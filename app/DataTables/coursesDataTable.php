@@ -65,10 +65,12 @@ class coursesDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'name',
-            'subject',
-            'duration',
-            'price'
+            'company_id',
+            'title',
+            'body',
+            'published_on',
+            'category_id',
+            'tags'
         ];
     }
 
