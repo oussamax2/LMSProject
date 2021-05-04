@@ -4,28 +4,40 @@
     <p>{{ $courses->id }}</p>
 </div>
 
-<!-- Name Field -->
+<!-- Company Id Field -->
 <div class="form-group">
-    {!! Form::label('name', 'Name:') !!}
-    <p>{{ $courses->name }}</p>
+    {!! Form::label('company_id', 'Company Id:') !!}
+    <p>{{ $courses->company_id }}</p>
 </div>
 
-<!-- Subject Field -->
+<!-- Title Field -->
 <div class="form-group">
-    {!! Form::label('subject', 'Subject:') !!}
-    <p>{{ $courses->subject }}</p>
+    {!! Form::label('title', 'Title:') !!}
+    <p>{{ $courses->title }}</p>
 </div>
 
-<!-- Duration Field -->
+<!-- Body Field -->
 <div class="form-group">
-    {!! Form::label('duration', 'Duration:') !!}
-    <p>{{ $courses->duration }}</p>
+    {!! Form::label('body', 'Body:') !!}
+    <p>{{ $courses->body }}</p>
 </div>
 
-<!-- Price Field -->
+<!-- Published On Field -->
 <div class="form-group">
-    {!! Form::label('price', 'Price:') !!}
-    <p>{{ $courses->price }}</p>
+    {!! Form::label('published_on', 'Published On:') !!}
+    <p>{{ $courses->published_on }}</p>
+</div>
+
+<!-- Category Id Field -->
+<div class="form-group">
+    {!! Form::label('category_id', 'Category Id:') !!}
+    <p>{{ $courses->category_id }}</p>
+</div>
+
+<!-- Tags Field -->
+<div class="form-group">
+    {!! Form::label('tags', 'Tags:') !!}
+    <p>{{ $courses->tags }}</p>
 </div>
 
 <!-- Created At Field -->
