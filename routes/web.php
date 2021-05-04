@@ -39,5 +39,3 @@ Route::post(
 
 
 
-
-Route::resource('courses', App\Http\Controllers\coursesController::class);
