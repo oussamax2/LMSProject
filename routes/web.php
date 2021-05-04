@@ -39,3 +39,26 @@ Route::post(
 
 
 
+
+
+Route::resource('countries', App\Http\Controllers\countriesController::class);
+
+
+
+Route::resource('states', App\Http\Controllers\statesController::class);
+
+Route::resource('cities', App\Http\Controllers\citiesController::class);
+
+Route::resource('registerations', App\Http\Controllers\registerationsController::class);
+
+Route::resource('companies', App\Http\Controllers\companiesController::class);
+
+Route::resource('tags', App\Http\Controllers\tagsController::class);
+
+Route::resource('courses', App\Http\Controllers\coursesController::class);
+
+Route::resource('courseTags', App\Http\Controllers\course_tagController::class);
+
+Route::resource('categories', App\Http\Controllers\categoriesController::class);
+
+Route::resource('sessions', App\Http\Controllers\sessionsController::class);
