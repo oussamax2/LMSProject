@@ -231,32 +231,18 @@
   header.menu-style-one .header-wrapper .logo img{
     width:74px;
     }
+    .teachers-course .theme-title a.profcourse{display: none;}
 }
-@media(max-width:1200px){
-  body{
-    padding:1rem;
- }
-}
-@media(min-width:1200px){
- body{
-   padding:5rem;
-}
+@media(min-width:992px){
 .find-course .opacity {
-margin: 6rem;
+margin: 4rem;
 }
 }
 @media(max-width:992px){
-.testimonial-styleOne .single-blog .categorytitle{
-  position: absolute;
-  top: 10px;
-  margin: 48px;
-  text-align: center;
-  z-index: 1;
-}
 .find-course .opacity {
   background: #fff;
-  padding: 0px 0 10px 0;
-  margin: 1rem;
+  padding: 10px 10px 10px 10px;
+  margin: 3rem 1rem;
 }
 #theme-main-banner h1{
   margin: 0px 0px 0px 10px;
@@ -279,6 +265,16 @@ margin-bottom: 20px;
   #theme-main-banner .single-input .searchcoursecampus{
   text-align: center;
   }
+  .single-blog{
+    margin-bottom: 20px;
   }
+
+  }
+  @media(max-width:576px){
+    .single-blog{
+      margin-bottom: 20px;
+    }
+  
+    }
 
 
