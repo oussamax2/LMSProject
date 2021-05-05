@@ -51,5 +51,13 @@ class tags extends Model
         
     ];
 
-    
+    public function courses()
+    {
+    	return $this->belongsToMany(courses::class);
+    }
+
+    public function categories()
+    {
+    	return $this->belongsTo(categories::class);
+    }
 }

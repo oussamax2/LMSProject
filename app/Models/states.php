@@ -54,5 +54,18 @@ class states extends Model
         
     ];
 
+    public function cities()
+    {
+        return $this->hasMany(cities::class);
+    }
     
+    public function countries()
+    {
+        return $this->belongsTo(countries::class);
+    }
+
+    public function sessions()
+    {
+        return $this->HasMany(sessions::class);
+    }
 }
