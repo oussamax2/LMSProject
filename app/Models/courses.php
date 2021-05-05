@@ -9,12 +9,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class courses
  * @package App\Models
- * @version May 3, 2021, 11:13 am UTC
+ * @version May 4, 2021, 10:06 am UTC
  *
- * @property string $name
- * @property string $subject
- * @property integer $duration
- * @property integer $price
+ * @property integer $company_id
+ * @property string $title
+ * @property string $body
+ * @property string $published_on
+ * @property integer $category_id
+ * @property integer $tags
  */
 class courses extends Model
 {
@@ -29,10 +31,12 @@ class courses extends Model
 
 
     public $fillable = [
-        'name',
-        'subject',
-        'duration',
-        'price'
+        'company_id',
+        'title',
+        'body',
+        'published_on',
+        'category_id',
+        'tags'
     ];
 
     /**
@@ -42,10 +46,12 @@ class courses extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'name' => 'string',
-        'subject' => 'string',
-        'duration' => 'integer',
-        'price' => 'integer'
+        'company_id' => 'integer',
+        'title' => 'string',
+        'body' => 'string',
+        'published_on' => 'datetime',
+        'category_id' => 'integer',
+        'tags' => 'integer'
     ];
 
     /**

@@ -1,25 +1,52 @@
-<!-- Name Field -->
+<!-- Company Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('name', 'Name:') !!}
-    {!! Form::text('name', null, ['class' => 'form-control']) !!}
+    {!! Form::label('company_id', 'Company Id:') !!}
+    {!! Form::text('company_id', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Subject Field -->
+<!-- Title Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('subject', 'Subject:') !!}
-    {!! Form::text('subject', null, ['class' => 'form-control']) !!}
+    {!! Form::label('title', 'Title:') !!}
+    {!! Form::text('title', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Duration Field -->
+<!-- Body Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('duration', 'Duration:') !!}
-    {!! Form::number('duration', null, ['class' => 'form-control']) !!}
+    {!! Form::label('body', 'Body:') !!}
+    {!! Form::text('body', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Price Field -->
+<!-- Published On Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('price', 'Price:') !!}
-    {!! Form::number('price', null, ['class' => 'form-control']) !!}
+    {!! Form::label('published_on', 'Published On:') !!}
+    {!! Form::text('published_on', null, ['class' => 'form-control','id'=>'published_on']) !!}
+</div>
+
+@push('scripts')
+   <script type="text/javascript">
+           $('#published_on').datetimepicker({
+               format: 'YYYY-MM-DD HH:mm:ss',
+               useCurrent: true,
+               icons: {
+                   up: "icon-arrow-up-circle icons font-2xl",
+                   down: "icon-arrow-down-circle icons font-2xl"
+               },
+               sideBySide: true
+           })
+       </script>
+@endpush
+
+
+<!-- Category Id Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('category_id', 'Category Id:') !!}
+    {!! Form::text('category_id', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Tags Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('tags', 'Tags:') !!}
+    {!! Form::text('tags', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->
