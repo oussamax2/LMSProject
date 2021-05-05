@@ -72,5 +72,38 @@ class sessions extends Model
         
     ];
 
-    
+    public function courses()
+    {
+        return $this->BelongsTo(courses::class);
+    }
+
+    public function registerations()
+    {
+        return $this->HasMany(registerations::class);
+    }
+
+    public function User()
+    {
+    	return $this->BelongsToMany(User::class,'registerations');
+    }
+    public function companies()
+    {
+        return $this->BelongsTo(companies::class);
+    }
+
+
+    public function countries()
+    {
+        return $this->BelongsTo(countries::class);
+    }
+
+    public function states()
+    {
+        return $this->BelongsTo(states::class);
+    } 
+      
+    public function cities()
+    {
+        return $this->BelongsTo(cities::class);
+    }  
 }

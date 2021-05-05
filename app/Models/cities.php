@@ -53,6 +53,15 @@ class cities extends Model
     public static $rules = [
         
     ];
-
+    
+    public function states()
+    {
+        return $this->belongsTo(states::class);
+    }
+    
+    public function sessions()
+    {
+        return $this->HasMany(sessions::class);
+    }
     
 }

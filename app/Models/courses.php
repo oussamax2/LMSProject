@@ -63,5 +63,23 @@ class courses extends Model
         
     ];
 
-    
+    public function categories()
+    {
+        return $this->belongsTo(categories::class);
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(tags::class);
+    }
+
+    public function companies()
+    {
+        return $this->belongsTo(companies::class);
+    }
+
+    public function sessions()
+    {
+        return $this->HasMany(sessions::class);
+    }
 }
