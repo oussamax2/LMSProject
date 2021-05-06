@@ -23,4 +23,8 @@ class HomeController extends Controller
     {
         return view('front.catg_courses');
     }
+    public function singlcourse()
+    {
+        return view('front.singlcourse');
+    }
 }

@@ -345,7 +345,7 @@ header.menu-style-one .header-wrapper .logo {
   height: 100%;
 }
 header.menu-style-one .header-wrapper .logo img{
-width:100px;
+width:95px;
 }
 
 
@@ -1755,6 +1755,26 @@ footer .bottom-footer {
   text-align: center;
   margin-bottom: 30px;
 }
+.inner-banner-coursedetails{
+  text-align: center;
+  margin-bottom: 30px;
+}
+.inner-banner-coursedetails .opacity{
+  background: rgba(0,0,0,0.6);
+  padding: 15px 0px;
+}
+.inner-banner-coursedetails .opacity ul li{
+  display: inline-block;
+  font-size: 18px;
+  color: #fff;
+  margin: 0 2px;
+  text-transform: capitalize;
+}
+.inner-banner-coursedetails .opacity ul li a{
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+}
+
 .inner-banner .opacity {
   background: rgba(0,0,0,0.6);
   padding: 240px 0 95px 0;
@@ -2110,7 +2130,6 @@ footer .bottom-footer {
           transform:rotate(-45deg);
 }
 /*----------------------- Course details -------------------*/
-.course-details {padding-bottom: 135px;}
 .course-details .course-sidebar {padding-left: 30px;}
 .course-sidebar .sidebar-course-information {
   border: 1px solid rgba(0,0,0,0.06);
