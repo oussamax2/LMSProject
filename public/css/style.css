@@ -336,6 +336,7 @@ header.menu-style-one .header-wrapper {
   position: relative;
   z-index: 9;
   border-top: 3px solid #d2d2d2;
+  box-shadow: 1px 1px 20px rgb(0 0 0 / 20%);
 }
 header.menu-style-one .header-wrapper .logo {
   position: relative;
@@ -1786,7 +1787,15 @@ footer .bottom-footer {
 .about-text .row {margin: 0 -35px;}
 .about-text .row [class*="col-"] {padding: 0 35px;}
 /*-------------------------- Our Course ---------------------*/
-.our-course {padding-bottom: 150px;}
+.our-course {padding-bottom: 40px; margin-top: 40px;}
+.our-course .course-sidebar .panel-body ul li span{
+  background: #bcbcbc;
+  padding: 5px 10px;
+  border-radius: 50%;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
 .course-sidebar h4 {
   font-size: 24px;
   font-weight: 700;
@@ -2061,10 +2070,9 @@ footer .bottom-footer {
   border-radius: 3px 0 0 3px;
 }
 .course-list .popular-course .single-course .text {
-  width: 58%;
+  width: 100%;
   padding: 25px 40px 0 40px;
   border-top: 1px solid #e9e9e9;
-  border-left: none;
   border-radius: 0 3px 3px 0;
 }
 .course-list .popular-course .single-course .text .name {
@@ -3725,6 +3733,32 @@ opacity: 0.6;
   font-weight: 600 !important;
   padding-top: 6px;
 }
+.our-course .searchcoursecampus{
+  font-size: 25px;
+  font-weight: 600 !important;
+  padding-top: 6px;
+}
+.our-course .single-input input {
+  width: 100%;
+  height: 38px;
+  border-radius: 5px;
+  border: 2px solid #2196f3;
+  box-shadow: 0px 0px 2px 1px rgb(0 0 0 / 16%);
+}
+.our-course .action-button {
+  background: #ed3d9e;
+  color: #fff;
+  padding: 8px;
+  width: 100%;
+  border-radius: 3px;
+}
+.our-course .find-coursecatg{
+  margin-bottom: 30px;
+}
+.our-course .find-coursecatg .single-input{
+  margin-bottom: 20px;
+}
+
 
 #theme-main-banner .camera_caption input::placeholder{
  font-size: 18px;
