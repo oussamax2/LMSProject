@@ -11,4 +11,12 @@ class HomeController extends Controller
     {
         return view('front.index');
     }
+    public function partners()
+    {
+        return view('front.partners');
+    }
+    public function pro_training()
+    {
+        return view('front.pro_training');
+    }
 }
