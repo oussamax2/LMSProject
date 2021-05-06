@@ -268,13 +268,20 @@ margin-bottom: 20px;
   .single-blog{
     margin-bottom: 20px;
   }
+  .dateloc{
+    border-bottom: 1px solid #ddd;
+    padding: 20px;
+  }
+  .sessionlms{
+    padding: 20px;
+  }
+
 
   }
   @media(max-width:576px){
     .single-blog{
       margin-bottom: 20px;
     }
-  
     }
 
 

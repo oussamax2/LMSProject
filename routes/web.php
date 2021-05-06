@@ -24,6 +24,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'home'])->name('Cam
 Route::get('/partners', [App\Http\Controllers\HomeController::class, 'partners'])->name('partners');
 Route::get('/pro_training', [App\Http\Controllers\HomeController::class, 'pro_training'])->name('pro_training');
 Route::get('/catg_courses', [App\Http\Controllers\HomeController::class, 'catg_courses'])->name('catg_courses');
+Route::get('/singlcourse', [App\Http\Controllers\HomeController::class, 'singlcourse'])->name('singlcourse');
 
 
 
