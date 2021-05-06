@@ -45,3 +45,5 @@ Route::resource('course_tags', App\Http\Controllers\API\course_tagAPIController:
 Route::resource('categories', App\Http\Controllers\API\categoriesAPIController::class);
 
 Route::resource('sessions', App\Http\Controllers\API\sessionsAPIController::class);
+
+Route::resource('roles', App\Http\Controllers\API\RoleAPIController::class);
