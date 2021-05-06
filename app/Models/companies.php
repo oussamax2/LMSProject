@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 
 /**
@@ -48,5 +49,14 @@ class companies extends Model
         
     ];
 
-    
+
+    public function courses()
+    {
+        return $this->HasMany(courses::class);
+    }
+
+    public function sessions()
+    {
+        return $this->HasMany(sessions::class);
+    }
 }

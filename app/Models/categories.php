@@ -51,5 +51,19 @@ class categories extends Model
         
     ];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function courses()
+    {
+        return $this->HasMany(courses::class);
+    }
     
+     /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function tags()
+    {
+        return $this->HasMany(tags::class);
+    }
 }

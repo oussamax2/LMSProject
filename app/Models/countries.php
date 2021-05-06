@@ -51,5 +51,12 @@ class countries extends Model
         
     ];
 
-    
+    public function states()
+    {
+        return $this->hasMany(states::class);
+    }
+    public function sessions()
+    {
+        return $this->HasMany(sessions::class);
+    }
 }

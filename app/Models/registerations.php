@@ -54,5 +54,21 @@ class registerations extends Model
         
     ];
 
+    public function sessions()
+    {
+        return $this->BelongsTo(sessions::class);
+    }
+
+    public function User()
+    {
+        return $this->BelongsTo(User::class);
+
+    }    
+
+    public function companies()
+    {
+        return $this->BelongsTo(companies::class);
+
+    }
     
 }
