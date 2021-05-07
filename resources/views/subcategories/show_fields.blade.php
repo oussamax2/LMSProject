@@ -1,30 +1,30 @@
 <!-- Id Field -->
 <div class="form-group">
     {!! Form::label('id', 'Id:') !!}
-    <p>{{ $courseTag->id }}</p>
+    <p>{{ $subcategorie->id }}</p>
 </div>
 
-<!-- Course Id Field -->
+<!-- Name Field -->
 <div class="form-group">
-    {!! Form::label('course_id', 'Course Id:') !!}
-    <p>{{ $courseTag->course_id }}</p>
+    {!! Form::label('name', 'Name:') !!}
+    <p>{{ $subcategorie->name }}</p>
 </div>
 
-<!-- Tag Id Field -->
+<!-- Category Id Field -->
 <div class="form-group">
-    {!! Form::label('tag_id', 'Tag Id:') !!}
-    <p>{{ $courseTag->tag_id }}</p>
+    {!! Form::label('category_id', 'Category Id:') !!}
+    <p>{{ $subcategorie->category_id }}</p>
 </div>
 
 <!-- Created At Field -->
 <div class="form-group">
     {!! Form::label('created_at', 'Created At:') !!}
-    <p>{{ $courseTag->created_at }}</p>
+    <p>{{ $subcategorie->created_at }}</p>
 </div>
 
 <!-- Updated At Field -->
 <div class="form-group">
     {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{{ $courseTag->updated_at }}</p>
+    <p>{{ $subcategorie->updated_at }}</p>
 </div>
 

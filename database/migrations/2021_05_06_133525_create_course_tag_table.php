@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateCourseTagTable extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -15,11 +14,13 @@ class CreateCourseTagTable extends Migration
     public function up()
     {
         Schema::create('course_tag', function (Blueprint $table) {
+            
             $table->increments('id');
-            $table->integer('course_id');
-            $table->integer('tag_id');
+            $table->unsignedInteger('course_id')->unsigned();
+            $table->unsignedInteger('tag_id')->unsigned();
+            $table->foreign('course_id')->references('id')->on('courses')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign('tag_id')->references('id')->on('tags')->onUpdate('CASCADE')->onDelete('CASCADE');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -30,6 +31,6 @@ class CreateCourseTagTable extends Migration
      */
     public function down()
     {
-        Schema::drop('course_tag');
+        Schema::dropIfExists('course_tag');
     }
 }

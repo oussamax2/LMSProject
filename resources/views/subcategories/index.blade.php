@@ -2,7 +2,7 @@
 
 @section('content')
     <ol class="breadcrumb">
-        <li class="breadcrumb-item">Course Tags</li>
+        <li class="breadcrumb-item">Subcategories</li>
     </ol>
     <div class="container-fluid">
         <div class="animated fadeIn">
@@ -12,11 +12,11 @@
                      <div class="card">
                          <div class="card-header">
                              <i class="fa fa-align-justify"></i>
-                             course_tags
-                             <a class="pull-right" href="{{ route('courseTags.create') }}"><i class="fa fa-plus-square fa-lg"></i></a>
+                             subcategories
+                             <a class="pull-right" href="{{ route('subcategories.create') }}"><i class="fa fa-plus-square fa-lg"></i></a>
                          </div>
                          <div class="card-body">
-                             @include('course_tags.table')
+                             @include('subcategories.table')
                               <div class="pull-right mr-3">
                                      
                               </div>

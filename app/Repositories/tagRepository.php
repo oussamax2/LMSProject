@@ -2,16 +2,16 @@
 
 namespace App\Repositories;
 
-use App\Models\tags;
+use App\Models\tag;
 use App\Repositories\BaseRepository;
 
 /**
- * Class tagsRepository
+ * Class tagRepository
  * @package App\Repositories
- * @version May 4, 2021, 10:01 am UTC
+ * @version May 6, 2021, 1:19 pm UTC
 */
 
-class tagsRepository extends BaseRepository
+class tagRepository extends BaseRepository
 {
     /**
      * @var array
@@ -36,6 +36,6 @@ class tagsRepository extends BaseRepository
      **/
     public function model()
     {
-        return tags::class;
+        return tag::class;
     }
 }

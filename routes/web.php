@@ -42,6 +42,7 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','role:admin']],
     Route::resource('categories', App\Http\Controllers\categoriesController::class);
     Route::resource('sessions', App\Http\Controllers\sessionsController::class);
     Route::resource('roles', App\Http\Controllers\RoleController::class);
+    Route::resource('subcategories', App\Http\Controllers\subcategorieController::class);
 
 });
 
@@ -62,6 +63,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:compa
     Route::resource('courses', App\Http\Controllers\coursesController::class);
     Route::resource('courseTags', App\Http\Controllers\course_tagController::class);
     Route::resource('categories', App\Http\Controllers\categoriesController::class);
+    Route::resource('subcategories', App\Http\Controllers\subcategorieController::class);
   
 
 });

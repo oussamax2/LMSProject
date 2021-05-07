@@ -62,8 +62,24 @@ class categories extends Model
      /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function tags()
+    public function tag()
     {
-        return $this->HasMany(tags::class);
+        return $this->HasMany(tag::class);
+    }
+
+     /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function tag()
+    {
+        return $this->HasMany(tag::class);
+    }
+    
+         /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function subcategorie()
+    {
+        return $this->HasMany(subcategorie::class);
     }
 }

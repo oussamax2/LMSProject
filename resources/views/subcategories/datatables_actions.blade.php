@@ -1,9 +1,9 @@
-{!! Form::open(['route' => ['courseTags.destroy', $id], 'method' => 'delete']) !!}
+{!! Form::open(['route' => ['subcategories.destroy', $id], 'method' => 'delete']) !!}
 <div class='btn-group'>
-    <a href="{{ route('courseTags.show', $id) }}" class='btn btn-ghost-success'>
+    <a href="{{ route('subcategories.show', $id) }}" class='btn btn-ghost-success'>
        <i class="fa fa-eye"></i>
     </a>
-    <a href="{{ route('courseTags.edit', $id) }}" class='btn btn-ghost-info'>
+    <a href="{{ route('subcategories.edit', $id) }}" class='btn btn-ghost-info'>
        <i class="fa fa-edit"></i>
     </a>
     {!! Form::button('<i class="fa fa-trash"></i>', [
