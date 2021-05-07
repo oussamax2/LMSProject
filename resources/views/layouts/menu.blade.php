@@ -31,24 +31,14 @@
     </a>
 </li>
 
-<li class="nav-item {{ Request::is('tags*') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ route('tags.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>Tags</span>
-    </a>
-</li>
+
 <li class="nav-item {{ Request::is('courses*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('courses.index') }}">
         <i class="nav-icon icon-cursor"></i>
         <span>Courses</span>
     </a>
 </li>
-<li class="nav-item {{ Request::is('courseTags*') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ route('courseTags.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>Course Tags</span>
-    </a>
-</li>
+
 <li class="nav-item {{ Request::is('categories*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('categories.index') }}">
         <i class="nav-icon icon-cursor"></i>
@@ -59,5 +49,18 @@
     <a class="nav-link" href="{{ route('sessions.index') }}">
         <i class="nav-icon icon-cursor"></i>
         <span>Sessions</span>
+    </a>
+</li>
+
+<li class="nav-item {{ Request::is('tags*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('tags.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Tags</span>
+    </a>
+</li>
+<li class="nav-item {{ Request::is('subcategories*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('subcategories.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Subcategories</span>
     </a>
 </li>

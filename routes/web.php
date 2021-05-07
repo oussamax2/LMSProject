@@ -60,12 +60,18 @@ Route::resource('registerations', App\Http\Controllers\registerationsController:
 
 Route::resource('companies', App\Http\Controllers\companiesController::class);
 
-Route::resource('tags', App\Http\Controllers\tagsController::class);
+
 
 Route::resource('courses', App\Http\Controllers\coursesController::class);
 
-Route::resource('courseTags', App\Http\Controllers\course_tagController::class);
+
 
 Route::resource('categories', App\Http\Controllers\categoriesController::class);
 
 Route::resource('sessions', App\Http\Controllers\sessionsController::class);
+
+
+
+Route::resource('tags', App\Http\Controllers\tagController::class);
+
+Route::resource('subcategories', App\Http\Controllers\subcategorieController::class);

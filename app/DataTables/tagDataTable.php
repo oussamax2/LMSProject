@@ -2,11 +2,11 @@
 
 namespace App\DataTables;
 
-use App\Models\course_tag;
+use App\Models\tag;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
 
-class course_tagDataTable extends DataTable
+class tagDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -18,16 +18,16 @@ class course_tagDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'course_tags.datatables_actions');
+        return $dataTable->addColumn('action', 'tags.datatables_actions');
     }
 
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\course_tag $model
+     * @param \App\Models\tag $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(course_tag $model)
+    public function query(tag $model)
     {
         return $model->newQuery();
     }
@@ -65,8 +65,8 @@ class course_tagDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'course_id',
-            'tag_id'
+            'name',
+            'category_id'
         ];
     }
 
@@ -77,6 +77,6 @@ class course_tagDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'course_tags_datatable_' . time();
+        return 'tags_datatable_' . time();
     }
 }

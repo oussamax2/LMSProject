@@ -2,23 +2,23 @@
 
 namespace App\Repositories;
 
-use App\Models\course_tag;
+use App\Models\subcategorie;
 use App\Repositories\BaseRepository;
 
 /**
- * Class course_tagRepository
+ * Class subcategorieRepository
  * @package App\Repositories
- * @version May 4, 2021, 10:07 am UTC
+ * @version May 6, 2021, 2:25 pm UTC
 */
 
-class course_tagRepository extends BaseRepository
+class subcategorieRepository extends BaseRepository
 {
     /**
      * @var array
      */
     protected $fieldSearchable = [
-        'course_id',
-        'tag_id'
+        'name',
+        'category_id'
     ];
 
     /**
@@ -36,6 +36,6 @@ class course_tagRepository extends BaseRepository
      **/
     public function model()
     {
-        return course_tag::class;
+        return subcategorie::class;
     }
 }

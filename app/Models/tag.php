@@ -7,14 +7,16 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 
 /**
- * Class tags
+ * Class tag
  * @package App\Models
- * @version May 4, 2021, 10:01 am UTC
+ * @version May 6, 2021, 1:19 pm UTC
  *
+ * @property \Illuminate\Database\Eloquent\Collection $courses
+ * @property \App\Models\categories $category
  * @property string $name
  * @property integer $category_id
  */
-class tags extends Model
+class tag extends Model
 {
     use SoftDeletes;
 
@@ -51,13 +53,19 @@ class tags extends Model
         
     ];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     **/
     public function courses()
     {
-    	return $this->belongsToMany(courses::class);
+        return $this->belongsToMany(\App\Models\courses::class, 'course_tag', 'tag_id', 'course_id');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
     public function categories()
     {
-    	return $this->belongsTo(categories::class);
+        return $this->belongsTo(\App\Models\categories::class, 'category_id');
     }
 }

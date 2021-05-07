@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\API;
 
-use Illuminate\Foundation\Http\FormRequest;
-use App\Models\course_tag;
+use App\Models\tag;
+use InfyOm\Generator\Request\APIRequest;
 
-class Updatecourse_tagRequest extends FormRequest
+class UpdatetagAPIRequest extends APIRequest
 {
-
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -25,7 +24,7 @@ class Updatecourse_tagRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = course_tag::$rules;
+        $rules = tag::$rules;
         
         return $rules;
     }
