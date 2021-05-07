@@ -27,4 +27,16 @@ class HomeController extends Controller
     {
         return view('front.singlcourse');
     }
+    public function registeruser()
+    {
+        return view('front.registeruser');
+    }
+    public function contact()
+    {
+        return view('front.contactp');
+    }
+    public function registervendor()
+    {
+        return view('front.registervendor');
+    }
 }
