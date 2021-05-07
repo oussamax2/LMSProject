@@ -24,12 +24,7 @@
         <span>Registerations</span>
     </a>
 </li>
-<li class="nav-item {{ Request::is('companies*') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ route('companies.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>Companies</span>
-    </a>
-</li>
+
 
 
 <li class="nav-item {{ Request::is('courses*') ? 'active' : '' }}">
@@ -66,5 +61,11 @@
     <a class="nav-link" href="{{ route('roles.index') }}">
         <i class="nav-icon icon-cursor"></i>
         <span>Roles</span>
+    </a>
+</li>
+<li class="nav-item {{ Request::is('companies*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('companies.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Companies</span>
     </a>
 </li>
