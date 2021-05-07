@@ -49,3 +49,4 @@ Route::resource('sessions', App\Http\Controllers\API\sessionsAPIController::clas
 Route::resource('tags', App\Http\Controllers\API\tagAPIController::class);
 
 Route::resource('subcategories', App\Http\Controllers\API\subcategorieAPIController::class);
+Route::resource('roles', App\Http\Controllers\API\RoleAPIController::class);

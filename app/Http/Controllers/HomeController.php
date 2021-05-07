@@ -19,4 +19,12 @@ class HomeController extends Controller
     {
         return view('front.pro_training');
     }
+    public function catg_courses()
+    {
+        return view('front.catg_courses');
+    }
+    public function singlcourse()
+    {
+        return view('front.singlcourse');
+    }
 }
