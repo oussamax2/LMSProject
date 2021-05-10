@@ -39,13 +39,15 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','role:admin']],
     Route::resource('states', App\Http\Controllers\statesController::class);
     Route::resource('cities', App\Http\Controllers\citiesController::class);
     Route::resource('registerations', App\Http\Controllers\registerationsController::class);
-    Route::resource('companies', App\Http\Controllers\companiesController::class);
+    
     Route::resource('tags', App\Http\Controllers\tagsController::class);
     Route::resource('courses', App\Http\Controllers\coursesController::class);
     Route::resource('courseTags', App\Http\Controllers\course_tagController::class);
     Route::resource('categories', App\Http\Controllers\categoriesController::class);
     Route::resource('sessions', App\Http\Controllers\sessionsController::class);
     Route::resource('roles', App\Http\Controllers\RoleController::class);
+    Route::resource('subcategories', App\Http\Controllers\subcategorieController::class);
+    Route::resource('companies', App\Http\Controllers\companiesController::class);
 
 });
 
@@ -57,16 +59,6 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','role:admin']],
 
 Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:company']], function () {
 
-    Route::get('/', [App\Http\Controllers\BackController::class, 'admin'])->name('admin');
-    Route::resource('states', App\Http\Controllers\statesController::class);
-    Route::resource('cities', App\Http\Controllers\citiesController::class);
-    Route::resource('registerations', App\Http\Controllers\registerationsController::class);
-    Route::resource('companies', App\Http\Controllers\companiesController::class);
-    Route::resource('tags', App\Http\Controllers\tagsController::class);
-    Route::resource('courses', App\Http\Controllers\coursesController::class);
-    Route::resource('courseTags', App\Http\Controllers\course_tagController::class);
-    Route::resource('categories', App\Http\Controllers\categoriesController::class);
-  
 
 });
 
@@ -94,3 +86,8 @@ Route::post(
     'generator_builder/generate-from-file',
     '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generateFromFile'
 )->name('io_generator_builder_generate_from_file');
+
+
+
+
+

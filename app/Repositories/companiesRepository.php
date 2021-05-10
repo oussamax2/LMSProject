@@ -8,7 +8,7 @@ use App\Repositories\BaseRepository;
 /**
  * Class companiesRepository
  * @package App\Repositories
- * @version May 4, 2021, 9:54 am UTC
+ * @version May 7, 2021, 2:00 pm UTC
 */
 
 class companiesRepository extends BaseRepository
@@ -17,7 +17,16 @@ class companiesRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
-        'name'
+        'lastname',
+        'website',
+        'telephone',
+        'picture',
+        'shortDescription',
+        'description',
+        'fcburl',
+        'twitturl',
+        'linkdinurl',
+        'dribbleurl'
     ];
 
     /**

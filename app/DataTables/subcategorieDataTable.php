@@ -2,11 +2,11 @@
 
 namespace App\DataTables;
 
-use App\Models\tags;
+use App\Models\subcategorie;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
 
-class tagsDataTable extends DataTable
+class subcategorieDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -18,16 +18,16 @@ class tagsDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'tags.datatables_actions');
+        return $dataTable->addColumn('action', 'subcategories.datatables_actions');
     }
 
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\tags $model
+     * @param \App\Models\subcategorie $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(tags $model)
+    public function query(subcategorie $model)
     {
         return $model->newQuery();
     }
@@ -77,6 +77,6 @@ class tagsDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'tags_datatable_' . time();
+        return 'subcategories_datatable_' . time();
     }
 }

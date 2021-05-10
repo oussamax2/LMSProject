@@ -34,16 +34,22 @@ Route::resource('cities', App\Http\Controllers\API\citiesAPIController::class);
 
 Route::resource('registerations', App\Http\Controllers\API\registerationsAPIController::class);
 
-Route::resource('companies', App\Http\Controllers\API\companiesAPIController::class);
 
-Route::resource('tags', App\Http\Controllers\API\tagsAPIController::class);
+
+
 
 Route::resource('courses', App\Http\Controllers\API\coursesAPIController::class);
-
-Route::resource('course_tags', App\Http\Controllers\API\course_tagAPIController::class);
 
 Route::resource('categories', App\Http\Controllers\API\categoriesAPIController::class);
 
 Route::resource('sessions', App\Http\Controllers\API\sessionsAPIController::class);
 
 Route::resource('roles', App\Http\Controllers\API\RoleAPIController::class);
+
+
+Route::resource('tags', App\Http\Controllers\API\tagAPIController::class);
+
+Route::resource('subcategories', App\Http\Controllers\API\subcategorieAPIController::class);
+
+
+Route::resource('companies', App\Http\Controllers\API\companiesAPIController::class);

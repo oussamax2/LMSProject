@@ -65,7 +65,16 @@ class companiesDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'name'
+            'lastname',
+            'website',
+            'telephone',
+            'picture',
+            'shortDescription',
+            'description',
+            'fcburl',
+            'twitturl',
+            'linkdinurl',
+            'dribbleurl'
         ];
     }
 
