@@ -10,7 +10,7 @@
 						<ul>
 							<li><a href="index.html" class="tran3s">Home</a></li>
 							<li>/</li>
-							<li>Courses</li>
+							<li>course detail</li>
 						</ul>
 					</div> <!-- /.container -->
 				</div> <!-- /.opacity -->
@@ -31,25 +31,18 @@
 									<span>Posted on 24 Mar 2018</span>
 								</div> <!-- /.course-title -->
 								<div class="course-info row">
-									<div class="col-xs-4">
+									<div class="col-xs-6">
 										<div>
 											<i class="flaticon-bookmark"></i>
 											<p>Sub Categories</p>
 											<b>Java Development</b>
 										</div>
 									</div>
-									<div class="col-xs-4">
+									<div class="col-xs-6">
 										<div>
 											<i class="flaticon-bookmark"></i>
 											<p>Categories</p>
 											<b>Human Resources</b>
-										</div>
-									</div>
-									<div class="col-xs-4">
-										<div>
-											<i class="flaticon-time"></i>
-											<p>Duration</p>
-                                            <b>4 days</b>
 										</div>
 									</div>
 								</div> <!-- /.course-info -->
@@ -57,18 +50,33 @@
 							<div class="curriculum-panel">
 								<div class="clearfix">
 									<h3 class="float-left">Session</h3>
-									<ul class="float-right">
-										<li>1 Classes</li>
-									</ul>
 								</div>
 							</div>
 							<div class="curriculum-panel-date">
-								<div class="clearfix">
-									<b class="title-curr-panel float-left"><i class="flaticon-clock"></i>12 May 2018 To 13 May 2018</b>
-									<ul class="local-sec float-right">
-										<i class="flaticon-placeholder"></i>
-										<li class="title-curr-panel">Saudia Arabia,jeddah</li>
-									</ul>
+								<div class="linksession clearfix">
+                                    <a href="#">
+									    <b class="title-curr-panel float-left"><i class="flaticon-clock"></i>12 May 2018 To 13 May 2018</b>
+                                    </a>
+								</div>
+                                <div class="linksession clearfix">
+                                    <a href="#">
+									    <b class="title-curr-panel float-left"><i class="flaticon-clock"></i>12 May 2018 To 13 May 2018</b>
+                                    </a>
+								</div>
+                                <div class="linksession clearfix">
+                                    <a href="#">
+									    <b class="title-curr-panel float-left"><i class="flaticon-clock"></i>12 May 2018 To 13 May 2018</b>
+                                    </a>
+								</div>
+                                <div class="linksession clearfix">
+                                    <a href="#">
+									    <b class="title-curr-panel float-left"><i class="flaticon-clock"></i>12 May 2018 To 13 May 2018</b>
+                                    </a>
+								</div>
+                                <div class="linksession clearfix">
+                                    <a href="#">
+									    <b class="title-curr-panel float-left"><i class="flaticon-clock"></i>12 May 2018 To 13 May 2018</b>
+                                    </a>
 								</div>
 							</div>
 						</div> <!-- /.col- -->
@@ -76,14 +84,6 @@
 						<!-- ************************* SIDEBAR ***************************** -->
 						<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="course-sidebar">
-								<div class="sidebar-course-information">
-									<ul class="price clearfix">
-										<li class="float-left"><strong class="s-color"><b style="color:#222;">Price:</b>  $79<sup>.99</sup></strong></li>
-									</ul>
-									<ul class="info-list row">
-										<li class="col-xs-12"><b>Target Audiance :</b><br><br>CEO, Executives, Managers</li>
-									</ul>
-								</div> <!-- /.sidebar-course-information -->
 
 								<div class="sidebar-instructor-info">
 									<h4>Company</h4>
