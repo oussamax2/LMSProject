@@ -2,11 +2,11 @@
 
 namespace App\DataTables;
 
-use App\Models\companies;
+use App\Models\tag;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
 
-class companiesDataTable extends DataTable
+class tagDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -18,16 +18,16 @@ class companiesDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'companies.datatables_actions');
+        return $dataTable->addColumn('action', 'tags.datatables_actions');
     }
 
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\companies $model
+     * @param \App\Models\tag $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(companies $model)
+    public function query(tag $model)
     {
         return $model->newQuery();
     }
@@ -65,16 +65,8 @@ class companiesDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'lastname',
-            'website',
-            'telephone',
-            'picture',
-            'shortDescription',
-            'description',
-            'fcburl',
-            'twitturl',
-            'linkdinurl',
-            'dribbleurl'
+            'name',
+            'category_id'
         ];
     }
 
@@ -85,6 +77,6 @@ class companiesDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'companies_datatable_' . time();
+        return 'tags_datatable_' . time();
     }
 }

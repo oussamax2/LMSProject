@@ -20,8 +20,11 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'home'])->name('Campus');
 Route::get('/partners', [App\Http\Controllers\HomeController::class, 'partners'])->name('partners');
 Route::get('/pro_training', [App\Http\Controllers\HomeController::class, 'pro_training'])->name('pro_training');
-Route::get('/catg_courses', [App\Http\Controllers\HomeController::class, 'catg_courses'])->name('catg_courses');
-Route::get('/singlcourse', [App\Http\Controllers\HomeController::class, 'singlcourse'])->name('singlcourse');
+Route::get('/list_sessions', [App\Http\Controllers\HomeController::class, 'catg_courses'])->name('list_sessions');
+Route::get('/singlsession', [App\Http\Controllers\HomeController::class, 'singlcourse'])->name('singlsession');
+Route::get('/registeruser', [App\Http\Controllers\HomeController::class, 'registeruser'])->name('registeruser');
+Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
+Route::get('/register_vendor', [App\Http\Controllers\HomeController::class, 'registervendor'])->name('register_vendor');
 
 
 /*
@@ -35,13 +38,15 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','role:admin']],
     Route::resource('states', App\Http\Controllers\statesController::class);
     Route::resource('cities', App\Http\Controllers\citiesController::class);
     Route::resource('registerations', App\Http\Controllers\registerationsController::class);
-    Route::resource('companies', App\Http\Controllers\companiesController::class);
+    
     Route::resource('tags', App\Http\Controllers\tagsController::class);
     Route::resource('courses', App\Http\Controllers\coursesController::class);
     Route::resource('courseTags', App\Http\Controllers\course_tagController::class);
     Route::resource('categories', App\Http\Controllers\categoriesController::class);
     Route::resource('sessions', App\Http\Controllers\sessionsController::class);
     Route::resource('roles', App\Http\Controllers\RoleController::class);
+    Route::resource('subcategories', App\Http\Controllers\subcategorieController::class);
+    Route::resource('companies', App\Http\Controllers\companiesController::class);
 
 });
 
@@ -53,16 +58,6 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','role:admin']],
 
 Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:company']], function () {
 
-    Route::get('/', [App\Http\Controllers\BackController::class, 'admin'])->name('admin');
-    Route::resource('states', App\Http\Controllers\statesController::class);
-    Route::resource('cities', App\Http\Controllers\citiesController::class);
-    Route::resource('registerations', App\Http\Controllers\registerationsController::class);
-    Route::resource('companies', App\Http\Controllers\companiesController::class);
-    Route::resource('tags', App\Http\Controllers\tagsController::class);
-    Route::resource('courses', App\Http\Controllers\coursesController::class);
-    Route::resource('courseTags', App\Http\Controllers\course_tagController::class);
-    Route::resource('categories', App\Http\Controllers\categoriesController::class);
-  
 
 });
 
@@ -90,3 +85,8 @@ Route::post(
     'generator_builder/generate-from-file',
     '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generateFromFile'
 )->name('io_generator_builder_generate_from_file');
+
+
+
+
+

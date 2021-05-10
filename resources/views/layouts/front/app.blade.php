@@ -134,13 +134,6 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-body">
-                <h3>Login with Social Networks</h3>
-                <ul class="clearfix">
-                    <li class="float-left"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i> facebook</a></li>
-                    <li class="float-left"><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i> Google</a></li>
-                    <li class="float-left"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
-                    <li class="float-left"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i> Linkedin</a></li>
-                </ul>
                 <form action="#">
                     <h3>Login with Site Account</h3>
                     <div class="wrapper">

@@ -2,31 +2,23 @@
 
 namespace App\Repositories;
 
-use App\Models\companies;
+use App\Models\tag;
 use App\Repositories\BaseRepository;
 
 /**
- * Class companiesRepository
+ * Class tagRepository
  * @package App\Repositories
- * @version May 7, 2021, 2:00 pm UTC
+ * @version May 6, 2021, 1:19 pm UTC
 */
 
-class companiesRepository extends BaseRepository
+class tagRepository extends BaseRepository
 {
     /**
      * @var array
      */
     protected $fieldSearchable = [
-        'lastname',
-        'website',
-        'telephone',
-        'picture',
-        'shortDescription',
-        'description',
-        'fcburl',
-        'twitturl',
-        'linkdinurl',
-        'dribbleurl'
+        'name',
+        'category_id'
     ];
 
     /**
@@ -44,6 +36,6 @@ class companiesRepository extends BaseRepository
      **/
     public function model()
     {
-        return companies::class;
+        return tag::class;
     }
 }

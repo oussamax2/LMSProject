@@ -73,4 +73,9 @@ class User extends Authenticatable
         }
         return false;
     }
+
+    public function companies()
+    {
+        return $this->BelongsTo(companies::class);
+    }
 }

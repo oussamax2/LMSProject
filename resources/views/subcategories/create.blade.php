@@ -3,7 +3,7 @@
 @section('content')
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-         <a href="{!! route('companies.index') !!}">Companies</a>
+         <a href="{!! route('subcategories.index') !!}">Subcategorie</a>
       </li>
       <li class="breadcrumb-item active">Create</li>
     </ol>
@@ -15,12 +15,12 @@
                         <div class="card">
                             <div class="card-header">
                                 <i class="fa fa-plus-square-o fa-lg"></i>
-                                <strong>Create Companies</strong>
+                                <strong>Create Subcategorie</strong>
                             </div>
                             <div class="card-body">
-                                {!! Form::open(['route' => 'companies.store', 'files' => true]) !!}
+                                {!! Form::open(['route' => 'subcategories.store']) !!}
 
-                                   @include('companies.fields')
+                                   @include('subcategories.fields')
 
                                 {!! Form::close() !!}
                             </div>

@@ -68,10 +68,7 @@ class courses extends Model
         return $this->belongsTo(categories::class);
     }
 
-    public function tags()
-    {
-        return $this->belongsToMany(tags::class);
-    }
+  
 
     public function companies()
     {
@@ -81,5 +78,13 @@ class courses extends Model
     public function sessions()
     {
         return $this->HasMany(sessions::class);
+    }
+
+        /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     **/
+    public function tag()
+    {
+        return $this->belongsToMany(\App\Models\tags::class, 'course_tag', 'course_id', 'tag_id');
     }
 }
