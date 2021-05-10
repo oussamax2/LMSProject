@@ -24,6 +24,7 @@ Route::get('/list_sessions', [App\Http\Controllers\HomeController::class, 'catg_
 Route::get('/singlsession', [App\Http\Controllers\HomeController::class, 'singlcourse'])->name('singlsession');
 Route::get('/registeruser', [App\Http\Controllers\HomeController::class, 'registeruser'])->name('registeruser');
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
+Route::get('/detailcourse', [App\Http\Controllers\HomeController::class, 'detailcourse'])->name('detailcourse');
 Route::get('/register_vendor', [App\Http\Controllers\HomeController::class, 'registervendor'])->name('register_vendor');
 
 

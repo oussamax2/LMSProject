@@ -17,7 +17,7 @@
 										<div class="image"><img src="images/course/4.jpg" alt=""></div>
 										<div class="name clearfix">
 											<h6 class="float-left">Jannatul</h6>
-											<span class="p-bg-color float-right">Free</span>
+											<strong class="s-color float-right">$79<sup>.99</sup></strong>
 										</div>
 										<h5><a href="course-details.html" class="tran3s">Angular 2 Essential Training JavaScript Framework</a></h5>
 										<ul class="clearfix">
@@ -63,7 +63,7 @@
 										<div class="image"><img src="images/course/4.jpg" alt=""></div>
 										<div class="name clearfix">
 											<h6 class="float-left">Jannatul</h6>
-											<span class="p-bg-color float-right">Free</span>
+											<strong class="s-color float-right">$79<sup>.99</sup></strong>
 										</div>
 										<h5><a href="course-details.html" class="tran3s">Angular 2 Essential Training JavaScript Framework</a></h5>
 										<ul class="clearfix">
@@ -86,7 +86,7 @@
 										<div class="image"><img src="images/course/4.jpg" alt=""></div>
 										<div class="name clearfix">
 											<h6 class="float-left">Jannatul</h6>
-											<span class="p-bg-color float-right">Free</span>
+											<strong class="s-color float-right">$79<sup>.99</sup></strong>
 										</div>
 										<h5><a href="course-details.html" class="tran3s">Angular 2 Essential Training JavaScript Framework</a></h5>
 										<ul class="clearfix">
