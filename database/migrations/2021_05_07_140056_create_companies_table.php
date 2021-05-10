@@ -16,7 +16,16 @@ class CreateCompaniesTable extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('lastname');
+            $table->string('website');
+            $table->string('telephone');
+            $table->string('picture');
+            $table->string('shortDescription');
+            $table->string('description');
+            $table->string('fcburl');
+            $table->string('twitturl');
+            $table->string('linkdinurl');
+            $table->string('dribbleurl');
             $table->timestamps();
             $table->softDeletes();
         });

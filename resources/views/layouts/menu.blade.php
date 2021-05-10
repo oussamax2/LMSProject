@@ -24,12 +24,7 @@
         <span>Registerations</span>
     </a>
 </li>
-<li class="nav-item {{ Request::is('companies*') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ route('companies.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>Companies</span>
-    </a>
-</li>
+
 
 
 <li class="nav-item {{ Request::is('courses*') ? 'active' : '' }}">
@@ -45,16 +40,18 @@
         <span>Categories</span>
     </a>
 </li>
+<li class="nav-item {{ Request::is('subcategories*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('subcategories.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Subcategories</span>
+    </a>
+</li>
 <li class="nav-item {{ Request::is('sessions*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('sessions.index') }}">
         <i class="nav-icon icon-cursor"></i>
         <span>Sessions</span>
     </a>
 </li>
-<li class="nav-item {{ Request::is('roles*') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ route('roles.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>Roles</span>
 
 <li class="nav-item {{ Request::is('tags*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('tags.index') }}">
@@ -62,9 +59,17 @@
         <span>Tags</span>
     </a>
 </li>
-<li class="nav-item {{ Request::is('subcategories*') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ route('subcategories.index') }}">
+
+
+<li class="nav-item {{ Request::is('roles*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('roles.index') }}">
         <i class="nav-icon icon-cursor"></i>
-        <span>Subcategories</span>
+        <span>Roles</span>
+    </a>
+</li>
+<li class="nav-item {{ Request::is('companies*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('companies.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Companies</span>
     </a>
 </li>

@@ -4,15 +4,23 @@ namespace App\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 
 /**
  * Class companies
  * @package App\Models
- * @version May 4, 2021, 9:54 am UTC
+ * @version May 7, 2021, 2:00 pm UTC
  *
- * @property string $name
+ * @property string $lastname
+ * @property string $website
+ * @property string $telephone
+ * @property string $picture
+ * @property string $shortDescription
+ * @property string $description
+ * @property string $fcburl
+ * @property string $twitturl
+ * @property string $linkdinurl
+ * @property string $dribbleurl
  */
 class companies extends Model
 {
@@ -27,7 +35,16 @@ class companies extends Model
 
 
     public $fillable = [
-        'name'
+        'lastname',
+        'website',
+        'telephone',
+        'picture',
+        'shortDescription',
+        'description',
+        'fcburl',
+        'twitturl',
+        'linkdinurl',
+        'dribbleurl'
     ];
 
     /**
@@ -37,7 +54,16 @@ class companies extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'name' => 'string'
+        'lastname' => 'string',
+        'website' => 'string',
+        'telephone' => 'string',
+        'picture' => 'string',
+        'shortDescription' => 'string',
+        'description' => 'string',
+        'fcburl' => 'string',
+        'twitturl' => 'string',
+        'linkdinurl' => 'string',
+        'dribbleurl' => 'string'
     ];
 
     /**
@@ -49,7 +75,6 @@ class companies extends Model
         
     ];
 
-
     public function courses()
     {
         return $this->HasMany(courses::class);
@@ -58,5 +83,10 @@ class companies extends Model
     public function sessions()
     {
         return $this->HasMany(sessions::class);
+    }
+
+    public function User()
+    {
+        return $this->HasMany(User::class);
     }
 }

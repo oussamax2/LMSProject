@@ -18,7 +18,7 @@
                                 <strong>Create Companies</strong>
                             </div>
                             <div class="card-body">
-                                {!! Form::open(['route' => 'companies.store']) !!}
+                                {!! Form::open(['route' => 'companies.store', 'files' => true]) !!}
 
                                    @include('companies.fields')
 
