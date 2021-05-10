@@ -7,6 +7,6 @@
 @endsection
 
 @section('content')
-@include('layouts.front.registercompany')
+@include('layouts.front.detailcrse')
 @include('layouts.front.footer')
 @endsection

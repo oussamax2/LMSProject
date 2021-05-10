@@ -39,4 +39,8 @@ class HomeController extends Controller
     {
         return view('front.registervendor');
     }
+    public function detailcourse()
+    {
+        return view('front.detailcourse');
+    }
 }
