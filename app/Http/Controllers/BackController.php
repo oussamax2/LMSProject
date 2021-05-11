@@ -21,7 +21,7 @@ class BackController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function admin()
-    {
+    { //auth()->user()->addRole(['company','admin','user']);
         return view('home');
     }
 

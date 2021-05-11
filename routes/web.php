@@ -49,6 +49,9 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','role:admin']],
     Route::resource('subcategories', App\Http\Controllers\subcategorieController::class);
     Route::resource('companies', App\Http\Controllers\companiesController::class);
 
+    Route::get('user-profile', [App\Http\Controllers\Profile\UserProfileController::class, 'edit'])->name("user-profile.edit");
+	Route::patch('user-profile', [App\Http\Controllers\Profile\UserProfileController::class, 'update'])->name("login-profile.update");
+
 });
 
 
@@ -69,6 +72,16 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:compa
  */
 
 Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:user']], function () {
+    //--------
+});
+
+
+/*
+ * Auth all Routes
+ * Namespaces indicate folder structure
+ */
+
+Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth']], function () {
     //--------
 });
 

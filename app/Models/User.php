@@ -6,7 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
+use App\Models\Role;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -69,6 +69,15 @@ class User extends Authenticatable
 
     public function hasRole($role){
         if($this->roles()->where('name','=', $role)->first()){
+            return true;
+        }
+        return false;
+    }
+
+    public function addRole($role){
+        if(Role::whereIn('name', $role)->first()){
+            $role =  Role::whereIn('name', $role)->pluck('id');
+            $this->roles()->sync($role);
             return true;
         }
         return false;
