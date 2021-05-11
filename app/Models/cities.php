@@ -61,7 +61,7 @@ class cities extends Model
     
     public function sessions()
     {
-        return $this->HasMany(sessions::class);
+        return $this->HasMany(sessions::class, 'city');
     }
     
 }

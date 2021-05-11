@@ -50,8 +50,8 @@ class courses extends Model
         'title' => 'string',
         'body' => 'string',
         'published_on' => 'datetime',
-        'category_id' => 'integer',
-        'tags' => 'integer'
+        'category_id' => 'integer'
+        
     ];
 
     /**
@@ -72,15 +72,15 @@ class courses extends Model
 
     public function companies()
     {
-        return $this->belongsTo(companies::class);
+        return $this->belongsTo(companies::class, 'company_id');
     }
 
     public function sessions()
     {
-        return $this->HasMany(sessions::class);
+        return $this->HasMany(sessions::class, 'course_id');
     }
 
-        /**
+     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      **/
     public function tag()

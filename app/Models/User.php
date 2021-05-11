@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Role;
+use App\Models\companies;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -85,6 +86,6 @@ class User extends Authenticatable
 
     public function companies()
     {
-        return $this->BelongsTo(companies::class);
+        return $this->HasMany(companies::class);
     }
 }

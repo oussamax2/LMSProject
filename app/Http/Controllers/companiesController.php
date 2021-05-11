@@ -10,6 +10,10 @@ use App\Repositories\companiesRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
+use App\Models\User;
+use App\Models\companies;
+use App\Models\cities;
+use Illuminate\Support\Facades\Auth;
 
 class companiesController extends AppBaseController
 {
@@ -76,8 +80,19 @@ class companiesController extends AppBaseController
 
             return redirect(route('companies.index'));
         }
+        /**get all courses of ths companies */
+        $listcourses = $companies->courses()->get();
+        
 
-        return view('companies.show')->with('companies', $companies);
+        /**get cities List */
+        $listcities = cities::all();
+
+        return view('companies.show')->with([
+            'companies'=>$companies,
+            'listcourses'=>$listcourses,
+            'listcities'=>$listcities,
+        
+        ]);
     }
 
     /**

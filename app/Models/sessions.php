@@ -74,7 +74,7 @@ class sessions extends Model
 
     public function courses()
     {
-        return $this->BelongsTo(courses::class);
+        return $this->BelongsTo(courses::class, 'course_id');
     }
 
     public function registerations()
@@ -104,6 +104,6 @@ class sessions extends Model
       
     public function cities()
     {
-        return $this->BelongsTo(cities::class);
+        return $this->BelongsTo(cities::class, 'city');
     }  
 }
