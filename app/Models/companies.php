@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
+use App\Models\User;
 
 /**
  * Class companies
@@ -44,7 +44,8 @@ class companies extends Model
         'fcburl',
         'twitturl',
         'linkdinurl',
-        'dribbleurl'
+        'dribbleurl',
+        'user_id'
     ];
 
     /**
@@ -77,7 +78,7 @@ class companies extends Model
 
     public function courses()
     {
-        return $this->HasMany(courses::class);
+        return $this->HasMany(courses::class, 'company_id');
     }
 
     public function sessions()
@@ -85,8 +86,8 @@ class companies extends Model
         return $this->HasMany(sessions::class);
     }
 
-    public function User()
+    public function user()
     {
-        return $this->HasMany(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 }
