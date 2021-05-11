@@ -1,21 +1,39 @@
-<!-- Id Field -->
+<!-- companyName Field -->
 <div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{{ $companies->id }}</p>
+    {!! Form::label('name', 'company Name:') !!}
+    <p>{{ $companies->user->name }}</p>
 </div>
 
-<!-- Lastname Field -->
+<!-- Email Field -->
 <div class="form-group">
-    {!! Form::label('lastname', 'Lastname:') !!}
-    <p>{{ $companies->lastname }}</p>
+    {!! Form::label('email', 'Company Email:') !!}
+    <p>{{ $companies->user->email }}</p>
 </div>
-
 <!-- Website Field -->
 <div class="form-group">
     {!! Form::label('website', 'Website:') !!}
     <p>{{ $companies->website }}</p>
 </div>
 
+<!-- Status Field -->
+<div class="form-group">
+    {!! Form::label('status', 'Company status:') !!}
+       
+        @if($companies->status == 0)
+                                        
+         <p>@lang('front.Pending request')</p>
+         
+        @elseif($companies->status == 1)
+          <p>@lang('front.Accepted request')</p>
+
+        @elseif($companies->status == 2)
+          <p>@lang('front.Rejected request')</p>
+
+        @elseif($companies->status == 3)
+          <p>@lang('front.Cancelled request')</p>
+
+        @endif
+</div>
 <!-- Telephone Field -->
 <div class="form-group">
     {!! Form::label('telephone', 'Telephone:') !!}
@@ -32,12 +50,6 @@
 <div class="form-group">
     {!! Form::label('shortDescription', 'Shortdescription:') !!}
     <p>{{ $companies->shortDescription }}</p>
-</div>
-
-<!-- Description Field -->
-<div class="form-group">
-    {!! Form::label('description', 'Description:') !!}
-    <p>{{ $companies->description }}</p>
 </div>
 
 <!-- Fcburl Field -->
@@ -64,15 +76,45 @@
     <p>{{ $companies->dribbleurl }}</p>
 </div>
 
-<!-- Created At Field -->
-<div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{{ $companies->created_at }}</p>
-</div>
 
-<!-- Updated At Field -->
+<!-- courses Field -->
 <div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{{ $companies->updated_at }}</p>
-</div>
+    {!! Form::label('courses', 'Company courses:') !!}
+        @foreach ($listcourses as $listcourses)
+            <p>{{ $listcourses->title }}</p>
+       
+            @foreach ($listcourses->sessions()->get() as $sessions)
 
+                <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Start Date</th>
+                            <th scope="col">End Date</th>
+                            <th scope="col">fee</th>
+                            <th scope="col">city</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>{{$sessions['start']}}</td>
+                                <td>{{$sessions['end']}}</td>
+                                <td>{{$sessions['fee']}}</td>
+                                @foreach ($listcities as $listcities)
+                                   
+                                    @if($listcities->id == $sessions['city'])
+                                     
+                                     <td>{{$listcities->name}}</td>
+                                   
+                                    @endif
+                                @endforeach   
+                            
+                            </tr>
+                        
+                        
+                        </tbody>
+                </table>
+            @endforeach
+        @endforeach
+</div>
