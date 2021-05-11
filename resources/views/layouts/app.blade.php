@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('assets-panel/css/bootstrap-datetimepicker.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('assets-panel/css/coreui.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets-panel/css/admin.css')}}">
   
     <!-- Ionicons -->
     <link rel="stylesheet" href="{{ asset('assets-panel/css/coreui-icons-free.css')}}">
@@ -19,19 +20,27 @@
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
 <header class="app-header navbar">
     <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
-        <span class="navbar-toggler-icon"></span>
+        <span class="icon-menu"></span>
     </button>
     <a class="navbar-brand" href="#">
-        <img class="navbar-brand-full" src="https://assets.infyom.com/logo/blue_logo_150x150.png" width="30" height="30"
+        <img class="navbar-brand-full" src="{{ asset('images/logo/logo3.png')}}" width="30" height="30"
              alt="InfyOm Logo">
-        <img class="navbar-brand-minimized" src="https://assets.infyom.com/logo/blue_logo_150x150.png" width="30"
+        <img class="navbar-brand-minimized" src="{{ asset('images/logo/logo3.png')}}" width="30"
              height="30" alt="InfyOm Logo">
     </a>
     <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
-        <span class="navbar-toggler-icon"></span>
+        <span class="icon-menu"></span>
     </button>
 
+
     <ul class="nav navbar-nav ml-auto">
+        <!-- menu list -->
+        <li class="menu-list"><a href="{{ route ('Campus') }}" class="tran3s">Home</a></li>
+        <li class="menu-list"><a href="{{ route ('course') }}" class="tran3s">Course</a></li>
+        <li class="menu-list"><a href="{{ route ('partners') }}" class="tran3s">Organizers</a></li>
+        <li class="menu-list"><a href="{{ route ('contact') }}" class="tran3s">Contact Us</a></li>
+        <!-- menu list -->
+
         <li class="nav-item d-md-down-none">
             <a class="nav-link" href="#">
                 <i class="icon-bell"></i>
@@ -39,7 +48,7 @@
             </a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link" style="margin-right: 10px" data-toggle="dropdown" href="#" role="button"
+            <a class="nameuserlms nav-link" style="margin-right: 10px" data-toggle="dropdown" href="#" role="button"
                aria-haspopup="true" aria-expanded="false">
                 {{ Auth::user()->name }}
             </a>
@@ -76,13 +85,75 @@
         @yield('content')
     </main>
 </div>
-<footer class="app-footer">
-    <div>
-        <a href="https://infyom.com">InfyOm </a>
-        <span>&copy; 2021 InfyOmLabs.</span>
-    </div>
-  
-</footer>
+<!-- footer -->
+    <footer class="app-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-logo">
+                        <a href="index.html"><img src="{{ asset('images/logo/logo2.png')}}" alt="Logo"></a>
+                        <p>It was some time before he obtained any answer, and the reply, when made, was unpropitious.</p>
+                        <ul>
+                            <li><a href="" class="tran3s"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="" class="tran3s"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="" class="tran3s"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                            <li><a href="" class="tran3s"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-3 footer-list">
+                    <h6>Company</h6>
+                    <ul>
+                        <li><a href="about-us.html" class="tran3s">About Us</a></li>
+                        <li><a href="blog-grid.html" class="tran3s">Blog</a></li>
+                        <li><a href="#" class="tran3s">Become a Teacher</a></li>
+                        <li><a href="contact-us.html" class="tran3s">Contact</a></li>
+                        <li><a href="faq.html" class="tran3s">Faq &amp; Plicy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-sm-3 footer-list">
+                    <h6>Product</h6>
+                    <ul>
+                        <li><a href="#" class="tran3s">Education Pack</a></li>
+                        <li><a href="#" class="tran3s">Eucation Starter</a></li>
+                        <li><a href="#" class="tran3s">Features &amp; Skills</a></li>
+                        <li><a href="#" class="tran3s">Pricing</a></li>
+                        <li><a href="#" class="tran3s">Sell Your Products</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-sm-6 footer-list">
+                    <h6>About us</h6>
+                    <ul>
+                        <li><a href="blog-list.html" class="tran3s">Blog</a></li>
+                        <li><a href="#" class="tran3s">Toll Free Number</a></li>
+                        <li><a href="#" class="tran3s">Press Releases</a></li>
+                        <li><a href="#" class="tran3s">Jobs</a></li>
+                        <li><a href="#" class="tran3s">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 footer-subscribe">
+                    <h6>Subscribe Us</h6>
+                    <p>This sounded a very good reason, and Alice was quite pleased.</p>
+                    <form action="#">
+                        <input type="text" placeholder="Your Email">
+                        <button class="tran3s s-bg-color"><i class="flaticon-envelope-back-view-outline"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-footer">
+            <div class="container">
+                <ul class="float-right">
+                    <li><h3><span class="counter p-color">8,997</span> Products</h3></li>
+                    <li><h3><span class="counter p-color">53,701</span> Members</h3></li>
+                    <li><h3><span class="counter p-color">1,119</span> Shops</h3></li>
+                </ul>
+                <p class="float-left">&copy; 2017 <a href="#" class="tran3s s-color">UnifyThemes</a>. All rights reserved</p>		
+            </div>
+        </div>
+    </footer>
+<!-- footer -->
 </body>
 <!-- jQuery 3.1.1 -->
 <script src="{{ asset('assets-panel/js/jquery-3.3.1.min.js')}}"></script>

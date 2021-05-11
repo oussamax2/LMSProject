@@ -20,11 +20,11 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'home'])->name('Campus');
 Route::get('/partners', [App\Http\Controllers\HomeController::class, 'partners'])->name('partners');
 Route::get('/pro_training', [App\Http\Controllers\HomeController::class, 'pro_training'])->name('pro_training');
-Route::get('/list_sessions', [App\Http\Controllers\HomeController::class, 'catg_courses'])->name('list_sessions');
-Route::get('/singlsession', [App\Http\Controllers\HomeController::class, 'singlcourse'])->name('singlsession');
+Route::get('/list_sessions', [App\Http\Controllers\HomeController::class, 'catg_courses'])->name('course');
+Route::get('/singlsession', [App\Http\Controllers\HomeController::class, 'singlcourse'])->name('detailcourse');
 Route::get('/registeruser', [App\Http\Controllers\HomeController::class, 'registeruser'])->name('registeruser');
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
-Route::get('/detailcourse', [App\Http\Controllers\HomeController::class, 'detailcourse'])->name('detailcourse');
+Route::get('/detailcourse', [App\Http\Controllers\HomeController::class, 'detailcourse'])->name('detailcrs');
 Route::get('/register_vendor', [App\Http\Controllers\HomeController::class, 'registervendor'])->name('register_vendor');
 
 

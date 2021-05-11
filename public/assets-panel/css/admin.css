@@ -1,0 +1,166 @@
+/* responsive */
+@media (min-width: 992px){
+.header-fixed .app-header {
+    position: fixed;
+    z-index: 1020;
+    width: 100%;
+    height: 75px;
+}
+.header-fixed .app-body {
+    margin-top: 75px;
+}
+}
+@media (max-width: 992px){
+.app-header .navbar-nav .menu-list{
+    display: none;
+}}
+
+@media (max-width: 991.98px){
+.app-header {
+    height: 66px;
+}
+.app-body {
+    margin-top: 66px;
+}
+.app-header .navbar-nav .nav-item .nameuserlms {
+    background: #ff7417;
+    height: 66px !important;
+}
+}
+
+@media (max-width: 991.98px){
+.app-header .navbar-toggler {
+    color: #191515;
+}}
+
+/* responsive */
+
+/* style header */
+.app-header .navbar-brand img.navbar-brand-full{
+    width: 100%;
+    height: 75px;
+}
+.app-header .navbar-nav .menu-list a{
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #000000;
+    background: transparent;
+    padding: 0 17px;
+    text-decoration: none;
+}
+.app-header .navbar-brand {
+    width:120px;
+}
+.sidebar {
+    background: #072640;
+}
+.app-header .navbar-nav .nav-item .nameuserlms{
+    background: #ff7417;
+    height: 70px;
+    width: 100%;
+    line-height: 70px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.nav-item span.icon{
+    font-size: 18px;
+}
+.nav-item span.menu-item-dsh{
+  margin-left: 10px;
+  text-transform: uppercase;
+}
+.sidebar .nav-item a:hover{
+    background:#ff7417 !important;
+}
+.sidebar .nav-item a.active{
+    background:#0d3454  !important;
+}
+.main{
+    background:#e3e3e3;
+}
+
+/* style header */
+
+/*---------------------- Footer ----------------------*/
+footer.app-footer {
+    background: #282828;
+    padding-top: 90px;
+  }
+  footer.app-footer  p,footer .footer-list ul li a {
+    color: #959595;
+  }
+  footer.app-footer  .row [class*="col-"] {margin-bottom: 70px;}
+  footer.app-footer  .footer-logo p {margin: 20px 0 30px 0;}
+  footer.app-footer  .footer-logo ul li {display: inline-block;}
+  footer.app-footer  .footer-logo ul li a {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #454545;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    color: #a8acb9;
+    margin-right: 10px;
+  }
+  footer.app-footer  .footer-logo ul li a:hover {color: #fff;}
+  footer.app-footer  h6 {
+    font-weight: 700;
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  footer.app-footer  .footer-list ul li a {
+    line-height: 36px;
+  }
+  footer.app-footer  .footer-subscribe form {
+    height: 48px;
+    position: relative;
+    border-radius: 28px;
+    overflow: hidden;
+    margin-top: 20px;
+  }
+  footer.app-footer  .footer-subscribe form input {
+    width: 100%;
+    height: 100%;
+    border: 1px solid transparent;
+    background: #353535;
+    color: #6c6c6c;
+    font-size: 14px;
+    padding: 0 45px 0 30px;
+    border-radius: 28px;
+  }
+  footer.app-footer  .footer-subscribe form button {
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    position: absolute;
+    top:4px;
+    right: 4px;
+    bottom: 4px;
+    z-index: 9;
+    color: #fff;
+  }
+  footer.app-footer  .bottom-footer p,footer .bottom-footer ul li {line-height: 40px;}
+  footer.app-footer  .bottom-footer ul li {
+    float:left;
+    padding-left: 50px;
+  }
+  footer.app-footer  .bottom-footer ul li h3 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+  }
+  footer.app-footer  .bottom-footer{
+    margin: auto;
+  }
+  footer.app-footer  .bottom-footer {
+    border-top: 1px solid #2d2d2d;
+    padding: 20px 0 10px 0;
+  }
+  /*---------------------- Footer ----------------------*/
+
+
+
