@@ -1,27 +1,27 @@
 
 <li class="nav-item {{ Request::is('countries*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('countries.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>Countries</span>
+        <span class="icon icon-globe"></span>
+        <span class="menu-item-dsh">Countries</span>
     </a>
 </li>
 
 <li class="nav-item {{ Request::is('states*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('states.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>States</span>
+        <span class="icon icon-layers"></span>
+        <span class="menu-item-dsh">States</span>
     </a>
 </li>
 <li class="nav-item {{ Request::is('cities*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('cities.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>Cities</span>
+        <span class="icon icon-drawer"></span>
+        <span class="menu-item-dsh">Cities</span>
     </a>
 </li>
 <li class="nav-item {{ Request::is('registerations*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('registerations.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>Registerations</span>
+        <span class="icon icon-login"></span>
+        <span class="menu-item-dsh">Registerations</span>
     </a>
 </li>
 
@@ -29,47 +29,47 @@
 
 <li class="nav-item {{ Request::is('courses*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('courses.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>Courses</span>
+        <span class="icon icon-docs"></span>
+        <span class="menu-item-dsh">Courses</span>
     </a>
 </li>
 
 <li class="nav-item {{ Request::is('categories*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('categories.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>Categories</span>
+        <span class="icon icon-wallet"></span>
+        <span class="menu-item-dsh">Categories</span>
     </a>
 </li>
 <li class="nav-item {{ Request::is('subcategories*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('subcategories.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>Subcategories</span>
+        <span class="icon icon-wallet"></span>
+        <span class="menu-item-dsh">Subcategories</span>
     </a>
 </li>
 <li class="nav-item {{ Request::is('sessions*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('sessions.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>Sessions</span>
+        <span class="icon icon-briefcase"></span>
+        <span class="menu-item-dsh">Sessions</span>
     </a>
 </li>
 
 <li class="nav-item {{ Request::is('tags*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('tags.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>Tags</span>
+        <span class="icon icon-tag"></span>
+        <span class="menu-item-dsh">Tags</span>
     </a>
 </li>
 
 
 <li class="nav-item {{ Request::is('roles*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('roles.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>Roles</span>
+        <span class="icon icon-graduation"></span>
+        <span class="menu-item-dsh">Roles</span>
     </a>
 </li>
 <li class="nav-item {{ Request::is('companies*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('companies.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>Companies</span>
+        <span class="icon icon-drawer"></span>
+        <span class="menu-item-dsh">Companies</span>
     </a>
 </li>

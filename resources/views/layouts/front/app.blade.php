@@ -57,13 +57,13 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navbar-collapse-1">
                         <ul class="nav">
-                            <li class="menu-list"><a href="" class="tran3s">Home</a>
+                            <li class="menu-list"><a href="{{ route ('Campus') }}" class="tran3s">Home</a>
                             </li>
-                            <li class="menu-list"><a href="#" class="tran3s">Course</a>
+                            <li class="menu-list"><a href="{{ route ('course') }}" class="tran3s">Course</a>
                             </li>
-                            <li class="menu-list"><a href="#" class="tran3s">Organizers</a>
+                            <li class="menu-list"><a href="{{ route ('partners') }}" class="tran3s">Organizers</a>
                             </li>
-                            <li><a href="#" class="tran3s">Contact Us</a></li>
+                            <li><a href="{{ route ('contact') }}" class="tran3s">Contact Us</a></li>
                             <li class="login"><a class="tran3s" data-toggle="modal" data-target=".signInModal"><i class="flaticon-lock"></i></a></li>
                             <li class="login"><a class="tran3s"><i class="flaticon-online-shopping-cart"></i></a></li>
                             <li class="login"><a class="tran3s"><i class="flaticon-search"></i></a></li>
