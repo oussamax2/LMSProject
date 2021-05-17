@@ -29,7 +29,7 @@ class coursesDataTable extends DataTable
      */
     public function query(courses $model)
     {
-        return $model->newQuery();
+        return $model->newQuery()->with('companies');
     }
 
     /**
@@ -66,6 +66,7 @@ class coursesDataTable extends DataTable
     {
         return [
             'company_id',
+            ['data' => 'companies.user_id', 'name' => 'companies.user_id', 'title' => __('forms.Title')],
             'title',
             'body',
             'published_on',
