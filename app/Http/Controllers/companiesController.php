@@ -14,6 +14,8 @@ use App\Models\User;
 use App\Models\companies;
 use App\Models\cities;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Http\Request;
 
 class companiesController extends AppBaseController
 {
@@ -115,6 +117,13 @@ class companiesController extends AppBaseController
         return view('companies.edit')->with('companies', $companies);
     }
 
+
+
+    public function saveImagecompany(UploadedFile $file) : string
+    {
+        return $file->store('companies_pictures', ['disk' => 'public']);
+    }
+
     /**
      * Update the specified companies in storage.
      *
@@ -125,15 +134,51 @@ class companiesController extends AppBaseController
      */
     public function update($id, UpdatecompaniesRequest $request)
     {
-        $companies = $this->companiesRepository->find($id);
 
-        if (empty($companies)) {
-            Flash::error(__('admin.Company not found'));
+        if ($request->has('picture')){
+         
+            $image = $this->saveImagecompany($request->file('picture'));
 
-            return redirect(route('companies.index'));
+            $companies = $this->companiesRepository->find($id);
+           
+            // $companies->picture = $image;
+                        
+            if (empty($companies)) {
+                Flash::error(__('admin.Company not found'));
+
+                return redirect(route('companies.index'));
+            }
+                        
+            $companies = $this->companiesRepository->update($request->all(), $id);
+            $companies->picture = $image;
+            $companies->save();
+
+            $userfind = User::find($companies->user->id);
+            $userfind->name = $request->name;
+            $userfind->email = $request->email;
+
+            $userfind->save();
+
+        }else{
+
+            $companies = $this->companiesRepository->find($id);
+                                  
+            if (empty($companies)) {
+                Flash::error(__('admin.Company not found'));
+
+                return redirect(route('companies.index'));
+            }
+
+            $companies = $this->companiesRepository->update($request->all(), $id);
+            $userfind = User::find($companies->user->id);
+            $userfind->name = $request->name;
+            $userfind->email = $request->email;
+
+            $userfind->save();
         }
 
-        $companies = $this->companiesRepository->update($request->all(), $id);
+
+
 
         Flash::success(__('admin.updated successfully.'));
 

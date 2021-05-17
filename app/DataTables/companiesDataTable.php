@@ -3,6 +3,7 @@
 namespace App\DataTables;
 
 use App\Models\companies;
+use App\Models\User;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
 
@@ -29,7 +30,7 @@ class companiesDataTable extends DataTable
      */
     public function query(companies $model)
     {
-        return $model->newQuery();
+        return $model->newQuery()->with('user');
     }
 
     /**
@@ -65,6 +66,7 @@ class companiesDataTable extends DataTable
     protected function getColumns()
     {
         return [
+            ['data' => 'user.name', 'name' => 'user.name', 'title' => __('firstname')],
             'lastname',
             'website',
             'telephone',

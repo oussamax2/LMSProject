@@ -108,14 +108,8 @@
                                 <td>{{$sessions['start']}}</td>
                                 <td>{{$sessions['end']}}</td>
                                 <td>{{$sessions['fee']}}</td>
-                                {{-- @foreach ($listcities as $listcities)
-                                   
-                                    @if($listcities->id == $sessions['city'])
-                                     
-                                     <td>{{$listcities->name}}</td>
-                                   
-                                    @endif
-                                @endforeach  --}}  
+                                <td>{{$sessions->cities->name}}</td>
+                             
                             
                             </tr>
                         
