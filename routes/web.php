@@ -20,8 +20,12 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'home'])->name('Campus');
 Route::get('/partners', [App\Http\Controllers\HomeController::class, 'partners'])->name('partners');
 Route::get('/pro_training', [App\Http\Controllers\HomeController::class, 'pro_training'])->name('pro_training');
-Route::get('/catg_courses', [App\Http\Controllers\HomeController::class, 'catg_courses'])->name('catg_courses');
-Route::get('/singlcourse', [App\Http\Controllers\HomeController::class, 'singlcourse'])->name('singlcourse');
+Route::get('/list_sessions', [App\Http\Controllers\HomeController::class, 'catg_courses'])->name('course');
+Route::get('/singlsession', [App\Http\Controllers\HomeController::class, 'singlcourse'])->name('detailcourse');
+Route::get('/registeruser', [App\Http\Controllers\HomeController::class, 'registeruser'])->name('registeruser');
+Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
+Route::get('/detailcourse', [App\Http\Controllers\HomeController::class, 'detailcourse'])->name('detailcrs');
+Route::get('/register_vendor', [App\Http\Controllers\HomeController::class, 'registervendor'])->name('register_vendor');
 
 
 /*
@@ -46,6 +50,8 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','role:admin']],
     Route::resource('companies', App\Http\Controllers\companiesController::class);
 
     
+    Route::get('user-profile', [App\Http\Controllers\Profile\UserProfileController::class, 'edit'])->name("user-profile.edit");
+	Route::patch('user-profile', [App\Http\Controllers\Profile\UserProfileController::class, 'update'])->name("login-profile.update");
 
 });
 
@@ -60,7 +66,6 @@ Route::get('verifcompany/{id}', 'App\Http\Controllers\companiesController@update
 Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:company']], function () {
 
 
-
 });
 
 
@@ -70,6 +75,16 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:compa
  */
 
 Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:user']], function () {
+    //--------
+});
+
+
+/*
+ * Auth all Routes
+ * Namespaces indicate folder structure
+ */
+
+Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth']], function () {
     //--------
 });
 

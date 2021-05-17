@@ -57,61 +57,13 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="navbar-collapse-1">
                         <ul class="nav">
-                            <li class="dropdown-holder menu-list"><a href="index.html" class="tran3s">Home</a>
-                                <ul class="sub-menu">
-                                    <li><a href="index.html">Home version one</a></li>
-                                    <li><a href="index-2.html">Home version Two</a></li>
-                                </ul>
+                            <li class="menu-list"><a href="{{ route ('Campus') }}" class="tran3s">Home</a>
                             </li>
-                            <li class="dropdown-holder menu-list"><a href="#" class="tran3s">Course</a>
-                                <ul class="sub-menu">
-                                    <li><a href="course-grid.html">Course grid</a></li>
-                                    <li><a href="course-list.html">Course List</a></li>
-                                    <li><a href="course-details.html">Course Details</a></li>
-                                    <li class="dropdown-holder"><a href="#">Third Level menu</a>
-                                        <ul class="second-sub-menu">
-                                            <li><a href="#">menu one</a></li>
-                                            <li><a href="#">menu two</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                            <li class="menu-list"><a href="{{ route ('course') }}" class="tran3s">Course</a>
                             </li>
-                            <li class="dropdown-holder menu-list"><a href="#" class="tran3s">Pages</a>
-                                <ul class="sub-menu width-half">
-                                    <li><a href="about-us.html">About Us</a></li>
-                                    <li><a href="our-teacher.html">Our teacher</a></li>
-                                    <li><a href="teachers-profile.html">teachers profile</a></li>
-                                    <li><a href="shop.html">Shop page</a></li>
-                                    <li><a href="shop-details.html">Shop Details</a></li>
-                                    <li><a href="portfolio-3-column.html">portfolio 3 column</a></li>
-                                    <li><a href="portfolio-4-column.html">portfolio 4 column</a></li>
-                                    <li><a href="pricing-plan.html">Pricing Plan</a></li>
-                                    <li><a href="faq.html">Faq Page</a></li>
-                                    <li><a href="404.html">Error Page</a></li>
-                                    <li><a href="sign-up.html">Registration</a></li>
-                                    <li class="dropdown-holder"><a href="#">Third Level menu</a>
-                                        <ul class="second-sub-menu">
-                                            <li><a href="#">menu one</a></li>
-                                            <li><a href="#">menu two</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                            <li class="menu-list"><a href="{{ route ('partners') }}" class="tran3s">Organizers</a>
                             </li>
-                            <li class="dropdown-holder menu-list"><a href="#" class="tran3s">Event</a>
-                                <ul class="sub-menu">
-                                    <li><a href="event-list.html">Event List</a></li>
-                                    <li><a href="event-grid.html">Event Grid</a></li>
-                                    <li><a href="event-details.html">Event Single</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-holder menu-list"><a href="#" class="tran3s">Blog</a>
-                                <ul class="sub-menu">
-                                    <li><a href="blog-grid.html">Blog grid</a></li>
-                                    <li><a href="blog-list.html">Blog List</a></li>
-                                    <li><a href="blog-details.html">blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact-us.html" class="tran3s">Contact Us</a></li>
+                            <li><a href="{{ route ('contact') }}" class="tran3s">Contact Us</a></li>
                             <li class="login"><a class="tran3s" data-toggle="modal" data-target=".signInModal"><i class="flaticon-lock"></i></a></li>
                             <li class="login"><a class="tran3s"><i class="flaticon-online-shopping-cart"></i></a></li>
                             <li class="login"><a class="tran3s"><i class="flaticon-search"></i></a></li>
@@ -134,13 +86,6 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-body">
-                <h3>Login with Social Networks</h3>
-                <ul class="clearfix">
-                    <li class="float-left"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i> facebook</a></li>
-                    <li class="float-left"><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i> Google</a></li>
-                    <li class="float-left"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
-                    <li class="float-left"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i> Linkedin</a></li>
-                </ul>
                 <form action="#">
                     <h3>Login with Site Account</h3>
                     <div class="wrapper">

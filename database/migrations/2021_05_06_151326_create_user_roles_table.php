@@ -20,7 +20,7 @@ class CreateUserRolesTable extends Migration
             $table->timestamps();
         });
 
-      
+     
     }
 
     /**

@@ -231,7 +231,7 @@
   header.menu-style-one .header-wrapper .logo img{
     width:74px;
     }
-    .teachers-course .theme-title a.profcourse{display: none;}
+
 }
 @media(min-width:992px){
 .find-course .opacity {
@@ -242,7 +242,7 @@ margin: 4rem;
 .find-course .opacity {
   background: #fff;
   padding: 10px 10px 10px 10px;
-  margin: 3rem 1rem;
+  margin: 2rem 1rem;
 }
 #theme-main-banner h1{
   margin: 0px 0px 0px 10px;
@@ -282,6 +282,21 @@ margin-bottom: 20px;
     .single-blog{
       margin-bottom: 20px;
     }
+    .teachers-course .theme-title a.profcourse{
+      right: 0px !important;
+      margin: 0 0 -50px 0 !important;
     }
+    .teachers-course-slider{
+      margin-top: 60px;
+    }
+    }
+    @media(max-width:700px){
+      .teachers-course .theme-title a.profcourse{
+        margin: 0 0 -50px 0 !important;
+      }
+      .teachers-course-slider{
+        margin-top: 60px;
+      }
+      }
 
 

@@ -70,7 +70,7 @@
 									<p>Front-End Developer</p>
 								</div> <!-- /.single-member -->
 							</div> <!-- /.col- -->
-							<div class="col-lg-3">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<div class="single-member">
 									<div class="image">
 										<img src="images/team/8.jpg" alt="">

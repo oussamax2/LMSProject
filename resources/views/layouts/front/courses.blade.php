@@ -17,21 +17,17 @@
 										<div class="image"><img src="images/course/4.jpg" alt=""></div>
 										<div class="name clearfix">
 											<h6 class="float-left">Jannatul</h6>
-											<span class="p-bg-color float-right">Free</span>
+											<strong class="s-color float-right">$79<sup>.99</sup></strong>
 										</div>
 										<h5><a href="course-details.html" class="tran3s">Angular 2 Essential Training JavaScript Framework</a></h5>
 										<ul class="clearfix">
 											<li class="float-left">
 												<i class="flaticon-people"></i>
-												<a href="#" class="tran3s">2,680</a>
-											</li>
-											<li class="float-left">
-												<i class="flaticon-comments"></i>
-												<a href="#" class="tran3s">13</a>
+												<a href="#" class="tran3s">Nov 2,2018</a>
 											</li>
 											<li class="float-right">
 												<i class="flaticon-heart"></i>
-												<a href="#" class="tran3s">3</a>
+												<a href="#" class="tran3s">Saudia Arabia,Riyadh</a>
 											</li>
 										</ul>
 									</div>
@@ -50,15 +46,11 @@
 										<ul class="clearfix">
 											<li class="float-left">
 												<i class="flaticon-people"></i>
-												<a href="#" class="tran3s">2,680</a>
-											</li>
-											<li class="float-left">
-												<i class="flaticon-comments"></i>
-												<a href="#" class="tran3s">13</a>
+												<a href="#" class="tran3s">Nov 2,2018</a>
 											</li>
 											<li class="float-right">
 												<i class="flaticon-heart"></i>
-												<a href="#" class="tran3s">3</a>
+												<a href="#" class="tran3s">Saudia Arabia,Riyadh</a>
 											</li>
 										</ul>
 									</div>
@@ -71,21 +63,17 @@
 										<div class="image"><img src="images/course/4.jpg" alt=""></div>
 										<div class="name clearfix">
 											<h6 class="float-left">Jannatul</h6>
-											<span class="p-bg-color float-right">Free</span>
+											<strong class="s-color float-right">$79<sup>.99</sup></strong>
 										</div>
 										<h5><a href="course-details.html" class="tran3s">Angular 2 Essential Training JavaScript Framework</a></h5>
 										<ul class="clearfix">
 											<li class="float-left">
 												<i class="flaticon-people"></i>
-												<a href="#" class="tran3s">2,680</a>
-											</li>
-											<li class="float-left">
-												<i class="flaticon-comments"></i>
-												<a href="#" class="tran3s">13</a>
+												<a href="#" class="tran3s">Nov 2,2018</a>
 											</li>
 											<li class="float-right">
 												<i class="flaticon-heart"></i>
-												<a href="#" class="tran3s">3</a>
+												<a href="#" class="tran3s">Saudia Arabia,Riyadh</a>
 											</li>
 										</ul>
 									</div>
@@ -98,21 +86,17 @@
 										<div class="image"><img src="images/course/4.jpg" alt=""></div>
 										<div class="name clearfix">
 											<h6 class="float-left">Jannatul</h6>
-											<span class="p-bg-color float-right">Free</span>
+											<strong class="s-color float-right">$79<sup>.99</sup></strong>
 										</div>
 										<h5><a href="course-details.html" class="tran3s">Angular 2 Essential Training JavaScript Framework</a></h5>
 										<ul class="clearfix">
 											<li class="float-left">
 												<i class="flaticon-people"></i>
-												<a href="#" class="tran3s">2,680</a>
-											</li>
-											<li class="float-left">
-												<i class="flaticon-comments"></i>
-												<a href="#" class="tran3s">13</a>
+												<a href="#" class="tran3s">Nov 2,2018</a>
 											</li>
 											<li class="float-right">
 												<i class="flaticon-heart"></i>
-												<a href="#" class="tran3s">3</a>
+												<a href="#" class="tran3s">Saudia Arabia,Riyadh</a>
 											</li>
 										</ul>
 									</div>

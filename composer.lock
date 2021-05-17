@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "21545e7c72a51ec0a11f2a49cb636f12",
+    "content-hash": "149fdb2e3258ba3a7c3a21ef60791e31",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3250,6 +3250,58 @@
                 "uuid"
             ],
             "time": "2020-08-18T17:17:46+00:00"
+        },
+        {
+            "name": "reta110/user-profile",
+            "version": "1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Reta110/userprofile.git",
+                "reference": "0e236048afe45aa4d593392e2bbcdb553b8b4ba4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Reta110/userprofile/zipball/0e236048afe45aa4d593392e2bbcdb553b8b4ba4",
+                "reference": "0e236048afe45aa4d593392e2bbcdb553b8b4ba4",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3 || ^7.0"
+            },
+            "type": "coomposer-plugin",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Reta110\\UserProfile\\UserProfileServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Reta110\\UserProfile\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rafael Torrealba",
+                    "email": "rafaeltorrealba6@gmail.com"
+                }
+            ],
+            "description": "Infyom user profile boilerplate.",
+            "keywords": [
+                "infyom",
+                "profile",
+                "user-profile"
+            ],
+            "support": {
+                "issues": "https://github.com/Reta110/userprofile/issues",
+                "source": "https://github.com/Reta110/userprofile/tree/1.1"
+            },
+            "time": "2018-11-12T15:29:18+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -7699,5 +7751,6 @@
     "platform": {
         "php": "^7.3"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
 }

@@ -4,5 +4,7 @@
             @include('layouts.menu')
         </ul>
     </nav>
-    <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+    <button class="sidebar-minimizer brand-minimizer" type="button">
+        <span class="icon-arrow-left-circle"></span>
+    </button>
 </div>
