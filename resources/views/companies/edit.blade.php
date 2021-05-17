@@ -20,7 +20,7 @@
                           <div class="card-body">
                               {!! Form::model($companies, ['route' => ['companies.update', $companies->id], 'method' => 'patch', 'files' => true]) !!}
 
-                              @include('companies.fields')
+                                   @include('companies.fields',['userdetails' => $companies->user])
 
                               {!! Form::close() !!}
                             </div>
