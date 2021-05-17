@@ -7,5 +7,6 @@ return [
     'Accepted request'      => 'طلب مقبول',
     'Rejected request'      => 'الطلب مرفوض',    
     'Cancelled request'      => 'الطلب ملغي',
-    
+    'Accept request'      => 'قبول الطلب',
+    'Decline request'      => 'رفض الطلب',
 ];

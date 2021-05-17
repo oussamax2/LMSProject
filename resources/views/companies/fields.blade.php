@@ -1,9 +1,20 @@
+<!-- get user information from users table Firstname,email -->
+
+<!-- Firstname Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('firstname', 'Firstname:') !!}
+    {!! Form::text('name', $userdetails->name, ['class' => 'form-control']) !!}
+</div>
 <!-- Lastname Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('lastname', 'Lastname:') !!}
     {!! Form::text('lastname', null, ['class' => 'form-control']) !!}
 </div>
-
+<!-- Email Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('email', 'Email:') !!}
+    {!! Form::text('email', $userdetails->email, ['class' => 'form-control']) !!}
+</div>
 <!-- Website Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('website', 'Website:') !!}
