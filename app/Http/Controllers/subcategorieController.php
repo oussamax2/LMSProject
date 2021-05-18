@@ -10,6 +10,7 @@ use App\Repositories\subcategorieRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
+use App\Models\categories;
 
 class subcategorieController extends AppBaseController
 {
@@ -39,7 +40,12 @@ class subcategorieController extends AppBaseController
      */
     public function create()
     {
-        return view('subcategories.create');
+        /**get categories List and send them to selection list in blade */
+         $listcateg = categories::pluck('name', 'id');
+
+        $selectedID = 1; 
+        return view('subcategories.create', compact('selectedID', 'listcateg'));
+        
     }
 
     /**
@@ -52,10 +58,12 @@ class subcategorieController extends AppBaseController
     public function store(CreatesubcategorieRequest $request)
     {
         $input = $request->all();
-
+       
         $subcategorie = $this->subcategorieRepository->create($input);
-
-        Flash::success('Subcategorie saved successfully.');
+        $subcategorie->category_id = $request->input('category_id');
+        $subcategorie->save();
+        //  var_dump($subcategorie);
+        Flash::success(__('admin.saved successfully.'));
 
         return redirect(route('subcategories.index'));
     }
@@ -72,7 +80,7 @@ class subcategorieController extends AppBaseController
         $subcategorie = $this->subcategorieRepository->find($id);
 
         if (empty($subcategorie)) {
-            Flash::error('Subcategorie not found');
+            Flash::error(__('admin.not found'));
 
             return redirect(route('subcategories.index'));
         }
@@ -92,12 +100,16 @@ class subcategorieController extends AppBaseController
         $subcategorie = $this->subcategorieRepository->find($id);
 
         if (empty($subcategorie)) {
-            Flash::error('Subcategorie not found');
+            Flash::error(__('admin.not found'));
 
             return redirect(route('subcategories.index'));
         }
+        /**get categories List and send them to selection list in blade */
+        $listcateg = categories::pluck('name', 'id');
 
-        return view('subcategories.edit')->with('subcategorie', $subcategorie);
+        $selectedID = 1; 
+        return view('subcategories.edit', compact('subcategorie', 'selectedID', 'listcateg'));
+ 
     }
 
     /**
@@ -113,14 +125,15 @@ class subcategorieController extends AppBaseController
         $subcategorie = $this->subcategorieRepository->find($id);
 
         if (empty($subcategorie)) {
-            Flash::error('Subcategorie not found');
+            Flash::error(__('admin.not found'));
 
             return redirect(route('subcategories.index'));
         }
 
         $subcategorie = $this->subcategorieRepository->update($request->all(), $id);
-
-        Flash::success('Subcategorie updated successfully.');
+        $subcategorie->category_id = $request->input('category_id');
+        $subcategorie->save();
+        Flash::success(__('admin.updated successfully.'));
 
         return redirect(route('subcategories.index'));
     }
@@ -137,14 +150,14 @@ class subcategorieController extends AppBaseController
         $subcategorie = $this->subcategorieRepository->find($id);
 
         if (empty($subcategorie)) {
-            Flash::error('Subcategorie not found');
+            Flash::error(__('admin.not found'));
 
             return redirect(route('subcategories.index'));
         }
 
         $this->subcategorieRepository->delete($id);
 
-        Flash::success('Subcategorie deleted successfully.');
+        Flash::success(__('admin.deleted successfully.'));
 
         return redirect(route('subcategories.index'));
     }

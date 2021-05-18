@@ -29,7 +29,7 @@ class subcategorieDataTable extends DataTable
      */
     public function query(subcategorie $model)
     {
-        return $model->newQuery();
+        return $model->newQuery()->with('categories');
     }
 
     /**
@@ -61,8 +61,10 @@ class subcategorieDataTable extends DataTable
     protected function getColumns()
     {
         return [
+            ['data' => 'category_id', 'name' => 'category_id', 'title' => __('CATEGORY ID'), 'visible' => false] ,
+            
             'name',
-            'category_id'
+            ['data' => 'categories.name', 'name' => 'categories.name', 'title' => __('category Name')],
         ];
     }
 
