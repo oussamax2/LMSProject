@@ -29,7 +29,7 @@ class coursesDataTable extends DataTable
      */
     public function query(courses $model)
     {
-        return $model->newQuery();
+        return $model->newQuery()->with('companies');
     }
 
     /**
@@ -48,11 +48,7 @@ class coursesDataTable extends DataTable
                 'stateSave' => true,
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
-                    ['extend' => 'create', 'className' => 'btn btn-default btn-sm no-corner',],
-                    ['extend' => 'export', 'className' => 'btn btn-default btn-sm no-corner',],
-                    ['extend' => 'print', 'className' => 'btn btn-default btn-sm no-corner',],
-                    ['extend' => 'reset', 'className' => 'btn btn-default btn-sm no-corner',],
-                    ['extend' => 'reload', 'className' => 'btn btn-default btn-sm no-corner',],
+
                 ],
             ]);
     }
@@ -66,6 +62,7 @@ class coursesDataTable extends DataTable
     {
         return [
             'company_id',
+            ['data' => 'companies.user_id', 'name' => 'companies.user_id', 'title' => __('forms.Title')],
             'title',
             'body',
             'published_on',

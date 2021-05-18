@@ -1167,6 +1167,14 @@
                 "laravel",
                 "view"
             ],
+
+            "funding": [
+                {
+                    "url": "https://opencollective.com/infyomlabs",
+                    "type": "opencollective"
+                }
+            ],
+
             "time": "2021-05-10T09:53:53+00:00"
         },
         {
@@ -1705,6 +1713,34 @@
                 "md",
                 "parser"
             ],
+
+            "funding": [
+                {
+                    "url": "https://enjoy.gitstore.app/repositories/thephpleague/commonmark",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.colinodell.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.paypal.me/colinpodell/10.00",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/colinodell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/colinodell",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/league/commonmark",
+                    "type": "tidelift"
+                }
+            ],
+
             "time": "2021-05-12T11:39:41+00:00"
         },
         {
@@ -2393,6 +2429,18 @@
                 "datetime",
                 "time"
             ],
+
+            "funding": [
+                {
+                    "url": "https://opencollective.com/Carbon",
+                    "type": "open_collective"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/nesbot/carbon",
+                    "type": "tidelift"
+                }
+            ],
+
             "time": "2021-05-07T10:08:30+00:00"
         },
         {
@@ -3438,6 +3486,20 @@
                 "console",
                 "terminal"
             ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2021-05-11T15:45:21+00:00"
         },
         {
@@ -3588,6 +3650,22 @@
             ],
             "description": "Provides tools to manage errors and ease debugging PHP code",
             "homepage": "https://symfony.com",
+
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+
             "time": "2021-05-07T13:42:21+00:00"
         },
         {
@@ -3762,6 +3840,22 @@
             ],
             "description": "Finds files and directories via an intuitive fluent interface",
             "homepage": "https://symfony.com",
+
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+
             "time": "2021-05-10T14:39:23+00:00"
         },
         {
@@ -3879,6 +3973,22 @@
             ],
             "description": "Defines an object-oriented layer for the HTTP specification",
             "homepage": "https://symfony.com",
+
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+
             "time": "2021-05-07T13:41:16+00:00"
         },
         {
@@ -3974,6 +4084,22 @@
             ],
             "description": "Provides a structured process for converting a Request into a Response",
             "homepage": "https://symfony.com",
+
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+
             "time": "2021-05-12T13:27:53+00:00"
         },
         {
@@ -4861,6 +4987,22 @@
                 "utf-8",
                 "utf8"
             ],
+
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+
             "time": "2021-05-10T14:56:10+00:00"
         },
         {
@@ -4937,6 +5079,22 @@
             ],
             "description": "Provides tools to internationalize your application",
             "homepage": "https://symfony.com",
+
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+
             "time": "2021-05-07T13:41:16+00:00"
         },
         {
@@ -5069,6 +5227,22 @@
                 "debug",
                 "dump"
             ],
+
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+
             "time": "2021-05-07T13:42:21+00:00"
         },
         {
@@ -5458,6 +5632,18 @@
                 "jquery",
                 "laravel"
             ],
+
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/yajra",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/yajra",
+                    "type": "patreon"
+                }
+            ],
+
             "time": "2021-05-17T05:46:04+00:00"
         },
         {
@@ -5576,6 +5762,18 @@
                 "jquery",
                 "laravel"
             ],
+
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/yajra",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/yajra",
+                    "type": "patreon"
+                }
+            ],
+
             "time": "2021-05-17T04:57:46+00:00"
         },
         {
@@ -7747,5 +7945,13 @@
     "platform": {
         "php": "^7.3"
     },
+
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
+=======
     "platform-dev": []
+>>>>>>> bd017bf5a03c03783a52a24d1491e51a3164f462
+=======
+    "platform-dev": []
+>>>>>>> 3bb9d6a1fc6122f0237b06e5ceed0632152774b3
 }

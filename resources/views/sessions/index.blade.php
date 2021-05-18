@@ -11,9 +11,9 @@
                  <div class="col-lg-12">
                      <div class="card">
                          <div class="card-header">
-                             <i class="fa fa-align-justify"></i>
+                             <i class="icon icon-briefcase"></i>
                              sessions
-                             <a class="pull-right" href="{{ route('sessions.create') }}"><i class="fa fa-plus-square fa-lg"></i></a>
+                             <a class="pull-right" href="{{ route('sessions.create') }}"><i class="icon icon-plus"></i>Create session</a>
                          </div>
                          <div class="card-body">
                              @include('sessions.table')
