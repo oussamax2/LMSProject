@@ -291,8 +291,21 @@ margin:0;
 .info-company-lms{
 padding:0;
 }
-
+table tr td{
+  text-align: center;
+}
+.btn-ghost-success {
+  font-size: 20px;
+}
+.btn-ghost-info {
+  font-size: 20px;
+}
+.btn-ghost-danger {
+  font-size: 20px;
+}
 /*---------------------- cards ----------------------*/
+
+
 
 
 

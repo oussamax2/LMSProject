@@ -8,12 +8,12 @@
         <div class="animated fadeIn">
              @include('flash::message')
              <div class="row">
-                 <div class="col-lg-12">
+                 <div class="col-lg-10 col-lg-offset-10 mx-auto">
                      <div class="card">
                          <div class="card-header">
-                             <i class="fa fa-align-justify"></i>
+                             <span class="icon icon-graduation"></span>
                              Roles
-                             <a class="pull-right" href="{{ route('roles.create') }}"><i class="fa fa-plus-square fa-lg"></i></a>
+                             <a class="pull-right" href="{{ route('roles.create') }}"><span class="icon icon-plus"></span>Create roles</a>
                          </div>
                          <div class="card-body">
                              @include('roles.table')
