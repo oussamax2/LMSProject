@@ -13,7 +13,7 @@
                          <div class="card-header">
                              <i class="icon icon-wallet"></i>
                              subcategories
-                             <a class="pull-right" href="{{ route('subcategories.create') }}"><i class="icon-plus"></i>Create subcategories</a>
+                             <a class="pull-right" href="{{ route('subcategories.create') }}"><span class="icon icon-plus"></span>Create subcategories</a>
                          </div>
                          <div class="card-body">
                              @include('subcategories.table')

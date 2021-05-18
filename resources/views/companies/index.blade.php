@@ -11,9 +11,8 @@
                  <div class="col-lg-12">
                      <div class="card">
                          <div class="card-header">
-                             <i class="fa fa-align-justify"></i>
+                             <span class="icon icon-drawer"></span>
                              companies
-
                          </div>
                          <div class="card-body">
                              @include('companies.table')
