@@ -32,10 +32,10 @@
     <div id="loader-wrapper">
         <div id="loader"></div>
     </div>
-    <!-- 
+    <!--
     =============================================
         Theme Header
-    ============================================== 
+    ==============================================
     -->
     <header class="theme-menu-wrapper menu-style-one">
         <div class="container-fluid">
@@ -64,7 +64,19 @@
                             <li class="menu-list"><a href="{{ route ('partners') }}" class="tran3s">@lang('front.Organizers')</a>
                             </li>
                             <li><a href="{{ route ('contact') }}" class="tran3s">@lang('front.Contact Us')</a></li>
+                            @auth
+                            <li class="dropdown-holder menu-list"><a href="#" class="tran3s"><i class="flaticon-user"></i></a>
+                                <ul class="sub-menu">
+                                    <li><a href="#">account</a></li>
+                                    <li><a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">@lang('auth.sign_out')</a>
+                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form></li>
+                                </ul>
+                            <i class="icon flaticon-down-arrow"></i></li>
+                            @else
                             <li class="login"><a class="tran3s" data-toggle="modal" data-target=".signInModal"><i class="flaticon-lock"></i></a></li>
+                            @endauth
                             <li class="login"><a href="" class="tran3s">EN</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
@@ -80,16 +92,28 @@
 </div>
 
 <!-- Sign-in Modal -->
-<div class="modal fade signInModal theme-modal-box" role="dialog">
+<div class="modal fade signInModal theme-modal-box"  id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
     <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-body">
-                <form action="#">
+                <form method="post" action="{{ url('/login') }}">
+                    @csrf
                     <h3>Login with Site Account</h3>
                     <div class="wrapper">
-                        <input type="text" placeholder="Username or Email">
-                        <input type="password" placeholder="Password">
+                        <input id="email" placeholder="@lang('auth.email')" type="email" class="form-control {{ $errors->has('email')?'is-invalid':'' }}" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                        @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        <input id="password" placeholder="@lang('auth.password')" type="password" class="form-control {{ $errors->has('password')?'is-invalid':'' }}" name="password" required autocomplete="current-password">
+
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                         <ul class="clearfix">
                             <li class="float-left">
                                 <input type="checkbox" id="remember">
@@ -97,7 +121,7 @@
                             </li>
                             <li class="float-right"><a href="{{ url('/password/reset') }}" class="s-color">Lost Your Password?</a></li>
                         </ul>
-                        <button class="p-bg-color hvr-trim">Login</button>
+                        <button class="p-bg-color hvr-trim" type="submit">@lang('auth.sign_in')</button>
                     </div>
                 </form>
                 <div><a href="{{ route ('registeruser') }}" class="p-color tran3s">Not an account?? Sign Up</a></div>
@@ -110,6 +134,7 @@
 <button class="scroll-top tran3s">
     <i class="fa fa-angle-up" aria-hidden="true"></i>
 </button>
+
 
 <script type="text/javascript" src="{{ asset('vendor/jquery.2.2.3.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('vendor/bootstrap-select/dist/js/bootstrap-select.js') }}"></script>
@@ -125,6 +150,28 @@
 <script type="text/javascript" src="{{ asset('vendor/jquery-ui/jquery-ui.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('vendor/jquery.mixitup.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/theme.js') }}"></script>
+@if($errors->has('email') || $errors->has('password'))
+    <script>
+    $(function() {
+        $('#loginModal').modal({
+            show: true
+        });
+    });
+    </script>
+@endif
 @yield('js')
+@section('scripts')
+@parent
+
+@if($errors->has('email') || $errors->has('password'))
+    <script>
+    $(function() {
+        $('#loginModal').modal({
+            show: true
+        });
+    });
+    </script>
+@endif
+@endsection
 </body>
 </html>
