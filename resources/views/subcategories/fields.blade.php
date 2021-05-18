@@ -6,8 +6,8 @@
 
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('category_id', 'Category Id:') !!}
-    {!! Form::text('category_id', null, ['class' => 'form-control']) !!}
+    {!! Form::Label('category_id', __('front.category list:')) !!}
+    {!! Form::select('category_id', $listcateg, $selectedID, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

@@ -10,6 +10,7 @@ use App\Repositories\subcategorieRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
+use App\Models\categories;
 
 class subcategorieController extends AppBaseController
 {
@@ -39,7 +40,12 @@ class subcategorieController extends AppBaseController
      */
     public function create()
     {
-        return view('subcategories.create');
+        /**get categories List and send them to selection list in blade */
+         $listcateg = categories::pluck('name', 'id');
+
+        $selectedID = 1; 
+        return view('subcategories.create', compact('selectedID', 'listcateg'));
+        
     }
 
     /**
@@ -52,10 +58,12 @@ class subcategorieController extends AppBaseController
     public function store(CreatesubcategorieRequest $request)
     {
         $input = $request->all();
-
+       
         $subcategorie = $this->subcategorieRepository->create($input);
-
-        Flash::success('Subcategorie saved successfully.');
+        $subcategorie->category_id = $request->input('category_id');
+        $subcategorie->save();
+        //  var_dump($subcategorie);
+        Flash::success(__('saved successfully.'));
 
         return redirect(route('subcategories.index'));
     }
