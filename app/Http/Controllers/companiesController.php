@@ -14,6 +14,8 @@ use App\Models\User;
 use App\Models\companies;
 use App\Models\cities;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Http\Request;
 
 class companiesController extends AppBaseController
 {
@@ -59,7 +61,7 @@ class companiesController extends AppBaseController
 
         $companies = $this->companiesRepository->create($input);
 
-        Flash::success('Companies saved successfully.');
+        Flash::success(__('admin.Company saved successfully.'));
 
         return redirect(route('companies.index'));
     }
@@ -76,7 +78,7 @@ class companiesController extends AppBaseController
         $companies = $this->companiesRepository->find($id);
 
         if (empty($companies)) {
-            Flash::error('Companies not found');
+            Flash::error(__('admin.Company not found'));
 
             return redirect(route('companies.index'));
         }
@@ -107,12 +109,19 @@ class companiesController extends AppBaseController
         $companies = $this->companiesRepository->find($id);
 
         if (empty($companies)) {
-            Flash::error('Companies not found');
+            Flash::error(__('admin.Company not found'));
 
             return redirect(route('companies.index'));
         }
 
         return view('companies.edit')->with('companies', $companies);
+    }
+
+
+
+    public function saveImagecompany(UploadedFile $file) : string
+    {
+        return $file->store('companies_pictures', ['disk' => 'public']);
     }
 
     /**
@@ -125,21 +134,89 @@ class companiesController extends AppBaseController
      */
     public function update($id, UpdatecompaniesRequest $request)
     {
-        $companies = $this->companiesRepository->find($id);
 
-        if (empty($companies)) {
-            Flash::error('Companies not found');
+        if ($request->has('picture')){
+         
+            $image = $this->saveImagecompany($request->file('picture'));
 
-            return redirect(route('companies.index'));
+            $companies = $this->companiesRepository->find($id);
+           
+            // $companies->picture = $image;
+                        
+            if (empty($companies)) {
+                Flash::error(__('admin.Company not found'));
+
+                return redirect(route('companies.index'));
+            }
+                        
+            $companies = $this->companiesRepository->update($request->all(), $id);
+            $companies->picture = $image;
+            $companies->save();
+
+            $userfind = User::find($companies->user->id);
+            $userfind->name = $request->name;
+            $userfind->email = $request->email;
+
+            $userfind->save();
+
+        }else{
+
+            $companies = $this->companiesRepository->find($id);
+                                  
+            if (empty($companies)) {
+                Flash::error(__('admin.Company not found'));
+
+                return redirect(route('companies.index'));
+            }
+
+            $companies = $this->companiesRepository->update($request->all(), $id);
+            $userfind = User::find($companies->user->id);
+            $userfind->name = $request->name;
+            $userfind->email = $request->email;
+
+            $userfind->save();
         }
 
-        $companies = $this->companiesRepository->update($request->all(), $id);
 
-        Flash::success('Companies updated successfully.');
+
+
+        Flash::success(__('admin.updated successfully.'));
 
         return redirect(route('companies.index'));
     }
+    /**
+     * Update the specified company's request in storage.
+     *
+     * @param  int              $id
+     * @param UpdatecompaniesRequest $request
+     *
+     * @return Response
+     */
+    public function update_companyreqst($id)
+    {
+        $companies = $this->companiesRepository->find($id);
 
+        if (empty($companies)) {
+            Flash::error(__('admin.Company not found'));
+
+            return redirect(route('companies.index'));
+        }
+       /**if admin clicked on acceptcompany button=> the company'status will be 1 ~ accepted company's request */
+       if (isset($_POST['acceptcompany'])) {
+
+            $companies->status = 1;
+       /**if admin clicked on declinecompany button=> the company'status will be 2 ~ rejected company's request */
+       } else {
+
+            $companies->status = 2;
+         
+       }
+       /**save status in DB */
+       $companies->save();
+       Flash::success(__('admin.updated successfully.'));
+
+       return redirect(route('companies.index'));
+    }
     /**
      * Remove the specified companies from storage.
      *
@@ -152,14 +229,14 @@ class companiesController extends AppBaseController
         $companies = $this->companiesRepository->find($id);
 
         if (empty($companies)) {
-            Flash::error('Companies not found');
+            Flash::error(__('admin.Company not found'));
 
             return redirect(route('companies.index'));
         }
 
         $this->companiesRepository->delete($id);
 
-        Flash::success('Companies deleted successfully.');
+        Flash::success(__('admin.deleted successfully.'));
 
         return redirect(route('companies.index'));
     }

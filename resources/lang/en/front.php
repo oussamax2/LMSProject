@@ -7,4 +7,6 @@ return [
     'Accepted request'      => 'Accepted request',
     'Rejected request'      => 'Rejected request',    
     'Cancelled request'      => 'Cancelled request',
+    'Accept request'      => 'Accept request',
+    'Decline request'      => 'Decline request',
 ];

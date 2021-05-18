@@ -3,7 +3,14 @@
     {!! Form::label('name', 'company Name:') !!}
     <p>{{ $companies->user->name }}</p>
 </div>
+@if($companies->status == 0)
 
+    <a href="{{ route('verifcompany', $companies->id) }}" class="btn btn-outline-success" name="acceptcompany" value="accept">@lang('front.Accept request')</a>
+    <a href="{{ route('verifcompany', $companies->id) }}" class="btn btn-outline-success" name="declinecompany" value="decline">@lang('front.Decline request')</a>
+        
+
+
+@endif
 <!-- Email Field -->
 <div class="form-group">
     {!! Form::label('email', 'Company Email:') !!}
@@ -101,14 +108,8 @@
                                 <td>{{$sessions['start']}}</td>
                                 <td>{{$sessions['end']}}</td>
                                 <td>{{$sessions['fee']}}</td>
-                                @foreach ($listcities as $listcities)
-                                   
-                                    @if($listcities->id == $sessions['city'])
-                                     
-                                     <td>{{$listcities->name}}</td>
-                                   
-                                    @endif
-                                @endforeach   
+                                <td>{{$sessions->cities->name}}</td>
+                             
                             
                             </tr>
                         

@@ -18,9 +18,9 @@
                               <strong>Edit Companies</strong>
                           </div>
                           <div class="card-body">
-                              {!! Form::model($companies, ['route' => ['companies.update', $companies->id], 'method' => 'patch', 'files' => true]) !!}
+                              {!! Form::model($companies, ['route' => ['companies.update', $companies->id], 'method' => 'patch', 'files' => true, 'enctype' => 'multipart/form-data']) !!}
 
-                              @include('companies.fields')
+                                   @include('companies.fields',['userdetails' => $companies->user])
 
                               {!! Form::close() !!}
                             </div>
