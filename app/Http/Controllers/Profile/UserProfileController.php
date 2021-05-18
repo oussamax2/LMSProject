@@ -21,12 +21,12 @@ class UserProfileController extends Controller
 
     function update(Request $request){
 
-        $id = auth()->user()->id; 
+        $id = auth()->user()->id;
 
         $this->validate($request, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,'.$id,
-           
+
         ]);
 
 		$user = User::find($id);
@@ -39,6 +39,6 @@ class UserProfileController extends Controller
         }
     	$user->update();
 
-    	return redirect()->to('/admin');    
+    	return redirect()->back();
     }
 }

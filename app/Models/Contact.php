@@ -7,19 +7,21 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 
 /**
- * Class subcategorie
+ * Class Contact
  * @package App\Models
- * @version May 6, 2021, 2:25 pm UTC
+ * @version May 18, 2021, 2:15 pm UTC
  *
  * @property string $name
- * @property integer $category_id
+ * @property string $email
+ * @property integer $phone
+ * @property string $message
  */
-class subcategorie extends Model
+class Contact extends Model
 {
     use SoftDeletes;
 
 
-    public $table = 'subcategories';
+    public $table = 'contacts';
     
 
     protected $dates = ['deleted_at'];
@@ -28,7 +30,9 @@ class subcategorie extends Model
 
     public $fillable = [
         'name',
-        'category_id'
+        'email',
+        'phone',
+        'message'
     ];
 
     /**
@@ -39,7 +43,8 @@ class subcategorie extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
-        'category_id' => 'integer'
+        'email' => 'string',
+        'phone' => 'integer'
     ];
 
     /**
@@ -51,8 +56,5 @@ class subcategorie extends Model
         
     ];
 
-    public function categories()
-    {
-        return $this->belongsTo(categories::class, 'category_id');
-    }
+    
 }

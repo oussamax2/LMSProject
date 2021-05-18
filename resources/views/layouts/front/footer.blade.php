@@ -41,9 +41,9 @@
 				<div class="bottom-footer">
 					<div class="container">
 						<ul class="float-right">
-							<li><h3><span class="counter p-color">8,997</span> Products</h3></li>
-							<li><h3><span class="counter p-color">53,701</span> Members</h3></li>
-							<li><h3><span class="counter p-color">1,119</span> Shops</h3></li>
+							<li><h3><span class="counter p-color">8,997</span> Courses</h3></li>
+							<li><h3><span class="counter p-color">53,701</span> Sessions</h3></li>
+							<li><h3><span class="counter p-color">1,119</span> Company</h3></li>
 						</ul>
 						<p class="float-left">&copy; 2021  All rights reserved</p>		
 					</div>

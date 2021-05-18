@@ -53,3 +53,6 @@ Route::resource('subcategories', App\Http\Controllers\API\subcategorieAPIControl
 
 
 Route::resource('companies', App\Http\Controllers\API\companiesAPIController::class);
+
+
+Route::resource('contacts', App\Http\Controllers\API\ContactAPIController::class);

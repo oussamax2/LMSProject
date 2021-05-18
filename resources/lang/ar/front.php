@@ -14,9 +14,19 @@ return [
     'Created At:' => ':أنشئت في',
     'Subcategory List:' => ':قائمة الفئات الفرعية:',
     'Subcategory name' => 'اسم الفئة الفرعية',   
-    '' => '',
-    '' => '',
-    '' => '',
-    '' => '',    
+    'Looking for a' => 'ابحث عن',
+    'course' => 'دورة',
+    'never been easy as it is to day' => 'لم يكن سهلا كما هو اليوم',
+    'Find a course' => 'ابحث عن دورة',
+    'Subject or qualification, eg. IT' => 'الموضوع أو المؤهل ، على سبيل المثال. هو - هي',  
+    'Home' => 'الصفحة الرئيسية',
+    'Course' => 'الدورات',
+    'Organizers' => 'الشركاء',
+    'Contact Us' => 'اتصل بنا',  
+
+    'Latest added' => 'احدث الدورات',
+    'See All Course' => 'انظر جميع الدورات',
+    'See All Course' => 'انظر جميع الدورات',
+    
 
 ];

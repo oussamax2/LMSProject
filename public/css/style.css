@@ -3917,6 +3917,12 @@ display: flex;
 .course-details .linksession{
   margin-bottom: 20px;
 }
+.register-company{
+    color: #43f32e;
+    font-size: 17px;
+    margin: 1.5rem 0px 0px;
+}
+
 
 /* register company style */
 

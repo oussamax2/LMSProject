@@ -2,11 +2,11 @@
 
 namespace App\DataTables;
 
-use App\Models\subcategorie;
+use App\Models\Contact;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
 
-class subcategorieDataTable extends DataTable
+class ContactDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -18,18 +18,18 @@ class subcategorieDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'subcategories.datatables_actions');
+        return $dataTable->addColumn('action', 'contacts.datatables_actions');
     }
 
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\subcategorie $model
+     * @param \App\Models\Contact $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(subcategorie $model)
+    public function query(Contact $model)
     {
-        return $model->newQuery()->with('categories');
+        return $model->newQuery();
     }
 
     /**
@@ -48,7 +48,11 @@ class subcategorieDataTable extends DataTable
                 'stateSave' => true,
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
-
+                    ['extend' => 'create', 'className' => 'btn btn-default btn-sm no-corner',],
+                    ['extend' => 'export', 'className' => 'btn btn-default btn-sm no-corner',],
+                    ['extend' => 'print', 'className' => 'btn btn-default btn-sm no-corner',],
+                    ['extend' => 'reset', 'className' => 'btn btn-default btn-sm no-corner',],
+                    ['extend' => 'reload', 'className' => 'btn btn-default btn-sm no-corner',],
                 ],
             ]);
     }
@@ -61,10 +65,10 @@ class subcategorieDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            ['data' => 'category_id', 'name' => 'category_id', 'title' => __('CATEGORY ID'), 'visible' => false] ,
-            
             'name',
-            ['data' => 'categories.name', 'name' => 'categories.name', 'title' => __('category Name')],
+            'email',
+            'phone',
+            'message'
         ];
     }
 
@@ -75,6 +79,6 @@ class subcategorieDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'subcategories_datatable_' . time();
+        return 'contacts_datatable_' . time();
     }
 }
