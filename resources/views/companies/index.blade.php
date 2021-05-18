@@ -11,9 +11,9 @@
                  <div class="col-lg-12">
                      <div class="card">
                          <div class="card-header">
-                             <i class="fa fa-align-justify"></i>
+                             <span class="icon icon-drawer"></span>
                              companies
-                             <a class="pull-right" href="{{ route('companies.create') }}"><i class="fa fa-plus-square fa-lg"></i></a>
+                             <a class="pull-right" href="{{ route('companies.create') }}"><span class="icon icon-plus"></span>Create companies</a>
                          </div>
                          <div class="card-body">
                              @include('companies.table')

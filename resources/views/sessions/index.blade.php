@@ -13,7 +13,7 @@
                          <div class="card-header">
                              <i class="icon icon-briefcase"></i>
                              sessions
-                             <a class="pull-right" href="{{ route('sessions.create') }}"><i class="icon icon-plus"></i>Create session</a>
+                             <a class="pull-right" href="{{ route('sessions.create') }}"><span class="icon icon-plus"></span>Create session</a>
                          </div>
                          <div class="card-body">
                              @include('sessions.table')
