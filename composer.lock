@@ -1167,15 +1167,14 @@
                 "laravel",
                 "view"
             ],
-<<<<<<< HEAD
+
             "funding": [
                 {
                     "url": "https://opencollective.com/infyomlabs",
                     "type": "opencollective"
                 }
             ],
-=======
->>>>>>> bd017bf5a03c03783a52a24d1491e51a3164f462
+
             "time": "2021-05-10T09:53:53+00:00"
         },
         {
@@ -1714,7 +1713,7 @@
                 "md",
                 "parser"
             ],
-<<<<<<< HEAD
+
             "funding": [
                 {
                     "url": "https://enjoy.gitstore.app/repositories/thephpleague/commonmark",
@@ -1741,8 +1740,7 @@
                     "type": "tidelift"
                 }
             ],
-=======
->>>>>>> bd017bf5a03c03783a52a24d1491e51a3164f462
+
             "time": "2021-05-12T11:39:41+00:00"
         },
         {
@@ -2431,7 +2429,7 @@
                 "datetime",
                 "time"
             ],
-<<<<<<< HEAD
+
             "funding": [
                 {
                     "url": "https://opencollective.com/Carbon",
@@ -2442,8 +2440,7 @@
                     "type": "tidelift"
                 }
             ],
-=======
->>>>>>> bd017bf5a03c03783a52a24d1491e51a3164f462
+
             "time": "2021-05-07T10:08:30+00:00"
         },
         {
@@ -3489,7 +3486,6 @@
                 "console",
                 "terminal"
             ],
-<<<<<<< HEAD
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -3504,8 +3500,6 @@
                     "type": "tidelift"
                 }
             ],
-=======
->>>>>>> bd017bf5a03c03783a52a24d1491e51a3164f462
             "time": "2021-05-11T15:45:21+00:00"
         },
         {
@@ -3656,7 +3650,7 @@
             ],
             "description": "Provides tools to manage errors and ease debugging PHP code",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
+
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -3671,8 +3665,7 @@
                     "type": "tidelift"
                 }
             ],
-=======
->>>>>>> bd017bf5a03c03783a52a24d1491e51a3164f462
+
             "time": "2021-05-07T13:42:21+00:00"
         },
         {
@@ -3847,7 +3840,7 @@
             ],
             "description": "Finds files and directories via an intuitive fluent interface",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
+
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -3862,8 +3855,7 @@
                     "type": "tidelift"
                 }
             ],
-=======
->>>>>>> bd017bf5a03c03783a52a24d1491e51a3164f462
+
             "time": "2021-05-10T14:39:23+00:00"
         },
         {
@@ -3981,7 +3973,7 @@
             ],
             "description": "Defines an object-oriented layer for the HTTP specification",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
+
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -3996,8 +3988,7 @@
                     "type": "tidelift"
                 }
             ],
-=======
->>>>>>> bd017bf5a03c03783a52a24d1491e51a3164f462
+
             "time": "2021-05-07T13:41:16+00:00"
         },
         {
@@ -4093,7 +4084,7 @@
             ],
             "description": "Provides a structured process for converting a Request into a Response",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
+
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -4108,8 +4099,7 @@
                     "type": "tidelift"
                 }
             ],
-=======
->>>>>>> bd017bf5a03c03783a52a24d1491e51a3164f462
+
             "time": "2021-05-12T13:27:53+00:00"
         },
         {
@@ -4997,7 +4987,7 @@
                 "utf-8",
                 "utf8"
             ],
-<<<<<<< HEAD
+
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5012,8 +5002,7 @@
                     "type": "tidelift"
                 }
             ],
-=======
->>>>>>> bd017bf5a03c03783a52a24d1491e51a3164f462
+
             "time": "2021-05-10T14:56:10+00:00"
         },
         {
@@ -5090,7 +5079,7 @@
             ],
             "description": "Provides tools to internationalize your application",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
+
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5105,8 +5094,7 @@
                     "type": "tidelift"
                 }
             ],
-=======
->>>>>>> bd017bf5a03c03783a52a24d1491e51a3164f462
+
             "time": "2021-05-07T13:41:16+00:00"
         },
         {
@@ -5239,7 +5227,7 @@
                 "debug",
                 "dump"
             ],
-<<<<<<< HEAD
+
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5254,8 +5242,7 @@
                     "type": "tidelift"
                 }
             ],
-=======
->>>>>>> bd017bf5a03c03783a52a24d1491e51a3164f462
+
             "time": "2021-05-07T13:42:21+00:00"
         },
         {
@@ -5645,7 +5632,7 @@
                 "jquery",
                 "laravel"
             ],
-<<<<<<< HEAD
+
             "funding": [
                 {
                     "url": "https://www.paypal.me/yajra",
@@ -5656,8 +5643,7 @@
                     "type": "patreon"
                 }
             ],
-=======
->>>>>>> bd017bf5a03c03783a52a24d1491e51a3164f462
+
             "time": "2021-05-17T05:46:04+00:00"
         },
         {
@@ -5776,7 +5762,7 @@
                 "jquery",
                 "laravel"
             ],
-<<<<<<< HEAD
+
             "funding": [
                 {
                     "url": "https://www.paypal.me/yajra",
@@ -5787,8 +5773,7 @@
                     "type": "patreon"
                 }
             ],
-=======
->>>>>>> bd017bf5a03c03783a52a24d1491e51a3164f462
+
             "time": "2021-05-17T04:57:46+00:00"
         },
         {
@@ -7960,10 +7945,13 @@
     "platform": {
         "php": "^7.3"
     },
-<<<<<<< HEAD
+
     "platform-dev": [],
     "plugin-api-version": "1.1.0"
 =======
     "platform-dev": []
 >>>>>>> bd017bf5a03c03783a52a24d1491e51a3164f462
+=======
+    "platform-dev": []
+>>>>>>> 3bb9d6a1fc6122f0237b06e5ceed0632152774b3
 }
