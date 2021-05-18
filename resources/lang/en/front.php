@@ -9,4 +9,13 @@ return [
     'Cancelled request'      => 'Cancelled request',
     'Accept request'      => 'Accept request',
     'Decline request'      => 'Decline request',
+    'Name:' => 'Name:',
+    'Order:' => 'Order:',
+    'Created At:' => 'Created At:',
+    'Subcategory List:' => 'Subcategory List:',
+    'Subcategory name' => 'Subcategory name',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',    
 ];
