@@ -10,7 +10,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('assets-panel/css/coreui.min.css')}}">
     <link rel="stylesheet" href="{{ asset('assets-panel/css/admin.css')}}">
-  
+
     <!-- Ionicons -->
     <link rel="stylesheet" href="{{ asset('assets-panel/css/coreui-icons-free.css')}}">
     <link href="{{ asset('fonts/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
@@ -53,7 +53,7 @@
                 {{ Auth::user()->name }}
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-                <div class="dropdown-header text-center">
+               {{-- <div class="dropdown-header text-center">
                     <strong>Account</strong>
                 </div>
                 <a class="dropdown-item" href="#">
@@ -62,7 +62,7 @@
                 </a>
                 <div class="dropdown-header text-center">
                     <strong>@lang('auth.app.settings')</strong>
-                </div>
+                </div> --}}
                 <a class="dropdown-item" href="{{ route('user-profile.edit') }}">
                     <i class="fa fa-user"></i> @lang('auth.app.profile')</a>
                 <a class="dropdown-item" href="#">
@@ -128,7 +128,7 @@
                     <li><h3><span class="counter p-color">53,701</span> Members</h3></li>
                     <li><h3><span class="counter p-color">1,119</span> Shops</h3></li>
                 </ul>
-                <p class="float-left">&copy; 2021 All rights reserved</p>		
+                <p class="float-left">&copy; 2021 All rights reserved</p>
             </div>
         </div>
     </footer>
