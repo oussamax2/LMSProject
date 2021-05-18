@@ -73,6 +73,6 @@ class categories extends Model
      */
     public function subcategorie()
     {
-        return $this->HasMany(subcategorie::class);
+        return $this->HasMany(subcategorie::class, 'category_id');
     }
 }

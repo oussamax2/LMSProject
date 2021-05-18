@@ -1,30 +1,55 @@
-<!-- Id Field -->
-<div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{{ $categories->id }}</p>
-</div>
 
 <!-- Name Field -->
 <div class="form-group">
-    {!! Form::label('name', 'Name:') !!}
+    {!! Form::label('name', __('front.Name:')) !!}
     <p>{{ $categories->name }}</p>
 </div>
 
 <!-- Order Field -->
 <div class="form-group">
-    {!! Form::label('order', 'Order:') !!}
+    {!! Form::label('order', __('front.Order:')) !!}
     <p>{{ $categories->order }}</p>
 </div>
 
 <!-- Created At Field -->
 <div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
+    {!! Form::label('created_at', __('front.Created At:')) !!}
     <p>{{ $categories->created_at }}</p>
 </div>
 
-<!-- Updated At Field -->
+<!-- Order Field -->
 <div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{{ $categories->updated_at }}</p>
-</div>
+    {!! Form::label('order', __('front.Subcategory List:')) !!}
+    
 
+   
+
+        <table class="table table-bordered">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">@lang('front.Subcategory name')</th>
+                    
+                    </tr>
+                </thead>
+                {{$i=1}}
+                @foreach ($listsubcateg as $listsubcateg) 
+                   
+                    <tbody>
+                        <tr>
+                            <th scope="row">{{$i++}}</th>
+                            <td>{{$listsubcateg['name']}}</td>
+                        
+                        
+                        
+                        </tr>
+                    
+                    
+                    </tbody>
+                @endforeach    
+        </table>
+    
+
+
+
+</div>

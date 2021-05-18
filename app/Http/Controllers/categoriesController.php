@@ -76,8 +76,14 @@ class categoriesController extends AppBaseController
 
             return redirect(route('categories.index'));
         }
-
-        return view('categories.show')->with('categories', $categories);
+        /**get all Subcategories of this category */
+        $listsubcateg = $categories->subcategorie()->get();
+        // var_dump($listsubcateg);
+        return view('categories.show')->with([
+            'categories'=>$categories,
+            'listsubcateg'=>$listsubcateg
+            
+            ]);
     }
 
     /**
