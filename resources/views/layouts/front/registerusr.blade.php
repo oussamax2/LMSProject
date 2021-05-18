@@ -17,9 +17,12 @@
 											<input type="text" placeholder="Your Name">
 											<h6>Your EMail</h6>
 											<input type="email" placeholder="sample@gmail.com">
-											<h6>Mobile Number</h6>
-											<input type="text" placeholder="+880 854 875 971">
+											<h6>Password</h6>
+											<input type="password" placeholder="password">
+											<h6>Confirm Password</h6>
+											<input type="password" placeholder="confirm password">
 											<button class="tran3s hvr-trim">SIGN UP NOW!!</button>
+											<a class="register-company" href="{{ route ('register_vendor') }}">register as a company</a>
 										</div> <!-- /.form-wrapper -->
 									</form>
 								</div> <!-- /.registration-form -->
