@@ -22,10 +22,6 @@
 .app-body {
     margin-top: 66px;
 }
-.app-header .navbar-nav .nav-item .nameuserlms {
-    background: #ff7417;
-    height: 66px !important;
-}
 }
 
 @media (max-width: 991.98px){
@@ -56,11 +52,10 @@
     background: #072640;
 }
 .app-header .navbar-nav .nav-item .nameuserlms{
-    background: #ff7417;
     height: 70px;
     width: 100%;
     line-height: 70px;
-    color: #fff;
+    color:#222;
     text-transform: uppercase;
     font-weight: 500;
 }
@@ -161,6 +156,144 @@ footer.app-footer {
     padding: 20px 0 10px 0;
   }
   /*---------------------- Footer ----------------------*/
+
+    /*---------------------- cards ----------------------*/
+    .card{
+      border-top: 2px solid #ff7417;
+      box-shadow: 0px 0px 13px 5px rgb(0 0 0 / 10%);
+      border-left:0px;
+      border-right: 0px;
+      border-bottom: 0px;
+      border-bottom-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+    }
+    .card-header {
+      background-color: #f3f3f3;
+      font-size: 20px;
+      text-transform: uppercase;
+      color: #072640;
+      padding: 0.75rem 1.25rem;
+      border-bottom: 0px;
+  }
+  .card-header a{
+    background: #f36824;
+    color: #fff;
+    padding: .5rem .5rem;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 20px;
+}
+.card-header a span.icon{
+  color: #fff;
+  margin-right: 10px;
+}
+  .card-header span.icon{
+    font-size: 20px;
+    color: #ff7417;
+  }
+.main {
+  background: #f3f3f3;
+  }
+  .breadcrumb .breadcrumb-item{
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+  .card .dataTables_filter{
+    width: 100%;
+    display: flex;
+  }
+  .card .dataTables_filter label{
+    width: 100%;
+    margin: 1rem 0;
+    font-size: 18px;
+    color: #0d3454;
+    font-weight: 400;
+  }
+  .card .dataTables_filter input{
+    width: 100%;
+  }
+  .card .dataTables_paginate{
+ margin: auto;
+ padding: 15px;
+  }
+  .form-control{
+    border: 1px solid #ddd;
+    height: 40px !important;
+    border-radius: 0px;
+  }
+  .card table tr th{
+    text-align: center;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #0d3454;
+  }
+  .card table tr td{
+    font-size: 16px;
+  }
+  .table-striped tbody tr:nth-of-type(odd) {
+    background: #f3f3f3;
+}
+.card .dataTables_info{
+  font-size: 16px;
+  padding: 15px;
+}
+.card .pagination .paginate_button{
+  margin-right: 20px;
+}
+.card .form-group label{
+  font-size: 16px;
+  color: #072640;
+  font-weight: 400;
+}
+.card ul.pagination{
+margin:0;
+}
+.card .pagination .paginate_button a{
+  background: #fff;
+  padding: 7px 3px;
+  border-radius: 3px;
+  color: #f36824;
+  font-weight: 500;
+  text-transform: uppercase;
+  box-shadow: 0px 0px 6px 2px rgb(0 0 0 / 16%);
+}
+.buttons-action-lms{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.buttons-action-lms .btn-primary{
+  color: #fff;
+  background-color: #f36824;
+  border-color: #f36824;
+  width: 8rem;
+  font-weight: 500;
+  height: 40px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.buttons-action-lms .btn-secondary {
+  color: #303131;
+  font-weight: 500;
+  width: 8rem;
+  height: 40px;
+  text-transform: uppercase;
+  background-color: #d0cfcf;
+  border-color: #c8ced3;
+}
+.breadcrumb .breadcrumb-item a{
+  color: #36d64c;
+}
+.badge-danger {
+  color: #fff;
+  background-color: #f36824;
+}
+.info-company-lms{
+padding:0;
+}
+
+/*---------------------- cards ----------------------*/
+
 
 
 
