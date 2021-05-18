@@ -50,8 +50,6 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','role:admin']],
     Route::resource('companies', App\Http\Controllers\companiesController::class);
 
 
-    Route::get('user-profile', [App\Http\Controllers\Profile\UserProfileController::class, 'edit'])->name("user-profile.edit");
-	Route::patch('user-profile', [App\Http\Controllers\Profile\UserProfileController::class, 'update'])->name("login-profile.update");
 
 });
 
@@ -86,6 +84,9 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:user'
 
 Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth']], function () {
     //--------
+    Route::get('user-profile', [App\Http\Controllers\Profile\UserProfileController::class, 'edit'])->name("user-profile.edit");
+	Route::patch('user-profile', [App\Http\Controllers\Profile\UserProfileController::class, 'update'])->name("login-profile.update");
+
 });
 
 Route::get('generator_builder', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@builder')->name('io_generator_builder');
@@ -107,3 +108,6 @@ Route::post(
 
 
 
+
+
+Route::resource('contacts', App\Http\Controllers\ContactController::class);

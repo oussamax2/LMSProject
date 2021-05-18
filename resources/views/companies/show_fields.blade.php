@@ -7,7 +7,7 @@
 
     <a href="{{ route('verifcompany', $companies->id) }}" class="btn btn-outline-success" name="acceptcompany" value="accept">@lang('front.Accept request')</a>
     <a href="{{ route('verifcompany', $companies->id) }}" class="btn btn-outline-success" name="declinecompany" value="decline">@lang('front.Decline request')</a>
-        
+
 
 
 @endif
@@ -25,11 +25,11 @@
 <!-- Status Field -->
 <div class="form-group">
     {!! Form::label('status', 'Company status:') !!}
-       
+
         @if($companies->status == 0)
-                                        
+
          <p>@lang('front.Pending request')</p>
-         
+
         @elseif($companies->status == 1)
           <p>@lang('front.Accepted request')</p>
 
@@ -51,6 +51,7 @@
 <div class="form-group">
     {!! Form::label('picture', 'Picture:') !!}
     <p>{{ $companies->picture }}</p>
+    {{asset("storage/$companies->picture")}}
 </div>
 
 <!-- Shortdescription Field -->
@@ -58,7 +59,7 @@
     {!! Form::label('shortDescription', 'Shortdescription:') !!}
     <p>{{ $companies->shortDescription }}</p>
 </div>
-
+{{-- banner home --}}
 <!-- Fcburl Field -->
 <div class="form-group">
     {!! Form::label('fcburl', 'Fcburl:') !!}
@@ -89,7 +90,7 @@
     {!! Form::label('courses', 'Company courses:') !!}
         @foreach ($listcourses as $listcourses)
             <p>{{ $listcourses->title }}</p>
-       
+
             @foreach ($listcourses->sessions()->get() as $sessions)
 
                 <table class="table table-bordered">
@@ -109,11 +110,11 @@
                                 <td>{{$sessions['end']}}</td>
                                 <td>{{$sessions['fee']}}</td>
                                 <td>{{$sessions->cities->name}}</td>
-                             
-                            
+
+
                             </tr>
-                        
-                        
+
+
                         </tbody>
                 </table>
             @endforeach

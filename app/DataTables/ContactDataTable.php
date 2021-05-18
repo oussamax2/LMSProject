@@ -2,12 +2,11 @@
 
 namespace App\DataTables;
 
-use App\Models\companies;
-use App\Models\User;
+use App\Models\Contact;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
 
-class companiesDataTable extends DataTable
+class ContactDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -19,18 +18,18 @@ class companiesDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'companies.datatables_actions');
+        return $dataTable->addColumn('action', 'contacts.datatables_actions');
     }
 
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\companies $model
+     * @param \App\Models\Contact $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(companies $model)
+    public function query(Contact $model)
     {
-        return $model->newQuery()->with('user');
+        return $model->newQuery();
     }
 
     /**
@@ -49,6 +48,11 @@ class companiesDataTable extends DataTable
                 'stateSave' => true,
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
+                    ['extend' => 'create', 'className' => 'btn btn-default btn-sm no-corner',],
+                    ['extend' => 'export', 'className' => 'btn btn-default btn-sm no-corner',],
+                    ['extend' => 'print', 'className' => 'btn btn-default btn-sm no-corner',],
+                    ['extend' => 'reset', 'className' => 'btn btn-default btn-sm no-corner',],
+                    ['extend' => 'reload', 'className' => 'btn btn-default btn-sm no-corner',],
                 ],
             ]);
     }
@@ -61,18 +65,10 @@ class companiesDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
-            ['data' => 'user.name', 'name' => 'user.name', 'title' => __('firstname')],
-            'lastname',
-            'website',
-            'telephone',
-            'picture',
-            'shortDescription',
-            'description',
-            'fcburl',
-            'twitturl',
-            'linkdinurl',
-            'dribbleurl'
+            'name',
+            'email',
+            'phone',
+            'message'
         ];
     }
 
@@ -83,6 +79,6 @@ class companiesDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'companies_datatable_' . time();
+        return 'contacts_datatable_' . time();
     }
 }

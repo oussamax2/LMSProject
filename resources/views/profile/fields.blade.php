@@ -44,7 +44,7 @@
 	</div>
 
 	<div class="row">
-	  
+
 	    <!-- /.col -->
 	    <div class="col-xs-6">
 	        <button type="submit" class="btn btn-primary btn-block btn-flat">Update</button>
@@ -52,3 +52,5 @@
 	    <!-- /.col -->
 	</div>
 </div>
+
+{{ url('/password/reset') }}
