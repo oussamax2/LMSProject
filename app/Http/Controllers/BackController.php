@@ -25,4 +25,9 @@ class BackController extends Controller
         return view('home');
     }
 
+    public function company()
+    { //auth()->user()->addRole(['company','admin','user']);
+        return view('home');
+    }
+
 }

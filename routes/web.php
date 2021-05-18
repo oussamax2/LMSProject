@@ -39,7 +39,7 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','role:admin']],
     Route::resource('states', App\Http\Controllers\statesController::class);
     Route::resource('cities', App\Http\Controllers\citiesController::class);
     Route::resource('registerations', App\Http\Controllers\registerationsController::class);
-    
+
     Route::resource('tags', App\Http\Controllers\tagsController::class);
     Route::resource('courses', App\Http\Controllers\coursesController::class);
     Route::resource('courseTags', App\Http\Controllers\course_tagController::class);
@@ -49,7 +49,7 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','role:admin']],
     Route::resource('subcategories', App\Http\Controllers\subcategorieController::class);
     Route::resource('companies', App\Http\Controllers\companiesController::class);
 
-    
+
     Route::get('user-profile', [App\Http\Controllers\Profile\UserProfileController::class, 'edit'])->name("user-profile.edit");
 	Route::patch('user-profile', [App\Http\Controllers\Profile\UserProfileController::class, 'update'])->name("login-profile.update");
 
@@ -64,7 +64,7 @@ Route::get('verifcompany/{id}', 'App\Http\Controllers\companiesController@update
  */
 
 Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:company']], function () {
-
+    Route::get('/', [App\Http\Controllers\BackController::class, 'company'])->name('company');
 
 });
 
