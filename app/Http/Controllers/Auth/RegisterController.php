@@ -8,6 +8,9 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Models\companies;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -73,4 +76,76 @@ class RegisterController extends Controller
 
         return $user;
     }
+
+    
+    public function savepicture(UploadedFile $file) : string
+    {
+        return $file->store('companies_pictures', ['disk' => 'public']);
+    }
+
+    /**
+     * Create a new user instance after a valid registration.
+     *
+     * @param  array  $data
+     * @return \App\Models\companies
+     */
+    protected function registervendor(Request $request)
+    {
+
+        $validated = $request->validate([
+           
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+        // var_dump($request->all());
+       $user =   User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+        $user->roles()->sync([2]) ;
+        if ($request->has('picture')){
+         
+            $image = $this->savepicture($request->file('picture'));
+            $companies = companies::create([
+                'user_id' => $user->id,
+                'lastname' => $request->lastname,            
+                'website' => $request->website,   
+                'telephone' => $request->telephone,   
+                'shortDescription'	 => $request->shortDescription,   
+                'description' => $request->description,   
+                'fcburl' => $request->fcburl,   
+                'twitturl' => $request->twitturl,   
+                'linkdinurl' => $request->linkdinurl,   
+                'dribbleurl' => $request->dribbleurl,   
+                'status' => 0,   
+            ]);
+            $companies->picture = $image;
+            $companies->save();
+
+        }else{
+
+            
+            companies::create([
+                'user_id' => $user->id,
+                'lastname' => $request->lastname,            
+                'website' => $request->website,   
+                'telephone' => $request->telephone,   
+                'picture' => "",   
+                'shortDescription'	 => $request->shortDescription,   
+                'description' => $request->description,   
+                'fcburl' => $request->fcburl,   
+                'twitturl' => $request->twitturl,   
+                'linkdinurl' => $request->linkdinurl,   
+                'dribbleurl' => $request->dribbleurl,   
+                'status' => 0,   
+            ]);
+
+        }
+
+
+        auth()->attempt($request->only('email', 'password'));
+        return redirect()->intended('/dashboard');
+    }    
 }
