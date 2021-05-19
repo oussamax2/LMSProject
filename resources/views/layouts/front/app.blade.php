@@ -30,26 +30,20 @@
 <body>
 
 <section>
-    <!-- ===================================================
-    Loading Transition
-    ==================================================== -->
+    {{-- Loading Transition --}}
     <div id="loader-wrapper">
         <div id="loader"></div>
     </div>
-    <!--
-    =============================================
-        Theme Header
-    ==============================================
-    -->
+    {{-- Theme Header --}}
     <header class="theme-menu-wrapper menu-style-one">
         <div class="container-fluid">
             <div class="header-wrapper clearfix">
-                <!-- Logo -->
+                {{-- Logo --}}
                 <div class="logo float-left tran4s"><a href="index.html"><img src="images/logo/logo3.png" alt="Logo"></a></div>
 
-                <!-- ============================ Theme Menu ========================= -->
+                {{-- Theme Menu --}}
                 <nav class="theme-main-menu float-right navbar" id="mega-menu-wrapper">
-                    <!-- Brand and toggle get grouped for better mobile display -->
+                    {{-- Brand and toggle get grouped for better mobile display --}}
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
@@ -58,7 +52,7 @@
                         <span class="icon-bar"></span>
                         </button>
                     </div>
-                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    {{-- Collect the nav links, forms, and other content for toggling --}}
                     <div class="collapse navbar-collapse" id="navbar-collapse-1">
                         <ul class="nav">
                             <li class="menu-list"><a href="{{ route ('Campus') }}" class="tran3s">@lang('front.Home')</a>
@@ -94,11 +88,11 @@
                             <li class="login"><a class="tran3s" data-toggle="modal" data-target=".signInModal"><i class="flaticon-lock"></i></a></li>
                             @endauth
                         </ul>
-                    </div><!-- /.navbar-collapse -->
-                </nav> <!-- /.theme-main-menu -->
-            </div> <!-- /.header-wrapper -->
+                    </div>
+                </nav>
+            </div>
         </div>
-    </header> <!-- /.theme-menu-wrapper -->
+    </header>
 
 </section>
 
@@ -106,10 +100,10 @@
     @yield('content')
 </div>
 
-<!-- Sign-in Modal -->
+{{-- Sign-in Modal --}}
 <div class="modal fade signInModal theme-modal-box"  id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
     <div class="modal-dialog">
-        <!-- Modal content-->
+        {{-- Modal content --}}
         <div class="modal-content">
             <div class="modal-body">
                 <form method="post" action="{{ url('/login') }}">
@@ -140,12 +134,13 @@
                     </div>
                 </form>
                 <div><a href="{{ route ('registeruser') }}" class="p-color tran3s">Not an account?? Sign Up</a></div>
-            </div> <!-- /.modal-body -->
-        </div> <!-- /.modal-content -->
-    </div> <!-- /.modal-dialog -->
-</div> <!-- /.signInModal -->
+            </div>
+        </div>
+    </div>
+</div>
 
- <!-- Scroll Top Button -->
+
+ {{-- Scroll Top Button --}}
 <button class="scroll-top tran3s">
     <i class="fa fa-angle-up" aria-hidden="true"></i>
 </button>
