@@ -21,7 +21,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'home'])->name('Cam
 Route::get('/partners', [App\Http\Controllers\HomeController::class, 'partners'])->name('partners');
 Route::get('/pro_training', [App\Http\Controllers\HomeController::class, 'pro_training'])->name('pro_training');
 Route::get('/list_sessions', [App\Http\Controllers\HomeController::class, 'catg_courses'])->name('course');
-Route::get('/singlsession', [App\Http\Controllers\HomeController::class, 'singlcourse'])->name('detailcourse');
+Route::get('/singlsession/{id}', [App\Http\Controllers\HomeController::class, 'singlcourse'])->name('detailcourse');
 Route::get('/registeruser', [App\Http\Controllers\HomeController::class, 'registeruser'])->name('registeruser');
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 Route::get('/detailcourse', [App\Http\Controllers\HomeController::class, 'detailcourse'])->name('detailcrs');
@@ -63,7 +63,9 @@ Route::get('verifcompany/{id}', 'App\Http\Controllers\companiesController@update
 
 Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:company']], function () {
     Route::get('/', [App\Http\Controllers\BackController::class, 'company'])->name('company');
-
+    Route::resource('registerations', App\Http\Controllers\company\registerationsController::class);
+    Route::resource('courses', App\Http\Controllers\company\coursesController::class);
+     Route::resource('sessions', App\Http\Controllers\company\sessionsController::class);
 });
 
 
