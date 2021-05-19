@@ -9,6 +9,8 @@ use App\Http\Requests\UpdatecategoriesRequest;
 use App\Repositories\categoriesRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
+use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 use Response;
 
 class categoriesController extends AppBaseController
@@ -42,6 +44,11 @@ class categoriesController extends AppBaseController
         return view('categories.create');
     }
 
+    public function savecategpicture(UploadedFile $file) : string
+    {
+        return $file->store('categories_pictures', ['disk' => 'public']);
+    }
+
     /**
      * Store a newly created categories in storage.
      *
@@ -51,11 +58,20 @@ class categoriesController extends AppBaseController
      */
     public function store(CreatecategoriesRequest $request)
     {
+
+        
+       
+        /**save image in intended folder */
+        $image = $this->savecategpicture($request->file('picture'));
+
         $input = $request->all();
-
         $categories = $this->categoriesRepository->create($input);
+        /**save image in database column */
+        $categories->picture = $image;
+        $categories->save();
+            
 
-        Flash::success('Categories saved successfully.');
+        Flash::success(__('admin.saved successfully.'));
 
         return redirect(route('categories.index'));
     }
@@ -114,19 +130,44 @@ class categoriesController extends AppBaseController
      *
      * @return Response
      */
-    public function update($id, UpdatecategoriesRequest $request)
+    public function update($id, Request $request)
     {
-        $categories = $this->categoriesRepository->find($id);
+        if ($request->has('picture')){
+                /**save image in intended folder */
+                $image = $this->savecategpicture($request->file('picture'));
 
-        if (empty($categories)) {
-            Flash::error('Categories not found');
+                $categories = $this->categoriesRepository->find($id);
 
-            return redirect(route('categories.index'));
-        }
+                if (empty($categories)) {
+                    Flash::error('Categories not found');
 
-        $categories = $this->categoriesRepository->update($request->all(), $id);
+                    return redirect(route('categories.index'));
+                }
 
-        Flash::success('Categories updated successfully.');
+                $categories = $this->categoriesRepository->update($request->all(), $id);
+                /**save image in database column */
+                $categories->picture = $image;
+                $categories->save();
+
+            }else{
+
+                $categories = $this->categoriesRepository->find($id);
+
+                if (empty($categories)) {
+                    Flash::error('Categories not found');
+
+                    return redirect(route('categories.index'));
+                }
+                
+                $currentpicture = $categories->picture;
+                $categories = $this->categoriesRepository->update($request->all(), $id);
+                /**save image in database column */
+                $categories->picture = $currentpicture;
+                $categories->save();
+
+            }
+
+        Flash::success(__('admin.updated successfully.'));
 
         return redirect(route('categories.index'));
     }

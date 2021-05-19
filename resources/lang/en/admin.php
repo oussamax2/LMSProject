@@ -6,5 +6,6 @@ return [
     'Company not found'      => 'Company not found',
     'updated successfully.'      => 'updated successfully.',
     'deleted successfully.'      => 'deleted successfully.',
+    'Picture:'      => 'Picture:',
     
 ];

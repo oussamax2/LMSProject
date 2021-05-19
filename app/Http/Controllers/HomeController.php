@@ -10,7 +10,11 @@ class HomeController extends Controller
 
     public function home()
     {
-        return view('front.index');
+        /**get latest sessions */
+        $sessionList = sessions::orderBy('id', 'desc')->take(5)->get();
+        
+        return view('front.index')->with('sessionList', $sessionList);
+      
     }
     public function partners()
     {

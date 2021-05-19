@@ -18,7 +18,7 @@
                                 <strong>Create Categories</strong>
                             </div>
                             <div class="card-body">
-                                {!! Form::open(['route' => 'categories.store']) !!}
+                                {!! Form::open(['route' => 'categories.store', 'files' => true, 'enctype' => 'multipart/form-data']) !!}
 
                                    @include('categories.fields')
 
