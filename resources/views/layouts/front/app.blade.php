@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,8 +15,12 @@
 	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
     @else
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/bootstrap-rtl.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styleRTL.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome-rtl.css') }}">
     <link rel="icon" type="image/png" sizes="56x56" href="{{ asset('images/fav-icon/icon.png') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/responsiveRTL.css') }}">
+    <link rel="stylesheet" href="{{ asset('fonts/ExpoArabic-Book.ttf') }}">
     @endif
     <link rel="icon" type="image/png" sizes="56x56" href="{{ asset('images/fav-icon/icon.png') }}">
     @yield('css')
@@ -64,8 +68,19 @@
                             <li class="menu-list"><a href="{{ route ('partners') }}" class="tran3s">@lang('front.Organizers')</a>
                             </li>
                             <li><a href="{{ route ('contact') }}" class="tran3s">@lang('front.Contact Us')</a></li>
+                            <li class="dropdown-holder menu-list">
+                                <a href="#">
+                                    {{ Config::get('languages')[App::getLocale()] }}
+                                </a>
+                                <ul class="sub-menu">
+                                @foreach (Config::get('languages') as $lang => $language)
+                                    @if ($lang != App::getLocale())
+                                            <a href="{{ route('lang.switch', $lang) }}"> {{$language}}</a>
+                                    @endif
+                                @endforeach
+                                </ul>
+                            </li>
                             <li class="login"><a class="tran3s" data-toggle="modal" data-target=".signInModal"><i class="flaticon-lock"></i></a></li>
-                            <li class="login"><a href="" class="tran3s">EN</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav> <!-- /.theme-main-menu -->
