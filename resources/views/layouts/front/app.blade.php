@@ -65,9 +65,9 @@
                             </li>
                             <li><a href="{{ route ('contact') }}" class="tran3s">@lang('front.Contact Us')</a></li>
                             @auth
-                            <li class="dropdown-holder menu-list"><a href="#" class="tran3s"><i class="flaticon-user"></i></a>
+                            <li class="dropdown-holder menu-list"><a  class="tran3s"><i class="flaticon-user"></i></a>
                                 <ul class="sub-menu">
-                                    <li><a href="#">account</a></li>
+                                    <li><a href="{{ auth()->user()->hasRole('admin') ? url('/admin') : url('/dashbord') }}">account</a></li>
                                     <li><a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">@lang('auth.sign_out')</a>
                                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                             @csrf
