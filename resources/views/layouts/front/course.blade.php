@@ -45,7 +45,7 @@
 										</li>
 										<li class="float-right">
 											<i class="flaticon-heart"></i>
-											<a href="#" class="tran3s">Saudi Arabia, Riyadh</a>
+											<a href="#" class="tran3s">@lang('front.Saudi Arabia, Riyadh')</a>
 										</li>
 									</ul>
 								</div>
@@ -67,7 +67,7 @@
 										</li>
 										<li class="float-right">
 											<i class="flaticon-heart"></i>
-											<a href="#" class="tran3s">Saudi Arabia, Riyadh</a>
+											<a href="#" class="tran3s">@lang('front.Saudi Arabia, Riyadh')</a>
 										</li>
 									</ul>
 								</div>
@@ -91,7 +91,7 @@
 										</li>
 										<li class="float-right">
 											<i class="flaticon-heart"></i>
-											<a href="#" class="tran3s">Saudi Arabia, Riyadh</a>
+											<a href="#" class="tran3s">@lang('front.Saudi Arabia, Riyadh')</a>
 										</li>
 									</ul>
 								</div>
@@ -113,7 +113,7 @@
 										</li>
 										<li class="float-right">
 											<i class="flaticon-heart"></i>
-											<a href="#" class="tran3s">Saudi Arabia, Riyadh</a>
+											<a href="#" class="tran3s">@lang('front.Saudi Arabia, Riyadh')</a>
 										</li>
 									</ul>
 								</div>
@@ -135,7 +135,7 @@
 										</li>
 										<li class="float-right">
 											<i class="flaticon-heart"></i>
-											<a href="#" class="tran3s">Saudi Arabia, Riyadh</a>
+											<a href="#" class="tran3s">@lang('front.Saudi Arabia, Riyadh')</a>
 										</li>
 									</ul>
 								</div>
