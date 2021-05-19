@@ -48,13 +48,11 @@
 /*(min-width: 992px) and (max-width: 1199px)*/
 
 @media (max-width: 991px) {
-  #mega-menu-wrapper {float: none;}
   header.menu-style-one .header-wrapper .logo {
     position: absolute;
     z-index: 999;
     top:0;
     left:0;
-    height: 63px;
   }
   header.menu-style-one .header-wrapper .logo:before {height: 63px;}
   .menu-style-one #mega-menu-wrapper .nav>li.login button {
@@ -221,7 +219,6 @@
   .event-details .details-wrapper .title ul li,.course-details .details-wrapper .curriculum-panel .clearfix>ul {width: 100%;}
 }
 @media (max-width: 380px) {
-  header.menu-style-one .header-wrapper .logo {width: 70%;}
   header.menu-style-one .header-wrapper .logo:before {width: 90px;}
   .theme-modal-box .modal-content .modal-body form ul li  {width: 100%;}
   .our-course-styleTwo .single-course:hover .image .opacity h5 {top:50px;}
@@ -229,7 +226,7 @@
 }
 @media(max-width:992px){
   header.menu-style-one .header-wrapper .logo img{
-    width:74px;
+    width:70px;
     }
 
 }

@@ -53,12 +53,26 @@ return [
     'Sessions' => 'الجلسات',
     'Your Email' => 'بريدك الالكتروني',
     'All rights reserved' => 'كل الحقوق محفوظة',
-  
-   
-    'This sounded a very good reason, and Alice was quite pleased.' => 'This sounded a very good reason, and Alice was quite pleased.',
-   
-   
+    'Proffisional Training Center' => 'مركز التدريب الاحترافي',
+    'Partners' => 'شركاء',
+    'Our Partners' => 'شركاؤنا',
 
+    'WebSite:' => 'موقع الكتروني:',
+    'E-mail:' => 'بريد إلكتروني:',
+    'Telephone:' => 'هاتف:',
+    'Senior Web Design' => 'كبار تصميم مواقع الويب',
+    'Developer' => 'مطور',
+
+    'Total Courses' => 'مجموع الدورات',
+    'Total Session' => 'إجمالي الدورة',
+    'Total View' => 'إجمالي العرض',
+
+    'Courses by Profissional Training' => 'دورات التدريب المهني',
+    'See All Course' => 'انظر جميع الدورات',
+
+    'Partner' => 'شريك',
+    'Load More' => 'اكتشف أكثر',
+    'This sounded a very good reason, and Alice was quite pleased.' => 'This sounded a very good reason, and Alice was quite pleased.',
     'Workshop' => 'ورشة عمل',
     'Design & Development' => 'تطوير التصميم',
     'IOS & Adroid Apps Development' => 'تطوير تطبيقات IOS و Adroid',
