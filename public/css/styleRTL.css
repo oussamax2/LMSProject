@@ -580,7 +580,7 @@ header.menu-style-two.fixed .logo {width: 10%;top:0;}
 #theme-main-banner .camera_caption>div {
   background: transparent;
   position: absolute;
-  width: 100%;
+  width: 100% !important;
   z-index: 1;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -595,13 +595,13 @@ header.menu-style-two.fixed .logo {width: 10%;top:0;}
   color:#fff;
   text-transform: uppercase;
   letter-spacing: 1.4px;
-  margin: 5px 0px 30px 50px;
+  margin: 5px 50px 30px 50px;
 }
 #theme-main-banner h1 {
   color: #fff;
   line-height: 70px;
   font-size: 55px;
-  margin: 5px 0px 30px 50px;
+  margin: 5px 50px 30px 50px;
 }
 #theme-main-banner a.banner-button {
   width: 190px;
@@ -3934,6 +3934,14 @@ display: flex;
 }
 .navbar-collapse{
   direction: rtl;
+}
+.menu-list a i{
+  font-size: 20px;
+}
+@media (min-width: 1200px){
+.container {
+    max-width: initial;
+}
 }
 
 
