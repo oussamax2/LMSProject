@@ -88,18 +88,19 @@ class sessions extends Model
     }
     public function companies()
     {
-        return $this->BelongsTo(companies::class);
+        // return $this->hasOneThrough(sessions::class, courses::class, 'company_id', 'course_id',  'id', 'id' );
+        return $this->courses->companies();
     }
 
 
     public function countries()
     {
-        return $this->BelongsTo(countries::class);
+        return $this->BelongsTo(countries::class, 'country_id');
     }
 
     public function states()
     {
-        return $this->BelongsTo(states::class);
+        return $this->BelongsTo(states::class, 'state');
     } 
       
     public function cities()
