@@ -62,7 +62,8 @@ class categoriesDataTable extends DataTable
     {
         return [
             'name',
-            'order'
+            'order',
+            'picture'
         ];
     }
 
