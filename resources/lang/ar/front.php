@@ -66,6 +66,21 @@ return [
     'Total Courses' => 'مجموع الدورات',
     'Total Session' => 'إجمالي الدورة',
     'Total View' => 'إجمالي العرض',
+    'Posted on' => 'نشر',
+
+    'Sub Categories' => 'الفئات الفرعية',
+    'Categories' => 'الفئات',
+    'Duration' => 'المدة الزمنية',
+    'Session' => 'الدورة',
+    'Price' => 'سعر',
+    'Follow Now' => 'اتبع الآن',
+    
+    
+    
+
+    'Saudia Arabia,Riyadh' => 'السعودية , الرياض',
+   
+    
 
     'Courses by Profissional Training' => 'دورات التدريب المهني',
     'See All Course' => 'انظر جميع الدورات',
@@ -81,6 +96,8 @@ return [
     'You can start search by Categories that meet your requirements' => 'يمكنك بدء البحث عن طريق الفئات التي تلبي متطلباتك',
     'Saudi Arabia, Riyadh' => 'السعودية , الرياض',
     'Angular 2 Essential Training JavaScript Framework' => 'Angular 2 Essential Training JavaScript Framework',
+
+    'your contact was successfully sent!' => 'تم إرسال طلبك بنجاح!', 
     
     
 

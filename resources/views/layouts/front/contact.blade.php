@@ -10,7 +10,7 @@
 						<ul>
 							<li><a href="index.html" class="tran3s">Home</a></li>
 							<li>/</li>
-							<li>Conatct</li>
+							<li>Contact</li>
 						</ul>
 					</div> <!-- /.container -->
 				</div> <!-- /.opacity -->
@@ -26,30 +26,52 @@
 	   		<div class="container contact-us-page">
 	        	<div class="row">
 	        		<div class="col-md-6 col-sm-12 col-xs-12 wow fadeInLeft">
+					@include('flash::message')
 	        			<div class="contact-us-form">
 	        				<h2>Send a Message</h2>
 
-	        				<form action="inc/sendemail.php" class="form-validation" autocomplete="off">
+	        				<form action="{{route('sendcontact')}}" class="form-validation" autocomplete="off">
+							{{ csrf_field() }}
 	        					<div class="row">
 	        						<div class="col-xs-12">
 	        							<div class="single-input">
-	        								<input type="text" placeholder="You Name*" name="name">
+	        								<input type="text" placeholder="You Name*" name="name" required>
 	        							</div> <!-- /.single-input -->
+										@if ($errors->has('name'))
+											<span class="invalid-feedback">
+												<strong>{{ $errors->first('name') }}</strong>
+											</span>
+										@endif
 	        						</div> <!-- /.col- -->
 	        						<div class="col-sm-6 col-xs-12">
 	        							<div class="single-input">
-	        								<input type="email" placeholder="Enter Email here*" name="email">
+	        								<input type="email" placeholder="Enter Email here*" name="email" required>
 	        							</div> <!-- /.single-input -->
+										@if ($errors->has('email'))
+											<span class="invalid-feedback">
+												<strong>{{ $errors->first('email') }}</strong>
+											</span>
+										@endif
 	        						</div> <!-- /.col- -->
 	        						<div class="col-sm-6 col-xs-12">
 	        							<div class="single-input">
-	        								<input type="text" placeholder="Phone Number" name="phone">
+	        								<input type="text" placeholder="Phone Number" name="phone" required>
 	        							</div> <!-- /.single-input -->
+										@if ($errors->has('phone'))
+											<span class="invalid-feedback">
+												<strong>{{ $errors->first('phone') }}</strong>
+											</span>
+										@endif
 	        						</div> <!-- /.col- -->
 	        						<div class="col-xs-12">
 	        							<div class="single-input">
-	        								<textarea placeholder="Your Message" name="message"></textarea>
+	        								<textarea placeholder="Your Message" name="message" required></textarea>
 	        							</div> <!-- /.single-input -->
+										@if ($errors->has('message'))
+											<span class="invalid-feedback">
+												<strong>{{ $errors->first('message') }}</strong>
+											</span>
+										@endif
 	        						</div> <!-- /.col- -->
 	        					</div> <!-- /.row -->
 	        					<input type="submit" value="Send Message" class="tran3s p-bg-color">

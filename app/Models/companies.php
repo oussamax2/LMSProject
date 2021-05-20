@@ -81,11 +81,6 @@ class companies extends Model
         return $this->HasMany(courses::class, 'company_id');
     }
 
-    public function sessions()
-    {
-        return $this->HasMany(sessions::class);
-    }
-
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');

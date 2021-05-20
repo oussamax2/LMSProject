@@ -53,7 +53,7 @@ class countries extends Model
 
     public function states()
     {
-        return $this->hasMany(states::class);
+        return $this->hasMany(states::class, 'country_id');
     }
     public function sessions()
     {

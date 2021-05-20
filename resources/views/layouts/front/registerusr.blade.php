@@ -1,27 +1,28 @@
-			<!-- 
+			<!--
 			=============================================
-				Registration Banner  
-			============================================== 
+				Registration Banner
+			==============================================
 			-->
 			<div class="registration-banner">
 				<div class="opacity">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-5 col-xs-12">
-								<div class="registration-form">
-									<form action="#">
+								<div class="registration-form" >
+									<form method="POST" action="{{ route('register_user') }}" enctype="multipart/form-data">
+                                        {{ csrf_field() }}
 										<h2>Register Now</h2>
 										<p>Create  your account and browse thousand of courses!!</p>
 										<div class="form-wrapper">
 											<h6>Your Full Name</h6>
-											<input type="text" placeholder="Your Name">
+											<input type="text" name='name' placeholder="Your Name" required>
 											<h6>Your EMail</h6>
-											<input type="email" placeholder="sample@gmail.com">
+											<input type="email" name="email" placeholder="sample@gmail.com" required>
 											<h6>Password</h6>
-											<input type="password" placeholder="password">
+											<input type="password" name="password" placeholder="password" required>
 											<h6>Confirm Password</h6>
-											<input type="password" placeholder="confirm password">
-											<button class="tran3s hvr-trim">SIGN UP NOW!!</button>
+											<input type="password" name="password_confirmation"  placeholder="confirm password" required>
+											<button type="submit"  class="tran3s hvr-trim">SIGN UP NOW!!</button>
 											<a class="register-company" href="{{ route ('register_vendor') }}">register as a company</a>
 										</div> <!-- /.form-wrapper -->
 									</form>

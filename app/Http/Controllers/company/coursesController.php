@@ -29,7 +29,11 @@ class coursesController extends AppBaseController
      */
     public function index(coursesDataTable $coursesDataTable)
     {
+
         return $coursesDataTable->render('courses.index');
+
+
+
     }
 
     /**
@@ -52,7 +56,7 @@ class coursesController extends AppBaseController
     public function store(CreatecoursesRequest $request)
     {
         $input = $request->all();
-
+        $input['company_id']= auth()->user()->companies->id;
         $courses = $this->coursesRepository->create($input);
 
         Flash::success('Courses saved successfully.');
@@ -69,9 +73,10 @@ class coursesController extends AppBaseController
      */
     public function show($id)
     {
+
         $courses = $this->coursesRepository->find($id);
 
-        if (empty($courses)) {
+        if (empty($courses) ) {
             Flash::error('Courses not found');
 
             return redirect(route('courses.index'));

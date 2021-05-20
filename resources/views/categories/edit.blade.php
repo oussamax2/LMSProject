@@ -18,7 +18,7 @@
                               <strong>Edit Categories</strong>
                           </div>
                           <div class="card-body">
-                              {!! Form::model($categories, ['route' => ['categories.update', $categories->id], 'method' => 'patch']) !!}
+                              {!! Form::model($categories, ['route' => ['categories.update', $categories->id], 'method' => 'patch', 'files' => true, 'enctype' => 'multipart/form-data']) !!}
 
                               @include('categories.fields')
 
