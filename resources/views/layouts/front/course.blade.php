@@ -7,10 +7,10 @@
 						<a href="course-grid.html" class="tran3s">@lang('front.See All Course')</a>
 					</div>
 
-					<div class="row"> 
-					
-					@foreach ($sessionList as $sessionList) 
-					
+					<div class="row">
+
+					@foreach ($sessionList as $sessionList)
+
 						<div class="col-md-4 col-xs-6 wow fadeInLeft">
 							<div class="single-course">
 								<div class="text">
@@ -22,14 +22,15 @@
 										@else
 										   <strong class="s-color float-right">${{$sessionList->fee}}</strong>
 										@endif
-										
+
 									</div>
 									<h5><a href="{{ url('singlsession/1') }}" class="tran3s">{{$sessionList->courses->title}}</a></h5>
 									<ul class="clearfix">
 										<li class="float-left">
 											<i class="flaticon-people"></i>
-										
-											<a href="#" class="tran3s">{{Carbon\Carbon::parse($sessionList->start)->formatLocalized('%b %d')}}</a>
+
+
+											<a href="#" class="tran3s">{{Carbon\Carbon::parse($sessionList->start)->locale('en')->isoFormat(' Do MMMM  YYYY ')}}</a>
 										</li>
 										<li class="float-right">
 											<i class="flaticon-heart"></i>
@@ -40,10 +41,10 @@
 							</div>
 						</div>
 						@endforeach
-					
-						
+
+
 					</div>
-					
+
 				</div>
 			</div>
 {{-- Latest Course --}}
