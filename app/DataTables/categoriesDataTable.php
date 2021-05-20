@@ -18,7 +18,16 @@ class categoriesDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'categories.datatables_actions');
+        return $dataTable->addColumn('action', 'categories.datatables_actions')
+        ->editColumn('picture', '<img class="profile-user-img  img-circle" src="{{ asset("storage/".$picture) }}" style="width: 70px;">')->escapeColumns([]);
+          
+            //   OR METHOD 2 by addColumn
+            //     ->addColumn('picture', function ($dataTable) { 
+            //       $url= asset("storage/".$dataTable['picture']);
+            //       return '<img src="'.$url.'" border="0" width="40" class="img-rounded" align="center" />';
+            //      })->escapeColumns([]);
+
+
     }
 
     /**
@@ -61,9 +70,9 @@ class categoriesDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'name',
-            'order',
-            'picture'
+            'picture',
+            'name'
+            
         ];
     }
 
