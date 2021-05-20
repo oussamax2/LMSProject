@@ -2236,10 +2236,15 @@ footer .bottom-footer {
   position: relative;
   padding-left: 105px;
 }
+.course-details .curriculum-panel-date i.icon{
+  float: right;
+}
+
 .course-sidebar .sidebar-instructor-info .name h6 {
   font-family: 'ExpoArabic-Book';
   font-weight: 700;
   font-size: 18px;
+  margin-bottom: 20px;
 }
 .course-sidebar .sidebar-instructor-info .name span {
   font-style: italic;

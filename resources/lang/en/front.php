@@ -59,6 +59,16 @@ return [
     'Partners' => 'Partners',
     'Our Partners' => 'Our Partners',
     'Partner' => 'Partner',
+    'Posted on' => 'Posted on',
+    'Sub Categories' => 'Sub Categories',
+    'Categories' => 'Categories',
+    'Duration' => 'Duration',
+    'Session' => 'Session',
+    'Price' => 'Price',
+    'Target Audiance :' => 'Target Audiance :',
+    'Follow Now' => 'Follow Now',
+    
+
     'Course' => 'Course',
     'Organizers' => 'Organizers',
     'Contact us' => 'Contact us',
