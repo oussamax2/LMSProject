@@ -24,7 +24,7 @@
 										@endif
 										
 									</div>
-									<h5><a href="{{ url('singlsession/1') }}" class="tran3s">{{$sessionList->note}}</a></h5>
+									<h5><a href="{{ url('singlsession/1') }}" class="tran3s">{{$sessionList->courses->title}}</a></h5>
 									<ul class="clearfix">
 										<li class="float-left">
 											<i class="flaticon-people"></i>

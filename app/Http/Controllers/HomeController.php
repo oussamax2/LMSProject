@@ -12,9 +12,9 @@ class HomeController extends Controller
     {
         /**get latest sessions */
         $sessionList = sessions::orderBy('id', 'desc')->take(5)->get();
-        
+
         return view('front.index')->with('sessionList', $sessionList);
-      
+
     }
     public function partners()
     {
@@ -32,8 +32,10 @@ class HomeController extends Controller
     {
 
         $sessions = sessions::find($id);
-       return view('front.singlcourse', ['sessions'=>$sessions]);
-      //  return $sessions;
+         if(isset($sessions))
+         return view('front.singlcourse', ['sessions'=>$sessions]);
+        else
+         return abort(404);
     }
     public function registeruser()
     {
