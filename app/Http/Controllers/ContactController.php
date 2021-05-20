@@ -9,6 +9,7 @@ use App\Http\Requests\UpdateContactRequest;
 use App\Repositories\ContactRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
+use Illuminate\Http\Request;
 use Response;
 
 class ContactController extends AppBaseController
@@ -60,6 +61,24 @@ class ContactController extends AppBaseController
         return redirect(route('contacts.index'));
     }
 
+    /**sendcontact_method() for public user in front*/
+    public function sendcontact(CreateContactRequest $request)
+    {
+        // $this->validate($request, [
+        //     'name' => 'required|string|max:255',
+        //     'email' => 'required',
+        //     'phone' => 'required',
+        //     'message' => 'required',
+
+        // ]);
+        $input = $request->all();
+
+        $contact = $this->contactRepository->create($input);
+        
+        Flash::success(__('front.your contact was successfully sent!'));
+
+        return view('front.contactp');
+    }
     /**
      * Display the specified Contact.
      *

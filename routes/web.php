@@ -118,3 +118,4 @@ Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controller
 
 
 Route::resource('contacts', App\Http\Controllers\ContactController::class);
+Route::get('sendcontact', [App\Http\Controllers\ContactController::class, 'sendcontact'])->name("sendcontact");
