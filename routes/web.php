@@ -26,7 +26,7 @@ Route::get('/registeruser', [App\Http\Controllers\HomeController::class, 'regist
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 Route::get('/detailcourse', [App\Http\Controllers\HomeController::class, 'detailcourse'])->name('detailcrs');
 Route::get('/register_vendor', [App\Http\Controllers\HomeController::class, 'registervendor'])->name('register_vendor');
-
+Route::post('/store_vendor', [App\Http\Controllers\Auth\RegisterController::class, 'registervendor'])->name('registervendor');
 
 /*
  * Backend admin Routes
@@ -38,13 +38,13 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','role:admin']],
     Route::resource('countries', App\Http\Controllers\countriesController::class);
     Route::resource('states', App\Http\Controllers\statesController::class);
     Route::resource('cities', App\Http\Controllers\citiesController::class);
-    Route::resource('registerations', App\Http\Controllers\registerationsController::class);
+    Route::resource('adminregisterations', App\Http\Controllers\registerationsController::class);
 
     Route::resource('tags', App\Http\Controllers\tagsController::class);
-    Route::resource('courses', App\Http\Controllers\coursesController::class);
+    Route::resource('admincourses', App\Http\Controllers\coursesController::class);
     Route::resource('courseTags', App\Http\Controllers\course_tagController::class);
     Route::resource('categories', App\Http\Controllers\categoriesController::class);
-    Route::resource('sessions', App\Http\Controllers\sessionsController::class);
+    Route::resource('adminsessions', App\Http\Controllers\sessionsController::class);
     Route::resource('roles', App\Http\Controllers\RoleController::class);
     Route::resource('subcategories', App\Http\Controllers\subcategorieController::class);
     Route::resource('companies', App\Http\Controllers\companiesController::class);
@@ -61,7 +61,7 @@ Route::get('verifcompany/{id}', 'App\Http\Controllers\companiesController@update
  * Namespaces indicate folder structure
  */
 
-Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:company']], function () {
+Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:admin|company']], function () {
     Route::get('/', [App\Http\Controllers\BackController::class, 'company'])->name('company');
     Route::resource('registerations', App\Http\Controllers\company\registerationsController::class);
     Route::resource('courses', App\Http\Controllers\company\coursesController::class);

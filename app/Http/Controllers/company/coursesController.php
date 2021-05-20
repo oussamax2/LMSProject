@@ -30,6 +30,7 @@ class coursesController extends AppBaseController
     public function index(coursesDataTable $coursesDataTable)
     {
         return $coursesDataTable->render('courses.index');
+        
     }
 
     /**

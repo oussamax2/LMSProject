@@ -61,7 +61,7 @@ class states extends Model
     
     public function countries()
     {
-        return $this->belongsTo(countries::class);
+        return $this->belongsTo(countries::class, 'country_id');
     }
 
     public function sessions()
