@@ -30,7 +30,7 @@ class coursesController extends AppBaseController
     public function index(coursesDataTable $coursesDataTable)
     {
         return $coursesDataTable->render('courses.index');
-        
+
     }
 
     /**
@@ -53,7 +53,7 @@ class coursesController extends AppBaseController
     public function store(CreatecoursesRequest $request)
     {
         $input = $request->all();
-
+        $input['company_id']= auth()->user()->companies->id;
         $courses = $this->coursesRepository->create($input);
 
         Flash::success('Courses saved successfully.');

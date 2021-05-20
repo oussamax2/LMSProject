@@ -23,6 +23,7 @@ Route::get('/pro_training', [App\Http\Controllers\HomeController::class, 'pro_tr
 Route::get('/list_sessions', [App\Http\Controllers\HomeController::class, 'catg_courses'])->name('course');
 Route::get('/singlsession/{id}', [App\Http\Controllers\HomeController::class, 'singlcourse'])->name('detailcourse');
 Route::get('/registeruser', [App\Http\Controllers\HomeController::class, 'registeruser'])->name('registeruser');
+Route::post('/register_user', [App\Http\Controllers\Auth\RegisterController::class, 'registeruser'])->name('register_user');
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 Route::get('/detailcourse', [App\Http\Controllers\HomeController::class, 'detailcourse'])->name('detailcrs');
 Route::get('/register_vendor', [App\Http\Controllers\HomeController::class, 'registervendor'])->name('register_vendor');
@@ -75,7 +76,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:admin
  */
 
 Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:user']], function () {
-    //--------
+    Route::get('/', [App\Http\Controllers\BackController::class, 'user'])->name('user');
 });
 
 
