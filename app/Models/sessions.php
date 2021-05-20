@@ -27,7 +27,7 @@ class sessions extends Model
 
 
     public $table = 'sessions';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -69,7 +69,7 @@ class sessions extends Model
      * @var array
      */
     public static $rules = [
-        
+
     ];
 
     public function courses()
@@ -106,5 +106,5 @@ class sessions extends Model
     public function cities()
     {
         return $this->BelongsTo(cities::class, 'city');
-    }  
+    }
 }

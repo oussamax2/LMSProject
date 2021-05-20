@@ -7,13 +7,19 @@
   border-radius: 0;
   min-height: auto;
 }
+@media(max-width:768px){
+  #mega-menu-wrapper {
+    float: right !important;
+  }
+}
+
 #mega-menu-wrapper li {position: relative;}
 #mega-menu-wrapper .nav>li {
   float: left
 }
 #mega-menu-wrapper .nav>li>a {
   position: relative;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
   text-transform: uppercase;
   color: #000000;
@@ -86,8 +92,8 @@
 @media (max-width: 991px) { /*---- Set Mobile breakpoint -----*/
   #mega-menu-wrapper .navbar-toggle {
     display: block;
-    margin: 20px 15px 20px 0;
     padding: 0;
+    margin: 15px;
   }
   #mega-menu-wrapper .nav>li.dropdown-holder .sub-menu li a {font-size: 13px;line-height: 38px;}
   #mega-menu-wrapper .nav>li.dropdown-holder .sub-menu .icon {
@@ -142,7 +148,7 @@
   #mega-menu-wrapper .nav>li.dropdown-holder .sub-menu.width-half>li {float: none;width: 100%;}
   #mega-menu-wrapper .nav>li>a {
     border-top: 1px solid #ededed;
-    padding: 0 15px;
+    padding: 0 120px;
     line-height: 45px;
     font-weight: normal;
   }

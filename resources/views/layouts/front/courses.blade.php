@@ -1,13 +1,9 @@
-			<!-- 
-			=============================================
-				Teachers Course
-			============================================== 
-			-->
+{{-- Courses --}}
 			<div class="teachers-course popular-course">
 				<div class="container">
                     <div class="theme-title">
-                    <h3>Courses by Profissional Training</h3>
-                    <a href="course-grid.html" class="profcourse">See All Course</a>
+                    <h3>@lang('front.Courses by Profissional Training')</h3>
+                    <a href="course-grid.html" class="profcourse">@lang('front.See All Course')</a>
                     </div>
 					<div class="row">
 						<div class="teachers-course-slider">
@@ -27,12 +23,12 @@
 											</li>
 											<li class="float-right">
 												<i class="flaticon-heart"></i>
-												<a href="#" class="tran3s">Saudia Arabia,Riyadh</a>
+												<a href="#" class="tran3s">@lang('front.Saudia Arabia,Riyadh')</a>
 											</li>
 										</ul>
 									</div>
-								</div> <!-- /.single-course -->
-							</div> <!-- /.col- -->
+								</div>
+							</div>
 							<div class="item">
 								<div class="single-course">
 								
@@ -50,12 +46,12 @@
 											</li>
 											<li class="float-right">
 												<i class="flaticon-heart"></i>
-												<a href="#" class="tran3s">Saudia Arabia,Riyadh</a>
+												<a href="#" class="tran3s">@lang('front.Saudia Arabia,Riyadh')</a>
 											</li>
 										</ul>
 									</div>
-								</div> <!-- /.single-course -->
-							</div> <!-- /.col- -->
+								</div>
+							</div>
 							<div class="item">
 								<div class="single-course">
 									
@@ -73,12 +69,12 @@
 											</li>
 											<li class="float-right">
 												<i class="flaticon-heart"></i>
-												<a href="#" class="tran3s">Saudia Arabia,Riyadh</a>
+												<a href="#" class="tran3s">@lang('front.Saudia Arabia,Riyadh')</a>
 											</li>
 										</ul>
 									</div>
-								</div> <!-- /.single-course -->
-							</div> <!-- /.col- -->
+								</div>
+							</div>
 							<div class="item">
 								<div class="single-course">
 									
@@ -96,13 +92,14 @@
 											</li>
 											<li class="float-right">
 												<i class="flaticon-heart"></i>
-												<a href="#" class="tran3s">Saudia Arabia,Riyadh</a>
+												<a href="#" class="tran3s">@lang('front.Saudia Arabia,Riyadh')</a>
 											</li>
 										</ul>
 									</div>
-								</div> <!-- /.single-course -->
-							</div> <!-- /.col- -->
+								</div>
+							</div>
 						</div>
-					</div> <!-- /.row -->
-				</div> <!-- /.container -->
-			</div> <!-- /.teachers-course -->
+					</div>
+				</div>
+			</div>
+{{-- Courses --}}

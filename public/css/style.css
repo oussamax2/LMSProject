@@ -435,6 +435,9 @@ header.menu-style-two .logo {
   top:-46px;
   z-index: 99;
 }
+.menu-list a i{
+  font-size: 20px;
+}
 header.menu-style-two #mega-menu-wrapper .nav>li>a,
 header.menu-style-two #mega-menu-wrapper .nav li.dropdown-holder .icon {line-height: 99px;}
 /* ------------- Cart Button ------------*/

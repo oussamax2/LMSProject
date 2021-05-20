@@ -182,6 +182,7 @@
  input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webkit-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;}
 .float-left {float:left;}
 .float-right {float:right;}
+.theme-main-menu .float-right{float:right;}
 .m-top0 {margin-top: 0 !important;}
 .m-bottom0 {margin-bottom: 0 !important;}
 
@@ -268,7 +269,7 @@
   position: absolute;
   bottom: 5px;
   box-shadow: 0px 0px 0px 4px rgb(255 255 255);
-  right: 90px;
+  left: 90px;
 }
 
 .theme-title a:hover {color: #fff;}
@@ -580,7 +581,7 @@ header.menu-style-two.fixed .logo {width: 10%;top:0;}
 #theme-main-banner .camera_caption>div {
   background: transparent;
   position: absolute;
-  width: 100%;
+  width: 100% !important;
   z-index: 1;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -594,14 +595,13 @@ header.menu-style-two.fixed .logo {width: 10%;top:0;}
   font-weight: 200;
   color:#fff;
   text-transform: uppercase;
-  letter-spacing: 1.4px;
-  margin: 5px 0px 30px 50px;
+  margin: 5px 50px 30px 50px;
 }
 #theme-main-banner h1 {
   color: #fff;
   line-height: 70px;
   font-size: 55px;
-  margin: 5px 0px 30px 50px;
+  margin: 5px 50px 30px 50px;
 }
 #theme-main-banner a.banner-button {
   width: 190px;
@@ -1382,6 +1382,7 @@ header.menu-style-two.fixed .logo {width: 10%;top:0;}
 footer {
   background: #282828;
   padding-top: 90px;
+  direction: rtl;
 }
 footer p,footer .footer-list ul li a {
   color: #959595;
@@ -1764,6 +1765,7 @@ footer .bottom-footer {
   text-align: center;
   margin-bottom: 30px;
   overflow: hidden;
+  direction: rtl;
 }
 .inner-banner-coursedetails{
   text-align: center;
@@ -2850,6 +2852,9 @@ footer .bottom-footer {
   margin: 0;
 }
 /*------------------------------- Our Instructors Profile ------------------------*/
+.our-instructor-profile{
+  direction: rtl;
+  }
 .our-instructor-profile .content-info-center .item-info{
   margin-bottom: 15px;
   font-weight: bold;
@@ -2897,7 +2902,7 @@ footer .bottom-footer {
   background: #eaeaea;
   position: absolute;
   top: 10px;
-  right: 45px;
+  left: 45px;
   -webkit-transform:rotate(15deg);
           transform:rotate(15deg);
 }
@@ -2913,7 +2918,7 @@ footer .bottom-footer {
 }
 .teachers-course-slider .item {margin: 0 15px;}
 .teachers-course .owl-theme .owl-nav [class*=owl-] {
-  font-family: 'ExpoArabic-Book';
+  font-family: 'font-awesome';
   background: transparent;
   width: 30px;
   height: 30px;
@@ -2929,7 +2934,7 @@ footer .bottom-footer {
 .teachers-course .owl-theme .owl-nav {
   position: absolute;
   top:-47px;
-  right: 10px;
+  left: 10px;
   margin: 0;
 }
 /*-------------------- Portfolio ----------------------*/
@@ -3934,6 +3939,14 @@ display: flex;
 }
 .navbar-collapse{
   direction: rtl;
+}
+.menu-list a i{
+  font-size: 20px;
+}
+@media (min-width: 1200px){
+.container {
+    max-width: initial;
+}
 }
 
 

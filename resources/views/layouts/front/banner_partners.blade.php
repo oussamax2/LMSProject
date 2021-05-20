@@ -1,17 +1,15 @@
-			<!-- 
-			=============================================
-				Theme Inner Banner
-			============================================== 
-			-->
+
+			{{-- banner partners --}}
 			<div class="inner-banner">
 				<div class="opacity">
 					<div class="container">
-						<h2>Our Partners</h2>
+						<h2>@lang('front.Our Partners')</h2>
 						<ul>
-							<li><a href="index.html" class="tran3s">Home</a></li>
+							<li><a href="index.html" class="tran3s">@lang('front.Home')</a></li>
 							<li>/</li>
-							<li>Partner</li>
+							<li>@lang('front.Partner')</li>
 						</ul>
-					</div> <!-- /.container -->
-				</div> <!-- /.opacity -->
-			</div> <!-- /.inner-banner -->
+					</div>
+				</div>
+			</div>
+			{{-- banner partners --}}

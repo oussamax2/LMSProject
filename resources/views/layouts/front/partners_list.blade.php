@@ -1,8 +1,4 @@
-			<!-- 
-			=============================================
-				Our Instructors
-			============================================== 
-			-->
+{{-- partner list --}}
 			<div class="our-instructor">
 				<div class="container">
 					<div class="row">
@@ -14,8 +10,8 @@
 									</div>
 									<h6><a href="teachers-profile.html" class="tran3s">Jubayer Hasan</a></h6>
 									<p>Web Design &amp; Developer</p>
-								</div> <!-- /.single-member -->
-							</div> <!-- /.col- -->
+								</div>
+							</div>
 							<div class="col-md-3 col-sm-4 col-xs-6">
 								<div class="single-member">
 									<div class="image">
@@ -23,8 +19,8 @@
 									</div>
 									<h6><a href="teachers-profile.html" class="tran3s">Rashed ka.</a></h6>
 									<p>Senior Designer</p>
-								</div> <!-- /.single-member -->
-							</div> <!-- /.col- -->
+								</div>
+							</div>
 							<div class="col-md-3 col-sm-4 col-xs-6">
 								<div class="single-member">
 									<div class="image">
@@ -32,8 +28,8 @@
 									</div>
 									<h6><a href="teachers-profile.html" class="tran3s">Jannatul Ferdous</a></h6>
 									<p>Photographer</p>
-								</div> <!-- /.single-member -->
-							</div> <!-- /.col- -->
+								</div>
+							</div>
 							<div class="col-md-3 col-sm-4 col-xs-6">
 								<div class="single-member">
 									<div class="image">
@@ -41,8 +37,8 @@
 									</div>
 									<h6><a href="teachers-profile.html" class="tran3s">Hasan Masud</a></h6>
 									<p>TV Artist</p>
-								</div> <!-- /.single-member -->
-							</div> <!-- /.col- -->
+								</div>
+							</div>
 							<div class="col-md-3 col-sm-4 col-xs-6">
 								<div class="single-member">
 									<div class="image">
@@ -50,8 +46,8 @@
 									</div>
 									<h6><a href="teachers-profile.html" class="tran3s">Suraiya Khatun</a></h6>
 									<p>Art &amp; Illustrator Expert</p>
-								</div> <!-- /.single-member -->
-							</div> <!-- /.col- -->
+								</div>
+							</div>
 							<div class="col-md-3 col-sm-4 col-xs-6">
 								<div class="single-member">
 									<div class="image">
@@ -59,8 +55,8 @@
 									</div>
 									<h6><a href="teachers-profile.html" class="tran3s">Mahfuz RIad</a></h6>
 									<p>UI/UX Desginer at Unify</p>
-								</div> <!-- /.single-member -->
-							</div> <!-- /.col- -->
+								</div>
+							</div>
 							<div class="col-md-3 col-sm-4 col-xs-6">
 								<div class="single-member">
 									<div class="image">
@@ -68,8 +64,8 @@
 									</div>
 									<h6><a href="teachers-profile.html" class="tran3s">Sayfur Rahman</a></h6>
 									<p>Front-End Developer</p>
-								</div> <!-- /.single-member -->
-							</div> <!-- /.col- -->
+								</div>
+							</div>
 							<div class="col-md-3 col-sm-4 col-xs-6">
 								<div class="single-member">
 									<div class="image">
@@ -77,10 +73,11 @@
 									</div>
 									<h6><a href="teachers-profile.html" class="tran3s">Foqrul islam</a></h6>
 									<p>Marketing Expert</p>
-								</div> <!-- /.single-member -->
-							</div> <!-- /.col- -->
-						</div> <!-- /.instructor-slider -->
-					</div> <!-- /.row -->
-					<a href="#" class="load-more tran3s">Load More</a>
-				</div> <!-- /.container -->
-			</div> <!-- /.our-instructor -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<a href="#" class="load-more tran3s">@lang('front.Load More')</a>
+				</div>
+			</div>
+{{-- partner list --}}

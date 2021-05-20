@@ -6,7 +6,7 @@ use App\Models\sessions;
 
 class HomeController extends Controller
 {
-  
+
 
     public function home()
     {
@@ -28,9 +28,12 @@ class HomeController extends Controller
     {
         return view('front.catg_courses');
     }
-    public function singlcourse()
+    public function singlcourse($id)
     {
-        return view('front.singlcourse');
+
+        $sessions = sessions::find($id);
+       return view('front.singlcourse',['sessions'=>$sessions]);
+      //  return $sessions;
     }
     public function registeruser()
     {
