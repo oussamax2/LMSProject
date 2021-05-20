@@ -66,7 +66,20 @@ return [
     'Total Courses' => 'مجموع الدورات',
     'Total Session' => 'إجمالي الدورة',
     'Total View' => 'إجمالي العرض',
+    'Posted on' => 'نشر',
+
+    'Sub Categories' => 'الفئات الفرعية',
+    'Categories' => 'الفئات',
+    'Duration' => 'المدة الزمنية',
+    'Session' => 'الدورة',
+    'Price' => 'سعر',
+    'Follow Now' => 'اتبع الآن',
+    
+    
+    
+
     'Saudia Arabia,Riyadh' => 'السعودية , الرياض',
+   
     
 
     'Courses by Profissional Training' => 'دورات التدريب المهني',

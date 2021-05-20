@@ -2231,6 +2231,7 @@ footer .bottom-footer {
   font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-size: 18px;
+  margin-bottom: 20px;
 }
 .course-sidebar .sidebar-instructor-info .name span {
   font-style: italic;
