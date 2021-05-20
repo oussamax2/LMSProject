@@ -28,7 +28,7 @@ class HomeController extends Controller
     {
 
         $sessions = sessions::find($id);
-       return view('front.singlcourse',['sessions'=>$sessions]);
+       return view('front.singlcourse', ['sessions'=>$sessions]);
       //  return $sessions;
     }
     public function registeruser()

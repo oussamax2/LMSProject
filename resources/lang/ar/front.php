@@ -66,6 +66,8 @@ return [
     'Total Courses' => 'مجموع الدورات',
     'Total Session' => 'إجمالي الدورة',
     'Total View' => 'إجمالي العرض',
+    'Saudia Arabia,Riyadh' => 'السعودية , الرياض',
+    
 
     'Courses by Profissional Training' => 'دورات التدريب المهني',
     'See All Course' => 'انظر جميع الدورات',

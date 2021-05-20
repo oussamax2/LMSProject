@@ -39,7 +39,7 @@
         <div class="container-fluid">
             <div class="header-wrapper clearfix">
                 {{-- Logo --}}
-                <div class="logo float-left tran4s"><a href="index.html"><img src="images/logo/logo3.png" alt="Logo"></a></div>
+                <div class="logo float-left tran4s"><a href="{{ route ('Campus') }}"><img src="images/logo/logo3.png" alt="Logo"></a></div>
 
                 {{-- Theme Menu --}}
                 <nav class="theme-main-menu float-right navbar" id="mega-menu-wrapper">
