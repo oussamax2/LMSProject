@@ -90,4 +90,5 @@ return [
     'Online & Social Markting' => 'Online & Social Markting',
     'Video & Animation Development' => 'Video & Animation Development',
     'Angular 2 Essential Training JavaScript Framework' => 'Angular 2 Essential Training JavaScript Framework',  
+    'your contact was successfully sent!' => 'your contact was successfully sent!', 
 ];

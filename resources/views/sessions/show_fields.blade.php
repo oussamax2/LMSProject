@@ -30,8 +30,8 @@
 
 <!-- Course Id Field -->
 <div class="form-group">
-    {!! Form::label('course_id', 'Course Id:') !!}
-    <p>{{ $sessions->course_id }}</p>
+    {!! Form::label('course_id', 'Course title:') !!}
+    <p>{{ $sessions->courses->title}}</p>
 </div>
 
 <!-- Country Id Field -->

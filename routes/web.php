@@ -16,7 +16,7 @@
  * Namespaces indicate folder structure
  */
 
-Auth::routes();
+Auth::routes(['verify' => true ,  'register' => false]);
 Route::get('/', [App\Http\Controllers\HomeController::class, 'home'])->name('Campus');
 Route::get('/partners', [App\Http\Controllers\HomeController::class, 'partners'])->name('partners');
 Route::get('/pro_training', [App\Http\Controllers\HomeController::class, 'pro_training'])->name('pro_training');
@@ -28,13 +28,14 @@ Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])-
 Route::get('/detailcourse', [App\Http\Controllers\HomeController::class, 'detailcourse'])->name('detailcrs');
 Route::get('/register_vendor', [App\Http\Controllers\HomeController::class, 'registervendor'])->name('register_vendor');
 Route::post('/store_vendor', [App\Http\Controllers\Auth\RegisterController::class, 'registervendor'])->name('registervendor');
+Route::get('sendcontact', [App\Http\Controllers\ContactController::class, 'sendcontact'])->name("sendcontact");
 
 /*
  * Backend admin Routes
  * Namespaces indicate folder structure
  */
 
-Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','role:admin']], function () {
+Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','verified','role:admin']], function () {
     Route::get('/', [App\Http\Controllers\BackController::class, 'admin'])->name('admin');
     Route::resource('countries', App\Http\Controllers\countriesController::class);
     Route::resource('states', App\Http\Controllers\statesController::class);
@@ -49,6 +50,7 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','role:admin']],
     Route::resource('roles', App\Http\Controllers\RoleController::class);
     Route::resource('subcategories', App\Http\Controllers\subcategorieController::class);
     Route::resource('companies', App\Http\Controllers\companiesController::class);
+    Route::resource('contacts', App\Http\Controllers\ContactController::class);
 
 
 
@@ -111,11 +113,3 @@ Route::post(
  * switchlanguage route
  */
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
-
-
-
-
-
-
-
-Route::resource('contacts', App\Http\Controllers\ContactController::class);

@@ -22,7 +22,7 @@
 							<div class="col-md-12 col-xs-12">
 								<div class="registration-form">
 
-									<form  method="POST" action="{{ route('register_user') }}" enctype="multipart/form-data">
+									<form  method="POST" action="{{ route('registervendor') }}" enctype="multipart/form-data">
                                       {{ csrf_field() }}
 										<div class="row">
 											<div class="col-md-6">

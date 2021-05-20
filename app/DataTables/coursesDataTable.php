@@ -28,7 +28,8 @@ class coursesDataTable extends DataTable
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function query(courses $model)
-    { $user = auth()->user();
+    {
+         $user = auth()->user();
     if($user->hasRole('admin'))
         return $model->newQuery()->with('companies');
         else
