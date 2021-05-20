@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\categories;
 use Illuminate\Http\Request;
 use App\Models\sessions;
 
@@ -11,9 +13,15 @@ class HomeController extends Controller
     public function home()
     {
         /**get latest sessions */
-        $sessionList = sessions::orderBy('id', 'desc')->take(5)->get();
+        $sessionList = sessions::orderBy('id', 'desc')->take(6)->get();
+        /**get latest categories */
+        $categList = categories::orderBy('id', 'desc')->take(6)->get();
         
-        return view('front.index')->with('sessionList', $sessionList);
+        
+        return view('front.index')->with([
+            'sessionList'=>$sessionList,
+            'categList'=>$categList
+            ]);
       
     }
     public function partners()
