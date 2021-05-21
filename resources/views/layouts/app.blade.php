@@ -10,6 +10,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('assets-panel/css/coreui.min.css')}}">
     <link rel="stylesheet" href="{{ asset('assets-panel/css/admin.css')}}">
+    <link rel="stylesheet" href="{{ asset('fonts/icon/font/flaticon.css') }}">
 
     <!-- Ionicons -->
     <link rel="stylesheet" href="{{ asset('assets-panel/css/coreui-icons-free.css')}}">
