@@ -1,16 +1,9 @@
-<<<<<<< HEAD
 <div class="detailssessionlms">
 <!-- Course Id Field -->
 <div class="form-group">
 <i class="icon flaticon-bookmark"></i>
     {!! Form::label('course_id', 'Course Title') !!}
     <p>{{ $sessions->courses->title}}</p>
-=======
-<!-- Course Id Field -->
-<div class="form-group">
-    {!! Form::label('course_id', 'Course Name:') !!}
-    <p>{{ $sessions->courses['title'] }}</p>
->>>>>>> 047e52f00920a4d9f555f20458e03bfb3671eaf2
 </div>
 
 <!-- Start Field -->

@@ -12,5 +12,14 @@ return [
     'User Name'      => 'User Name', 
     'Back'      => 'Back',     
     'Detail'      => 'Detail', 
-    'Registerations'      => 'Registerations',         
+    'Registerations'      => 'Registerations',   
+    'Registration Number'      => 'Registration Number', 
+    'start Date'      => 'start Date',     
+    'end Date'      => 'end Date',       
+    ''      => '',     
+    ''      => '',     
+    ''      => '',       
+    ''      => '',  
+    
+    
 ];

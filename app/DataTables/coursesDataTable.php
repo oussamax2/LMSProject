@@ -78,12 +78,11 @@ class coursesDataTable extends DataTable
     protected function getColumns()
     {
         return [
+            ['data' => 'company_id', 'name' => 'company_id', 'title' => __('forms.Company Name')],
             'title',
-            ['data' => 'company_id', 'name' => 'company Name', 'title' => __('forms.Company Name')],
-            'body',
-            'published_on',
-            ['data' => 'category_id', 'name' => 'Category Name', 'title' => __('forms.Category Name')],
-            ['data' => 'count_session', 'name' => 'session number', 'title' => __('forms.Session Number')],            
+            ['data' => 'category_id', 'name' => 'category_id', 'title' => __('forms.Category Name')],
+            'published_on',            
+            ['data' => 'count_session', 'name' => 'count_session', 'title' => __('forms.Session Number')],            
         ];
     }
 
