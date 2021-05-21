@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 <div class="detailssessionlms">
 <!-- Course Id Field -->
 <div class="form-group">
 <i class="icon flaticon-bookmark"></i>
     {!! Form::label('course_id', 'Course Title') !!}
     <p>{{ $sessions->courses->title}}</p>
+=======
+<!-- Course Id Field -->
+<div class="form-group">
+    {!! Form::label('course_id', 'Course Name:') !!}
+    <p>{{ $sessions->courses['title'] }}</p>
+>>>>>>> 047e52f00920a4d9f555f20458e03bfb3671eaf2
 </div>
 
 <!-- Start Field -->
@@ -19,14 +26,19 @@
     {!! Form::label('end', 'End') !!}
     <p>{{Carbon\Carbon::parse($sessions->end)->isoFormat(' Do MMMM  YYYY ')}}</p>
 </div>
-
-<!-- Fee Field -->
-<div class="form-group">
-<i class="icon flaticon-bookmark"></i>
-    {!! Form::label('fee', 'Fee') !!}
-    <p>{{ $sessions->fee }}</p>
-</div>
-
+@if($sessions->fee == 0)
+    <!-- Fee Field -->
+    <div class="form-group">
+        {!! Form::label('fee', 'Fee:') !!}
+        <p>FREE</p>
+    </div>
+@else
+    <!-- Fee Field -->
+    <div class="form-group">
+        {!! Form::label('fee', 'Fee:') !!}
+        <p>{{ $sessions->fee }}</p>
+    </div>
+@endif
 <!-- Language Field -->
 <div class="form-group">
 <i class="icon flaticon-bookmark"></i>
@@ -55,5 +67,42 @@
     <p>{{ $sessions->note }}</p>
 </div>
 
+<!-- Order Field -->
+<div class="form-group">
+    {!! Form::label('order', __('front.Registration List:')) !!}
+
+
+
+
+        <table class="table table-bordered">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">@lang('front.User name')</th>
+                    <th scope="col">@lang('front.status')</th>
+
+                    </tr>
+                </thead>
+                {{$i=1}}
+                @foreach ($sessions->registerations as $listreg)
+
+                    <tbody>
+                        <tr>
+                            <th scope="row">{{$i++}}</th>
+                            <td>{{$listreg->user['name']}}</td>
+                            <td>{{$listreg->status}}</td>
+
+
+                        </tr>
+
+
+                    </tbody>
+                @endforeach
+        </table>
+
+
+
+
 </div>
+
 

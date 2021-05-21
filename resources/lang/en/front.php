@@ -99,11 +99,21 @@ return [
     'Search courses' => 'Search courses',
     'Saudi Arabia, Riyadh' => 'Saudi Arabia, Riyadh',
     'Browse by Categories' => 'Browse by Categories',
-    'Adobe Photoshop' => 'Adobe Photoshop',
+
     'Design & Development' => 'Design & Development',
     'IOS & Adroid Apps Development' => 'IOS & Adroid Apps Development',
     'Online & Social Markting' => 'Online & Social Markting',
     'Video & Animation Development' => 'Video & Animation Development',
     'Angular 2 Essential Training JavaScript Framework' => 'Angular 2 Essential Training JavaScript Framework',  
     'your contact was successfully sent!' => 'your contact was successfully sent!', 
+
+    'Session List:' => 'Session List:',
+    'Start date' => 'Start date',    
+    'End date' => 'End date',    
+    'Session fee' => 'Session fee', 
+    'Country name' => 'Country name',   
+    'Registration List:' => 'Registration List:', 
+    'User name' => 'User name',     
+    'status' => 'status',         
+    '' => '',         
 ];
