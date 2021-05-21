@@ -96,6 +96,7 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
         ]);
         $user->addRole(['user']);
+        $user->sendEmailVerificationNotification();
 
         auth()->attempt($request->only('email', 'password'));
         return redirect()->intended('/dashboard');
@@ -127,9 +128,9 @@ class RegisterController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-        
-        $user->addRole(['company']);
 
+        $user->addRole(['company']);
+        $user->sendEmailVerificationNotification();
         if ($request->has('picture')){
 
             $image = $this->savepicture($request->file('picture'));
