@@ -88,6 +88,11 @@ return [
     'End date' => 'تاريخ الانتهاء',    
     'Session fee' => 'رسوم الدورة', 
     'Country name' => 'مكان الدورة', 
-    
+
+    'Registration List:' => 'قائمة التسجيلات', 
+    '' => '',     
+    '' => '',         
+    'User name' => 'إسم الطالب',     
+    'status' => 'الحالة',   
 
 ];

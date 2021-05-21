@@ -18,7 +18,26 @@ class sessionsDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'sessions.datatables_actions');
+        return $dataTable->addColumn('action', 'sessions.datatables_actions')
+                        ->editColumn('course_id', function ($dataTable) { 
+                            return $dataTable->courses['title'];
+                            
+                        })
+                        ->editColumn('country_id', function ($dataTable) { 
+                            return $dataTable->countries['name'];
+                            
+                        })
+                        ->editColumn('state', function ($dataTable) { 
+                            return $dataTable->states['name'];
+                            
+                        })   
+                        ->editColumn('city', function ($dataTable) { 
+                            return $dataTable->cities['name'];
+                            
+                        })->escapeColumns([]);
+                        
+                        
+
     }
 
     /**
@@ -64,11 +83,11 @@ class sessionsDataTable extends DataTable
             'start',
             'end',
             'fee',
-            'language',
-            'course_id',
-            'country_id',
-            'state',
-            'city',
+            'language',           
+            ['data' => 'course_id', 'name' => 'course Name', 'title' => __('forms.Course Name')],
+            ['data' => 'country_id', 'name' => 'country Name', 'title' => __('forms.Country Name')],
+            ['data' => 'state', 'name' => 'course Name', 'title' => __('forms.State Name')],
+            ['data' => 'city', 'name' => 'country Name', 'title' => __('forms.City Name')],   
             'note'
         ];
     }

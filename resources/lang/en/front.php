@@ -84,5 +84,9 @@ return [
     'Start date' => 'Start date',    
     'End date' => 'End date',    
     'Session fee' => 'Session fee', 
-    'Country name' => 'Country name',        
+    'Country name' => 'Country name',   
+    'Registration List:' => 'Registration List:', 
+    'User name' => 'User name',     
+    'status' => 'status',         
+    '' => '',         
 ];
