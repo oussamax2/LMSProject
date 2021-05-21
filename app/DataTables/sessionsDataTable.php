@@ -3,6 +3,7 @@
 namespace App\DataTables;
 
 use App\Models\sessions;
+use Carbon\Carbon;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
 
@@ -34,7 +35,19 @@ class sessionsDataTable extends DataTable
                         ->editColumn('city', function ($dataTable) { 
                             return $dataTable->cities['name'];
                             
-                        })->escapeColumns([]);
+                        })
+                        ->editColumn('start', function ($dataTable) { 
+                            return  Carbon::parse($dataTable['start'])->isoFormat(' Do MMMM  YYYY ');
+                            
+                        })   
+                        ->editColumn('end', function ($dataTable) { 
+                            return  Carbon::parse($dataTable['end'])->isoFormat(' Do MMMM  YYYY ');
+                            
+                        })                                                
+                        ->addColumn('count_registrations', function ($dataTable) { 
+                            return count($dataTable->registerations);
+                            
+                        })->escapeColumns([]); 
                         
                         
 
@@ -80,15 +93,13 @@ class sessionsDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'start',
-            'end',
+            ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
+            ['data' => 'course_id', 'name' => 'course_id', 'title' => __('forms.Course Title')],
+            ['data' => 'count_registrations', 'name' => 'count_registrations', 'title' => __('forms.Registration Number')],          
+            ['data' => 'start', 'name' => 'start', 'title' => __('forms.start Date')],
+            ['data' => 'end', 'name' => 'end', 'title' => __('forms.end Date')],
             'fee',
-            'language',           
-            ['data' => 'course_id', 'name' => 'course Name', 'title' => __('forms.Course Name')],
-            ['data' => 'country_id', 'name' => 'country Name', 'title' => __('forms.Country Name')],
-            ['data' => 'state', 'name' => 'course Name', 'title' => __('forms.State Name')],
-            ['data' => 'city', 'name' => 'country Name', 'title' => __('forms.City Name')],   
-            'note'
+
         ];
     }
 

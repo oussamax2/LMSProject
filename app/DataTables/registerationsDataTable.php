@@ -18,7 +18,24 @@ class registerationsDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'registerations.datatables_actions');
+        return $dataTable->addColumn('action', 'registerations.datatables_actions')
+
+                        ->editColumn('user_id', function ($dataTable) { 
+                            return $dataTable->user['name'];
+                            
+                        })
+                        ->addColumn('course_title', function ($dataTable) { 
+                            return $dataTable->sessions->courses['title'];
+                            
+                        })        
+                        ->editColumn('session_id', function ($dataTable) { 
+                            return $dataTable->sessions['start'];
+                            
+                        })->escapeColumns([]);   
+
+       
+                        
+        
     }
 
     /**
@@ -61,9 +78,10 @@ class registerationsDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'session_id',
-            'user_id',
-            'status'
+            ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
+            ['data' => 'user_id', 'name' => 'user_id', 'title' => __('forms.User Name')],
+            ['data' => 'course_title', 'name' => 'course_title', 'title' => __('forms.Course Title')],
+            ['data' => 'session_id', 'name' => 'session_id', 'title' => __('forms.Session startDate')]
         ];
     }
 
