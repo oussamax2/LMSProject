@@ -20,13 +20,14 @@ class CompanyIsVerified
         $response = $next($request);
 if(Auth::user()->hasRole('admin'))
         return $response;
-  if (Auth::check() && (! Auth::user()->companies->status ) || isset(Auth::user()->email_verified_at)) {
+        if(isset(Auth::user()->email_verified_at )){
+  if (Auth::check() && (! Auth::user()->companies->status  )) {
             $isActive = Auth::user()->companies->status;
             Auth::logout();
 
             return redirect('login')->withErrors(__('validation.Your account is not active. Please contact to administrator.'));
 
-        }
+        }}
 
         return $response;
     }
