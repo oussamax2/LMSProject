@@ -1,24 +1,19 @@
-<!-- Id Field -->
-<div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{{ $courses->id }}</p>
-</div>
-
-<!-- Company Id Field -->
-<div class="form-group">
-    {!! Form::label('company_id', 'Company Id:') !!}
-    <p>{{ $courses->company_id }}</p>
-</div>
-
 <!-- Title Field -->
 <div class="form-group">
     {!! Form::label('title', 'Title:') !!}
     <p>{{ $courses->title }}</p>
 </div>
 
+<!-- Company Id Field -->
+<div class="form-group">
+    {!! Form::label('company_id', 'Company Name:') !!}
+    <p>{{ $courses->companies->user->name }}</p>
+</div>
+
+
 <!-- Body Field -->
 <div class="form-group">
-    {!! Form::label('body', 'Body:') !!}
+    {!! Form::label('body', 'course Desciption:') !!}
     <p>{{ $courses->body }}</p>
 </div>
 
@@ -30,25 +25,48 @@
 
 <!-- Category Id Field -->
 <div class="form-group">
-    {!! Form::label('category_id', 'Category Id:') !!}
-    <p>{{ $courses->category_id }}</p>
+    {!! Form::label('category_id', 'Category Name:') !!}
+    <p>{{ $courses->categories->name }}</p>
 </div>
 
-<!-- Tags Field -->
-<div class="form-group">
-    {!! Form::label('tags', 'Tags:') !!}
-    <p>{{ $courses->tags }}</p>
-</div>
 
-<!-- Created At Field -->
+<!-- Session List Field -->
 <div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{{ $courses->created_at }}</p>
-</div>
+    {!! Form::label('order', __('front.Session List:')) !!}
+    
 
-<!-- Updated At Field -->
-<div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{{ $courses->updated_at }}</p>
+        <table class="table table-bordered">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">@lang('front.Start date')</th>
+                    <th scope="col">@lang('front.End date')</th>
+                    <th scope="col">@lang('front.Session fee')</th>
+                    <th scope="col">@lang('front.Country name')</th>
+                    
+                    
+                    </tr>
+                </thead>
+                {{$i=1}}
+                @foreach ($courses->sessions as $listsess) 
+                   
+                    <tbody>
+                        <tr>
+                            <th scope="row">{{$i++}}</th>
+                            <td>{{$listsess['start']}}</td>
+                            <td>{{$listsess['end']}}</td>
+                            <td>{{$listsess['fee']}}</td>
+                            <td>{{$listsess->countries['name']}}</td>                        
+                        
+                        </tr>
+                    
+                    
+                    </tbody>
+                @endforeach    
+        </table>
+    
+
+
+
 </div>
 
