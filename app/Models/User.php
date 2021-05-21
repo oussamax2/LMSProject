@@ -8,7 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Role;
 use App\Models\companies;
-class User extends Authenticatable
+
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory, Notifiable;
 

@@ -79,13 +79,21 @@
 										<div class="name">
 											<h6>{{ $sessions->companies->lastname }}</h6>
 											<ul>
-												<li><a href="{{ $sessions->companies->fcburl }}" class="tran3s"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-												<li><a href="{{ $sessions->companies->twitturl }}" class="tran3s"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-												<li><a href="{{ $sessions->companies->linkdinurl }}" class="tran3s"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-												<li><a href="{{ $sessions->companies->dribbleurl }}" class="tran3s"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+											@if(isset($sessions->companies->fcburl))
+											<li><a href="{{ $sessions->companies->fcburl }}" class="tran3s"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+											@endif
+											@if(isset($sessions->companies->twitturl))
+											<li><a href="{{ $sessions->companies->twitturl }}" class="tran3s"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+											@endif
+											@if(isset($sessions->companies->linkdinurl))
+											<li><a href="{{ $sessions->companies->linkdinurl }}" class="tran3s"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+											@endif
+											@if(isset($sessions->companies->dribbleurl))
+											<li><a href="{{ $sessions->companies->dribbleurl }}" class="tran3s"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+											@endif
 											</ul>
 										</div>
-										<p>@lang('front.Lorem ipsum dolor sit amet, duo vide etiam periculis ei, ius inumian lorem iuvaret. Cum nemro assum copiosae despite')</p>
+										<p>{{ $sessions->companies->shortDescription }}</p>
 										<a href="#" class="tran3s p-bg-color follow hvr-trim">@lang('front.Follow Now')</a>
 									</div>
 								</div>
