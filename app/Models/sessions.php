@@ -79,7 +79,7 @@ class sessions extends Model
 
     public function registerations()
     {
-        return $this->HasMany(registerations::class);
+        return $this->HasMany(registerations::class, 'session_id');
     }
 
     public function User()

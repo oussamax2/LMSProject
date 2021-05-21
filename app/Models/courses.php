@@ -65,7 +65,7 @@ class courses extends Model
 
     public function categories()
     {
-        return $this->belongsTo(categories::class);
+        return $this->belongsTo(categories::class, 'category_id');
     }
 
   

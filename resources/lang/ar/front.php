@@ -114,7 +114,16 @@ return [
     'Angular 2 Essential Training JavaScript Framework' => 'Angular 2 Essential Training JavaScript Framework',
 
     'your contact was successfully sent!' => 'تم إرسال طلبك بنجاح!', 
-    
-    
+    'Session List:' => 'قائمة الدورات',
+    'Start date' => 'تاريخ البدء',    
+    'End date' => 'تاريخ الانتهاء',    
+    'Session fee' => 'رسوم الدورة', 
+    'Country name' => 'مكان الدورة', 
+
+    'Registration List:' => 'قائمة التسجيلات', 
+    '' => '',     
+    '' => '',         
+    'User name' => 'إسم الطالب',     
+    'status' => 'الحالة',   
 
 ];
