@@ -158,4 +158,6 @@ return [
         'username'              => 'اسم المُستخدم',
         'year'                  => 'السنة',
     ],
+
+    'Your account is not active. Please contact to administrator.'=>'حسابك غير فعال. يرجى الاتصال بالمسؤول.',
 ];

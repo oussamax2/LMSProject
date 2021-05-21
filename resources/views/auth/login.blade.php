@@ -28,6 +28,15 @@
                     <div class="card-body">
                         <form method="post" action="{{ url('/login') }}">
                             @csrf
+                            @if ($errors->any())
+                            <div class="alert alert-danger p-0">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        {{ $error }}<br>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                             <h1>@lang('auth.sign_in')</h1>
                             <p class="text-muted">@lang('auth.login.title')</p>
                             <div class="input-group mb-3">
