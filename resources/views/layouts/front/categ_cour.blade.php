@@ -1,9 +1,5 @@
 
-			<!-- 
-			=============================================
-				Our Course
-			============================================== 
-			-->
+{{-- list course --}}
 			<div class="our-course course-list">
 				<div class="container">
 					<div class="row">
@@ -15,15 +11,15 @@
 											<div class="row">
 												<div class="col-md-3 col-lg-3 col-sm-12 col-xs-12">
 													<div class="single-input">
-														<h2 class="searchcoursecampus">Find a course</h2>
+														<h2 class="searchcoursecampus">@lang('front.Find a course')</h2>
 													</div>
 												</div>
 												<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
 													<div class="single-input">
-														<input type="text" name="name" placeholder="Subject or qualification, eg. IT">
+														<input type="text" name="name" placeholder="@lang('front.Subject or qualification, eg. IT')">
 													</div>
 												</div>
-												<div class="col-md-3 col-lg-3 col-sm-12 col-xs-12"><button class="action-button tran3s">Search courses</button></div>
+												<div class="col-md-3 col-lg-3 col-sm-12 col-xs-12"><button class="action-button tran3s">@lang('front.Search courses')</button></div>
 											</div>
 										</form>
 									</div>
@@ -31,10 +27,10 @@
 							</div>
 							<div class="course-style-filter clearfix">
 								<ul class="float-left clearfix">
-									<li><a href="#" class="tran3s active">All</a></li>
-									<li><a href="#" class="tran3s">free</a></li>
+									<li><a href="#" class="tran3s active">@lang('front.All')</a></li>
+									<li><a href="#" class="tran3s">@lang('front.free')</a></li>
 								</ul>
-							</div> <!-- /.course-style-filter -->
+							</div>
 							<div>
 								<div class="single-course clearfix trending">
 
@@ -60,7 +56,7 @@
 											</li>
                                             <li class="float-left">
 												<i class="flaticon-comments"></i>
-												<a href="#" class="tran3s">Category: Human Resources</a>
+												<a href="#" class="tran3s">@lang('front.Category:') Human Resources</a>
 											</li>
 											<li class="float-right">
 												<i class="flaticon-placeholder"></i>
@@ -68,7 +64,7 @@
 											</li>
 										</ul>
 									</div>
-								</div> <!-- /.single-course -->
+								</div>
                                 <div class="single-course clearfix trending">
 
                                     <div class="text float-left">
@@ -93,7 +89,7 @@
 											</li>
                                             <li class="float-left">
 												<i class="flaticon-comments"></i>
-												<a href="#" class="tran3s">Category: Human Resources</a>
+												<a href="#" class="tran3s">@lang('front.Category:') Human Resources</a>
 											</li>
 											<li class="float-right">
 												<i class="flaticon-placeholder"></i>
@@ -101,7 +97,7 @@
 											</li>
 										</ul>
                                     </div>
-                                    </div> <!-- /.single-course -->
+                                    </div>
                                     <div class="single-course clearfix trending">
 
                                     <div class="text float-left">
@@ -126,7 +122,7 @@
 											</li>
                                             <li class="float-left">
 												<i class="flaticon-comments"></i>
-												<a href="#" class="tran3s">Category: Human Resources</a>
+												<a href="#" class="tran3s">@lang('front.Category:') Human Resources</a>
 											</li>
 											<li class="float-right">
 												<i class="flaticon-placeholder"></i>
@@ -134,7 +130,7 @@
 											</li>
 										</ul>
                                     </div>
-                                    </div> <!-- /.single-course -->
+                                    </div>
 								<div class="single-course clearfix">
 									
 									<div class="text float-left">
@@ -159,7 +155,7 @@
 											</li>
                                             <li class="float-left">
 												<i class="flaticon-comments"></i>
-												<a href="#" class="tran3s">Category: Human Resources</a>
+												<a href="#" class="tran3s">@lang('front.Category:') Human Resources</a>
 											</li>
 											<li class="float-right">
 												<i class="flaticon-placeholder"></i>
@@ -167,7 +163,7 @@
 											</li>
 										</ul>
 									</div>
-								</div> <!-- /.single-course -->
+								</div>
 								<div class="single-course clearfix trending">
 									
 									<div class="text float-left">
@@ -192,7 +188,7 @@
 											</li>
                                             <li class="float-left">
 												<i class="flaticon-comments"></i>
-												<a href="#" class="tran3s">Category: Human Resources</a>
+												<a href="#" class="tran3s">@lang('front.Category:') Human Resources</a>
 											</li>
 											<li class="float-right">
 												<i class="flaticon-placeholder"></i>
@@ -200,7 +196,7 @@
 											</li>
 										</ul>
 									</div>
-								</div> <!-- /.single-course -->
+								</div>
 								<div class="single-course clearfix">
 									
 									<div class="text float-left">
@@ -225,7 +221,7 @@
 											</li>
                                             <li class="float-left">
 												<i class="flaticon-comments"></i>
-												<a href="#" class="tran3s">Category: Human Resources</a>
+												<a href="#" class="tran3s">@lang('front.Category:') Human Resources</a>
 											</li>
 											<li class="float-right">
 												<i class="flaticon-placeholder"></i>
@@ -233,22 +229,22 @@
 											</li>
 										</ul>
 									</div>
-								</div> <!-- /.single-course -->
+								</div>
 							</div>
 							
 							<ul class="theme-pagination clearfix">
 								<li><a href="" class="tran3s active">1</a></li>
 								<li><a href="" class="tran3s">2</a></li>
 								<li><a href="" class="tran3s">3</a></li>
-								<li><a href="#" class="tran3s">Next</a></li>
-							</ul> <!-- /.theme-pagination -->
-						</div> <!-- /.popular-course -->
+								<li><a href="#" class="tran3s">@lang('front.Next')</a></li>
+							</ul>
+						</div>
 
-						<!-- ************************* SIDEBAR ***************************** -->
+
 						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
 							<div class="course-sidebar">
 								<div class="sidebar-categories">
-									<h4>Categories</h4>
+									<h4>@lang('front.Categories')</h4>
 									<div class="panel-group theme-accordion" id="accordion">
 									  <div class="panel">
 									    <div class="panel-heading active-panel">
@@ -266,7 +262,7 @@
 									      	</ul>
 									      </div>
 									    </div>
-									  </div> <!-- /panel 1 -->
+									  </div> 
 									  <div class="panel">
 									    <div class="panel-heading">
 									      <h6 class="panel-title">
@@ -283,7 +279,7 @@
 									      	</ul>
 									      </div>
 									    </div>
-									  </div> <!-- /panel 2 -->
+									  </div> 
 									  <div class="panel">
 									    <div class="panel-heading">
 									      <h6 class="panel-title">
@@ -300,7 +296,7 @@
 									      	</ul>
 									      </div>
 									    </div>
-									  </div> <!-- /panel 3 -->
+									  </div> 
 									  <div class="panel">
 									    <div class="panel-heading">
 									      <h6 class="panel-title">
@@ -317,7 +313,7 @@
 									      	</ul>
 									      </div>
 									    </div>
-									  </div> <!-- /panel 4 -->
+									  </div> 
 									  <div class="panel">
 									    <div class="panel-heading">
 									      <h6 class="panel-title">
@@ -334,35 +330,35 @@
 									      	</ul>
 									      </div>
 									    </div>
-									  </div> <!-- /panel 5 -->
-									</div> <!-- end #accordion -->
-								</div> <!-- /.sidebar-categories -->
+									  </div> 
+									</div> 
+								</div>
 
 								<div class="course-filter">
-									<h4>Search By Filters</h4>
+									<h4>@lang('front.Search By Filters')</h4>
 									<form action="" class="main-wrapper">
 
 										<div class="course-price-filter">
-											<h5>Price Range</h5>
+											<h5>@lang('front.Price Range')</h5>
 											<div class="price-ranger">
 												<div class="ranger-min-max-block">
 													<ul class="clearfix">
 														<li class="float-left">
-															<label for="min">From</label>
+															<label for="min">@lang('front.From')</label>
 															<input type="text" class="min" placeholder="$99" readonly>
 														</li>
 														<li class="float-left">
-															<label for="max">To</label>
+															<label for="max">@lang('front.To')</label>
 															<input type="text" class="max" placeholder="$1035" readonly>
 														</li>
 													</ul>
 												</div>
 												<div id="slider-range"></div>
-											</div> <!-- /price-ranger -->
-										</div> <!-- /.course-price-filter -->
+											</div>
+										</div>
 
 										<div class="course-work-level">
-											<h5>Target Audiance</h5>
+											<h5>@lang('front.Target Audiance')</h5>
 											<ul class="clearfix">
 												<li>
 													<input type="checkbox" id="starting">
@@ -385,14 +381,14 @@
 													<label for="advance">Staff</label>
 												</li>
 											</ul>
-										</div> <!-- /.course-work-level -->
+										</div>
 
 										<div class="course-location">
-											<h5>Country</h5>
+											<h5>@lang('front.Country')</h5>
 											<div class="form-group">
 										      <div>
 										        <select id="loaction" class="selectpicker show-tick form-control" data-live-search="true">
-										          <option>All</option>
+										          <option>@lang('front.All')</option>
 										          <option>Bab Ezzouar</option>
 										          <option>Baguio</option>
 										          <option>London</option>
@@ -410,14 +406,14 @@
 										        </select>
 										      </div>
 										    </div>
-										</div> <!-- /.course-location -->
+										</div>
 
                                         <div class="course-location">
-											<h5>City</h5>
+											<h5>@lang('front.City')</h5>
 											<div class="form-group">
 										      <div>
 										        <select id="loaction" class="selectpicker show-tick form-control" data-live-search="true">
-										          <option>All</option>
+										          <option>@lang('front.All')</option>
 										          <option>Bab Ezzouar</option>
 										          <option>Baguio</option>
 										          <option>London</option>
@@ -435,13 +431,14 @@
 										        </select>
 										      </div>
 										    </div>
-										</div> <!-- /.course-location -->
+										</div>
 
-										<div class="button-wrapper"><input type="submit" value="Apply filters" class="p-bg-color tran3s"></div>
-									</form> <!-- /.main-wrapper -->
-								</div> <!-- /.course-filter -->
-							</div> <!-- /.course-sidebar -->
-						</div> <!-- /.col- -->
-					</div> <!-- /.row -->
-				</div> <!-- /.container -->
-			</div> <!-- /.our-course -->
+										<div class="button-wrapper"><input type="submit" value="@lang('front.Apply filters')" class="p-bg-color tran3s"></div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+{{-- list course --}}
