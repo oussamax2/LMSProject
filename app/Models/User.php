@@ -45,7 +45,7 @@ class User extends Authenticatable
     ];
     public function registerations()
     {
-        return $this->HasMany(registerations::class);
+        return $this->HasMany(registerations::class, 'user_id');
     }
 
     public function sessions()

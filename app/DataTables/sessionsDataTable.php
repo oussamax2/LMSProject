@@ -80,14 +80,15 @@ class sessionsDataTable extends DataTable
     protected function getColumns()
     {
         return [
+            ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
             'start',
             'end',
             'fee',
             'language',           
-            ['data' => 'course_id', 'name' => 'course Name', 'title' => __('forms.Course Name')],
-            ['data' => 'country_id', 'name' => 'country Name', 'title' => __('forms.Country Name')],
-            ['data' => 'state', 'name' => 'course Name', 'title' => __('forms.State Name')],
-            ['data' => 'city', 'name' => 'country Name', 'title' => __('forms.City Name')],   
+            ['data' => 'course_id', 'name' => 'course_id', 'title' => __('forms.Course Name')],
+            ['data' => 'country_id', 'name' => 'country_id', 'title' => __('forms.Country Name')],
+            ['data' => 'state', 'name' => 'state', 'title' => __('forms.State Name')],
+            ['data' => 'city', 'name' => 'city', 'title' => __('forms.City Name')],   
             'note'
         ];
     }

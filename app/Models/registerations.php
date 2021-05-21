@@ -56,7 +56,7 @@ class registerations extends Model
 
     public function sessions()
     {
-        return $this->BelongsTo(sessions::class);
+        return $this->BelongsTo(sessions::class, 'session_id');
     }
 
     public function user()
