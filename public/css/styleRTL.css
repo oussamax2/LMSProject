@@ -2073,7 +2073,7 @@ footer .bottom-footer {
   font-size: 20px;
   margin-left: 5px;
 }
-.our-course .theme-pagination {padding-top: 45px;}
+.our-course .theme-pagination {padding-top: 45px; direction: rtl;}
 .theme-pagination {margin: 0 -3px;}
 .theme-pagination li {
   display: inline-block;
@@ -2236,10 +2236,28 @@ footer .bottom-footer {
   position: relative;
   padding-left: 105px;
 }
+.course-details .curriculum-panel-date i.icon{
+  float: right;
+  margin-left: 12px;
+}
+.course-details .curriculum-panel-date b{
+ direction: rtl;
+}
+.course-details .local-sec{
+  direction: rtl;
+ }
+ .inner-banner-coursedetails ul{
+   direction: rtl;
+}
+
+
+
+
 .course-sidebar .sidebar-instructor-info .name h6 {
   font-family: 'ExpoArabic-Book';
   font-weight: 700;
   font-size: 18px;
+  margin-bottom: 20px;
 }
 .course-sidebar .sidebar-instructor-info .name span {
   font-style: italic;
@@ -3788,6 +3806,7 @@ opacity: 0.6;
 }
 .our-course .find-coursecatg{
   margin-bottom: 30px;
+  direction: rtl;
 }
 .our-course .find-coursecatg .single-input{
   margin-bottom: 20px;
@@ -3849,7 +3868,7 @@ color:#fff;
   font-size: 16px;
  }
  .course-details .curriculum-panel-date i{
- margin-right: 12px;
+ margin-left: 8px;
   font-size: 17px;
   font-weight: bold;
  }

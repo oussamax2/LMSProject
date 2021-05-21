@@ -66,6 +66,37 @@ return [
     'Total Courses' => 'مجموع الدورات',
     'Total Session' => 'إجمالي الدورة',
     'Total View' => 'إجمالي العرض',
+    'Posted on' => 'نشر',
+    'Apply filters' => 'تطبيق المرشحات',
+
+    'Search By Filters' => 'البحث عن طريق المرشحات',
+    'Price Range' => 'نطاق السعر',
+    'From' => 'من',
+    'To' => 'إلى',
+    'Country' => 'دولة',
+    'City' => 'مدينة',
+
+    'Sub Categories' => 'الفئات الفرعية',
+    'Categories' => 'الفئات',
+    'Duration' => 'المدة الزمنية',
+    'Session' => 'الدورة',
+    'Price:' => 'السعر:',
+    'Follow Now' => 'اتبع الآن',
+    'To' => 'إلى',
+    'tunisia' => 'تونس',
+    'Saudia Arabia,Riyadh' => 'السعودية , الرياض',
+
+    'Find a course' => 'ابحث عن دورة',
+    'Search courses' => 'البحث في الدورات',
+    'All' => 'الكل',
+    'free' => 'مجانا',
+    'Category:' => 'فئة:',
+    'Next' => 'التالي',
+  
+   
+   
+   
+    
 
     'Courses by Profissional Training' => 'دورات التدريب المهني',
     'See All Course' => 'انظر جميع الدورات',

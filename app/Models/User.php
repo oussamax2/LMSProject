@@ -90,6 +90,7 @@ class User extends Authenticatable
 
     public function companies()
     {
-        return $this->HasMany(companies::class);
+        return $this->hasOne(companies::class,'user_id');
+
     }
 }

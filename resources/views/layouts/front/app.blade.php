@@ -39,7 +39,7 @@
         <div class="container-fluid">
             <div class="header-wrapper clearfix">
                 {{-- Logo --}}
-                <div class="logo float-left tran4s"><a href="index.html"><img src="images/logo/logo3.png" alt="Logo"></a></div>
+                <div class="logo float-left tran4s"><a href="{{ route ('Campus') }}"><img src="images/logo/logo3.png" alt="Logo"></a></div>
 
                 {{-- Theme Menu --}}
                 <nav class="theme-main-menu float-right navbar" id="mega-menu-wrapper">
@@ -77,7 +77,7 @@
                             @auth
                             <li class="dropdown-holder menu-list"><a class="tran3s"><i class="flaticon-user"></i></a>
                                 <ul class="sub-menu">
-                                    <li><a href="{{ auth()->user()->hasRole('admin') ? url('/admin') : url('/dashbord') }}">account</a></li>
+                                    <li><a href="{{ auth()->user()->hasRole('admin') ? url('/admin') : url('/dashboard') }}">account</a></li>
                                     <li><a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">@lang('auth.sign_out')</a>
                                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                             @csrf
@@ -160,6 +160,8 @@
 <script type="text/javascript" src="{{ asset('vendor/jquery-ui/jquery-ui.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('vendor/jquery.mixitup.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/theme.js') }}"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.11/vue.cjs.js"></script>
+@if(!Route::currentRouteName() == 'registeruser' || !Route::currentRouteName() == 'register_vendor' )
 @if($errors->has('email') || $errors->has('password'))
     <script>
     $(function() {
@@ -168,20 +170,11 @@
         });
     });
     </script>
+@endif
 @endif
 @yield('js')
 @section('scripts')
 @parent
-
-@if($errors->has('email') || $errors->has('password'))
-    <script>
-    $(function() {
-        $('#loginModal').modal({
-            show: true
-        });
-    });
-    </script>
-@endif
 @endsection
 </body>
 </html>

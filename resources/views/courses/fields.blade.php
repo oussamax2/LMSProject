@@ -1,8 +1,5 @@
 <!-- Company Id Field -->
-<div class="form-group col-sm-12">
-    {!! Form::label('company_id', 'Company Id:') !!}
-    {!! Form::text('company_id', null, ['class' => 'form-control']) !!}
-</div>
+
 
 <!-- Title Field -->
 <div class="form-group col-sm-12">

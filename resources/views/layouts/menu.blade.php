@@ -3,14 +3,19 @@
 <li class="nav-item" style="background-color: #72808e;height: 43px;padding: 10px 25px 10px 0px;">
 
         <span class="menu-item-dsh">Courses</span><br/>
-        <li class="nav-item {{ Request::is('courses*') ? 'active' : '' }}">
+        <li class="nav-item {{ Request::is('admincourses*') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('courses.index') }}">
                 <span class="icon icon-docs"></span>
                 <span class="menu-item-dsh">Courses</span>
             </a>
         </li>
-
-        <li class="nav-item {{ Request::is('registerations*') ? 'active' : '' }}">
+        <li class="nav-item {{ Request::is('sessions*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('sessions.index') }}">
+                <span class="icon icon-briefcase"></span>
+                <span class="menu-item-dsh">Sessions</span>
+            </a>
+        </li>
+        <li class="nav-item {{ Request::is('adminregisterations*') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('registerations.index') }}">
                 <span class="icon icon-login"></span>
                 <span class="menu-item-dsh">Registerations</span>
@@ -32,12 +37,7 @@
                 <span class="menu-item-dsh">Subcategories</span>
             </a>
         </li>
-        <li class="nav-item {{ Request::is('sessions*') ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('sessions.index') }}">
-                <span class="icon icon-briefcase"></span>
-                <span class="menu-item-dsh">Sessions</span>
-            </a>
-        </li>
+
 
 
 

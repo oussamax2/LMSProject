@@ -1,7 +1,7 @@
-						<!-- 
+						<!--
 			=============================================
 				Theme Inner Banner
-			============================================== 
+			==============================================
 			-->
 			<div class="inner-banner">
 				<div class="opacity">
@@ -10,18 +10,18 @@
 					</div> <!-- /.container -->
 				</div> <!-- /.opacity -->
 			</div> <!-- /.inner-banner -->
-			
-			<!-- 
+
+			<!--
 			=============================================
-				Registration Banner  
-			============================================== 
+				Registration Banner
+			==============================================
 			-->
 			<div class="registration-banner-company">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12 col-xs-12">
 								<div class="registration-form">
-									
+
 									<form  method="POST" action="{{ route('registervendor') }}" enctype="multipart/form-data">
                                       {{ csrf_field() }}
 										<div class="row">

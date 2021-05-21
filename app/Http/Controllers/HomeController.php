@@ -16,13 +16,13 @@ class HomeController extends Controller
         $sessionList = sessions::orderBy('id', 'desc')->take(6)->get();
         /**get latest categories */
         $categList = categories::orderBy('id', 'desc')->take(6)->get();
-        
-        
+
+
         return view('front.index')->with([
             'sessionList'=>$sessionList,
             'categList'=>$categList
             ]);
-      
+
     }
     public function partners()
     {
@@ -40,8 +40,10 @@ class HomeController extends Controller
     {
 
         $sessions = sessions::find($id);
-       return view('front.singlcourse',['sessions'=>$sessions]);
-      //  return $sessions;
+         if(isset($sessions))
+         return view('front.singlcourse', ['sessions'=>$sessions]);
+        else
+         return abort(404);
     }
     public function registeruser()
     {
