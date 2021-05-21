@@ -1,25 +1,10 @@
-<<<<<<< HEAD
-<div class="detailssessionlms">
-<!-- Course Id Field -->
-<div class="form-group">
-<i class="icon flaticon-bookmark"></i>
-    {!! Form::label('course_id', 'Course Title') !!}
-    <p>{{ $sessions->courses->title}}</p>
-=======
-<!-- Course Id Field -->
-<div class="form-group">
-    {!! Form::label('course_id', 'Course Name:') !!}
-    <p>{{ $sessions->courses['title'] }}</p>
->>>>>>> 047e52f00920a4d9f555f20458e03bfb3671eaf2
-</div>
-
-<!-- Start Field -->
+<div class="list-field-detalssessions">
+    <!-- start Field -->
 <div class="form-group">
 <i class="icon flaticon-clock"></i>
     {!! Form::label('start', 'Start') !!}
     <p>{{Carbon\Carbon::parse($sessions->start)->isoFormat(' Do MMMM  YYYY ')}}</p>
 </div>
-
 <!-- End Field -->
 <div class="form-group">
 <i class="icon flaticon-clock"></i>
@@ -29,12 +14,14 @@
 @if($sessions->fee == 0)
     <!-- Fee Field -->
     <div class="form-group">
+    <i class="icon flaticon-bookmark"></i>
         {!! Form::label('fee', 'Fee:') !!}
         <p>FREE</p>
     </div>
 @else
     <!-- Fee Field -->
     <div class="form-group">
+    <i class="icon flaticon-bookmark"></i>
         {!! Form::label('fee', 'Fee:') !!}
         <p>{{ $sessions->fee }}</p>
     </div>
@@ -68,41 +55,32 @@
 </div>
 
 <!-- Order Field -->
-<div class="form-group">
+<div class="form-group listregistersession">
+<i class="icon icon-user-following"></i>
     {!! Form::label('order', __('front.Registration List:')) !!}
+    <div class="table-responsive">
+    <table class="table table-bordered">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">@lang('front.User name')</th>
+                <th scope="col">@lang('front.status')</th>
 
-
-
-
-        <table class="table table-bordered">
-                <thead>
+                </tr>
+            </thead>
+            {{$i=1}}
+            @foreach ($sessions->registerations as $listreg)
+                <tbody>
                     <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">@lang('front.User name')</th>
-                    <th scope="col">@lang('front.status')</th>
-
+                        <th scope="row">{{$i++}}</th>
+                        <td>{{$listreg->user['name']}}</td>
+                        <td>{{$listreg->status}}</td>
                     </tr>
-                </thead>
-                {{$i=1}}
-                @foreach ($sessions->registerations as $listreg)
-
-                    <tbody>
-                        <tr>
-                            <th scope="row">{{$i++}}</th>
-                            <td>{{$listreg->user['name']}}</td>
-                            <td>{{$listreg->status}}</td>
-
-
-                        </tr>
-
-
-                    </tbody>
-                @endforeach
-        </table>
-
-
-
-
+                </tbody>
+            @endforeach
+    </table>
+    </div>
+</div>
 </div>
 
 

@@ -49,6 +49,7 @@ return [
     'Become A Partner' => 'Become A Partner',
     'Spread Your Trainings Worldwide' => 'Spread Your Trainings Worldwide',
     'Get Started Now' => 'Get Started Now',
+    
 
     'It was some time before he obtained any answer, and the reply, when made, was unpropitious.' => 'It was some time before he obtained any answer, and the reply, when made, was unpropitious.',
     'Company' => 'Company',

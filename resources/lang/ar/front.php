@@ -69,6 +69,7 @@ return [
     'Posted on' => 'نشر',
     'Apply filters' => 'تطبيق المرشحات',
 
+
     'Search By Filters' => 'البحث عن طريق المرشحات',
     'Price Range' => 'نطاق السعر',
     'From' => 'من',
