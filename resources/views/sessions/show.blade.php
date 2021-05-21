@@ -11,11 +11,12 @@
           <div class="animated fadeIn">
                  @include('coreui-templates::common.errors')
                  <div class="row">
-                     <div class="col-lg-12">
-                         <div class="card">
+                     <div class="col-lg-8 col-lg-8-offset mx-auto">
+                         <div class="card-details card">
                              <div class="card-header">
+                             <i class="icon-info"></i>
                                  <strong>Details</strong>
-                                  <a href="{{ route('sessions.index') }}" class="btn btn-light">Back</a>
+                                  <a href="{{ route('sessions.index') }}" class="btn btn-light"><i class="icon icon-arrow-right-circle"></i>Back</a>
                              </div>
                              <div class="card-body">
                                  @include('sessions.show_fields')

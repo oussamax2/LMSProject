@@ -243,7 +243,21 @@ footer.app-footer {
 .card .form-group label{
   font-size: 16px;
   color: #072640;
-  font-weight: 400;
+  font-weight: 500;
+  margin: 0;
+  text-transform: uppercase;
+}
+.card-details.card a{
+  float: right;
+
+}
+.card-details .card-header i.icon{
+margin-right: 10px;
+
+}
+.card .form-group p{
+  font-size: 16px;
+  margin: 0;
 }
 .card ul.pagination{
 margin:0;
@@ -304,6 +318,26 @@ table tr td{
   font-size: 20px;
 }
 /*---------------------- cards ----------------------*/
+
+/* details sessions */
+.detailssessionlms .form-group{
+  display: flex;
+}
+.detailssessionlms .form-group i.icon{
+    color: #f36824;
+    margin: -6px 10px 0 10px;
+    font-size: 23px;
+    border: 1px solid #f36824;
+    border-radius: 50%;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+}
+.detailssessionlms .form-group label{
+margin-right: 15px;
+}
+/* /* details sessions */ */
 
 
 
