@@ -30,6 +30,15 @@
         <div class="modal-content">
             <div class="modal-body">
                 <form method="post" action="{{ url('/login') }}">
+                    @if ($errors->any())
+                    <div class="alert alert-danger p-0">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                {{ $error }}<br>
+                            @endforeach
+                        </ul>
+                    </div>
+                     @endif
                     @csrf
                     <h1>@lang('auth.sign_in')</h1>
                     <h3>Sign in to start your session</h3>
