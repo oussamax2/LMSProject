@@ -1,7 +1,7 @@
 <!-- Start Field -->
 <div class="form-group col-sm-12">
     {!! Form::label('start', __('forms.Session startDate')) !!}
-    {!! Form::text('start', null, ['class' => 'form-control', 'id' => 'start']) !!}
+    {!! Form::text('start', null, ['class' => 'form-control','id'=>'start']) !!}
 </div>
 
 @push('scripts')
@@ -24,11 +24,26 @@
     </script>
 @endpush
 
+
 <!-- End Field -->
 <div class="form-group col-sm-12">
     {!! Form::label('end', __('forms.Session endDate')) !!}
-    {!! Form::text('end', null, ['class' => 'form-control', 'id' => 'end']) !!}
+    {!! Form::text('end', null, ['class' => 'form-control','id'=>'end']) !!}
 </div>
+
+@push('scripts')
+   <script type="text/javascript">
+           $('#end').datetimepicker({
+               format: 'YYYY-MM-DD HH:mm:ss',
+               useCurrent: true,
+               icons: {
+                   up: "icon-arrow-up-circle icons font-2xl",
+                   down: "icon-arrow-down-circle icons font-2xl"
+               },
+               sideBySide: true
+           })
+       </script>
+@endpush
 
 
 
