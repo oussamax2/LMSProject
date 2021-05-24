@@ -19,15 +19,7 @@ class coursesDataTable extends DataTable
         $dataTable = new EloquentDataTable($query);
 
         return $dataTable->addColumn('action', 'courses.datatables_actions')
-                         ->editColumn('company_id', function ($dataTable) { 
-                             return $dataTable->companies->user['name'];
-                             
-                         })
-                         ->editColumn('category_id', function ($dataTable) { 
-                             return $dataTable->categories['name'];
-                             
-                         })
-                         ->addColumn('count_session', function ($dataTable) { 
+                        ->addColumn('count_session', function ($dataTable) { 
                              return count($dataTable->sessions);
                              
                          })->escapeColumns([]);                       
@@ -44,9 +36,9 @@ class coursesDataTable extends DataTable
     {
          $user = auth()->user();
     if($user->hasRole('admin'))
-        return $model->newQuery()->with('companies');
+        return $model->newQuery()->with('companies')->with('categories');
         else
-        return $model->newQuery()->where('company_id',$user->companies->id)->with('companies');
+        return $model->newQuery()->where('company_id',$user->companies->id)->with('companies')->with('categories');
     }
 
     /**
@@ -78,9 +70,9 @@ class coursesDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            ['data' => 'company_id', 'name' => 'company_id', 'title' => __('forms.Company Name')],
+            ['data' => 'companies.lastname', 'name' => 'companies.lastname', 'title' => __('forms.Company Name')],
             'title',
-            ['data' => 'category_id', 'name' => 'category_id', 'title' => __('forms.Category Name')],
+            ['data' => 'categories.name', 'name' => 'categories.name', 'title' => __('forms.Category Name')],
             'published_on',            
             ['data' => 'count_session', 'name' => 'count_session', 'title' => __('forms.Session Number')],            
         ];
