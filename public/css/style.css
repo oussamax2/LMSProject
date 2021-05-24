@@ -3927,5 +3927,13 @@ display: flex;
     margin: 1.5rem 0px 0px;
 }
 /* register company style */
+/* new login style */
+.loginverfiy-lms-content .modal-content{
+  box-shadow: 2px 10px 30px rgb(0 0 0 / 20%);
+  margin: 3rem 0;
+}
+/* new login style */
+
+
 
 

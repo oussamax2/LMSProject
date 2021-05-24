@@ -7,7 +7,7 @@
 <!-- End Field -->
 <div class="form-group col-sm-12">
     {!! Form::label('end', 'End:') !!}
-    {!! Form::text('end', null, ['class' => 'form-control']) !!}
+    {!! Form::text('dateTime-local','end', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Fee Field -->

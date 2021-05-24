@@ -320,24 +320,35 @@ table tr td{
 /*---------------------- cards ----------------------*/
 
 /* details sessions */
-.detailssessionlms .form-group{
+.list-field-detalssessions .form-group{
   display: flex;
 }
-.detailssessionlms .form-group i.icon{
+.list-field-detalssessions .listregistersession{
+  display: block;
+}
+.list-field-detalssessions .form-group i.icon{
     color: #f36824;
     margin: -6px 10px 0 10px;
     font-size: 23px;
-    border: 1px solid #f36824;
     border-radius: 50%;
     text-align: center;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
+    line-height: 45px;
 }
-.detailssessionlms .form-group label{
+.list-field-detalssessions .form-group label{
 margin-right: 15px;
 }
-/* /* details sessions */ */
+@media(max-width:768px){
+.list-field-detalssessions .form-group{
+  display: block;
+}
+.list-field-detalssessions .form-group i.icon {
+  font-size: 20px;
+}
+.card .form-group label {
+  font-size: 14px;
+}
+}
+/* /* details sessions */ 
 
 
 
