@@ -30,7 +30,8 @@ class cities extends Model
     public $fillable = [
         'state_id',
         'name',
-        'status'
+        'status',
+        'picture'
     ];
 
     /**
@@ -42,7 +43,8 @@ class cities extends Model
         'id' => 'integer',
         'state_id' => 'integer',
         'name' => 'string',
-        'status' => 'string'
+        'status' => 'string',
+        'picture' => 'string'
     ];
 
     /**
@@ -56,7 +58,7 @@ class cities extends Model
     
     public function states()
     {
-        return $this->belongsTo(states::class);
+        return $this->belongsTo(states::class, 'state_id');
     }
     
     public function sessions()

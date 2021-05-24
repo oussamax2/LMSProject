@@ -18,7 +18,7 @@
                                 <strong>Create Cities</strong>
                             </div>
                             <div class="card-body">
-                                {!! Form::open(['route' => 'cities.store']) !!}
+                                {!! Form::open(['route' => 'cities.store', 'files' => true, 'enctype' => 'multipart/form-data']) !!}
 
                                    @include('cities.fields')
 

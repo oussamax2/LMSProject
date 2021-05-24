@@ -9,6 +9,8 @@ use App\Http\Requests\UpdatecitiesRequest;
 use App\Repositories\citiesRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
+use App\Models\states;
+use Illuminate\Http\UploadedFile;
 use Response;
 
 class citiesController extends AppBaseController
@@ -39,8 +41,19 @@ class citiesController extends AppBaseController
      */
     public function create()
     {
-        return view('cities.create');
+
+        /**get states List and send them to selection list in blade */
+        $liststates = states::pluck('name', 'id');
+        $selectedID = 1;
+
+        return view('cities.create', compact('selectedID', 'liststates'));
     }
+
+    public function savecitiespicture(UploadedFile $file) : string
+    {
+        return $file->store('cities_pictures', ['disk' => 'public']);
+    }
+
 
     /**
      * Store a newly created cities in storage.
@@ -53,9 +66,25 @@ class citiesController extends AppBaseController
     {
         $input = $request->all();
 
-        $cities = $this->citiesRepository->create($input);
+        if ($request->has('picture')){
 
-        Flash::success('Cities saved successfully.');
+           /**save image in intended folder */
+           $image = $this->savecitiespicture($request->file('picture'));
+           $cities = $this->citiesRepository->create($input);
+           $cities->state_id = $request->input('state_id');
+           
+           /**save image in database column */
+           $cities->picture = $image;
+           $cities->save();
+
+        }else{
+
+            $cities = $this->citiesRepository->create($input);
+            $cities->state_id = $request->input('state_id');
+            $cities->save();
+        }   
+
+        Flash::success(__('admin.saved successfully.'));
 
         return redirect(route('cities.index'));
     }
@@ -97,7 +126,12 @@ class citiesController extends AppBaseController
             return redirect(route('cities.index'));
         }
 
-        return view('cities.edit')->with('cities', $cities);
+       /**get states List and send them to selection list in blade */
+       $liststates = states::pluck('name', 'id');
+       $selectedID = 1;
+        
+
+        return view('cities.edit', compact('cities', 'selectedID', 'liststates'));
     }
 
     /**
@@ -118,9 +152,25 @@ class citiesController extends AppBaseController
             return redirect(route('cities.index'));
         }
 
-        $cities = $this->citiesRepository->update($request->all(), $id);
+        if ($request->has('picture')){
 
-        Flash::success('Cities updated successfully.');
+            /**save image in intended folder */
+            $image = $this->savecitiespicture($request->file('picture'));
+    
+            $cities = $this->citiesRepository->update($request->all(), $id);
+            /**save image in database column */
+            $cities->picture = $image;
+            $cities->save();
+ 
+        }else{
+
+            $cities = $this->citiesRepository->update($request->all(), $id);
+        }  
+
+
+
+
+        Flash::success(__('admin.updated successfully.'));
 
         return redirect(route('cities.index'));
     }
