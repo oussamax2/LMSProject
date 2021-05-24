@@ -68,6 +68,7 @@ return [
     'Total View' => 'إجمالي العرض',
     'Posted on' => 'نشر',
     'Apply filters' => 'تطبيق المرشحات',
+    'Register' => 'تسجيل',
 
 
     'Search By Filters' => 'البحث عن طريق المرشحات',

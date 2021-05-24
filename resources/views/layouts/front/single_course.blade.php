@@ -60,6 +60,9 @@
 									</ul>
 								</div>
 							</div>
+							<div class="curriculum-panel-buttonregister float-right">
+									<a href="{{ route ('detailsregister') }}" class="btn btn-default">@lang('front.Register')</a>
+							</div>
 						</div>
 
 						<div class="col-md-4 col-sm-6 col-xs-12">
