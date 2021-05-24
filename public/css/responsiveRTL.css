@@ -226,7 +226,7 @@
 }
 @media(max-width:992px){
   header.menu-style-one .header-wrapper .logo img{
-    width:70px;
+    width:75px;
     }
 
 }
@@ -242,10 +242,14 @@ margin: 4rem;
   margin: 2rem 1rem;
 }
 #theme-main-banner h1{
-  margin: 0px 0px 0px 10px;
+  margin: 0px 15px 15px 0px;
 }
 #theme-main-banner h3 {
-  margin: 0px 0px 0px 10px;
+  margin: 0px 15px 15px 0px;
+}
+.theme-menu-wrapper .theme-main-menu .nav{
+  display: block;
+
 }
 }
 @media(max-width:768px){

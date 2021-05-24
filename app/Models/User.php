@@ -46,7 +46,7 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
     public function registerations()
     {
-        return $this->HasMany(registerations::class);
+        return $this->HasMany(registerations::class, 'user_id');
     }
 
     public function sessions()

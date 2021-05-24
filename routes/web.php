@@ -82,7 +82,7 @@ Route::get('verifcompany/{id}', 'App\Http\Controllers\companiesController@update
  * Namespaces indicate folder structure
  */
 
-Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:admin|company']], function () {
+Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','verified','VerifiedCompany','role:admin|company']], function () {
     Route::get('/', [App\Http\Controllers\BackController::class, 'company'])->name('company');
     Route::resource('registerations', App\Http\Controllers\company\registerationsController::class);
     Route::resource('courses', App\Http\Controllers\company\coursesController::class);
@@ -95,7 +95,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:admin
  * Namespaces indicate folder structure
  */
 
-Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:user']], function () {
+Route::group(['prefix' => 'dashboarduser','middleware' => ['web', 'auth','role:user']], function () {
     Route::get('/', [App\Http\Controllers\BackController::class, 'user'])->name('user');
 });
 

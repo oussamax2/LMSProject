@@ -24,7 +24,7 @@ class courses extends Model
 
 
     public $table = 'courses';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -51,7 +51,7 @@ class courses extends Model
         'body' => 'string',
         'published_on' => 'datetime',
         'category_id' => 'integer'
-        
+
     ];
 
     /**
@@ -60,7 +60,7 @@ class courses extends Model
      * @var array
      */
     public static $rules = [
-        
+
     ];
 
     public function categories()
@@ -68,7 +68,7 @@ class courses extends Model
         return $this->belongsTo(categories::class, 'category_id');
     }
 
-  
+
 
     public function companies()
     {
@@ -86,5 +86,10 @@ class courses extends Model
     public function tag()
     {
         return $this->belongsToMany(\App\Models\tags::class, 'course_tag', 'course_id', 'tag_id');
+    }
+
+    public function user()
+    {
+        return $this->companies->user();
     }
 }

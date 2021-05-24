@@ -19,19 +19,12 @@ class coursesDataTable extends DataTable
         $dataTable = new EloquentDataTable($query);
 
         return $dataTable->addColumn('action', 'courses.datatables_actions')
-                         ->editColumn('company_id', function ($dataTable) { 
-                             return $dataTable->companies->user['name'];
-                             
-                         })
-                         ->editColumn('category_id', function ($dataTable) { 
-                             return $dataTable->categories['name'];
-                             
-                         })
-                         ->addColumn('count_session', function ($dataTable) { 
+
+                         ->addColumn('count_session', function ($dataTable) {
                              return count($dataTable->sessions);
-                             
-                         })->escapeColumns([]);                       
-                         
+
+                         })->escapeColumns([]);
+
     }
 
     /**
@@ -42,11 +35,12 @@ class coursesDataTable extends DataTable
      */
     public function query(courses $model)
     {
+
          $user = auth()->user();
     if($user->hasRole('admin'))
-        return $model->newQuery()->with('companies');
+        return $model->newQuery()->with('companies')->with('categories')->select('courses.*') ;
         else
-        return $model->newQuery()->where('company_id',$user->companies->id)->with('companies');
+        return $model->newQuery()->where('company_id',$user->companies->id)->with('companies')->with('categories');
     }
 
     /**
@@ -66,7 +60,7 @@ class coursesDataTable extends DataTable
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
 
-                ],
+                ], 'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],
             ]);
     }
 
@@ -78,12 +72,11 @@ class coursesDataTable extends DataTable
     protected function getColumns()
     {
         return [
+            ['data' => 'companies.lastname', 'name' => 'companies.lastname', 'title' => __('forms.Company Name'),'searchable' => true ],
             'title',
-            ['data' => 'company_id', 'name' => 'company Name', 'title' => __('forms.Company Name')],
-            'body',
+            ['data' => 'categories.name', 'name' => 'categories.name', 'title' => __('forms.Category Name')],
             'published_on',
-            ['data' => 'category_id', 'name' => 'Category Name', 'title' => __('forms.Category Name')],
-            ['data' => 'count_session', 'name' => 'session number', 'title' => __('forms.Session Number')],            
+            ['data' => 'count_session', 'name' => 'count_session', 'title' => __('forms.Session Number')],
         ];
     }
 
