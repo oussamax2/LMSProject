@@ -19,19 +19,19 @@ class coursesDataTable extends DataTable
         $dataTable = new EloquentDataTable($query);
 
         return $dataTable->addColumn('action', 'courses.datatables_actions')
-                         ->editColumn('company_id', function ($dataTable) { 
+                         ->editColumn('company_id', function ($dataTable) {
                              return $dataTable->companies->user['name'];
-                             
+
                          })
-                         ->editColumn('category_id', function ($dataTable) { 
+                         ->editColumn('category_id', function ($dataTable) {
                              return $dataTable->categories['name'];
-                             
+
                          })
-                         ->addColumn('count_session', function ($dataTable) { 
+                         ->addColumn('count_session', function ($dataTable) {
                              return count($dataTable->sessions);
-                             
-                         })->escapeColumns([]);                       
-                         
+
+                         })->escapeColumns([]);
+
     }
 
     /**
@@ -81,8 +81,8 @@ class coursesDataTable extends DataTable
             ['data' => 'company_id', 'name' => 'company_id', 'title' => __('forms.Company Name')],
             'title',
             ['data' => 'category_id', 'name' => 'category_id', 'title' => __('forms.Category Name')],
-            'published_on',            
-            ['data' => 'count_session', 'name' => 'count_session', 'title' => __('forms.Session Number')],            
+            'published_on',
+            ['data' => 'count_session', 'name' => 'count_session', 'title' => __('forms.Session Number')],
         ];
     }
 
