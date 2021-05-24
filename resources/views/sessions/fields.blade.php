@@ -1,18 +1,40 @@
 <!-- Start Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('start', 'Start:') !!}
-    {!! Form::text('start', null, ['class' => 'form-control']) !!}
+    {!! Form::label('start', __('forms.Session startDate')) !!}
+    {!! Form::text('start', null, ['class' => 'form-control', 'id' => 'start']) !!}
 </div>
+
+@push('scripts')
+    <script type="text/javascript">
+        $('#start').datetimepicker({
+            format: 'YYYY-MM-DD hh:m:ss',
+            useCurrent: true
+        })
+        $('#end').datetimepicker({
+            format: 'YYYY-MM-DD hh:m:ss',
+            useCurrent: true
+        })
+
+
+
+    $('.select2').select2();
+
+
+
+    </script>
+@endpush
 
 <!-- End Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('end', 'End:') !!}
-    {!! Form::text('dateTime-local','end', null, ['class' => 'form-control']) !!}
+    {!! Form::label('end', __('forms.Session endDate')) !!}
+    {!! Form::text('end', null, ['class' => 'form-control', 'id' => 'end']) !!}
 </div>
+
+
 
 <!-- Fee Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('fee', 'Fee:') !!}
+    {!! Form::label('fee', __('front.Session fee')) !!}
     {!! Form::text('fee', null, ['class' => 'form-control']) !!}
 </div>
 
@@ -22,28 +44,28 @@
     {!! Form::text('language', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Course Id Field -->
+<!-- Category Id Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('course_id', 'Course Id:') !!}
-    {!! Form::text('course_id', null, ['class' => 'form-control']) !!}
+    {!! Form::Label('course_id', __('front.courses list:')) !!}
+    {!! Form::select('course_id', $listcourses, $selectedID, ['class' => 'select2 form-control']) !!}
 </div>
 
-<!-- Country Id Field -->
+<!-- Category Id Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('country_id', 'Country Id:') !!}
-    {!! Form::text('country_id', null, ['class' => 'form-control']) !!}
+    {!! Form::Label('country_id', __('front.courses list:')) !!}
+    {!! Form::select('country_id', $listcountries, $selectedID, ['class' => 'form-control select2']) !!}
 </div>
 
-<!-- State Field -->
+<!-- Category Id Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('state', 'State:') !!}
-    {!! Form::text('state', null, ['class' => 'form-control']) !!}
+    {!! Form::Label('state', __('front.courses list:')) !!}
+    {!! Form::select('state', $liststates, $selectedID, ['class' => 'form-control select2']) !!}
 </div>
 
-<!-- City Field -->
+<!-- Category Id Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('city', 'City:') !!}
-    {!! Form::text('city', null, ['class' => 'form-control']) !!}
+    {!! Form::Label('city', __('front.courses list:')) !!}
+    {!! Form::select('city', $listcities, $selectedID, ['class' => 'form-control select2']) !!}
 </div>
 
 <!-- Note Field -->
@@ -57,3 +79,4 @@
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
     <a href="{{ route('sessions.index') }}" class="btn btn-secondary">Cancel</a>
 </div>
+

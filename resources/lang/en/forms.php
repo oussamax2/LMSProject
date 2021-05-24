@@ -17,6 +17,7 @@ return [
     'start Date'      => 'start Date',
     'end Date'      => 'end Date',
     'lang'      => 'English',
+    'State Name'      => 'State Name',
     ''      => '',
     ''      => '',
     ''      => '',

@@ -18,7 +18,7 @@
                               <strong>Edit Cities</strong>
                           </div>
                           <div class="card-body">
-                              {!! Form::model($cities, ['route' => ['cities.update', $cities->id], 'method' => 'patch']) !!}
+                              {!! Form::model($cities, ['route' => ['cities.update', $cities->id], 'method' => 'patch', 'files' => true, 'enctype' => 'multipart/form-data']) !!}
 
                               @include('cities.fields')
 

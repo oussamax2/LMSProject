@@ -18,7 +18,13 @@ class citiesDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'cities.datatables_actions');
+        return $dataTable->addColumn('action', 'cities.datatables_actions')
+                ->editColumn('picture', '<img class="profile-user-img  img-circle" src="{{ asset("storage/".$picture) }}" style="width: 97px;height: 64px;">')
+                ->editColumn('state_id', function ($dataTable) { 
+                    return $dataTable->states['name'];
+                    
+                })->escapeColumns([]);
+        
     }
 
     /**
@@ -61,9 +67,10 @@ class citiesDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'state_id',
+            ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
+            'picture',
             'name',
-            'status'
+            ['data' => 'state_id', 'name' => 'state_id', 'title' => __('forms.State Name')]
         ];
     }
 

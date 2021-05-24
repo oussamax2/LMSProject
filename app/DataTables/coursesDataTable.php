@@ -19,8 +19,7 @@ class coursesDataTable extends DataTable
         $dataTable = new EloquentDataTable($query);
 
         return $dataTable->addColumn('action', 'courses.datatables_actions')
-
-                         ->addColumn('count_session', function ($dataTable) {
+                        ->addColumn('count_session', function ($dataTable) {
                              return count($dataTable->sessions);
 
                          })->escapeColumns([]);
@@ -72,7 +71,7 @@ class coursesDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            ['data' => 'companies.lastname', 'name' => 'companies.lastname', 'title' => __('forms.Company Name'),'searchable' => true ],
+            ['data' => 'companies.lastname', 'name' => 'companies.lastname', 'title' => __('forms.Company Name')],
             'title',
             ['data' => 'categories.name', 'name' => 'categories.name', 'title' => __('forms.Category Name')],
             'published_on',
