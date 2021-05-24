@@ -7,8 +7,6 @@
 @endsection
 
 @section('content')
-
 @include('layouts.front.single_course')
-
 @include('layouts.front.footer')
 @endsection

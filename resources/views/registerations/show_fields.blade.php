@@ -1,3 +1,18 @@
+<!-- timeline registrations -->
+<ul class="vcv-timeline">
+  <li class="vcv-timeline-item vcv-step-done" data-step="1" data-step-title="Download"><span>Download</span></li>
+  <li class="vcv-timeline-item vcv-step-done" data-step="2"><span>Install</span></li>
+  <li class="vcv-timeline-item" data-step="3"><span>Activate</span></li>
+  <li class="vcv-timeline-item" data-step="4"><span>Go Premium</span></li>
+</ul>
+<!-- timeline registrations -->
+<!-- Id Field -->
+
+<!-- Id Field -->
+<div class="form-group">
+    {!! Form::label('id', 'Id:') !!}
+    <p>{{ $registerations->id }}</p>
+</div>
 
 <!-- User Id Field -->
 <div class="form-group">

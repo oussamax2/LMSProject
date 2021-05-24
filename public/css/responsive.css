@@ -250,6 +250,10 @@ margin: 4rem;
 #theme-main-banner h3 {
   margin: 0px 0px 0px 10px;
 }
+  .theme-menu-wrapper .theme-main-menu .nav{
+    display: block;
+  
+  }
 }
 @media(max-width:768px){
 #theme-main-banner .action-button {

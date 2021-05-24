@@ -61,8 +61,4 @@ class HomeController extends Controller
     {
         return view('front.detailcourse');
     }
-    public function loginverif()
-    {
-        return view('front.loginverif');
-    }
 }

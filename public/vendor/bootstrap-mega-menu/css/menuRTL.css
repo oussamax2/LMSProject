@@ -148,7 +148,7 @@
   #mega-menu-wrapper .nav>li.dropdown-holder .sub-menu.width-half>li {float: none;width: 100%;}
   #mega-menu-wrapper .nav>li>a {
     border-top: 1px solid #ededed;
-    padding: 0 120px;
+    padding: 0 50px;
     line-height: 45px;
     font-weight: normal;
   }
