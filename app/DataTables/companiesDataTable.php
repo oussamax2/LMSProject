@@ -19,7 +19,16 @@ class companiesDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'companies.datatables_actions');
+        return $dataTable->addColumn('action', 'companies.datatables_actions')
+         ->editColumn('picture', '<img class="profile-user-img  img-circle" src="{{ asset("storage/".$picture) }}" style="width: 70px;">')
+         ->editColumn('status', function ($companies) {
+             if($companies->status ==0)
+            return '<span class="btn btn-ghost-info icon icon-hourglass"></span>';
+            if($companies->status ==1)
+            return '<span class="btn btn-ghost-danger icon icon-dislike"></span>';
+            if($companies->status ==2)
+            return '<span class="btn btn btn-ghost-success icon icon-like"></span>';})
+         ->escapeColumns([]);;
     }
 
     /**
@@ -62,17 +71,14 @@ class companiesDataTable extends DataTable
     {
         return [
             ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
+            'picture',
             ['data' => 'user.name', 'name' => 'user.name', 'title' => __('firstname')],
             'lastname',
-            'website',
+            ['data' => 'user.email', 'name' => 'user.email', 'title' => __('email')],
             'telephone',
-            'picture',
-            'shortDescription',
-            'description',
-            'fcburl',
-            'twitturl',
-            'linkdinurl',
-            'dribbleurl'
+            'status',
+
+
         ];
     }
 
