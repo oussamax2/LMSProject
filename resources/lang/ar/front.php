@@ -69,6 +69,11 @@ return [
     'Posted on' => 'نشر',
     'Apply filters' => 'تطبيق المرشحات',
     'Register' => 'تسجيل',
+    'messaging' => 'المراسلة',
+    'Send' => 'إرسال',
+    'Enter your message...' => 'أدخل رسالتك...',
+    
+    
 
 
     'Search By Filters' => 'البحث عن طريق المرشحات',

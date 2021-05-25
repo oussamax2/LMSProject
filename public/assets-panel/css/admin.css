@@ -361,6 +361,7 @@ margin-right: 15px;
   padding: 0;
   list-style-type: none;
   color: #a7a7a7;
+  margin-bottom: 40px;
 }
 
 .vcv-timeline-item {
@@ -400,13 +401,13 @@ margin-right: 15px;
 
     .vcv-timeline .vcv-step-done::before {
         content: '';
-        border-color: #aace35;
-        background: #aace35 url(check.svg) no-repeat center;
+        border-color: #36d64c;
+        background: #36d64c url(check.svg) no-repeat center;
         background-size: 60%;
       }
       .vcv-timeline .vcv-step-done::after {
         content: '';
-        background: #aace35;
+        background: #36d64c;
       }
       @media(max-width:700px){
       .vcv-timeline {
@@ -435,20 +436,29 @@ margin-right: 15px;
   flex-flow: column wrap;
   justify-content: space-between;
   width: 100%;
-  max-width: 867px;
   margin: 25px 10px;
   height: calc(100% - 50px);
-  border: 2px solid rgb(8, 8, 8);
   border-radius: 5px;
   background:  linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);;
   box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
 }
+.msger .msger-header-title i.icon{
+  color: #f36824;
+  font-size: 30px;
+  margin-right: 10px;
+}
+.msger .msger-header-title{
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #072640;
+}
+
+
 
 .msger-header {
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  border-bottom: 2px solid rgb(8, 8, 8);;
   background: #eee;
   color: #666;
 }
@@ -524,7 +534,7 @@ margin-right: 15px;
 .msger-inputarea {
   display: flex;
   padding: 10px;
-  border-top: 2px solid rgb(8, 8, 8);
+  border-top: 2px solid #f36824;
   background: #eee;
 }
 .msger-inputarea * {
@@ -539,14 +549,14 @@ margin-right: 15px;
 }
 .msger-send-btn {
   margin-left: 10px;
-  background: rgb(0, 196, 65);
+  background: #36d64c;
   color: #fff;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.23s;
 }
 .msger-send-btn:hover {
-  background: rgb(0, 180, 50);
+  background: #36d64c;
 }
 .msger-chat {
   background-color: #fcfcfe;

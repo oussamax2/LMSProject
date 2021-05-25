@@ -22,6 +22,9 @@ return [
     'countries list:'      => 'قائمة البلدان',       
     'states list:'      => 'قائمة المناطق',  
     'cities list:'      => 'قائمة المدن',     
+    'Student'      => 'طالب',       
+    ''      => '',  
+
     'Registration Number'      => 'عدد التسجيلات',
     'start Date'      => 'تاريخ بداية الدورة',
     'end Date'      => 'تاريخ نهاية الدورة',

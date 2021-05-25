@@ -48,7 +48,7 @@
                         <button class="p-bg-color hvr-trim" type="submit">@lang('auth.sign_in')</button>
                     </div>
                 </form>
-                <div><a href="{{ url('/register') }}" class="p-color tran3s">Not an account?? Sign Up</a></div>
+                <div><a href="{{ url('/registeruser') }}" class="p-color tran3s">Not an account?? Sign Up</a></div>
             </div>
         </div>
     </div>
