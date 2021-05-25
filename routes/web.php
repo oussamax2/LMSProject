@@ -36,6 +36,9 @@ Route::get('/loginverif', [App\Http\Controllers\HomeController::class, 'loginver
 /** verification */
 
 Route::get('/email/verify', function () {
+    if( auth()->user()->email_verified_at)
+    return redirect('/');
+    else
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {

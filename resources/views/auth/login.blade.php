@@ -41,7 +41,6 @@
                      @endif
                     @csrf
                     <h1>@lang('auth.sign_in')</h1>
-                    <h3>Sign in to start your session</h3>
                     <div class="wrapper">
                         <input id="email" placeholder="@lang('auth.email')" type="email" class="form-control {{ $errors->has('email')?'is-invalid':'' }}" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                         @if ($errors->has('email'))
