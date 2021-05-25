@@ -50,6 +50,9 @@ return [
     'Spread Your Trainings Worldwide' => 'Spread Your Trainings Worldwide',
     'Get Started Now' => 'Get Started Now',
     'Register' => 'Register',
+    'messaging' => 'messaging',
+    'Enter your message...' => 'Enter your message...',
+    'Send' => 'Send',
     
 
     'It was some time before he obtained any answer, and the reply, when made, was unpropitious.' => 'It was some time before he obtained any answer, and the reply, when made, was unpropitious.',
