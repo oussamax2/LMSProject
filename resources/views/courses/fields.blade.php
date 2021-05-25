@@ -36,13 +36,12 @@
 
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('category_id', 'Category Id:') !!}
-    {!! Form::text('category_id', null, ['class' => 'form-control']) !!}
+    {!! Form::Label('category_id',  __('front.category list:')) !!}
+    {!! Form::select('category_id', $listcateg, $selectedID, ['class' => 'form-control select2']) !!}
 </div>
-
 <!-- Tags Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('tags', 'Tags:') !!}
+    {!! Form::label('tags', __('front.Target Audiance list:')) !!}
     {!! Form::text('tags', null, ['class' => 'form-control']) !!}
 </div>
 

@@ -9,6 +9,7 @@ use App\Http\Requests\UpdatecoursesRequest;
 use App\Repositories\coursesRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
+use App\Models\categories;
 use Response;
 
 class coursesController extends AppBaseController
@@ -43,7 +44,11 @@ class coursesController extends AppBaseController
      */
     public function create()
     {
-        return view('courses.create');
+        /**get categories List and send them to selection list in blade */
+        $listcateg = categories::pluck('name', 'id');
+        $selectedID = 1; 
+
+        return view('courses.create', compact('selectedID', 'listcateg'));
     }
 
     /**

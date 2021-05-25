@@ -67,19 +67,19 @@
 
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
-    {!! Form::Label('country_id', __('front.courses list:')) !!}
+    {!! Form::Label('country_id', __('front.countries list:')) !!}
     {!! Form::select('country_id', $listcountries, $selectedID, ['class' => 'form-control select2']) !!}
 </div>
 
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
-    {!! Form::Label('state', __('front.courses list:')) !!}
+    {!! Form::Label('state', __('front.states list:')) !!}
     {!! Form::select('state', $liststates, $selectedID, ['class' => 'form-control select2']) !!}
 </div>
 
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
-    {!! Form::Label('city', __('front.courses list:')) !!}
+    {!! Form::Label('city', __('front.cities list:')) !!}
     {!! Form::select('city', $listcities, $selectedID, ['class' => 'form-control select2']) !!}
 </div>
 
