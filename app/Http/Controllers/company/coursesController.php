@@ -81,7 +81,7 @@ class coursesController extends AppBaseController
 
         $courses = $this->coursesRepository->find($id);
 
-        if (empty($courses) ) {
+        if (empty($courses)  || $courses->company_id != auth()->user()->companies->id) {
             Flash::error('Courses not found');
 
             return redirect(route('courses.index'));
@@ -101,14 +101,14 @@ class coursesController extends AppBaseController
     {
         $courses = $this->coursesRepository->find($id);
 
-        if (empty($courses)) {
+        if (empty($courses) || $courses->company_id != auth()->user()->companies->id) {
             Flash::error('Courses not found');
 
             return redirect(route('courses.index'));
         }
         /**get categories List and send them to selection list in blade */
         $listcateg = categories::pluck('name', 'id');
-        $selectedID = 1; 
+        
         return view('courses.edit', compact('courses', 'listcateg'));
     }
 
@@ -131,10 +131,10 @@ class coursesController extends AppBaseController
         }
 
         $courses = $this->coursesRepository->update($request->all(), $id);
-
+        
         Flash::success('Courses updated successfully.');
 
-        return redirect(route('courses.index'));
+        return redirect()->back();
     }
 
     /**
@@ -148,7 +148,7 @@ class coursesController extends AppBaseController
     {
         $courses = $this->coursesRepository->find($id);
 
-        if (empty($courses)) {
+        if (empty($courses) || $courses->company_id != auth()->user()->companies->id) {
             Flash::error('Courses not found');
 
             return redirect(route('courses.index'));
