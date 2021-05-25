@@ -172,7 +172,7 @@ class citiesController extends AppBaseController
 
         Flash::success(__('admin.updated successfully.'));
 
-        return redirect(route('cities.index'));
+        return redirect()->back();
     }
 
     /**

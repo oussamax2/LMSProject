@@ -132,7 +132,7 @@ class subcategorieController extends AppBaseController
       
         Flash::success(__('admin.updated successfully.'));
 
-        return redirect(route('subcategories.index'));
+        return redirect()->back();
     }
 
     /**

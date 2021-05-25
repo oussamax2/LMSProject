@@ -169,7 +169,7 @@ class categoriesController extends AppBaseController
 
         Flash::success(__('admin.updated successfully.'));
 
-        return redirect(route('categories.index'));
+        return redirect()->back();
     }
 
     /**
