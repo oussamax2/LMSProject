@@ -21,7 +21,7 @@ class CompanyIsVerified
 if(Auth::user()->hasRole('admin'))
         return $response;
         if(isset(Auth::user()->email_verified_at )){
-  if (Auth::check() && (! Auth::user()->companies->status  )) {
+  if (Auth::check() && (Auth::user()->companies->status < 2  )) {
             return redirect('/dashboard')->withErrors(__('validation.Your account is not active. Please contact to administrator.'));
 
         }}

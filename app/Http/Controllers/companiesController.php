@@ -84,7 +84,7 @@ class companiesController extends AppBaseController
         }
         /**get all courses of ths companies */
         $listcourses = $companies->courses()->get();
-        
+
 
         /**get cities List */
         $listcities = cities::all();
@@ -93,7 +93,7 @@ class companiesController extends AppBaseController
             'companies'=>$companies,
             'listcourses'=>$listcourses,
             'listcities'=>$listcities,
-        
+
         ]);
     }
 
@@ -136,19 +136,19 @@ class companiesController extends AppBaseController
     {
 
         if ($request->has('picture')){
-         
+
             $image = $this->saveImagecompany($request->file('picture'));
 
             $companies = $this->companiesRepository->find($id);
-           
+
             // $companies->picture = $image;
-                        
+
             if (empty($companies)) {
                 Flash::error(__('admin.Company not found'));
 
                 return redirect(route('companies.index'));
             }
-                        
+
             $companies = $this->companiesRepository->update($request->all(), $id);
             $companies->picture = $image;
             $companies->save();
@@ -162,7 +162,7 @@ class companiesController extends AppBaseController
         }else{
 
             $companies = $this->companiesRepository->find($id);
-                                  
+
             if (empty($companies)) {
                 Flash::error(__('admin.Company not found'));
 
@@ -205,11 +205,11 @@ class companiesController extends AppBaseController
        if (isset($_POST['acceptcompany'])) {
 
             $companies->status = 1;
-       /**if admin clicked on declinecompany button=> the company'status will be 2 ~ rejected company's request */
+       /**if admin clicked on declinecompany button=> the company'status will be 1 ~ rejected company's request */
        } else {
 
             $companies->status = 2;
-         
+
        }
        /**save status in DB */
        $companies->save();

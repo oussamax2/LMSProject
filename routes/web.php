@@ -65,7 +65,7 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','verified','rol
     Route::resource('cities', App\Http\Controllers\citiesController::class);
     Route::resource('adminregisterations', App\Http\Controllers\registerationsController::class);
 
-    Route::resource('tags', App\Http\Controllers\tagsController::class);
+    Route::resource('tags', App\Http\Controllers\tagController::class);
     Route::resource('admincourses', App\Http\Controllers\coursesController::class);
     Route::resource('courseTags', App\Http\Controllers\course_tagController::class);
     Route::resource('categories', App\Http\Controllers\categoriesController::class);
@@ -75,12 +75,12 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','verified','rol
     Route::resource('companies', App\Http\Controllers\companiesController::class);
     Route::resource('contacts', App\Http\Controllers\ContactController::class);
 
-
+    Route::get('verifcompany/{id}', 'App\Http\Controllers\companiesController@update_companyreqst')->name('verifcompany');
 
 });
 
 
-Route::get('verifcompany/{id}', 'App\Http\Controllers\companiesController@update_companyreqst')->name('verifcompany');
+
 
 /*
  * dashboard compny  Routes
