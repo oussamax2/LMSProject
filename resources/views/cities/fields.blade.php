@@ -1,9 +1,16 @@
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
     {!! Form::Label('state_id', __('front.states list:')) !!}
-    {!! Form::select('state_id', $liststates, $selectedID, ['class' => 'form-control']) !!}
+    {!! Form::select('state_id', $liststates, null , ['class' => 'form-control select2']) !!}
 </div>
+@push('scripts')
+    <script type="text/javascript">
+        $('.select2').select2({
+        width: '100%' // need to override the changed default
+        });
+   </script>
 
+@endpush
 <!-- Name Field -->
 <div class="form-group col-sm-12">
     {!! Form::label('name', 'Name:') !!}
@@ -12,13 +19,21 @@
 
 @if(isset($cities->picture))
    <div class="image" ><img style="width: 185px;height: 157px;border: 3px solid #fff;border-radius: 50%;" src="{{ asset("storage/".$cities['picture']) }}" alt=""></div>
-@endif
 
+<!-- Picture Field -->
+<div class="form-group col-sm-12">
+    {!! Form::label('picture', __('admin.Picture:')) !!}
+    {!! Form::file('picture') !!}
+</div>
+@else
 <!-- Picture Field -->
 <div class="form-group col-sm-12">
     {!! Form::label('picture', __('admin.Picture:')) !!}
     {!! Form::file('picture', ['required']) !!}
 </div>
+@endif
+
+
 
 <!-- Status Field -->
 <div class="form-group col-sm-12">

@@ -43,8 +43,7 @@ class subcategorieController extends AppBaseController
         /**get categories List and send them to selection list in blade */
          $listcateg = categories::pluck('name', 'id');
 
-        $selectedID = 1; 
-        return view('subcategories.create', compact('selectedID', 'listcateg'));
+        return view('subcategories.create', compact('listcateg'));
         
     }
 
@@ -60,8 +59,7 @@ class subcategorieController extends AppBaseController
         $input = $request->all();
        
         $subcategorie = $this->subcategorieRepository->create($input);
-        $subcategorie->category_id = $request->input('category_id');
-        $subcategorie->save();
+      
         //  var_dump($subcategorie);
         Flash::success(__('admin.saved successfully.'));
 
@@ -107,8 +105,8 @@ class subcategorieController extends AppBaseController
         /**get categories List and send them to selection list in blade */
         $listcateg = categories::pluck('name', 'id');
 
-        $selectedID = 1; 
-        return view('subcategories.edit', compact('subcategorie', 'selectedID', 'listcateg'));
+       
+        return view('subcategories.edit', compact('subcategorie', 'listcateg'));
  
     }
 
@@ -131,8 +129,7 @@ class subcategorieController extends AppBaseController
         }
 
         $subcategorie = $this->subcategorieRepository->update($request->all(), $id);
-        $subcategorie->category_id = $request->input('category_id');
-        $subcategorie->save();
+      
         Flash::success(__('admin.updated successfully.'));
 
         return redirect(route('subcategories.index'));
