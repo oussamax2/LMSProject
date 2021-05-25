@@ -6,45 +6,51 @@
   <li class="vcv-timeline-item" data-step="4"><span>Go Premium</span></li>
 </ul>
 <!-- timeline registrations -->
-<!-- Id Field -->
-
+<div class="list-field-detalssessions">
 <!-- Id Field -->
 <div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{{ $registerations->id }}</p>
+<i class="icon flaticon-bookmark"></i>
+    {!! Form::label('course_id', 'Course') !!}
+    <p>{{ $registerations->sessions->courses->title}}</p>
 </div>
 
+<!-- description -->
+<div class="form-group">
+<i class="icon icon-book-open"></i>
+    {!! Form::label('description', 'Description') !!}
+    <p>{{ $registerations->sessions->courses->companies->description}}</p>
+</div>
+<!-- Location -->
+<div class="form-group">
+<i class="icon icon-location-pin"></i>
+    {!! Form::label('location', 'Location') !!}
+    <p>{{ $registerations->sessions->countries->name}}</p>
+</div>
+<!-- fee -->
+<div class="form-group">
+<i class="icon flaticon-bookmark"></i>
+    {!! Form::label('price', 'Price') !!}
+    <p>{{ $registerations->sessions->fee}}</p>
+</div>
 <!-- User Id Field -->
 <div class="form-group">
-    {!! Form::label('user_id', __('forms.User Name')) !!}
+<i class="icon icon-user"></i>
+    {!! Form::label('user_id', __('forms.Student')) !!}
     <p>{{ $registerations->user['name'] }}</p>
 </div>
-
 <!-- Session Id Field -->
 <div class="form-group">
-    {!! Form::label('session_id', __('forms.Course Title')) !!}
-    <p>{{ $registerations->sessions->courses->title }}</p>
+  <i class="icon icon-clock"></i>
+    {!! Form::label('session_id', __('forms.Session Start')) !!}
+    <p>{{Carbon\Carbon::parse($registerations->sessions->start)->isoFormat(' Do MMMM  YYYY ')}}</p>
 </div>
-<!-- Session Id Field -->
-<div class="form-group">
-    {!! Form::label('session_id', __('forms.Session startDate')) !!}
-    <p>{{ $registerations->sessions->start }}</p>
-</div>
-
-<!-- Created At Field -->
-<div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{{ $registerations->created_at }}</p>
 </div>
 
 <!-- messagerie-->
 <section class="msger">
   <header class="msger-header">
     <div class="msger-header-title">
-      <i class="fas fa-comment-alt"></i> messaging
-    </div>
-    <div class="msger-header-options">
-      <span><i class="fas fa-cog"></i></span>
+      <i class="icon icon-bubbles"></i> @lang('front.messaging')
     </div>
   </header>
 
@@ -87,8 +93,8 @@
   </main>
 
   <form class="msger-inputarea">
-    <input type="text" class="msger-input" placeholder="Enter your message...">
-    <button type="submit" class="msger-send-btn">Send</button>
+    <input type="text" class="msger-input" placeholder=" @lang('front.Enter your message...')">
+    <button type="submit" class="msger-send-btn"> @lang('front.Send')</button>
   </form>
 </section>
 <!-- messagerie-->

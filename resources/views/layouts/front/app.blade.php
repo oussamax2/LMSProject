@@ -162,7 +162,7 @@
 <script type="text/javascript" src="{{ asset('js/theme.js') }}"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.11/vue.cjs.js"></script>
 
-@if(Route::currentRouteName() != 'registeruser' && Route::currentRouteName() != 'register_vendor' )
+@if(Route::currentRouteName() != 'registeruser' && Route::currentRouteName() != 'register_vendor' && Request::segment(1) !='login' )
 @if($errors->has('email') || $errors->has('password'))
     <script>
     $(function() {
@@ -178,4 +178,5 @@
 @parent
 @endsection
 </body>
+
 </html>
