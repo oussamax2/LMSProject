@@ -15,9 +15,9 @@
 										<p>Create  your account and browse thousand of courses!!</p>
 										<div class="form-wrapper">
 											<h6>Your Full Name</h6>
-											<input type="text" name='name' placeholder="Your Name" required>
+											<input type="text" name='name' placeholder="Your Name" value="{{ old('name') }}"  required>
 											<h6>Your EMail</h6>
-											<input type="email" name="email" placeholder="sample@gmail.com" required>
+											<input type="email" name="email" placeholder="sample@gmail.com" value="{{ old('email') }}" required>
 											<h6>Password</h6>
 											<input type="password" name="password" placeholder="password" required>
 											<h6>Confirm Password</h6>

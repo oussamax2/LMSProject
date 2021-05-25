@@ -30,11 +30,15 @@ Route::get('/detailcourse', [App\Http\Controllers\HomeController::class, 'detail
 Route::get('/register_vendor', [App\Http\Controllers\HomeController::class, 'registervendor'])->name('register_vendor');
 Route::post('/store_vendor', [App\Http\Controllers\Auth\RegisterController::class, 'registervendor'])->name('registervendor');
 Route::get('sendcontact', [App\Http\Controllers\ContactController::class, 'sendcontact'])->name("sendcontact");
+Route::get('/loginverif', [App\Http\Controllers\HomeController::class, 'loginverif'])->name("loginverif");
 
 
 /** verification */
 
 Route::get('/email/verify', function () {
+    if( auth()->user()->email_verified_at)
+    return redirect('/');
+    else
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
