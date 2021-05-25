@@ -7,6 +7,7 @@
           </li>
           <li class="breadcrumb-item active">Edit</li>
         </ol>
+        @include('flash::message')
     <div class="container-fluid">
          <div class="animated fadeIn">
              @include('coreui-templates::common.errors')

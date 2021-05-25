@@ -12,7 +12,7 @@ return [
     'Name:' => ':إسم الفئة',
     'Order:' => ':ترتيب الفئة',
     'Created At:' => ':أنشئت في',
-    'Subcategory List:' => ':قائمة الفئات الفرعية:',
+    'Subcategory List:' => 'قائمة الفئات الفرعية:',    
     'Subcategory name' => 'اسم الفئة الفرعية',   
     'Looking for a' => 'ابحث عن',
     'course' => 'دورة',
@@ -70,8 +70,14 @@ return [
     'Apply filters' => 'تطبيق المرشحات',
     'Register' => 'تسجيل',
     'messaging' => 'المراسلة',
+    'Log Out' => 'تسجيل خروج',
     'Send' => 'إرسال',
+    'Resend Verification Email' => 'إعادة ارسال بريد التحقق',
+    
+    'A new verification link has been sent to the email address you provided during registration.' => 'تم إرسال رابط تحقق جديد إلى عنوان البريد الإلكتروني الذي قدمته أثناء التسجيل.',
     'Enter your message...' => 'أدخل رسالتك...',
+    'Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.' => 'شكرا لتسجيلك! قبل البدء ، هل يمكنك التحقق من عنوان بريدك الإلكتروني من خلال النقر على الرابط الذي أرسلناه إليك عبر البريد الإلكتروني للتو؟ إذا لم تتلق البريد الإلكتروني ، فسنرسل لك رسالة أخرى بكل سرور.',
+
     
     
 
@@ -127,12 +133,19 @@ return [
     'Session fee' => 'رسوم الدورة', 
     'Country name' => 'مكان الدورة', 
 
-    'Registration List:' => 'قائمة التسجيلات', 
-    '' => '',     
-    '' => '',         
+    'Registration List:' => 'قائمة التسجيلات',   
     'User name' => 'إسم الطالب',     
     'status' => 'الحالة',  
     
     'Target Audiance list:' => '',   
-
+    'category list:' => 'قائمة الفئات',
+    'cities list:' => 'قائمة المدن',
+    'states list:' => 'قائمة المناطق', 
+    'countries list:' => 'قائمة الدول',     
+    'courses list:' => 'قائمة الدورات', 
+    '' => '',     
+    '' => '', 
+    '' => '',     
+    '' => '', 
+    
 ];

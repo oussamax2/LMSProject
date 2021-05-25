@@ -3,6 +3,7 @@
 namespace App\DataTables;
 
 use App\Models\courses;
+use Carbon\Carbon;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
 
@@ -22,7 +23,11 @@ class coursesDataTable extends DataTable
                         ->addColumn('count_session', function ($dataTable) {
                              return count($dataTable->sessions);
 
-                         })->escapeColumns([]);
+                         })
+                         ->editColumn('published_on', function ($dataTable) {
+                            return  Carbon::parse($dataTable['published_on'])->isoFormat(' Do MMMM  YYYY ');
+
+                        })->escapeColumns([]);
 
     }
 
@@ -39,7 +44,7 @@ class coursesDataTable extends DataTable
     if($user->hasRole('admin'))
         return $model->newQuery()->with('companies')->with('categories')->select('courses.*') ;
         else
-        return $model->newQuery()->where('company_id',$user->companies->id)->with('companies')->with('categories');
+        return $model->newQuery()->with('companies')->with('categories')->where('company_id',$user->companies->id);
     }
 
     /**
@@ -71,10 +76,11 @@ class coursesDataTable extends DataTable
     protected function getColumns()
     {
         return [
+            ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
             ['data' => 'companies.lastname', 'name' => 'companies.lastname', 'title' => __('forms.Company Name')],
             'title',
             ['data' => 'categories.name', 'name' => 'categories.name', 'title' => __('forms.Category Name')],
-            'published_on',
+            ['data' => 'published_on', 'name' => 'published_on', 'title' => __('forms.Published On:')],
             ['data' => 'count_session', 'name' => 'count_session', 'title' => __('forms.Session Number')],
         ];
     }

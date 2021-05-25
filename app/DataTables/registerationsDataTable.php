@@ -20,9 +20,9 @@ class registerationsDataTable extends DataTable
 
         return $dataTable->addColumn('action', 'registerations.datatables_actions');
 
-       
-                        
-        
+
+
+
     }
 
     /**
@@ -33,7 +33,15 @@ class registerationsDataTable extends DataTable
      */
     public function query(registerations $model)
     {
-        return $model->newQuery()->with('user')->with(['sessions', 'sessions.courses']);
+       $user = auth()->user();
+       if($user->hasRole('admin'))
+       return $model->newQuery()->with('user')->with(['sessions', 'sessions.courses']);
+    else{
+           return $model->newQuery()->with('user')->with(['sessions', 'sessions.courses'])->whereHas('sessions.courses', function ($query) {
+            $user = auth()->user();
+            $query->where('company_id',$user->companies->id);
+
+       });}
     }
 
     /**

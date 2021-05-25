@@ -44,9 +44,9 @@ class citiesController extends AppBaseController
 
         /**get states List and send them to selection list in blade */
         $liststates = states::pluck('name', 'id');
-        $selectedID = 1;
+        // $selectedID = 1;
 
-        return view('cities.create', compact('selectedID', 'liststates'));
+        return view('cities.create', compact('liststates'));
     }
 
     public function savecitiespicture(UploadedFile $file) : string
@@ -71,7 +71,7 @@ class citiesController extends AppBaseController
            /**save image in intended folder */
            $image = $this->savecitiespicture($request->file('picture'));
            $cities = $this->citiesRepository->create($input);
-           $cities->state_id = $request->input('state_id');
+        //    $cities->state_id = $request->input('state_id');
            
            /**save image in database column */
            $cities->picture = $image;
@@ -80,8 +80,8 @@ class citiesController extends AppBaseController
         }else{
 
             $cities = $this->citiesRepository->create($input);
-            $cities->state_id = $request->input('state_id');
-            $cities->save();
+            // $cities->state_id = $request->input('state_id');
+            // $cities->save();
         }   
 
         Flash::success(__('admin.saved successfully.'));
@@ -128,10 +128,10 @@ class citiesController extends AppBaseController
 
        /**get states List and send them to selection list in blade */
        $liststates = states::pluck('name', 'id');
-       $selectedID = 1;
+    
         
 
-        return view('cities.edit', compact('cities', 'selectedID', 'liststates'));
+        return view('cities.edit', compact('cities', 'liststates'));
     }
 
     /**
@@ -172,7 +172,7 @@ class citiesController extends AppBaseController
 
         Flash::success(__('admin.updated successfully.'));
 
-        return redirect(route('cities.index'));
+        return redirect()->back();
     }
 
     /**

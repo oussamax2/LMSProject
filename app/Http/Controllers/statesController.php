@@ -122,7 +122,7 @@ class statesController extends AppBaseController
 
         Flash::success('States updated successfully.');
 
-        return redirect(route('states.index'));
+        return redirect()->back();
     }
 
     /**

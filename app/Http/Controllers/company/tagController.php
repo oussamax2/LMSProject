@@ -122,7 +122,7 @@ class tagController extends AppBaseController
 
         Flash::success('Tag updated successfully.');
 
-        return redirect(route('tags.index'));
+        return redirect()->back();
     }
 
     /**
