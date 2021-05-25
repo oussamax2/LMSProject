@@ -115,5 +115,7 @@ return [
     'Registration List:' => 'Registration List:', 
     'User name' => 'User name',     
     'status' => 'status',         
-    '' => '',         
+    'Target Audiance list:' => 'Target Audiance list:',   
+    '' => '',      
+    '' => '',      
 ];

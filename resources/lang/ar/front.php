@@ -124,6 +124,8 @@ return [
     '' => '',     
     '' => '',         
     'User name' => 'إسم الطالب',     
-    'status' => 'الحالة',   
+    'status' => 'الحالة',  
+    
+    'Target Audiance list:' => '',   
 
 ];

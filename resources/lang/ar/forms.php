@@ -18,7 +18,10 @@ return [
     'end Date'      => 'تاريخ نهاية الدورة',       
     'State Name'      => 'اسم الولاية',   
     'Session endDate'      => 'تاريخ إنتهاء الدورةe',       
-    ''      => '',     
+    'courses list:'      => 'قائمة الدورات',     
+    'countries list:'      => 'قائمة البلدان',       
+    'states list:'      => 'قائمة المناطق',  
+    'cities list:'      => 'قائمة المدن',     
     ''      => '',       
     ''      => '',  
 ];

@@ -18,9 +18,10 @@ return [
     'start Date'      => 'start Date',     
     'end Date'      => 'end Date',       
     'State Name'      => 'State Name',     
-    ''      => '',     
-    ''      => '',       
-    ''      => '',  
-    
-    
+    'courses list:'      => 'courses list:',     
+    'countries list:'      => 'countries list:',       
+    'states list:'      => 'states list:',  
+    'cities list:'      => 'cities list:',  
+    ''      => '',
+    ''      => '',      
 ];
