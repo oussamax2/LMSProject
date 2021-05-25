@@ -10,15 +10,16 @@
 							<div class="col-md-5 col-xs-12">
 								<div class="registration-form" >
 									<form method="POST" action="{{ route('register_user') }}" enctype="multipart/form-data">
-                                        @if ($errors->has('name'))
-                                        <span class="invalid-feedback">
-                                            <strong>{{ $errors->first('name') }}</strong>
-                                        </span>
-                                    @endif
+
                                         {{ csrf_field() }}
 										<h2>Register Now</h2>
 										<p>Create  your account and browse thousand of courses!!</p>
 										<div class="form-wrapper">
+                                            @if ($errors->has('name'))
+                                            <span class="invalid-feedback">
+                                                <strong>{{ $errors->first('name') }}</strong>
+                                            </span>
+                                        @endif
 											<h6>Your Full Name</h6>
 											<input type="text" name='name' placeholder="Your Name" value="{{ old('name') }}"  required>
                                             @if ($errors->has('email'))
@@ -35,14 +36,14 @@
                                             @endif
                                             <h6>Password</h6>
 											<input type="password" name="password" placeholder="password" required>
-                                            @if ($errors->has('email'))
+                                            @if ($errors->has('password'))
                                             <span class="invalid-feedback">
                                                 <strong>{{ $errors->first('password') }}</strong>
                                             </span>
                                             @endif
 											<h6>Confirm Password</h6>
 											<input type="password" name="password_confirmation"  placeholder="confirm password" required>
-                                            @if ($errors->has('email'))
+                                            @if ($errors->has('password'))
                                             <span class="invalid-feedback">
                                                 <strong>{{ $errors->first('password_confirmation') }}</strong>
                                             </span>

@@ -1,5 +1,5 @@
 
-//  Theme Custom jquery file, 
+//  Theme Custom jquery file,
 
     // Created on   : 01/09/2017.
     // Theme Name   : Campus.
@@ -8,7 +8,7 @@
     // Author       : @Unifytheme.
     // Designed By  : @Unifytheme.
     // Developed By : @Unifytheme.
-   
+
 
 
 
@@ -36,17 +36,17 @@ function removePlaceholder () {
                 $(this).on('focusout', function() {
                     $(this).attr('placeholder',$(this).data('holder'));
                 });
-                
+
         });
   }
 }
 
 
-// Theme-banner slider 
+// Theme-banner slider
 function BannerSlider () {
   var banner = $(".banner-one");
   if (banner.length) {
-    banner.camera({ //here I declared some settings, the height and the presence of the thumbnails 
+    banner.camera({ //here I declared some settings, the height and the presence of the thumbnails
       height: '46%',
       pagination: false,
       navigation: true,
@@ -64,11 +64,11 @@ function BannerSlider () {
 }
 
 
-// Theme-banner slider 
+// Theme-banner slider
 function BannerSliderTwo () {
   var bannertwo = $(".banner-two");
   if (bannertwo.length) {
-    bannertwo.camera({ //here I declared some settings, the height and the presence of the thumbnails 
+    bannertwo.camera({ //here I declared some settings, the height and the presence of the thumbnails
       height: '40%',
       pagination: false,
       navigation: true,
@@ -86,13 +86,13 @@ function BannerSliderTwo () {
 }
 
 
-// WOW animation 
+// WOW animation
 function wowAnimation () {
   if($('.wow').length) {
     var wow = new WOW(
     {
       boxClass:     'wow',      // animated element css class (default is wow)
-      animateClass: 'animated', // animation css class (default is animated) 
+      animateClass: 'animated', // animation css class (default is animated)
       mobile:       true,       // trigger animations on mobile devices (default is true)
       live:         true,       // act on asynchronously loaded content (default is true)
       callback:     function(box) {
@@ -244,7 +244,7 @@ function particalBG () {
 }
 
 
-// Partner Logo Footer 
+// Partner Logo Footer
 function partnersLogo () {
   var logoslider = $ ("#partner-logo");
   if(logoslider.length) {
@@ -329,7 +329,7 @@ function scrollToTop () {
         $('.scroll-top').fadeOut();
       }
     });
-    
+
     //Click event to scroll to top
     $('.scroll-top').on('click', function() {
       $('html, body').animate({scrollTop : 0},1500);
@@ -402,7 +402,7 @@ function stickyHeader () {
 
     if (scroll >= 190) sticky.addClass('fixed');
     else sticky.removeClass('fixed');
-    
+
   };
 }
 
@@ -413,7 +413,7 @@ function themeAccrodion () {
     $('.theme-accordion > .panel').on('show.bs.collapse', function (e) {
           var heading = $(this).find('.panel-heading');
           heading.addClass("active-panel");
-          
+
     });
     $('.theme-accordion > .panel').on('hidden.bs.collapse', function (e) {
         var heading = $(this).find('.panel-heading');
@@ -442,8 +442,8 @@ function priceRanger () {
       }
     });
       $( '.price-ranger .ranger-min-max-block .min' ).val( '$' + $( '.price-ranger #slider-range' ).slider( 'values', 0 ) );
-    $( '.price-ranger .ranger-min-max-block .max' ).val( '$' + $( '.price-ranger #slider-range' ).slider( 'values', 1 ) );        
-  };  
+    $( '.price-ranger .ranger-min-max-block .max' ).val( '$' + $( '.price-ranger #slider-range' ).slider( 'values', 1 ) );
+  };
 }
 
 
@@ -456,11 +456,11 @@ function ticketPrize () {
         var quantity = 0;
         }
         $(this).data('0', quantity);
-    $('#amazon5totalpoints').text((quantity * amazon5 )); 
+    $('#amazon5totalpoints').text((quantity * amazon5 ));
   });
 }
 
-// Countdown 
+// Countdown
 function coachcountdown () {
   var countTo= $("#count");
   if(countTo.length) {

@@ -3,7 +3,7 @@
 
 <div class="form-group col-sm-12">
     {!! Form::Label('course_id', __('front.courses list:')) !!}
-    {!! Form::select('course_id', $listcourses, $selectedID, ['class' => 'select2 form-control' ]) !!}
+    {!! Form::select('course_id', $listcourses, null, ['class' => 'select2 form-control' ]) !!}
 </div>
 <div class="form-group col-sm-12">
     {!! Form::label('start', __('forms.Session startDate')) !!}
@@ -68,19 +68,19 @@
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
     {!! Form::Label('country_id', __('front.countries list:')) !!}
-    {!! Form::select('country_id', $listcountries, $selectedID, ['class' => 'form-control select2']) !!}
+    {!! Form::select('country_id', $listcountries, null, ['class' => 'form-control select2']) !!}
 </div>
 
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
     {!! Form::Label('state', __('front.states list:')) !!}
-    {!! Form::select('state', $liststates, $selectedID, ['class' => 'form-control select2']) !!}
+    {!! Form::select('state', $liststates, null, ['class' => 'form-control select2']) !!}
 </div>
 
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
     {!! Form::Label('city', __('front.cities list:')) !!}
-    {!! Form::select('city', $listcities, $selectedID, ['class' => 'form-control select2']) !!}
+    {!! Form::select('city', $listcities, null, ['class' => 'form-control select2']) !!}
 </div>
 
 <!-- Note Field -->

@@ -106,8 +106,10 @@ class coursesController extends AppBaseController
 
             return redirect(route('courses.index'));
         }
-
-        return view('courses.edit')->with('courses', $courses)->with('listcateg', $listcateg);
+        /**get categories List and send them to selection list in blade */
+        $listcateg = categories::pluck('name', 'id');
+        $selectedID = 1;
+        return view('courses.edit', compact('courses', 'listcateg'));
     }
 
     /**
