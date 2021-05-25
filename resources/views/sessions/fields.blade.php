@@ -5,17 +5,23 @@
 </div>
 
 @push('scripts')
-   <script type="text/javascript">
-           $('#start').datetimepicker({
-               format: 'YYYY-MM-DD HH:mm:ss',
-               useCurrent: true,
-               icons: {
-                   up: "icon-arrow-up-circle icons font-2xl",
-                   down: "icon-arrow-down-circle icons font-2xl"
-               },
-               sideBySide: true
-           })
-       </script>
+    <script type="text/javascript">
+        $('#start').datetimepicker({
+            format: 'YYYY-MM-DD hh:m:ss',
+            useCurrent: true
+        })
+        $('#end').datetimepicker({
+            format: 'YYYY-MM-DD hh:m:ss',
+            useCurrent: true
+        })
+
+
+
+    $('.select2').select2();
+
+
+
+    </script>
 @endpush
 
 
@@ -55,26 +61,26 @@
 
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
-    {!! Form::Label('course_id', __('forms.courses list:')) !!}
-    {!! Form::select('course_id', $listcourses, $selectedID, ['class' => 'form-control']) !!}
+    {!! Form::Label('course_id', __('front.courses list:')) !!}
+    {!! Form::select('course_id', $listcourses, $selectedID, ['class' => 'select2 form-control']) !!}
 </div>
 
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
-    {!! Form::Label('country_id', __('forms.countries list:')) !!}
-    {!! Form::select('country_id', $listcountries, $selectedID, ['class' => 'form-control']) !!}
+    {!! Form::Label('country_id', __('front.countries list:')) !!}
+    {!! Form::select('country_id', $listcountries, $selectedID, ['class' => 'form-control select2']) !!}
 </div>
 
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
-    {!! Form::Label('state', __('forms.states list:')) !!}
-    {!! Form::select('state', $liststates, $selectedID, ['class' => 'form-control']) !!}
+    {!! Form::Label('state', __('front.states list:')) !!}
+    {!! Form::select('state', $liststates, $selectedID, ['class' => 'form-control select2']) !!}
 </div>
 
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
-    {!! Form::Label('city', __('forms.cities list:')) !!}
-    {!! Form::select('city', $listcities, $selectedID, ['class' => 'form-control']) !!}
+    {!! Form::Label('city', __('front.cities list:')) !!}
+    {!! Form::select('city', $listcities, $selectedID, ['class' => 'form-control select2']) !!}
 </div>
 
 <!-- Note Field -->
@@ -88,3 +94,4 @@
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
     <a href="{{ route('sessions.index') }}" class="btn btn-secondary">Cancel</a>
 </div>
+

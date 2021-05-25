@@ -147,5 +147,7 @@ return [
     */
 
     'attributes' => [],
+    'Your account is not active. Please contact to administrator.'=>'Your account is not active. Please contact to administrator.',
+
 
 ];

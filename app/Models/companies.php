@@ -28,7 +28,7 @@ class companies extends Model
 
 
     public $table = 'companies';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -73,7 +73,7 @@ class companies extends Model
      * @var array
      */
     public static $rules = [
-        
+
     ];
 
     public function courses()

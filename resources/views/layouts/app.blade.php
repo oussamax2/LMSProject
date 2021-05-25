@@ -10,7 +10,10 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('assets-panel/css/coreui.min.css')}}">
     <link rel="stylesheet" href="{{ asset('assets-panel/css/admin.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets-panel/css/select2.min.css')}}">
     <link rel="stylesheet" href="{{ asset('fonts/icon/font/flaticon.css') }}">
+
+
 
     <!-- Ionicons -->
     <link rel="stylesheet" href="{{ asset('assets-panel/css/coreui-icons-free.css')}}">
@@ -137,6 +140,7 @@
 </body>
 <!-- jQuery 3.1.1 -->
 <script src="{{ asset('assets-panel/js/jquery-3.3.1.min.js')}}"></script>
+<script src="{{ asset('assets-panel/js/select2.min.js')}}"></script>
 <script src="{{ asset('assets-panel/js/popper.min.js')}}"></script>
 <script src="{{ asset('assets-panel/js/bootstrap.min.js')}}"></script>
 <script src="{{ asset('assets-panel/js/moment.min.js')}}"></script>
