@@ -3968,9 +3968,9 @@ display: flex;
   margin-bottom: 20px;
 }
 .register-company{
-    color: #43f32e;
-    font-size: 17px;
-    margin: 1.5rem 0px 0px;
+  color: #36d64c;
+  font-size: 18px;
+  margin: 1.5rem 0px 0px;
 }
 .navbar-collapse{
   direction: rtl;
@@ -3983,6 +3983,59 @@ display: flex;
     max-width: initial;
 }
 }
+
+/* mail verify style */
+.content-mail-verify{
+  background: #fff;
+  padding: 10px;
+  margin: 2rem;
+  box-shadow: 0px 1px 20px 0px rgb(0 0 0 / 20%);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  border-top: 2px solid #ff7417;
+  }
+  .content-buttonverify{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 40px 0;
+    align-items: center;
+    }
+    @media(min-width:992px){
+    .content-mail-verify .description-mailverify{
+      width: 70%;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+    }}
+    .content-buttonverify .button-veriflmss{
+      background: #ff7417;
+      color: #fff;
+      border: none; 
+      padding: 10px; 
+      text-transform: uppercase; 
+      margin-right: 50px;
+        }
+        .content-buttonverify .button-veriflmssgr{
+          background: #ddd;
+           border: none; 
+           padding: 10px; 
+           text-transform: uppercase;"
+          }
+          
+  /* mail verify style */
+  
+  /* invalid feedback */
+  .invalid-feedback {
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 80%;
+    color: #e3342f;
+  }
+  /* invalid feedback */
 
 
 

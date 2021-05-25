@@ -44,7 +44,7 @@ Route::get('/email/verify', function () {
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
     $request->fulfill();
 
-    return redirect('/home');
+    return redirect('/');
 })->middleware(['auth', 'signed'])->name('verification.verify');
 
 Route::post('/email/verification-notification', function (Request $request) {
@@ -52,6 +52,7 @@ Route::post('/email/verification-notification', function (Request $request) {
 
     return back()->with('message', 'Verification link sent!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
 /*
  * Backend admin Routes
  * Namespaces indicate folder structure
@@ -85,9 +86,10 @@ Route::get('verifcompany/{id}', 'App\Http\Controllers\companiesController@update
  * dashboard compny  Routes
  * Namespaces indicate folder structure
  */
-
-Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','verified','VerifiedCompany','role:admin|company']], function () {
+Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:admin|company']], function () {
     Route::get('/', [App\Http\Controllers\BackController::class, 'company'])->name('company');
+});
+Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','verified','VerifiedCompany','role:admin|company']], function () {
     Route::resource('registerations', App\Http\Controllers\company\registerationsController::class);
     Route::resource('courses', App\Http\Controllers\company\coursesController::class);
      Route::resource('sessions', App\Http\Controllers\company\sessionsController::class);

@@ -1,8 +1,4 @@
-			<!--
-			=============================================
-				Registration Banner
-			==============================================
-			-->
+{{-- registrations --}}
 			<div class="registration-banner">
 				<div class="opacity">
 					<div class="container">
@@ -21,6 +17,9 @@
                                             </span>
                                         @endif
 											<h6>Your Full Name</h6>
+
+										
+
 											<input type="text" name='name' placeholder="Your Name" value="{{ old('name') }}"  required>
                                             @if ($errors->has('email'))
                                             <span class="invalid-feedback">
@@ -50,9 +49,9 @@
                                             @endif
                                             <button type="submit"  class="tran3s hvr-trim">SIGN UP NOW!!</button>
 											<a class="register-company" href="{{ route ('register_vendor') }}">register as a company</a>
-										</div> <!-- /.form-wrapper -->
+										</div>
 									</form>
-								</div> <!-- /.registration-form -->
+								</div>
 							</div>
 
 							<div class="col-md-7 col-xs-12">
@@ -64,24 +63,25 @@
 											<div class="single-box">
 						        				<h3><span class="counter">8,759</span></h3>
 						        				<p>Currently Use</p>
-						        			</div> <!-- /.single-box -->
+						        			</div>
 										</li>
 										<li class="float-left">
 											<div class="single-box">
 						        				<h3><span class="counter">42</span>M</h3>
 						        				<p>Total Students</p>
-						        			</div> <!-- /.single-box -->
+						        			</div>
 										</li>
 										<li class="float-left">
 											<div class="single-box">
 						        				<h3><span class="counter">70,593</span></h3>
 						        				<p>Finished Course</p>
-						        			</div> <!-- /.single-box -->
+						        			</div>
 										</li>
 									</ul>
 								</div>
 							</div>
-						</div> <!-- /.row -->
-					</div> <!-- /.container -->
-				</div> <!-- /.opacity -->
-			</div> <!-- /.registration-banner -->
+						</div>
+					</div>
+				</div>
+			</div>
+{{-- registrations --}}
