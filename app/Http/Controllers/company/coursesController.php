@@ -46,9 +46,9 @@ class coursesController extends AppBaseController
     {
         /**get categories List and send them to selection list in blade */
         $listcateg = categories::pluck('name', 'id');
-        $selectedID = 1; 
 
-        return view('courses.create', compact('selectedID', 'listcateg'));
+
+        return view('courses.create', compact('listcateg'));
     }
 
     /**
