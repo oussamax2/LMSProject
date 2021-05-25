@@ -71,7 +71,7 @@ class registerationsController extends AppBaseController
     {
         $registerations = $this->registerationsRepository->find($id);
 
-        if (empty($registerations)) {
+        if (empty($registerations)  || $registerations->user_id != auth()->user()->id) {
             Flash::error('Registerations not found');
 
             return redirect(route('registerations.index'));
@@ -91,7 +91,7 @@ class registerationsController extends AppBaseController
     {
         $registerations = $this->registerationsRepository->find($id);
 
-        if (empty($registerations)) {
+        if (empty($registerations)   || $registerations->user_id != auth()->user()->id) {
             Flash::error('Registerations not found');
 
             return redirect(route('registerations.index'));
@@ -122,7 +122,7 @@ class registerationsController extends AppBaseController
 
         Flash::success('Registerations updated successfully.');
 
-        return redirect(route('registerations.index'));
+        return redirect()->back();
     }
 
     /**
@@ -136,7 +136,7 @@ class registerationsController extends AppBaseController
     {
         $registerations = $this->registerationsRepository->find($id);
 
-        if (empty($registerations)) {
+        if (empty($registerations)   || $registerations->user_id != auth()->user()->id) {
             Flash::error('Registerations not found');
 
             return redirect(route('registerations.index'));

@@ -44,8 +44,8 @@ class sessionsController extends AppBaseController
     public function create()
     {
         /**get courses List and send them to selection list in blade */
-        $listcourses = courses::pluck('title', 'id');
-        $selectedID = 1;  
+        $listcourses = courses::where('company_id', auth()->user()->companies->id)->pluck('title', 'id');
+      
         
         /**get countries List and send them to selection list in blade */
         $listcountries = countries::pluck('name', 'id');
@@ -60,7 +60,7 @@ class sessionsController extends AppBaseController
 
         //  var_dump("hello");    
         return view('sessions.create', compact(
-            'selectedID', 
+           
             'listcourses', 
             'listcountries',
             'liststates',
@@ -97,12 +97,12 @@ class sessionsController extends AppBaseController
     {
         $sessions = $this->sessionsRepository->find($id);
 
-        if (empty($sessions)) {
+        if (empty($sessions) || $sessions->courses->company_id != auth()->user()->companies->id) {
             Flash::error('Sessions not found');
 
             return redirect(route('sessions.index'));
         }
-
+      
         return view('sessions.show')->with('sessions', $sessions);
     }
 
@@ -117,15 +117,14 @@ class sessionsController extends AppBaseController
     {
         $sessions = $this->sessionsRepository->find($id);
 
-        if (empty($sessions)) {
+        if (empty($sessions) || $sessions->courses->company_id != auth()->user()->companies->id) {
             Flash::error('Sessions not found');
 
             return redirect(route('sessions.index'));
         }
 
         /**get courses List and send them to selection list in blade */
-        $listcourses = courses::pluck('title', 'id');
-        $selectedID = 1;   
+        $listcourses = courses::where('company_id', auth()->user()->companies->id)->pluck('title', 'id');  
         
         /**get countries List and send them to selection list in blade */
         $listcountries = countries::pluck('name', 'id');
@@ -140,7 +139,7 @@ class sessionsController extends AppBaseController
          
         return view('sessions.edit', compact(
             'sessions',     
-            'selectedID', 
+           
             'listcourses', 
             'listcountries',
             'liststates',
@@ -171,7 +170,7 @@ class sessionsController extends AppBaseController
 
         Flash::success('Sessions updated successfully.');
 
-        return redirect(route('sessions.index'));
+        return redirect()->back();
     }
 
     /**
@@ -185,7 +184,7 @@ class sessionsController extends AppBaseController
     {
         $sessions = $this->sessionsRepository->find($id);
 
-        if (empty($sessions)) {
+        if (empty($sessions)|| $sessions->courses->company_id != auth()->user()->companies->id) {
             Flash::error('Sessions not found');
 
             return redirect(route('sessions.index'));
