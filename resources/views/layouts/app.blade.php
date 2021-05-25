@@ -146,6 +146,7 @@
 <script src="{{ asset('assets-panel/js/moment.min.js')}}"></script>
 <script src="{{ asset('assets-panel/js/bootstrap-datetimepicker.min.js')}}"></script>
 <script src="{{ asset('assets-panel/js/coreui.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('js/theme.js') }}"></script>
 @stack('scripts')
 
 </html>

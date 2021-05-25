@@ -228,6 +228,10 @@
   header.menu-style-one .header-wrapper .logo img{
     width:75px;
     }
+    .loginmodal .modal-content h1{
+      text-align: center;
+      font-size: 46px;
+      }
 
 }
 @media(min-width:992px){
