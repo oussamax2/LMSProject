@@ -15,6 +15,7 @@
 
 
 
+
     <!-- Ionicons -->
     <link rel="stylesheet" href="{{ asset('assets-panel/css/coreui-icons-free.css')}}">
     <link href="{{ asset('fonts/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
@@ -146,7 +147,6 @@
 <script src="{{ asset('assets-panel/js/moment.min.js')}}"></script>
 <script src="{{ asset('assets-panel/js/bootstrap-datetimepicker.min.js')}}"></script>
 <script src="{{ asset('assets-panel/js/coreui.min.js')}}"></script>
-<script type="text/javascript" src="{{ asset('js/theme.js') }}"></script>
 @stack('scripts')
 
 </html>
