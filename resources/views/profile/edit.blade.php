@@ -7,6 +7,7 @@
             Editing Profile
         </h1>
    </section>
+   @include('flash::message')
    <div class="container-fluid">
        @include('coreui-templates::common.errors')
        <div class="row">

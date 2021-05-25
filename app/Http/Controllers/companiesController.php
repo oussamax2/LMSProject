@@ -182,7 +182,7 @@ class companiesController extends AppBaseController
 
         Flash::success(__('admin.updated successfully.'));
 
-        return redirect(route('companies.index'));
+        return redirect()->back();
     }
     /**
      * Update the specified company's request in storage.
@@ -215,7 +215,7 @@ class companiesController extends AppBaseController
        $companies->save();
        Flash::success(__('admin.updated successfully.'));
 
-       return redirect(route('companies.index'));
+       return redirect()->back();
     }
     /**
      * Remove the specified companies from storage.

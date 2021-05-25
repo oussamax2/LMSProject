@@ -125,7 +125,7 @@ class RoleController extends AppBaseController
 
         Flash::success('Role updated successfully.');
 
-        return redirect(route('roles.index'));
+        return redirect()->back();
     }
 
     /**
