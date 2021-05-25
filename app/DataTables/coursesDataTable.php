@@ -44,7 +44,7 @@ class coursesDataTable extends DataTable
     if($user->hasRole('admin'))
         return $model->newQuery()->with('companies')->with('categories')->select('courses.*') ;
         else
-        return $model->newQuery()->where('company_id',$user->companies->id)->with('companies')->with('categories');
+        return $model->newQuery()->with('companies')->with('categories')->where('company_id',$user->companies->id);
     }
 
     /**
