@@ -100,14 +100,14 @@ class coursesController extends AppBaseController
     public function edit($id)
     {
         $courses = $this->coursesRepository->find($id);
-
+        $listcateg = categories::pluck('name', 'id');
         if (empty($courses)) {
             Flash::error('Courses not found');
 
             return redirect(route('courses.index'));
         }
 
-        return view('courses.edit')->with('courses', $courses);
+        return view('courses.edit')->with('courses', $courses)->with('listcateg', $listcateg);
     }
 
     /**
