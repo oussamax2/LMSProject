@@ -85,4 +85,9 @@ class companies extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function sessions()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }
