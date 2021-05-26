@@ -76,12 +76,11 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','verified','rol
     Route::resource('companies', App\Http\Controllers\companiesController::class);
     Route::resource('contacts', App\Http\Controllers\ContactController::class);
 
-    Route::get('verifcompany/{id}', 'App\Http\Controllers\companiesController@update_companyreqst')->name('verifcompany');
-
+    Route::get('verifcompany/{id}/{response}', 'App\Http\Controllers\companiesController@update_companyreqst')->name('verifcompany');
 });
 
 
-Route::get('verifcompany/{id}/{response}', 'App\Http\Controllers\companiesController@update_companyreqst')->name('verifcompany');
+
 
 /*
  * dashboard compny  Routes
@@ -95,7 +94,9 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','verified',
     Route::resource('courses', App\Http\Controllers\company\coursesController::class);
      Route::resource('sessions', App\Http\Controllers\company\sessionsController::class);
 });
-
+Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:company']], function () {
+    Route::get('verifregistrequest/{id}/{response}', [App\Http\Controllers\company\registerationsController::class, 'update_registrationStatus'])->name('verifregistrequest');
+});
 
 /*
  * dashboard user  Routes

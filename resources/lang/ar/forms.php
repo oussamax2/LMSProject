@@ -25,7 +25,7 @@ return [
     'Student'      => 'طالب',
     'Accept' => 'قبول',
     'Rejected' => 'الرفض',
-    ''      => '',
+    'Reject'      => 'رفض',
 
     'Registration Number'      => 'عدد التسجيلات',
     'start Date'      => 'تاريخ بداية الدورة',
