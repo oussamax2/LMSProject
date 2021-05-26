@@ -24,10 +24,10 @@ class coursesDataTable extends DataTable
                              return count($dataTable->sessions);
 
                          })
-                         ->editColumn('published_on', function ($dataTable) { 
+                         ->editColumn('published_on', function ($dataTable) {
                             return  Carbon::parse($dataTable['published_on'])->isoFormat(' Do MMMM  YYYY ');
-                            
-                        })->escapeColumns([]); 
+
+                        })->escapeColumns([]);
 
     }
 
@@ -44,7 +44,7 @@ class coursesDataTable extends DataTable
     if($user->hasRole('admin'))
         return $model->newQuery()->with('companies')->with('categories')->select('courses.*') ;
         else
-        return $model->newQuery()->where('company_id',$user->companies->id)->with('companies')->with('categories');
+        return $model->newQuery()->with('companies')->with('categories')->where('company_id',$user->companies->id);
     }
 
     /**
@@ -76,6 +76,7 @@ class coursesDataTable extends DataTable
     protected function getColumns()
     {
         return [
+            ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
             ['data' => 'companies.lastname', 'name' => 'companies.lastname', 'title' => __('forms.Company Name')],
             'title',
             ['data' => 'categories.name', 'name' => 'categories.name', 'title' => __('forms.Category Name')],

@@ -44,7 +44,7 @@ Route::get('/email/verify', function () {
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
     $request->fulfill();
 
-    return redirect('/home');
+    return redirect('/');
 })->middleware(['auth', 'signed'])->name('verification.verify');
 
 Route::post('/email/verification-notification', function (Request $request) {
@@ -52,6 +52,7 @@ Route::post('/email/verification-notification', function (Request $request) {
 
     return back()->with('message', 'Verification link sent!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
 /*
  * Backend admin Routes
  * Namespaces indicate folder structure
@@ -64,7 +65,7 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','verified','rol
     Route::resource('cities', App\Http\Controllers\citiesController::class);
     Route::resource('adminregisterations', App\Http\Controllers\registerationsController::class);
 
-    Route::resource('tags', App\Http\Controllers\tagsController::class);
+    Route::resource('tags', App\Http\Controllers\tagController::class);
     Route::resource('admincourses', App\Http\Controllers\coursesController::class);
     Route::resource('courseTags', App\Http\Controllers\course_tagController::class);
     Route::resource('categories', App\Http\Controllers\categoriesController::class);
@@ -74,7 +75,7 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','verified','rol
     Route::resource('companies', App\Http\Controllers\companiesController::class);
     Route::resource('contacts', App\Http\Controllers\ContactController::class);
 
-
+    Route::get('verifcompany/{id}', 'App\Http\Controllers\companiesController@update_companyreqst')->name('verifcompany');
 
 });
 
@@ -85,9 +86,10 @@ Route::get('verifcompany/{id}/{response}', 'App\Http\Controllers\companiesContro
  * dashboard compny  Routes
  * Namespaces indicate folder structure
  */
-
-Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','verified','VerifiedCompany','role:admin|company']], function () {
+Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:admin|company']], function () {
     Route::get('/', [App\Http\Controllers\BackController::class, 'company'])->name('company');
+});
+Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','verified','VerifiedCompany','role:admin|company']], function () {
     Route::resource('registerations', App\Http\Controllers\company\registerationsController::class);
     Route::resource('courses', App\Http\Controllers\company\coursesController::class);
      Route::resource('sessions', App\Http\Controllers\company\sessionsController::class);

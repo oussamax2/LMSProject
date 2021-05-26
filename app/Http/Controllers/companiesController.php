@@ -84,7 +84,7 @@ class companiesController extends AppBaseController
         }
         /**get all courses of ths companies */
         $listcourses = $companies->courses()->get();
-        
+
 
         /**get cities List */
         $listcities = cities::all();
@@ -93,7 +93,7 @@ class companiesController extends AppBaseController
             'companies'=>$companies,
             'listcourses'=>$listcourses,
             'listcities'=>$listcities,
-        
+
         ]);
     }
 
@@ -136,19 +136,19 @@ class companiesController extends AppBaseController
     {
 
         if ($request->has('picture')){
-         
+
             $image = $this->saveImagecompany($request->file('picture'));
 
             $companies = $this->companiesRepository->find($id);
-           
+
             // $companies->picture = $image;
-                        
+
             if (empty($companies)) {
                 Flash::error(__('admin.Company not found'));
 
                 return redirect(route('companies.index'));
             }
-                        
+
             $companies = $this->companiesRepository->update($request->all(), $id);
             $companies->picture = $image;
             $companies->save();
@@ -162,7 +162,7 @@ class companiesController extends AppBaseController
         }else{
 
             $companies = $this->companiesRepository->find($id);
-                                  
+
             if (empty($companies)) {
                 Flash::error(__('admin.Company not found'));
 

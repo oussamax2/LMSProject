@@ -34,7 +34,11 @@
                    down: "icon-arrow-down-circle icons font-2xl"
                },
                sideBySide: true
-           })
+           });
+
+    $('.select2').select2({
+    width: '100%' // need to override the changed default
+});
        </script>
 @endpush
 
@@ -42,7 +46,7 @@
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
     {!! Form::Label('category_id',  __('front.category list:')) !!}
-    {!! Form::select('category_id', $listcateg, isset($courses)?$courses->category_id:null, ['class' => 'form-control select2']) !!}
+    {!! Form::select('category_id', $listcateg,null, ['class' => 'form-control select2']) !!}
 </div>
 @endif
 

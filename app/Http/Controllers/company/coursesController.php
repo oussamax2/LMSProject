@@ -108,7 +108,7 @@ class coursesController extends AppBaseController
         }
         /**get categories List and send them to selection list in blade */
         $listcateg = categories::pluck('name', 'id');
-        
+        $selectedID = 1;
         return view('courses.edit', compact('courses', 'listcateg'));
     }
 
@@ -131,7 +131,7 @@ class coursesController extends AppBaseController
         }
 
         $courses = $this->coursesRepository->update($request->all(), $id);
-        
+
         Flash::success('Courses updated successfully.');
 
         return redirect()->back();
