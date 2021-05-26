@@ -192,7 +192,7 @@ class companiesController extends AppBaseController
      *
      * @return Response
      */
-    public function update_companyreqst($id)
+    public function update_companyreqst($id, $response)
     {
         $companies = $this->companiesRepository->find($id);
 
@@ -201,15 +201,15 @@ class companiesController extends AppBaseController
 
             return redirect(route('companies.index'));
         }
-       /**if admin clicked on acceptcompany button=> the company'status will be 1 ~ accepted company's request */
-       if (isset($_POST['acceptcompany'])) {
+       /**if admin clicked on acceptcompany button=> the company'status will be 2 ~ accepted company's request */
+       if ($response == "accept") {
 
-            $companies->status = 1;
+            $companies->status = 2;
        /**if admin clicked on declinecompany button=> the company'status will be 1 ~ rejected company's request */
        } else {
 
-            $companies->status = 2;
-
+            $companies->status = 1;
+         
        }
        /**save status in DB */
        $companies->save();

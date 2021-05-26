@@ -80,7 +80,7 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','verified','rol
 });
 
 
-
+Route::get('verifcompany/{id}/{response}', 'App\Http\Controllers\companiesController@update_companyreqst')->name('verifcompany');
 
 /*
  * dashboard compny  Routes
