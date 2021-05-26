@@ -20,36 +20,36 @@ class sessionsDataTable extends DataTable
         $dataTable = new EloquentDataTable($query);
 
         return $dataTable->addColumn('action', 'sessions.datatables_actions')
-                        ->editColumn('course_id', function ($dataTable) { 
+                        ->editColumn('course_id', function ($dataTable) {
                             return $dataTable->courses['title'];
-                            
+
                         })
-                        ->editColumn('country_id', function ($dataTable) { 
+                        ->editColumn('country_id', function ($dataTable) {
                             return $dataTable->countries['name'];
-                            
+
                         })
-                        ->editColumn('state', function ($dataTable) { 
+                        ->editColumn('state', function ($dataTable) {
                             return $dataTable->states['name'];
-                            
-                        })   
-                        ->editColumn('city', function ($dataTable) { 
-                            return $dataTable->cities['name'];
-                            
+
                         })
-                        ->editColumn('start', function ($dataTable) { 
+                        ->editColumn('city', function ($dataTable) {
+                            return $dataTable->cities['name'];
+
+                        })
+                        ->editColumn('start', function ($dataTable) {
                             return  Carbon::parse($dataTable['start'])->isoFormat(' Do MMMM  YYYY ');
-                            
-                        })   
-                        ->editColumn('end', function ($dataTable) { 
+
+                        })
+                        ->editColumn('end', function ($dataTable) {
                             return  Carbon::parse($dataTable['end'])->isoFormat(' Do MMMM  YYYY ');
-                            
-                        })                                                
-                        ->addColumn('count_registrations', function ($dataTable) { 
+
+                        })
+                        ->addColumn('count_registrations', function ($dataTable) {
                             return count($dataTable->registerations);
-                            
-                        })->escapeColumns([]); 
-                        
-                        
+
+                        })->escapeColumns([]);
+
+
 
     }
 
@@ -61,7 +61,16 @@ class sessionsDataTable extends DataTable
      */
     public function query(sessions $model)
     {
-        return $model->newQuery();
+            $user = auth()->user();
+            if($user->hasRole('admin'))
+            return $model->newQuery()->whereHas('courses', function ($query) {
+                $query->where('company_id',1);});
+         else{
+                 return $model->newQuery()->whereHas('courses', function ($query) {
+                    $user = auth()->user();
+                    $query->where('company_id',$user->companies->id);});
+
+                 }
     }
 
     /**
@@ -95,7 +104,7 @@ class sessionsDataTable extends DataTable
         return [
             ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
             ['data' => 'course_id', 'name' => 'course_id', 'title' => __('forms.Course Title')],
-            ['data' => 'count_registrations', 'name' => 'count_registrations', 'title' => __('forms.Registration Number')],          
+            ['data' => 'count_registrations', 'name' => 'count_registrations', 'title' => __('forms.Registration Number')],
             ['data' => 'start', 'name' => 'start', 'title' => __('forms.start Date')],
             ['data' => 'end', 'name' => 'end', 'title' => __('forms.end Date')],
             'fee',

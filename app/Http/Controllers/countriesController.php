@@ -122,7 +122,7 @@ class countriesController extends AppBaseController
 
         Flash::success('Countries updated successfully.');
 
-        return redirect(route('countries.index'));
+        return redirect()->back();
     }
 
     /**

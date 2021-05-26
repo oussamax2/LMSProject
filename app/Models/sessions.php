@@ -74,17 +74,17 @@ class sessions extends Model
 
     public function courses()
     {
-        return $this->BelongsTo(courses::class, 'course_id');
+        return $this->BelongsTo(courses::class, 'course_id')->withTrashed();
     }
 
     public function registerations()
     {
-        return $this->HasMany(registerations::class, 'session_id');
+        return $this->HasMany(registerations::class, 'session_id')->withTrashed();
     }
 
     public function User()
     {
-    	return $this->BelongsToMany(User::class,'registerations');
+    	return $this->BelongsToMany(User::class,'registerations')->withTrashed();
     }
     public function companies()
     {
@@ -95,16 +95,16 @@ class sessions extends Model
 
     public function countries()
     {
-        return $this->BelongsTo(countries::class, 'country_id');
+        return $this->BelongsTo(countries::class, 'country_id')->withTrashed();
     }
 
     public function states()
     {
-        return $this->BelongsTo(states::class, 'state');
+        return $this->BelongsTo(states::class, 'state')->withTrashed();
     }
 
     public function cities()
     {
-        return $this->BelongsTo(cities::class, 'city');
+        return $this->BelongsTo(cities::class, 'city')->withTrashed();
     }
 }

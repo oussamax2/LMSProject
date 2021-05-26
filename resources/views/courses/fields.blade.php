@@ -15,11 +15,16 @@
 
 <!-- Published On Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('published_on', 'Published On:') !!}
+    {!! Form::label('published_on', __('forms.Published On:')) !!}
     {!! Form::text('published_on', null, ['class' => 'form-control','id'=>'published_on']) !!}
 </div>
 
 @push('scripts')
+    <script type="text/javascript">
+    $('.select2').select2({
+    width: '100%' // need to override the changed default
+});
+    </script>
    <script type="text/javascript">
            $('#published_on').datetimepicker({
                format: 'YYYY-MM-DD HH:mm:ss',
@@ -29,16 +34,22 @@
                    down: "icon-arrow-down-circle icons font-2xl"
                },
                sideBySide: true
-           })
+           });
+
+    $('.select2').select2({
+    width: '100%' // need to override the changed default
+});
        </script>
 @endpush
 
-
+@if(isset($listcateg))
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
     {!! Form::Label('category_id',  __('front.category list:')) !!}
-    {!! Form::select('category_id', $listcateg, isset($courses)?$courses->category_id:null, ['class' => 'form-control select2']) !!}
+    {!! Form::select('category_id', $listcateg,null, ['class' => 'form-control select2']) !!}
 </div>
+@endif
+
 <!-- Tags Field -->
 <div class="form-group col-sm-12">
     {!! Form::label('tags', __('front.Target Audiance list:')) !!}

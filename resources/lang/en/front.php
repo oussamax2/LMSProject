@@ -126,6 +126,14 @@ return [
     'User name' => 'User name',     
     'status' => 'status',         
     'Target Audiance list:' => 'Target Audiance list:',   
-    '' => '',      
-    '' => '',      
+    'category list:' => 'category list:',      
+    'cities list:' => 'cities list:',
+    'states list:' => 'states list:', 
+    'countries list:' => 'countries list:',     
+    'courses list:' => 'courses list:', 
+    '' => '',     
+    '' => '', 
+    '' => '',     
+    '' => '',     
+          
 ];
