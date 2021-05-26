@@ -19,6 +19,7 @@ use Illuminate\Http\Request;
 
 Auth::routes(['verify' => true ,  'register' => false]);
 Route::get('/', [App\Http\Controllers\HomeController::class, 'home'])->name('Campus');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
 Route::get('/partners', [App\Http\Controllers\HomeController::class, 'partners'])->name('partners');
 Route::get('/profilecompany/{id}', [App\Http\Controllers\HomeController::class, 'pro_training'])->name('profilecompany');
 Route::get('/list_sessions', [App\Http\Controllers\HomeController::class, 'catg_courses'])->name('course');
@@ -31,6 +32,7 @@ Route::get('/register_vendor', [App\Http\Controllers\HomeController::class, 'reg
 Route::post('/store_vendor', [App\Http\Controllers\Auth\RegisterController::class, 'registervendor'])->name('registervendor');
 Route::get('sendcontact', [App\Http\Controllers\ContactController::class, 'sendcontact'])->name("sendcontact");
 Route::get('/loginverif', [App\Http\Controllers\HomeController::class, 'loginverif'])->name("loginverif");
+Route::view('loginlive','livewire.home');
 
 
 /** verification */
@@ -75,12 +77,11 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','verified','rol
     Route::resource('companies', App\Http\Controllers\companiesController::class);
     Route::resource('contacts', App\Http\Controllers\ContactController::class);
 
-    Route::get('verifcompany/{id}', 'App\Http\Controllers\companiesController@update_companyreqst')->name('verifcompany');
-
+    Route::get('verifcompany/{id}/{response}', 'App\Http\Controllers\companiesController@update_companyreqst')->name('verifcompany');
 });
 
 
-Route::get('verifcompany/{id}/{response}', 'App\Http\Controllers\companiesController@update_companyreqst')->name('verifcompany');
+
 
 /*
  * dashboard compny  Routes
@@ -94,14 +95,16 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','verified',
     Route::resource('courses', App\Http\Controllers\company\coursesController::class);
      Route::resource('sessions', App\Http\Controllers\company\sessionsController::class);
 });
-
+Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:company']], function () {
+    Route::get('verifregistrequest/{id}/{response}', [App\Http\Controllers\company\registerationsController::class, 'update_registrationStatus'])->name('verifregistrequest');
+});
 
 /*
  * dashboard user  Routes
  * Namespaces indicate folder structure
  */
 
-Route::group(['prefix' => 'dashboarduser','middleware' => ['web', 'auth','role:user']], function () {
+Route::group(['prefix' => 'dashboarduser','middleware' => ['web', 'auth','verified','role:user']], function () {
     Route::get('/', [App\Http\Controllers\BackController::class, 'user'])->name('user');
 });
 

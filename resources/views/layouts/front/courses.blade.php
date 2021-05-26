@@ -2,102 +2,38 @@
 			<div class="teachers-course popular-course">
 				<div class="container">
                     <div class="theme-title">
-                    <h3>@lang('front.Courses by Profissional Training')</h3>
+                    <h3>@lang('front.Courses by') {{ $companies->lastname }}</h3>
                     <a href="course-grid.html" class="profcourse">@lang('front.See All Course')</a>
                     </div>
 					<div class="row">
 						<div class="teachers-course-slider">
+						@foreach ($companies->courses as $coursesList)
+						@foreach ($coursesList->sessions as $sessList)
+
 							<div class="item">
 								<div class="single-course">
 									<div class="text">
-										<div class="image"><img src="images/course/4.jpg" alt=""></div>
+										<div class="image"><img src="{{ asset("storage/".$companies['picture']) }}" alt=""></div>
 										<div class="name clearfix">
-											<h6 class="float-left">Jannatul</h6>
-											<strong class="s-color float-right">$79<sup>.99</sup></strong>
+											<h6 class="float-left">{{ $companies->user->name }}</h6>
+											<strong class="s-color float-right">$ {{ $sessList->fee }}</strong>
 										</div>
-										<h5><a href="course-details.html" class="tran3s">Angular 2 Essential Training JavaScript Framework</a></h5>
+										<h5><a href="course-details.html" class="tran3s">{{ $sessList->courses->title }}</a></h5>
 										<ul class="clearfix">
 											<li class="float-left">
 												<i class="flaticon-people"></i>
-												<a href="#" class="tran3s">Nov 2,2018</a>
+												<a href="#" class="tran3s">{{Carbon\Carbon::parse($sessList->start)->isoFormat(' Do MMMM  YYYY ')}}</a>
 											</li>
 											<li class="float-right">
 												<i class="flaticon-heart"></i>
-												<a href="#" class="tran3s">@lang('front.Saudia Arabia,Riyadh')</a>
+												<a href="#" class="tran3s">{{ $sessList->countries->name }}</a>
 											</li>
 										</ul>
 									</div>
 								</div>
 							</div>
-							<div class="item">
-								<div class="single-course">
-								
-									<div class="text">
-										<div class="image"><img src="images/course/4.jpg" alt=""></div>
-										<div class="name clearfix">
-											<h6 class="float-left">Jannatul</h6>
-											<strong class="s-color float-right">$79<sup>.99</sup></strong>
-										</div>
-										<h5><a href="course-details.html" class="tran3s">Angular 2 Essential Training JavaScript Framework</a></h5>
-										<ul class="clearfix">
-											<li class="float-left">
-												<i class="flaticon-people"></i>
-												<a href="#" class="tran3s">Nov 2,2018</a>
-											</li>
-											<li class="float-right">
-												<i class="flaticon-heart"></i>
-												<a href="#" class="tran3s">@lang('front.Saudia Arabia,Riyadh')</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="single-course">
-									
-									<div class="text">
-										<div class="image"><img src="images/course/4.jpg" alt=""></div>
-										<div class="name clearfix">
-											<h6 class="float-left">Jannatul</h6>
-											<strong class="s-color float-right">$79<sup>.99</sup></strong>
-										</div>
-										<h5><a href="course-details.html" class="tran3s">Angular 2 Essential Training JavaScript Framework</a></h5>
-										<ul class="clearfix">
-											<li class="float-left">
-												<i class="flaticon-people"></i>
-												<a href="#" class="tran3s">Nov 2,2018</a>
-											</li>
-											<li class="float-right">
-												<i class="flaticon-heart"></i>
-												<a href="#" class="tran3s">@lang('front.Saudia Arabia,Riyadh')</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="single-course">
-									
-									<div class="text">
-										<div class="image"><img src="images/course/4.jpg" alt=""></div>
-										<div class="name clearfix">
-											<h6 class="float-left">Jannatul</h6>
-											<strong class="s-color float-right">$79<sup>.99</sup></strong>
-										</div>
-										<h5><a href="course-details.html" class="tran3s">Angular 2 Essential Training JavaScript Framework</a></h5>
-										<ul class="clearfix">
-											<li class="float-left">
-												<i class="flaticon-people"></i>
-												<a href="#" class="tran3s">Nov 2,2018</a>
-											</li>
-											<li class="float-right">
-												<i class="flaticon-heart"></i>
-												<a href="#" class="tran3s">@lang('front.Saudia Arabia,Riyadh')</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
+						@endforeach
+						@endforeach
 						</div>
 					</div>
 				</div>

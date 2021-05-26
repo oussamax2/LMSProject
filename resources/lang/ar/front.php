@@ -71,6 +71,7 @@ return [
     'Register' => 'تسجيل',
     'messaging' => 'المراسلة',
     'Log Out' => 'تسجيل خروج',
+    'Courses by' => 'دورات من قبل',
     'Send' => 'إرسال',
     'Resend Verification Email' => 'إعادة ارسال بريد التحقق',
     

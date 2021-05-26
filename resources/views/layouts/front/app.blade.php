@@ -77,7 +77,15 @@
                             @auth
                             <li class="dropdown-holder menu-list"><a class="tran3s"><i class="flaticon-user"></i></a>
                                 <ul class="sub-menu">
-                                    <li><a href="{{ auth()->user()->hasRole('admin') ? url('/admin') : url('/dashboard') }}">account</a></li>
+                                    <li><a href="
+                                        @if(auth()->user()->hasRole('admin'))
+                                        {{url('/admin')}}
+                                        @elseif (auth()->user()->hasRole('company'))
+                                        {{url('/dashboard')}}
+                                        @else
+                                        {{url('/dashboarduser')}}
+                                        @endif
+                                        ">account</a></li>
                                     <li><a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">@lang('auth.sign_out')</a>
                                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                             @csrf
@@ -106,33 +114,10 @@
         {{-- Modal content --}}
         <div class="modal-content">
             <div class="modal-body">
-                <form method="post" action="{{ url('/login') }}">
-                    @csrf
-                    <h3>Login with Site Account</h3>
-                    <div class="wrapper">
-                        <input id="email" placeholder="@lang('auth.email')" type="email" class="form-control {{ $errors->has('email')?'is-invalid':'' }}" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                        @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        <input id="password" placeholder="@lang('auth.password')" type="password" class="form-control {{ $errors->has('password')?'is-invalid':'' }}" name="password" required autocomplete="current-password">
 
-                        @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                        <ul class="clearfix">
-                            <li class="float-left">
-                                <input type="checkbox" id="remember">
-                                <label for="remember">Remember Me</label>
-                            </li>
-                            <li class="float-right"><a href="{{ url('/password/reset') }}" class="s-color">Lost Your Password?</a></li>
-                        </ul>
-                        <button class="p-bg-color hvr-trim" type="submit">@lang('auth.sign_in')</button>
-                    </div>
-                </form>
+                @livewireStyles
+                @livewire('login')
+                @livewireScripts
                 <div><a href="{{ route ('registeruser') }}" class="p-color tran3s">Not an account?? Sign Up</a></div>
             </div>
         </div>
@@ -160,7 +145,7 @@
 <script type="text/javascript" src="{{ asset('vendor/jquery-ui/jquery-ui.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('vendor/jquery.mixitup.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/theme.js') }}"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.11/vue.cjs.js"></script>
+
 
 @if(Route::currentRouteName() != 'registeruser' && Route::currentRouteName() != 'register_vendor' && Request::segment(1) !='login' )
 @if($errors->has('email') || $errors->has('password'))

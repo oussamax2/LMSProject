@@ -42,8 +42,7 @@ return [
     'Total Courses' => 'Total Courses',
     'Total Session' => 'Total Session',
     'Total View' => 'Total View',
-
-
+    'Courses by' => 'Courses by',
     'Courses by Profissional Training' => 'Courses by Profissional Training',
     'See All Course' => 'See All Course',
 

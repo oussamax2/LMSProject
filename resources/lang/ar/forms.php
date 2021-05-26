@@ -32,7 +32,7 @@ return [
     'end Date'      => 'تاريخ نهاية الدورة',
     'lang'      => 'Arabic',
     'Session endDate'      => 'تاريخ إنتهاء الدورةe',
-    'Published On:'      => 'نشرت في',
+    ''      => '',
     ''      => '',
     ''      => '',
     ''      => '',
