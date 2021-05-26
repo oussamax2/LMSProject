@@ -20,7 +20,7 @@ use Illuminate\Http\Request;
 Auth::routes(['verify' => true ,  'register' => false]);
 Route::get('/', [App\Http\Controllers\HomeController::class, 'home'])->name('Campus');
 Route::get('/partners', [App\Http\Controllers\HomeController::class, 'partners'])->name('partners');
-Route::get('/pro_training', [App\Http\Controllers\HomeController::class, 'pro_training'])->name('pro_training');
+Route::get('/profilecompany/{id}', [App\Http\Controllers\HomeController::class, 'pro_training'])->name('profilecompany');
 Route::get('/list_sessions', [App\Http\Controllers\HomeController::class, 'catg_courses'])->name('course');
 Route::get('/singlsession/{id}', [App\Http\Controllers\HomeController::class, 'singlcourse'])->name('detailcourse');
 Route::get('/registeruser', [App\Http\Controllers\HomeController::class, 'registeruser'])->name('registeruser');
