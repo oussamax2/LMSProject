@@ -13,6 +13,8 @@ return [
     'User Name'      => 'User Name', 
     'Back'      => 'Back',     
     'Student'      => 'Student',
+    'Accept' => 'Accept',
+    'Rejected' => 'Rejected',
     'Detail'      => 'Detail', 
     'Registerations'      => 'Registerations',   
     'Registration Number'      => 'Registration Number', 

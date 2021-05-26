@@ -87,4 +87,6 @@ class courses extends Model
     {
         return $this->belongsToMany(\App\Models\tags::class, 'course_tag', 'course_id', 'tag_id');
     }
+
+
 }

@@ -21,7 +21,7 @@ class registerations extends Model
 
 
     public $table = 'registerations';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -51,7 +51,7 @@ class registerations extends Model
      * @var array
      */
     public static $rules = [
-        
+
     ];
 
     public function sessions()
@@ -63,12 +63,17 @@ class registerations extends Model
     {
         return $this->BelongsTo(User::class, 'user_id');
 
-    }    
+    }
 
     public function companies()
     {
         return $this->BelongsTo(companies::class);
 
     }
-    
+
+    public function touser()
+    {
+        return $this->where('user_id',auth()->user()->id);
+    }
+
 }

@@ -61,7 +61,7 @@
 								</div>
 							</div>
 							<div class="curriculum-panel-buttonregister float-right">
-									<a href="{{ route ('detailsregister') }}" class="btn btn-default">@lang('front.Register')</a>
+									<a href="#" class="btn btn-default">@lang('front.Register')</a>
 							</div>
 						</div>
 
@@ -97,7 +97,7 @@
 											</ul>
 										</div>
 										<p>{{ $sessions->companies->shortDescription }}</p>
-										<a href="#" class="tran3s p-bg-color follow hvr-trim">@lang('front.Follow Now')</a>
+										<a href="#" class="tran3s p-bg-color follow hvr-trim">@lang('front.see profile')</a>
 									</div>
 								</div>
 							</div>
