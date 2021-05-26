@@ -5,8 +5,8 @@
 </div>
 @if($companies->status == 0)
 
-    <a href="{{ route('verifcompany', $companies->id) }}" class="btn btn-outline-success" name="acceptcompany" value="accept">@lang('front.Accept request')</a>
-    <a href="{{ route('verifcompany', $companies->id) }}" class="btn btn-outline-success" name="declinecompany" value="decline">@lang('front.Decline request')</a>
+    <a href="{{ route('verifcompany', [$companies->id, 'accept']) }}" class="btn btn-outline-success" name="acceptcompany" value="accept">@lang('front.Accept request')</a>
+    <a href="{{ route('verifcompany', [$companies->id, 'decline']) }}" class="btn btn-outline-success" name="declinecompany" value="decline">@lang('front.Decline request')</a>
 
 
 
@@ -31,10 +31,12 @@
          <p>@lang('front.Pending request')</p>
 
         @elseif($companies->status == 1)
-          <p>@lang('front.Accepted request')</p>
-
+         
+         <p>@lang('front.Rejected request')</p>
+         
         @elseif($companies->status == 2)
-          <p>@lang('front.Rejected request')</p>
+          
+          <p>@lang('front.Accepted request')</p>
 
         @elseif($companies->status == 3)
           <p>@lang('front.Cancelled request')</p>
