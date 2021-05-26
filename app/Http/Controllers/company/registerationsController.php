@@ -154,8 +154,8 @@ class registerationsController extends AppBaseController
         public function update_registrationStatus($id, $response)
         {
             $registerations = $this->registerationsRepository->find($id);
-    
-            if (empty($registerations)) {
+            // || $registerations->sessions->companies->id != auth()->user()->companies->id
+            if (empty($registerations)  ) {
                 Flash::error(__('admin.not found'));
     
                 return redirect(route('registerations.index'));
