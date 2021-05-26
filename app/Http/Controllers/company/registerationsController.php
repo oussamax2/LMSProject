@@ -148,4 +148,35 @@ class registerationsController extends AppBaseController
 
         return redirect(route('registerations.index'));
     }
+
+
+        /** update registration_request  status*/
+        public function update_registrationStatus($id, $response)
+        {
+            $registerations = $this->registerationsRepository->find($id);
+    
+            if (empty($registerations)) {
+                Flash::error(__('admin.not found'));
+    
+                return redirect(route('registerations.index'));
+            }
+           /**if admin clicked on acceptRequest button=> the registerations'status will be 2 ~ pending-payment user's request */
+           if ($response == 2) {
+    
+                $registerations->status = 2;
+           /**if admin clicked on declineRequest button=> the registerations'status will be 1 ~ rejected user's request */
+           } elseif ($response == 1)  {
+    
+                $registerations->status = 1;
+             
+           } elseif ($response == 3){
+             /**if admin clicked on accept after status(pending-payement) button=> the registerations'status will be 3 ~ confirmed user's request */
+                $registerations->status = 3;        
+           }
+           /**save status in DB */
+           $registerations->save();
+           Flash::success(__('admin.updated successfully.'));
+    
+           return redirect()->back();
+        }
 }
