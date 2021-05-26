@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\categories;
+use App\Models\companies;
 use Illuminate\Http\Request;
 use App\Models\sessions;
 
@@ -28,10 +29,21 @@ class HomeController extends Controller
     {
         return view('front.partners');
     }
-    public function pro_training()
+
+    public function pro_training($id)
     {
-        return view('front.pro_training');
+
+        $companies = companies::find($id);
+          foreach($companies->courses as $countsess){
+            $countsessions = count($countsess->sessions);
+        }
+        if(isset($companies))
+        return view('front.pro_training', compact('companies', 'countsessions'));
+       else
+        return abort(404); 
+      
     }
+
     public function catg_courses()
     {
         return view('front.catg_courses');
