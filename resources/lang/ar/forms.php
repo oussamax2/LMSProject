@@ -23,6 +23,8 @@ return [
     'states list:'      => 'قائمة المناطق',
     'cities list:'      => 'قائمة المدن',
     'Student'      => 'طالب',
+    'Accept' => 'قبول',
+    'Rejected' => 'الرفض',
     ''      => '',
 
     'Registration Number'      => 'عدد التسجيلات',
