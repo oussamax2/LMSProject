@@ -74,7 +74,9 @@
 							</div>							
 							@endif
 							@if(auth()->user() && $registuser>0)
-                             <h6>you have already registered in this session</h6>
+							<div class="check-register-session">
+							<h3><i class="icon flaticon-tick"></i>you have already registered in this session</h3>
+							</div>
 							@endif
 
 						</div>
