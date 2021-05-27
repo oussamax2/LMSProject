@@ -1,9 +1,16 @@
 <!-- Country Id Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('country_id', 'Country Id:') !!}
-    {!! Form::number('country_id', null, ['class' => 'form-control']) !!}
+    {!! Form::label('country_id', __('forms.country Name')) !!}
+    {!! Form::select('country_id', $listcountries, null , ['class' => 'form-control select2']) !!}
 </div>
+@push('scripts')
+    <script type="text/javascript">
+        $('.select2').select2({
+        width: '100%' // need to override the changed default
+        });
+   </script>
 
+@endpush
 <!-- Name Field -->
 <div class="form-group col-sm-12">
     {!! Form::label('name', 'Name:') !!}

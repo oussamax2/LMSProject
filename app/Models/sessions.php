@@ -107,4 +107,14 @@ class sessions extends Model
     {
         return $this->BelongsTo(cities::class, 'city')->withTrashed();
     }
+
+
+    /** verif is my */
+    public function my()
+    {
+        if(auth()->user()->hasRole('admin'))
+        return true;
+        if(auth()->user()->hasRole('company'))
+        return ($this->courses->company_id == auth()->user()->companies->id);
+    }
 }
