@@ -89,4 +89,12 @@ class courses extends Model
     }
 
 
+    /** verif is my */
+    public function my()
+    {
+        if(auth()->user()->hasRole('admin'))
+        return true;
+        if(auth()->user()->hasRole('company'))
+        return ($this->company_id == auth()->user()->companies->id);
+    }
 }

@@ -76,7 +76,9 @@
 									<a class="tran3s" data-toggle="modal" data-target=".signInModal" class="btn btn-default">@lang('front.Register')</a>
 							</div>							
 							@endif
-
+							@if(auth()->user() && $registuser>0)
+                             <h6>you have already registered in this session</h6>
+							@endif
 
 						</div>
 

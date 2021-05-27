@@ -19,6 +19,7 @@ class statesDataTable extends DataTable
         $dataTable = new EloquentDataTable($query);
 
         return $dataTable->addColumn('action', 'states.datatables_actions');
+                  
     }
 
     /**
@@ -29,7 +30,7 @@ class statesDataTable extends DataTable
      */
     public function query(states $model)
     {
-        return $model->newQuery();
+        return $model->newQuery()->with('countries');
     }
 
     /**
@@ -61,9 +62,10 @@ class statesDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'country_id',
+            ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
             'name',
-            'status'
+            'status',
+            ['data' => 'countries.name', 'name' => 'countries.name', 'title' => __('forms.country Name')]
         ];
     }
 

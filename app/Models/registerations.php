@@ -86,4 +86,5 @@ class registerations extends Model
         return ($this->sessions->courses->company_id == auth()->user()->companies->id);
     }
 
+
 }

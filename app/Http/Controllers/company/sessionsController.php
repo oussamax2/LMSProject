@@ -97,7 +97,7 @@ class sessionsController extends AppBaseController
     {
         $sessions = $this->sessionsRepository->find($id);
 
-        if (empty($sessions) || $sessions->courses->company_id != auth()->user()->companies->id) {
+        if (empty($sessions) || !$sessions->my()) {
             Flash::error('Sessions not found');
 
             return redirect(route('sessions.index'));
@@ -117,7 +117,7 @@ class sessionsController extends AppBaseController
     {
         $sessions = $this->sessionsRepository->find($id);
 
-        if (empty($sessions) || $sessions->courses->company_id != auth()->user()->companies->id) {
+        if (empty($sessions) || !$sessions->my()) {
             Flash::error('Sessions not found');
 
             return redirect(route('sessions.index'));
@@ -184,7 +184,7 @@ class sessionsController extends AppBaseController
     {
         $sessions = $this->sessionsRepository->find($id);
 
-        if (empty($sessions)|| $sessions->courses->company_id != auth()->user()->companies->id) {
+        if (empty($sessions) || !$sessions->my()) {
             Flash::error('Sessions not found');
 
             return redirect(route('sessions.index'));
