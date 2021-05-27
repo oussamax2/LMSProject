@@ -10,6 +10,8 @@ use App\Repositories\registerationsRepository;
 use Flash;
 use App\Models\registerations;
 use App\Http\Controllers\AppBaseController;
+use App\Models\registerations;
+use Illuminate\Http\Request;
 use Response;
 
 class registerationsController extends AppBaseController
@@ -23,24 +25,24 @@ class registerationsController extends AppBaseController
     }
 
     /**
-     * Display a listing of the registerations.
+     * Display a listing of the registerationsuser.
      *
      * @param registerationsDataTable $registerationsDataTable
      * @return Response
      */
     public function index(registerationsDataTable $registerationsDataTable)
     {
-        return $registerationsDataTable->render('registerations.index');
+        return $registerationsDataTable->render('registerationsuser.index');
     }
 
     /**
-     * Show the form for creating a new registerations.
+     * Show the form for creating a new registerationsuser.
      *
      * @return Response
      */
     public function create()
     {
-        return view('registerations.create');
+        return view('registerationsuser.create');
     }
 
     /**
@@ -58,11 +60,11 @@ class registerationsController extends AppBaseController
 
         Flash::success('Registerations saved successfully.');
 
-        return redirect(route('registerations.index'));
+        return redirect(route('registerationsuser.index'));
     }
 
     /**
-     * Display the specified registerations.
+     * Display the specified registerationsuser.
      *
      * @param  int $id
      *
@@ -72,59 +74,23 @@ class registerationsController extends AppBaseController
     {
         $registerations = $this->registerationsRepository->find($id);
 
-        if (empty($registerations)) {
+        if (empty($registerations) || !$registerations->my() ) {
             Flash::error('Registerations not found');
 
-            return redirect(route('registerations.index'));
+            return redirect(route('registerationsuser.index'));
         }
 
-        return view('registerations.show')->with('registerations', $registerations);
+        return view('registerationsuser.show')->with('registerations', $registerations);
     }
 
     /**
-     * Show the form for editing the specified registerations.
+     * Show the form for editing the specified registerationsuser.
      *
      * @param  int $id
      *
      * @return Response
      */
-    public function edit($id)
-    {
-        $registerations = $this->registerationsRepository->find($id);
 
-        if (empty($registerations)) {
-            Flash::error('Registerations not found');
-
-            return redirect(route('registerations.index'));
-        }
-
-        return view('registerations.edit')->with('registerations', $registerations);
-    }
-
-    /**
-     * Update the specified registerations in storage.
-     *
-     * @param  int              $id
-     * @param UpdateregisterationsRequest $request
-     *
-     * @return Response
-     */
-    public function update($id, UpdateregisterationsRequest $request)
-    {
-        $registerations = $this->registerationsRepository->find($id);
-
-        if (empty($registerations)) {
-            Flash::error('Registerations not found');
-
-            return redirect(route('registerations.index'));
-        }
-
-        $registerations = $this->registerationsRepository->update($request->all(), $id);
-
-        Flash::success('Registerations updated successfully.');
-
-        return redirect(route('registerations.index'));
-    }
 
     /**
      * Remove the specified registerations from storage.
@@ -137,17 +103,17 @@ class registerationsController extends AppBaseController
     {
         $registerations = $this->registerationsRepository->find($id);
 
-        if (empty($registerations)) {
+        if (empty($registerations) || !$registerations->my()) {
             Flash::error('Registerations not found');
 
-            return redirect(route('registerations.index'));
+            return redirect(route('registerationsuser.index'));
         }
 
         $this->registerationsRepository->delete($id);
 
         Flash::success('Registerations deleted successfully.');
 
-        return redirect(route('registerations.index'));
+        return redirect(route('registerationsuser.index'));
     }
 
     /** update registration_request  status*/
@@ -155,10 +121,10 @@ class registerationsController extends AppBaseController
     {
         $registerations = $this->registerationsRepository->find($id);
 
-        if (empty($registerations)) {
+        if (empty($registerations) || !$registerations->my()) {
             Flash::error(__('admin.not found'));
 
-            return redirect(route('registerations.index'));
+            return redirect(route('registerationsuser.index'));
         }
        /**if admin clicked on acceptRequest button=> the company'status will be 2 ~ pending-payment user's request */
        if ($response == 2) {
@@ -186,5 +152,24 @@ $r= registerations::find(5);
 
         return response()->json($r->my());
     }
+    /** send registration_request  */
+    public function student_registsess(Request $request)
+    {
+        // $request->session
+        // auth()->user()->id;
+        $registerations = registerations::firstOrCreate(array(
+            'session_id' =>  $request->session,
+            'user_id' => auth()->user()->id)
+        );
+        /**save in DB */
+        $registerations->save();
+
+
+        return redirect()->back();
+
+
+
+    }
+
 
 }

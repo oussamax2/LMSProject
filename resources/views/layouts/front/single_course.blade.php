@@ -60,9 +60,24 @@
 									</ul>
 								</div>
 							</div>
+							
+							@if(auth()->user() && !($registuser>0))
+								<form action="{{ route('registsess')}}"  method="post">
+									{{ csrf_field() }}
+
+									<input type="hidden" name="session" value="{{ $sessions->id }}" />
+								    
+									<div class="curriculum-panel-buttonregister float-right">
+											<a class="btn btn-default"><button  type ="submit">@lang('front.Register')</button></a>
+									</div>
+								</form>
+							@elseif(!(auth()->user()))
 							<div class="curriculum-panel-buttonregister float-right">
-									<a href="#" class="btn btn-default">@lang('front.Register')</a>
-							</div>
+									<a class="tran3s" data-toggle="modal" data-target=".signInModal" class="btn btn-default">@lang('front.Register')</a>
+							</div>							
+							@endif
+
+
 						</div>
 
 						<div class="col-md-4 col-sm-6 col-xs-12">

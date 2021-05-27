@@ -76,7 +76,6 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','verified','rol
     Route::resource('subcategories', App\Http\Controllers\subcategorieController::class);
     Route::resource('companies', App\Http\Controllers\companiesController::class);
     Route::resource('contacts', App\Http\Controllers\ContactController::class);
-
     Route::get('verifcompany/{id}/{response}', 'App\Http\Controllers\companiesController@update_companyreqst')->name('verifcompany');
 });
 
@@ -98,6 +97,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','verified',
 Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:company']], function () {
     Route::get('verifregistrequest/{id}/{response}', [App\Http\Controllers\company\registerationsController::class, 'update_registrationStatus'])->name('verifregistrequest');
 });
+    Route::post('registsess', [App\Http\Controllers\registerationsController::class, 'student_registsess'])->name('registsess');
 
 /*
  * dashboard user  Routes
@@ -106,6 +106,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:compa
 
 Route::group(['prefix' => 'dashboarduser','middleware' => ['web', 'auth','verified','role:user']], function () {
     Route::get('/', [App\Http\Controllers\BackController::class, 'user'])->name('user');
+    Route::resource('registerationsuser', App\Http\Controllers\registerationsController::class);
 });
 
 

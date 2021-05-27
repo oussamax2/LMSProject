@@ -17,7 +17,10 @@ class registerationsDataTable extends DataTable
     public function dataTable($query)
     {
         $dataTable = new EloquentDataTable($query);
-
+        $user = auth()->user();
+        if($user->hasRole('user'))
+        return $dataTable->addColumn('action', 'registerationsuser.datatables_actions');
+        else
         return $dataTable->addColumn('action', 'registerations.datatables_actions');
 
 
@@ -36,12 +39,14 @@ class registerationsDataTable extends DataTable
        $user = auth()->user();
        if($user->hasRole('admin'))
        return $model->newQuery()->with('user')->with(['sessions', 'sessions.courses']);
-    else{
+    elseif($user->hasRole('compnay')){
            return $model->newQuery()->with('user')->with(['sessions', 'sessions.courses'])->whereHas('sessions.courses', function ($query) {
             $user = auth()->user();
             $query->where('company_id',$user->companies->id);
 
-       });}
+       });}else{
+        return $model->touser()->newQuery()->with('user')->with(['sessions', 'sessions.courses']);
+       }
     }
 
     /**
@@ -72,12 +77,20 @@ class registerationsDataTable extends DataTable
      */
     protected function getColumns()
     {
+        $user = auth()->user();
+        if($user->hasRole('user')){
+        return [
+            ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
+            ['data' => 'sessions.courses.title', 'name' => 'sessions.courses.title', 'title' => __('forms.Course Title')],
+            ['data' => 'sessions.start', 'name' => 'sessions.start', 'title' => __('forms.Session startDate')]
+        ];}
+        else{
         return [
             ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
             ['data' => 'user.name', 'name' => 'user.name', 'title' => __('forms.User Name')],
             ['data' => 'sessions.courses.title', 'name' => 'sessions.courses.title', 'title' => __('forms.Course Title')],
             ['data' => 'sessions.start', 'name' => 'sessions.start', 'title' => __('forms.Session startDate')]
-        ];
+        ];}
     }
 
     /**
