@@ -182,7 +182,7 @@ class registerationsController extends AppBaseController
 
     public function userregist()
     {
-$r= registerations::find(3);
+$r= registerations::find(5);
 
         return response()->json($r->my());
     }

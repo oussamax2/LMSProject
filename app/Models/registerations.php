@@ -78,7 +78,12 @@ class registerations extends Model
 /** verif is my */
  public function my()
     {
+        if(auth()->user()->hasRole('admin'))
+        return true;
+        if(auth()->user()->hasRole('user'))
         return ($this->user_id == auth()->user()->id);
+        if(auth()->user()->hasRole('company'))
+        return ($this->sessions->courses->company_id == auth()->user()->companies->id);
     }
 
 }
