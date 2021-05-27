@@ -88,6 +88,6 @@ class companies extends Model
 
     public function sessions()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->courses;
     }
 }

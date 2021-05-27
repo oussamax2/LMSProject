@@ -1,101 +1,102 @@
-<!-- companyName Field -->
-<div class="form-group">
-    {!! Form::label('name', 'company Name:') !!}
-    <p>{{ $companies->user->name }}</p>
+<div class="list-field-detalssessions row">
+    <div class="col-sm-6 col-md-12 col-lg-4">
+        <!-- Picture Field -->
+        <div class="form-group">
+            <div class="image-companies">
+                <img src="{{ asset("storage/".$companies['picture']) }}"/>
+            </div>
+        </div>
+        <!-- Shortdescription Field -->
+            <div class="form-group">
+            <p>{{ $companies->shortDescription }}</p>
+        </div>
+        <ul class="social-media-companies">
+         <!-- Fcburl Field -->
+         <div class="form-group">
+            @if(isset($companies->fcburl))
+            <a href="{{ $companies->fcburl }}" class="tran3s"><i class="icon icon-social-facebook" aria-hidden="true"></i></a>
+            @endif
+        </div>
+        <!-- Twitturl Field -->
+        <div class="form-group">
+            @if(isset($companies->twitturl))
+            <a href="{{ $companies->twitturl }}" class="tran3s"><i class="icon icon-social-twitter" aria-hidden="true"></i></a>
+            @endif
+        </div>
+        <!-- Linkdinurl Field -->
+        <div class="form-group">
+            @if(isset($companies->linkdinurl))
+            <a href="{{ $companies->linkdinurl }}" class="tran3s"><i class="icon icon-social-linkedin" aria-hidden="true"></i></a>
+            @endif
+        </div>
+        <!-- Dribbleurl Field -->
+        <div class="form-group">
+            @if(isset($companies->linkdinurl))
+            <a href="{{ $companies->dribbleurl }}" class="tran3s"><i class="icon icon-social-dribbble" aria-hidden="true"></i></a>
+            @endif
+        </div>
+        </ul>
+    </div>
+    <div class="col-sm-6 col-md-12 col-lg-8">
+            <!-- companyName Field -->
+            <div class="form-group">
+        <i class="icon flaticon-bookmark"></i>
+            {!! Form::label('name', 'company Name') !!}
+            <p>{{ $companies->user->name }}</p>
+        </div>
+        <!-- Status Field -->
+        <div class="form-group">
+        <i class="icon flaticon-bookmark"></i>
+            {!! Form::label('status', 'Company status') !!}
+
+            @if($companies->status == 0)
+
+            <p>@lang('front.Pending request')</p>
+
+            @elseif($companies->status == 1)
+
+            <p>@lang('front.Rejected request')</p>
+
+            @elseif($companies->status == 2)
+
+            <p>@lang('front.Accepted request')</p>
+
+            @elseif($companies->status == 3)
+            <p>@lang('front.Cancelled request')</p>
+            @endif
+        </div>
+        <!-- Telephone Field -->
+        <div class="form-group">
+        <i class="icon icon-phone"></i>
+            {!! Form::label('telephone', 'Telephone') !!}
+            <p>{{ $companies->telephone }}</p>
+        </div>
+         <!-- Email Field -->
+         <div class="form-group">
+        <i class="icon icon-envelope"></i>
+            {!! Form::label('email', 'Company Email') !!}
+            <p>{{ $companies->user->email }}</p>
+        </div>
+        <!-- Website Field -->
+        <div class="form-group">
+        <i class="icon icon-globe"></i>
+            {!! Form::label('website', 'Website') !!}
+            <p>{{ $companies->website }}</p>
+        </div>
+        {{-- banner home --}}
+    </div>
 </div>
-@if($companies->status == 0)
-
-    <a href="{{ route('verifcompany', [$companies->id, 'accept']) }}" class="btn btn-outline-success" name="acceptcompany" value="accept">@lang('front.Accept request')</a>
-    <a href="{{ route('verifcompany', [$companies->id, 'decline']) }}" class="btn btn-outline-success" name="declinecompany" value="decline">@lang('front.Decline request')</a>
-
-
-
-@endif
-<!-- Email Field -->
+<div class="row">
+<div class="col-md-12">
+    <!-- courses Field -->
 <div class="form-group">
-    {!! Form::label('email', 'Company Email:') !!}
-    <p>{{ $companies->user->email }}</p>
-</div>
-<!-- Website Field -->
-<div class="form-group">
-    {!! Form::label('website', 'Website:') !!}
-    <p>{{ $companies->website }}</p>
-</div>
-
-<!-- Status Field -->
-<div class="form-group">
-    {!! Form::label('status', 'Company status:') !!}
-
-        @if($companies->status == 0)
-
-         <p>@lang('front.Pending request')</p>
-
-        @elseif($companies->status == 1)
-         
-         <p>@lang('front.Rejected request')</p>
-         
-        @elseif($companies->status == 2)
-          
-          <p>@lang('front.Accepted request')</p>
-
-        @elseif($companies->status == 3)
-          <p>@lang('front.Cancelled request')</p>
-
-        @endif
-</div>
-<!-- Telephone Field -->
-<div class="form-group">
-    {!! Form::label('telephone', 'Telephone:') !!}
-    <p>{{ $companies->telephone }}</p>
-</div>
-
-<!-- Picture Field -->
-<div class="form-group">
-    {!! Form::label('picture', 'Picture:') !!}
-    <p>{{ $companies->picture }}</p>
-    {{asset("storage/$companies->picture")}}
-</div>
-
-<!-- Shortdescription Field -->
-<div class="form-group">
-    {!! Form::label('shortDescription', 'Shortdescription:') !!}
-    <p>{{ $companies->shortDescription }}</p>
-</div>
-{{-- banner home --}}
-<!-- Fcburl Field -->
-<div class="form-group">
-    {!! Form::label('fcburl', 'Fcburl:') !!}
-    <p>{{ $companies->fcburl }}</p>
-</div>
-
-<!-- Twitturl Field -->
-<div class="form-group">
-    {!! Form::label('twitturl', 'Twitturl:') !!}
-    <p>{{ $companies->twitturl }}</p>
-</div>
-
-<!-- Linkdinurl Field -->
-<div class="form-group">
-    {!! Form::label('linkdinurl', 'Linkdinurl:') !!}
-    <p>{{ $companies->linkdinurl }}</p>
-</div>
-
-<!-- Dribbleurl Field -->
-<div class="form-group">
-    {!! Form::label('dribbleurl', 'Dribbleurl:') !!}
-    <p>{{ $companies->dribbleurl }}</p>
-</div>
-
-
-<!-- courses Field -->
-<div class="form-group">
-    {!! Form::label('courses', 'Company courses:') !!}
+    {!! Form::label('courses', 'Company courses') !!}
         @foreach ($listcourses as $listcourses)
             <p>{{ $listcourses->title }}</p>
 
             @foreach ($listcourses->sessions()->get() as $sessions)
-
-                <table class="table table-bordered">
+            <div class="table-responsive">
+                <table class="table table-bordered" style="margin:15px 0 0 0;">
                         <thead>
                             <tr>
                             <th scope="col">#</th>
@@ -112,13 +113,13 @@
                                 <td>{{$sessions['end']}}</td>
                                 <td>{{$sessions['fee']}}</td>
                                 <td>{{$sessions->cities->name}}</td>
-
-
                             </tr>
-
-
                         </tbody>
                 </table>
+            </div>
             @endforeach
         @endforeach
 </div>
+</div>
+</div>
+
