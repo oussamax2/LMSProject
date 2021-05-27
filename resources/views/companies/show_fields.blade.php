@@ -1,13 +1,15 @@
 <div class="list-field-detalssessions row">
-    <div class="col-sm-6 col-md-12 col-lg-4">
+    <div class="col-sm-6 col-md-12 col-lg-3">
         <!-- Picture Field -->
         <div class="form-group">
             <div class="image-companies">
-                <img src="{{ asset("storage/".$companies['picture']) }}"/>
+                <img src="{{ asset("storage/companies_pictures/".$companies['picture']) }}"/>
             </div>
         </div>
-        <!-- Shortdescription Field -->
-            <div class="form-group">
+    </div>
+    <div class="col-sm-6 col-md-12 col-lg-5">
+           <!-- Shortdescription Field -->
+           <div class="form-group">
             <p>{{ $companies->shortDescription }}</p>
         </div>
         <ul class="social-media-companies">
@@ -37,9 +39,9 @@
         </div>
         </ul>
     </div>
-    <div class="col-sm-6 col-md-12 col-lg-8">
-            <!-- companyName Field -->
-            <div class="form-group">
+    <div class="col-sm-6 col-md-12 col-lg-4">
+                    <!-- companyName Field -->
+                    <div class="form-group">
         <i class="icon flaticon-bookmark"></i>
             {!! Form::label('name', 'company Name') !!}
             <p>{{ $companies->user->name }}</p>
