@@ -3866,6 +3866,7 @@ display: flex;
   .course-details .curriculum-panel-date{
     border-bottom: 1px solid #ddd;
     padding:15px;
+    margin-bottom: 20px;
       }
   .course-details .curriculum-panel-date .title-curr-panel{
    font-size: 15px;
@@ -3999,6 +4000,22 @@ margin-right: 50px;
   color: #e3342f;
 }
 /* invalid feedback */
+.check-register-session{
+background: #36d64c;
+    padding: 10px;
+    margin: auto;
+    border-radius: 4px;
+    width: 65%;
+  }
+
+  .check-register-session h3{
+    font-size: 17px;
+    text-transform: uppercase;
+    color: #fff;
+      }
+      .check-register-session i.icon{
+        margin-right: 10px;
+          }
 
 
 

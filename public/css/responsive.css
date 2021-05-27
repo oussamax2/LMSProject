@@ -235,6 +235,9 @@
       text-align: center;
       font-size: 46px;
       }
+      .check-register-session{
+            width: 100%;
+          }
 
 }
 @media(min-width:992px){
