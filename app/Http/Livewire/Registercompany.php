@@ -39,7 +39,6 @@ class Registercompany extends Component
         $this->lastname = '';
         $this->telephone = '';
         $this->website = '';
-        $this->picture = '';
         $this->linkdinurl = '';
         $this->dribbleurl = '';
         $this->description = '';
@@ -59,7 +58,6 @@ class Registercompany extends Component
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8|confirmed',
-            'picture' => 'image|max:1024',
             'password_confirmation' => 'required|min:8',
         ]);
 

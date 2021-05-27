@@ -10,7 +10,6 @@ use App\Repositories\registerationsRepository;
 use Flash;
 use App\Models\registerations;
 use App\Http\Controllers\AppBaseController;
-use App\Models\registerations;
 use Illuminate\Http\Request;
 use Response;
 
