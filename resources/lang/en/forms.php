@@ -26,7 +26,7 @@ return [
     'states list:'      => 'states list:',  
     'cities list:'      => 'cities list:',  
     'Reject'      => 'Reject',
-    ''      => '',      
+    'country Name'      => 'country Name',      
 
     'User Name'      => 'User Name',
     'Back'      => 'Back',

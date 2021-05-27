@@ -81,7 +81,7 @@ class coursesController extends AppBaseController
 
         $courses = $this->coursesRepository->find($id);
 
-        if (empty($courses)  || $courses->company_id != auth()->user()->companies->id) {
+        if (empty($courses)  || !$courses->my()) {
             Flash::error('Courses not found');
 
             return redirect(route('courses.index'));
@@ -101,7 +101,7 @@ class coursesController extends AppBaseController
     {
         $courses = $this->coursesRepository->find($id);
 
-        if (empty($courses) || $courses->company_id != auth()->user()->companies->id) {
+        if (empty($courses) || !$courses->my()) {
             Flash::error('Courses not found');
 
             return redirect(route('courses.index'));
@@ -148,7 +148,7 @@ class coursesController extends AppBaseController
     {
         $courses = $this->coursesRepository->find($id);
 
-        if (empty($courses) || $courses->company_id != auth()->user()->companies->id) {
+        if (empty($courses) || !$courses->my()) {
             Flash::error('Courses not found');
 
             return redirect(route('courses.index'));

@@ -9,6 +9,7 @@ use App\Http\Requests\UpdatestatesRequest;
 use App\Repositories\statesRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
+use App\Models\countries;
 use Response;
 
 class statesController extends AppBaseController
@@ -39,7 +40,10 @@ class statesController extends AppBaseController
      */
     public function create()
     {
-        return view('states.create');
+        /**get countries List and send them to selection list in blade */
+        $listcountries = countries::pluck('name', 'id');
+         
+        return view('states.create', compact('listcountries'));
     }
 
     /**
@@ -96,8 +100,11 @@ class statesController extends AppBaseController
 
             return redirect(route('states.index'));
         }
-
-        return view('states.edit')->with('states', $states);
+        /**get countries List and send them to selection list in blade */
+        $listcountries = countries::pluck('name', 'id');
+         
+        return view('states.edit', compact('states','listcountries'));
+        
     }
 
     /**

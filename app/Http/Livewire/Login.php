@@ -32,7 +32,7 @@ class Login extends Component
 
         if(\Auth::attempt(array('email' => $this->email, 'password' => $this->password))){
                 session()->flash('message', "You are Login successful.");
-                redirect('/');
+                redirect(url()->previous());
         }else{
             session()->flash('error', 'Email and password are wrong.');
         }

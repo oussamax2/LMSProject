@@ -39,7 +39,7 @@ class registerationsDataTable extends DataTable
        $user = auth()->user();
        if($user->hasRole('admin'))
        return $model->newQuery()->with('user')->with(['sessions', 'sessions.courses']);
-    elseif($user->hasRole('compnay')){
+    elseif($user->hasRole('company')){
            return $model->newQuery()->with('user')->with(['sessions', 'sessions.courses'])->whereHas('sessions.courses', function ($query) {
             $user = auth()->user();
             $query->where('company_id',$user->companies->id);
