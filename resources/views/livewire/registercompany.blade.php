@@ -75,6 +75,11 @@
                                         </span>
                                     @endif
                                     <h6>Your Picture</h6>
+                                    @if($picture)
+                                    <br>
+                                    <image src="{{$picture->temporaryUrl()}}" style="width: 200px;">
+                                        <br>
+                                    @endif
                                     <input type="file"  wire:model="picture" accept="image/*" value="{{ old('picture') }}">
                                     <h6>Description</h6>
                                     <textarea wire:model="description" ></textarea>
