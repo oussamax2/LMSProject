@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\categories;
 use App\Models\companies;
+use App\Models\registerations;
 use Illuminate\Http\Request;
 use App\Models\sessions;
 
@@ -52,8 +53,11 @@ class HomeController extends Controller
     {
 
         $sessions = sessions::find($id);
+        //get count user registertions in same session
+        $registuser = registerations::where('session_id', $sessions->id)->where('user_id', auth()->user()->id)->get()->count();
+        
          if(isset($sessions))
-         return view('front.singlcourse', ['sessions'=>$sessions]);
+         return view('front.singlcourse', ['sessions'=>$sessions, 'registuser' => $registuser]);
         else
          return abort(404);
     }

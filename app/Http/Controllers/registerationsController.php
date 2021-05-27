@@ -9,6 +9,8 @@ use App\Http\Requests\UpdateregisterationsRequest;
 use App\Repositories\registerationsRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
+use App\Models\registerations;
+use Illuminate\Http\Request;
 use Response;
 
 class registerationsController extends AppBaseController
@@ -178,5 +180,25 @@ class registerationsController extends AppBaseController
 
        return redirect()->back();
     }
+
+    /** send registration_request  */
+    public function student_registsess(Request $request)
+    {
+        // $request->session
+        // auth()->user()->id;
+        $registerations = registerations::firstOrCreate(array(
+            'session_id' =>  $request->session,
+            'user_id' => auth()->user()->id)
+        );
+        /**save in DB */
+        $registerations->save();
+
+
+        return redirect()->back();
+
+
+
+    }
+    
 
 }

@@ -98,6 +98,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','verified',
 Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:company']], function () {
     Route::get('verifregistrequest/{id}/{response}', [App\Http\Controllers\company\registerationsController::class, 'update_registrationStatus'])->name('verifregistrequest');
 });
+    Route::post('registsess', [App\Http\Controllers\registerationsController::class, 'student_registsess'])->name('registsess');
 
 /*
  * dashboard user  Routes
