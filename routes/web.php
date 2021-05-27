@@ -33,7 +33,7 @@ Route::post('/store_vendor', [App\Http\Controllers\Auth\RegisterController::clas
 Route::get('sendcontact', [App\Http\Controllers\ContactController::class, 'sendcontact'])->name("sendcontact");
 Route::get('/loginverif', [App\Http\Controllers\HomeController::class, 'loginverif'])->name("loginverif");
 Route::view('loginlive','livewire.home');
-
+Route::get('test', [App\Http\Controllers\registerationsController::class,'userregist']);
 
 /** verification */
 

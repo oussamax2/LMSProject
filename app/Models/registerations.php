@@ -70,10 +70,20 @@ class registerations extends Model
         return $this->BelongsTo(companies::class);
 
     }
-
-    public function touser()
+/** list for user  */
+ public function touser()
     {
         return $this->where('user_id',auth()->user()->id);
+    }
+/** verif is my */
+ public function my()
+    {
+        if(auth()->user()->hasRole('admin'))
+        return true;
+        if(auth()->user()->hasRole('user'))
+        return ($this->user_id == auth()->user()->id);
+        if(auth()->user()->hasRole('company'))
+        return ($this->sessions->courses->company_id == auth()->user()->companies->id);
     }
 
 }

@@ -8,6 +8,7 @@ use App\Http\Requests\CreateregisterationsRequest;
 use App\Http\Requests\UpdateregisterationsRequest;
 use App\Repositories\registerationsRepository;
 use Flash;
+use App\Models\registerations;
 use App\Http\Controllers\AppBaseController;
 use Response;
 
@@ -167,16 +168,23 @@ class registerationsController extends AppBaseController
        } elseif ($response == 1)  {
 
             $registerations->status = 1;
-         
+
        } elseif ($response == 3){
          /**if admin clicked on accept after status(pending-payement) button=> the company'status will be 3 ~ confirmed user's request */
-            $registerations->status = 3;        
+            $registerations->status = 3;
        }
        /**save status in DB */
        $registerations->save();
        Flash::success(__('admin.updated successfully.'));
 
        return redirect()->back();
+    }
+
+    public function userregist()
+    {
+$r= registerations::find(5);
+
+        return response()->json($r->my());
     }
 
 }
