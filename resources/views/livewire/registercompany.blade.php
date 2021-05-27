@@ -1,78 +1,109 @@
-<div>
-    <div class="col-md-12">
-        @if (session()->has('message'))
-            <div class="alert alert-success">
-                {{ session('message') }}
-            </div>
-        @endif
-        @if (session()->has('error'))
-            <div class="alert alert-danger">
-                {{ session('error') }}
-            </div>
-        @endif
-    </div>
-    @if($registerForm)
-        <form>
-            <div class="wrapper">
-                        <label>Name :</label>
-                        <input type="text" wire:model="name" class="form-control">
-                        @error('name') <span class="text-danger error">{{ $message }}</span>@enderror
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label>Email :</label>
-                        <input type="text" wire:model="email" class="form-control">
-                        @error('email') <span class="text-danger error">{{ $message }}</span>@enderror
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label>Password :</label>
-                        <input type="password" wire:model="password" class="form-control">
-                        @error('password') <span class="text-danger error">{{ $message }}</span>@enderror
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Password ccc :</label>
-                    <input type="password" wire:model="password_confirmation" class="form-control">
-                    @error('password_confirmation') <span class="text-danger error">{{ $message }}</span>@enderror
-                </div>
-                <div class="col-md-12 text-center">
-                    <button class="btn text-white btn-success" wire:click.prevent="registerStore">Register</button>
-                </div>
-                <div class="col-md-12">
-                    <a class="text-primary" wire:click.prevent="register"><strong>Login</strong></a>
-                </div>
-            </div>
-        </form>
-    @else
-        <form method="post" action="{{ url('/login') }}">
-            @csrf
-            <h3>Login with Site Account</h3>
-            <div class="wrapper">
-                <input id="email" placeholder="@lang('auth.email')" type="email" class="form-control {{ $errors->has('email')?'is-invalid':'' }}" wire:model="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                <input id="password" placeholder="@lang('auth.password')" type="password" class="form-control {{ $errors->has('password')?'is-invalid':'' }}" wire:model="password" required autocomplete="current-password">
 
-                @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-                <ul class="clearfix">
-                    <li class="float-left">
-                        <input type="checkbox" id="remember">
-                        <label for="remember">Remember Me</label>
-                    </li>
-                    <li class="float-right"><a href="{{ url('/password/reset') }}" class="s-color">Lost Your Password?</a></li>
-                </ul>
-                <button class="p-bg-color hvr-trim" wire:click.prevent="login">@lang('auth.sign_in')</button>
+<div class="registration-banner-company">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <div class="registration-form">
+
+                    <form   enctype="multipart/form-data">
+                      {{ csrf_field() }}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-wrapper">
+                                    <h6>Your Name</h6>
+                                    <input type="text" wire:model="name" placeholder="Your Name" value="{{ old('name') }}" required>
+                                    @if ($errors->has('name'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('name') }}</strong>
+                                        </span>
+                                    @endif
+                                    <h6>Your EMail</h6>
+                                    <input type="email" wire:model="email" placeholder="sample@gmail.com" value="{{ old('email') }}" required>
+                                    @if ($errors->has('email'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
+                                    <h6>Your Password</h6>
+                                    <input type="password" wire:model="password" placeholder="password" required>
+                                    @if ($errors->has('password'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
+                                    @endif
+                                    <h6>Confirm Password</h6>
+                                    <input type="password" wire:model="password_confirmation" placeholder="Confirm password" required>
+                                    @if ($errors->has('password_confirmation'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                        </span>
+                                    @endif
+                                    <h6>Short Description</h6>
+                                    <textarea wire:model="shortDescription" id=""></textarea>
+                                    <h6>Facebook Url</h6>
+                                    <input type="text"  wire:model="fcburl" placeholder="facebook url" value="{{ old('fcburl') }}">
+                                    @if ($errors->has('fcburl'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('fcburl') }}</strong>
+                                        </span>
+                                    @endif
+                                    <h6>Twitter Url</h6>
+                                    <input type="text" wire:model="twitturl"  placeholder="twitter url" value="{{ old('twitturl') }}">
+                                    @if ($errors->has('twitturl'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('twitturl') }}</strong>
+                                        </span>
+                                    @endif
+                                </div> <!-- /.form-wrapper -->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-wrapper">
+                                    <h6>Your LastName</h6>
+                                    <input type="text" wire:model="lastname"  placeholder="Your LastName" value="{{ old('lastname') }}" required>
+                                    <h6>Mobile Number</h6>
+                                    <input type="text" wire:model="telephone"  placeholder="+880 854 875 971" value="{{ old('telephone') }}">
+                                    @if ($errors->has('telephone'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('telephone') }}</strong>
+                                        </span>
+                                    @endif
+                                    <h6>Your WebSite</h6>
+                                    <input type="text"  wire:model="website" placeholder="website" value="{{ old('website') }}">
+                                    @if ($errors->has('website'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('website') }}</strong>
+                                        </span>
+                                    @endif
+                                    <h6>Your Picture</h6>
+                                    <input type="file"  wire:model="picture" accept="image/*" value="{{ old('picture') }}">
+                                    <h6>Description</h6>
+                                    <textarea wire:model="description" ></textarea>
+                                    <h6>Linkedin Url</h6>
+                                    <input type="text" wire:model="linkdinurl"  placeholder="linkedin url" value="{{ old('linkdinurl') }}">
+                                    @if ($errors->has('linkdinurl'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('linkdinurl') }}</strong>
+                                        </span>
+                                    @endif
+                                    <h6>Dribble Url</h6>
+                                    <input type="text" wire:model="dribbleurl"  placeholder="dribble url" value="{{ old('dribbleurl') }}">
+                                    @if ($errors->has('dribbleurl'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('dribbleurl') }}</strong>
+                                        </span>
+                                    @endif
+                                </div> <!-- /.form-wrapper -->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset-4">
+                            <button wire:click.prevent="register" class="tran3s hvr-trim">SIGN UP NOW!!</button>
+                            </div>
+                        </div>
+                    </form>
+                </div> <!-- /.registration-form -->
             </div>
-        </form>
-    @endif
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
 </div>
+

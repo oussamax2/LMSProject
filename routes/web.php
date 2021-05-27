@@ -106,6 +106,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:compa
 
 Route::group(['prefix' => 'dashboarduser','middleware' => ['web', 'auth','verified','role:user']], function () {
     Route::get('/', [App\Http\Controllers\BackController::class, 'user'])->name('user');
+    Route::resource('registerationsuser', App\Http\Controllers\registerationsController::class);
 });
 
 

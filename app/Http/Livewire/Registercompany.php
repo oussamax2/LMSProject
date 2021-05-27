@@ -5,10 +5,23 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Hash;
 use App\Models\User;
-
+use App\Models\companies;
+use Illuminate\Http\UploadedFile;
+use Livewire\WithFileUploads;
+use Auth;
 class Registercompany extends Component
 {
-    public $users, $email, $password, $name,$password_confirmation;
+    use WithFileUploads;
+    public $users, $email, $password, $name,$password_confirmation,$shortDescription,
+    $fcburl,
+    $twitturl,
+    $lastname,
+    $telephone,
+    $website,
+    $picture,
+    $linkdinurl,
+    $description,
+    $dribbleurl;
 
     public function render()
     {
@@ -20,41 +33,94 @@ class Registercompany extends Component
         $this->email = '';
         $this->password = '';
         $this->password_confirmation = '';
+        $this->shortDescription = '';
+        $this->fcburl = '';
+        $this->twitturl = '';
+        $this->lastname = '';
+        $this->telephone = '';
+        $this->website = '';
+        $this->picture = '';
+        $this->linkdinurl = '';
+        $this->dribbleurl = '';
+        $this->description = '';
+
     }
 
-    public function login()
+
+    public function savepicture(UploadedFile $file) : string
     {
-        $validatedDate = $this->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
-
-        if(\Auth::attempt(array('email' => $this->email, 'password' => $this->password))){
-                session()->flash('message', "You are Login successful.");
-                redirect('/');
-        }else{
-            session()->flash('error', 'Email and password are wrong.');
-        }
+        return $file->store('companies_pictures', ['disk' => 'public']);
     }
 
 
-
-    public function registerStore()
+    public function register()
     {
         $validatedDate = $this->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8|confirmed',
+            'picture' => 'image|max:1024',
             'password_confirmation' => 'required|min:8',
         ]);
 
-        $this->password = Hash::make($this->password);
 
-        User::create(['name' => $this->name, 'email' => $this->email,'password' => $this->password]);
 
-        session()->flash('message', 'Your register successfully Go to the login page.');
-        redirect('/');
-        $this->resetInputFields();
+
+
+
+
+        $pass = $this->password;
+       $user =   User::create([
+            'name' => $this->name,
+            'email' => $this->email,
+            'password' => Hash::make($this->password),
+        ]);
+
+        $user->addRole(['company']);
+       // $user->sendEmailVerificationNotification();
+        if ($this->picture){
+
+            $image = $this->picture->store('companies_pictures', ['disk' => 'public']);
+            $companies = companies::create([
+                'user_id' => $user->id,
+                'lastname' => $this->lastname,
+                'website' => $this->website,
+                'telephone' => $this->telephone,
+                'shortDescription'	 => $this->shortDescription,
+                'description' => $this->description,
+                'fcburl' => $this->fcburl,
+                'twitturl' => $this->twitturl,
+                'linkdinurl' => $this->linkdinurl,
+                'dribbleurl' => $this->dribbleurl,
+                'status' => 0,
+            ]);
+            $companies->picture = $image;
+            $companies->save();
+
+        }else{
+
+
+            companies::create([
+                'user_id' => $user->id,
+                'lastname' => $this->lastname,
+                'website' => $this->website,
+                'telephone' => $this->telephone,
+                'picture' => "",
+                'shortDescription'	 => $this->shortDescription,
+                'description' => $this->description,
+                'fcburl' => $this->fcburl,
+                'twitturl' => $this->twitturl,
+                'linkdinurl' => $this->linkdinurl,
+                'dribbleurl' => $this->dribbleurl,
+                'status' => 0,
+            ]);
+
+        }
+        if(\Auth::attempt(array('email' => $this->email, 'password' => $pass))){
+            session()->flash('message', "You are Login successful.");
+            redirect('/dashboarduser');
+    }
+       $this->resetInputFields();
 
     }
 }
