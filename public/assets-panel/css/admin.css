@@ -181,9 +181,10 @@ footer.app-footer {
     border-radius: 3px;
     text-decoration: none;
     font-size: 20px;
-    margin: 0 0 0 30px;
+    margin: 0 0 0 20px;
     padding: 6px 10px;
     float: right;
+    border:none;
 }
 .card-header a span.icon{
   color: #fff;
@@ -258,10 +259,18 @@ margin-right: 10px;
 float: right;
   }
 
-  @media(max-width:1200px){
+  @media(min-width:576px) and (max-width:1200px){
+    .card-header a{
+        font-size: 18px;
+        margin: 0 0 0 10px;
+    }
+  }
+
+  @media(max-width:576px){
   .card-header a{
     float: left;
     margin: 0;
+    width: 100%;
     margin-bottom: 10px;
   }
   .card-details .actionbuttonslmsreg{
@@ -351,9 +360,30 @@ table tr td{
 /*---------------------- cards ----------------------*/
 
 /* details sessions */
-.list-field-detalssessions{
-padding: 25px;
+.list-field-detalssessions .image-companies img{
+  width: 100%;
 }
+.list-field-detalssessions ul.social-media-companies{
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+@media(max-width:576px){
+  .list-field-detalssessions ul.social-media-companies{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+      text-align: center;
+      align-items: center;
+  }
+}
+.list-field-detalssessions ul.social-media-companies .form-group a{
+text-decoration: none;
+margin:0 10px auto;
+ }
+
+
 .list-field-detalssessions .form-group{
   display: flex;
 }
@@ -362,7 +392,7 @@ padding: 25px;
 }
 .list-field-detalssessions .form-group i.icon{
   color: #f36824;
-  margin: -6px 10px 0 10px;
+  margin: -9px 10px 0 10px;
   font-size: 23px;
   border-radius: 50%;
   text-align: center;
