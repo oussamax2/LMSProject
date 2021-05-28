@@ -78,6 +78,8 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','verified','rol
     Route::resource('contacts', App\Http\Controllers\ContactController::class);
 
     Route::get('verifcompany/{id}/{response}', 'App\Http\Controllers\companieontroller@update_companyreqst')->name('verifcompany');
+
+    Route::resource('targetAudiances', App\Http\Controllers\target_audianceController::class);
 });
 
 

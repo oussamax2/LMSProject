@@ -42,19 +42,29 @@
        </script>
 @endpush
 
-@if(isset($listcateg))
+
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
     {!! Form::Label('category_id',  __('front.category list:')) !!}
     {!! Form::select('category_id', $listcateg,null, ['class' => 'form-control select2']) !!}
 </div>
-@endif
 
+@if(!isset($targetvalues))
 <!-- Tags Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('tags', __('front.Target Audiance list:')) !!}
-    {!! Form::text('tags', null, ['class' => 'form-control']) !!}
+    {!! Form::label('target_id', __('front.Target Audiance list:')) !!}
+    {!! Form::select('target_id[]', $listtarget,null, ['class' => 'form-control select2','multiple']) !!}
+   
 </div>
+@else
+<!-- Tags Field -->
+<div class="form-group col-sm-12">
+    {!! Form::label('target_id', __('front.Target Audiance list:')) !!}
+    {!! Form::select('target_id[]', $listtarget, $targetvalues, ['class' => 'form-control select2','multiple']) !!}
+   
+</div>
+@endif
+
 
 <!-- Submit Field -->
 <div class="form-group buttons-action-lms col-sm-12">
