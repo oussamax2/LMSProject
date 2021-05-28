@@ -41,8 +41,8 @@ class HomeController extends Controller
         if(isset($companies))
         return view('front.pro_training', compact('companies', 'countsessions'));
        else
-        return abort(404); 
-      
+        return abort(404);
+
     }
 
     public function catg_courses()
@@ -58,7 +58,7 @@ class HomeController extends Controller
 
             //get count user registertions in same session
             $registuser = registerations::where('session_id', $sessions->id)->where('user_id', auth()->user()->id)->get()->count();
-            
+
             if(isset($sessions))
             return view('front.singlcourse', ['sessions'=>$sessions, 'registuser' => $registuser]);
             else
@@ -74,7 +74,8 @@ class HomeController extends Controller
 
     }
     public function registeruser()
-    {
+    {   if(auth()->user())
+        return redirect('/');
         return view('front.registeruser');
     }
     public function contact()
@@ -82,7 +83,8 @@ class HomeController extends Controller
         return view('front.contactp');
     }
     public function registervendor()
-    {
+    {   if(auth()->user())
+        return redirect('/');
         return view('front.registervendor');
     }
     public function detailcourse()
