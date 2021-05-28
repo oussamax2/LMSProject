@@ -35,8 +35,7 @@ class courses extends Model
         'title',
         'body',
         'published_on',
-        'category_id',
-        'tags'
+        'category_id'
     ];
 
     /**
@@ -96,5 +95,13 @@ class courses extends Model
         return true;
         if(auth()->user()->hasRole('company'))
         return ($this->company_id == auth()->user()->companies->id);
+    }
+
+        /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     **/
+    public function target_audiance()
+    {
+        return $this->belongsToMany(\App\Models\target_audiance::class, 'target_courses', 'course_id', 'target_id');
     }
 }

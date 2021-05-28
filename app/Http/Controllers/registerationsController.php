@@ -9,6 +9,7 @@ use App\Http\Requests\UpdateregisterationsRequest;
 use App\Repositories\registerationsRepository;
 use Flash;
 use App\Models\registerations;
+use App\Models\Mailsender;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Response;
@@ -147,9 +148,9 @@ class registerationsController extends AppBaseController
 
     public function userregist()
     {
-$r= registerations::find(5);
+       // $r= registerations::find(6);
 
-        return response()->json($r->my());
+        return Mailsender::send();
     }
     /** send registration_request  */
     public function student_registsess(Request $request)

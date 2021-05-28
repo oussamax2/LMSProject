@@ -37,6 +37,12 @@
                 <span class="menu-item-dsh">Subcategories</span>
             </a>
         </li>
+        <li class="nav-item {{ Request::is('target_audiances*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('targetAudiances.index') }}">
+                <span class="icon icon-wallet"></span>
+                <span class="menu-item-dsh">target_audiances</span>
+            </a>
+        </li>
 
 
 
@@ -96,5 +102,11 @@
     <a class="nav-link" href="{{ route('contacts.index') }}">
         <span class="icon icon-envelope-open"></span>
         <span class="menu-item-dsh">Contacts</span>
+    </a>
+</li>
+<li class="nav-item {{ Request::is('targetAudiances*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('targetAudiances.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Target Audiances</span>
     </a>
 </li>

@@ -16,6 +16,7 @@ use App\Models\cities;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Http\Request;
+use App\Models\Mailsender;
 
 class companiesController extends AppBaseController
 {
@@ -209,7 +210,7 @@ class companiesController extends AppBaseController
        } else {
 
             $companies->status = 1;
-         
+
        }
        /**save status in DB */
        $companies->save();
