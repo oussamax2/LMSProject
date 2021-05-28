@@ -19,7 +19,15 @@ class citiesDataTable extends DataTable
         $dataTable = new EloquentDataTable($query);
 
         return $dataTable->addColumn('action', 'cities.datatables_actions')
-                ->editColumn('picture', '<img class="profile-user-img  img-circle" src="{{ asset("storage/".$picture) }}" style="width: 97px;height: 64px;">')
+                ->editColumn('picture', function($data) {
+                    if(isset($data->picture) && $data->picture != NULL){
+                    $url= asset("storage/".$data->picture);
+                    return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 70px;" />';
+                    }else{
+                    $url= asset("storage/defaultcity.png");
+                    return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 90px;">';
+                    }
+                })
                 ->editColumn('state_id', function ($dataTable) { 
                     return $dataTable->states['name'];
                     

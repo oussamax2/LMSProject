@@ -104,9 +104,3 @@
         <span class="menu-item-dsh">Contacts</span>
     </a>
 </li>
-<li class="nav-item {{ Request::is('targetAudiances*') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ route('targetAudiances.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>Target Audiances</span>
-    </a>
-</li>

@@ -20,15 +20,23 @@ class companiesDataTable extends DataTable
         $dataTable = new EloquentDataTable($query);
 
         return $dataTable->addColumn('action', 'companies.datatables_actions')
-         ->editColumn('picture', '<img class="profile-user-img  img-circle" src="{{ asset("storage/".$picture) }}" style="width: 70px;">')
-         ->editColumn('status', function ($companies) {
-             if($companies->status ==0)
-            return '<span class="btn btn-ghost-info icon icon-hourglass"></span>';
-            if($companies->status ==1)
-            return '<span class="btn btn-ghost-danger icon icon-dislike"></span>';
-            if($companies->status ==2)
-            return '<span class="btn btn btn-ghost-success icon icon-like"></span>';})
-         ->escapeColumns([]);;
+                ->editColumn('picture', function($data) {
+                    if(isset($data->picture) && $data->picture != NULL){
+                    $url= asset("storage/".$data->picture);
+                    return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 70px;" />';
+                    }else{
+                    $url= asset("storage/defaultuser.png");
+                    return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 70px;">';
+                    }
+                })
+                ->editColumn('status', function ($companies) {
+                    if($companies->status ==0)
+                    return '<span class="btn btn-ghost-info icon icon-hourglass"></span>';
+                    if($companies->status ==1)
+                    return '<span class="btn btn-ghost-danger icon icon-dislike"></span>';
+                    if($companies->status ==2)
+                    return '<span class="btn btn btn-ghost-success icon icon-like"></span>';})
+                ->escapeColumns([]);
     }
 
     /**
