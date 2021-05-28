@@ -147,7 +147,17 @@
 <script type="text/javascript" src="{{ asset('js/theme.js') }}"></script>
 
 
-
+@if(Route::currentRouteName() != 'registeruser' && Route::currentRouteName() != 'register_vendor' && Request::segment(1) !='login' )
+@if($errors->has('email') || $errors->has('password'))
+    <script>
+    $(function() {
+        $('#loginModal').modal({
+            show: true
+        });
+    });
+    </script>
+@endif
+@endif
 @yield('js')
 @section('scripts')
 @parent
