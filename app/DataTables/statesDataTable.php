@@ -30,7 +30,7 @@ class statesDataTable extends DataTable
      */
     public function query(states $model)
     {
-        return $model->newQuery()->with('countries');
+        return $model->newQuery()->with('countries')->select('states.*');
     }
 
     /**
