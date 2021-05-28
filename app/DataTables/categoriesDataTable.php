@@ -25,7 +25,7 @@ class categoriesDataTable extends DataTable
                                 $url= asset("storage/".$data->picture);
                                 return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 70px;" />';
                              }else{
-                                $url= asset("storage/defaultpicture.jpg");
+                                $url= asset("storage/defaultpicture.png");
                                 return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 70px;">';
                              }
                          })->escapeColumns([]);
