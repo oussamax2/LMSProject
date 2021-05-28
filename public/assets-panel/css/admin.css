@@ -181,9 +181,8 @@ footer.app-footer {
     border-radius: 3px;
     text-decoration: none;
     font-size: 20px;
-    margin: 0 0 0 20px;
+    margin: 0 0 0 15px;
     padding: 6px 10px;
-    float: right;
     border:none;
 }
 .card-header a span.icon{
@@ -509,9 +508,6 @@ background-color: #f36824;
 .arrow-steps .step.current:after {
 border-left: 17px solid #f36824;	
 }
-.arrow-steps{
-  float: right;
-  }
 /* timeline style details register */
 /*messagerie*/
 .msger {
