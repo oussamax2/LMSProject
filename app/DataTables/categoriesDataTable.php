@@ -19,8 +19,16 @@ class categoriesDataTable extends DataTable
         $dataTable = new EloquentDataTable($query);
 
         return $dataTable->addColumn('action', 'categories.datatables_actions')
-        ->editColumn('picture', '<img class="profile-user-img  img-circle" src="{{ asset("storage/".$picture) }}" style="width: 70px;">')->escapeColumns([]);
           
+                         ->editColumn('picture', function($data) {
+                             if(isset($data->picture) && $data->picture != NULL){
+                                $url= asset("storage/".$data->picture);
+                                return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 70px;" />';
+                             }else{
+                                $url= asset("storage/defaultpicture.png");
+                                return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 70px;">';
+                             }
+                         })->escapeColumns([]);
             //   OR METHOD 2 by addColumn
             //     ->addColumn('picture', function ($dataTable) { 
             //       $url= asset("storage/".$dataTable['picture']);

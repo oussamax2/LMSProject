@@ -1,1 +1,3 @@
-bonjour {{ $name }}:)
+Welcome {{ $name }}
+<br>
+{{$status}}
