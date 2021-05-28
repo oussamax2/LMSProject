@@ -206,6 +206,7 @@ class companiesController extends AppBaseController
        if ($response == "accept") {
 
             $companies->status = 2;
+            Mailsender::
        /**if admin clicked on declinecompany button=> the company'status will be 1 ~ rejected company's request */
        } else {
 
