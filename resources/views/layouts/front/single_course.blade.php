@@ -60,13 +60,10 @@
 									</ul>
 								</div>
 							</div>
-							
 							@if(auth()->user() && !($registuser>0))
 								<form action="{{ route('registsess')}}"  method="post">
 									{{ csrf_field() }}
-
 									<input type="hidden" name="session" value="{{ $sessions->id }}" />
-								    
 									<div class="curriculum-panel-buttonregister float-right">
 											<a class="btn btn-default"><button  type ="submit">@lang('front.Register')</button></a>
 									</div>
@@ -77,7 +74,9 @@
 							</div>							
 							@endif
 							@if(auth()->user() && $registuser>0)
-                             <h6>you have already registered in this session</h6>
+							<div class="check-register-session">
+							<h3><i class="icon flaticon-tick"></i>you have already registered in this session</h3>
+							</div>
 							@endif
 
 						</div>

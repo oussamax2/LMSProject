@@ -58,6 +58,7 @@ class Registercompany extends Component
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8|confirmed',
+            'picture' => 'max:1024',
             'password_confirmation' => 'required|min:8',
         ]);
 

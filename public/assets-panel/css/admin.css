@@ -181,9 +181,8 @@ footer.app-footer {
     border-radius: 3px;
     text-decoration: none;
     font-size: 20px;
-    margin: 0 0 0 20px;
+    margin: 0 0 0 15px;
     padding: 6px 10px;
-    float: right;
     border:none;
 }
 .card-header a span.icon{
@@ -268,8 +267,6 @@ float: right;
 
   @media(max-width:576px){
   .card-header a{
-    float: left;
-    margin: 0;
     width: 100%;
     margin-bottom: 10px;
   }
@@ -368,6 +365,10 @@ table tr td{
   padding: 0;
   margin: 0;
 }
+.social-media-companies{
+  border-top: 1px solid #ddd;
+}
+
 @media(max-width:576px){
   .list-field-detalssessions ul.social-media-companies{
     display: flex;
@@ -401,7 +402,7 @@ margin:0 10px auto;
 .list-field-detalssessions .form-group label{
 margin-right: 15px;
 }
-@media(max-width:768px){
+@media(max-width:1200px){
 .list-field-detalssessions .form-group{
   display: block;
 }
@@ -436,7 +437,7 @@ color: #666;
 cursor: default;
 margin: 0 3px;
 padding: 10px 10px 10px 30px;
-min-width: 180px;
+min-width: 160px;
 float: left;
 position: relative;
 background-color: #deeaf5;
@@ -447,13 +448,11 @@ background-color: #deeaf5;
     min-width: 100%;
     margin-bottom: 10px;
 }
-.arrow-steps {
-  float: left !important;
 }
-}
-@media(min-width:768px) and (max-width:1200px){
+@media(min-width:576px) and (max-width:1200px){
   .arrow-steps .step {
-    min-width: 126px;
+    min-width: 115px;
+    margin-bottom: 10px;
 }
 }
 .arrow-steps .step:after,
@@ -509,9 +508,6 @@ background-color: #f36824;
 .arrow-steps .step.current:after {
 border-left: 17px solid #f36824;	
 }
-.arrow-steps{
-  float: right;
-  }
 /* timeline style details register */
 /*messagerie*/
 .msger {
