@@ -12,10 +12,11 @@
                  @include('coreui-templates::common.errors')
                  <div class="row">
                      <div class="col-lg-12">
-                         <div class="card">
+                         <div class="card-details card">
                              <div class="card-header">
+                             <i class="icon-info"></i>
                                  <strong>Details</strong>
-                                  <a href="{{ route('cities.index') }}" class="btn btn-light">Back</a>
+                                  <a href="{{ route('cities.index') }}" class="btn btn-light"><i class="icon icon-arrow-right-circle"></i>Back</a>
                              </div>
                              <div class="card-body">
                                  @include('cities.show_fields')
