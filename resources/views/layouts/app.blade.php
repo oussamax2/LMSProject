@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('assets-panel/css/select2.min.css')}}">
     <link rel="stylesheet" href="{{ asset('fonts/icon/font/flaticon.css') }}">
 
-
+    @toastr_css
 
 
     <!-- Ionicons -->
@@ -148,5 +148,6 @@
 <script src="{{ asset('assets-panel/js/bootstrap-datetimepicker.min.js')}}"></script>
 <script src="{{ asset('assets-panel/js/coreui.min.js')}}"></script>
 @stack('scripts')
-
+@toastr_js
+@toastr_render
 </html>
