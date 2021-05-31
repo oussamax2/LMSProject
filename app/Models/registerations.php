@@ -70,6 +70,10 @@ class registerations extends Model
         return $this->BelongsTo(companies::class);
 
     }
+    public function messaging()
+    {
+        return $this->HasMany(messaging::class, 'registeration_id');
+    }
 /** list for user  */
  public function touser()
     {

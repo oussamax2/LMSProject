@@ -144,3 +144,6 @@ Route::post(
  * switchlanguage route
  */
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
+
+
+Route::resource('messagings', App\Http\Controllers\messagingController::class);

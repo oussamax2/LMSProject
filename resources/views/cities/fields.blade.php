@@ -16,26 +16,40 @@
     {!! Form::label('name', 'Name:') !!}
     {!! Form::text('name', null, ['class' => 'form-control', 'required']) !!}
 </div>
-
+    @push('scripts')
+        <script type="text/javascript">
+            imgInp.onchange = evt => {
+                const [file] = imgInp.files
+                if (file) {
+                    blah.src = URL.createObjectURL(file)
+                }
+            }
+    </script>
+    @endpush  
 @if(isset($cities->picture) && $cities['picture'] != NULL)
+
    <!-- Picture Field -->
-   <div class="form-group">
-        <div class="image-companies">
-            <img src="{{ asset("storage/".$cities['picture']) }}" style="width: 185px;height: 157px;border: 3px solid #fff;border-radius: 50%;"/>
+   <div class="form-group col-sm-12">
+            {!! Form::label('picture', __('admin.Picture:')) !!}
+           
+                {!! Form::file('picture', ['id' =>'imgInp']) !!} 
+                
+                <img id="blah" src="{{ asset("storage/".$cities['picture']) }}" style="width: 238px;height: 238px;" />
+          
         </div>
-    </div>
-    <!-- Picture Field -->
-    <div class="form-group col-sm-12">
-        {!! Form::label('picture', __('admin.Picture:')) !!}
-        {!! Form::file('picture') !!}
-    </div>
+
 @else
-    
-    <!-- Picture Field -->
-    <div class="form-group col-sm-12">
-        {!! Form::label('picture', __('admin.Picture:')) !!}
-        {!! Form::file('picture') !!}
-    </div>
+     
+        <!-- Picture Field -->
+        <div class="form-group col-sm-12">
+            {!! Form::label('picture', __('admin.Picture:')) !!}
+           
+                {!! Form::file('picture', ['id' =>'imgInp']) !!} 
+                
+                <img id="blah" src="{{ asset("images/no-image.png") }}" style="width: 238px;height: 238px;" />
+          
+        </div>
+
 @endif
 
 
