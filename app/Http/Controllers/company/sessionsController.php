@@ -44,28 +44,29 @@ class sessionsController extends AppBaseController
     public function create()
     {
         /**get courses List and send them to selection list in blade */
+        if(auth()->user()->hasRole('company'))
         $listcourses = courses::where('company_id', auth()->user()->companies->id)->pluck('title', 'id');
-      
-        
+        else
+        $listcourses = courses::pluck('title', 'id');
         /**get countries List and send them to selection list in blade */
         $listcountries = countries::pluck('name', 'id');
 
-        
+
         /**get states List and send them to selection list in blade */
         $liststates = states::pluck('name', 'id');
-        
-        
+
+
         /**get cities List and send them to selection list in blade */
         $listcities = cities::pluck('name', 'id');
 
-        //  var_dump("hello");    
+        //  var_dump("hello");
         return view('sessions.create', compact(
-           
-            'listcourses', 
+
+            'listcourses',
             'listcountries',
             'liststates',
             'listcities'));
-        
+
     }
 
     /**
@@ -102,7 +103,7 @@ class sessionsController extends AppBaseController
 
             return redirect(route('sessions.index'));
         }
-      
+
         return view('sessions.show')->with('sessions', $sessions);
     }
 
@@ -124,28 +125,28 @@ class sessionsController extends AppBaseController
         }
 
         /**get courses List and send them to selection list in blade */
-        $listcourses = courses::where('company_id', auth()->user()->companies->id)->pluck('title', 'id');  
-        
+        $listcourses = courses::where('company_id', auth()->user()->companies->id)->pluck('title', 'id');
+
         /**get countries List and send them to selection list in blade */
         $listcountries = countries::pluck('name', 'id');
-        
-               
+
+
         /**get states List and send them to selection list in blade */
         $liststates = states::pluck('name', 'id');
-        
-        
+
+
         /**get cities List and send them to selection list in blade */
         $listcities = cities::pluck('name', 'id');
-         
+
         return view('sessions.edit', compact(
-            'sessions',     
-           
-            'listcourses', 
+            'sessions',
+
+            'listcourses',
             'listcountries',
             'liststates',
             'listcities'));
 
-    
+
     }
 
     /**

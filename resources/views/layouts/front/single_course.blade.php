@@ -15,6 +15,11 @@
 					<div class="row">
 						<div class="col-md-8 col-xs-12">
 							<div class="details-wrapper">
+                                @if(Session::has('success'))
+                                <div class="alert alert-success">
+                                    {{Session::get('success')}}
+                                </div>
+                            @endif
 								<div class="course-title">
 									<h2>{{ $sessions->courses->title }}</h2>
 									<span>@lang('front.Posted on') {{Carbon\Carbon::parse($sessions->courses->published_on)->isoFormat(' Do MMMM  YYYY ')}}</span>
@@ -60,13 +65,10 @@
 									</ul>
 								</div>
 							</div>
-							
 							@if(auth()->user() && !($registuser>0))
 								<form action="{{ route('registsess')}}"  method="post">
 									{{ csrf_field() }}
-
 									<input type="hidden" name="session" value="{{ $sessions->id }}" />
-								    
 									<div class="curriculum-panel-buttonregister float-right">
 											<a class="btn btn-default"><button  type ="submit">@lang('front.Register')</button></a>
 									</div>
@@ -74,10 +76,12 @@
 							@elseif(!(auth()->user()))
 							<div class="curriculum-panel-buttonregister float-right">
 									<a class="tran3s" data-toggle="modal" data-target=".signInModal" class="btn btn-default">@lang('front.Register')</a>
-							</div>							
+							</div>
 							@endif
 							@if(auth()->user() && $registuser>0)
-                             <h6>you have already registered in this session</h6>
+							<div class="check-register-session">
+							<h3><i class="icon flaticon-tick"></i>you have already registered in this session</h3>
+							</div>
 							@endif
 
 						</div>
@@ -114,7 +118,7 @@
 											</ul>
 										</div>
 										<p>{{ $sessions->companies->shortDescription }}</p>
-										<a href="#" class="tran3s p-bg-color follow hvr-trim">@lang('front.see profile')</a>
+										<a href="{{ url('/profilecompany/{id}') }}" class="tran3s p-bg-color follow hvr-trim">@lang('front.see profile')</a>
 									</div>
 								</div>
 							</div>

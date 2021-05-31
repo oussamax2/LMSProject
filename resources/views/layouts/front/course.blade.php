@@ -14,7 +14,13 @@
 						<div class="col-md-4 col-xs-6 wow fadeInLeft">
 							<div class="single-course">
 								<div class="text">
-									<div class="image"><img src="{{ asset("storage/".$sessionList->companies['picture']) }}" alt=""></div>
+									<div class="image">
+										@if(isset($sessionList->companies->picture))
+										<img src="{{ asset("storage/".$sessionList->companies['picture']) }}" alt="">
+										@else
+										<img src="{{ asset('images/companydefault.svg') }}" alt="">
+										@endif
+									</div>
 									<div class="name clearfix">
 										<h6 class="float-left">{{$sessionList->companies->user->name}}</h6>
 										@if($sessionList->fee == 0)

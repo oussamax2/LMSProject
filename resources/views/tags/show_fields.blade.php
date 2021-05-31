@@ -1,30 +1,34 @@
-<!-- Id Field -->
-<div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{{ $tag->id }}</p>
-</div>
+<div class="list-field-detalssessions row">
+<div class="col-sm-6 col-md-12 col-lg-6">
 
 <!-- Name Field -->
 <div class="form-group">
-    {!! Form::label('name', 'Name:') !!}
+<i class="icon flaticon-bookmark"></i>
+    {!! Form::label('name', 'Name') !!}
     <p>{{ $tag->name }}</p>
 </div>
 
 <!-- Category Id Field -->
 <div class="form-group">
-    {!! Form::label('category_id', 'Category Id:') !!}
-    <p>{{ $tag->category_id }}</p>
+<i class="icon flaticon-bookmark"></i>
+    {!! Form::label('category_id', 'Category Name') !!}
+    <p>{{ $tag->categories->name }}</p>
 </div>
+</div>
+<div class="col-sm-6 col-md-12 col-lg-6">
 
 <!-- Created At Field -->
 <div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{{ $tag->created_at }}</p>
+<i class="icon icon-clock"></i>
+    {!! Form::label('created_at', 'Created At') !!}
+    <p>{{Carbon\Carbon::parse($tag->created_at)->isoFormat(' Do MMMM  YYYY ')}}</p>
 </div>
 
 <!-- Updated At Field -->
 <div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{{ $tag->updated_at }}</p>
+<i class="icon icon-clock"></i>
+    {!! Form::label('updated_at', 'Updated At') !!}
+    <p>{{Carbon\Carbon::parse($tag->updated_at)->isoFormat(' Do MMMM  YYYY ')}}</p>
+</div>
 </div>
 

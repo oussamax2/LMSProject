@@ -10,6 +10,7 @@ use App\Repositories\registerationsRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
+use App\Models\Mailsender;
 
 class registerationsController extends AppBaseController
 {
@@ -154,6 +155,8 @@ class registerationsController extends AppBaseController
         public function update_registrationStatus($id, $response)
         {
             $registerations = $this->registerationsRepository->find($id);
+            $user =$registerations->user_id;
+
             // || $registerations->sessions->companies->id != auth()->user()->companies->id
             if (empty($registerations)  ) {
                 Flash::error(__('admin.not found'));
@@ -164,14 +167,17 @@ class registerationsController extends AppBaseController
            if ($response == 2) {
 
                 $registerations->status = 2;
+                Mailsender::senduser($user,$id,2);
            /**if admin clicked on declineRequest button=> the registerations'status will be 1 ~ rejected user's request */
            } elseif ($response == 1)  {
 
                 $registerations->status = 1;
+                Mailsender::senduser($user,$id,1);
 
            } elseif ($response == 3){
              /**if admin clicked on accept after status(pending-payement) button=> the registerations'status will be 3 ~ confirmed user's request */
                 $registerations->status = 3;
+                Mailsender::senduser($user,$id,3);
            }
            /**save status in DB */
            $registerations->save();

@@ -7,6 +7,7 @@ use App\Models\companies;
 use App\Models\registerations;
 use Illuminate\Http\Request;
 use App\Models\sessions;
+use App\Models\cities;
 
 class HomeController extends Controller
 {
@@ -17,12 +18,16 @@ class HomeController extends Controller
         /**get latest sessions */
         $sessionList = sessions::orderBy('id', 'desc')->take(6)->get();
         /**get latest categories */
-        $categList = categories::orderBy('id', 'desc')->take(6)->get();
+        $categList = categories::inRandomOrder()->orderBy('id', 'desc')->take(6)->get();
+        $citiesList = cities::inRandomOrder()->orderBy('id', 'desc')->take(8)->get();
+        $companies = companies::inRandomOrder()->orderBy('id', 'desc')->take(8)->get();
 
 
         return view('front.index')->with([
             'sessionList'=>$sessionList,
-            'categList'=>$categList
+            'categList'=>$categList,
+            'companies'=>$companies,
+            'citiesList'=>$citiesList
             ]);
 
     }
@@ -41,8 +46,8 @@ class HomeController extends Controller
         if(isset($companies))
         return view('front.pro_training', compact('companies', 'countsessions'));
        else
-        return abort(404); 
-      
+        return abort(404);
+
     }
 
     public function catg_courses()
@@ -58,7 +63,7 @@ class HomeController extends Controller
 
             //get count user registertions in same session
             $registuser = registerations::where('session_id', $sessions->id)->where('user_id', auth()->user()->id)->get()->count();
-            
+
             if(isset($sessions))
             return view('front.singlcourse', ['sessions'=>$sessions, 'registuser' => $registuser]);
             else
@@ -74,7 +79,8 @@ class HomeController extends Controller
 
     }
     public function registeruser()
-    {
+    {   if(auth()->user())
+        return redirect('/');
         return view('front.registeruser');
     }
     public function contact()
@@ -82,7 +88,8 @@ class HomeController extends Controller
         return view('front.contactp');
     }
     public function registervendor()
-    {
+    {   if(auth()->user())
+        return redirect('/');
         return view('front.registervendor');
     }
     public function detailcourse()

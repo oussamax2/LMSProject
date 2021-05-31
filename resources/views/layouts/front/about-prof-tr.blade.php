@@ -3,7 +3,11 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-4 col-sm-6 col-xs-12">
+						@if(isset($companies->picture))
 						<img src="{{ asset("storage/".$companies['picture']) }}" alt="">
+						@else
+						<img src="{{ asset('images/companydefault.svg') }}" alt="">
+						@endif
                         <ul class="content-info-center">
                             <li class="item-info">@lang('front.WebSite:') {{ $companies->website }}</li>
                             <li class="item-info">@lang('front.E-mail:') {{ $companies->user->email }}</li>

@@ -75,12 +75,13 @@
                                         </span>
                                     @endif
                                     <h6>Your Picture</h6>
+                                    @error('picture') <span class="invalid-feedback">{{ $message }}</span> @enderror
                                     @if($picture)
                                     <br>
                                     <image src="{{$picture->temporaryUrl()}}" style="width: 200px;">
                                         <br>
                                     @endif
-                                    <input type="file"  wire:model="picture" accept="image/*" value="{{ old('picture') }}">
+                                    <input type="file" accept="image/*"  wire:model="picture" >
                                     <h6>Description</h6>
                                     <textarea wire:model="description" ></textarea>
                                     <h6>Linkedin Url</h6>

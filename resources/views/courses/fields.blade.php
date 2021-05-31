@@ -49,21 +49,13 @@
     {!! Form::select('category_id', $listcateg,null, ['class' => 'form-control select2', 'required']) !!}
 </div>
 
-@if(!isset($targetvalues))
-<!-- Tags Field -->
+
+
 <div class="form-group col-sm-12">
     {!! Form::label('target_id', __('front.Target Audiance list:')) !!}
-    {!! Form::select('target_id[]', $listtarget,null, ['class' => 'form-control select2','multiple', 'required']) !!}
-   
+    {!! Form::select('target_id[]', $listtarget,isset($targetvalues)?$targetvalues:null, ['class' => 'form-control select2','multiple']) !!}
 </div>
-@else
-<!-- Tags Field -->
-<div class="form-group col-sm-12">
-    {!! Form::label('target_id', __('front.Target Audiance list:')) !!}
-    {!! Form::select('target_id[]', $listtarget, $targetvalues, ['class' => 'form-control select2','multiple', 'required']) !!}
-   
-</div>
-@endif
+
 
 
 <!-- Submit Field -->

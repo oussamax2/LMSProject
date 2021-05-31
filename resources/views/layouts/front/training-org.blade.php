@@ -4,9 +4,9 @@
 					<div class="theme-title text-center">
 						<h2>@lang('front.Training Organizer Company')</h2>
 						<p>@lang('front.Search training from training organizer companies')</p>
+                        {{$companies}}
 						<a href="course-grid.html" class="tran3s">@lang('front.See All Companies')</a>
 					</div>
-
 					<div class="row">
 						<div class="instructor-slider">
 							<div class="item">
@@ -95,4 +95,3 @@
 				</div>
 			</div>
 {{-- training organizer company --}}
-		

@@ -9,14 +9,14 @@
                 </div>
             </div>
         @else
-          
+
             <!-- Picture Field -->
             <div class="form-group">
                 <div class="image-companies">
                     <img src="{{ asset("images/defaultuser.png") }}" />
                 </div>
-            </div>          
-            
+            </div>
+
         @endif
         <!-- Shortdescription Field -->
             <div class="form-group">
@@ -49,9 +49,9 @@
         </div>
         </ul>
     </div>
-    <div class="col-sm-6 col-md-12 col-lg-8">
-            <!-- companyName Field -->
-            <div class="form-group">
+    <div class="col-sm-6 col-md-12 col-lg-4">
+                    <!-- companyName Field -->
+                    <div class="form-group">
         <i class="icon flaticon-bookmark"></i>
             {!! Form::label('name', 'company Name') !!}
             <p>{{ $companies->user->name }}</p>
