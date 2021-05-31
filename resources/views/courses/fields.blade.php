@@ -3,19 +3,19 @@
 
 <!-- Title Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('title', 'Title:') !!}
+    {!! Form::label('title', 'Title') !!}
     {!! Form::text('title', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Body Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('body', 'Body:') !!}
+    {!! Form::label('body', 'Body') !!}
     {!! Form::text('body', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Published On Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('published_on', __('forms.Published On:')) !!}
+    {!! Form::label('published_on', 'Published On') !!}
     {!! Form::text('published_on', null, ['class' => 'form-control','id'=>'published_on']) !!}
 </div>
 
@@ -45,14 +45,14 @@
 @if(isset($listcateg))
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
-    {!! Form::Label('category_id',  __('front.category list:')) !!}
+    {!! Form::Label('category_id', 'category list') !!}
     {!! Form::select('category_id', $listcateg,null, ['class' => 'form-control select2']) !!}
 </div>
 @endif
 
 <!-- Tags Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('tags', __('front.Target Audiance list:')) !!}
+    {!! Form::label('tags', 'Target Audiance list') !!}
     {!! Form::text('tags', null, ['class' => 'form-control']) !!}
 </div>
 

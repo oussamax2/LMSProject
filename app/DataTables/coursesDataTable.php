@@ -80,7 +80,7 @@ class coursesDataTable extends DataTable
             ['data' => 'companies.lastname', 'name' => 'companies.lastname', 'title' => __('forms.Company Name')],
             'title',
             ['data' => 'categories.name', 'name' => 'categories.name', 'title' => __('forms.Category Name')],
-            ['data' => 'published_on', 'name' => 'published_on', 'title' => __('forms.Published On:')],
+            ['data' => 'published_on', 'name' => 'published_on', 'title' => __('forms.Published On')],
             ['data' => 'count_session', 'name' => 'count_session', 'title' => __('forms.Session Number')],
         ];
     }

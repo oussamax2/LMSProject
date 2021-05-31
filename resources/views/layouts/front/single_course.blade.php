@@ -113,7 +113,7 @@
 											</ul>
 										</div>
 										<p>{{ $sessions->companies->shortDescription }}</p>
-										<a href="#" class="tran3s p-bg-color follow hvr-trim">@lang('front.see profile')</a>
+										<a href="{{ url('/profilecompany/{id}') }}" class="tran3s p-bg-color follow hvr-trim">@lang('front.see profile')</a>
 									</div>
 								</div>
 							</div>

@@ -37,7 +37,7 @@ return [
     'end Date'      => 'end Date',
     'lang'      => 'English',
     'State Name'      => 'State Name',
-    'Published On:'      => 'Published On:',
+    'Published On'      => 'Published On',
     ''      => '',
     ''      => '',
 

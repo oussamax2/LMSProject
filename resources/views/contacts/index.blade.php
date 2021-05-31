@@ -13,7 +13,6 @@
                          <div class="card-header">
                              <i class="fa fa-align-justify"></i>
                              Contacts
-
                          </div>
                          <div class="card-body">
                              @include('contacts.table')
