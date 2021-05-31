@@ -75,7 +75,7 @@
                                 </ul>
                             </li>
                             @auth
-                            <li class="dropdown-holder menu-list"><a class="tran3s"><i class="flaticon-user"></i></a>
+                            <li class="dropdown-holder menu-list"><a class="tran3s"><i class="flaticon-user"></i> {{ Auth::user()->name }}</a>
                                 <ul class="sub-menu">
                                     <li><a href="
                                         @if(auth()->user()->hasRole('admin'))
