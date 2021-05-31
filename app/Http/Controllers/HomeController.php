@@ -20,11 +20,13 @@ class HomeController extends Controller
         /**get latest categories */
         $categList = categories::inRandomOrder()->orderBy('id', 'desc')->take(6)->get();
         $citiesList = cities::inRandomOrder()->orderBy('id', 'desc')->take(8)->get();
+        $companies = companies::inRandomOrder()->orderBy('id', 'desc')->take(8)->get();
 
 
         return view('front.index')->with([
             'sessionList'=>$sessionList,
             'categList'=>$categList,
+            'companies'=>$companies,
             'citiesList'=>$citiesList
             ]);
 
