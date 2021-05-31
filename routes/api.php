@@ -58,3 +58,5 @@ Route::resource('companies', App\Http\Controllers\API\companiesAPIController::cl
 Route::resource('contacts', App\Http\Controllers\API\ContactAPIController::class);
 
 Route::resource('target_audiances', App\Http\Controllers\API\target_audianceAPIController::class);
+
+Route::resource('messagings', App\Http\Controllers\API\messagingAPIController::class);

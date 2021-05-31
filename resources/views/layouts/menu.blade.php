@@ -104,3 +104,9 @@
         <span class="menu-item-dsh">Contacts</span>
     </a>
 </li>
+<li class="nav-item {{ Request::is('messagings*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('messagings.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Messagings</span>
+    </a>
+</li>
