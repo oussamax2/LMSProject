@@ -14,16 +14,17 @@
         <table class="table table-bordered">
                 <thead>
                     <tr>
-                  
+                    <th scope="col">#</th>
                     <th scope="col">@lang('forms.Course Title')</th>
                     
                     </tr>
                 </thead>
-                {{$i=1}}
+                <?php $i=1; ?>
                 @foreach ($targetAudiance->courses as $listcourses) 
                    
                     <tbody>
                         <tr>
+                          <th scope="row">{{$i++}}</th>
                           
                             <td>{{$listcourses['title']}}</td>
                         

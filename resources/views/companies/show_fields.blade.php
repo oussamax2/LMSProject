@@ -13,7 +13,7 @@
             <!-- Picture Field -->
             <div class="form-group">
                 <div class="image-companies">
-                    <img src="{{ asset("storage/defaultuser.png") }}" />
+                    <img src="{{ asset("images/defaultuser.png") }}" />
                 </div>
             </div>
 
@@ -106,7 +106,7 @@
         @foreach ($listcourses as $listcourses)
             <p>{{ $listcourses->title }}</p>
 
-            @foreach ($listcourses->sessions()->get() as $sessions)
+            
             <div class="table-responsive">
                 <table class="table table-bordered" style="margin:15px 0 0 0;">
                         <thead>
@@ -118,18 +118,21 @@
                             <th scope="col">city</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>{{$sessions['start']}}</td>
-                                <td>{{$sessions['end']}}</td>
-                                <td>{{$sessions['fee']}}</td>
-                                <td>{{$sessions->cities->name}}</td>
-                            </tr>
-                        </tbody>
+                        <?php $i=1; ?>
+                        @foreach ($listcourses->sessions()->get() as $sessions)
+                            <tbody>
+                                <tr>
+                                    <th scope="row">{{$i++}}</th>
+                                    <td>{{$sessions['start']}}</td>
+                                    <td>{{$sessions['end']}}</td>
+                                    <td>{{$sessions['fee']}}</td>
+                                    <td>{{$sessions->cities->name}}</td>
+                                </tr>
+                            </tbody>
+                        @endforeach
                 </table>
             </div>
-            @endforeach
+            
         @endforeach
 </div>
 </div>
