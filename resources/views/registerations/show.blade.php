@@ -49,7 +49,6 @@
                                         <div class="step"> <span>pending-payment</span> </div>
                                         <div class="step current"> <span>Confirmed</span> </div>
                                    @endif
-<<<<<<< HEAD
 
 
                                 </div>
@@ -72,14 +71,6 @@
                                  @include('registerations.show_fields')
                              </div>
                          </div>
-=======
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                 @include('registerationsuser.show_fields')
-                            </div>
-                        </div>
->>>>>>> 7a2f2f6e036a29e696a15681c6b40084750e8ed5
                      </div>
                  </div>
           </div>
