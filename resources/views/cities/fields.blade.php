@@ -16,7 +16,16 @@
     {!! Form::label('name', 'Name:') !!}
     {!! Form::text('name', null, ['class' => 'form-control', 'required']) !!}
 </div>
-
+    @push('scripts')
+        <script type="text/javascript">
+            imgInp.onchange = evt => {
+                const [file] = imgInp.files
+                if (file) {
+                    blah.src = URL.createObjectURL(file)
+                }
+            }
+    </script>
+    @endpush  
 @if(isset($cities->picture) && $cities['picture'] != NULL)
 
    <!-- Picture Field -->
@@ -30,16 +39,7 @@
         </div>
 
 @else
-    @push('scripts')
-        <script type="text/javascript">
-            imgInp.onchange = evt => {
-                const [file] = imgInp.files
-                if (file) {
-                    blah.src = URL.createObjectURL(file)
-                }
-            }
-    </script>
-    @endpush    
+     
         <!-- Picture Field -->
         <div class="form-group col-sm-12">
             {!! Form::label('picture', __('admin.Picture:')) !!}

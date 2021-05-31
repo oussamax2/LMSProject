@@ -9,18 +9,6 @@
     {!! Form::label('order', 'Order:') !!}
     {!! Form::text('order', null, ['class' => 'form-control']) !!}
 </div>
-
-@if(isset($categories->picture))
-       <!-- Picture Field -->
-       <div class="form-group col-sm-12">
-            {!! Form::label('picture', __('admin.Picture:')) !!}
-           
-                {!! Form::file('picture', ['required','id' =>'imgInp']) !!} 
-                
-                <img id="blah" src="{{ asset("storage/".$categories['picture']) }}" style="width: 238px;height: 238px;" />
-          
-        </div>
-@else
 @push('scripts')
     <script type="text/javascript">
      imgInp.onchange = evt => {
@@ -32,6 +20,18 @@
    </script>
 
 @endpush
+@if(isset($categories->picture))
+       <!-- Picture Field -->
+       <div class="form-group col-sm-12">
+            {!! Form::label('picture', __('admin.Picture:')) !!}
+           
+                {!! Form::file('picture', ['required','id' =>'imgInp']) !!} 
+                
+                <img id="blah" src="{{ asset("storage/".$categories['picture']) }}" style="width: 238px;height: 238px;" />
+          
+        </div>
+@else
+
         <!-- Picture Field -->
         <div class="form-group col-sm-12">
             {!! Form::label('picture', __('admin.Picture:')) !!}
