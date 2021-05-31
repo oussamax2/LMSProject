@@ -24,6 +24,7 @@ return [
     'cities list:'      => 'قائمة المدن',
     'Student'      => 'طالب',
     'Accept' => 'قبول',
+    'Published On'      => 'تم النشر في',
     'Rejected' => 'الرفض',
     'country Name'      => 'اسم البلد',
 

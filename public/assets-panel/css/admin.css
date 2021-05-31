@@ -268,7 +268,8 @@ float: right;
   @media(max-width:576px){
   .card-header a{
     width: 100%;
-    margin-bottom: 10px;
+    margin: 15px 0 0 0;
+    text-align: center;
   }
   .card-details .actionbuttonslmsreg{
     float: left;
@@ -322,6 +323,12 @@ margin:0;
   font-size: 15px;
   text-transform: uppercase;
 }
+@media(max-width:576px){
+  .buttons-action-lms .btn-primary{
+    margin-bottom: 10px;
+  }
+}
+
 .buttons-action-lms .btn-secondary {
   color: #303131;
   font-weight: 500;
@@ -727,6 +734,10 @@ border-left: 17px solid #f36824;
 }
 /* attachment */
 /*messagerie*/
+.select2-container--default .select2-selection--single {
+  height: 40px !important;
+  border-radius: 0px !important;
+}
 
 
 

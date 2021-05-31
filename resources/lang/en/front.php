@@ -116,7 +116,7 @@ return [
     'Angular 2 Essential Training JavaScript Framework' => 'Angular 2 Essential Training JavaScript Framework',  
     'your contact was successfully sent!' => 'your contact was successfully sent!', 
 
-    'Session List:' => 'Session List:',
+    'Session List' => 'Session List',
     'Start date' => 'Start date',    
     'End date' => 'End date',    
     'Session fee' => 'Session fee', 
