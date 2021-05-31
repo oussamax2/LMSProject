@@ -30,12 +30,26 @@
         {!! Form::file('picture') !!}
     </div>
 @else
-    
-    <!-- Picture Field -->
-    <div class="form-group col-sm-12">
-        {!! Form::label('picture', __('admin.Picture:')) !!}
-        {!! Form::file('picture') !!}
-    </div>
+    @push('scripts')
+        <script type="text/javascript">
+            imgInp.onchange = evt => {
+                const [file] = imgInp.files
+                if (file) {
+                    blah.src = URL.createObjectURL(file)
+                }
+            }
+    </script>
+    @endpush    
+        <!-- Picture Field -->
+        <div class="form-group col-sm-12">
+            {!! Form::label('picture', __('admin.Picture:')) !!}
+           
+                {!! Form::file('picture', ['id' =>'imgInp']) !!} 
+                
+                <img id="blah" src="{{ asset("images/no-image.png") }}" style="width: 238px;height: 238px;" />
+          
+        </div>
+
 @endif
 
 

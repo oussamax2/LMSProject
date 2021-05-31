@@ -32,7 +32,7 @@
 											</li>
 											<li class="float-right">
 												<i class="flaticon-heart"></i>
-												<a href="#" class="tran3s">{{ $sessList->countries->name }}</a>
+												<a href="#" class="tran3s">{{ $sessList->countries->name }},{{ $sessList->states->name }}</a>
 											</li>
 										</ul>
 									</div>
