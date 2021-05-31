@@ -24,7 +24,7 @@ class citiesDataTable extends DataTable
                     $url= asset("storage/".$data->picture);
                     return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 70px;" />';
                     }else{
-                    $url= asset("storage/defaultcity.png");
+                    $url= asset("images/defaultcity.png");
                     return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 90px;">';
                     }
                 })

@@ -15,6 +15,11 @@
 					<div class="row">
 						<div class="col-md-8 col-xs-12">
 							<div class="details-wrapper">
+                                @if(Session::has('success'))
+                                <div class="alert alert-success">
+                                    {{Session::get('success')}}
+                                </div>
+                            @endif
 								<div class="course-title">
 									<h2>{{ $sessions->courses->title }}</h2>
 									<span>@lang('front.Posted on') {{Carbon\Carbon::parse($sessions->courses->published_on)->isoFormat(' Do MMMM  YYYY ')}}</span>
@@ -71,7 +76,7 @@
 							@elseif(!(auth()->user()))
 							<div class="curriculum-panel-buttonregister float-right">
 									<a class="tran3s" data-toggle="modal" data-target=".signInModal" class="btn btn-default">@lang('front.Register')</a>
-							</div>							
+							</div>
 							@endif
 							@if(auth()->user() && $registuser>0)
 							<div class="check-register-session">

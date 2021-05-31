@@ -165,7 +165,7 @@ class registerationsController extends AppBaseController
         $registerations->save();
 
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Your registration send with success !');;
 
 
 

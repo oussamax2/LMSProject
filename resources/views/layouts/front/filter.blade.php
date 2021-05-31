@@ -1,6 +1,8 @@
 {{-- gallery --}}
 			<div class="our-portfolio Portfolio-4-column">
+
 				<div class="container">
+                    {{$citiesList}}
 					<div class="mixitUp-menu">
 	        			<ul>
 	        				<li class="filter active tran3s" data-filter="all">@lang('front.All')</li>

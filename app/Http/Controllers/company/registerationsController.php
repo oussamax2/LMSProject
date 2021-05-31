@@ -10,6 +10,7 @@ use App\Repositories\registerationsRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
+use App\Models\Mailsender;
 
 class registerationsController extends AppBaseController
 {
@@ -154,6 +155,8 @@ class registerationsController extends AppBaseController
         public function update_registrationStatus($id, $response)
         {
             $registerations = $this->registerationsRepository->find($id);
+            $user =$registerations->user_id;
+            
             // || $registerations->sessions->companies->id != auth()->user()->companies->id
             if (empty($registerations)  ) {
                 Flash::error(__('admin.not found'));

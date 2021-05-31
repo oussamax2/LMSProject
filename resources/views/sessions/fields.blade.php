@@ -7,7 +7,7 @@
 </div>
 <div class="form-group col-sm-12">
     {!! Form::label('start', __('forms.Session startDate')) !!}
-    {!! Form::text('start', null, ['class' => 'form-control','id'=>'start']) !!}
+    {!! Form::text('start', null, ['class' => 'form-control','id'=>'start', 'required']) !!}
 </div>
 
 @push('scripts')
@@ -33,7 +33,7 @@
 <!-- End Field -->
 <div class="form-group col-sm-12">
     {!! Form::label('end', __('forms.Session endDate')) !!}
-    {!! Form::text('end', null, ['class' => 'form-control','id'=>'end']) !!}
+    {!! Form::text('end', null, ['class' => 'form-control','id'=>'end', 'required']) !!}
 </div>
 
 @push('scripts')
@@ -55,7 +55,7 @@
 <!-- Fee Field -->
 <div class="form-group col-sm-12">
     {!! Form::label('fee', __('front.Session fee')) !!}
-    {!! Form::text('fee', null, ['class' => 'form-control']) !!}
+    {!! Form::text('fee', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Language Field -->
