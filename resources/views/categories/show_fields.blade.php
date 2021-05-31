@@ -32,7 +32,7 @@
                     
                     </tr>
                 </thead>
-                {{$i=1}}
+                <?php $i=1; ?>
                 @foreach ($listsubcateg as $listsubcateg) 
                    
                     <tbody>

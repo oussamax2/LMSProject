@@ -77,7 +77,7 @@
 
                 </tr>
             </thead>
-            {{$i=1}}
+            <?php $i=1; ?>
             @foreach ($sessions->registerations as $listreg)
                 <tbody>
                     <tr>

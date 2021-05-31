@@ -86,7 +86,7 @@
 <!-- Note Field -->
 <div class="form-group col-sm-12">
     {!! Form::label('note', 'Note:') !!}
-    {!! Form::text('note', null, ['class' => 'form-control']) !!}
+    {!! Form::text('note', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Submit Field -->

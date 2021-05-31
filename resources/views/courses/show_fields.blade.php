@@ -50,7 +50,7 @@
                 <th scope="col">@lang('front.Country name')</th>
                 </tr>
             </thead>
-            {{$i=1}}
+            <?php $i=1; ?>
             @foreach ($courses->sessions as $listsess) 
                 <tbody>
                     <tr>
