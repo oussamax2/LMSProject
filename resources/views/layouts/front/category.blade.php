@@ -15,7 +15,7 @@
 										@if(isset($categList->picture))
 										<img src="{{ asset("storage/".$categList->picture) }}" alt="">
 										@else
-										<img src="{{ asset('images/companydefault.svg') }}" alt="">
+										<img src="{{ asset('images/categorydefault.svg') }}" alt="">
 										@endif
 										<div class="categorytitle">
 											<h3>{{ $categList->name }}</h3>

@@ -6,7 +6,6 @@
 						<p>@lang('front.Search training from training organizer companies')</p>
 						<a href="course-grid.html" class="tran3s">@lang('front.See All Companies')</a>
 					</div>
-
 					<div class="row">
 						<div class="instructor-slider">
 							<div class="item">
