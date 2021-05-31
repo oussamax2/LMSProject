@@ -25,7 +25,7 @@ class companiesDataTable extends DataTable
                     $url= asset("storage/".$data->picture);
                     return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 70px;" />';
                     }else{
-                    $url= asset("storage/defaultuser.png");
+                    $url= asset("images/defaultuser.png");
                     return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 70px;">';
                     }
                 })

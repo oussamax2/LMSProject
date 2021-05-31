@@ -33,7 +33,7 @@
     <!-- default_Picture Field -->
     <div class="form-group">
         <div class="image-companies">
-            <img src="{{ asset("storage/defaultcity.png") }}" />
+            <img src="{{ asset("images/defaultcity.png") }}" />
         </div>
     </div>  
     <!-- Picture Field -->
