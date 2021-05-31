@@ -11,13 +11,15 @@
 </div>
 
 @if(isset($categories->picture))
-     <div class="image" ><img style="width: 185px;height: 157px;border: 3px solid #fff;border-radius: 50%;" src="{{ asset("storage/".$categories['picture']) }}" alt=""></div>
-
-    <!-- Picture Field -->
-    <div class="form-group col-sm-12">
-        {!! Form::label('picture', __('admin.Picture:')) !!}
-        {!! Form::file('picture') !!}
-    </div>
+       <!-- Picture Field -->
+       <div class="form-group col-sm-12">
+            {!! Form::label('picture', __('admin.Picture:')) !!}
+           
+                {!! Form::file('picture', ['required','id' =>'imgInp']) !!} 
+                
+                <img id="blah" src="{{ asset("storage/".$categories['picture']) }}" style="width: 238px;height: 238px;" />
+          
+        </div>
 @else
 @push('scripts')
     <script type="text/javascript">
