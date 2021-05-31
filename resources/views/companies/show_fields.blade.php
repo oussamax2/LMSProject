@@ -1,15 +1,25 @@
 <div class="list-field-detalssessions row">
-    <div class="col-sm-6 col-md-12 col-lg-3">
-        <!-- Picture Field -->
-        <div class="form-group">
-            <div class="image-companies">
-                <img src="{{ asset("storage/".$companies['picture']) }}"/>
+    <div class="col-sm-6 col-md-12 col-lg-4">
+
+        @if(isset($companies['picture']) && $companies['picture'] != NULL)
+            <!-- Picture Field -->
+            <div class="form-group">
+                <div class="image-companies">
+                    <img src="{{ asset("storage/".$companies['picture']) }}" />
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-md-12 col-lg-5">
-           <!-- Shortdescription Field -->
-           <div class="form-group">
+        @else
+
+            <!-- Picture Field -->
+            <div class="form-group">
+                <div class="image-companies">
+                    <img src="{{ asset("storage/defaultuser.png") }}" />
+                </div>
+            </div>
+
+        @endif
+        <!-- Shortdescription Field -->
+            <div class="form-group">
             <p>{{ $companies->shortDescription }}</p>
         </div>
         <ul class="social-media-companies">

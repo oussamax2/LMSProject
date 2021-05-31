@@ -10,6 +10,7 @@ use App\Repositories\coursesRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use App\Models\categories;
+use App\Models\target_audiance;
 use Response;
 
 class coursesController extends AppBaseController
@@ -46,9 +47,10 @@ class coursesController extends AppBaseController
     {
         /**get categories List and send them to selection list in blade */
         $listcateg = categories::pluck('name', 'id');
+        /**get targetAudiance List and send them to selection list in blade */
+        $listtarget = target_audiance::pluck('name', 'id');
 
-
-        return view('courses.create', compact('listcateg'));
+        return view('courses.create', compact('listcateg', 'listtarget'));
     }
 
     /**
@@ -63,10 +65,13 @@ class coursesController extends AppBaseController
         $input = $request->all();
         $input['company_id']= auth()->user()->companies->id;
         $courses = $this->coursesRepository->create($input);
-
+        $courses->target_audiance()->sync($request->target_id);
         Flash::success('Courses saved successfully.');
 
         return redirect(route('courses.index'));
+        
+        
+        
     }
 
     /**
@@ -108,8 +113,17 @@ class coursesController extends AppBaseController
         }
         /**get categories List and send them to selection list in blade */
         $listcateg = categories::pluck('name', 'id');
-        $selectedID = 1;
-        return view('courses.edit', compact('courses', 'listcateg'));
+        /**get targetAudiance List and send them to selection list in blade */
+        $listtarget = target_audiance::pluck('name', 'id');
+
+        $targetvalues = $courses->target_audiance(['*'])->get();
+       // var_dump($targetvalues);
+        return view('courses.edit', compact(
+            'targetvalues',
+            'courses',
+            'listcateg',
+            'listtarget'
+        ));
     }
 
     /**
@@ -131,7 +145,7 @@ class coursesController extends AppBaseController
         }
 
         $courses = $this->coursesRepository->update($request->all(), $id);
-
+        $courses->target_audiance()->sync($request->target_id);
         Flash::success('Courses updated successfully.');
 
         return redirect()->back();

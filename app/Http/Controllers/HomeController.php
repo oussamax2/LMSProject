@@ -7,6 +7,7 @@ use App\Models\companies;
 use App\Models\registerations;
 use Illuminate\Http\Request;
 use App\Models\sessions;
+use App\Models\cities;
 
 class HomeController extends Controller
 {
@@ -17,12 +18,14 @@ class HomeController extends Controller
         /**get latest sessions */
         $sessionList = sessions::orderBy('id', 'desc')->take(6)->get();
         /**get latest categories */
-        $categList = categories::orderBy('id', 'desc')->take(6)->get();
+        $categList = categories::inRandomOrder()->orderBy('id', 'desc')->take(6)->get();
+        $citiesList = cities::inRandomOrder()->orderBy('id', 'desc')->take(8)->get();
 
 
         return view('front.index')->with([
             'sessionList'=>$sessionList,
-            'categList'=>$categList
+            'categList'=>$categList,
+            'citiesList'=>$citiesList
             ]);
 
     }

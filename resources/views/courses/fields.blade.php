@@ -4,19 +4,19 @@
 <!-- Title Field -->
 <div class="form-group col-sm-12">
     {!! Form::label('title', 'Title:') !!}
-    {!! Form::text('title', null, ['class' => 'form-control']) !!}
+    {!! Form::text('title', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Body Field -->
 <div class="form-group col-sm-12">
     {!! Form::label('body', 'Body:') !!}
-    {!! Form::text('body', null, ['class' => 'form-control']) !!}
+    {!! Form::text('body', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Published On Field -->
 <div class="form-group col-sm-12">
     {!! Form::label('published_on', __('forms.Published On:')) !!}
-    {!! Form::text('published_on', null, ['class' => 'form-control','id'=>'published_on']) !!}
+    {!! Form::text('published_on', null, ['class' => 'form-control','id'=>'published_on', 'required']) !!}
 </div>
 
 @push('scripts')
@@ -42,19 +42,21 @@
        </script>
 @endpush
 
-@if(isset($listcateg))
+
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
     {!! Form::Label('category_id',  __('front.category list:')) !!}
-    {!! Form::select('category_id', $listcateg,null, ['class' => 'form-control select2']) !!}
+    {!! Form::select('category_id', $listcateg,null, ['class' => 'form-control select2', 'required']) !!}
 </div>
-@endif
 
-<!-- Tags Field -->
+
+
 <div class="form-group col-sm-12">
-    {!! Form::label('tags', __('front.Target Audiance list:')) !!}
-    {!! Form::text('tags', null, ['class' => 'form-control']) !!}
+    {!! Form::label('target_id', __('front.Target Audiance list:')) !!}
+    {!! Form::select('target_id[]', $listtarget,isset($targetvalues)?$targetvalues:null, ['class' => 'form-control select2','multiple']) !!}
 </div>
+
+
 
 <!-- Submit Field -->
 <div class="form-group buttons-action-lms col-sm-12">

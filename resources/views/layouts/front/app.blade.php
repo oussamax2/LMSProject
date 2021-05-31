@@ -145,9 +145,6 @@
 <script type="text/javascript" src="{{ asset('vendor/jquery-ui/jquery-ui.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('vendor/jquery.mixitup.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/theme.js') }}"></script>
-
-
-
 @yield('js')
 @section('scripts')
 @parent

@@ -14,23 +14,33 @@
 <!-- Name Field -->
 <div class="form-group col-sm-12">
     {!! Form::label('name', 'Name:') !!}
-    {!! Form::text('name', null, ['class' => 'form-control']) !!}
+    {!! Form::text('name', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
-@if(isset($cities->picture))
-   <div class="image" ><img style="width: 185px;height: 157px;border: 3px solid #fff;border-radius: 50%;" src="{{ asset("storage/".$cities['picture']) }}" alt=""></div>
-
-<!-- Picture Field -->
-<div class="form-group col-sm-12">
-    {!! Form::label('picture', __('admin.Picture:')) !!}
-    {!! Form::file('picture') !!}
-</div>
+@if(isset($cities->picture) && $cities['picture'] != NULL)
+   <!-- Picture Field -->
+   <div class="form-group">
+        <div class="image-companies">
+            <img src="{{ asset("storage/".$cities['picture']) }}" style="width: 185px;height: 157px;border: 3px solid #fff;border-radius: 50%;"/>
+        </div>
+    </div>
+    <!-- Picture Field -->
+    <div class="form-group col-sm-12">
+        {!! Form::label('picture', __('admin.Picture:')) !!}
+        {!! Form::file('picture') !!}
+    </div>
 @else
-<!-- Picture Field -->
-<div class="form-group col-sm-12">
-    {!! Form::label('picture', __('admin.Picture:')) !!}
-    {!! Form::file('picture', ['required']) !!}
-</div>
+    <!-- default_Picture Field -->
+    <div class="form-group">
+        <div class="image-companies">
+            <img src="{{ asset("images/defaultcity.png") }}" />
+        </div>
+    </div>  
+    <!-- Picture Field -->
+    <div class="form-group col-sm-12">
+        {!! Form::label('picture', __('admin.Picture:')) !!}
+        {!! Form::file('picture', ['required']) !!}
+    </div>
 @endif
 
 

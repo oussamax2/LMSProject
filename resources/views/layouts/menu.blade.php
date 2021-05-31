@@ -37,6 +37,12 @@
                 <span class="menu-item-dsh">Subcategories</span>
             </a>
         </li>
+        <li class="nav-item {{ Request::is('target_audiances*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('targetAudiances.index') }}">
+                <span class="icon icon-wallet"></span>
+                <span class="menu-item-dsh">target_audiances</span>
+            </a>
+        </li>
 
 
 

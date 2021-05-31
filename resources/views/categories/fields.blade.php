@@ -1,7 +1,7 @@
 <!-- Name Field -->
 <div class="form-group col-sm-12">
     {!! Form::label('name', 'Name:') !!}
-    {!! Form::text('name', null, ['class' => 'form-control']) !!}
+    {!! Form::text('name', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Order Field -->
@@ -19,6 +19,12 @@
         {!! Form::file('picture') !!}
     </div>
 @else
+    <!-- default_Picture Field -->
+    <div class="form-group">
+        <div class="image-companies">
+            <img src="{{ asset("images/defaultpicture.png") }}" />
+        </div>
+    </div>  
         <!-- Picture Field -->
         <div class="form-group col-sm-12">
             {!! Form::label('picture', __('admin.Picture:')) !!}
