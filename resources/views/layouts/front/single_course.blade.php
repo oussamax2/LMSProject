@@ -70,7 +70,7 @@
 									{{ csrf_field() }}
 									<input type="hidden" name="session" value="{{ $sessions->id }}" />
 									<div class="curriculum-panel-buttonregister float-right">
-											<a class="btn btn-default"><button  type ="submit">@lang('front.Register')</button></a>
+											<button class="btn btn-default"  type ="submit">@lang('front.Register')</button>
 									</div>
 								</form>
 							@elseif(!(auth()->user()))
@@ -118,7 +118,7 @@
 											</ul>
 										</div>
 										<p>{{ $sessions->companies->shortDescription }}</p>
-										<a href="{{ url('/profilecompany/{id}') }}" class="tran3s p-bg-color follow hvr-trim">@lang('front.see profile')</a>
+										<a href="{{ url('/profilecompany',$sessions->companies->id) }}" class="tran3s p-bg-color follow hvr-trim">@lang('front.see profile')</a>
 									</div>
 								</div>
 							</div>
