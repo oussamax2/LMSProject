@@ -30,16 +30,11 @@
         {!! Form::file('picture') !!}
     </div>
 @else
-    <!-- default_Picture Field -->
-    <div class="form-group">
-        <div class="image-companies">
-            <img src="{{ asset("images/defaultcity.png") }}" />
-        </div>
-    </div>  
+    
     <!-- Picture Field -->
     <div class="form-group col-sm-12">
         {!! Form::label('picture', __('admin.Picture:')) !!}
-        {!! Form::file('picture', ['required']) !!}
+        {!! Form::file('picture') !!}
     </div>
 @endif
 

@@ -38,7 +38,7 @@
                     <th scope="col">@lang('front.Subcategory name')</th>
                     </tr>
                 </thead>
-                {{$i=1}}
+                <?php $i=1; ?>
                 @foreach ($listsubcateg as $listsubcateg) 
                    
                     <tbody>

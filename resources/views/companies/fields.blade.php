@@ -3,7 +3,7 @@
 <!-- Firstname Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('firstname', 'Firstname:') !!}
-    {!! Form::text('name', isset($userdetails->name) ?$userdetails->name: null, ['class' => 'form-control']) !!}
+    {!! Form::text('name', isset($userdetails->name) ?$userdetails->name: null, ['class' => 'form-control', 'required']) !!}
 </div>
 <!-- Lastname Field -->
 <div class="form-group col-sm-12">
@@ -13,7 +13,7 @@
 <!-- Email Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('email', 'Email:') !!}
-    {!! Form::text('email', isset($userdetails->email) ?$userdetails->email: null, ['class' => 'form-control']) !!}
+    {!! Form::text('email', isset($userdetails->email) ?$userdetails->email: null, ['class' => 'form-control', 'required']) !!}
 </div>
 <!-- Website Field -->
 <div class="form-group col-sm-12">
@@ -24,7 +24,7 @@
 <!-- Telephone Field -->
 <div class="form-group col-sm-12">
     {!! Form::label('telephone', 'Telephone:') !!}
-    {!! Form::text('telephone', null, ['class' => 'form-control']) !!}
+    {!! Form::text('telephone', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Picture Field -->
