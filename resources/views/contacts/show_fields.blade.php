@@ -1,42 +1,34 @@
-<!-- Id Field -->
-<div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{{ $contact->id }}</p>
-</div>
-
+<div class="list-field-detalssessions row">
+    <div class="col-sm-6 col-md-12 col-lg-6">
 <!-- Name Field -->
 <div class="form-group">
-    {!! Form::label('name', 'Name:') !!}
+<i class="icon flaticon-bookmark"></i>
+    {!! Form::label('name', 'Name') !!}
     <p>{{ $contact->name }}</p>
 </div>
 
 <!-- Email Field -->
 <div class="form-group">
-    {!! Form::label('email', 'Email:') !!}
+<i class="icon icon-envelope"></i>
+    {!! Form::label('email', 'Email') !!}
     <p>{{ $contact->email }}</p>
 </div>
+</div>
+<div class="col-sm-6 col-md-12 col-lg-6">
 
 <!-- Phone Field -->
 <div class="form-group">
-    {!! Form::label('phone', 'Phone:') !!}
+<i class="icon icon-phone"></i>
+    {!! Form::label('phone', 'Phone') !!}
     <p>{{ $contact->phone }}</p>
 </div>
 
 <!-- Message Field -->
 <div class="form-group">
-    {!! Form::label('message', 'Message:') !!}
+<i class="icon icon-speech"></i>
+    {!! Form::label('message', 'Message') !!}
     <p>{{ $contact->message }}</p>
 </div>
-
-<!-- Created At Field -->
-<div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{{ $contact->created_at }}</p>
 </div>
-
-<!-- Updated At Field -->
-<div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{{ $contact->updated_at }}</p>
 </div>
 

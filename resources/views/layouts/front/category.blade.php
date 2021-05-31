@@ -11,7 +11,12 @@
 						@foreach ($categList as $categList) 
 							<div class="col-md-4 col-sm-4">
 								<div class="single-blog">
-									<div class="image"><img src="{{ asset("storage/".$categList->picture) }}" alt="">
+									<div class="image">
+										@if(isset($categList->picture))
+										<img src="{{ asset("storage/".$categList->picture) }}" alt="">
+										@else
+										<img src="{{ asset('images/companydefault.svg') }}" alt="">
+										@endif
 										<div class="categorytitle">
 											<h3>{{ $categList->name }}</h3>
 										</div>

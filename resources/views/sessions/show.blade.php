@@ -11,7 +11,7 @@
           <div class="animated fadeIn">
                  @include('coreui-templates::common.errors')
                  <div class="row">
-                     <div class="col-lg-8 col-lg-8-offset mx-auto">
+                     <div class="col-lg-12">
                          <div class="card-details card">
                              <div class="card-header">
                              <i class="icon-info"></i>
