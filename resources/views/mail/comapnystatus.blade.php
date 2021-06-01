@@ -43,7 +43,7 @@
                     <h3>welcome {{$name}}</h3>
                     @if ($status == 2)
                     <p>your request was successfully accepted</p>
-                    <a href="http://lmspojt.test/dashboard">Your dashboard</a>
+                    <a href="{{ url('/dashboard') }}">Your dashboard</a>
                     @else
                     <p>your request has been declined</p>
                     @endif
