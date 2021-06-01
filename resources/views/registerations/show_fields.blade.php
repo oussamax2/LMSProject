@@ -47,46 +47,35 @@
   </header>
 
   <main class="msger-chat">
-    <div class="msg left-msg">
-      <div
-       class="msg-img"
-       style="background-image: url(https://image.flaticon.com/icons/svg/327/327779.svg)"
-      ></div>
 
-      <div class="msg-bubble">
-        <div class="msg-info">
-          <div class="msg-info-name">BOT</div>
-          <div class="msg-info-time">12:45</div>
-        </div>
+   @foreach ($registerations->messaging as $messaging )
+   <div class="msg {{(auth()->user()->id == $messaging->user->id) ? 'right-msg' : 'left-msg'}}">
+    <div
+     class="msg-img"
+     @if($messaging->user->hasAnyRole('company'))
+     style="background-image: url(://image.flaticon.com/icons/svg/327/327779.svg)"
+     @else
+     style="background-image: url(https://image.flaticon.com/icons/svg/327/327779.svg)"
+     @endif
+    ></div>
 
-        <div class="msg-text">
-          Hi, welcome to SimpleChat! Go ahead and send me a message. 😄
-        </div>
+    <div class="msg-bubble">
+      <div class="msg-info">
+        <div class="msg-info-name">{{$messaging->user->name}}</div>
+        <div class="msg-info-time">{{Carbon\Carbon::parse($messaging->created_at)->isoFormat(' Do MMMM  YYYY , H:mm')}}</div>
+      </div>
+
+      <div class="msg-text">
+        {{$messaging->message}}
       </div>
     </div>
-
-    <div class="msg right-msg">
-      <div
-       class="msg-img"
-       style="background-image: url(https://image.flaticon.com/icons/svg/145/145867.svg)"
-      ></div>
-
-      <div class="msg-bubble">
-        <div class="msg-info">
-          <div class="msg-info-name">Sajad</div>
-          <div class="msg-info-time">12:46</div>
-        </div>
-
-        <div class="msg-text">
-          You can change your name in JS section!
-        </div>
-      </div>
-    </div>
+  </div>
+   @endforeach
   </main>
-
-  <form class="msger-inputarea">
-
-    <input type="text" class="msger-input" placeholder=" @lang('front.Enter your message...')">
+  <form class="msger-inputarea" action="{{ route('sendmsg')}}" method="POST">
+	{{ csrf_field() }}
+    <input type="text" class="msger-input" name="message"placeholder=" @lang('front.Enter your message...')" required>
+    <input type="text" hidden name="idr" value="{{$registerations->id}}">
     <input class="uploader__input" id="file-upload" type="file" name="fileUpload" accept="image/*" />
     <label class="uploader__label" for="file-upload">
       <div class="uploader__wrapper">

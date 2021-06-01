@@ -37,7 +37,7 @@ class HomeController extends Controller
         $companies = companies::inRandomOrder()->orderBy('id', 'desc')->take(8)->get();
         return view('front.partners')->with(['companies'=>$companies ]);
     }
-    
+
 
     public function pro_training($id)
     {
@@ -65,7 +65,7 @@ class HomeController extends Controller
         {
 
             //get count user registertions in same session
-            $registuser = registerations::where('session_id', $sessions->id)->where('user_id', auth()->user()->id)->get()->count();
+            $registuser = registerations::where('session_id', $sessions->id)->where('user_id', auth()->user()->id)->first();
 
             if(isset($sessions))
             return view('front.singlcourse', ['sessions'=>$sessions, 'registuser' => $registuser]);

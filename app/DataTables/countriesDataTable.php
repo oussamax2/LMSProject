@@ -61,6 +61,9 @@ class countriesDataTable extends DataTable
     {
         return [
             'name',
+            
+            ['data' => 'continent', 'name' => 'continent', 'title' => __('forms.Continent Name')],
+
             'status'
         ];
     }

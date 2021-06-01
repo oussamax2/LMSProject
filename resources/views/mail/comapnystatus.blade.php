@@ -11,11 +11,24 @@
         text-align:center;
         align-items:center;
         margin:auto;
+        background:#f3f3f3;
+        padding:25px;
+        box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 20%);
         }
-        .information-user-company .content-mail-send{
-            background:
+        .information-user-company .content-mail-send h3{
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: 500;
         }
-        
+        .information-user-company .content-mail-send p{
+            font-size: 15px;
+            font-weight: 400;
+        }
+        .information-user-company .content-mail-send a{
+            text-decoration: none;
+            color: #36d64c;
+            font-size: 15px;
+        }
     </style>
 </head>
 <body>
@@ -29,9 +42,10 @@
                     <div class="content-mail-send">
                     <h3>welcome {{$name}}</h3>
                     @if ($status == 2)
-                    <p style="text-align:center">accept</p>
+                    <p>your request was successfully accepted</p>
+                    <a href="{{ url('/dashboard') }}">Your dashboard</a>
                     @else
-                    <p style="text-align:center">decline</p>
+                    <p>your request has been declined</p>
                     @endif
                     </div>
                 </div>

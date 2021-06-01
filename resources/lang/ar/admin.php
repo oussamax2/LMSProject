@@ -7,4 +7,12 @@ return [
     'updated successfully.'      => 'تم التحديث بنجاح.',
     'deleted successfully.'      => 'تم الحذف بنجاح.',
     'Picture:'      => 'الصورة',
+    'accepted successfully.'      => 'تم قبول الطلب',
+    'rejected successfully.'      => 'تم رفض الطلب ',
+    'Accepted'      => 'مقبول',
+    'Rejected'      => 'مرفوض',    
+    ''      => '',
+    ''      => '',    
+    ''      => '',
+    ''      => '',   
 ];

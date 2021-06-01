@@ -28,8 +28,8 @@ class Registeruser extends Component
     public function registerUser()
     {
         $validatedDate = $this->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
+            'name' => 'required|max:25',
+            'email' => 'required|email|max:25|unique:users',
             'password' => 'required|min:8|confirmed',
             'password_confirmation' => 'required|min:8',
         ]);

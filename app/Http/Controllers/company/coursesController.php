@@ -69,9 +69,9 @@ class coursesController extends AppBaseController
         Flash::success('Courses saved successfully.');
 
         return redirect(route('courses.index'));
-        
-        
-        
+
+
+
     }
 
     /**

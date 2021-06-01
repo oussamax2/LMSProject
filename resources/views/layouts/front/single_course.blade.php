@@ -65,7 +65,7 @@
 									</ul>
 								</div>
 							</div>
-							@if(auth()->user() && !($registuser>0))
+							@if(auth()->user() && !($registuser))
 								<form action="{{ route('registsess')}}"  method="post">
 									{{ csrf_field() }}
 									<input type="hidden" name="session" value="{{ $sessions->id }}" />
@@ -78,9 +78,9 @@
 									<a class="tran3s" data-toggle="modal" data-target=".signInModal" class="btn btn-default">@lang('front.Register')</a>
 							</div>
 							@endif
-							@if(auth()->user() && $registuser>0)
+							@if(auth()->user() && $registuser)
 							<div class="check-register-session">
-							<h3><i class="icon flaticon-tick"></i>you have already registered in this session</h3>
+                                <a href="{{ route('registerationsuser.show', $registuser->id) }}"><h3><i class="icon flaticon-tick"></i>you have already registered in this session</h3></a>
 							</div>
 							@endif
 

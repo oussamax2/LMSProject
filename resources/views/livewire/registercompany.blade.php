@@ -60,6 +60,11 @@
                                 <div class="form-wrapper">
                                     <h6>Your LastName</h6>
                                     <input type="text" wire:model="lastname"  placeholder="Your LastName" value="{{ old('lastname') }}" required>
+                                    @if ($errors->has('lastname'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('lastname') }}</strong>
+                                    </span>
+                                @endif
                                     <h6>Mobile Number</h6>
                                     <input type="text" wire:model="telephone"  placeholder="+880 854 875 971" value="{{ old('telephone') }}">
                                     @if ($errors->has('telephone'))
@@ -76,7 +81,7 @@
                                     @endif
                                     <h6>Your Picture</h6>
                                     @error('picture') <span class="invalid-feedback">{{ $message }}</span> @enderror
-                                    @if($picture)
+                                    @if($picture && in_array($picture->getClientOriginalExtension(), array("png", "jpg", "jpeg", "Cleveland"))  )
                                     <br>
                                     <image src="{{$picture->temporaryUrl()}}" style="width: 200px;">
                                         <br>

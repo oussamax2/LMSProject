@@ -38,8 +38,9 @@ return [
     'lang'      => 'English',
     'State Name'      => 'State Name',
     'Published On'      => 'Published On',
+    'Continent Name'      => 'Continent Name',
     ''      => '',
     ''      => '',
-
+    ''      => '',
 
 ];
