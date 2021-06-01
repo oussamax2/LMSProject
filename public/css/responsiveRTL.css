@@ -263,15 +263,22 @@ margin: 4rem;
 #theme-main-banner .action-button {
   background: #ed3d9e;
   width: 100%;
+  font-size: 17px;
 }
 #theme-main-banner .single-input {
 margin-bottom: 20px;
 }
 }
+@media(min-width:768px) and (max-width:1200px){
+  #theme-main-banner .single-input {
+  margin:auto;
+  }
+  }
 
 @media(max-width:768px){
   #theme-main-banner .single-input .searchcoursecampus{
   text-align: center;
+  font-size: 25px;
   }
   .single-blog{
     margin-bottom: 20px;

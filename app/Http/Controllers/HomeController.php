@@ -31,10 +31,13 @@ class HomeController extends Controller
             ]);
 
     }
+
     public function partners()
     {
-        return view('front.partners');
+        $companies = companies::inRandomOrder()->orderBy('id', 'desc')->take(8)->get();
+        return view('front.partners')->with(['companies'=>$companies ]);
     }
+    
 
     public function pro_training($id)
     {
