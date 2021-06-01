@@ -55,11 +55,7 @@
                             <div class="card-body">
                                  @include('registerationsuser.show_fields')
                             </div>
-                            ***********
-                            <br>
-                            {{$registerations->messaging}}
-                            <br>
-                            **********
+
                         </div>
                      </div>
                  </div>

@@ -23,7 +23,7 @@ class messaging extends Model
 
 
     public $table = 'messagings';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -52,7 +52,7 @@ class messaging extends Model
      * @var array
      */
     public static $rules = [
-        
+        'message' => 'required|max:160',
     ];
 
     /**

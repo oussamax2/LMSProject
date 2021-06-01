@@ -9,6 +9,7 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
+use App\Models\registerations;
 
 class messagingController extends AppBaseController
 {
@@ -153,4 +154,21 @@ class messagingController extends AppBaseController
 
         return redirect(route('messagings.index'));
     }
+/*** messaging registration */
+
+    public function sendmsg(CreatemessagingRequest $request)
+    {
+        $registerations = registerations::find($request->idr);
+        $input['user_id'] = auth()->user()->id;
+        $input['registeration_id'] = $request->idr ;
+        $input['message'] = $request->message;
+        if($registerations->my())
+        $messaging = $this->messagingRepository->create($input);
+
+        Flash::success('Messaging saved successfully.');
+
+        return redirect()->back();
+    }
+
+
 }

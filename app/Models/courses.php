@@ -59,7 +59,7 @@ class courses extends Model
      * @var array
      */
     public static $rules = [
-
+        'title' => 'required|max:30',
     ];
 
     public function categories()
