@@ -53,19 +53,6 @@
 
                                 </div>
                                  </div>
-                                 <div class="actionbuttonslmsreg">
-                                 <a href="{{ route('registerations.index') }}" class="btn btn-light"><i class="icon icon-arrow-right-circle"></i>@lang('forms.Back')</a>
-
-                                 @if(!($registerations->status == 1 || $registerations->status == 3) && $registerations->status == 0)
-                                    <a href="{{ route('verifregistrequest', [$registerations->id, 2]) }}" class="btn btn-light"><i class="icon icon-trash"></i>@lang('forms.Accept')</a>
-                                    <a href="{{ route('verifregistrequest', [$registerations->id, 1]) }}" class="btn btn-light"><i class="icon icon-check"></i>@lang('forms.Reject')</a>
-                                 @endif
-                                 @if(!($registerations->status == 1 || $registerations->status == 3) && $registerations->status == 2)
-                                    <a href="{{ route('verifregistrequest', [$registerations->id, 3]) }}" class="btn btn-light"><i class="icon icon-trash"></i>@lang('forms.Accept')</a>
-                                    <a href="{{ route('verifregistrequest', [$registerations->id, 1]) }}" class="btn btn-light"><i class="icon icon-check"></i>@lang('forms.Reject')</a>
-                                 @endif
-
-                                 </div>
                              </div>
                              <div class="card-body">
                                  @include('registerations.show_fields')

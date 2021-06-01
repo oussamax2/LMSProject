@@ -580,7 +580,7 @@ header.menu-style-two.fixed .logo {width: 10%;top:0;}
 #theme-main-banner .container {position: relative;}
 #theme-main-banner .camera_caption>div {
   background: transparent;
-  position: absolute;
+  /* position: absolute; */
   width: 100% !important;
   z-index: 1;
   top: 50%;
