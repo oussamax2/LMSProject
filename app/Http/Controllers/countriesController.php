@@ -51,13 +51,16 @@ class countriesController extends AppBaseController
      */
     public function store(CreatecountriesRequest $request)
     {
-        $input = $request->all();
+        
 
-        $countries = $this->countriesRepository->create($input);
+        $countries = $this->countriesRepository->create($request->all());
+        
+     
 
         Flash::success('Countries saved successfully.');
 
         return redirect(route('countries.index'));
+    
     }
 
     /**

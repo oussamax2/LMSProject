@@ -33,7 +33,7 @@ return [
     'end Date'      => 'تاريخ نهاية الدورة',
     'lang'      => 'Arabic',
     'Session endDate'      => 'تاريخ إنتهاء الدورةe',
-    ''      => '',
+    'Continent Name'      => 'القارة',
     ''      => '',
     ''      => '',
     ''      => '',

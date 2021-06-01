@@ -7,5 +7,12 @@ return [
     'updated successfully.'      => 'updated successfully.',
     'deleted successfully.'      => 'deleted successfully.',
     'Picture:'      => 'Picture:',
-    
+    'accepted successfully.'      => 'accepted successfully.',
+    'rejected successfully.'      => 'rejected successfully.',
+    'Accepted'      => 'Accepted',
+    'Rejected'      => 'Rejected',    
+    ''      => '',
+    ''      => '',    
+    ''      => '',
+    ''      => '',        
 ];

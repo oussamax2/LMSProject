@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Http\Request;
 use App\Models\Mailsender;
+use Yoeunes\Toastr\Facades\Toastr;
 
 class companiesController extends AppBaseController
 {
@@ -198,7 +199,7 @@ class companiesController extends AppBaseController
         $companies = $this->companiesRepository->find($id);
 
         if (empty($companies)) {
-            Flash::error(__('admin.Company not found'));
+            Toastr::error(__('admin.Company not found'));
 
             return redirect(route('companies.index'));
         }
@@ -207,18 +208,24 @@ class companiesController extends AppBaseController
 
             $companies->status = 2;
             Mailsender::sendcompanystatus($companies->user->id,2);
+               
+            /**save status in DB */
+            $companies->save();
+            Toastr::success(__('admin.accepted successfully.'),__('admin.Accepted'));
+
+           
        /**if admin clicked on declinecompany button=> the company'status will be 1 ~ rejected company's request */
        } else {
 
             $companies->status = 1;
             Mailsender::sendcompanystatus($companies->user->id,1);
 
-       }
-       /**save status in DB */
-       $companies->save();
-       Flash::success(__('admin.updated successfully.'));
+            /**save status in DB */
+            $companies->save();
+            Toastr::error(__('admin.rejected successfully.'),__('admin.Rejected'));
 
-       return redirect()->back();
+       }
+      return redirect()->back();
     }
     /**
      * Remove the specified companies from storage.
