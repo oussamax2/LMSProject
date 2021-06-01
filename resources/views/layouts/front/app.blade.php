@@ -26,6 +26,7 @@
     @yield('css')
     <meta property="og:url" content="{{ request()->url() }}"/>
     @yield('og')
+    @toastr_css
 </head>
 <body>
 
@@ -149,6 +150,8 @@
 @section('scripts')
 @parent
 @endsection
+@toastr_js
+@toastr_render
 </body>
 
 </html>

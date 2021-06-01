@@ -164,10 +164,8 @@ class registerationsController extends AppBaseController
         /**save in DB */
         $registerations->save();
 
-
-        return redirect()->back()->with('success', 'Your registration send with success !');;
-
-
+        toastr()->success('Your registration send with success !');
+        return redirect(url('dashboarduser/registerationsuser',$registerations->id));
 
     }
 
