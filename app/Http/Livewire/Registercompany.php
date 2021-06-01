@@ -56,9 +56,9 @@ class Registercompany extends Component
     {
         $validatedDate = $this->validate([
             'name' => 'required',
+            'lastname' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8|confirmed',
-            'picture' => 'max:1024',
             'password_confirmation' => 'required|min:8',
         ]);
 
@@ -78,7 +78,11 @@ class Registercompany extends Component
         $user->addRole(['company']);
        // $user->sendEmailVerificationNotification();
         if ($this->picture){
+            $validatedDate = $this->validate([
 
+                'picture' => 'image|mimes:jpeg,png,jpg|max:1024',
+
+            ]);
             $image = $this->picture->store('companies_pictures', ['disk' => 'public']);
             $companies = companies::create([
                 'user_id' => $user->id,
