@@ -13,7 +13,7 @@
        <div class="row">
            <div class="col-lg-12">
                <div class="">
-                   {!! Form::model($user, ['route' => ['login-profile.update', $user->id], 'method' => 'patch']) !!}
+                   {!! Form::model($user, ['route' => ['login-profile.update', $user->id], 'method' => 'patch', 'files' => true, 'enctype' => 'multipart/form-data']) !!}
 
                         @include('profile.fields')
 
