@@ -28,7 +28,8 @@ class countries extends Model
 
     public $fillable = [
         'name',
-        'status'
+        'status',
+        'continent'
     ];
 
     /**
@@ -39,7 +40,8 @@ class countries extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
-        'status' => 'string'
+        'status' => 'string',
+        'continent' => 'string'
     ];
 
     /**
