@@ -80,6 +80,8 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','verified','rol
     Route::get('verifcompany/{id}/{response}', [App\Http\Controllers\companiesController::class, 'update_companyreqst'])->name('verifcompany');
 
     Route::resource('targetAudiances', App\Http\Controllers\target_audianceController::class);
+
+    Route::resource('messagings', App\Http\Controllers\messagingController::class);
 });
 
 
@@ -122,6 +124,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth']], function
     //--------
     Route::get('user-profile', [App\Http\Controllers\Profile\UserProfileController::class, 'edit'])->name("user-profile.edit");
 	Route::patch('user-profile', [App\Http\Controllers\Profile\UserProfileController::class, 'update'])->name("login-profile.update");
+    Route::post('sendmsg', [App\Http\Controllers\messagingController::class, 'sendmsg'])->name("sendmsg");
 
 });
 
@@ -146,4 +149,4 @@ Route::post(
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
 
 
-Route::resource('messagings', App\Http\Controllers\messagingController::class);
+

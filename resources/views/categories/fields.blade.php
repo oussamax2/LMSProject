@@ -24,22 +24,22 @@
        <!-- Picture Field -->
        <div class="form-group col-sm-12">
             {!! Form::label('picture', __('admin.Picture:')) !!}
-           
-                {!! Form::file('picture', ['required','id' =>'imgInp']) !!} 
-                
+
+                {!! Form::file('picture', ['id' =>'imgInp']) !!}
+
                 <img id="blah" src="{{ asset("storage/".$categories['picture']) }}" style="width: 238px;height: 238px;" />
-          
+
         </div>
 @else
 
         <!-- Picture Field -->
         <div class="form-group col-sm-12">
             {!! Form::label('picture', __('admin.Picture:')) !!}
-           
-                {!! Form::file('picture', ['required','id' =>'imgInp']) !!} 
-                
+
+                {!! Form::file('picture', ['required','id' =>'imgInp']) !!}
+
                 <img id="blah" src="{{ asset("images/no-image.png") }}" style="width: 238px;height: 238px;" />
-          
+
         </div>
 @endif
 <!-- Submit Field -->
