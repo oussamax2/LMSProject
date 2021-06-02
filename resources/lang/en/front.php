@@ -130,6 +130,12 @@ return [
     'states list:' => 'states list:', 
     'countries list:' => 'countries list:',     
     'courses list:' => 'courses list:', 
+    
+    'Africa' => 'Africa',
+    'Europe' => 'Europe',
+    'North_america' => 'North_america',
+    'Asia' => 'Asia',
+    'South_america' => 'South_america',
     '' => '',     
     '' => '', 
     '' => '',     

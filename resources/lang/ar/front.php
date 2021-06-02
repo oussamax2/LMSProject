@@ -12,6 +12,13 @@ return [
     'Name' => 'إسم الفئة',
     'Order' => 'ترتيب الفئة',
     'Created At' => 'أنشئت في',
+
+    'Africa' => 'افريقيا',
+    'Europe' => 'اوربا',
+    'North_america' => 'شمال امريكا',
+    'Asia' => 'آسيا',
+    'South_america' => 'أمريكا الجنوبية',
+
     'Subcategory List:' => 'قائمة الفئات الفرعية:',    
     'Subcategory name' => 'اسم الفئة الفرعية',   
     'Looking for a' => 'ابحث عن',
