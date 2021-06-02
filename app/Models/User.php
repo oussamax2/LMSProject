@@ -2,98 +2,51 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use App\Models\Role;
-use App\Models\companies;
+use Eloquent as Model;
 
-class User extends Authenticatable implements MustVerifyEmail
+
+
+/**
+ * Class User
+ * @package App\Models
+ * @version June 2, 2021, 11:21 am UTC
+ *
+ * @property string $name
+ * @property string $email
+ */
+class User extends Model
 {
-    use HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'email', 'password',
+
+    public $table = 'users';
+    
+
+
+
+    public $fillable = [
+        'name',
+        'email'
     ];
 
     /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
-
-    /**
-     * The attributes that should be cast to native types.
+     * The attributes that should be casted to native types.
      *
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'id' => 'integer',
+        'name' => 'string',
+        'email' => 'string'
     ];
+
+    /**
+     * Validation rules
+     *
+     * @var array
+     */
     public static $rules = [
-
-        'name' => 'required|max:10',
-        'email' => 'required|max:255|unique:users',
         
-
     ];
-    public function registerations()
-    {
-        return $this->HasMany(registerations::class, 'user_id');
-    }
 
-    public function sessions()
-    {
-        return $this->BelongsToMany(sessions::class,'registerations');
-    }
-
-    public function roles(){
-        return $this->belongsToMany(\App\Models\Role::class, 'user_roles', 'user_id', 'role_id');
-    }
-
-    public function hasAnyRole($roles){
-        if(is_array($roles)){
-            foreach ($roles as $role){
-                if($this->hasRole($role)){
-                    return true;
-                }
-            }
-        }else{
-            if($this->hasRole($roles)){
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public function hasRole($role){
-        if($this->roles()->where('name','=', $role)->first()){
-            return true;
-        }
-        return false;
-    }
-
-    public function addRole($role){
-        if(Role::whereIn('name', $role)->first()){
-            $role =  Role::whereIn('name', $role)->pluck('id');
-            $this->roles()->sync($role);
-            return true;
-        }
-        return false;
-    }
-
-    public function companies()
-    {
-        return $this->hasOne(companies::class,'user_id');
-
-    }
+    
 }
