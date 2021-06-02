@@ -39,6 +39,12 @@
         .information-user-company .details-registrations p{
             color:#09174c;
         }
+        .information-user-company .linkfordahsboard{
+            margin-bottom:15px;
+        }
+        .information-user-company .image-logolms img{
+            width:150px;
+        }
     </style>
 </head>
 <body>
@@ -58,10 +64,15 @@
                     @else
                     <p>your request has been declined</p>
                     @endif
+                    <div class="linkfordahsboard">
+                        <a href="{{ url('/dashboarduser/registerationsuser/{id}') }}">Your Dashboard</a>
+                    </div>
                     <div class="details-registrations">
                     <p>Start Session: {{Carbon\Carbon::parse($registeration->sessions->start)->locale('en')->isoFormat(' Do MMMM  YYYY ')}}</p>
                     <p>End Session: {{Carbon\Carbon::parse($registeration->sessions->end)->locale('en')->isoFormat(' Do MMMM  YYYY ')}}</p>
                     <p>Fee: {{$registeration->sessions->fee}}</p>
+                    <p>Course: {{$registeration->sessions->courses->title}}</p>
+                    <p>Country: {{$registeration->sessions->countries->name}}</p>
                     </div>
                     </div>
                 </div>

@@ -4,7 +4,7 @@
 					<div class="theme-title text-center">
 						<h2>@lang('front.Training Organizer Company')</h2>
 						<p>@lang('front.Search training from training organizer companies')</p>
-						<a href="course-grid.html" class="tran3s">@lang('front.See All Companies')</a>
+						<a href="{{ route ('partners') }}" class="tran3s">@lang('front.See All Companies')</a>
 					</div>
 					<div class="row">
 						<div class="instructor-slider">
@@ -18,7 +18,7 @@
 										<img src="{{ asset('images/companydefault.svg') }}" alt="">
 										@endif
 									</div>
-									<h6><a href="#" class="tran3s">{{ $compList->lastname }}</a></h6>
+									<h6><a href="{{ url('/profilecompany/{id}') }}" class="tran3s">{{ $compList->lastname }}</a></h6>
 									<p>{{ $compList->shortDescription }}</p>
 								</div>
 							</div>

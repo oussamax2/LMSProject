@@ -1539,7 +1539,12 @@ footer .bottom-footer {
   border-radius: 3px;
   overflow: hidden;
 }
-.our-instructor .single-member img {width: 100%;}
+.our-instructor .single-member img {
+  width: 100%;
+  min-height: 200px;
+  object-position: center;
+  object-fit: cover;
+}
 .our-instructor .single-member .opacity {
   background: radial-gradient(circle at 50% -70%, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, rgba(15,210,42,0.9) 50%, rgba(15,210,42,0.9) 100%);
   background-size: 100% 320%;
@@ -2970,7 +2975,13 @@ footer .bottom-footer {
 }
 .mixitUp-menu li.active:before {height: 2px;}
 #mixitUp-item .mix {display: none;}
-#mixitUp-item .single-item img {width: 100%;margin: 0 auto;}
+#mixitUp-item .single-item img {
+  width: 100%;
+  margin: 0 auto;
+  min-height: 200px;
+  object-position: center;
+  object-fit: cover;
+}
 #mixitUp-item .single-item {
   border-radius: 3px;
   overflow: hidden;
@@ -3827,6 +3838,9 @@ opacity: 0.6;
 }
 .testimonial-styleOne .single-blog .image img{
  width:100%;
+ min-height: 250px;
+ object-fit: cover;
+ object-position: center;
 }
 .testimonial-styleOne .single-blog .categorytitle{
   position: absolute;
@@ -4016,6 +4030,7 @@ background: #36d64c;
       .check-register-session i.icon{
         margin-right: 10px;
           }
+
 
 
 
