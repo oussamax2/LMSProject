@@ -82,6 +82,7 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','verified','rol
     Route::resource('targetAudiances', App\Http\Controllers\target_audianceController::class);
 
     Route::resource('messagings', App\Http\Controllers\messagingController::class);
+    Route::resource('users', App\Http\Controllers\UserController::class);
 });
 
 
@@ -147,9 +148,3 @@ Route::post(
  * switchlanguage route
  */
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
-
-
-
-
-
-Route::resource('users', App\Http\Controllers\UserController::class);
