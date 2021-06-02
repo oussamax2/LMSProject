@@ -65,14 +65,14 @@
                     <p>your request has been declined</p>
                     @endif
                     <div class="linkfordahsboard">
-                        <a href="{{ url('/dashboarduser/registerationsuser/{id}') }}">Your Dashboard</a>
+                        <a href="{{ url('/dashboarduser/registerationsuser', $registeration->id) }}">Your Registeration</a>
                     </div>
                     <div class="details-registrations">
                     <p>Start Session: {{Carbon\Carbon::parse($registeration->sessions->start)->locale('en')->isoFormat(' Do MMMM  YYYY ')}}</p>
                     <p>End Session: {{Carbon\Carbon::parse($registeration->sessions->end)->locale('en')->isoFormat(' Do MMMM  YYYY ')}}</p>
                     <p>Fee: {{$registeration->sessions->fee}}</p>
                     <p>Course: {{$registeration->sessions->courses->title}}</p>
-                    <p>Country: {{$registeration->sessions->countries->name}}</p>
+                    <p>Country: {{$registeration->sessions->countries->name}} , {{$registeration->sessions->states->name}}</p>
                     </div>
                     </div>
                 </div>
