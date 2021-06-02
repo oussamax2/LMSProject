@@ -24,7 +24,7 @@
 											<h6 class="float-left">{{ $companies->user->name }}</h6>
 											<strong class="s-color float-right">$ {{ $sessList->fee }}</strong>
 										</div>
-										<h5><a href="course-details.html" class="tran3s">{{ $sessList->courses->title }}</a></h5>
+										<h5><a href="{{ url('/singlsession',$sessList->id) }}" class="tran3s">{{ $sessList->courses->title }}</a></h5>
 										<ul class="clearfix">
 											<li class="float-left">
 												<i class="flaticon-people"></i>
