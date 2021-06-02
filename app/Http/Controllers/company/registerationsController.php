@@ -88,7 +88,7 @@ class registerationsController extends AppBaseController
      *
      * @return Response
      */
-    public function edit($id)
+    public function editx($id)
     {
         $registerations = $this->registerationsRepository->find($id);
 
@@ -109,7 +109,7 @@ class registerationsController extends AppBaseController
      *
      * @return Response
      */
-    public function update($id, UpdateregisterationsRequest $request)
+    public function updatex($id, UpdateregisterationsRequest $request)
     {
         $registerations = $this->registerationsRepository->find($id);
 

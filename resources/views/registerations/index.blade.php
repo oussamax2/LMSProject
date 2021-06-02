@@ -13,12 +13,11 @@
                          <div class="card-header">
                              <span class="icon icon-login"></span>
                              registerations
-                             <a class="pull-right" href="{{ route('registerations.create') }}"><span class="icon icon-plus"></span>Create registerations</a>
-                         </div>
+                        </div>
                          <div class="card-body">
                              @include('registerations.table')
                               <div class="pull-right mr-3">
-                                     
+
                               </div>
                          </div>
                      </div>
