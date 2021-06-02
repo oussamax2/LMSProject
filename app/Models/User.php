@@ -41,7 +41,9 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
     public static $rules = [
 
-
+        'name' => 'required|max:10',
+        'email' => 'required|max:255|unique:users',
+        
 
     ];
     public function registerations()

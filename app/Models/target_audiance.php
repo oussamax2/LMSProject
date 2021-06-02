@@ -46,7 +46,7 @@ class target_audiance extends Model
      * @var array
      */
     public static $rules = [
-        
+        'name' => 'required|max:30',
     ];
 
     /**

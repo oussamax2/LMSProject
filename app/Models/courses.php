@@ -60,6 +60,7 @@ class courses extends Model
      */
     public static $rules = [
         'title' => 'required|max:30',
+        'body' => 'max:180',
     ];
 
     public function categories()

@@ -69,7 +69,11 @@ class sessions extends Model
      * @var array
      */
     public static $rules = [
-
+        'start' => 'required',
+        'end' => 'required',
+        'fee' => 'required',
+        'language' => 'max:10',
+        'note' => 'max:180',
     ];
 
     public function courses()
