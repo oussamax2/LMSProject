@@ -73,7 +73,11 @@ class companies extends Model
      * @var array
      */
     public static $rules = [
-
+        'lastname' => 'required|max:10',
+        'website' => 'max:100',
+        'telephone' => 'max:15',
+        'shortDescription' => 'max:100',
+        'description' => 'max:180',        
     ];
 
     public function courses()
@@ -89,5 +93,16 @@ class companies extends Model
     public function sessions()
     {
         return $this->courses;
+    }
+
+    // this is the recommended way for declaring event handlers
+    public static function boot() {
+        parent::boot();
+        self::deleting(function($company) { // before delete() method call this
+             $company->courses()->each(function($course) {
+                $course->delete(); // <-- delete courses belonging to this company
+             });
+                     
+        });
     }
 }

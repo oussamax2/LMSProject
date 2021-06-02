@@ -150,3 +150,6 @@ Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controller
 
 
 
+
+
+Route::resource('users', App\Http\Controllers\UserController::class);

@@ -161,7 +161,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class,
+      
 
         /*
          * Package Service Providers...
@@ -235,7 +235,7 @@ return [
         'Html'      => Collective\Html\HtmlFacade::class,
         'Flash'     => Laracasts\Flash\Flash::class,
         'DataTable'     => Yajra\DataTables\Services\DataTable::class,
-        'Image' => Intervention\Image\Facades\Image::class,
+    
     ],
 
 ];

@@ -245,6 +245,8 @@ class companiesController extends AppBaseController
         }
 
         $this->companiesRepository->delete($id);
+        //delete user parent of this company
+        $companies->user->delete();
 
         Flash::success(__('admin.deleted successfully.'));
 

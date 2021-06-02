@@ -48,7 +48,7 @@ class subcategorie extends Model
      * @var array
      */
     public static $rules = [
-        
+        'name' => 'required|max:30',
     ];
 
     public function categories()
