@@ -29,6 +29,9 @@
             color: #36d64c;
             font-size: 15px;
         }
+        .information-user-company .image-logolms img{
+            width:150px;
+        }
     </style>
 </head>
 <body>
