@@ -90,4 +90,15 @@ class companies extends Model
     {
         return $this->courses;
     }
+
+    // this is the recommended way for declaring event handlers
+    public static function boot() {
+        parent::boot();
+        self::deleting(function($company) { // before delete() method call this
+             $company->courses()->each(function($course) {
+                $course->delete(); // <-- delete courses belonging to this company
+             });
+                     
+        });
+    }
 }

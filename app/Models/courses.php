@@ -104,4 +104,15 @@ class courses extends Model
     {
         return $this->belongsToMany(\App\Models\target_audiance::class, 'target_courses', 'course_id', 'target_id');
     }
+
+    // this is the recommended way for declaring event handlers
+    public static function boot() {
+        parent::boot();
+        self::deleting(function($course) { // before delete() method call this
+             $course->sessions()->each(function($session) {
+                $session->delete(); // <-- delete sessions belonging to this course
+             });
+                     
+        });
+    }
 }
