@@ -13,6 +13,7 @@ use App\Models\Mailsender;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Response;
+use App\Models\sessions;
 
 class registerationsController extends AppBaseController
 {
@@ -116,35 +117,7 @@ class registerationsController extends AppBaseController
         return redirect(route('registerationsuser.index'));
     }
 
-    /** update registration_request  status*/
-    public function update_registrationStatus($id, $response)
-    {
-        $registerations = $this->registerationsRepository->find($id);
 
-        if (empty($registerations) || !$registerations->my()) {
-            Flash::error(__('admin.not found'));
-
-            return redirect(route('registerationsuser.index'));
-        }
-       /**if admin clicked on acceptRequest button=> the company'status will be 2 ~ pending-payment user's request */
-       if ($response == 2) {
-
-            $registerations->status = 2;
-       /**if admin clicked on declineRequest button=> the company'status will be 1 ~ rejected user's request */
-       } elseif ($response == 1)  {
-
-            $registerations->status = 1;
-
-       } elseif ($response == 3){
-         /**if admin clicked on accept after status(pending-payement) button=> the company'status will be 3 ~ confirmed user's request */
-            $registerations->status = 3;
-       }
-       /**save status in DB */
-       $registerations->save();
-       Flash::success(__('admin.updated successfully.'));
-
-       return redirect()->back();
-    }
 
     public function userregist()
     {
@@ -163,6 +136,9 @@ class registerationsController extends AppBaseController
         );
         /**save in DB */
         $registerations->save();
+        $sessions = sessions::find($request->session);
+        /** mail to company */
+        Mailsender::sendcompany(auth()->user()->id,$registerations->id,$sessions->companies->user->id);
 
         toastr()->success('Your registration send with success !');
         return redirect(url('dashboarduser/registerationsuser',$registerations->id));
