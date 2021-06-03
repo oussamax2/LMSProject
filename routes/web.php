@@ -82,6 +82,7 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','verified','rol
     Route::resource('targetAudiances', App\Http\Controllers\target_audianceController::class);
 
     Route::resource('messagings', App\Http\Controllers\messagingController::class);
+    Route::resource('users', App\Http\Controllers\UserController::class);
 });
 
 
@@ -149,7 +150,8 @@ Route::post(
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
 
 
+// this route can return the subcateg with the subcateg_id
+Route::get('findsubcategWithcategID/{id}', 'App\Http\Controllers\company\coursesController@findsubcategWithcategID');
 
 
 
-Route::resource('users', App\Http\Controllers\UserController::class);
