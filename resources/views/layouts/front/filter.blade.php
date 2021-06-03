@@ -22,7 +22,7 @@
 								@endif
 								<div class="opacity tran3s">
 									<div>
-										<h6><a href="#">{{ $citList->states->countries->continent }} {{ $citList->name }}</a></h6>
+										<h6><a href="#"> {{ $citList->name }}</a></h6>
 										<p>{{ $citList->states->countries->name }}</p>
 									</div>
 								</div>
