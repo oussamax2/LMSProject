@@ -10,6 +10,7 @@ use App\Repositories\coursesRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use App\Models\categories;
+use App\Models\subcategorie;
 use App\Models\target_audiance;
 use Response;
 
@@ -46,11 +47,19 @@ class coursesController extends AppBaseController
     public function create()
     {
         /**get categories List and send them to selection list in blade */
-        $listcateg = categories::pluck('name', 'id');
+        // $listcateg = categories::pluck('name', 'id');
+         $listcateg = categories::all();
         /**get targetAudiance List and send them to selection list in blade */
         $listtarget = target_audiance::pluck('name', 'id');
 
         return view('courses.create', compact('listcateg', 'listtarget'));
+    }
+
+    /**get subcategories List according to category chosen */
+    public function findsubcategWithcategID($id)
+    {
+        $subcateg = subcategorie::where('category_id',$id)->get();
+        return response()->json($subcateg);
     }
 
     /**
@@ -112,7 +121,7 @@ class coursesController extends AppBaseController
             return redirect(route('courses.index'));
         }
         /**get categories List and send them to selection list in blade */
-        $listcateg = categories::pluck('name', 'id');
+        $listcateg = categories::all();
         /**get targetAudiance List and send them to selection list in blade */
         $listtarget = target_audiance::pluck('name', 'id');
 

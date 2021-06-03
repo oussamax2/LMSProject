@@ -35,7 +35,8 @@ class courses extends Model
         'title',
         'body',
         'published_on',
-        'category_id'
+        'category_id',
+        'subcateg_id'
     ];
 
     /**
@@ -49,7 +50,8 @@ class courses extends Model
         'title' => 'string',
         'body' => 'string',
         'published_on' => 'datetime',
-        'category_id' => 'integer'
+        'category_id' => 'integer',
+        'subcateg_id' => 'integer'
 
     ];
 
@@ -68,7 +70,10 @@ class courses extends Model
         return $this->belongsTo(categories::class, 'category_id');
     }
 
-
+    public function subcategorie()
+    {
+        return $this->belongsTo(subcategorie::class, 'subcateg_id');
+    }
 
     public function companies()
     {
