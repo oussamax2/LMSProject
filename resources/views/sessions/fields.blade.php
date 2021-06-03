@@ -68,13 +68,13 @@
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
     {!! Form::Label('country_id', __('front.countries list:')) !!}
-    {!! Form::select('country_id', $listcountries, null, ['class' => 'form-control select2','id'=>'country_id']) !!}
+    {!! Form::select('country_id', $listcountries, null, ['class' => 'form-control select2','id'=>'country_id' ,'required']) !!}
 </div>
 
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
     {!! Form::Label('state', __('front.states list:')) !!}
-    {!! Form::select('state', $liststates, null, ['class' => 'form-control select2' ,'id'=>'state']) !!}
+    {!! Form::select('state', $liststates, null, ['class' => 'form-control select2' ,'id'=>'state', 'required']) !!}
 </div>
 
 <!-- Category Id Field -->
@@ -99,7 +99,7 @@
 @push('scripts')
 <script type="text/javascript">
     $(document).ready(function() {
-        $('select[name="state"]').empty();
+
         $('select[name="country_id"]').on('change', function() {
             var stateID = $(this).val();
             if(stateID) {
@@ -111,8 +111,12 @@
 
 
                         $('select[name="state"]').empty();
+                        $('select[name="state"]').append('<option value="">----</option>');
+                        $('select[name="city"]').empty();
+                        $('select[name="city"]').append('<option value="">----</option>');
                         $.each(data, function(key, value) {
                             $('select[name="state"]').append('<option value="'+ key +'">'+ value +'</option>');
+
                         });
 
 
@@ -122,7 +126,7 @@
                 $('select[name="state"]').empty();
             }
         });
-        $('select[name="city"]').empty();
+
         $('select[name="state"]').on('change', function() {
             var stateID = $(this).val();
             if(stateID) {
