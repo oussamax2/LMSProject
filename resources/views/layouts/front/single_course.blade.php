@@ -93,7 +93,8 @@
 										<li class="float-left"><strong class="s-color"><b style="color:#222;">@lang('front.Price:')</b>  {{ $sessions->fee }}</strong></li>
 									</ul>
 									<ul class="info-list row">
-										<li class="col-xs-12"><b>@lang('front.Target Audiance :')</b><br><br>CEO, Executives, Managers</li>
+
+										<li class="col-xs-12"><b>@lang('front.Target Audiance :')</b><br><br>{{ implode(", ",json_decode($sessions->courses->target_audiance->pluck('name'))) }}</li>
 									</ul>
 								</div>
 

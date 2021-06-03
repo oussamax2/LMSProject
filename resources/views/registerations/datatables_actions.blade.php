@@ -3,9 +3,6 @@
     <a href="{{ route('registerations.show', $id) }}" class='btn btn-ghost-success'>
        <span class="icon icon-eye"></span>
     </a>
-    <a href="{{ route('registerations.edit', $id) }}" class='btn btn-ghost-info'>
-       <span class="icon icon-note"></span>
-    </a>
     {!! Form::button('<span class="icon icon-trash"></span>', [
         'type' => 'submit',
         'class' => 'btn btn-ghost-danger',

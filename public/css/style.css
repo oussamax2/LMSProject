@@ -2564,6 +2564,15 @@ footer .bottom-footer {
   font-size: 15px;
   text-transform: uppercase;
 }
+.course-details .curriculum-panel-buttonregister button{
+  background: #36d64c;
+  color: #fff;
+  padding: 10px 10px;
+  margin: 2rem;
+  border-radius: 3px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
 /*----------------------- Our Event Grid/List ---------------------*/
 .our-event {padding-bottom: 135px;}
 .our-event .single-event .image-box {

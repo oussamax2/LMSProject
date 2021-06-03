@@ -912,6 +912,7 @@ text-align: center;
   height: 42px;
   margin-bottom: 30px;
   color: rgba(0,0,0,0.4);
+  direction: rtl;
 }
 .registration-banner .registration-form form input:focus {border-bottom-color:#ff7417; }
 .registration-banner .registration-form form button {
@@ -1032,7 +1033,13 @@ text-align: center;
   -webkit-transform:translateY(-50%);
           transform:translateY(-50%);
 }
-.popular-course .single-course .text .image img {width: 100%;}
+.popular-course .single-course .text .image img {
+  width: 100%;
+  height: 100%;
+}
+.teachers-course .theme-title h3{
+  direction: rtl;
+}
 .popular-course .single-course .text strong {
   font-family: 'ExpoArabic-Book';
   line-height: 30px;
@@ -3914,6 +3921,16 @@ display: flex;
   .course-details .curriculum-panel-date .title-curr-panel{
    font-size: 15px;
    font-weight: bold;
+      }
+
+      .course-details .curriculum-panel-buttonregister button{
+        background: #36d64c;
+        color: #fff;
+        padding: 10px 10px;
+        margin: 2rem;
+        border-radius: 3px;
+        font-size: 15px;
+        text-transform: uppercase;
       }
 
 /* details session  */

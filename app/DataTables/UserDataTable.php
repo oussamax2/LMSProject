@@ -29,14 +29,11 @@ class UserDataTable extends DataTable
      */
     public function query(User $model)
     {
-      
-
         return $model->newQuery()->whereHas(
             'roles', function($q){
                 $q->where('name', 'user');
             }
         );
-        
     }
 
     /**
@@ -55,7 +52,7 @@ class UserDataTable extends DataTable
                 'stateSave' => true,
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
-             
+
                 ],
             ]);
     }

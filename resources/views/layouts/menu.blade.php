@@ -53,6 +53,13 @@
 
 <li class="nav-item" style="background-color: #72808e;height: 43px;padding: 0px 25px 10px 0px;"><br/>
     <span class="menu-item-dsh">User</span><br/>
+
+    <li class="nav-item {{ Request::is('users*') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('users.index') }}">
+            <i class="icon icon-user"></i>
+            <span>Users</span>
+        </a>
+    </li>
     <li class="nav-item {{ Request::is('companies*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('companies.index') }}">
         <span class="icon icon-drawer"></span>

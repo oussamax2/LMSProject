@@ -109,8 +109,8 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:compa
  * dashboard user  Routes
  * Namespaces indicate folder structure
  */
-
-Route::group(['prefix' => 'dashboarduser','middleware' => ['web', 'auth','verified','role:user']], function () {
+//Route::group(['prefix' => 'dashboarduser','middleware' => ['web', 'auth','verified','role:user']], function () {
+Route::group(['prefix' => 'dashboarduser','middleware' => ['web', 'auth','verified']], function () {
     Route::get('/', [App\Http\Controllers\BackController::class, 'user'])->name('user');
     Route::resource('registerationsuser', App\Http\Controllers\registerationsController::class);
 });
@@ -149,6 +149,9 @@ Route::post(
  */
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
 
+Route::get('state/ajax/{id}',  [App\Http\Controllers\sessionsController::class, 'ajaxstate'])->name('ajaxstate');
+Route::get('city/ajax/{id}',  [App\Http\Controllers\sessionsController::class, 'ajaxcity'])->name('ajaxcity');
+// Route::get('',array('as'=>'myform.ajax','uses'=>'HomeController@));
 
 // this route can return the subcateg with the subcateg_id
 Route::get('findsubcategWithcategID/{id}', 'App\Http\Controllers\company\coursesController@findsubcategWithcategID');
