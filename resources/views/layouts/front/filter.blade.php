@@ -11,7 +11,7 @@
 	        			</ul>
 	        		</div>
 	        		<div class="row" id="mixitUp-item">
-					@foreach ($citiesList as $citList) 
+					@foreach ($citiesList as $citList)
 						<div class="col-md-3 col-sm-4 col-xs-6 mix">
 							<div class="single-item">
 								@if(isset($citList->picture))
@@ -21,7 +21,7 @@
 								@endif
 								<div class="opacity tran3s">
 									<div>
-										<h6><a href="#">{{ $citList->name }}</a></h6>
+										<h6><a href="#">{{ $citList->states->countries->continent }} {{ $citList->name }}</a></h6>
 										<p>{{ $citList->states->countries->name }}</p>
 									</div>
 								</div>

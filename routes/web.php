@@ -148,3 +148,7 @@ Route::post(
  * switchlanguage route
  */
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
+
+Route::get('state/ajax/{id}',  [App\Http\Controllers\sessionsController::class, 'ajaxstate'])->name('ajaxstate');
+Route::get('city/ajax/{id}',  [App\Http\Controllers\sessionsController::class, 'ajaxcity'])->name('ajaxcity');
+// Route::get('',array('as'=>'myform.ajax','uses'=>'HomeController@));
