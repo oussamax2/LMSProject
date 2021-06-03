@@ -8,7 +8,7 @@
 					</div>
 					<div class="row">
 						<div class="instructor-slider">
-							@foreach ($companies as $compList) 
+							@foreach ($companies as $compList)
 							<div class="item">
 								<div class="single-member">
 									<div class="image">
@@ -19,7 +19,7 @@
 										@endif
 									</div>
 									<h6><a href="{{ url('/profilecompany',$compList->id) }}" class="tran3s">{{ $compList->lastname }}</a></h6>
-									<p>{{ $compList->shortDescription }}</p>
+									<p>{{substr_replace($compList->shortDescription, " ...", 30)}}</p>
 								</div>
 							</div>
 							@endforeach

@@ -41,11 +41,12 @@ class HomeController extends Controller
 
     public function pro_training($id)
     {
-
+        $countsessions = 0;
         $companies = companies::find($id);
-          foreach($companies->courses as $countsess){
-            $countsessions = count($countsess->sessions);
-        }
+        $countsessions = sessions::whereHas('courses', function ($query) use ($id){
+            $query->where('company_id',$id);
+    })->count();
+
         if(isset($companies))
         return view('front.pro_training', compact('companies', 'countsessions'));
        else
