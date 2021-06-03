@@ -125,8 +125,10 @@ class sessionsController extends AppBaseController
         }
 
         /**get courses List and send them to selection list in blade */
+        if(auth()->user()->hasRole('admin'))
+        $listcourses = courses::pluck('title', 'id');
+        else
         $listcourses = courses::where('company_id', auth()->user()->companies->id)->pluck('title', 'id');
-
         /**get countries List and send them to selection list in blade */
         $listcountries = countries::pluck('name', 'id');
 
