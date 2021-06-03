@@ -76,6 +76,11 @@ class sessions extends Model
         'note' => 'max:180',
     ];
 
+    public function languages()
+    {
+        return $this->belongsTo(language::class, 'language');
+    }
+
     public function courses()
     {
         return $this->BelongsTo(courses::class, 'course_id')->withTrashed();

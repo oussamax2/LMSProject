@@ -106,13 +106,19 @@
 </li>
 <li class="nav-item {{ Request::is('messagings*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('messagings.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>Messagings</span>
+    <span class="icon icon-cursor"></span>
+    <span class="menu-item-dsh">Messagings</span>
     </a>
 </li>
 <li class="nav-item {{ Request::is('users*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('users.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>Users</span>
+    <span class="icon icon-cursor"></span>
+    <span class="menu-item-dsh">Users</span>
+    </a>
+</li>
+<li class="nav-item {{ Request::is('languages*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('languages.index') }}">
+    <span class="icon icon-cursor"></span>
+    <span class="menu-item-dsh">Languages</span>
     </a>
 </li>

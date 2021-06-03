@@ -62,3 +62,5 @@ Route::resource('target_audiances', App\Http\Controllers\API\target_audianceAPIC
 Route::resource('messagings', App\Http\Controllers\API\messagingAPIController::class);
 
 Route::resource('users', App\Http\Controllers\API\UserAPIController::class);
+
+Route::resource('languages', App\Http\Controllers\API\languageAPIController::class);
