@@ -50,7 +50,8 @@ class categories extends Model
      * @var array
      */
     public static $rules = [
-        
+        'name' => 'required|max:30',
+        'picture' => 'required',
     ];
 
     /**

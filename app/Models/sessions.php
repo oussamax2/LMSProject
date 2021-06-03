@@ -69,7 +69,11 @@ class sessions extends Model
      * @var array
      */
     public static $rules = [
-
+        'start' => 'required',
+        'end' => 'required',
+        'fee' => 'required',
+        'language' => 'max:10',
+        'note' => 'max:180',
     ];
 
     public function courses()
@@ -116,5 +120,16 @@ class sessions extends Model
         return true;
         if(auth()->user()->hasRole('company'))
         return ($this->courses->company_id == auth()->user()->companies->id);
+    }
+
+    // this is the recommended way for declaring event handlers
+    public static function boot() {
+        parent::boot();
+        self::deleting(function($session) { // before delete() method call this
+             $session->registerations()->each(function($registerations) {
+                $registerations->delete(); // <-- delete registerations belonging to this session
+             });
+                     
+        });
     }
 }

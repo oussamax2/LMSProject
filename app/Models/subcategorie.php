@@ -48,11 +48,19 @@ class subcategorie extends Model
      * @var array
      */
     public static $rules = [
-        
+        'name' => 'required|max:30',
     ];
 
     public function categories()
     {
         return $this->belongsTo(categories::class, 'category_id');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function courses()
+    {
+        return $this->HasMany(courses::class);
     }
 }

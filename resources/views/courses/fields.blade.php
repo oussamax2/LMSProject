@@ -43,12 +43,67 @@
 @endpush
 
 
-<!-- Category Id Field -->
-<div class="form-group col-sm-12">
-    {!! Form::Label('category_id',  __('front.category list:')) !!}
-    {!! Form::select('category_id', $listcateg,null, ['class' => 'form-control select2', 'required']) !!}
-</div>
 
+@push('scripts')
+ <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+	<script>
+         $(document).ready(function() {
+        $('#category_id').on('change', function() {
+            var categID = $(this).val();
+            if(categID) {
+                $.ajax({
+                    url: '/findsubcategWithcategID/'+$(this).val(),
+                    type: "GET",
+                    data : {"_token":"{{ csrf_token() }}"},
+                    dataType: "json",
+                    success:function(data) {
+                        console.log(data);
+                      if(data){
+                         $('#subcateg_id').empty();
+                         $('#subcateg_id').focus;
+                         $('#subcateg_id').append('<option value="">-- Select sub category --</option>'); 
+                         $.each(data, function(key, value){
+                            $('select[name="subcateg_id"]').append('<option value="'+ value.id +'">' + value.name+ '</option>');
+                         });
+                        }else{
+                         $('#subcateg_id').empty();
+                        }
+                    }
+                });
+            }else{
+              $('#subcateg_id').empty();
+            }
+        });
+    });
+    </script>
+@endpush
+<!-- Category Id Field -->
+
+
+	<div class="form-group  col-sm-12 {{ ($errors->has('roll'))?'has-error':'' }}">
+	    <label for="roll">category <span class="required">*</span></label>
+	    <select name="category_id" class="form-control" id="category_id">
+
+         <option value="">{{isset($courses->categories['name']) ?$courses->categories['name']: null}}</option>
+		@foreach ($listcateg as $listcateg)
+             
+			<option value="{{ $listcateg->id }}">{{ ucfirst($listcateg->name) }}</option>
+		@endforeach
+	     </select>
+	</div>
+			  
+
+	<div class="form-group  col-sm-12 {{ ($errors->has('name'))?'has-error':'' }}">
+    <label for="roll">sub Categories </label>
+    <select name="subcateg_id" class="form-control" id="subcateg_id">
+      <option value="">{{isset($courses->subcategorie['name']) ?$courses->subcategorie['name']: null}}</option>
+    </select>
+  </div>
+
+			
 
 
 <div class="form-group col-sm-12">
@@ -63,3 +118,6 @@
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
     <a href="{{ route('courses.index') }}" class="btn btn-secondary">Cancel</a>
 </div>
+
+
+

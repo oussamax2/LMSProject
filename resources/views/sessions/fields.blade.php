@@ -68,13 +68,13 @@
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
     {!! Form::Label('country_id', __('front.countries list:')) !!}
-    {!! Form::select('country_id', $listcountries, null, ['class' => 'form-control select2']) !!}
+    {!! Form::select('country_id', $listcountries, null, ['class' => 'form-control select2','id'=>'country_id']) !!}
 </div>
 
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
     {!! Form::Label('state', __('front.states list:')) !!}
-    {!! Form::select('state', $liststates, null, ['class' => 'form-control select2']) !!}
+    {!! Form::select('state', $liststates, null, ['class' => 'form-control select2' ,'id'=>'state']) !!}
 </div>
 
 <!-- Category Id Field -->
@@ -95,3 +95,57 @@
     <a href="{{ route('sessions.index') }}" class="btn btn-secondary">Cancel</a>
 </div>
 
+
+@push('scripts')
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('select[name="state"]').empty();
+        $('select[name="country_id"]').on('change', function() {
+            var stateID = $(this).val();
+            if(stateID) {
+                $.ajax({
+                    url: '/state/ajax/'+stateID,
+                    type: "GET",
+                    dataType: "json",
+                    success:function(data) {
+
+
+                        $('select[name="state"]').empty();
+                        $.each(data, function(key, value) {
+                            $('select[name="state"]').append('<option value="'+ key +'">'+ value +'</option>');
+                        });
+
+
+                    }
+                });
+            }else{
+                $('select[name="state"]').empty();
+            }
+        });
+        $('select[name="city"]').empty();
+        $('select[name="state"]').on('change', function() {
+            var stateID = $(this).val();
+            if(stateID) {
+                $.ajax({
+                    url: '/city/ajax/'+stateID,
+                    type: "GET",
+                    dataType: "json",
+                    success:function(data) {
+
+
+                        $('select[name="city"]').empty();
+                        $.each(data, function(key, value) {
+                            $('select[name="city"]').append('<option value="'+ key +'">'+ value +'</option>');
+                        });
+
+
+                    }
+                });
+            }else{
+                $('select[name="city"]').empty();
+            }
+        });
+
+    });
+</script>
+@endpush

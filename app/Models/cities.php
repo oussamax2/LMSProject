@@ -53,7 +53,7 @@ class cities extends Model
      * @var array
      */
     public static $rules = [
-        
+        'name' => 'required|max:10', 
     ];
     
     public function states()

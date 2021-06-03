@@ -14,6 +14,7 @@ use App\Models\countries;
 use App\Models\courses;
 use App\Models\states;
 use Response;
+use DB;
 
 class sessionsController extends AppBaseController
 {
@@ -44,24 +45,24 @@ class sessionsController extends AppBaseController
     public function create()
     {
 
-        
+
         // /**get courses List and send them to selection list in blade */
-        $listcourses = courses::where('company_id', auth()->user()->companies->id)->pluck('title', 'id'); 
-        
+        $listcourses = courses::where('company_id', auth()->user()->companies->id)->pluck('title', 'id');
+
         /**get countries List and send them to selection list in blade */
         $listcountries = countries::pluck('name', 'id');
-       
-               
+
+
         /**get states List and send them to selection list in blade */
         $liststates = states::pluck('name', 'id');
-       
-        
+
+
         /**get cities List and send them to selection list in blade */
         $listcities = cities::pluck('name', 'id');
-        //  var_dump("hello");    
+        //  var_dump("hello");
         return view('sessions.create', compact(
-            'selectedID', 
-            'listcourses', 
+            'selectedID',
+            'listcourses',
             'listcountries',
             'liststates',
             'listcities'));
@@ -124,27 +125,27 @@ class sessionsController extends AppBaseController
         }
         /**get courses List and send them to selection list in blade */
         $listcourses = courses::pluck('title', 'id');
-        $selectedID = 1;   
-        
+        $selectedID = 1;
+
         /**get countries List and send them to selection list in blade */
         $listcountries = countries::pluck('name', 'id');
-       
-               
+
+
         /**get states List and send them to selection list in blade */
         $liststates = states::pluck('name', 'id');
-       
-        
+
+
         /**get cities List and send them to selection list in blade */
         $listcities = cities::pluck('name', 'id');
-        // var_dump("hello");    
+        // var_dump("hello");
         return view('sessions.edit', compact(
-            'sessions',     
-            'selectedID', 
-            'listcourses', 
+            'sessions',
+            'selectedID',
+            'listcourses',
             'listcountries',
             'liststates',
             'listcities'));
-       
+
     }
 
     /**
@@ -195,4 +196,18 @@ class sessionsController extends AppBaseController
 
         return redirect(route('sessions.index'));
     }
+
+/** dynamic select */
+public function ajaxstate($id)
+{
+    $state = states::where("country_id",$id)
+                ->pluck('name', 'id');
+    return json_encode($state);
+}
+public function ajaxcity($id)
+{
+    $cities = cities::where("state_id",$id)
+                ->pluck('name', 'id');
+    return json_encode($cities);
+}
 }
