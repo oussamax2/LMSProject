@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html >
+@if (App::isLocale('ar'))
+<html dir="rtl" lang="ar">
+@else
+<html lang="{{ app()->getLocale() }}">
+@endif
 <head>
     <meta charset="UTF-8">
     <title>{{config('app.name')}}</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    @if(App::isLocale('en'))
     <!-- Bootstrap 4.1.1 -->
     <link rel="stylesheet" href="{{ asset('assets-panel/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{ asset('assets-panel/css/bootstrap-datetimepicker.css')}}">
@@ -12,15 +17,28 @@
     <link rel="stylesheet" href="{{ asset('assets-panel/css/admin.css')}}">
     <link rel="stylesheet" href="{{ asset('assets-panel/css/select2.min.css')}}">
     <link rel="stylesheet" href="{{ asset('fonts/icon/font/flaticon.css') }}">
-
     @toastr_css
-
-
     <!-- Ionicons -->
     <link rel="stylesheet" href="{{ asset('assets-panel/css/coreui-icons-free.css')}}">
     <link href="{{ asset('fonts/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{ asset('assets-panel/css/simple-line-icons.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets-panel/css/flag-icon.min.css')}}">
+    @else
+    <!-- Bootstrap 4.1.1 -->
+    <link rel="stylesheet" href="{{ asset('assets-panel/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets-panel/css/bootstrap-datetimepicker.css')}}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('assets-panel/css/coreui.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets-panel/css/adminrtl.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets-panel/css/select2.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('fonts/icon/font/flaticon.css') }}">
+    @toastr_css
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="{{ asset('assets-panel/css/coreui-icons-free.css')}}">
+    <link href="{{ asset('fonts/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets-panel/css/simple-line-icons.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets-panel/css/flag-icon.min.css')}}">
+    @endif
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
 <header class="app-header navbar">
@@ -37,13 +55,24 @@
         <span class="icon-menu"></span>
     </button>
 
-
     <ul class="nav navbar-nav ml-auto">
         <!-- menu list -->
         <li class="menu-list"><a href="{{ route ('Campus') }}" class="tran3s">Home</a></li>
         <li class="menu-list"><a href="{{ route ('course') }}" class="tran3s">Course</a></li>
         <li class="menu-list"><a href="{{ route ('partners') }}" class="tran3s">Organizers</a></li>
         <li class="menu-list"><a href="{{ route ('contact') }}" class="tran3s">Contact Us</a></li>
+        <li class="dropdown-holder menu-list">
+            <a href="#" class="tran3s">
+                {{ Config::get('languages')[App::getLocale()] }}
+            </a>
+            <ul class="sub-menu">
+            @foreach (Config::get('languages') as $lang => $language)
+                @if ($lang != App::getLocale())
+                        <a href="{{ route('lang.switch', $lang) }}"> {{$language}}</a>
+                @endif
+            @endforeach
+            </ul>
+        </li>
         <!-- menu list -->
 
         <li class="nav-item d-md-down-none">
