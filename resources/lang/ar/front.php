@@ -151,6 +151,7 @@ return [
     'states list:' => 'قائمة المناطق', 
     'countries list:' => 'قائمة الدول',     
     'courses list:' => 'قائمة الدورات', 
+    'language list:' => 'قائمة اللغات',    
     '' => '',     
     '' => '', 
     '' => '',     

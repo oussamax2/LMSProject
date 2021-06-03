@@ -55,7 +55,7 @@ class sessions extends Model
         'start' => 'datetime',
         'end' => 'datetime',
         'fee' => 'integer',
-        'language' => 'string',
+        'language' => 'integer',
         'course_id' => 'integer',
         'country_id' => 'integer',
         'state' => 'integer',
@@ -72,7 +72,6 @@ class sessions extends Model
         'start' => 'required',
         'end' => 'required',
         'fee' => 'required',
-        'language' => 'max:10',
         'note' => 'max:180',
     ];
 
