@@ -58,12 +58,11 @@
     {!! Form::text('fee', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
-<!-- Language Field -->
+<!-- Category Id Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('language', 'Language:') !!}
-    {!! Form::text('language', null, ['class' => 'form-control']) !!}
+    {!! Form::Label('language', __('front.language list:')) !!}
+    {!! Form::select('language', $listlanguage, null, ['class' => 'form-control']) !!}
 </div>
-
 
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">

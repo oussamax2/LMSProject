@@ -158,3 +158,6 @@ Route::get('findsubcategWithcategID/{id}', 'App\Http\Controllers\company\courses
 
 
 
+
+
+Route::resource('languages', App\Http\Controllers\languageController::class);

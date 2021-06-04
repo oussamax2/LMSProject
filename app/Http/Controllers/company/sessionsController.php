@@ -12,6 +12,7 @@ use App\Http\Controllers\AppBaseController;
 use App\Models\cities;
 use App\Models\countries;
 use App\Models\courses;
+use App\Models\language;
 use App\Models\states;
 use Response;
 
@@ -55,13 +56,15 @@ class sessionsController extends AppBaseController
         /**get states List and send them to selection list in blade */
         $liststates = states::pluck('name', 'id');
 
+        /**get language List and send them to selection list in blade */
+        $listlanguage = language::pluck('name', 'id');
 
         /**get cities List and send them to selection list in blade */
         $listcities = cities::pluck('name', 'id');
 
         //  var_dump("hello");
         return view('sessions.create', compact(
-
+            'listlanguage',
             'listcourses',
             'listcountries',
             'liststates',
@@ -135,14 +138,16 @@ class sessionsController extends AppBaseController
 
         /**get states List and send them to selection list in blade */
         $liststates = states::pluck('name', 'id');
-
+        
+        /**get language List and send them to selection list in blade */
+        $listlanguage = language::pluck('name', 'id');
 
         /**get cities List and send them to selection list in blade */
         $listcities = cities::pluck('name', 'id');
 
         return view('sessions.edit', compact(
             'sessions',
-
+            'listlanguage',
             'listcourses',
             'listcountries',
             'liststates',
