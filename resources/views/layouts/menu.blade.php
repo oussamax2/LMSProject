@@ -1,6 +1,6 @@
 
 <br/><br/>
-<li class="nav-item" style="background-color: #72808e;height: 43px;padding: 10px 25px 10px 0px;">
+<li class="nav-item" style="background-color: #143455; height: 43px;padding: 10px 25px 10px 0px;">
 
         <span class="menu-item-dsh">Courses</span><br/>
         <li class="nav-item {{ Request::is('admincourses*') ? 'active' : '' }}">
@@ -51,12 +51,12 @@
 </li>
 
 
-<li class="nav-item" style="background-color: #72808e;height: 43px;padding: 0px 25px 10px 0px;"><br/>
-    <span class="menu-item-dsh">User</span><br/>
+<li class="nav-item" style="background-color: #143455; height: 43px;padding: 0px 25px 10px 0px;"><br/>
+    <span class="icon menu-item-dsh">User</span><br/>
 
     <li class="nav-item {{ Request::is('users*') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('users.index') }}">
-            <i class="icon icon-user"></i>
+            <span class="icon icon-user"></span>
             <span>Users</span>
         </a>
     </li>
@@ -74,7 +74,7 @@
 </li>
 
 </li>
-<li class="nav-item" style="background-color: #72808e;height: 43px;padding: 0px 25px 10px 0px;"><br/>
+<li class="nav-item" style="background-color: #143455; height: 43px;padding: 0px 25px 10px 0px;"><br/>
     <span class="menu-item-dsh">Settings</span><br/>
     <li class="nav-item {{ Request::is('tags*') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('tags.index') }}">

@@ -61,17 +61,19 @@
         <li class="menu-list"><a href="{{ route ('course') }}" class="tran3s">Course</a></li>
         <li class="menu-list"><a href="{{ route ('partners') }}" class="tran3s">Organizers</a></li>
         <li class="menu-list"><a href="{{ route ('contact') }}" class="tran3s">Contact Us</a></li>
-        <li class="dropdown-holder menu-list">
-            <a href="#" class="tran3s">
+        <li class="nav-item dropdown">
+            <a class="nameuserlms nav-link" href="#" class="tran3s" data-toggle="dropdown" href="#" role="button"
+               aria-haspopup="true" aria-expanded="false">
+               <i class="icon flaticon-down-arrow"></i>
                 {{ Config::get('languages')[App::getLocale()] }}
             </a>
-            <ul class="sub-menu">
+            <div class="dropdown-menu dropdown-menu-right">
             @foreach (Config::get('languages') as $lang => $language)
                 @if ($lang != App::getLocale())
-                        <a href="{{ route('lang.switch', $lang) }}"> {{$language}}</a>
+                        <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"> {{$language}}</a>
                 @endif
             @endforeach
-            </ul>
+            </div>
         </li>
         <!-- menu list -->
 
@@ -82,7 +84,7 @@
             </a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nameuserlms nav-link" style="margin-right: 10px" data-toggle="dropdown" href="#" role="button"
+            <a class="nameuserlms nav-link" data-toggle="dropdown" href="#" role="button"
                aria-haspopup="true" aria-expanded="false">
                 {{ Auth::user()->name }}
             </a>
