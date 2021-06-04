@@ -2958,6 +2958,11 @@ footer .bottom-footer {
   margin-top: 70px;
   padding: 0px 0 40px 0;
 }
+.teachers-course .msginfocrs{
+  text-align: center;
+  padding-top: 20px;
+  margin: auto;
+}
 .teachers-course h3 {
   font-weight: 500;
   margin-bottom: 5px;

@@ -63,7 +63,6 @@ class coursesDataTable extends DataTable
                 'stateSave' => true,
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
-
                 ], 'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],
             ]);
     }
@@ -78,7 +77,7 @@ class coursesDataTable extends DataTable
         return [
             ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
             ['data' => 'companies.lastname', 'name' => 'companies.lastname', 'title' => __('forms.Company Name')],
-            'title',
+            ['data' => 'title', 'name' => 'title', 'title' => __('forms.title')],
             ['data' => 'categories.name', 'name' => 'categories.name', 'title' => __('forms.Category Name')],
             ['data' => 'published_on', 'name' => 'published_on', 'title' => __('forms.Published On')],
             ['data' => 'count_session', 'name' => 'count_session', 'title' => __('forms.Session Number')],

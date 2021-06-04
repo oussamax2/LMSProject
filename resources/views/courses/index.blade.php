@@ -2,7 +2,7 @@
 
 @section('content')
     <ol class="breadcrumb">
-        <li class="breadcrumb-item">Courses</li>
+        <li class="breadcrumb-item">@lang('front.Courses')</li>
     </ol>
     <div class="container-fluid">
         <div class="animated fadeIn">
@@ -12,8 +12,8 @@
                      <div class="card">
                          <div class="card-header">
                              <i class="icon icon-docs"></i>
-                             courses
-                             <a class="pull-right" href="{{ route('courses.create') }}"><span class="icon icon-plus"></span>Create courses</a>
+                             @lang('front.Courses')
+                             <a class="pull-right" href="{{ route('courses.create') }}"><span class="icon icon-plus"></span>@lang('front.Create courses')</a>
                              <a class="pull-right" href="{{ route('courses.import') }}"><span class="icon icon-social-dropbox"></span>Import courses</a>
                          </div>
                          <div class="card-body">

@@ -53,7 +53,7 @@ class target_audianceDataTable extends DataTable
                     // ['extend' => 'print', 'className' => 'btn btn-default btn-sm no-corner',],
                     // ['extend' => 'reset', 'className' => 'btn btn-default btn-sm no-corner',],
                     // ['extend' => 'reload', 'className' => 'btn btn-default btn-sm no-corner',],
-                ],
+                ],'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],
             ]);
     }
 
@@ -65,7 +65,7 @@ class target_audianceDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'name'
+            ['data' => 'name', 'name' => 'name', 'title' => __('forms.name')],
         ];
     }
 

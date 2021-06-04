@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="{{ asset('assets-panel/css/bootstrap-datetimepicker.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('assets-panel/css/coreui.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets-panel/fonts/ExpoArabic-Book.ttf') }}">
     <link rel="stylesheet" href="{{ asset('assets-panel/css/adminrtl.css')}}">
     <link rel="stylesheet" href="{{ asset('assets-panel/css/select2.min.css')}}">
     <link rel="stylesheet" href="{{ asset('fonts/icon/font/flaticon.css') }}">
@@ -57,10 +58,10 @@
 
     <ul class="nav navbar-nav ml-auto">
         <!-- menu list -->
-        <li class="menu-list"><a href="{{ route ('Campus') }}" class="tran3s">Home</a></li>
-        <li class="menu-list"><a href="{{ route ('course') }}" class="tran3s">Course</a></li>
-        <li class="menu-list"><a href="{{ route ('partners') }}" class="tran3s">Organizers</a></li>
-        <li class="menu-list"><a href="{{ route ('contact') }}" class="tran3s">Contact Us</a></li>
+        <li class="menu-list"><a href="{{ route ('Campus') }}" class="tran3s">@lang('front.Home')</a></li>
+        <li class="menu-list"><a href="{{ route ('course') }}" class="tran3s">@lang('front.Course')</a></li>
+        <li class="menu-list"><a href="{{ route ('partners') }}" class="tran3s">@lang('front.Organizers')</a></li>
+        <li class="menu-list"><a href="{{ route ('contact') }}" class="tran3s">@lang('front.Contact Us')</a></li>
         <li class="nav-item dropdown">
             <a class="nameuserlms nav-link" href="#" class="tran3s" data-toggle="dropdown" href="#" role="button"
                aria-haspopup="true" aria-expanded="false">

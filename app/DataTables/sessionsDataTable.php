@@ -89,8 +89,7 @@ class sessionsDataTable extends DataTable
                 'stateSave' => true,
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
-
-                ],
+                ],'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],
             ]);
     }
 
@@ -107,7 +106,8 @@ class sessionsDataTable extends DataTable
             ['data' => 'count_registrations', 'name' => 'count_registrations', 'title' => __('forms.Registration Number')],
             ['data' => 'start', 'name' => 'start', 'title' => __('forms.start Date')],
             ['data' => 'end', 'name' => 'end', 'title' => __('forms.end Date')],
-            'fee',
+            ['data' => 'fee', 'name' => 'fee', 'title' => __('forms.fee')],
+            
 
         ];
     }
