@@ -13,11 +13,15 @@ return [
     'Order' => 'ترتيب الفئة',
     'Created At' => 'أنشئت في',
 
+    'There are no courses' => 'لا توجد دورات',
+
     'Africa' => 'افريقيا',
     'Europe' => 'اوربا',
     'North_america' => 'شمال امريكا',
     'Asia' => 'آسيا',
     'South_america' => 'أمريكا الجنوبية',
+    'There is no subcategory' => 'لا توجد فئة فرعية',
+    
 
     'Subcategory List:' => 'قائمة الفئات الفرعية:',    
     'Subcategory name' => 'اسم الفئة الفرعية',   
@@ -112,7 +116,12 @@ return [
     'All' => 'الكل',
     'free' => 'مجانا',
     'Category:' => 'فئة:',
+    'Create Users' => 'إنشاء المستخدمين',
     'Next' => 'التالي',
+    'Target Audiances' => 'هدف',
+    'Create subcategories' => 'إنشاء فئات فرعية',
+    'Create Target Audiances' => 'إنشاء الجماهير المستهدفة',
+    
   
    
    
@@ -151,9 +160,26 @@ return [
     'states list:' => 'قائمة المناطق', 
     'countries list:' => 'قائمة الدول',     
     'courses list:' => 'قائمة الدورات', 
-    '' => '',     
-    '' => '', 
-    '' => '',     
-    '' => '', 
+    'Courses' => 'الدورات',     
+    'Create courses' => 'إضافة دورة', 
+
+    'Registerations' => 'التسجيلات',     
+    'Subcategories' => 'الفئات الفرعية', 
+    'target_audiances' => 'الهدف', 
+    'User' => 'المستخدم', 
+    'Users' => 'المستخدمون', 
+    'Companies' => 'الشركاء', 
+    'Roles' => 'الأدوار', 
+    'Settings' => 'إعدادات', 
+    'Tags' => 'العلامات', 
+    'Countries' => 'الدول', 
+    'States' => 'جهة', 
+    'Cities' => 'مدن',
+    'Contacts' => 'الاتصال',
+    'Create session' => 'إنشاء جلسة',
+    'Create categories' => 'إنشاء فئة',
+    
+
+   
     
 ];

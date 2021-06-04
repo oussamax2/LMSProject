@@ -4,6 +4,8 @@ return [
 
     'Company Name'      => 'اسم الشركة',
     'Category Name'      => 'إسم الفئة',
+    'title'      => 'الاسم',
+    'action'      => 'الاجراءات ',
     'Session Number'      => 'عدد الدورات',
     'State Name'      => 'إسم المنطقة',
     'City Name'      => 'اسم المدينة',
@@ -12,6 +14,18 @@ return [
     'User Name'      => 'إسم الطالب',
     'Back'      => 'عودة',
     'Detail'      => 'التفاصيل',
+    'fee' => 'الثمن',
+    'picture' => 'صورة',
+    'email' => 'البريد الإلكتروني',
+    'name' => 'الاسم',
+
+    'firstname' => 'الاسم الأول',
+    'lastname' => 'الكنية',
+    'telephone' => 'هاتف',
+    'status' => 'الحالة',
+
+    'category Name' => 'اسم التصنيف',
+    'Create subcategories' => 'إنشاء فئات فرعية',
     'Registerations'      => 'التسجيلات',
     'Registration Number'      => 'عدد التسجيلات',
     'start Date'      => 'تاريخ بداية الدورة',

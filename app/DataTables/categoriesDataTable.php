@@ -23,10 +23,10 @@ class categoriesDataTable extends DataTable
                          ->editColumn('picture', function($data) {
                              if(isset($data->picture) && $data->picture != NULL){
                                 $url= asset("storage/".$data->picture);
-                                return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 70px;" />';
+                                return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 70px; height:70px;" />';
                              }else{
                                 $url= asset("images/defaultpicture.png");
-                                return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 70px;">';
+                                return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 70px; height:70px;">';
                              }
                          })->escapeColumns([]);
             //   OR METHOD 2 by addColumn
@@ -65,8 +65,7 @@ class categoriesDataTable extends DataTable
                 'stateSave' => true,
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
-
-                ],
+                ],'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],
             ]);
     }
 
@@ -78,8 +77,9 @@ class categoriesDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'picture',
-            'name'
+            ['data' => 'picture', 'name' => 'picture', 'title' => __('forms.picture')],
+            ['data' => 'name', 'name' => 'name', 'title' => __('forms.name')],
+           
             
         ];
     }

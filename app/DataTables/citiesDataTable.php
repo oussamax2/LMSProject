@@ -22,10 +22,10 @@ class citiesDataTable extends DataTable
                 ->editColumn('picture', function($data) {
                     if(isset($data->picture) && $data->picture != NULL){
                     $url= asset("storage/".$data->picture);
-                    return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 70px;" />';
+                    return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 70px; height:70px;" />';
                     }else{
                     $url= asset("images/defaultcity.png");
-                    return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 90px;">';
+                    return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 90px; height:90px;">';
                     }
                 })
                 ->editColumn('state_id', function ($dataTable) { 

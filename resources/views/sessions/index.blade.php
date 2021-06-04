@@ -2,7 +2,7 @@
 
 @section('content')
     <ol class="breadcrumb">
-        <li class="breadcrumb-item">Sessions</li>
+        <li class="breadcrumb-item">@lang('front.Sessions')</li>
     </ol>
     <div class="container-fluid">
         <div class="animated fadeIn">
@@ -12,8 +12,8 @@
                      <div class="card">
                          <div class="card-header">
                              <i class="icon icon-briefcase"></i>
-                             sessions
-                             <a class="pull-right" href="{{ route('sessions.create') }}"><span class="icon icon-plus"></span>Create session</a>
+                             @lang('front.Sessions')
+                             <a class="pull-right" href="{{ route('sessions.create') }}"><span class="icon icon-plus"></span> @lang('front.Create session')</a>
                          </div>
                          <div class="card-body">
                              @include('sessions.table')
