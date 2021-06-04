@@ -27,16 +27,22 @@
 								<div class="course-info row">
 									<div class="col-xs-4">
 										<div>
+										@if(isset($sessions->courses->subcategorie->name))
 											<i class="flaticon-bookmark"></i>
 											<p>@lang('front.Sub Categories')</p>
-											<b>{{ $sessions->language }}</b>
+											<b>{{ $sessions->courses->subcategorie->name }}</b>
+										@else
+											<i class="flaticon-bookmark"></i>
+											<p>@lang('front.Sub Categories')</p>
+											<b>@lang('front.There is no subcategory')</b>
+										@endif
 										</div>
 									</div>
 									<div class="col-xs-4">
 										<div>
 											<i class="flaticon-bookmark"></i>
 											<p>@lang('front.Categories')</p>
-											<b>{{ $sessions->language }}</b>
+											<b>{{ $sessions->courses->categories->name }}</b>
 										</div>
 									</div>
 									<div class="col-xs-4">

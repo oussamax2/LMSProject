@@ -87,10 +87,18 @@
 	    <label for="roll">category <span class="required">*</span></label>
 	    <select name="category_id" class="form-control" id="category_id">
 
-         <option value="">{{isset($courses->categories['name']) ?$courses->categories['name']: null}}</option>
 		@foreach ($listcateg as $listcateg)
-             
-			<option value="{{ $listcateg->id }}">{{ ucfirst($listcateg->name) }}</option>
+
+            @if(isset($courses->categories['id']))
+                @if($listcateg->id == $courses->categories['id'])
+                    <option selected="selected" value="{{ $listcateg->id }}">{{ ucfirst($listcateg->name) }}</option>
+                @else
+                    <option value="{{ $listcateg->id }}">{{ ucfirst($listcateg->name) }}</option>
+                @endif
+            @else
+                <option value="{{ $listcateg->id }}">{{ ucfirst($listcateg->name) }}</option>
+            @endif
+
 		@endforeach
 	     </select>
 	</div>

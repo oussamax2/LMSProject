@@ -6,6 +6,7 @@
                     <a href="course-grid.html" class="profcourse">@lang('front.See All Course')</a>
                     </div>
 					<div class="row">
+					@if(isset($sessList))
 						<div class="teachers-course-slider">
 						@foreach ($companies->courses as $coursesList)
 						@foreach ($coursesList->sessions as $sessList)
@@ -41,6 +42,9 @@
 						@endforeach
 						@endforeach
 						</div>
+						@else
+						<p class="msginfocrs">@lang('front.There are no courses')</p>
+						@endif
 					</div>
 				</div>
 			</div>

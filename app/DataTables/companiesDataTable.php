@@ -23,10 +23,10 @@ class companiesDataTable extends DataTable
                 ->editColumn('picture', function($data) {
                     if(isset($data->picture) && $data->picture != NULL){
                     $url= asset("storage/".$data->picture);
-                    return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 70px;" />';
+                    return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 70px; height:70px;" />';
                     }else{
                     $url= asset("images/defaultuser.png");
-                    return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 70px;">';
+                    return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 70px; height:70px;">';
                     }
                 })
                 ->editColumn('status', function ($companies) {
@@ -66,7 +66,7 @@ class companiesDataTable extends DataTable
                 'stateSave' => true,
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
-                ],
+                ],'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],
             ]);
     }
 
@@ -79,12 +79,12 @@ class companiesDataTable extends DataTable
     {
         return [
             ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
-            'picture',
-            ['data' => 'user.name', 'name' => 'user.name', 'title' => __('firstname')],
-            'lastname',
-            ['data' => 'user.email', 'name' => 'user.email', 'title' => __('email')],
-            'telephone',
-            'status',
+            ['data' => 'picture', 'name' => 'picture', 'title' => __('forms.picture')],
+            ['data' => 'user.name', 'name' => 'user.name', 'title' => __('forms.firstname')],
+            ['data' => 'lastname', 'name' => 'lastname', 'title' => __('forms.lastname')],
+            ['data' => 'user.email', 'name' => 'user.email', 'title' => __('forms.email')],
+            ['data' => 'telephone', 'name' => 'telephone', 'title' => __('forms.telephone')],
+            ['data' => 'status', 'name' => 'status', 'title' => __('forms.status')],
 
 
         ];

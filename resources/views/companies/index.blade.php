@@ -2,7 +2,7 @@
 
 @section('content')
     <ol class="breadcrumb">
-        <li class="breadcrumb-item">Companies</li>
+        <li class="breadcrumb-item">@lang('front.Companies')</li>
     </ol>
     <div class="container-fluid">
         <div class="animated fadeIn">
@@ -12,7 +12,7 @@
                      <div class="card">
                          <div class="card-header">
                              <span class="icon icon-drawer"></span>
-                             companies
+                             @lang('front.Companies')
                          </div>
                          <div class="card-body">
                              @include('companies.table')

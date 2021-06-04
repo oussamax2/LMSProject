@@ -98,6 +98,8 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:admin
 Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','verified','VerifiedCompany','role:admin|company']], function () {
     Route::resource('registerations', App\Http\Controllers\company\registerationsController::class);
     Route::resource('courses', App\Http\Controllers\company\coursesController::class);
+    Route::get('coursesimport', [App\Http\Controllers\company\coursesController::class,'import'])->name('courses.import');
+    Route::post('importExcel', [App\Http\Controllers\company\coursesController::class, 'importExcel'])->name('importExcel');
      Route::resource('sessions', App\Http\Controllers\company\sessionsController::class);
 });
 Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:company']], function () {
@@ -147,7 +149,7 @@ Route::post(
 /*
  * switchlanguage route
  */
-Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
+Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageSwitchController@switchLang']);
 
 Route::get('state/ajax/{id}',  [App\Http\Controllers\sessionsController::class, 'ajaxstate'])->name('ajaxstate');
 Route::get('city/ajax/{id}',  [App\Http\Controllers\sessionsController::class, 'ajaxcity'])->name('ajaxcity');
@@ -158,3 +160,6 @@ Route::get('findsubcategWithcategID/{id}', 'App\Http\Controllers\company\courses
 
 
 
+
+
+Route::resource('languages', App\Http\Controllers\languageController::class);
