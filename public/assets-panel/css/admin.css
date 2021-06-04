@@ -46,7 +46,7 @@
     text-decoration: none;
 }
 .app-header .navbar-brand {
-    width:120px;
+    width:110px;
 }
 .sidebar {
     background: #072640;
@@ -58,6 +58,7 @@
     color:#222;
     text-transform: uppercase;
     font-weight: 500;
+    margin-right: 10px;
 }
 .nav-item span.icon{
     font-size: 18px;
@@ -293,6 +294,25 @@ table tr td{
 .btn-ghost-danger {
   font-size: 20px;
 }
+.app-header .nav>li i.icon{
+  font-size: 10px;
+  color:#c6c4c4;
+            
+}
+.app-header .nav>li .dropdown-menu{
+border-radius: 0px !important;
+background: #fff;
+border-top: 2px solid #f36824 !important;
+border-bottom: 0px;
+border-left: 0px;
+border-right: 0px;  
+box-shadow: 0px 0px 9px 1px rgb(0 0 0 / 20%);    
+}
+
+.app-header .nav>li .dropdown-menu .dropdown-item{
+  text-align: center;
+  text-transform: uppercase;    
+  }
 
 /*---------------------- cards ----------------------*/
 
@@ -671,6 +691,23 @@ border-left: 17px solid #f36824;
   height: 40px !important;
   border-radius: 0px !important;
 }
+/*scroll style*/
+::-webkit-scrollbar {
+  width: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+  background:rgb(121, 120, 120); 
+  border-radius: 10px;
+  }
+  /*scroll style*/
+  @media (max-width: 991.98px){
+.app-header .navbar-brand {
+    position: absolute;
+    top: 0;
+    left: 30% !important;
+    margin-left: -77.5px;
+}
+
 
 
 
