@@ -14,11 +14,12 @@
                              <i class="icon icon-docs"></i>
                              courses
                              <a class="pull-right" href="{{ route('courses.create') }}"><span class="icon icon-plus"></span>Create courses</a>
+                             <a class="pull-right" href="{{ route('courses.import') }}"><span class="icon icon-social-dropbox"></span>Import courses</a>
                          </div>
                          <div class="card-body">
                              @include('courses.table')
                               <div class="pull-right mr-3">
-                                     
+
                               </div>
                          </div>
                      </div>
