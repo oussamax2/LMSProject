@@ -9,7 +9,7 @@
     </ol>
      <div class="container-fluid">
           <div class="animated fadeIn">
-                @include('coreui-templates::common.errors')
+            @include('flash::message')
                 <div class="row">
                     <div class="col-lg-10 col-lg-offset-10 mx-auto">
                         <div class="card">
@@ -18,6 +18,8 @@
                                 <strong>import Courses</strong>
                             </div>
                             <div class="card-body">
+                                <a class="btn btn-ghost-info" href="{{ asset('assets-panel/course.xlsx')}}"><i class="fa fa-file-excel-o" style="font-size:24px"></i> Get exel model </a>
+                                <br>
                                 <form style="border: 4px solid #a1a1a1;margin-top: 15px;padding: 10px;" action="{{ route('importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <input type="file" name="import_file" />

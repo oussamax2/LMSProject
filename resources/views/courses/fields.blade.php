@@ -10,14 +10,11 @@
 <!-- Body Field -->
 <div class="form-group col-sm-12">
     {!! Form::label('body', 'Body:') !!}
-    {!! Form::text('body', null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::textarea('body', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Published On Field -->
-<div class="form-group col-sm-12">
-    {!! Form::label('published_on', __('forms.Published On:')) !!}
-    {!! Form::text('published_on', null, ['class' => 'form-control','id'=>'published_on', 'required']) !!}
-</div>
+
 
 @push('scripts')
     <script type="text/javascript">
@@ -45,9 +42,6 @@
 
 
 @push('scripts')
- <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
 	<script>
          $(document).ready(function() {
@@ -64,7 +58,7 @@
                       if(data){
                          $('#subcateg_id').empty();
                          $('#subcateg_id').focus;
-                         $('#subcateg_id').append('<option value="">-- Select sub category --</option>'); 
+                         $('#subcateg_id').append('<option value="">-- Select sub category --</option>');
                          $.each(data, function(key, value){
                             $('select[name="subcateg_id"]').append('<option value="'+ value.id +'">' + value.name+ '</option>');
                          });
@@ -102,7 +96,7 @@
 		@endforeach
 	     </select>
 	</div>
-			  
+
 
 	<div class="form-group  col-sm-12 {{ ($errors->has('name'))?'has-error':'' }}">
     <label for="roll">sub Categories </label>
@@ -111,7 +105,7 @@
     </select>
   </div>
 
-			
+
 
 
 <div class="form-group col-sm-12">

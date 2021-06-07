@@ -34,7 +34,6 @@ class courses extends Model
         'company_id',
         'title',
         'body',
-        'published_on',
         'category_id',
         'subcateg_id'
     ];
@@ -49,7 +48,6 @@ class courses extends Model
         'company_id' => 'integer',
         'title' => 'string',
         'body' => 'string',
-        'published_on' => 'datetime',
         'category_id' => 'integer',
         'subcateg_id' => 'integer'
 
@@ -118,7 +116,7 @@ class courses extends Model
              $course->sessions()->each(function($session) {
                 $session->delete(); // <-- delete sessions belonging to this course
              });
-                     
+
         });
     }
 }

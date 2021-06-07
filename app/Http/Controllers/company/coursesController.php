@@ -65,20 +65,21 @@ class coursesController extends AppBaseController
      */
     public function import()
     {
-        /**get categories List and send them to selection list in blade */
-        // $listcateg = categories::pluck('name', 'id');
-         $listcateg = categories::all();
-        /**get targetAudiance List and send them to selection list in blade */
-        $listtarget = target_audiance::pluck('name', 'id');
 
-        return view('courses.import', compact('listcateg', 'listtarget'));
+
+        return view('courses.import');
     }
 
     public function importExcel(Request $request)
     {
+        if($request->import_file && auth()->user()->hasRole('company') ){
         \Excel::import(new coursesImport,$request->import_file);
 
-        \Session::put('success', 'Your file is imported successfully in database.');
+        Flash::success('Your file is imported successfully in database.');
+        }else{
+            Flash::error('error');
+        }
+
 
         return back();
     }

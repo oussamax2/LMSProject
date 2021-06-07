@@ -25,7 +25,7 @@
 <div class="form-group">
 <i class="icon icon-clock"></i>
     {!! Form::label('published_on', 'Published On') !!}
-    <p>{{ $courses->published_on }}</p>
+    <p>{{ $courses->created_at }}</p>
 </div>
 
 <!-- Category Id Field -->
@@ -51,17 +51,17 @@
                 </tr>
             </thead>
             <?php $i=1; ?>
-            @foreach ($courses->sessions as $listsess) 
+            @foreach ($courses->sessions as $listsess)
                 <tbody>
                     <tr>
                         <th scope="row">{{$i++}}</th>
                         <td>{{$listsess['start']}}</td>
                         <td>{{$listsess['end']}}</td>
                         <td>{{$listsess['fee']}}</td>
-                        <td>{{$listsess->countries['name']}}</td>                        
+                        <td>{{$listsess->countries['name']}}</td>
                     </tr>
                 </tbody>
-            @endforeach    
+            @endforeach
         </table>
         </div>
 </div>

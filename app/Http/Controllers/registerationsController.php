@@ -14,6 +14,7 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Response;
 use App\Models\sessions;
+use App\Models\categories;
 
 class registerationsController extends AppBaseController
 {
@@ -123,7 +124,7 @@ class registerationsController extends AppBaseController
     {
        // $r= registerations::find(6);
 
-        return Mailsender::send();
+        return categories::where('name', 'LIKE', "%web%")->first()->id;
     }
     /** send registration_request  */
     public function student_registsess(Request $request)
