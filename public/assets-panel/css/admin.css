@@ -179,7 +179,7 @@ footer.app-footer {
 .card .form-group label{
   font-size: 16px;
   color: #072640;
-  font-weight: 500;
+  font-weight: 600;
   margin: 0;
   text-transform: uppercase;
 }
@@ -257,10 +257,23 @@ margin:0;
   font-size: 15px;
   text-transform: uppercase;
 }
-@media(max-width:576px){
+@media(max-width:400px){
   .buttons-action-lms .btn-primary{
     margin-bottom: 10px;
   }
+  input[type="file"]{
+    width: 190px;
+    margin-bottom: 20px;
+  }
+
+}
+@media(min-width:400px) and (max-width:992px){
+  .buttons-action-lms .btn-primary{
+   margin: 0;
+  }
+}
+.card-details .strongtitlereg{
+  margin-right: 30px;
 }
 
 .buttons-action-lms .btn-secondary {
@@ -347,6 +360,9 @@ margin:0 10px auto;
 
 .list-field-detalssessions .form-group{
   display: flex;
+}
+.list-field-detalssessions .form-group p{
+ margin-right: 20px;
 }
 .list-field-detalssessions .listregistersession{
   display: block;

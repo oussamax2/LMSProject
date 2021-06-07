@@ -3,19 +3,19 @@
 
 <!-- Title Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('title', 'Title:') !!}
+    {!! Form::label('title', __('forms.Title')) !!}
     {!! Form::text('title', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Body Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('body', 'Body:') !!}
+    {!! Form::label('body', __('forms.Body')) !!}
     {!! Form::text('body', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Published On Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('published_on', __('forms.Published On:')) !!}
+    {!! Form::label('published_on', __('forms.Published On')) !!}
     {!! Form::text('published_on', null, ['class' => 'form-control','id'=>'published_on', 'required']) !!}
 </div>
 
@@ -84,7 +84,7 @@
 
 
 	<div class="form-group  col-sm-12 {{ ($errors->has('roll'))?'has-error':'' }}">
-	    <label for="roll">category <span class="required">*</span></label>
+	    <label for="roll">@lang('front.Category')<span class="required">*</span></label>
 	    <select name="category_id" class="form-control" id="category_id">
 
 		@foreach ($listcateg as $listcateg)
@@ -105,7 +105,7 @@
 			  
 
 	<div class="form-group  col-sm-12 {{ ($errors->has('name'))?'has-error':'' }}">
-    <label for="roll">sub Categories </label>
+    <label for="roll">@lang('front.Sub Categories')</label>
     <select name="subcateg_id" class="form-control" id="subcateg_id">
       <option value="">{{isset($courses->subcategorie['name']) ?$courses->subcategorie['name']: null}}</option>
     </select>
@@ -115,7 +115,7 @@
 
 
 <div class="form-group col-sm-12">
-    {!! Form::label('target_id', __('front.Target Audiance list:')) !!}
+    {!! Form::label('target_id', __('forms.Target Audiance list')) !!}
     {!! Form::select('target_id[]', $listtarget,isset($targetvalues)?$targetvalues:null, ['class' => 'form-control select2','multiple']) !!}
 </div>
 
@@ -123,8 +123,8 @@
 
 <!-- Submit Field -->
 <div class="form-group buttons-action-lms col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{{ route('courses.index') }}" class="btn btn-secondary">Cancel</a>
+    {!! Form::submit(__('forms.Save'), ['class' => 'btn btn-primary']) !!}
+    <a href="{{ route('courses.index') }}" class="btn btn-secondary">@lang('front.Cancel')</a>
 </div>
 
 
