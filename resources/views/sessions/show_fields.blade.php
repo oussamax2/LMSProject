@@ -3,7 +3,7 @@
 <!-- Course Id Field -->
 <div class="form-group">
 <i class="icon flaticon-bookmark"></i>
-    {!! Form::label('course_id', 'Course Title') !!}
+    {!! Form::label('course_id', __('forms.Course Title')) !!}
     <p>{{ $sessions->courses->title}}</p>
 </div>
 
@@ -11,34 +11,34 @@
     <!-- start Field -->
 <div class="form-group">
 <i class="icon flaticon-clock"></i>
-    {!! Form::label('start', 'Start') !!}
+    {!! Form::label('start', __('forms.Start')) !!}
     <p>{{Carbon\Carbon::parse($sessions->start)->isoFormat(' Do MMMM  YYYY ')}}</p>
 </div>
 <!-- End Field -->
 <div class="form-group">
 <i class="icon flaticon-clock"></i>
-    {!! Form::label('end', 'End') !!}
+    {!! Form::label('end', __('forms.End')) !!}
     <p>{{Carbon\Carbon::parse($sessions->end)->isoFormat(' Do MMMM  YYYY ')}}</p>
 </div>
 @if($sessions->fee == 0)
     <!-- Fee Field -->
     <div class="form-group">
     <i class="icon flaticon-bookmark"></i>
-        {!! Form::label('fee', 'Fee:') !!}
+        {!! Form::label('fee', __('forms.Fee')) !!}
         <p>FREE</p>
     </div>
 @else
     <!-- Fee Field -->
     <div class="form-group">
     <i class="icon flaticon-bookmark"></i>
-        {!! Form::label('fee', 'Fee:') !!}
+        {!! Form::label('fee', __('forms.Fee')) !!}
         <p>{{ $sessions->fee }}</p>
     </div>
 @endif
 <!-- Language Field -->
 <div class="form-group">
 <i class="icon flaticon-bookmark"></i>
-    {!! Form::label('language', 'Language') !!}
+    {!! Form::label('language', __('forms.Language')) !!}
     <p>{{ $sessions->language }}</p>
 </div>
 </div>
@@ -47,21 +47,21 @@
 <!-- Country Id Field -->
 <div class="form-group">
 <i class="icon flaticon-placeholder"></i>
-    {!! Form::label('country_id', 'Country') !!}
+    {!! Form::label('country_id', __('forms.Country')) !!}
     <p>{{ $sessions->countries->name}}</p>
 </div>
 
 <!-- City Field -->
 <div class="form-group">
 <i class="icon flaticon-placeholder"></i>
-    {!! Form::label('city', 'City') !!}
+    {!! Form::label('city', __('forms.City')) !!}
     <p>{{ $sessions->cities->name }}</p>
 </div>
 
 <!-- Note Field -->
 <div class="form-group">
 <i class="icon icon-note"></i>
-    {!! Form::label('note', 'Note') !!}
+    {!! Form::label('note', __('forms.Note')) !!}
     <p>{{ $sessions->note }}</p>
 </div>
 </div>
@@ -69,7 +69,7 @@
 
 <!-- Order Field -->
 <div class="form-group listregistersession">
-    {!! Form::label('order', __('front.Registration List:')) !!}
+    {!! Form::label('order', __('forms.Registration List')) !!}
     <div class="table-responsive">
     <table class="table table-bordered">
             <thead>

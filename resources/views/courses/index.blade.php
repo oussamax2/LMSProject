@@ -9,12 +9,12 @@
              @include('flash::message')
              <div class="row">
                  <div class="col-lg-12">
-                     <div class="card">
+                     <div class="card-details card">
                          <div class="card-header">
                              <i class="icon icon-docs"></i>
                              @lang('front.Courses')
                              <a class="pull-right" href="{{ route('courses.create') }}"><span class="icon icon-plus"></span>@lang('front.Create courses')</a>
-                             <a class="pull-right" href="{{ route('courses.import') }}"><span class="icon icon-social-dropbox"></span>Import courses</a>
+                             <a class="pull-right" href="{{ route('courses.import') }}"><span class="icon icon-social-dropbox"></span>@lang('front.Import courses')</a>
                          </div>
                          <div class="card-body">
                              @include('courses.table')
