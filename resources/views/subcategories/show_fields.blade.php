@@ -4,14 +4,14 @@
 <!-- Name Field -->
 <div class="form-group">
 <i class="icon flaticon-bookmark"></i>
-    {!! Form::label('name', 'Name') !!}
+    {!! Form::label('name', __('front.Name subcategories')) !!}
     <p>{{ $subcategorie->name }}</p>
 </div>
 
 <!-- Category Id Field -->
 <div class="form-group">
 <i class="icon flaticon-bookmark"></i>
-    {!! Form::label('category_id', 'Category Name') !!}
+    {!! Form::label('category_id', __('front.Category Name')) !!}
     <p>{{ $subcategorie->categories->name }}</p>
 </div>
 </div>

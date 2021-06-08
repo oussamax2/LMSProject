@@ -3,9 +3,9 @@
 @section('content')
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-         <a href="{!! route('subcategories.index') !!}">Subcategorie</a>
+         <a href="{!! route('subcategories.index') !!}">@lang('front.Subcategories')</a>
       </li>
-      <li class="breadcrumb-item active">Create</li>
+      <li class="breadcrumb-item active">@lang('front.Create')</li>
     </ol>
      <div class="container-fluid">
           <div class="animated fadeIn">
@@ -15,7 +15,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <i class="icon-plus"></i>
-                                <strong>Create Subcategorie</strong>
+                                <strong>@lang('front.Create Subcategorie')</strong>
                             </div>
                             <div class="card-body">
                                 {!! Form::open(['route' => 'subcategories.store']) !!}

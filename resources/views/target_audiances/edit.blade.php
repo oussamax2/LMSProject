@@ -3,9 +3,9 @@
 @section('content')
     <ol class="breadcrumb">
           <li class="breadcrumb-item">
-             <a href="{!! route('targetAudiances.index') !!}">Target Audiance</a>
+             <a href="{!! route('targetAudiances.index') !!}">@lang('front.Target Audiance')</a>
           </li>
-          <li class="breadcrumb-item active">Edit</li>
+          <li class="breadcrumb-item active">@lang('front.Edit')</li>
         </ol>
     <div class="container-fluid">
          <div class="animated fadeIn">
@@ -15,7 +15,7 @@
                       <div class="card">
                           <div class="card-header">
                               <i class="fa fa-edit fa-lg"></i>
-                              <strong>Edit Target Audiance</strong>
+                              <strong>@lang('front.Edit Target Audiance')</strong>
                           </div>
                           <div class="card-body">
                               {!! Form::model($targetAudiance, ['route' => ['targetAudiances.update', $targetAudiance->id], 'method' => 'patch']) !!}

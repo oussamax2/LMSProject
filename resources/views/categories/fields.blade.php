@@ -1,12 +1,12 @@
 <!-- Name Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('name', 'Name:') !!}
+    {!! Form::label('name', __('front.Name')) !!}
     {!! Form::text('name', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Order Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('order', 'Order:') !!}
+    {!! Form::label('order', __('front.Order')) !!}
     {!! Form::text('order', null, ['class' => 'form-control']) !!}
 </div>
 @push('scripts')
@@ -44,6 +44,6 @@
 @endif
 <!-- Submit Field -->
 <div class="form-group buttons-action-lms col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{{ route('categories.index') }}" class="btn btn-secondary">Cancel</a>
+    {!! Form::submit(__('forms.Save'), ['class' => 'btn btn-primary']) !!}
+    <a href="{{ route('categories.index') }}" class="btn btn-secondary">@lang('front.Cancel')</a>
 </div>

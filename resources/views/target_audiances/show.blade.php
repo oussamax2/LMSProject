@@ -3,9 +3,9 @@
 @section('content')
      <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="{{ route('targetAudiances.index') }}">Target Audiance</a>
+                <a href="{{ route('targetAudiances.index') }}">@lang('front.Target Audiance')</a>
             </li>
-            <li class="breadcrumb-item active">Detail</li>
+            <li class="breadcrumb-item active">@lang('front.Details')</li>
      </ol>
      <div class="container-fluid">
           <div class="animated fadeIn">
@@ -14,8 +14,8 @@
                      <div class="col-lg-12">
                          <div class="card">
                              <div class="card-header">
-                                 <strong>Details</strong>
-                                  <a href="{{ route('targetAudiances.index') }}" class="btn btn-light">Back</a>
+                                 <strong>@lang('front.Details')</strong>
+                                  <a href="{{ route('targetAudiances.index') }}" class="btn btn-light">@lang('front.Back')</a>
                              </div>
                              <div class="card-body">
                                  @include('target_audiances.show_fields')

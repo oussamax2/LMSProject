@@ -3,20 +3,20 @@
 @section('content')
      <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="{{ route('categories.index') }}">Categories</a>
+                <a href="{{ route('categories.index') }}">@lang('front.Categories')</a>
             </li>
-            <li class="breadcrumb-item active">Detail</li>
+            <li class="breadcrumb-item active">@lang('front.Details')</li>
      </ol>
      <div class="container-fluid">
           <div class="animated fadeIn">
                  @include('coreui-templates::common.errors')
                  <div class="row">
                      <div class="col-lg-10 col-lg-offset-10 mx-auto">
-                         <div class=" card-details card">
+                         <div class="card-details card">
                              <div class="card-header">
-                             <i class="icon-info"></i>
+                             <i class="icon icon-info"></i>
                                  <strong>Details</strong>
-                                  <a href="{{ route('categories.index') }}" class="btn btn-light"><i class="icon icon-arrow-right-circle"></i>Back</a>
+                                  <a href="{{ route('categories.index') }}" class="btn btn-light"><span class="icon icon-arrow-right-circle"></span>@lang('front.Back')</a>
                              </div>
                              <div class="card-body">
                                  @include('categories.show_fields')

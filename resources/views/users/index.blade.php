@@ -11,7 +11,7 @@
                  <div class="col-lg-12">
                      <div class="card-details card">
                          <div class="card-header">
-                             <i class="fa fa-align-justify"></i>
+                             <i class="icon icon-user"></i>
                              @lang('front.Users')
                              <a class="pull-right" href="{{ route('users.create') }}"><span class="icon icon-plus"></span>@lang('front.Create Users')</a>
                          </div>

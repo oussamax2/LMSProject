@@ -3,9 +3,9 @@
 @section('content')
     <ol class="breadcrumb">
           <li class="breadcrumb-item">
-             <a href="{!! route('categories.index') !!}">Categories</a>
+             <a href="{!! route('categories.index') !!}">@lang('front.Categories')</a>
           </li>
-          <li class="breadcrumb-item active">Edit</li>
+          <li class="breadcrumb-item active">@lang('front.Edit')</li>
         </ol>
         @include('flash::message')
     <div class="container-fluid">
@@ -15,8 +15,8 @@
                  <div class="col-lg-12">
                       <div class="card">
                           <div class="card-header">
-                              <i class="fa fa-edit fa-lg"></i>
-                              <strong>Edit Categories</strong>
+                              <i class="icon icon-note"></i>
+                              <strong>@lang('front.Edit Categories')</strong>
                           </div>
                           <div class="card-body">
                               {!! Form::model($categories, ['route' => ['categories.update', $categories->id], 'method' => 'patch', 'files' => true, 'enctype' => 'multipart/form-data']) !!}

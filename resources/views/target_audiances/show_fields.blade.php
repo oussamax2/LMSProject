@@ -1,12 +1,12 @@
 <!-- Name Field -->
 <div class="form-group">
-    {!! Form::label('name', 'Name:') !!}
+    {!! Form::label('name', __(forms.'Name')) !!}
     <p>{{ $targetAudiance->name }}</p>
 </div>
 
 <!-- Order Field -->
 <div class="form-group">
-    {!! Form::label('order', __('forms.courses list:')) !!}
+    {!! Form::label('order', __('forms.courses list')) !!}
     
 
    

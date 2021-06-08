@@ -3,6 +3,7 @@
 return [
 
     'Company Name'      => 'Company Name',
+    'Name'      => 'Name',
     'Category Name'      => 'Category Name',
     'Session Number'      => 'Session Number',
     'State Name'      => 'State Name',
@@ -49,7 +50,8 @@ return [
     'start Date'      => 'start Date',     
     'end Date'      => 'end Date',       
     'State Name'      => 'State Name',     
-    'courses list'      => 'courses list',     
+    'courses list'      => 'courses list',  
+    'Email'      => 'Email',   
     'countries list'      => 'countries list',       
     'states list'      => 'states list',  
     'cities list'      => 'cities list',  
