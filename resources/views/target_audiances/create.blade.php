@@ -3,7 +3,7 @@
 @section('content')
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-         <a href="{!! route('targetAudiances.index') !!}">@lang('front.Target Audiance')</a>
+         <a href="{!! route('targetAudiances.index') !!}">@lang('front.Target Audiances')</a>
       </li>
       <li class="breadcrumb-item active">@lang('front.Create')</li>
     </ol>
@@ -15,7 +15,7 @@
                         <div class="card-details card">
                             <div class="card-header">
                                 <i class="icon icon-plus"></i>
-                                <strong>@lang('front.Create Target Audiance')</strong>
+                                <strong>@lang('front.Create Target Audiances')</strong>
                             </div>
                             <div class="card-body">
                                 {!! Form::open(['route' => 'targetAudiances.store']) !!}

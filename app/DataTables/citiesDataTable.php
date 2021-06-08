@@ -62,8 +62,7 @@ class citiesDataTable extends DataTable
                 'stateSave' => true,
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
-
-                ],
+                ],'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],
             ]);
     }
 
@@ -76,9 +75,9 @@ class citiesDataTable extends DataTable
     {
         return [
             ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
-            'picture',
-            'name',
-            ['data' => 'state_id', 'name' => 'state_id', 'title' => __('forms.State Name')]
+            ['data' => 'picture', 'name' => 'picture', 'title' => __('forms.picture')],
+            ['data' => 'name', 'name' => 'name', 'title' => __('forms.name')],
+            ['data' => 'state_id', 'name' => 'state_id', 'title' => __('forms.State Name')],
         ];
     }
 

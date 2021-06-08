@@ -4,14 +4,14 @@
 <!-- Name Field -->
 <div class="form-group">
 <i class="icon flaticon-bookmark"></i>
-    {!! Form::label('name', 'Name') !!}
+    {!! Form::label('name', __('forms.Name')) !!}
     <p>{{ $tag->name }}</p>
 </div>
 
 <!-- Category Id Field -->
 <div class="form-group">
 <i class="icon flaticon-bookmark"></i>
-    {!! Form::label('category_id', 'Category Name') !!}
+    {!! Form::label('category_id', __('forms.Category Name')) !!}
     <p>{{ $tag->categories->name }}</p>
 </div>
 </div>
@@ -20,14 +20,14 @@
 <!-- Created At Field -->
 <div class="form-group">
 <i class="icon icon-clock"></i>
-    {!! Form::label('created_at', 'Created At') !!}
+    {!! Form::label('created_at', __('forms.Created At')) !!}
     <p>{{Carbon\Carbon::parse($tag->created_at)->isoFormat(' Do MMMM  YYYY ')}}</p>
 </div>
 
 <!-- Updated At Field -->
 <div class="form-group">
 <i class="icon icon-clock"></i>
-    {!! Form::label('updated_at', 'Updated At') !!}
+    {!! Form::label('updated_at', __('forms.Updated At')) !!}
     <p>{{Carbon\Carbon::parse($tag->updated_at)->isoFormat(' Do MMMM  YYYY ')}}</p>
 </div>
 </div>
