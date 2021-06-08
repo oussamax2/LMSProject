@@ -12,13 +12,15 @@ class Search extends Component
     protected $paginationTheme = 'bootstrap';
     public $searchTerm;
     public function render()
-    {
+    {  if(!isset($this->searchTerm))
+        $this->searchTerm = request()->name;
+
         $searchTerm = '%'.$this->searchTerm.'%';
         return view('livewire.search',[
 
-            'sessionList' => sessions::with(["courses" => function($q) use ($searchTerm){
-                $q->where('courses.title','like', $searchTerm);
-            }])->orderBy('id', 'desc')->paginate(2)
+            'sessionList' => sessions::whereHas('courses', function ($q) use ($searchTerm){
+                $q->where('courses.title','like', $searchTerm)->Orwhere('courses.body','like', $searchTerm);
+             })->paginate(6)
         ]);
     }
 
