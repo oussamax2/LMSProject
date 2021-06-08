@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\User;
+use App\Models\sessions;
 class Search extends Component
 {
     use WithPagination;
@@ -14,9 +15,13 @@ class Search extends Component
     {
         $searchTerm = '%'.$this->searchTerm.'%';
         return view('livewire.search',[
-            'users' => User::where('name','like', $searchTerm)->paginate(10)
+
+            'sessionList' => sessions::with(["courses" => function($q) use ($searchTerm){
+                $q->where('courses.title','like', $searchTerm);
+            }])->orderBy('id', 'desc')->paginate(2)
         ]);
     }
 
 
 }
+

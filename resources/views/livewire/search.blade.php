@@ -26,19 +26,19 @@
             <th>Name</th>
             <th>Email</th>
         </tr>
-        @foreach($users as $user)
+        @foreach($sessionList as $session)
         <tr>
             <td>
-                {{ $user->name }}
+               xx
             </td>
             <td>
-                {{ $user->email }}
+            xx
             </td>
         </tr>
         @endforeach
     </table>
 
-    {{ $users->links() }}
+    {{ $sessionList->links() }}
 
     <div class="course-style-filter clearfix">
         <ul class="float-left clearfix">
