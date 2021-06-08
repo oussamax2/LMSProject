@@ -21,24 +21,9 @@
         </div>
     </div>
 
-    <table class="table table-bordered" style="margin: 10px 0 10px 0;">
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-        </tr>
-        @foreach($sessionList as $session)
-        <tr>
-            <td>
-               xx
-            </td>
-            <td>
-            xx
-            </td>
-        </tr>
-        @endforeach
-    </table>
 
-    {{ $sessionList->links() }}
+
+
 
     <div class="course-style-filter clearfix">
         <ul class="float-left clearfix">
@@ -48,6 +33,7 @@
     </div>
 
     <div>
+        @foreach($sessionList as $session)
         <div class="single-course clearfix trending">
 
             <div class="text float-left">
@@ -59,7 +45,7 @@
                     </div>
                     <strong class="s-color float-right">$1998.8</strong>
                 </div>
-                <h5><a href="course-details.html" class="tran3s">Social Media Marketing and Lead Generation</a></h5>
+                <h5><a href="course-details.html" class="tran3s">{{$session->courses->title}}</a></h5>
 
                 <ul class="clearfix">
                     <li class="float-left">
@@ -81,9 +67,12 @@
                 </ul>
             </div>
         </div>
+        @endforeach
+
 
     </div>
-
+    {{ $sessionList->links() }}
+    **
     <ul class="theme-pagination clearfix">
         <li><a href="" class="tran3s active">1</a></li>
         <li><a href="" class="tran3s">2</a></li>
