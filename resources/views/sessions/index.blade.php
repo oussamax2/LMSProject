@@ -9,7 +9,7 @@
              @include('flash::message')
              <div class="row">
                  <div class="col-lg-12">
-                     <div class="card">
+                     <div class="card-details card">
                          <div class="card-header">
                              <i class="icon icon-briefcase"></i>
                              @lang('front.Sessions')

@@ -79,13 +79,13 @@ class registerationsDataTable extends DataTable
         $user = auth()->user();
         if($user->hasRole('user')){
         return [
-            ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
+            'id'=> ['visible' => false, 'printable' => false, 'exportable' => true],
             ['data' => 'sessions.courses.title', 'name' => 'sessions.courses.title', 'title' => __('forms.Course Title')],
             ['data' => 'sessions.start', 'name' => 'sessions.start', 'title' => __('forms.Session startDate')]
         ];}
         else{
         return [
-            ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
+            'id'=> ['visible' => false, 'printable' => false, 'exportable' => true],
             ['data' => 'user.name', 'name' => 'user.name', 'title' => __('forms.User Name')],
             ['data' => 'sessions.courses.title', 'name' => 'sessions.courses.title', 'title' => __('forms.Course Title')],
             ['data' => 'sessions.start', 'name' => 'sessions.start', 'title' => __('forms.Session startDate')]

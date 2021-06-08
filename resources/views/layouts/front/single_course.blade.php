@@ -22,7 +22,7 @@
                             @endif
 								<div class="course-title">
 									<h2>{{ $sessions->courses->title }}</h2>
-									<span>@lang('front.Posted on') {{Carbon\Carbon::parse($sessions->courses->published_on)->isoFormat(' Do MMMM  YYYY ')}}</span>
+									<span>@lang('front.Posted on') {{Carbon\Carbon::parse($sessions->courses->created_at)->isoFormat(' Do MMMM  YYYY ')}}</span>
 								</div>
 								<div class="course-info row">
 									<div class="col-xs-4">

@@ -19,7 +19,7 @@ class CreateCoursesTable extends Migration
             $table->integer('company_id');
             $table->string('title');
             $table->string('body');
-            $table->dateTime('published_on');
+            $table->dateTime('published_on')->nullable();
             $table->integer('category_id');
             $table->integer('tags');
             $table->timestamps();

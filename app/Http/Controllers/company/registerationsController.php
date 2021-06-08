@@ -43,7 +43,7 @@ class registerationsController extends AppBaseController
         return view('registerations.create');
     }
 
-    /**
+    /**pregisterations
      * Store a newly created registerations in storage.
      *
      * @param CreateregisterationsRequest $request

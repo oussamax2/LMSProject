@@ -2,7 +2,7 @@
 <!-- Category Id Field -->
 
 <div class="form-group col-sm-12">
-    {!! Form::Label('course_id', __('front.courses list:')) !!}
+    {!! Form::Label('course_id', __('forms.courses list')) !!}
     {!! Form::select('course_id', $listcourses, null, ['class' => 'select2 form-control' ]) !!}
 </div>
 <div class="form-group col-sm-12">
@@ -28,7 +28,6 @@
            })
        </script>
 @endpush
-
 
 <!-- End Field -->
 <div class="form-group col-sm-12">
@@ -60,38 +59,38 @@
 
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
-    {!! Form::Label('language', __('front.language list:')) !!}
+    {!! Form::Label('language', __('front.language list')) !!}
     {!! Form::select('language', $listlanguage, null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
-    {!! Form::Label('country_id', __('front.countries list:')) !!}
+    {!! Form::Label('country_id', __('front.countries list')) !!}
     {!! Form::select('country_id', $listcountries, null, ['class' => 'form-control select2','id'=>'country_id' ,'required']) !!}
 </div>
 
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
-    {!! Form::Label('state', __('front.states list:')) !!}
+    {!! Form::Label('state', __('front.states list')) !!}
     {!! Form::select('state', $liststates, null, ['class' => 'form-control select2' ,'id'=>'state', 'required']) !!}
 </div>
 
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
-    {!! Form::Label('city', __('front.cities list:')) !!}
+    {!! Form::Label('city', __('front.cities list')) !!}
     {!! Form::select('city', $listcities, null, ['class' => 'form-control select2']) !!}
 </div>
 
 <!-- Note Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('note', 'Note:') !!}
+    {!! Form::label('note', __('forms.Note')) !!}
     {!! Form::text('note', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Submit Field -->
 <div class="form-group buttons-action-lms col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{{ route('sessions.index') }}" class="btn btn-secondary">Cancel</a>
+    {!! Form::submit(__('forms.Save'), ['class' => 'btn btn-primary']) !!}
+    <a href="{{ route('sessions.index') }}" class="btn btn-secondary">@lang('front.Cancel')</a>
 </div>
 
 
