@@ -1,12 +1,12 @@
 {!! Form::open(['route' => ['contacts.destroy', $id], 'method' => 'delete']) !!}
 <div class='btn-group'>
     <a href="{{ route('contacts.show', $id) }}" class='btn btn-ghost-success'>
-       <i class="fa fa-eye"></i>
+    <span class="icon icon-eye"></span>
     </a>
     <a href="{{ route('contacts.edit', $id) }}" class='btn btn-ghost-info'>
-       <i class="fa fa-edit"></i>
+    <span class="icon icon-note"></span>
     </a>
-    {!! Form::button('<i class="fa fa-trash"></i>', [
+    {!! Form::button('<span class="icon icon-trash"></span>', [
         'type' => 'submit',
         'class' => 'btn btn-ghost-danger',
         'onclick' => "return confirm('Are you sure?')"

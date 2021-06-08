@@ -1,6 +1,6 @@
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
-    {!! Form::Label('state_id', __('front.states list:')) !!}
+    {!! Form::Label('state_id', __('front.states list')) !!}
     {!! Form::select('state_id', $liststates, null , ['class' => 'form-control select2']) !!}
 </div>
 @push('scripts')
@@ -13,7 +13,7 @@
 @endpush
 <!-- Name Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('name', 'Name:') !!}
+    {!! Form::label('name', __('forms.Name')) !!}
     {!! Form::text('name', null, ['class' => 'form-control', 'required']) !!}
 </div>
     @push('scripts')
@@ -42,7 +42,7 @@
      
         <!-- Picture Field -->
         <div class="form-group col-sm-12">
-            {!! Form::label('picture', __('admin.Picture:')) !!}
+            {!! Form::label('picture', __('forms.Picture')) !!}
            
                 {!! Form::file('picture', ['id' =>'imgInp']) !!} 
                 
@@ -56,12 +56,12 @@
 
 <!-- Status Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('status', 'Status:') !!}
+    {!! Form::label('status', __('forms.status')) !!}
     {!! Form::select('status', ['active' => 'active', ' inactive' => ' inactive'], null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->
 <div class="form-group buttons-action-lms col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{{ route('cities.index') }}" class="btn btn-secondary">Cancel</a>
+    {!! Form::submit(__('forms.Save'), ['class' => 'btn btn-primary']) !!}
+    <a href="{{ route('cities.index') }}" class="btn btn-secondary">@lang('front.Cancel')</a>
 </div>

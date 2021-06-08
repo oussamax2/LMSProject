@@ -3,9 +3,9 @@
 @section('content')
      <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="{{ route('tags.index') }}">Tag</a>
+                <a href="{{ route('tags.index') }}">@lang('front.Tags')</a>
             </li>
-            <li class="breadcrumb-item active">Detail</li>
+            <li class="breadcrumb-item active">@lang('front.Details')</li>
      </ol>
      <div class="container-fluid">
           <div class="animated fadeIn">
@@ -15,8 +15,8 @@
                          <div class="card-details card">
                              <div class="card-header">
                              <i class="icon-info"></i>
-                                 <strong>Details</strong>
-                                  <a href="{{ route('tags.index') }}" class="btn btn-light"><i class="icon icon-arrow-right-circle"></i>Back</a>
+                                 <strong>@lang('front.Details')</strong>
+                                  <a href="{{ route('tags.index') }}" class="btn btn-light"><span class="icon icon-arrow-right-circle"></span>@lang('front.Back')</a>
                              </div>
                              <div class="card-body">
                                  @include('tags.show_fields')

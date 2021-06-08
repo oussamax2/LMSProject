@@ -3,7 +3,7 @@
 @section('content')
      <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="{{ route('targetAudiances.index') }}">@lang('front.Target Audiance')</a>
+                <a href="{{ route('targetAudiances.index') }}">@lang('front.Target Audiances')</a>
             </li>
             <li class="breadcrumb-item active">@lang('front.Details')</li>
      </ol>

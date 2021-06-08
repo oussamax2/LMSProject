@@ -3,9 +3,9 @@
         <thead>
             <tr>
                 <th>Id</th>
-        <th>Name</th>
-        <th>Description</th>
-                <th colspan="3">Action</th>
+        <th>@lang('front.Name')</th>
+        <th>@lang('front.Description')</th>
+                <th colspan="3">@lang('front.Action')</th>
             </tr>
         </thead>
         <tbody>
@@ -17,9 +17,9 @@
                 <td>
                     {!! Form::open(['route' => ['roles.destroy', $role->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{{ route('roles.show', [$role->id]) }}" class='btn btn-ghost-success'><i class="fa fa-eye"></i></a>
-                        <a href="{{ route('roles.edit', [$role->id]) }}" class='btn btn-ghost-info'><i class="fa fa-edit"></i></a>
-                        {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-ghost-danger', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                        <a href="{{ route('roles.show', [$role->id]) }}" class='btn btn-ghost-success'><span class="icon icon-eye"></span></a>
+                        <a href="{{ route('roles.edit', [$role->id]) }}" class='btn btn-ghost-info'><span class="icon icon-note"></span></a>
+                        {!! Form::button('<span class="icon icon-trash"></span>', ['type' => 'submit', 'class' => 'btn btn-ghost-danger', 'onclick' => "return confirm('Are you sure?')"]) !!}
                     </div>
                     {!! Form::close() !!}
                 </td>

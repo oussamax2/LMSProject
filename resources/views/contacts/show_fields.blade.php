@@ -3,14 +3,14 @@
 <!-- Name Field -->
 <div class="form-group">
 <i class="icon flaticon-bookmark"></i>
-    {!! Form::label('name', 'Name') !!}
+    {!! Form::label('name', __('forms.Name')) !!}
     <p>{{ $contact->name }}</p>
 </div>
 
 <!-- Email Field -->
 <div class="form-group">
 <i class="icon icon-envelope"></i>
-    {!! Form::label('email', 'Email') !!}
+    {!! Form::label('email', __('forms.Email')) !!}
     <p>{{ $contact->email }}</p>
 </div>
 </div>
@@ -19,14 +19,14 @@
 <!-- Phone Field -->
 <div class="form-group">
 <i class="icon icon-phone"></i>
-    {!! Form::label('phone', 'Phone') !!}
+    {!! Form::label('phone', __('forms.telephone')) !!}
     <p>{{ $contact->phone }}</p>
 </div>
 
 <!-- Message Field -->
 <div class="form-group">
 <i class="icon icon-speech"></i>
-    {!! Form::label('message', 'Message') !!}
+    {!! Form::label('message', __('forms.message')) !!}
     <p>{{ $contact->message }}</p>
 </div>
 </div>
