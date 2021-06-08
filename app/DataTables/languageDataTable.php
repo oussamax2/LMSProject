@@ -48,8 +48,7 @@ class languageDataTable extends DataTable
                 'stateSave' => true,
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
-                   
-                ],
+                ],'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],
             ]);
     }
 
@@ -61,7 +60,7 @@ class languageDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'name'
+            ['data' => 'name', 'name' => 'name', 'title' => __('forms.name')],
         ];
     }
 
