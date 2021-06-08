@@ -12,8 +12,7 @@ class Search extends Component
     protected $paginationTheme = 'bootstrap';
     public $searchTerm;
     public function render()
-    {  if(!isset($this->searchTerm))
-        $this->searchTerm = request()->name;
+    {
 
         $searchTerm = '%'.$this->searchTerm.'%';
         return view('livewire.search',[
