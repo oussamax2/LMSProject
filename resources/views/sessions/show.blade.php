@@ -16,7 +16,7 @@
                              <div class="card-header">
                              <i class="icon icon-info"></i>
                                  <strong>@lang('front.Details')</strong>
-                                  <a href="{{ route('sessions.index') }}" class="btn btn-light"><i class="icon icon-arrow-right-circle"></i>@lang('front.Back')</a>
+                                  <a href="{{ route('sessions.index') }}" class="btn btn-light"><span class="icon icon-arrow-right-circle"></span>@lang('front.Back')</a>
                              </div>
                              <div class="card-body">
                                  @include('sessions.show_fields')

@@ -2,18 +2,18 @@
 
 @section('content')
     <ol class="breadcrumb">
-        <li class="breadcrumb-item">Languages</li>
+        <li class="breadcrumb-item">@lang('front.Languages')</li>
     </ol>
     <div class="container-fluid">
         <div class="animated fadeIn">
              @include('flash::message')
              <div class="row">
                  <div class="col-lg-12">
-                     <div class="card">
+                     <div class="card-details card">
                          <div class="card-header">
-                             <i class="fa fa-align-justify"></i>
-                             languages
-                             <a class="pull-right" href="{{ route('languages.create') }}"><i class="fa fa-plus-square fa-lg"></i></a>
+                             <i class="icon icon-globe"></i>
+                             @lang('front.Languages')
+                             <a class="pull-right" href="{{ route('languages.create') }}"><i class="icon icon-plus"></i></a>
                          </div>
                          <div class="card-body">
                              @include('languages.table')
