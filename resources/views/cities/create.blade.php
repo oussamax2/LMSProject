@@ -3,19 +3,19 @@
 @section('content')
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-         <a href="{!! route('cities.index') !!}">Cities</a>
+         <a href="{!! route('cities.index') !!}">@lang('front.Cities')</a>
       </li>
-      <li class="breadcrumb-item active">Create</li>
+      <li class="breadcrumb-item active">@lang('front.Create')</li>
     </ol>
      <div class="container-fluid">
           <div class="animated fadeIn">
                 @include('coreui-templates::common.errors')
                 <div class="row">
                     <div class="col-lg-10 col-lg-offset-10 mx-auto">
-                        <div class="card">
+                        <div class="card-details card">
                             <div class="card-header">
                                 <span class="icon-plus"></span>
-                                <strong>Create Cities</strong>
+                                <strong>@lang('front.Create Cities')</strong>
                             </div>
                             <div class="card-body">
                                 {!! Form::open(['route' => 'cities.store', 'files' => true, 'enctype' => 'multipart/form-data']) !!}

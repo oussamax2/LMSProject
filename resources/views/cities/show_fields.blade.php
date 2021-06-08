@@ -11,28 +11,28 @@
     <!-- Id Field -->
 <div class="form-group">
 <i class="icon flaticon-bookmark"></i>
-    {!! Form::label('id', 'Cities Name') !!}
+    {!! Form::label('id', __('forms.Name')) !!}
     <p>{{ $cities->name }}</p>
 </div>
 
 <!-- State Id Field -->
 <div class="form-group">
 <i class="icon flaticon-bookmark"></i>
-    {!! Form::label('state_id', 'State Name') !!}
+    {!! Form::label('state_id', __('forms.State Name')) !!}
     <p>{{ $cities->states['name'] }}</p>
 </div>
 
 <!-- Status Field -->
 <div class="form-group">
 <i class="icon flaticon-bookmark"></i>
-    {!! Form::label('status', 'Status') !!}
+    {!! Form::label('status', __('forms.status')) !!}
     <p>{{ $cities->status }}</p>
 </div>
 
 <!-- Created At Field -->
 <div class="form-group">
 <i class="icon icon-clock"></i>
-    {!! Form::label('created_at', 'Created At') !!}
+    {!! Form::label('created_at', __('forms.Created At')) !!}
     <p>{{Carbon\Carbon::parse($cities->created_at)->isoFormat(' Do MMMM  YYYY ')}}</p>
 </div>
     </div>

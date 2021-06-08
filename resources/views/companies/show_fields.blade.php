@@ -53,13 +53,13 @@
                     <!-- companyName Field -->
                     <div class="form-group">
         <i class="icon flaticon-bookmark"></i>
-            {!! Form::label('name', 'company Name') !!}
+            {!! Form::label('name', __('forms.company Name')) !!}
             <p>{{ $companies->user->name }}</p>
         </div>
         <!-- Status Field -->
         <div class="form-group">
         <i class="icon flaticon-bookmark"></i>
-            {!! Form::label('status', 'Company status') !!}
+            {!! Form::label('status', __('forms.Company status')) !!}
 
             @if($companies->status == 0)
 
@@ -80,19 +80,19 @@
         <!-- Telephone Field -->
         <div class="form-group">
         <i class="icon icon-phone"></i>
-            {!! Form::label('telephone', 'Telephone') !!}
+            {!! Form::label('telephone', __('forms.Telephone')) !!}
             <p>{{ $companies->telephone }}</p>
         </div>
          <!-- Email Field -->
          <div class="form-group">
         <i class="icon icon-envelope"></i>
-            {!! Form::label('email', 'Company Email') !!}
+            {!! Form::label('email', __('forms.Company Email')) !!}
             <p>{{ $companies->user->email }}</p>
         </div>
         <!-- Website Field -->
         <div class="form-group">
         <i class="icon icon-globe"></i>
-            {!! Form::label('website', 'Website') !!}
+            {!! Form::label('website', __('forms.Website')) !!}
             <p>{{ $companies->website }}</p>
         </div>
         {{-- banner home --}}
@@ -102,7 +102,7 @@
 <div class="col-md-12">
     <!-- courses Field -->
 <div class="form-group">
-    {!! Form::label('courses', 'Company courses') !!}
+    {!! Form::label('courses', __('forms.Company courses')) !!}
         @foreach ($listcourses as $listcourses)
             <p>{{ $listcourses->title }}</p>
 
@@ -112,10 +112,10 @@
                         <thead>
                             <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Start Date</th>
-                            <th scope="col">End Date</th>
-                            <th scope="col">fee</th>
-                            <th scope="col">city</th>
+                            <th scope="col">@lang('front.Start Date')</th>
+                            <th scope="col">@lang('front.End Date')</th>
+                            <th scope="col">@lang('front.fee')</th>
+                            <th scope="col">@lang('front.city')</th>
                             </tr>
                         </thead>
                         <?php $i=1; ?>

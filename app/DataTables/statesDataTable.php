@@ -49,8 +49,7 @@ class statesDataTable extends DataTable
                 'stateSave' => true,
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
-
-                ],
+                ],'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],
             ]);
     }
 
@@ -63,9 +62,9 @@ class statesDataTable extends DataTable
     {
         return [
             ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
-            'name',
-            'status',
-            ['data' => 'countries.name', 'name' => 'countries.name', 'title' => __('forms.country Name')]
+            ['data' => 'name', 'name' => 'name', 'title' => __('forms.name')],
+            ['data' => 'status', 'name' => 'status', 'title' => __('forms.status')],
+            ['data' => 'countries.name', 'name' => 'countries.name', 'title' => __('forms.country Name')],
         ];
     }
 

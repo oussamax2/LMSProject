@@ -3,9 +3,9 @@
 @section('content')
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-         <a href="{!! route('states.index') !!}">States</a>
+         <a href="{!! route('states.index') !!}">@lang('front.States')</a>
       </li>
-      <li class="breadcrumb-item active">Create</li>
+      <li class="breadcrumb-item active">@lang('front.Create')</li>
     </ol>
      <div class="container-fluid">
           <div class="animated fadeIn">
@@ -15,7 +15,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <span class="icon-plus"></span>
-                                <strong>Create States</strong>
+                                <strong>@lang('front.Create States')</strong>
                             </div>
                             <div class="card-body">
                                 {!! Form::open(['route' => 'states.store']) !!}

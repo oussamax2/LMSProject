@@ -48,8 +48,7 @@ class tagDataTable extends DataTable
                 'stateSave' => true,
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
-
-                ],
+                ],'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],
             ]);
     }
 
@@ -61,8 +60,8 @@ class tagDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'name',
-            'category_id'
+            ['data' => 'name', 'name' => 'name', 'title' => __('forms.name')],
+            ['data' => 'category_id', 'name' => 'category_id', 'title' => __('forms.category_id')],
         ];
     }
 

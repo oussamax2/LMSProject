@@ -3,7 +3,7 @@
 @section('content')
     <ol class="breadcrumb">
           <li class="breadcrumb-item">
-             <a href="{!! route('targetAudiances.index') !!}">@lang('front.Target Audiance')</a>
+             <a href="{!! route('targetAudiances.index') !!}">@lang('front.Target Audiances')</a>
           </li>
           <li class="breadcrumb-item active">@lang('front.Edit')</li>
         </ol>
@@ -15,7 +15,7 @@
                       <div class="card">
                           <div class="card-header">
                               <i class="fa fa-edit fa-lg"></i>
-                              <strong>@lang('front.Edit Target Audiance')</strong>
+                              <strong>@lang('front.Edit Target Audiances')</strong>
                           </div>
                           <div class="card-body">
                               {!! Form::model($targetAudiance, ['route' => ['targetAudiances.update', $targetAudiance->id], 'method' => 'patch']) !!}

@@ -3,9 +3,9 @@
 @section('content')
      <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="{{ route('companies.index') }}">Companies</a>
+                <a href="{{ route('companies.index') }}">@lang('front.Companies')</a>
             </li>
-            <li class="breadcrumb-item active">Detail</li>
+            <li class="breadcrumb-item active">@lang('front.Details')</li>
      </ol>
      <div class="container-fluid">
           <div class="animated fadeIn">
@@ -15,25 +15,25 @@
                          <div class="card-details card">
                              <div class="card-header">
                                 <i class="icon-info"></i>
-                                <strong>Details</strong>
-                                <a href="{{ route('companies.index') }}" class="btn btn-light"><i class="icon icon-arrow-right-circle"></i>Back</a>
+                                <strong>@lang('front.Details')</strong>
+                                <a href="{{ route('companies.index') }}" class="btn btn-light"><span class="icon icon-arrow-right-circle"></span>@lang('front.Back')</a>
                                 @if($companies->status == 0)
                                 <a href="{{ route('verifcompany', [$companies->id, 'accept']) }}" class="btn btn-outline-success" name="acceptcompany" value="accept">@lang('front.Accept request')</a>
                                 <a href="{{ route('verifcompany', [$companies->id, 'decline']) }}" class="btn btn-outline-success" name="declinecompany" value="decline">@lang('front.Decline request')</a>
                                 @endif
                                 <div class="arrow-steps clearfix pull-right">
                                    @if($companies->status == 0)
-                                        <div class="step current"> <span>New</span> </div>
-                                        <div class="step"> <span>Accept request</span> </div>
-                                        <div class="step"> <span>Decline request</span> </div>
+                                        <div class="step current"> <span>@lang('front.New')</span> </div>
+                                        <div class="step"> <span>@lang('front.Accept request')</span> </div>
+                                        <div class="step"> <span>@lang('front.Decline request')</span> </div>
                                    @elseif($companies->status == 2)
-                                        <div class="step"> <span>New</span> </div>
-                                        <div class="step current"> <span>Accept request</span> </div>
-                                        <div class="step"> <span>Decline request</span> </div>
+                                        <div class="step"> <span>@lang('front.New')</span> </div>
+                                        <div class="step current"> <span>@lang('front.Accept request')</span> </div>
+                                        <div class="step"> <span>@lang('front.Decline request')</span> </div>
                                    @else
-                                   <div class="step"> <span>New</span> </div>
-                                    <div class="step"> <span>Accept request</span> </div>
-                                    <div class="step current"> <span>Decline request</span> </div>
+                                   <div class="step"> <span>@lang('front.New')</span> </div>
+                                    <div class="step"> <span>@lang('front.Accept request')</span> </div>
+                                    <div class="step current"> <span>@lang('front.Decline request')</span> </div>
                                    @endif
                                 </div>
                              </div>

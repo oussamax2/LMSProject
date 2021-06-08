@@ -48,7 +48,7 @@ class countriesDataTable extends DataTable
                 'stateSave' => true,
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
-                ],
+                ],'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],
             ]);
     }
 
@@ -60,11 +60,11 @@ class countriesDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'name',
+            ['data' => 'name', 'name' => 'name', 'title' => __('forms.name')],
             
             ['data' => 'continent', 'name' => 'continent', 'title' => __('forms.Continent Name')],
 
-            'status'
+            ['data' => 'status', 'name' => 'status', 'title' => __('forms.status')],
         ];
     }
 
