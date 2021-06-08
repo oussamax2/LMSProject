@@ -174,7 +174,12 @@ float: right;
 .card-details .card-header .pull-right{
   float: left;
   }
-
+  .app-footer .pull-right{
+    float: left;
+  }
+  .app-footer .pull-left{
+    float: right;
+  }
 .card-header a span.icon{
   color: #fff;
   margin-left: 10px;

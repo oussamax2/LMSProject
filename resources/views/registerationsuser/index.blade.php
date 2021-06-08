@@ -2,7 +2,7 @@
 
 @section('content')
     <ol class="breadcrumb">
-        <li class="breadcrumb-item">Registerations</li>
+        <li class="breadcrumb-item">@lang('front.Registerations')</li>
     </ol>
     <div class="container-fluid">
         <div class="animated fadeIn">
@@ -12,7 +12,7 @@
                      <div class="card">
                          <div class="card-header">
                              <span class="icon icon-login"></span>
-                             registerations
+                             @lang('front.Registerations')
                         </div>
                          <div class="card-body">
                              @include('registerationsuser.table')

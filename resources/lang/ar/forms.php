@@ -34,6 +34,8 @@ return [
 
     'firstname' => 'الاسم الأول',
     'lastname' => 'الكنية',
+    'Id' => 'المعرف',
+    'Session Id' => 'معرف الدورة',
     'telephone' => 'هاتف',
     'message' => 'الرسالة',
     'status' => 'الحالة',

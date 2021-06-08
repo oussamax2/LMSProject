@@ -131,7 +131,7 @@
                         <a href="index.html"><img src="{{ asset('images/logo/logo2.png')}}" alt="Logo"></a>
                     </div>
                     <div class="footer-logo pull-right">
-                        <p class="float-left">&copy; 2021 All rights reserved</p>
+                        <p class="float-left">&copy; @lang('front.2021 All rights reserved')</p>
                     </div>
                 </div>
             </div>
