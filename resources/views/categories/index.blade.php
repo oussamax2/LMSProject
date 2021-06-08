@@ -9,7 +9,7 @@
              @include('flash::message')
              <div class="row">
                  <div class="col-lg-10 col-lg-offset-10 mx-auto">
-                     <div class="card">
+                     <div class="card-details card">
                          <div class="card-header">
                              <i class="icon icon-wallet"></i>
                              @lang('front.Categories')
