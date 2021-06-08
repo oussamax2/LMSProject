@@ -34,9 +34,25 @@ class HomeController extends Controller
 
     public function partners()
     {
-        $companies = companies::inRandomOrder()->orderBy('id', 'desc')->take(8)->get();
+        // $companies = companies::orderBy('id', 'desc')->take(6)->get();
+        $companies = companies::orderBy('id', 'desc')->paginate(4);
         return view('front.partners')->with(['companies'=>$companies ]);
     }
+
+   /**get partners List according to button click */
+   public function getpartners(Request $request)
+    {
+        if($request->has('page')){
+          $page = $request->get('page');
+             $partners = companies::orderBy('id', 'desc')->skip($page - 1)->paginate(4);
+              return response()->json($partners);
+        }else{
+        return response()->json("null page");
+
+        }
+        
+    }
+   
 
 
     public function pro_training($id)

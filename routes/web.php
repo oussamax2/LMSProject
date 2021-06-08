@@ -156,8 +156,9 @@ Route::get('city/ajax/{id}',  [App\Http\Controllers\sessionsController::class, '
 // this route can return the subcateg with the subcateg_id
 Route::get('findsubcategWithcategID/{id}', 'App\Http\Controllers\company\coursesController@findsubcategWithcategID');
 
-
+Route::get('/getpartners', [App\Http\Controllers\HomeController::class, 'getpartners']);
 
 
 
 Route::resource('languages', App\Http\Controllers\languageController::class);
+
