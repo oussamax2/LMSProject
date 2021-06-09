@@ -690,6 +690,7 @@ text-align: center;
   padding: 0 20px;
   border-radius: 3px;
   margin-bottom: 20px;
+  direction: rtl;
 }
 .theme-modal-box .modal-content .modal-body form ul li label {
   position: relative;
@@ -778,14 +779,17 @@ text-align: center;
 .bootstrap-select.btn-group .dropdown-toggle .bs-caret {
   position: absolute;
   top:0;
-  right: 0;
+  left: 0;
   bottom: 0;
   width: 50px;
   border-left:1px solid #f1f1f1;
   text-align: center;
 }
+.dropdown-toggle::after {
+display: none !important;
+}
 .bootstrap-select.btn-group .dropdown-toggle .bs-caret:before {
-  font-family: 'ExpoArabic-Book';
+  font-family: 'font-awesome';
   content: '';
   position: absolute;
   top:0;
@@ -794,6 +798,13 @@ text-align: center;
   color: #c0c0c0;
   font-size: 16px;
   line-height: 60px;
+}
+.bootstrap-select.btn-group .dropdown-toggle .filter-option {
+  display: inline-block;
+  overflow: hidden;
+  width: 100%;
+  text-align: right;
+  color: #6f6f6f;
 }
 .find-course .bootstrap-select > .dropdown-toggle:hover,
 .find-course .bootstrap-select > .dropdown-toggle:focus {
@@ -1844,7 +1855,12 @@ footer .bottom-footer {
   padding: 5px 10px;
   border-radius: 50%;
   font-weight: bold;
-  margin-right: 10px;
+  margin-left: 10px;
+  float: right;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
 }
 
 .course-sidebar h4 {
@@ -1883,7 +1899,7 @@ footer .bottom-footer {
 }
 .course-sidebar .sidebar-categories .panel-heading a:before {
   content: '';
-  font-family: 'ExpoArabic-Book';
+  font-family: 'font-awesome';
   color: #b4bfc7;
   line-height: 48px;
   position: absolute;
@@ -2002,7 +2018,7 @@ footer .bottom-footer {
   position: relative;
   font-size: 14px;
   line-height: 30px;
-  padding-left: 20px;
+  padding-right: 20px;
   color: rgba(0,0,0,0.55);
   cursor: pointer;
 }
@@ -2016,13 +2032,13 @@ footer .bottom-footer {
   font-size: 12px;
   display: inline-block;
   position: absolute;
-  right:-17px;
+  left:-17px;
   top:0;
   opacity: 0;
 }
 .course-sidebar .main-wrapper .course-work-level ul li input[type="checkbox"]:checked + label:before {
   content: "";
-  font-family: 'ExpoArabic-Book';
+  font-family: 'font-awesome';
   opacity: 1;
 }
 .course-sidebar .main-wrapper .course-work-level {
@@ -2072,6 +2088,9 @@ footer .bottom-footer {
   font-weight: 700;
 }
 .our-course .course-style-filter ul li {display: inline-block;}
+.our-course .course-style-filter{
+  direction: rtl;
+}
 .our-course .course-style-filter ul.float-left li a {
   font-family: 'ExpoArabic-Book';
   font-weight: 700;
@@ -2128,13 +2147,16 @@ footer .bottom-footer {
 }
 .course-list .popular-course .single-course .text .name {
   position: relative;
-  padding-left: 75px;
+  padding-right: 75px;
 }
 .course-list .popular-course .single-course .text .name h6 {margin: 0 0 -5px 0;}
+.popular-course .single-course .text ul li.float-left {
+  margin-right: 25px;
+}
 .course-list .popular-course .single-course .text .name i {color: #b0b0b0;}
 .course-list .popular-course .single-course .text .name span,
 .course-list .popular-course .single-course .text .name strong {margin-top: 12px;}
-.course-list .popular-course .single-course .text .image {left:0;top:50%;}
+.course-list .popular-course .single-course .text .image {right:0;top:50%;}
 .course-list .popular-course .single-course .text h5 a {margin: 20px 0 15px 0;}
 .course-list .popular-course .single-course .text ul {margin-top: 28px;}
 .course-list .popular-course .single-course .text ul li {line-height: 60px;}
@@ -3338,11 +3360,13 @@ footer .bottom-footer {
 .contact-us-page .contact-us-form form input[type="text"],
 .contact-us-page .contact-us-form form input[type="email"] {
   height: 50px;
+  direction: rtl;
 }
 .contact-us-page .contact-us-form form textarea {
   height: 165px;
   max-height: 165px;
   padding: 15px;
+  direction: rtl;
 }
 .contact-us-page .contact-us-form form input[type="submit"] {
   font-family: 'ExpoArabic-Book';
@@ -3385,7 +3409,7 @@ footer .bottom-footer {
   margin-bottom: 30px;
 }
 .contact-us-page .contactUs-address .single-address .text {
-  padding-left: 26px;
+  padding-right: 26px;
   margin-top: 10px;
 }
 /*-------------------- Popular Faq ---------------------*/
@@ -3990,6 +4014,10 @@ display: flex;
   height: 42px;
   margin-bottom: 30px;
   color: rgba(0,0,0,0.4);
+  direction: rtl;
+}
+input[type="text"]:focus{
+  color:#666;
 }
 .registration-banner-company .registration-form form input:focus {border-bottom-color:#ff7417; }
 .registration-banner-company .registration-form form button {

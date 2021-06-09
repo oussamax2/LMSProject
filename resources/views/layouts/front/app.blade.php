@@ -119,7 +119,7 @@
                 @livewireStyles
                 @livewire('login')
                 @livewireScripts
-                <div><a href="{{ route ('registeruser') }}" class="p-color tran3s">Not an account?? Sign Up</a></div>
+                <div><a href="{{ route ('registeruser') }}" class="p-color tran3s">@lang('auth.Not an account?? Sign Up')</a></div>
             </div>
         </div>
     </div>
