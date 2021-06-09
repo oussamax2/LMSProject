@@ -20,6 +20,8 @@ return [
     'Name' => 'إسم الفئة',
     'Order' => 'ترتيب الفئة',
     'Created At' => 'أنشئت في',
+    'Short Description' => 'وصف قصير',
+    
 
     'There are no courses' => 'لا توجد دورات',
 
@@ -34,6 +36,22 @@ return [
     'Subcategory List:' => 'قائمة الفئات الفرعية:',
     'Subcategory name' => 'اسم الفئة الفرعية',
     'Looking for a' => 'ابحث عن',
+    'Facebook Url' => 'رابط الفايسبوك',
+    'Twitter Url' => 'رابط التويتر',
+
+    'Your LastName' => 'الاسم الثاني',
+    'Mobile Number' => 'رقم الهاتف المحمول',
+    'Your WebSite' => 'موقع الويب الخاص بك',
+    'Your Picture' => 'صورتك',
+    'Description' => 'وصف',
+    'Linkedin Url' => 'رابط لانكدين',
+    'Dribble Url' => 'رابط دريبل',
+    'Register Company' => 'تسجيل الشريك',
+    '+880 854 875 971' => '880 854 875 971+',
+   
+    
+
+
     'course' => 'دورة',
     'never been easy as it is to day' => 'لم يكن سهلا كما هو اليوم',
     'Find a course' => 'ابحث عن دورة',
@@ -135,6 +153,7 @@ return [
     'Next' => 'التالي',
     'Target Audiances' => 'الفئة المستهدفة',
     'Edit User' => 'تعديل المستخدم',
+    'see profile' => 'انظر الملف الشخصي',
 
     'Start Date' => 'تاريخ البدء',
     'End Date' => 'تاريخ الانتهاء',
@@ -235,7 +254,43 @@ return [
     'Create Contact' => 'إنشاء اتصال',
     'Edit Contact' => 'تعديل اتصال',
     'Messagings' => 'الرسائل',
+    'Contact' => 'اتصال',
+    'Send a Message' => 'ارسل رسالة',
+    'You Name*' => 'الاسم *',
+    'Enter Email here*' => 'البريد إلكتروني  *',
     'User Id' => 'معرف المستخدم',
+    'Phone Number' => 'رقم الهاتف',
+    'Your Message' => 'رسالتك',
+    'Phone & Fax' => 'الهاتف والفاكس',
+    'Email' => 'البريد إلكتروني',
+    'Address' => 'العنوان',
+    'Than' => 'من',
+
+    'Your Full Name' => 'اسمك الكامل',
+    'Your EMail' => 'بريدك الالكتروني',
+    'Password' => 'كلمه السر',
+    'Your Name' => 'الاسم',
+    'sample@gmail.com' => 'sample@gmail.com',
+    'Confirm Password' => 'تأكيد كلمة المرور',
+    'SIGN UP NOW!!' => '!! أفتح حساب الأن',
+    'register as a company' => 'سجل كشركة',
+    'Remember Me' => 'تذكرنى',
+    'Lost Your Password?' => 'فقدت كلمة المرور الخاصة بك؟',
+    'Login with Site Account' => 'تسجيل الدخول بحساب الموقع',
+
+    'Register Now' => 'سجل الان',
+    'Create  your account and browse thousand of courses!!' => 'قم بإنشاء حسابك وتصفح آلاف الدورات !!',
+    'Currently Use' => 'تستخدم حاليا',
+    'Total Students' => 'مجموع الطلاب',
+    'Finished Course' => 'الدورة المنتهية',
+    '28,690+Student' => '28690 + طالب',
+    'Currently Useing Campus' => 'تستخدم حاليا الحرم الجامعي',
+    'We Have More' => 'لدينا المزيد',
+    'There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form,' => 'هناك العديد من الاختلافات المتاحة لنصوص لوريم إيبسوم ولكن الغالبية تعرضت للتغيير في شكل ما ،',
+    'Contact Information' => 'معلومات للتواصل',
+    'Sorry!Something Went Wrong.' => 'عذرا، هناك خطأ ما.',
+    'Send Message' => 'أرسل رسالة',
+    'Your message was sent successfully.' => 'لقد تم ارسال رسالتك بنجاح.',
     'Registeration Id' => 'معرف التسجيل',
     'Create categories' => 'إنشاء فئة',
 

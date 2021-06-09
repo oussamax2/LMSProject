@@ -101,7 +101,7 @@
 									</ul>
 									<ul class="info-list row">
 
-										<li class="col-xs-12"><b>@lang('front.Target Audiance :')</b><br><br>{{ implode(", ",json_decode($sessions->courses->target_audiance->pluck('name'))) }}</li>
+										<li class="col-xs-12"><b>@lang('front.Target Audiances')</b><br><br>{{ implode(", ",json_decode($sessions->courses->target_audiance->pluck('name'))) }}</li>
 									</ul>
 								</div>
 
