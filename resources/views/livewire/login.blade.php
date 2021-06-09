@@ -13,7 +13,7 @@
     </div>
         <form method="post">
             @csrf
-            <h3>Login with Site Account</h3>
+            <h3>@lang('front.Login with Site Account')</h3>
             <div class="wrapper">
                 <input id="email" placeholder="@lang('auth.email')" type="email" class="form-control {{ $errors->has('email')?'is-invalid':'' }}" wire:model="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                 @error('email')
@@ -31,9 +31,9 @@
                 <ul class="clearfix">
                     <li class="float-left">
                         <input type="checkbox" id="remember">
-                        <label for="remember">Remember Me</label>
+                        <label for="remember">@lang('front.Remember Me')</label>
                     </li>
-                    <li class="float-right"><a href="{{ url('/password/reset') }}" class="s-color">Lost Your Password?</a></li>
+                    <li class="float-right"><a href="{{ url('/password/reset') }}" class="s-color">@lang('front.Lost Your Password?')</a></li>
                 </ul>
                 <button class="p-bg-color hvr-trim" wire:click.prevent="login">@lang('auth.sign_in')</button>
             </div>
