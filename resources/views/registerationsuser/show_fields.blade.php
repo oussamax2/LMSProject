@@ -3,25 +3,25 @@
 <!-- Id Field -->
 <div class="form-group col-sm-6 col-md-12 col-lg-6">
 <i class="icon flaticon-bookmark"></i>
-    {!! Form::label('course_id', 'Course') !!}
+    {!! Form::label('course_id', __('front.course')) !!}
     <p>{{ $registerations->sessions->courses->title}}</p>
 </div>
 <!-- description -->
 <div class="form-group col-sm-6 col-md-12 col-lg-6">
 <i class="icon icon-book-open"></i>
-    {!! Form::label('description', 'Description') !!}
+    {!! Form::label('description', __('forms.Description')) !!}
     <p>{{ $registerations->sessions->courses->companies->description}}</p>
 </div>
 <!-- Location -->
 <div class="form-group col-sm-6 col-md-12 col-lg-6">
 <i class="icon icon-location-pin"></i>
-    {!! Form::label('location', 'Location') !!}
+    {!! Form::label('location', __('forms.Location')) !!}
     <p>{{ $registerations->sessions->countries->name}}</p>
 </div>
 <!-- fee -->
 <div class="form-group col-sm-6 col-md-12 col-lg-6">
 <i class="icon flaticon-bookmark"></i>
-    {!! Form::label('price', 'Price') !!}
+    {!! Form::label('price', __('forms.Price')) !!}
     <p>{{ $registerations->sessions->fee}}</p>
 </div>
 <!-- User Id Field -->

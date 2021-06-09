@@ -92,6 +92,13 @@ return [
     'Log Out' => 'تسجيل خروج',
     'Courses by' => 'دورات من قبل',
     'Send' => 'إرسال',
+    'message' => 'رسالة',
+    'Languages' => 'اللغات',
+    'Create Language' => 'إنشاء لغة',
+    'Edit Language' => 'تعديل اللغة',
+    '2021 All rights reserved' => 'جميع الحقوق محفوظة 2021',
+    'Edit Messaging' => 'تعديل المراسلة',
+    'Create Messaging' => 'إنشاء الرسائل',
     'Resend Verification Email' => 'إعادة ارسال بريد التحقق',
 
     'A new verification link has been sent to the email address you provided during registration.' => 'تم إرسال رابط تحقق جديد إلى عنوان البريد الإلكتروني الذي قدمته أثناء التسجيل.',
@@ -227,6 +234,9 @@ return [
     'Create session' => 'إنشاء دورة',
     'Create Contact' => 'إنشاء اتصال',
     'Edit Contact' => 'تعديل اتصال',
+    'Messagings' => 'الرسائل',
+    'User Id' => 'معرف المستخدم',
+    'Registeration Id' => 'معرف التسجيل',
     'Create categories' => 'إنشاء فئة',
 
 

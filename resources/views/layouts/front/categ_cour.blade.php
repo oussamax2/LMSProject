@@ -1,11 +1,13 @@
 
 {{-- list course --}}
+
+
 			<div class="our-course course-list">
 
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-9 col-md-8 col-xs-12 popular-course float-right">
-                            
+
                             @livewireStyles
 
                             @livewire('search')
@@ -212,4 +214,6 @@
 					</div>
 				</div>
 			</div>
+
+
 {{-- list course --}}

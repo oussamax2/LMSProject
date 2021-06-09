@@ -11,7 +11,7 @@
                         </div>
                         <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                             <div class="single-input">
-                                <input type="text" name="name" wire:model="searchTerm" value="aa" >
+                                <input type="text" name="keywords" wire:model="searchTerm" placeholder="@lang('front.Subject or qualification, eg. IT')"  id="searchTerm">
                             </div>
                         </div>
                         <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12"><button class="action-button tran3s">@lang('front.Search courses')</button></div>
@@ -38,31 +38,42 @@
 
             <div class="text float-left">
                 <div class="name clearfix">
-                    <div class="image"><img src="images/course/6.jpg" alt=""></div>
+                        <div class="image">
+                            @if(isset($session->companies->picture))
+                            <img src="{{ asset("storage/".$session->companies['picture']) }}" alt="">
+                            @else
+                            <img src="{{ asset('images/companydefault.svg') }}" alt="">
+                            @endif
+                        </div>
                     <div class="float-left">
-                        <h6>Foqrul Islam</h6>
+                        <h6>{{$session->companies->user->name}}</h6>
 
                     </div>
-                    <strong class="s-color float-right">$1998.8</strong>
+                    @if($session->fee == 0)
+                    <strong class="p-pg-color float-right">FREE</strong>
+                 @else
+                    <strong class="s-color float-right">$ {{$session->fee}}</strong>
+                 @endif
+
                 </div>
-                <h5><a href="course-details.html" class="tran3s">{{$session->courses->title}}</a></h5>
+                <h5><a href="{{ url('singlsession') }}/{{$session->id}}" class="tran3s">{{$session->courses->title}}</a></h5>
 
                 <ul class="clearfix">
                     <li class="float-left">
                         <i class="flaticon-clock"></i>
-                        <a href="#" class="tran3s">12 May 2018</a>
+                        <a  class="tran3s">{{Carbon\Carbon::parse($session->start)->locale('en')->isoFormat(' Do MMMM  YYYY ')}}</a>
                     </li>
                     <li class="float-left">
                         <i class="flaticon-time"></i>
-                        <a href="#" class="tran3s">For 0 Days</a>
+                        <a  class="tran3s">{{ Carbon\Carbon::parse($session->end)->longAbsoluteDiffForHumans($session->start) }}</a>
                     </li>
                     <li class="float-left">
                         <i class="flaticon-comments"></i>
-                        <a href="#" class="tran3s">@lang('front.Category:') Human Resources</a>
+                        <a class="tran3s">@lang('front.Category:') {{isset($session->courses->categories)?$session->courses->categories->name:"NAN" }}</a>
                     </li>
                     <li class="float-right">
                         <i class="flaticon-placeholder"></i>
-                        <a href="#" class="tran3s">Egypt</a>
+                        <a  class="tran3s">{{ $session->countries->name }}{{isset($session->states->name)?','.$session->states->name:""}}</a>
                     </li>
                 </ul>
             </div>
@@ -71,14 +82,16 @@
 
 
     </div>
+
     {{ $sessionList->links() }}
-    **
-    <ul class="theme-pagination clearfix">
-        <li><a href="" class="tran3s active">1</a></li>
-        <li><a href="" class="tran3s">2</a></li>
-        <li><a href="" class="tran3s">3</a></li>
-        <li><a href="#" class="tran3s">@lang('front.Next')</a></li>
-    </ul>
+
 </div>
 
 </div>
+@section('js')
+<script>
+$(document).ready(function() {
+ @this.set('searchTerm', "{{request()->keywords}}");
+});
+</script>
+@endsection

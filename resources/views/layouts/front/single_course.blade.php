@@ -49,7 +49,8 @@
 										<div>
 											<i class="flaticon-time"></i>
 											<p>@lang('front.Duration')</p>
-                                            <b> {{ $diff = Carbon\Carbon::parse($sessions->end)->diffForHumans() }}</b>
+                                            <b>{{ Carbon\Carbon::parse($sessions->end)->longAbsoluteDiffForHumans($sessions->start) }}</b>
+
 										</div>
 									</div>
 								</div>

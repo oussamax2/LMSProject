@@ -2,10 +2,10 @@
     <table class="table table-striped" id="messagings-table">
         <thead>
             <tr>
-                <th>User Id</th>
-        <th>Registeration Id</th>
-        <th>Message</th>
-                <th colspan="3">Action</th>
+                <th>@lang('front.User Id')</th>
+        <th>@lang('front.Registeration Id')</th>
+        <th>@lang('front.message')</th>
+                <th colspan="3">@lang('front.Action')</th>
             </tr>
         </thead>
         <tbody>
@@ -17,9 +17,9 @@
                 <td>
                     {!! Form::open(['route' => ['messagings.destroy', $messaging->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{{ route('messagings.show', [$messaging->id]) }}" class='btn btn-ghost-success'><i class="fa fa-eye"></i></a>
-                        <a href="{{ route('messagings.edit', [$messaging->id]) }}" class='btn btn-ghost-info'><i class="fa fa-edit"></i></a>
-                        {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-ghost-danger', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                        <a href="{{ route('messagings.show', [$messaging->id]) }}" class='btn btn-ghost-success'><span class="icon icon-eye"></span></a>
+                        <a href="{{ route('messagings.edit', [$messaging->id]) }}" class='btn btn-ghost-info'><span class="icon icon-note"></span></a>
+                        {!! Form::button('<span class="icon icon-trash"></span>', ['type' => 'submit', 'class' => 'btn btn-ghost-danger', 'onclick' => "return confirm('Are you sure?')"]) !!}
                     </div>
                     {!! Form::close() !!}
                 </td>
