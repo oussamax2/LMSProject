@@ -14,12 +14,11 @@ class Search extends Component
     public $searchTerm;
     public $category;
     public $subcategory;
-
+    public $target;
 
 
     public function render()
     {
-
         $query = sessions::with(['courses','countries','cities','states']);
         $query->when(! empty($this->searchTerm), function (Builder $q) {
             $q->whereHas('courses', function (Builder $q){
@@ -34,7 +33,16 @@ class Search extends Component
                 $q->where('courses.category_id', $this->category);
              });
         });
+        $query->when(! empty($this->target), function (Builder $q) {
 
+            $q->whereHas('courses', function (Builder $q){
+                $q->whereHas('target_audiance',function($q){
+
+                    $q->whereIn('target_audiances.id',$this->target);
+                }
+            );
+             });
+        });
      /*   $query->when(! empty($this->target), function (Builder $q) {
 
             $q->whereHas('courses', function (Builder $q){

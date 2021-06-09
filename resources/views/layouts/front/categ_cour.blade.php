@@ -29,7 +29,7 @@
 									    <div id="collapse1" class="panel-collapse collapse in">
 									      <div class="panel-body">
 									      	<ul>
-									      		<li><a href="#" class="tran3s"><span>3</span>Html/Css</a></li>
+									      		<li><a href="?cat=1" class="tran3s"><span>3</span>Html/Css</a></li>
 									      		<li><a href="#" class="tran3s"><span>5</span>jQuery</a></li>
 									      		<li><a href="#" class="tran3s">Sass/less</a></li>
 									      	</ul>
@@ -109,7 +109,7 @@
 
 								<div class="course-filter">
 									<h4>@lang('front.Search By Filters')</h4>
-									<form  onsubmit="return false" class="main-wrapper">
+									<form  onsubmit="return false"class="main-wrapper">
 
 										<div class="course-price-filter">
 											<h5>@lang('front.Price Range')</h5>
@@ -134,24 +134,24 @@
 											<h5>@lang('front.Target Audiance')</h5>
 											<ul class="clearfix">
 												<li>
-													<input type="checkbox" id="starting">
-													<label for="starting">CEO</label>
+													<input  id ="2" value="10" name="target" type="checkbox" >
+													<label for="2">CEO</label>
 												</li>
 												<li>
-													<input type="checkbox" id="begainer">
-													<label for="begainer">GM/Directors</label>
+													<input  id ="3" value="2" name="target" type="checkbox" >
+													<label for="3">GM/Directors</label>
 												</li>
 												<li>
-													<input type="checkbox" id="expert" checked>
-													<label for="expert">Managers</label>
+													<input  id ="4" value="2" name="target" type="checkbox" >
+													<label for="4">Managers</label>
 												</li>
 												<li>
-													<input type="checkbox" id="intermediate">
-													<label for="intermediate">Supervisors/Leaders</label>
+													<input  id ="6" value="2" name="target" type="checkbox" >
+													<label for="6">Supervisors/Leaders</label>
 												</li>
 												<li>
-													<input type="checkbox" id="advance">
-													<label for="advance">Staff</label>
+													<input  id ="5" value="2" name="target" type="checkbox" >
+													<label for="6">Staff</label>
 												</li>
 											</ul>
 										</div>
