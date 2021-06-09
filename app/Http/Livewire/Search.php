@@ -18,7 +18,11 @@ class Search extends Component
         return view('livewire.search',[
 
             'sessionList' => sessions::whereHas('courses', function ($q) use ($searchTerm){
-                $q->where('courses.title','like', $searchTerm)->Orwhere('courses.body','like', $searchTerm);
+                $q->where('courses.title','like', $searchTerm)
+                ->Orwhere('courses.body','like', $searchTerm);
+                /*->orwhereHas('companies', function ($q) use ($searchTerm){
+                    $q->where('companies.lastname','like', $searchTerm)->Orwhere('courses.body','like', $searchTerm);
+                 });*/
              })->paginate(6)
         ]);
     }
