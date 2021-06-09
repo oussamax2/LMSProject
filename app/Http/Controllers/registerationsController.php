@@ -14,6 +14,7 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Response;
 use App\Models\sessions;
+use App\Models\courses;
 use App\Models\categories;
 
 class registerationsController extends AppBaseController
@@ -120,11 +121,15 @@ class registerationsController extends AppBaseController
 
 
 
-    public function userregist()
+    public function test()
     {
        // $r= registerations::find(6);
 
-        return categories::where('name', 'LIKE', "%web%")->first()->id;
+        return courses::whereHas('target_audiance',function($q){
+
+            $q->whereIn('target_audiances.id',[30,1,2]);
+        }
+        )->get();
     }
     /** send registration_request  */
     public function student_registsess(Request $request)

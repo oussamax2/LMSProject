@@ -109,7 +109,7 @@
 
 								<div class="course-filter">
 									<h4>@lang('front.Search By Filters')</h4>
-									<form action="" class="main-wrapper">
+									<form  onsubmit="return false" class="main-wrapper">
 
 										<div class="course-price-filter">
 											<h5>@lang('front.Price Range')</h5>
@@ -206,7 +206,7 @@
 										    </div>
 										</div>
 
-										<div class="button-wrapper"><input type="submit" value="@lang('front.Apply filters')" class="p-bg-color tran3s"></div>
+										<div class="button-wrapper"><input type="submit" id ="appfiltre" value="@lang('front.Apply filters')" class="p-bg-color tran3s"></div>
 									</form>
 								</div>
 							</div>

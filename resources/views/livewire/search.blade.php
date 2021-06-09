@@ -95,11 +95,11 @@ $(document).ready(function() {
  @this.set('searchTerm', "{{request()->keywords}}");
 });
 
-$( "input" ).on( "click", function() {
+$( "#appfiltre" ).on( "click", function() {
     var myArray=Array();
-$("input:checkbox:checked").each(function(){ myArray.push($(this).val()); })
+//$("input:checkbox:checked").each(function(){ myArray.push($(this).val()); })
 //alert(myArray);
- //@this.set('category', "php");
+ @this.set('category', '1');
 });
 
 </script>

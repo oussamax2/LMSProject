@@ -147,6 +147,7 @@ return [
 
     'Create subcategories' => 'إنشاء فئات فرعية',
     'Create Target Audiances' => 'إنشاء فئة مستهدفة',
+    'Target Audiance :' => 'الفئة المستهدفة',    
     'Get exel model '=>'احصل على نموذج Exel',
 
 

@@ -19,10 +19,15 @@ class HomeController extends Controller
         $sessionList = sessions::orderBy('id', 'desc')->take(6)->get();
         /**get latest categories */
         $categList = categories::inRandomOrder()->orderBy('id', 'desc')->take(6)->get();
-        $citiesList = cities::inRandomOrder()->orderBy('id', 'desc')->take(8)->get();
+        // $citiesList = cities::inRandomOrder()->orderBy('id', 'desc')->take(8)->get();
         $companies = companies::inRandomOrder()->orderBy('id', 'desc')->take(8)->get();
 
+      
 
+        $citiesList = cities::whereHas('sessions', function ($query) {
+            $query->where('deleted_at',null);
+        })->inRandomOrder()->orderBy('id', 'desc')->take(8)->get();
+        // var_dump($cities);
         return view('front.index')->with([
             'sessionList'=>$sessionList,
             'categList'=>$categList,

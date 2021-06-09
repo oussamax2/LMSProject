@@ -6,6 +6,7 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\User;
 use App\Models\sessions;
+use Illuminate\Database\Eloquent\Builder;
 class Search extends Component
 {
     use WithPagination;
@@ -18,19 +19,33 @@ class Search extends Component
 
     public function render()
     {
-        $this->category   = "";
-        $this->subcategory   = "";
-        $searchTerm = '%'.$this->searchTerm.'%';
 
+        $query = sessions::with(['courses','countries','cities','states']);
+        $query->when(! empty($this->searchTerm), function (Builder $q) {
+            $q->whereHas('courses', function (Builder $q){
+                $q->where('courses.title','like', '%'.$this->searchTerm.'%')
+                 ->Orwhere('courses.body','like', '%'.$this->searchTerm.'%');
+             });
+        });
+
+         $query->when(! empty($this->category), function (Builder $q) {
+
+            $q->whereHas('courses', function (Builder $q){
+                $q->where('courses.category_id', $this->category);
+             });
+        });
+
+     /*   $query->when(! empty($this->target), function (Builder $q) {
+
+            $q->whereHas('courses', function (Builder $q){
+                $q->where('courses.category_id', $this->category);
+             });
+        });*/
+
+         $sessions = $query->paginate(6);
         return view('livewire.search',[
 
-            'sessionList' => sessions::whereHas('courses', function ($q) use ($searchTerm){
-                $q->where('courses.title','like', $searchTerm)
-                ->Orwhere('courses.body','like', $searchTerm);
-                /*->orwhereHas('companies', function ($q) use ($searchTerm){
-                    $q->where('companies.lastname','like', $searchTerm)->Orwhere('courses.body','like', $searchTerm);
-                 });*/
-             })->paginate(6)
+            'sessionList' =>$sessions
         ]);
     }
 
