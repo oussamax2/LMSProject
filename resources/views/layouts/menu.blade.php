@@ -111,18 +111,7 @@
         <span class="menu-item-dsh">@lang('front.Contacts')</span>
     </a>
 </li>
-<li class="nav-item {{ Request::is('messagings*') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ route('messagings.index') }}">
-    <span class="icon icon-bubbles"></span>
-    <span class="menu-item-dsh">@lang('front.Messagings')</span>
-    </a>
-</li>
-<li class="nav-item {{ Request::is('users*') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ route('users.index') }}">
-    <span class="icon icon-user"></span>
-    <span class="menu-item-dsh">@lang('front.Users')</span>
-    </a>
-</li>
+
 <li class="nav-item {{ Request::is('languages*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('languages.index') }}">
     <span class="icon icon-globe"></span>

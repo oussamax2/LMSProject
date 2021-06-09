@@ -12,6 +12,7 @@
                         <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                             <div class="single-input">
                                 <input type="text" name="keywords" wire:model="searchTerm" placeholder="@lang('front.Subject or qualification, eg. IT')"  id="searchTerm">
+
                             </div>
                         </div>
                         <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12"><button class="action-button tran3s">@lang('front.Search courses')</button></div>
@@ -93,5 +94,13 @@
 $(document).ready(function() {
  @this.set('searchTerm', "{{request()->keywords}}");
 });
+
+$( "input" ).on( "click", function() {
+    var myArray=Array();
+$("input:checkbox:checked").each(function(){ myArray.push($(this).val()); })
+//alert(myArray);
+ //@this.set('category', "php");
+});
+
 </script>
 @endsection

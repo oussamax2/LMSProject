@@ -11,10 +11,17 @@ class Search extends Component
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
     public $searchTerm;
+    public $category;
+    public $subcategory;
+
+
+
     public function render()
     {
-
+        $this->category   = "";
+        $this->subcategory   = "";
         $searchTerm = '%'.$this->searchTerm.'%';
+
         return view('livewire.search',[
 
             'sessionList' => sessions::whereHas('courses', function ($q) use ($searchTerm){
@@ -26,6 +33,7 @@ class Search extends Component
              })->paginate(6)
         ]);
     }
+
 
 
 }

@@ -35,6 +35,19 @@
     <p>{{ $courses->categories->name }}</p>
 </div>
 
+<!-- Target_audiance Id Field -->
+<div class="form-group">
+<i class="icon flaticon-bookmark"></i>
+    {!! Form::label('target_audiance', __('front.Target Audiance :')) !!}
+    <p>{{ implode(", ",json_decode($courses->target_audiance->pluck('name'))) }}</p>
+</div>
+<!-- SubCategory Id Field -->
+<div class="form-group">
+<i class="icon flaticon-bookmark"></i>
+    {!! Form::label('subcategorie', __('front.Sub Categories')) !!}
+    <p>{{ isset($courses->subcategorie->name) ?$courses->subcategorie->name: "no subcategorie" }}</p>
+    
+</div>
 <!-- Session List Field -->
 <div class="form-group listregistersession">
 <i class="icon icon-briefcase"></i>
