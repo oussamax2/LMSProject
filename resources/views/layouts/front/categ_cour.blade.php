@@ -26,7 +26,7 @@
 									        Web Develoment</a>
 									      </h6>
 									    </div>
-									    <div id="collapse1" class="panel-collapse collapse in">
+									    <div id="collapse1" class="panel-collapse collapse ">
 									      <div class="panel-body">
 									      	<ul>
 									      		<li><a href="?cat=1" class="tran3s"><span>3</span>Html/Css</a></li>
