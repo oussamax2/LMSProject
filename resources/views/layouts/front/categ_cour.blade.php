@@ -21,13 +21,13 @@
 									<div class="panel-group theme-accordion" id="accordion">
                                         @foreach($categList as $cat)
                                       <div class="panel" >
-									    <div class="panel-heading {{$loop->first?'active-panel':''}}">
+									    <div class="panel-heading {{$loop->first?'active-panel':''}} {{$cat->id==request()->cat?'active-panel':''}}">
 									      <h6 class="panel-title">
 									        <a data-toggle="collapse" data-parent="#accordion" href="#{{$cat->id}}"  data-id="{{$cat->id}}" >
 									        {{$cat->name}}</a>
 									      </h6>
 									    </div>
-									    <div id="{{$cat->id}}" class="panel-collapse collapse {{$loop->first?'in':''}}" aria-expanded="false">
+									    <div id="{{$cat->id}}" class="panel-collapse collapse {{$loop->first?'in':''}}{{$cat->id==request()->cat?'in':''}}" aria-expanded="false">
 									      <div class="panel-body">
 									      	<ul id="subcat">
                                                 @foreach($cat->subcategorie as $subcat)
