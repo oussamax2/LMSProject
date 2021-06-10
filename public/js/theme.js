@@ -435,7 +435,7 @@ function priceRanger () {
       range: true,
       min: 0,
       max: 1000,
-      values: [ 50, 700 ],
+      values: [ 1, 700 ],
       slide: function( event, ui ) {
         $( '.price-ranger .ranger-min-max-block .min' ).val( ui.values[ 0 ] );
         $( '.price-ranger .ranger-min-max-block .max' ).val( ui.values[ 1 ] );

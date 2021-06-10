@@ -17,7 +17,8 @@ class Search extends Component
     public $target;
     public $city;
     public $country;
-
+    public $pricemin;
+    public $pricemax;
     public function render()
     {
         $query = sessions::with(['courses','countries','cities','states']);
@@ -32,6 +33,9 @@ class Search extends Component
         });
         $query->when(! empty($this->country), function (Builder $q) {
             $q->where('country_id',$this->country);
+        });
+        $query->when(! empty($this->pricemin), function (Builder $q) {
+            $q->whereBetween('fee', [$this->pricemin, $this->pricemax]);
         });
          $query->when(! empty($this->category), function (Builder $q) {
 

@@ -62,7 +62,7 @@
                 <ul class="clearfix">
                     <li class="float-left">
                         <i class="flaticon-clock"></i>
-                        <a  class="tran3s">{{Carbon\Carbon::parse($session->start)->locale('en')->isoFormat(' Do MMMM  YYYY ')}}</a>
+                        <a  class="tran3s">{{Carbon\Carbon::parse($session->start)->isoFormat(' Do MMMM  YYYY ')}}</a>
                     </li>
                     <li class="float-left">
                         <i class="flaticon-time"></i>
@@ -95,14 +95,19 @@ $(document).ready(function() {
  @this.set('searchTerm', "{{request()->keywords}}");
  @this.set('category', "{{request()->cat}}");
 });
-
+/** app filtre **/
 $( "#appfiltre" ).on( "click", function() {
     var myArray=Array();
 $("input[name=target]:checkbox:checked").each(function(){ myArray.push($(this).val()); })
  @this.set('target', myArray);
  @this.set('city', $("#city" ).val());
  @this.set('country', $("#country" ).val());
+ @this.set('pricemin', $("input[name=pricemin]" ).val());
+ @this.set('pricemax', $("input[name=pricemax]" ).val());
+
+
 });
+/** chose category **/
     $( "#subcat li" ).on( "click", function() {
     @this.set('subcategory', this.value); // get id of clicked li
 });

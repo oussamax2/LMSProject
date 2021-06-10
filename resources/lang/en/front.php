@@ -146,6 +146,7 @@ return [
     'Facebook Url' => 'Facebook Url',
     'Twitter Url' => 'Twitter Url',
     'see profile' => 'see profile',
+    'Register Now' => 'Register Now',
     'Your LastName' => 'Your LastName',
     'Mobile Number' => 'Mobile Number',
     'Your WebSite' => 'Your WebSite',

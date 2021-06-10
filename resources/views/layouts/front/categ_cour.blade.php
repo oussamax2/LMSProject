@@ -57,11 +57,11 @@
 													<ul class="clearfix">
 														<li class="float-left">
 															<label for="min">@lang('front.From')</label>
-															<input type="text" class="min" placeholder="10" readonly>
+															<input type="text" name="pricemin" class="min" placeholder="10" readonly>
 														</li>
 														<li class="float-left">
 															<label for="max">@lang('front.To')</label>
-															<input type="text" class="max" placeholder="1000" readonly>
+															<input type="text" name="pricemax" class="max" placeholder="1000" readonly>
 														</li>
 													</ul>
 												</div>

@@ -36,7 +36,7 @@
 											<i class="flaticon-people"></i>
 
 
-											<a href="#" class="tran3s">{{Carbon\Carbon::parse($sessionList->start)->locale('en')->isoFormat(' Do MMMM  YYYY ')}}</a>
+											<a href="#" class="tran3s">{{Carbon\Carbon::parse($sessionList->start)->isoFormat(' Do MMMM  YYYY ')}}</a>
 										</li>
 										<li class="float-right">
 											<i class="flaticon-heart"></i>
