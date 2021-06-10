@@ -40,7 +40,7 @@
 										</li>
 										<li class="float-right">
 											<i class="flaticon-heart"></i>
-											<a href="#" class="tran3s">{{$sessionList->countries->name}}, {{$sessionList->states->name}}</a>
+											<a href="#" class="tran3s">{{$sessionList->countries->name}}, {{substr_replace($sessionList->states->name, " ...", 3)}}</a>
 										</li>
 									</ul>
 								</div>
