@@ -43,6 +43,7 @@ class Search extends Component
             );
              });
         });
+        
      /*   $query->when(! empty($this->target), function (Builder $q) {
 
             $q->whereHas('courses', function (Builder $q){

@@ -94,6 +94,7 @@
 $(document).ready(function() {
  @this.set('searchTerm', "{{request()->keywords}}");
  @this.set('category', "{{request()->cat}}");
+ @this.set('cities', "{{request()->cities}}");
 });
 
 $( "#appfiltre" ).on( "click", function() {
