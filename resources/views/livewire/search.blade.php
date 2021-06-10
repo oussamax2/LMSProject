@@ -2,7 +2,7 @@
     <div class="find-coursecatg">
         <div class="opacity color-one">
             <div class="container-fluid">
-                <form action="#">
+                <div>
                     <div class="row">
                         <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12">
                             <div class="single-input">
@@ -15,9 +15,9 @@
 
                             </div>
                         </div>
-                        <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12"><button class="action-button tran3s">@lang('front.Search courses')</button></div>
+                        <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12"><button wire:click="resetsearch" id="resetsearch" class="action-button tran3s">@lang('front.Reset Filter')</button></div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
@@ -99,8 +99,23 @@ $(document).ready(function() {
 $( "#appfiltre" ).on( "click", function() {
     var myArray=Array();
 $("input[name=target]:checkbox:checked").each(function(){ myArray.push($(this).val()); })
-alert(myArray);
  @this.set('target', myArray);
+ @this.set('city', $("#city" ).val());
+ @this.set('country', $("#country" ).val());
+});
+    $( "#subcat li" ).on( "click", function() {
+    @this.set('subcategory', this.value); // get id of clicked li
+});
+$( ".panel-title a" ).on( "click", function() {
+    //alert( $(this).attr('data-id'));
+    // alert($(this).data("id"));
+    @this.set('category', $(this).attr('data-id')); // get id of clicked li
+
+});
+$( "#resetsearch" ).on( "click", function() {
+    $('input[name="target"]').each(function() {
+			this.checked = false;
+		});
 });
 
 </script>

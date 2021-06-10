@@ -20,7 +20,7 @@ class subcategorie extends Model
 
 
     public $table = 'subcategories';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -55,12 +55,12 @@ class subcategorie extends Model
     {
         return $this->belongsTo(categories::class, 'category_id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function courses()
     {
-        return $this->HasMany(courses::class);
+        return $this->HasMany(courses::class, 'subcateg_id');
     }
 }

@@ -3,14 +3,16 @@
 				<div class="container">
 					<div class="theme-title text-center">
 						<h2>@lang('front.Browse by Categories')</h2>
-						
+
 						<p>@lang('front.You can start search by Categories that meet your requirements')</p>
 					</div>
 
 					<div class="row" style="margin-bottom: 20px;">
-						@foreach ($categList as $categList) 
+
+						@foreach ($categList as $categList)
 							<div class="col-md-4 col-sm-4">
 								<div class="single-blog">
+                                    <a >
 									<div class="image">
 										@if(isset($categList->picture))
 										<img src="{{ asset("storage/".$categList->picture) }}" alt="">
@@ -21,12 +23,13 @@
 											<h3>{{ $categList->name }}</h3>
 										</div>
 									</div>
+                                </a>
 								</div>
 							</div>
 						@endforeach
-						
+
 					</div>
-				
+
 				</div>
 			</div>
 {{-- Browse sessions by category --}}

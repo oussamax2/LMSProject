@@ -19,91 +19,30 @@
 								<div class="sidebar-categories">
 									<h4>@lang('front.Categories')</h4>
 									<div class="panel-group theme-accordion" id="accordion">
-									  <div class="panel">
-									    <div class="panel-heading active-panel">
+                                        @foreach($categList as $cat)
+                                      <div class="panel" >
+									    <div class="panel-heading {{$loop->first?'active-panel':''}}">
 									      <h6 class="panel-title">
-									        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-									        Web Develoment</a>
+									        <a data-toggle="collapse" data-parent="#accordion" href="#{{$cat->id}}"  data-id="{{$cat->id}}" >
+									        {{$cat->name}}</a>
 									      </h6>
 									    </div>
-									    <div id="collapse1" class="panel-collapse collapse ">
+									    <div id="{{$cat->id}}" class="panel-collapse collapse {{$loop->first?'in':''}}" aria-expanded="false">
 									      <div class="panel-body">
-									      	<ul>
-									      		<li><a href="?cat=1" class="tran3s"><span>3</span>Html/Css</a></li>
-									      		<li><a href="#" class="tran3s"><span>5</span>jQuery</a></li>
-									      		<li><a href="#" class="tran3s">Sass/less</a></li>
+									      	<ul id="subcat">
+                                                @foreach($cat->subcategorie as $subcat)
+									      		<li  value="{{$subcat->id}}"><a  class="tran3s"><span>{{$subcat->courses->count()}}</span>{{$subcat->name}}</a></li>
+                                                  @endforeach
 									      	</ul>
 									      </div>
 									    </div>
 									  </div>
-									  <div class="panel">
-									    <div class="panel-heading">
-									      <h6 class="panel-title">
-									        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-									        Graphics Design</a>
-									      </h6>
-									    </div>
-									    <div id="collapse2" class="panel-collapse collapse">
-									      <div class="panel-body">
-									      	<ul>
-									      		<li><a href="#" class="tran3s">Html/Css</a></li>
-									      		<li><a href="#" class="tran3s">jQuery</a></li>
-									      		<li><a href="#" class="tran3s">Sass/less</a></li>
-									      	</ul>
-									      </div>
-									    </div>
-									  </div>
-									  <div class="panel">
-									    <div class="panel-heading">
-									      <h6 class="panel-title">
-									        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-									        Web Design</a>
-									      </h6>
-									    </div>
-									    <div id="collapse3" class="panel-collapse collapse">
-									      <div class="panel-body">
-									      	<ul>
-									      		<li><a href="#" class="tran3s">Html/Css</a></li>
-									      		<li><a href="#" class="tran3s">jQuery</a></li>
-									      		<li><a href="#" class="tran3s">Sass/less</a></li>
-									      	</ul>
-									      </div>
-									    </div>
-									  </div>
-									  <div class="panel">
-									    <div class="panel-heading">
-									      <h6 class="panel-title">
-									        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-									        IOS/Android Development</a>
-									      </h6>
-									    </div>
-									    <div id="collapse4" class="panel-collapse collapse">
-									      <div class="panel-body">
-									      	<ul>
-									      		<li><a href="#" class="tran3s">Html/Css</a></li>
-									      		<li><a href="#" class="tran3s">jQuery</a></li>
-									      		<li><a href="#" class="tran3s">Sass/less</a></li>
-									      	</ul>
-									      </div>
-									    </div>
-									  </div>
-									  <div class="panel">
-									    <div class="panel-heading">
-									      <h6 class="panel-title">
-									        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
-									        Others</a>
-									      </h6>
-									    </div>
-									    <div id="collapse5" class="panel-collapse collapse">
-									      <div class="panel-body">
-									      	<ul>
-									      		<li><a href="#" class="tran3s">Html/Css</a></li>
-									      		<li><a href="#" class="tran3s">jQuery</a></li>
-									      		<li><a href="#" class="tran3s">Sass/less</a></li>
-									      	</ul>
-									      </div>
-									    </div>
-									  </div>
+                                        @endforeach
+
+
+
+
+
 									</div>
 								</div>
 
@@ -118,11 +57,11 @@
 													<ul class="clearfix">
 														<li class="float-left">
 															<label for="min">@lang('front.From')</label>
-															<input type="text" class="min" placeholder="$99" readonly>
+															<input type="text" class="min" placeholder="10" readonly>
 														</li>
 														<li class="float-left">
 															<label for="max">@lang('front.To')</label>
-															<input type="text" class="max" placeholder="$1035" readonly>
+															<input type="text" class="max" placeholder="1000" readonly>
 														</li>
 													</ul>
 												</div>
@@ -133,49 +72,25 @@
 										<div class="course-work-level">
 											<h5>@lang('front.Target Audiance')</h5>
 											<ul class="clearfix">
-												<li>
-													<input  id ="2" value="10" name="target" type="checkbox" >
-													<label for="2">CEO</label>
-												</li>
-												<li>
-													<input  id ="3" value="2" name="target" type="checkbox" >
-													<label for="3">GM/Directors</label>
-												</li>
-												<li>
-													<input  id ="4" value="2" name="target" type="checkbox" >
-													<label for="4">Managers</label>
-												</li>
-												<li>
-													<input  id ="6" value="2" name="target" type="checkbox" >
-													<label for="6">Supervisors/Leaders</label>
-												</li>
-												<li>
-													<input  id ="5" value="2" name="target" type="checkbox" >
-													<label for="6">Staff</label>
-												</li>
+                                                @foreach($targets as $target)
+                                                <li>
+                                                    <input  id ="#{{$target->id}}#" value="{{$target->id}}" name="target" type="checkbox" >
+                                                    <label for="#{{$target->id}}#">{{$target->name}}</label>
+                                                </li>
+                                                @endforeach
 											</ul>
 										</div>
+
 
 										<div class="course-location">
 											<h5>@lang('front.Country')</h5>
 											<div class="form-group">
 										      <div>
-										        <select id="loaction" class="selectpicker show-tick form-control" data-live-search="true">
-										          <option>@lang('front.All')</option>
-										          <option>Bab Ezzouar</option>
-										          <option>Baguio</option>
-										          <option>London</option>
-										          <option>Paris</option>
-										          <option>Dubai</option>
-										          <option>New York</option>
-										          <option>Singapore</option>
-										          <option>Kuala Lumpur</option>
-										          <option>Istanbul</option>
-										          <option>Tokyo</option>
-										          <option>Seoul</option>
-										          <option>Amsterdam</option>
-										          <option>Osaka</option>
-										          <option>Vienna</option>
+										        <select id="country" class="selectpicker show-tick form-control" data-live-search="true">
+										          <option value="">@lang('front.All')</option>
+										     @foreach($countries as $country)
+										          <option value="{{$country->id}}">{{$country->name}}</option>
+                                                @endforeach
 										        </select>
 										      </div>
 										    </div>
@@ -185,27 +100,15 @@
 											<h5>@lang('front.City')</h5>
 											<div class="form-group">
 										      <div>
-										        <select id="loaction" class="selectpicker show-tick form-control" data-live-search="true">
-										          <option>@lang('front.All')</option>
-										          <option>Bab Ezzouar</option>
-										          <option>Baguio</option>
-										          <option>London</option>
-										          <option>Paris</option>
-										          <option>Dubai</option>
-										          <option>New York</option>
-										          <option>Singapore</option>
-										          <option>Kuala Lumpur</option>
-										          <option>Istanbul</option>
-										          <option>Tokyo</option>
-										          <option>Seoul</option>
-										          <option>Amsterdam</option>
-										          <option>Osaka</option>
-										          <option>Vienna</option>
+										        <select id="city" class="selectpicker show-tick form-control" data-live-search="true">
+										          <option value="">@lang('front.All')</option>
+                                                  @foreach($citiesList as $citie)
+										          <option value="{{$citie->id}}">{{$citie->name}}</option>
+                                                @endforeach
 										        </select>
 										      </div>
 										    </div>
 										</div>
-
 										<div class="button-wrapper"><input type="submit" id ="appfiltre" value="@lang('front.Apply filters')" class="p-bg-color tran3s"></div>
 									</form>
 								</div>

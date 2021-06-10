@@ -434,15 +434,15 @@ function priceRanger () {
     $( '.price-ranger #slider-range' ).slider({
       range: true,
       min: 0,
-      max: 1200,
-      values: [ 99, 1035 ],
+      max: 1000,
+      values: [ 50, 700 ],
       slide: function( event, ui ) {
-        $( '.price-ranger .ranger-min-max-block .min' ).val( '$' + ui.values[ 0 ] );
-        $( '.price-ranger .ranger-min-max-block .max' ).val( '$' + ui.values[ 1 ] );
+        $( '.price-ranger .ranger-min-max-block .min' ).val( ui.values[ 0 ] );
+        $( '.price-ranger .ranger-min-max-block .max' ).val( ui.values[ 1 ] );
       }
     });
-      $( '.price-ranger .ranger-min-max-block .min' ).val( '$' + $( '.price-ranger #slider-range' ).slider( 'values', 0 ) );
-    $( '.price-ranger .ranger-min-max-block .max' ).val( '$' + $( '.price-ranger #slider-range' ).slider( 'values', 1 ) );
+      $( '.price-ranger .ranger-min-max-block .min' ).val( $( '.price-ranger #slider-range' ).slider( 'values', 0 ) );
+    $( '.price-ranger .ranger-min-max-block .max' ).val( $( '.price-ranger #slider-range' ).slider( 'values', 1 ) );
   };
 }
 

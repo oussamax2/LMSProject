@@ -265,7 +265,7 @@ return [
     'Create session' => 'Create session',
     'Create categories' => 'Create categories',
     'Contacts' => 'Contacts',
-    '' => '',
+    'Reset Filter' => 'Reset Filter',
     '' => '',
     '' => '',
     '' => '',

@@ -21,7 +21,7 @@ return [
     'Order' => 'ترتيب الفئة',
     'Created At' => 'أنشئت في',
     'Short Description' => 'وصف قصير',
-    
+
 
     'There are no courses' => 'لا توجد دورات',
 
@@ -48,8 +48,8 @@ return [
     'Dribble Url' => 'رابط دريبل',
     'Register Company' => 'تسجيل الشريك',
     '+880 854 875 971' => '880 854 875 971+',
-   
-    
+
+
 
 
     'course' => 'دورة',
@@ -166,7 +166,7 @@ return [
 
     'Create subcategories' => 'إنشاء فئات فرعية',
     'Create Target Audiances' => 'إنشاء فئة مستهدفة',
-    'Target Audiance :' => 'الفئة المستهدفة',    
+    'Target Audiance :' => 'الفئة المستهدفة',
     'Get exel model '=>'احصل على نموذج Exel',
 
 
@@ -294,6 +294,7 @@ return [
     'Your message was sent successfully.' => 'لقد تم ارسال رسالتك بنجاح.',
     'Registeration Id' => 'معرف التسجيل',
     'Create categories' => 'إنشاء فئة',
+    'Reset Filter'=>'تصفية إعادة تعيين',
 
 
 
