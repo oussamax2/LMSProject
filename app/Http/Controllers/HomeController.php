@@ -8,6 +8,8 @@ use App\Models\registerations;
 use Illuminate\Http\Request;
 use App\Models\sessions;
 use App\Models\cities;
+use App\Models\countries;
+use App\Models\target_audiance;
 
 class HomeController extends Controller
 {
@@ -22,7 +24,7 @@ class HomeController extends Controller
         // $citiesList = cities::inRandomOrder()->orderBy('id', 'desc')->take(8)->get();
         $companies = companies::inRandomOrder()->orderBy('id', 'desc')->take(8)->get();
 
-      
+
 
         $citiesList = cities::whereHas('sessions', function ($query) {
             $query->where('deleted_at',null);
@@ -55,9 +57,9 @@ class HomeController extends Controller
         return response()->json("null page");
 
         }
-        
+
     }
-   
+
 
 
     public function pro_training($id)
@@ -76,8 +78,21 @@ class HomeController extends Controller
     }
 
     public function catg_courses()
-    {
-        return view('front.catg_courses');
+    {  $categList = categories::orderBy('id', 'desc')->get();
+        $targets = target_audiance::orderBy('id', 'desc')->get();
+        $citiesList = cities::whereHas('sessions', function ($query) {
+            $query->where('deleted_at',null);
+        })->orderBy('id', 'desc')->get();
+        $Country = countries::whereHas('sessions', function ($query) {
+
+        })->orderBy('id', 'desc')->get();
+
+        return view('front.catg_courses')->with([
+            'categList'=>$categList,
+            'targets'=>$targets,
+            'countries'=>$Country,
+            'citiesList'=>$citiesList
+            ]);;
     }
     public function singlcourse($id)
     {

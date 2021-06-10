@@ -49,7 +49,7 @@
   <main class="msger-chat">
 
    @foreach ($registerations->messaging as $messaging )
-   <div class="msg {{(auth()->user()->id == $messaging->user->id) ? 'right-msg' : 'left-msg'}}">
+   <div class="msg {{(auth()->user()->id == $messaging->user->id) ? 'left-msg' : 'right-msg'}}">
     <div
      class="msg-img"
      @if($messaging->user->hasAnyRole('company'))

@@ -10,5 +10,9 @@
     <p>{{ $user->email }}</p>
 </div>
 
-
+<!-- registerations Field -->
+<div class="form-group">
+    {!! Form::label('registerations', __('forms.Registration Number')) !!}
+    <p>{{ count($user->registerations) }}</p>
+</div>
 

@@ -1,3 +1,5 @@
+<a class="pull-right" href="{{ route('createfromcourseform', $courses->id) }}"><span class="icon icon-plus"></span>@lang('front.Create session')</a>
+
 <div class="list-field-detalssessions">
 <!-- Title Field -->
 <div class="form-group">

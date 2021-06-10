@@ -2,7 +2,7 @@
     <div class="find-coursecatg">
         <div class="opacity color-one">
             <div class="container-fluid">
-                <form action="#">
+                <div>
                     <div class="row">
                         <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12">
                             <div class="single-input">
@@ -15,9 +15,9 @@
 
                             </div>
                         </div>
-                        <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12"><button class="action-button tran3s">@lang('front.Search courses')</button></div>
+                        <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12"><button wire:click="resetsearch" id="resetsearch" class="action-button tran3s">@lang('front.Reset Filter')</button></div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
@@ -62,7 +62,7 @@
                 <ul class="clearfix">
                     <li class="float-left">
                         <i class="flaticon-clock"></i>
-                        <a  class="tran3s">{{Carbon\Carbon::parse($session->start)->locale('en')->isoFormat(' Do MMMM  YYYY ')}}</a>
+                        <a  class="tran3s">{{Carbon\Carbon::parse($session->start)->isoFormat(' Do MMMM  YYYY ')}}</a>
                     </li>
                     <li class="float-left">
                         <i class="flaticon-time"></i>
@@ -94,13 +94,34 @@
 $(document).ready(function() {
  @this.set('searchTerm', "{{request()->keywords}}");
  @this.set('category', "{{request()->cat}}");
+ @this.set('city', "{{request()->cities}}");
 });
-
+/** app filtre **/
 $( "#appfiltre" ).on( "click", function() {
     var myArray=Array();
 $("input[name=target]:checkbox:checked").each(function(){ myArray.push($(this).val()); })
-alert(myArray);
  @this.set('target', myArray);
+ @this.set('city', $("#city" ).val());
+ @this.set('country', $("#country" ).val());
+ @this.set('pricemin', $("input[name=pricemin]" ).val());
+ @this.set('pricemax', $("input[name=pricemax]" ).val());
+
+
+});
+/** chose category **/
+    $( "#subcat li" ).on( "click", function() {
+    @this.set('subcategory', this.value); // get id of clicked li
+});
+$( ".panel-title a" ).on( "click", function() {
+    //alert( $(this).attr('data-id'));
+    // alert($(this).data("id"));
+    @this.set('category', $(this).attr('data-id')); // get id of clicked li
+
+});
+$( "#resetsearch" ).on( "click", function() {
+    $('input[name="target"]').each(function() {
+			this.checked = false;
+		});
 });
 
 </script>

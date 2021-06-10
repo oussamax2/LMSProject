@@ -57,8 +57,8 @@
                         <div class="details-registrations">
                         <p>User Name: {{$user->name}}</p>
                         <p>User Email: {{$user->email}}</p>
-                        <p>Start Session: {{Carbon\Carbon::parse($registeration->sessions->start)->locale('en')->isoFormat(' Do MMMM  YYYY ')}}</p>
-                        <p>End Session: {{Carbon\Carbon::parse($registeration->sessions->end)->locale('en')->isoFormat(' Do MMMM  YYYY ')}}</p>
+                        <p>Start Session: {{Carbon\Carbon::parse($registeration->sessions->start)->isoFormat(' Do MMMM  YYYY ')}}</p>
+                        <p>End Session: {{Carbon\Carbon::parse($registeration->sessions->end)->isoFormat(' Do MMMM  YYYY ')}}</p>
                         <p>Fee: {{$registeration->sessions->fee}}</p>
                         </div>
                     </div>

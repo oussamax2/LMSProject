@@ -10,14 +10,10 @@
 <!-- Body Field -->
 <div class="form-group col-sm-12">
     {!! Form::label('body', __('forms.Body')) !!}
-    {!! Form::text('body', null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::textarea('body', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
-<!-- Published On Field -->
-<div class="form-group col-sm-12">
-    {!! Form::label('published_on', __('forms.Published On')) !!}
-    {!! Form::text('published_on', null, ['class' => 'form-control','id'=>'published_on', 'required']) !!}
-</div>
+
 
 @push('scripts')
     <script type="text/javascript">

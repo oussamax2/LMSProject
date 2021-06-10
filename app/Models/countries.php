@@ -20,7 +20,7 @@ class countries extends Model
 
 
     public $table = 'countries';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -50,7 +50,7 @@ class countries extends Model
      * @var array
      */
     public static $rules = [
-        'name' => 'required|max:10',        
+        'name' => 'required|max:10',
     ];
 
     public function states()
@@ -59,6 +59,6 @@ class countries extends Model
     }
     public function sessions()
     {
-        return $this->HasMany(sessions::class);
+        return $this->HasMany(sessions::class,'country_id');
     }
 }
