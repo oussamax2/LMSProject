@@ -100,7 +100,9 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','verified',
     Route::resource('courses', App\Http\Controllers\company\coursesController::class);
     Route::get('coursesimport', [App\Http\Controllers\company\coursesController::class,'import'])->name('courses.import');
     Route::post('importExcel', [App\Http\Controllers\company\coursesController::class, 'importExcel'])->name('importExcel');
-     Route::resource('sessions', App\Http\Controllers\company\sessionsController::class);
+    Route::resource('sessions', App\Http\Controllers\company\sessionsController::class);
+    Route::get('createfromcourseform/create/{id}', [App\Http\Controllers\company\sessionsController::class, 'createfromcourseform'])->name('createfromcourseform');
+
 });
 Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:company']], function () {
     Route::get('verifregistrequest/{id}/{response}', [App\Http\Controllers\company\registerationsController::class, 'update_registrationStatus'])->name('verifregistrequest');
@@ -159,7 +161,6 @@ Route::get('city/ajax/{id}',  [App\Http\Controllers\sessionsController::class, '
 Route::get('findsubcategWithcategID/{id}', 'App\Http\Controllers\company\coursesController@findsubcategWithcategID');
 
 Route::get('/getpartners', [App\Http\Controllers\HomeController::class, 'getpartners']);
-
 
 
 Route::resource('languages', App\Http\Controllers\languageController::class);

@@ -72,6 +72,38 @@ class sessionsController extends AppBaseController
 
     }
 
+    /**create a session from course view  */
+    public function createfromcourseform($id)
+    {
+        
+        /**get courses List and send them to selection list in blade */
+       
+        $listcourses = courses::where('company_id', auth()->user()->companies->id)->where('id', $id)->pluck('title', 'id');
+      
+        // var_dump($listcourses);
+        /**get countries List and send them to selection list in blade */
+        $listcountries = countries::pluck('name', 'id');
+
+
+        /**get states List and send them to selection list in blade */
+        $liststates = states::pluck('name', 'id');
+
+        /**get language List and send them to selection list in blade */
+        $listlanguage = language::pluck('name', 'id');
+
+        /**get cities List and send them to selection list in blade */
+        $listcities = cities::pluck('name', 'id');
+
+        //  var_dump("hello");
+        return view('sessions.create', compact(
+            'listlanguage',
+            'listcourses',
+            'listcountries',
+            'liststates',
+            'listcities'));
+
+    }
+    
     /**
      * Store a newly created sessions in storage.
      *
