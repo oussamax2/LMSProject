@@ -70,7 +70,7 @@
 										</div>
 
 										<div class="course-work-level">
-											<h5>@lang('front.Target Audiance')</h5>
+											<h5>@lang('front.Target Audiances')</h5>
 											<ul class="clearfix">
                                                 @foreach($targets as $target)
                                                 <li>

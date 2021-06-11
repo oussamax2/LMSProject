@@ -267,6 +267,7 @@ return [
     'Create categories' => 'Create categories',
     'Contacts' => 'Contacts',
     'Reset Filter' => 'Reset Filter',
+    'Category' => 'Category',
     '' => '',
     '' => '',
     '' => '',
