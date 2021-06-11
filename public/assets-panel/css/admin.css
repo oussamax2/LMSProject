@@ -497,6 +497,9 @@ border-left: 17px solid #f36824;
   background:  linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);;
   box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
 }
+.msger .msg-bubble{
+  background: #ebebeb;
+}
 .msger .msger-header-title i.icon{
   color: #f36824;
   font-size: 30px;
@@ -561,6 +564,10 @@ border-left: 17px solid #f36824;
 .msg-info-name {
   margin-right: 10px;
   font-weight: bold;
+}
+.select2-container--default .select2-selection--multiple {
+  border-radius: 0px !important;
+  height: 40px;
 }
 .msg-info-time {
   font-size: 0.85em;
