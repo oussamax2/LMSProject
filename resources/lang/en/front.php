@@ -145,6 +145,8 @@ return [
     'Email' => 'Email',
     'Facebook Url' => 'Facebook Url',
     'Twitter Url' => 'Twitter Url',
+    '401 Unauthorized' => '401 Unauthorized',
+    'Required was not found' => 'Required was not found',
     'see profile' => 'see profile',
     'Register Now' => 'Register Now',
     'Your LastName' => 'Your LastName',
