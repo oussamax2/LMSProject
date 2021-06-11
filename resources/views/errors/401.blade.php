@@ -1,1 +1,24 @@
-401
+@extends('layouts.front.app')
+
+@section('og')
+    <meta property="og:type" content="home"/>
+    <meta property="og:title" content="{{ config('app.name') }}"/>
+    <meta property="og:description" content="{{ config('app.name') }}"/>
+@endsection
+
+@section('content')
+<div class="theme-modal-box loginmodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h3 class="title-error-lms">401 !!</h3>
+                <p class="desc-error-lms">@lang('front.401 Unauthorized')</p>
+                <div class="img-error">
+                <img class="img-error-lms" src="{{ asset('images/errors/2.png') }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@include('layouts.front.footer')
+@endsection

@@ -565,6 +565,9 @@ border-left: 17px solid #f36824;
   margin-right: 10px;
   font-weight: bold;
 }
+textarea.form-control {
+  height: auto !important;
+}
 .select2-container--default .select2-selection--multiple {
   border-radius: 0px !important;
   height: 40px;

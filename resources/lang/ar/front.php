@@ -280,6 +280,8 @@ return [
     'Login with Site Account' => 'تسجيل الدخول بحساب الموقع',
 
     'Register Now' => 'سجل الان',
+    '401 Unauthorized' => '401 غير مصرح به',
+    'Required was not found' => 'لم يتم إيجاد المطلوب',
     'Create  your account and browse thousand of courses!!' => 'قم بإنشاء حسابك وتصفح آلاف الدورات !!',
     'Currently Use' => 'تستخدم حاليا',
     'Total Students' => 'مجموع الطلاب',
