@@ -115,10 +115,11 @@
         {{-- Modal content --}}
         <div class="modal-content">
             <div class="modal-body">
-
-                @livewireStyles
-                @livewire('login')
-                @livewireScripts
+            @if(!isset($exception))
+            @livewireStyles
+            @livewire('login')
+            @livewireScripts
+            @endif
                 <div><a href="{{ route ('registeruser') }}" class="p-color tran3s">@lang('auth.Not an account?? Sign Up')</a></div>
             </div>
         </div>

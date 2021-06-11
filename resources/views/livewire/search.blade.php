@@ -28,8 +28,8 @@
 
     <div class="course-style-filter clearfix">
         <ul class="float-left clearfix">
-            <li><a href="#" class="tran3s active">@lang('front.All')</a></li>
-            <li><a href="#" class="tran3s">@lang('front.free')</a></li>
+            <li><a href="#" wire:click="resetsearch" class="tran3s active">@lang('front.All')</a></li>
+            <li><a href="#" wire:click="freesearch" class="tran3s">@lang('front.free')</a></li>
         </ul>
     </div>
 
@@ -103,6 +103,7 @@ $("input[name=target]:checkbox:checked").each(function(){ myArray.push($(this).v
  @this.set('target', myArray);
  @this.set('city', $("#city" ).val());
  @this.set('country', $("#country" ).val());
+ @this.set('price',1);
  @this.set('pricemin', $("input[name=pricemin]" ).val());
  @this.set('pricemax', $("input[name=pricemax]" ).val());
 

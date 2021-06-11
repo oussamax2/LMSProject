@@ -65,24 +65,24 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','verified','rol
     Route::resource('countries', App\Http\Controllers\countriesController::class);
     Route::resource('states', App\Http\Controllers\statesController::class);
     Route::resource('cities', App\Http\Controllers\citiesController::class);
-    Route::resource('adminregisterations', App\Http\Controllers\registerationsController::class);
+    Route::resource('adminregisterations', App\Http\Controllers\registerationsController::class)->except(['create', 'store']);
 
     Route::resource('tags', App\Http\Controllers\tagController::class);
     Route::resource('admincourses', App\Http\Controllers\coursesController::class);
     Route::resource('courseTags', App\Http\Controllers\course_tagController::class);
     Route::resource('categories', App\Http\Controllers\categoriesController::class);
     Route::resource('adminsessions', App\Http\Controllers\sessionsController::class);
-    Route::resource('roles', App\Http\Controllers\RoleController::class);
+    Route::resource('roles', App\Http\Controllers\RoleController::class)->except(['edit', 'update', 'destroy']);
     Route::resource('subcategories', App\Http\Controllers\subcategorieController::class);
-    Route::resource('companies', App\Http\Controllers\companiesController::class);
-    Route::resource('contacts', App\Http\Controllers\ContactController::class);
+    Route::resource('companies', App\Http\Controllers\companiesController::class)->except(['create', 'store']);
+    Route::resource('contacts', App\Http\Controllers\ContactController::class)->except(['edit', 'update', 'create', 'store']);
 
     Route::get('verifcompany/{id}/{response}', [App\Http\Controllers\companiesController::class, 'update_companyreqst'])->name('verifcompany');
 
     Route::resource('targetAudiances', App\Http\Controllers\target_audianceController::class);
 
     Route::resource('messagings', App\Http\Controllers\messagingController::class);
-    Route::resource('users', App\Http\Controllers\UserController::class);
+    Route::resource('users', App\Http\Controllers\UserController::class)->except(['create', 'store']);
 });
 
 
@@ -96,7 +96,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:admin
     Route::get('/', [App\Http\Controllers\BackController::class, 'company'])->name('company');
 });
 Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','verified','VerifiedCompany','role:admin|company']], function () {
-    Route::resource('registerations', App\Http\Controllers\company\registerationsController::class);
+    Route::resource('registerations', App\Http\Controllers\company\registerationsController::class)->except(['create', 'store']);
     Route::resource('courses', App\Http\Controllers\company\coursesController::class);
     Route::get('coursesimport', [App\Http\Controllers\company\coursesController::class,'import'])->name('courses.import');
     Route::post('importExcel', [App\Http\Controllers\company\coursesController::class, 'importExcel'])->name('importExcel');
@@ -117,7 +117,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:compa
 //Route::group(['prefix' => 'dashboarduser','middleware' => ['web', 'auth','verified','role:user']], function () {
 Route::group(['prefix' => 'dashboarduser','middleware' => ['web', 'auth','verified']], function () {
     Route::get('/', [App\Http\Controllers\BackController::class, 'user'])->name('user');
-    Route::resource('registerationsuser', App\Http\Controllers\registerationsController::class);
+    Route::resource('registerationsuser', App\Http\Controllers\registerationsController::class)->except(['create', 'store']);
 });
 
 

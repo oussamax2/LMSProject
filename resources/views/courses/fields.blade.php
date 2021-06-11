@@ -78,7 +78,7 @@
 
 	<div class="form-group  col-sm-12 {{ ($errors->has('roll'))?'has-error':'' }}">
 	    <label for="roll">@lang('front.Category')<span class="required">*</span></label>
-	    <select name="category_id" class="form-control" id="category_id">
+	    <select name="category_id" class="form-control select2" id="category_id">
 
 		@foreach ($listcateg as $listcateg)
 
@@ -99,7 +99,7 @@
 
 	<div class="form-group  col-sm-12 {{ ($errors->has('name'))?'has-error':'' }}">
     <label for="roll">@lang('front.Sub Categories')</label>
-    <select name="subcateg_id" class="form-control" id="subcateg_id">
+    <select name="subcateg_id" class="form-control select2" id="subcateg_id">
       <option value="">{{isset($courses->subcategorie['name']) ?$courses->subcategorie['name']: null}}</option>
     </select>
   </div>

@@ -5,6 +5,7 @@ namespace App\DataTables;
 use App\Models\registerations;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
+use Carbon\Carbon;
 
 class registerationsDataTable extends DataTable
 {
@@ -19,7 +20,12 @@ class registerationsDataTable extends DataTable
         $dataTable = new EloquentDataTable($query);
         $user = auth()->user();
         if($user->hasRole('user'))
-        return $dataTable->addColumn('action', 'registerationsuser.datatables_actions');
+        return $dataTable->addColumn('action', 'registerationsuser.datatables_actions')
+        ->editColumn('sessions.start', function($data) {
+       
+            return Carbon::parse($data->sessions->start)->isoFormat(' Do MMMM  YYYY ');
+        
+        });
         else
         return $dataTable->addColumn('action', 'registerations.datatables_actions');
 
