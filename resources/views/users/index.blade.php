@@ -13,7 +13,7 @@
                          <div class="card-header">
                              <i class="icon icon-user"></i>
                              @lang('front.Users')
-                             <a class="pull-right" href="{{ route('users.create') }}"><span class="icon icon-plus"></span>@lang('front.Create Users')</a>
+                             {{-- <a class="pull-right" href="{{ route('users.create') }}"><span class="icon icon-plus"></span>@lang('front.Create Users')</a> --}}
                          </div>
                          <div class="card-body">
                              @include('users.table')
