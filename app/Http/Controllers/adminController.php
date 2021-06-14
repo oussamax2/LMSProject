@@ -56,7 +56,44 @@ class adminController extends AppBaseController
 
         return view('admin.show')->with('user', $user);
     }
+    
+    
 
+        /**
+     * Show the form for creating a new Role.
+     *
+     * @return Response
+     */
+    public function createadmin()
+    {
+        return view('admin.create');
+    }
+
+    /**
+     * Store a newly created Role in storage.
+     *
+     * @param CreateUserRequest $request
+     *
+     * @return Response
+     */
+    public function storeadmin(CreateUserRequest $request)
+    {
+        $input = $request->all();
+
+       
+
+        $user = $this->userRepository->create($input);
+        if ($request->has('password') && $request->input('password') != '') {
+
+            $this->validate($request, ['password' => 'string|min:6']);
+            $user->password = bcrypt($request->password);
+        }
+        $user->addRole(['admin']);
+        $user->save();
+        Flash::success(__('admin.saved successfully.'));
+
+        return redirect(route('indexadmins'));
+    }
     /**
      * Remove the specified User from storage.
      *

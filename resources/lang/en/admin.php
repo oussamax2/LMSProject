@@ -3,6 +3,7 @@
 return [
 
     'Company saved successfully.'      => 'Company saved successfully.',
+    'saved successfully.'      => 'saved successfully.',    
     'Company not found'      => 'Company not found',
     'updated successfully.'      => 'updated successfully.',
     'deleted successfully.'      => 'deleted successfully.',
@@ -13,6 +14,6 @@ return [
     'Rejected'      => 'Rejected',    
     'Admins'      => 'Admins',
     'Details'      => 'Details',    
-    ''      => '',
+    'Create admin'      => 'Create admin',
     ''      => '',        
 ];

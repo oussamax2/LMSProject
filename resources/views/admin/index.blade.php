@@ -13,6 +13,8 @@
                          <div class="card-header">
                              <span class="icon icon-graduation"></span>
                              @lang('admin.Admins')
+                             <a class="pull-right" href="{{ route('createadmin') }}"><span class="icon icon-plus"></span>@lang('admin.Create admin')</a>
+
                             
                          </div>
                          <div class="card-body">
