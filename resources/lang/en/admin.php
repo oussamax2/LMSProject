@@ -14,6 +14,6 @@ return [
     'Rejected'      => 'Rejected',    
     'Admins'      => 'Admins',
     'Details'      => 'Details',    
-    ''      => '',
+    'Create admin'      => 'Create admin',
     ''      => '',        
 ];
