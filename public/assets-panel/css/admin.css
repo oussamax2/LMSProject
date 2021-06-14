@@ -295,9 +295,6 @@ margin:0;
 .info-company-lms{
 padding:0;
 }
-table tr td{
-  text-align: center;
-}
 .btn-ghost-success {
   font-size: 20px;
 }
@@ -722,7 +719,7 @@ textarea.form-control {
   width: 10px;
   }
   ::-webkit-scrollbar-thumb {
-  background:rgb(121, 120, 120); 
+  background:#a8a8a8; 
   border-radius: 10px;
   }
   /*scroll style*/
@@ -732,7 +729,96 @@ textarea.form-control {
     top: 0;
     left: 30% !important;
     margin-left: -77.5px;
-}
+}}
+
+  /*analytic design dashboard*/
+  .analytic-lms .row{
+    margin-top: 40px;
+  }
+  .analytic-lms .card-body span.icon{
+    font-size: 40px;
+    color: #36d64c;
+    background: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 2px 3px 10px rgb(0 0 0 / 16%);
+  }
+  @media(max-width:992px){
+    .analytic-lms .card-body h3 {
+      font-size: 16px;
+  }
+  }
+  @media(min-width:992px) and (max-width:1200px){
+    .analytic-lms .card{
+      min-height: 198px;
+  }
+  }
+
+  .analytic-lms .card-body h3{
+    font-size: 18px;
+    color: #072640;
+    margin-top: 10px;
+    text-transform: uppercase;
+  }
+  .analytic-lms .card-body p{
+    font-size: 25px;
+    color: #f36824;
+    font-weight: bold;
+  }
+  .analytic-lms .card-body{
+    text-align: center;
+  }
+  .tableanalytic-lms .trback{
+  background: #fff;
+  }
+    .tableanalytic-lms .trback td img{
+      border-radius: 50%;
+      }
+    .tableanalytic-lms .thead-light th{
+      color: #768192;
+      background-color: #d8dbe0;
+      border-color: #d8dbe0;
+      font-size: 19px;
+       }
+       .tableanalytic-lms .titleuser{
+         font-size: 16px;
+         color:#222;
+         }
+         .tableanalytic-lms div.small{
+          font-size: 15px;
+          }
+          @media(max-width:700px){
+            .responsive-table {
+              margin:0px auto;
+              width:500px;
+            border: 1px solid #efebeb;
+            
+            }
+            
+            .responsive-table th {
+              display: none;
+            }
+            
+            .responsive-table td {
+              display: block;
+            border-top: 1px solid #ddd;
+            }
+            .responsive-table td:first-child{border:none;}
+            .responsive-table td:first-child {
+              padding-top: .5em;
+            }
+            .responsive-table td:last-child {
+              padding-bottom: .5em;
+            }
+            .responsive-table td:before {
+              content: attr(data-th) ": ";
+              display:block;
+            font-weight:bold;
+            }
+            }
+  /*analytic design dashboard*/
+
+
 
 
 
