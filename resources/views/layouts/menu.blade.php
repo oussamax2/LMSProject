@@ -53,13 +53,19 @@
 
 <li class="nav-item" style="background-color: #143455; height: 43px;padding: 0px 25px 10px 0px;"><br/>
     <span class="icon menu-item-dsh">@lang('front.User')</span><br/>
-
+    <li class="nav-item {{ Request::is('users*') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('indexadmins') }}">
+            <span class="icon icon-people"></span>
+            <span class="menu-item-dsh">@lang('admin.Admins')</span>
+        </a>
+    </li>
     <li class="nav-item {{ Request::is('users*') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('users.index') }}">
             <span class="icon icon-people"></span>
             <span class="menu-item-dsh">@lang('front.Users')</span>
         </a>
     </li>
+    
     <li class="nav-item {{ Request::is('companies*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('companies.index') }}">
         <span class="icon icon-organization"></span>

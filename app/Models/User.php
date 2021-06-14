@@ -94,4 +94,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(companies::class,'user_id');
 
     }
+    // this is the recommended way for declaring event handlers
+    public static function boot() {
+        parent::boot();
+        static::deleting(function($user) { // before delete() method call this
+            $user->roles()->detach();
+       });
+    }
 }
