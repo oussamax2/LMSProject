@@ -57,7 +57,7 @@ class UserProfileController extends Controller
         $user->companies->update();
         
         if ($request->has('picture')){
-
+            $this->validate($request, ['picture' => 'file|max:2048']);
             /**save image in intended folder */
             $image = $this->saveprofilepicture($request->file('picture'));
             /**save image in database column */

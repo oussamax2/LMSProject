@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Flash;
 use Response;
 use App\Models\registerations;
+use Illuminate\Http\UploadedFile;
+
 
 class messagingController extends AppBaseController
 {
@@ -155,13 +157,24 @@ class messagingController extends AppBaseController
         return redirect(route('messagings.index'));
     }
 /*** messaging registration */
-
-    public function sendmsg(CreatemessagingRequest $request)
+        public function savefile(UploadedFile $file) : string
+        {
+            return $file->store('files', ['disk' => 'public']);
+        }
+        
+    public function sendmsg(Request $request)
     {
         $registerations = registerations::find($request->idr);
         $input['user_id'] = auth()->user()->id;
         $input['registeration_id'] = $request->idr ;
         $input['message'] = $request->message;
+        if ($request->has('file_send')){
+            $this->validate($request, ['file_send' => 'file|max:2048']);
+            /**save image in intended folder */
+            $file = $this->savefile($request->file('file_send'));
+            $input['message'] = $request->message .'<br><a style="color: #f36824;" href='.asset("storage/".$file."").'>'.$request->file_send->getClientOriginalName().'<a>';
+        }
+     
         if($registerations->my())
         $messaging = $this->messagingRepository->create($input);
 

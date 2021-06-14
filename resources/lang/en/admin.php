@@ -11,8 +11,8 @@ return [
     'rejected successfully.'      => 'rejected successfully.',
     'Accepted'      => 'Accepted',
     'Rejected'      => 'Rejected',    
-    ''      => '',
-    ''      => '',    
+    'Admins'      => 'Admins',
+    'Details'      => 'Details',    
     ''      => '',
     ''      => '',        
 ];

@@ -83,6 +83,9 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','verified','rol
 
     Route::resource('messagings', App\Http\Controllers\messagingController::class);
     Route::resource('users', App\Http\Controllers\UserController::class)->except(['create', 'store']);
+    Route::get('indexadmins', [App\Http\Controllers\adminController::class, 'indexadmins'])->name('indexadmins');
+    Route::get('showadmins/{id}', [App\Http\Controllers\adminController::class, 'showadmins'])->name('showadmins');    
+    Route::delete('destroyadmins/{id}', [App\Http\Controllers\adminController::class, 'destroyadmins'])->name('destroyadmins');    
 });
 
 

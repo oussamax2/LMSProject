@@ -1,0 +1,29 @@
+@extends('layouts.app')
+
+@section('content')
+     <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{{ route('indexadmins') }}">@lang('admin.Admins')</a>
+            </li>
+            <li class="breadcrumb-item active">@lang('admin.Details')</li>
+     </ol>
+     <div class="container-fluid">
+          <div class="animated fadeIn">
+                 @include('coreui-templates::common.errors')
+                 <div class="row">
+                     <div class="col-lg-10 col-lg-offset-10 mx-auto">
+                         <div class="card">
+                             <div class="card-header">
+                             <i class="icon icon-info"></i>
+                                 <strong>@lang('admin.Details')</strong>
+                                  <a href="{{ route('indexadmins') }}" class="btn btn-light"><span class="icon icon-arrow-right-circle"></span>@lang('front.Back')</a>
+                             </div>
+                             <div class="card-body">
+                                 @include('admin.show_fields')
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+          </div>
+    </div>
+@endsection
