@@ -4,7 +4,7 @@
 				<div class="container">
 					<div class="theme-title">
 						<h2>@lang('front.Latest added')</h2>
-						<a href="course-grid.html" class="tran3s">@lang('front.See All Course')</a>
+						<a href="{{ route ('course') }}" class="tran3s">@lang('front.See All Course')</a>
 					</div>
 
 					<div class="row">
@@ -24,7 +24,7 @@
 									<div class="name clearfix">
 										<h6 class="float-left">{{$sessionList->companies->user->name}}</h6>
 										@if($sessionList->fee == 0)
-                                           <strong class="p-pg-color float-right">FREE</strong>
+                                           <span class="p-bg-color float-right">@lang('front.free')</span>
 										@else
 										   <strong class="s-color float-right">${{$sessionList->fee}}</strong>
 										@endif
