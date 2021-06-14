@@ -612,6 +612,9 @@ border-right: 17px solid #f36824;
   margin-left: 10px;
   font-weight: bold;
 }
+textarea.form-control {
+  height: auto !important;
+}
 .msg-info-time {
   font-size: 0.85em;
 }
