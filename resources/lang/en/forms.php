@@ -54,6 +54,8 @@ return [
     'Email'      => 'Email',
     'Id' => 'Id', 
     'Session Id' => 'Session Id',
+    'Location'      => 'Location',
+    'Price'      => 'Price',
     'message' => 'message',
     'Firstname'      => 'Firstname',
     'Continent'      => 'Continent',
