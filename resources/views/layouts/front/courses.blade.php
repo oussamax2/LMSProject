@@ -3,10 +3,11 @@
 				<div class="container">
                     <div class="theme-title">
                     <h3>@lang('front.Courses by') {{ $companies->lastname }}</h3>
-                    <a href="course-grid.html" class="profcourse">@lang('front.See All Course')</a>
+                    <a href="{{ route ('course') }}" class="profcourse">@lang('front.See All Course')</a>
                     </div>
 					<div class="row">
-					@if(isset($sessList))
+						
+					@if($countsessions>0)
 						<div class="teachers-course-slider">
 						@foreach ($companies->courses as $coursesList)
 						@foreach ($coursesList->sessions as $sessList)
@@ -23,7 +24,12 @@
 										</div>
 										<div class="name clearfix">
 											<h6 class="float-left">{{ $companies->user->name }}</h6>
-											<strong class="s-color float-right">$ {{ $sessList->fee }}</strong>
+											
+											@if($sessList->fee == 0)
+                                           <span class="p-bg-color float-right">@lang('front.free')</span>
+										@else
+										   <strong class="s-color float-right">${{$sessList->fee}}</strong>
+										@endif
 										</div>
 										<h5><a href="{{ url('/singlsession',$sessList->id) }}" class="tran3s">{{ $sessList->courses->title }}</a></h5>
 										<ul class="clearfix">
@@ -33,7 +39,7 @@
 											</li>
 											<li class="float-right">
 												<i class="flaticon-heart"></i>
-												<a href="#" class="tran3s">{{ $sessList->countries->name }},{{ $sessList->states->name }}</a>
+												<a href="#" class="tran3s">{{ $sessList->countries->name }},{{substr_replace($sessList->states->name, " ...", 3)}}</a>
 											</li>
 										</ul>
 									</div>

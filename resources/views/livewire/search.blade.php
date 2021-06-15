@@ -51,7 +51,7 @@
 
                     </div>
                     @if($session->fee == 0)
-                    <strong class="p-pg-color float-right">FREE</strong>
+                    <span class="p-bg-color float-right">@lang('front.free')</span>
                  @else
                     <strong class="s-color float-right">$ {{$session->fee}}</strong>
                  @endif

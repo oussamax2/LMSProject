@@ -72,11 +72,12 @@
   </div>
    @endforeach
   </main>
-  <form class="msger-inputarea" action="{{ route('sendmsg')}}" method="POST">
+  <form class="msger-inputarea" action="{{ route('sendmsg')}}" method="POST" enctype="multipart/form-data">
 	{{ csrf_field() }}
     <input type="text" class="msger-input" name="message"placeholder=" @lang('front.Enter your message...')" required>
     <input type="text" hidden name="idr" value="{{$registerations->id}}">
-    <input class="uploader__input" id="file-upload" type="file" name="fileUpload" accept="image/*" />
+    <div id="file-upload-filename"></div>
+    <input class="uploader__input" id="file-upload" type="file" name="file_send" accept="image/*,.doc,.docx,.pdf" />
     <label class="uploader__label" for="file-upload">
       <div class="uploader__wrapper">
         <img class="uploader__file hidden" src="#" alt="">
@@ -89,6 +90,18 @@
     <button type="submit" class="msger-send-btn"> @lang('front.Send')</button>
   </form>
 </section>
+@push('scripts')
+<script>
+var input = document.getElementById( 'file-upload' );
+var infoArea = document.getElementById( 'file-upload-filename' );
+input.addEventListener( 'change', showFileName );
+function showFileName( event ) { 
+var input = event.srcElement; 
+var fileName = input.files[0].name;
+  infoArea.textContent =  fileName;
+}
+</script>
+@endpush
 <!-- messagerie-->
 
 

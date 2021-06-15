@@ -27,7 +27,11 @@ class registerationsDataTable extends DataTable
         
         });
         else
-        return $dataTable->addColumn('action', 'registerations.datatables_actions');
+        return $dataTable->addColumn('action', 'registerations.datatables_actions') ->editColumn('sessions.start', function($data) {
+       
+            return Carbon::parse($data->sessions->start)->isoFormat(' Do MMMM  YYYY ');
+        
+        });
 
 
 
