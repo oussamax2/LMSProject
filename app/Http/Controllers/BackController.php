@@ -1,6 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\companies;
+use App\Models\courses;
+use App\Models\registerations;
+use App\Models\sessions;
 use Illuminate\Http\Request;
 
 class BackController extends Controller
@@ -21,7 +26,17 @@ class BackController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function admin()
-    { //auth()->user()->addRole(['company','admin','user']);
+    { 
+        $countcompanies = companies::count();
+        $countcourses = courses::count();
+        $countsessions = sessions::count();        
+        $countregisterations = registerations::count();
+        
+        // var_dump($countcompanies);
+        // var_dump($countcourses);
+        // var_dump($countsessions);
+        // var_dump($countregisterations);
+        
         return view('home');
     }
 

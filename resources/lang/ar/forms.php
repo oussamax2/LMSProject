@@ -98,7 +98,7 @@ return [
     'language list'      => 'قائمة اللغات',
     'Session endDate'      => 'تاريخ إنتهاء الدورة',
     'Continent Name'      => 'القارة',
-    ''      => '',
+    'Password'      => 'كلمة المرور',
     ''      => '',
     ''      => '',
 ];
