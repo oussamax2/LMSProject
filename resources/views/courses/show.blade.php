@@ -17,6 +17,7 @@
                                  <i class="icon icon-info"></i>
                                  <strong>@lang('front.Details')</strong>
                                   <a href="{{ route('courses.index') }}" class="btn btn-light"><span class="icon icon-arrow-right-circle"></span>@lang('front.Back')</a>
+                                  <a class="pull-right" href="{{ route('createfromcourseform', $courses->id) }}"><span class="icon icon-plus"></span>@lang('front.Create session')</a>
                              </div>
                              <div class="card-body">
                                  @include('courses.show_fields')

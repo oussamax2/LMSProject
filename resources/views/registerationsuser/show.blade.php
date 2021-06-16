@@ -24,19 +24,19 @@
                                         <div class="step"> <span>@lang('front.Confirmed')</span> </div>
                                    @elseif($registerations->status == 1)
                                         <div class="step"> <span>@lang('front.New')</span> </div>
-                                        <div class="step current"> <span>@lang('front.Rejected')</span> </div>
+                                        <div class="step reject"> <span>@lang('front.Rejected')</span> </div>
                                         <div class="step"> <span>@lang('front.pending-payment')</span> </div>
                                         <div class="step"> <span>@lang('front.Confirmed')</span> </div>
                                    @elseif($registerations->status == 2)
                                         <div class="step"> <span>New</span> </div>
                                         <div class="step"> <span>Rejected</span> </div>
-                                        <div class="step current"> <span>pending-payment</span> </div>
+                                        <div class="step pending"> <span>pending-payment</span> </div>
                                         <div class="step"> <span>Confirmed</span> </div>
                                    @else
                                         <div class="step"> <span>@lang('front.New')</span> </div>
                                         <div class="step"> <span>@lang('front.Rejected')</span> </div>
                                         <div class="step"> <span>@lang('front.pending-payment')</span> </div>
-                                        <div class="step current"> <span>@lang('front.Confirmed')</span> </div>
+                                        <div class="step confirm"> <span>@lang('front.Confirmed')</span> </div>
                                    @endif
                                 </div>
                             </div>

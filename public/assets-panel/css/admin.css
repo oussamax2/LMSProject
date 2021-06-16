@@ -301,6 +301,10 @@ padding:0;
 .btn-ghost-info {
   font-size: 20px;
 }
+.btn-ghost-pending {
+  font-size: 20px;
+  color:#ffc107;
+}
 .btn-ghost-danger {
   font-size: 20px;
 }
@@ -778,14 +782,14 @@ textarea.form-control {
   }
   @media(min-width:992px) and (max-width:1200px){
     .analytic-lms .card{
-      min-height: 198px;
+      min-height: 210px;
   }
   }
 
   .analytic-lms .card-body h3{
     font-size: 18px;
     color: #072640;
-    margin-top: 10px;
+    margin-top: 20px;
     text-transform: uppercase;
   }
   .analytic-lms .card-body p{
