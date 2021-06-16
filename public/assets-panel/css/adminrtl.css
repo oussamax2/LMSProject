@@ -531,7 +531,7 @@ border-right: 17px solid #f36824;
   background-color: #d22323;
   }
   .arrow-steps .step.reject:after {
-  border-left: 17px solid #d22323;	
+  border-right: 17px solid #d22323;	
   }
 /* style rejected */
 /* style confirmed */
@@ -540,7 +540,7 @@ border-right: 17px solid #f36824;
   background-color: #36d64c;
   }
   .arrow-steps .step.confirm:after {
-  border-left: 17px solid #36d64c;	
+  border-right: 17px solid #36d64c;	
   }
 /* style confirmed */
 /* style pending */
@@ -549,9 +549,17 @@ border-right: 17px solid #f36824;
   background-color: #ffc107;
   }
   .arrow-steps .step.pending:after {
-  border-left: 17px solid #ffc107;	
+  border-right: 17px solid #ffc107;	
   }
 /* style pending */
+.card-details .card-header a.buttonecceptuser{
+  background: #36d64c;
+  border:none;
+}
+.card-details .card-header a.buttonrejectuser{
+  background: #d22323;
+  border:none;
+}
 /* timeline style details register */
 /*messagerie*/
 .msger {
@@ -838,13 +846,13 @@ textarea.form-control {
   }
   @media(min-width:992px) and (max-width:1200px){
     .analytic-lms .card{
-      min-height: 198px;
+      min-height: 210px;
   }
   }
   .analytic-lms .card-body h3{
     font-size: 18px;
     color: #072640;
-    margin-top: 10px;
+    margin-top: 20px;
     text-transform: uppercase;
   }
   .analytic-lms .card-body p{

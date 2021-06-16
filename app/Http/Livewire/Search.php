@@ -20,6 +20,8 @@ class Search extends Component
     public $pricemin;
     public $pricemax;
     public $price;
+    public $all;
+    public $free;
     public function render()
     {
         $query = sessions::with(['courses','countries','cities','states']);
@@ -86,9 +88,12 @@ class Search extends Component
         $this->pricemin=0;
         $this->pricemax=0;
         $this->price=0;
+        $this->all=1;
+        $this->free=0;
     }
     public function freesearch()
-    {
+    {   $this->free=1;
+        $this->all=0;
         $this->price=1;
         $this->pricemin=0;
         $this->pricemax=0;
