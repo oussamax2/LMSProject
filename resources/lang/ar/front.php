@@ -282,6 +282,7 @@ return [
     'Register Now' => 'سجل الان',
     'Picture' => 'صورة',
     'Activity' => 'النشاط',
+    'Dashboard' => 'لوحة القيادة',
     'registered companies' => 'الشركاء المسجلين',
     'Registered Users' => 'المستخدمون المسجلون',
     '401 Unauthorized' => '401 غير مصرح به',
