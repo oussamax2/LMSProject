@@ -1,117 +1,62 @@
-
+<h3>@lang('front.registrations list in sessions')</h3>
 <div class="container-fluid">
 <table class="table responsive-table tableanalytic-lms">
   <thead class="thead-light">
     <tr class="trback">
       <th scope="col"><span class="icon icon-people"></span>@lang('front.Picture')</th>
+      <th scope="col">@lang('front.Company')</th>
       <th scope="col">@lang('front.User')</th>
+      <th scope="col">@lang('front.Course Title')</th>
       <th scope="col">@lang('front.Country')</th>
-      <th scope="col">@lang('front.Activity')</th>
+      <th scope="col">@lang('front.Register date')</th>
     </tr>
   </thead>
   <tbody>
-    <tr class="trback">
-      <td scope="row" data-th="@lang('front.Picture')">
-          <img src="{{ asset('images/avatars/2.jpg')}}" alt="">
-      </td>
-      <td data-th="@lang('front.User')">
-          <div class="titleuser">ines omri</div>
-          <div class="small text-muted">
-              <span>New</span>
-              | Registered: Jan 1, 2015
-          </div>
-      </td>
-      <td data-th="@lang('front.Country')">Otto</td>
-      <td data-th="@lang('front.Activity')">
-          <div class="small text-muted">Last login</div>
-          <strong>10 sec ago</strong>
-      </td>
-    </tr>
-    <tr class="trback">
-      <td scope="row" data-th="@lang('front.Picture')">
-      <img src="{{ asset('images/avatars/3.jpg')}}" alt="">
-      </td>
-      <td data-th="@lang('front.User')">
-        <div class="titleuser">ines omri</div>
-        <div class="small text-muted">
-            <span>New</span>
-            | Registered: Jan 1, 2015
-        </div>
-      </td>
-      <td data-th="@lang('front.Country')">Thornton</td>
-      <td data-th="@lang('front.Activity')">
-      <div class="small text-muted">Last login</div>
-          <strong>10 sec ago</strong>
-      </td>
-    </tr>
-    <tr class="trback">
-      <td scope="row" data-th="@lang('front.Picture')">
-      <img src="{{ asset('images/avatars/2.jpg')}}" alt="">
-      </td>
-      <td data-th="@lang('front.User')">
-        <div class="titleuser">ines omri</div>
-        <div class="small text-muted">
-            <span>New</span>
-            | Registered: Jan 1, 2015
-        </div>
-      </td>
-      <td data-th="@lang('front.Country')">the Bird</td>
-      <td data-th="@lang('front.Activity')">
-      <div class="small text-muted">Last login</div>
-          <strong>10 sec ago</strong>
-      </td>
-    </tr>
-    <tr class="trback">
-      <td scope="row" data-th="@lang('front.Picture')">
-      <img src="{{ asset('images/avatars/1.jpg')}}" alt="">
-      </td>
-      <td data-th="@lang('front.User')">
-        <div class="titleuser">ines omri</div>
-        <div class="small text-muted">
-            <span>New</span>
-            | Registered: Jan 1, 2015
-        </div>
-      </td>
-      <td data-th="@lang('front.Country')">the Bird</td>
-      <td data-th="@lang('front.Activity')">
-      <div class="small text-muted">Last login</div>
-          <strong>10 sec ago</strong>
-      </td>
-    </tr>
-    <tr class="trback">
-      <td scope="row" data-th="@lang('front.Picture')">
-      <img src="{{ asset('images/avatars/2.jpg')}}" alt="">
-      </td>
-      <td data-th="@lang('front.User')">
-        <div class="titleuser">ines omri</div>
-        <div class="small text-muted">
-            <span>New</span>
-            | Registered: Jan 1, 2015
-        </div>
-      </td>
-      <td data-th="@lang('front.Country')">the Bird</td>
-      <td data-th="@lang('front.Activity')">
-      <div class="small text-muted">Last login</div>
-          <strong>10 sec ago</strong>
-      </td>
-    </tr>
-    <tr class="trback">
-      <td scope="row" data-th="@lang('front.Picture')">
-      <img src="{{ asset('images/avatars/3.jpg')}}" alt="">
-      </td>
-      <td data-th="@lang('front.User')">
-        <div class="titleuser">ines omri</div>
-        <div class="small text-muted">
-            <span>New</span>
-            | Registered: Jan 1, 2015
-        </div>
-      </td>
-      <td data-th="@lang('front.Country')">the Bird</td>
-      <td data-th="@lang('front.Activity')">
-      <div class="small text-muted">Last login</div>
-          <strong>10 sec ago</strong>
-      </td>
-    </tr>
+  @foreach($rgstrdUsers as $rgstrdUsers)
+   
+      <tr class="trback">
+          @if(isset($rgstrdUsers->sessions->courses->companies['picture']) && $rgstrdUsers->sessions->courses->companies['picture'] != NULL)
+            <!-- Picture Field -->
+            <td scope="row" data-th="@lang('front.Picture')">
+              <img style="width: 80px;height: 80px;" src="{{ asset("storage/".$rgstrdUsers->sessions->courses->companies['picture']) }}" alt="">
+            </td>
+          @else
+
+            <!-- Picture Field -->
+            <td scope="row" data-th="@lang('front.Picture')">
+                    <img src="{{ asset("images/defaultuser.png") }}" />
+                
+            </td>
+
+          @endif
+
+        <td data-th="@lang('front.company')">
+            <div class="titleuser">{{$rgstrdUsers->sessions->courses->companies->user['name']}}</div>
+            
+        </td>
+        <td data-th="@lang('front.User')">
+            <div class="titleuser">{{$rgstrdUsers->user['name']}}</div>
+            <div class="small text-muted">
+                Registered: {{Carbon\Carbon::parse($rgstrdUsers->user['created_at'])->isoFormat(' Do MMMM  YYYY ')}}
+            </div>
+        </td>
+        
+        <td data-th="@lang('front.User')">
+          <div class="titleuser">{{$rgstrdUsers->sessions->courses['title']}}</div>
+        </td>
+        
+        <td data-th="@lang('front.Country')">
+          <div class="titleuser">{{$rgstrdUsers->sessions->countries['name']}}</div>
+        </td>
+        <td data-th="@lang('front.Activity')">
+            {{Carbon\Carbon::parse($rgstrdUsers->created_at)->isoFormat(' Do MMMM  YYYY ')}}
+            <strong></strong>
+        </td>
+      </tr>
+    
+  @endforeach
+
+  
   </tbody>
 </table>
 </div>

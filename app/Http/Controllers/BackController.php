@@ -6,6 +6,7 @@ use App\Models\companies;
 use App\Models\courses;
 use App\Models\registerations;
 use App\Models\sessions;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class BackController extends Controller
@@ -27,22 +28,75 @@ class BackController extends Controller
      */
     public function admin()
     { 
-        $countcompanies = companies::count();
-        $countcourses = courses::count();
-        $countsessions = sessions::count();        
-        $countregisterations = registerations::count();
+     
+             
+            $rgstrdUsers = registerations::whereHas('sessions',function($sess){
+                                                          
+                          $sess->whereHas('courses',function($crs){
+                            
+                                $crs->whereHas('companies',function($comp){
+                                    
+                                    $comp->where('deleted_at',null);
+                                });
+                            });
+                       
+            })->where('status',3)->get();
+            // var_dump($rgstrdUsers);
+
+            $countcompanies =companies::count();
+            $countcourses = courses::count();
+            $countsessions = sessions::count();        
+            $countregisterations = registerations::count();
+            return view('home', compact([
+                'rgstrdUsers',
+                'countcompanies',
+                'countcourses',    
+                'countsessions',     
+                'countregisterations'          
+    
+            ]));
+
+   
         
-        // var_dump($countcompanies);
-        // var_dump($countcourses);
-        // var_dump($countsessions);
-        // var_dump($countregisterations);
-        
-        return view('home');
+      
+     
     }
 
     public function company()
-    { //auth()->user()->addRole(['company','admin','user']);
-        return view('home');
+    { 
+        
+
+        $rgstrdUsers = registerations::whereHas('sessions',function($sess){
+                                                          
+                        $sess->whereHas('courses',function($crs){
+                        
+                            $user = auth()->user();
+                            $crs->where('company_id',$user->companies->id);
+                        });
+                   
+            })->where('status',3)->get();
+
+             //dd($rgstrdUsers);
+           
+            $countcourses = courses::where('company_id', auth()->user()->companies->id)->count();
+
+            $countsessions = sessions::whereHas('courses',function($crs){
+                        
+                            $user = auth()->user();
+                            $crs->where('company_id',$user->companies->id);
+                       
+                   
+            })->count();
+           
+            $countregisterations = $rgstrdUsers->count();
+            return view('home', compact([
+                'rgstrdUsers',
+                'countcourses',    
+                'countsessions',     
+                'countregisterations'          
+    
+            ]));
+        
     }
     public function user()
     { //auth()->user()->addRole(['company','admin','user']);
