@@ -13,8 +13,16 @@
             </ul>
         </div>
         @endif
-             @include('layouts.front.analytic')
-             @include('layouts.front.latestusrreg')
+
+        @if(!auth()->user()->hasRole('user'))
+
+            @include('layouts.front.analytic') 
+        @endif
+
+        @include('layouts.front.latestusrreg')
+
+       
+
     </div>
 </div>
 @endsection

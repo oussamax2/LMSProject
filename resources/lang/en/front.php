@@ -283,6 +283,6 @@ return [
     'Courses' => 'Courses',
     'registrations Requests' => 'registrations Requests',
     'Registered:' => 'Registered:',
-    
+    'no data' => 'no data',    
     
 ];
