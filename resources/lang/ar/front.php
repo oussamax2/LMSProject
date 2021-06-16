@@ -280,7 +280,7 @@ return [
     'Login with Site Account' => 'تسجيل الدخول بحساب الموقع',
 
     'Register Now' => 'سجل الان',
-    'Picture' => 'صورة',
+    'Picture' => 'الصورة',
     'Activity' => 'النشاط',
     'Dashboard' => 'لوحة القيادة',
     'registered companies' => 'الشركاء المسجلين',

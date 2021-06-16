@@ -13,26 +13,26 @@
   </thead>
   <tbody>
   @foreach($rgstrdUsers as $rgstrdUsers)
-   
+
       <tr class="trback">
           @if(isset($rgstrdUsers->sessions->courses->companies['picture']) && $rgstrdUsers->sessions->courses->companies['picture'] != NULL)
             <!-- Picture Field -->
             <td scope="row" data-th="@lang('front.Picture')">
-              <img style="width: 80px;height: 80px;" src="{{ asset("storage/".$rgstrdUsers->sessions->courses->companies['picture']) }}" alt="">
+              <img style="width: 60px;height: 60px;" src="{{ asset("storage/".$rgstrdUsers->sessions->courses->companies['picture']) }}" alt="">
             </td>
           @else
 
             <!-- Picture Field -->
             <td scope="row" data-th="@lang('front.Picture')">
                     <img src="{{ asset("images/defaultuser.png") }}" />
-                
+
             </td>
 
           @endif
 
         <td data-th="@lang('front.company')">
             <div class="titleuser">{{$rgstrdUsers->sessions->courses->companies->user['name']}}</div>
-            
+
         </td>
         <td data-th="@lang('front.User')">
             <div class="titleuser">{{$rgstrdUsers->user['name']}}</div>
@@ -40,11 +40,11 @@
                 Registered: {{Carbon\Carbon::parse($rgstrdUsers->user['created_at'])->isoFormat(' Do MMMM  YYYY ')}}
             </div>
         </td>
-        
+
         <td data-th="@lang('front.User')">
           <div class="titleuser">{{$rgstrdUsers->sessions->courses['title']}}</div>
         </td>
-        
+
         <td data-th="@lang('front.Country')">
           <div class="titleuser">{{$rgstrdUsers->sessions->countries['name']}}</div>
         </td>
@@ -53,10 +53,10 @@
             <strong></strong>
         </td>
       </tr>
-    
+
   @endforeach
 
-  
+
   </tbody>
 </table>
 </div>

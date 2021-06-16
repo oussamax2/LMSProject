@@ -12,9 +12,7 @@
             </div>
         </div>
     @else
-        <div class="col-md-6 col-lg-3">
 
-        </div>
     @endif
     <div class="col-md-6 col-lg-3">
         <div class="card" style="background:linear-gradient(30deg, #36d64c 10%, #fff 0%);">
