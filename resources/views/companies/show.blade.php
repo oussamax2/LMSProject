@@ -18,8 +18,8 @@
                                 <strong>@lang('front.Details')</strong>
                                 <a href="{{ route('companies.index') }}" class="btn btn-light"><span class="icon icon-arrow-right-circle"></span>@lang('front.Back')</a>
                                 @if($companies->status == 0)
-                                <a href="{{ route('verifcompany', [$companies->id, 'accept']) }}" class="btn btn-outline-success" name="acceptcompany" value="accept">@lang('front.Accept request')</a>
-                                <a href="{{ route('verifcompany', [$companies->id, 'decline']) }}" class="btn btn-outline-success" name="declinecompany" value="decline">@lang('front.Decline request')</a>
+                                <a href="{{ route('verifcompany', [$companies->id, 'accept']) }}" class="btn buttonecceptuser" name="acceptcompany" value="accept"><span class="icon icon-check"></span>@lang('front.Accept request')</a>
+                                <a href="{{ route('verifcompany', [$companies->id, 'decline']) }}" class="btn buttonrejectuser" name="declinecompany" value="decline"><span class="icon icon-trash"></span>@lang('front.Decline request')</a>
                                 @endif
                                 <div class="arrow-steps clearfix pull-right">
                                    @if($companies->status == 0)
@@ -28,12 +28,12 @@
                                         <div class="step"> <span>@lang('front.Decline request')</span> </div>
                                    @elseif($companies->status == 2)
                                         <div class="step"> <span>@lang('front.New')</span> </div>
-                                        <div class="step current"> <span>@lang('front.Accept request')</span> </div>
+                                        <div class="step confirm"> <span>@lang('front.Accept request')</span> </div>
                                         <div class="step"> <span>@lang('front.Decline request')</span> </div>
                                    @else
                                    <div class="step"> <span>@lang('front.New')</span> </div>
                                     <div class="step"> <span>@lang('front.Accept request')</span> </div>
-                                    <div class="step current"> <span>@lang('front.Decline request')</span> </div>
+                                    <div class="step reject"> <span>@lang('front.Decline request')</span> </div>
                                    @endif
                                 </div>
                              </div>

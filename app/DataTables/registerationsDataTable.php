@@ -25,17 +25,32 @@ class registerationsDataTable extends DataTable
        
             return Carbon::parse($data->sessions->start)->isoFormat(' Do MMMM  YYYY ');
         
-        });
+        })
+        ->editColumn('status', function ($registerations) {
+            if($registerations->status ==0)
+            return '<span class="btn btn-ghost-info icon icon-hourglass"></span>';
+            if($registerations->status ==1)
+            return '<span class="btn btn-ghost-danger icon icon-dislike"></span>';
+            if($registerations->status ==2)
+            return '<span class="btn btn-ghost-pending icon icon-hourglass"></span>';
+            if($registerations->status ==3)
+            return '<span class="btn btn btn-ghost-success icon icon-like"></span>';})
+            ->escapeColumns([]);
         else
         return $dataTable->addColumn('action', 'registerations.datatables_actions') ->editColumn('sessions.start', function($data) {
        
             return Carbon::parse($data->sessions->start)->isoFormat(' Do MMMM  YYYY ');
-        
-        });
-
-
-
-
+        })
+        ->editColumn('status', function ($registerations) {
+            if($registerations->status ==0)
+            return '<span class="btn btn-ghost-info icon icon-hourglass"></span>';
+            if($registerations->status ==1)
+            return '<span class="btn btn-ghost-danger icon icon-dislike"></span>';
+            if($registerations->status ==2)
+            return '<span class="btn btn-ghost-pending icon icon-hourglass"></span>';
+            if($registerations->status ==3)
+            return '<span class="btn btn btn-ghost-success icon icon-like"></span>';})
+            ->escapeColumns([]);
     }
 
     /**
@@ -91,14 +106,16 @@ class registerationsDataTable extends DataTable
         return [
             'id'=> ['visible' => false, 'printable' => false, 'exportable' => true],
             ['data' => 'sessions.courses.title', 'name' => 'sessions.courses.title', 'title' => __('forms.Course Title')],
-            ['data' => 'sessions.start', 'name' => 'sessions.start', 'title' => __('forms.Session startDate')]
+            ['data' => 'sessions.start', 'name' => 'sessions.start', 'title' => __('forms.Session startDate')],
+            ['data' => 'status', 'name' => 'status', 'title' => __('forms.status')]
         ];}
         else{
         return [
             'id'=> ['visible' => false, 'printable' => false, 'exportable' => true],
             ['data' => 'user.name', 'name' => 'user.name', 'title' => __('forms.User Name')],
             ['data' => 'sessions.courses.title', 'name' => 'sessions.courses.title', 'title' => __('forms.Course Title')],
-            ['data' => 'sessions.start', 'name' => 'sessions.start', 'title' => __('forms.Session startDate')]
+            ['data' => 'sessions.start', 'name' => 'sessions.start', 'title' => __('forms.Session startDate')],
+            ['data' => 'status', 'name' => 'status', 'title' => __('forms.status')]
         ];}
     }
 

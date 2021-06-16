@@ -18,11 +18,11 @@
                                 <strong>@lang('front.Import courses')</strong>
                             </div>
                             <div class="card-body">
-                                <a class="btn btn-ghost-info" href="{{ asset('assets-panel/course.xlsx')}}"><i class="fa fa-file-excel-o" style="font-size:24px"></i>@lang('front.Get exel model ')</a>
+                                <a class="btn btn-ghost-info" href="{{ asset('assets-panel/course.xlsx')}}"><i class="fa fa-file-excel-o" style="font-size:24px"></i>@lang('front.Get exel model')</a>
                                 <br>
                                 <form style="margin-top: 15px; padding: 10px;" action="{{ route('importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
-                                    <input type="file" name="import_file" />
+                                    <input type="file" name="import_file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"/>
                                     <button class="btn btn-primary" style="background: #f36824; border:none;">@lang('front.Import File')</button>
                                 </form>
                             </div>

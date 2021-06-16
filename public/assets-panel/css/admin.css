@@ -301,6 +301,10 @@ padding:0;
 .btn-ghost-info {
   font-size: 20px;
 }
+.btn-ghost-pending {
+  font-size: 20px;
+  color:#ffc107;
+}
 .btn-ghost-danger {
   font-size: 20px;
 }
@@ -473,7 +477,7 @@ opacity: 1;
 -ms-transition: opacity 0.3s ease 0.5s;
 transition: opacity 0.3s ease 0.5s;
 }
-
+/* style current */
 .arrow-steps .step.current {
 color: #fff;
 background-color: #f36824;
@@ -481,6 +485,34 @@ background-color: #f36824;
 .arrow-steps .step.current:after {
 border-left: 17px solid #f36824;	
 }
+/* style current */
+/* style rejected */
+.arrow-steps .step.reject {
+  color: #fff;
+  background-color: #d22323;
+  }
+  .arrow-steps .step.reject:after {
+  border-left: 17px solid #d22323;	
+  }
+/* style rejected */
+/* style confirmed */
+.arrow-steps .step.confirm {
+  color: #fff;
+  background-color: #36d64c;
+  }
+  .arrow-steps .step.confirm:after {
+  border-left: 17px solid #36d64c;	
+  }
+/* style confirmed */
+/* style pending */
+.arrow-steps .step.pending {
+  color: #fff;
+  background-color: #ffc107;
+  }
+  .arrow-steps .step.pending:after {
+  border-left: 17px solid #ffc107;	
+  }
+/* style pending */
 /* timeline style details register */
 /*messagerie*/
 .msger {
@@ -750,14 +782,14 @@ textarea.form-control {
   }
   @media(min-width:992px) and (max-width:1200px){
     .analytic-lms .card{
-      min-height: 198px;
+      min-height: 210px;
   }
   }
 
   .analytic-lms .card-body h3{
     font-size: 18px;
     color: #072640;
-    margin-top: 10px;
+    margin-top: 20px;
     text-transform: uppercase;
   }
   .analytic-lms .card-body p{
@@ -817,6 +849,15 @@ textarea.form-control {
             }
             }
   /*analytic design dashboard*/
+  .card-details .card-header a.buttonecceptuser{
+    background: #36d64c;
+    border:none;
+  }
+  .card-details .card-header a.buttonrejectuser{
+    background: #d22323;
+    border:none;
+  }
+
 
 
 
