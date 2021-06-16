@@ -281,8 +281,8 @@ return [
     'Sessions' => 'Sessions',
     'Registered Users' => 'Registered Users',
     'Courses' => 'Courses',
-    'registrations list in sessions' => 'registrations list in sessions',
-    '' => '',
-    
-    
+    'registrations Requests' => 'Registrations Requests',
+    'Registered:' => 'Registered:',
+
+
 ];
