@@ -272,9 +272,14 @@ return [
     'Contacts' => 'Contacts',
     'Reset Filter' => 'Reset Filter',
     'Category' => 'Category',
+    'Register date' => 'Register date',
+    'Course Title' => 'Course Title',
+    'Registered companies' => 'Registered companies',
+    'Sessions' => 'Sessions',
+    'Registered Users' => 'Registered Users',
+    'Courses' => 'Courses',
+    'registrations list in sessions' => 'registrations list in sessions',
     '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
+    
+    
 ];

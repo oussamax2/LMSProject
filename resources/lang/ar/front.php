@@ -80,7 +80,7 @@ return [
     'Get Started Now' => 'نبدأ الآن',
 
     'It was some time before he obtained any answer, and the reply, when made, was unpropitious.' => 'It was some time before he obtained any answer, and the reply, when made, was unpropitious.',
-    'Company' => 'شركة',
+    'Company' => 'الشركة',
     'Home' => 'الصفحة الرئيسية',
     'Course' => 'الدورة',
     'Organizers' => 'الشركاء',
@@ -131,8 +131,8 @@ return [
     'Price Range' => 'نطاق السعر',
     'From' => 'من',
     'To' => 'إلى',
-    'Country' => 'دولة',
-    'City' => 'مدينة',
+    'Country' => 'الدولة',
+    'City' => 'المدينة',
 
     'Sub Categories' => 'الفئات الفرعية',
     'Categories' => 'الفئات',
@@ -280,8 +280,8 @@ return [
     'Login with Site Account' => 'تسجيل الدخول بحساب الموقع',
 
     'Register Now' => 'سجل الان',
-    'Picture' => 'صورة',
-    'Activity' => 'النشاء',
+    'Picture' => 'الصورة',
+    'Activity' => 'النشاط',
     '401 Unauthorized' => '401 غير مصرح به',
     'Required was not found' => 'لم يتم إيجاد المطلوب',
     'Create  your account and browse thousand of courses!!' => 'قم بإنشاء حسابك وتصفح آلاف الدورات !!',
@@ -299,8 +299,15 @@ return [
     'Registeration Id' => 'معرف التسجيل',
     'Create categories' => 'إنشاء فئة',
     'Reset Filter'=>'تصفية إعادة تعيين',
-
-
-
+    'Register date' => 'تاريخ التسجيل',
+    'Course Title' => 'عنوان الدرس',
+    'Registered companies' => 'الشركات المسجلة',
+    'Sessions' => 'الدورات',
+    'Registered Users' => 'المستخدمون',
+    'Courses' => 'الدروس',
+    'registrations list in sessions' => 'القائمة المسجلة في الدورات',
+    '' => '',
+    '' => '',
+    '' => '',
 
 ];
