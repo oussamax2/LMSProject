@@ -301,6 +301,10 @@ padding:0;
 .btn-ghost-info {
   font-size: 20px;
 }
+.btn-ghost-pending {
+  font-size: 20px;
+  color:#ffc107;
+}
 .btn-ghost-danger {
   font-size: 20px;
 }

@@ -14,6 +14,7 @@ return [
     'Created At' => 'Created At',
     'registered companies' => 'registered companies',
     'Registered Users' => 'Registered Users',
+    'Dashboard' => 'Dashboard',
     'Subcategory List:' => 'Subcategory List:',
     'Subcategory name' => 'Subcategory name',
     'Looking for a' => 'Looking for a',
