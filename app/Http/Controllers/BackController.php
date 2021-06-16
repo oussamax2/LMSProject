@@ -40,7 +40,7 @@ class BackController extends Controller
                                 });
                             });
                        
-            })->where('status',3)->get();
+            })->where('status',0)->take(6)->get();
             // var_dump($rgstrdUsers);
 
             $countcompanies =companies::count();
@@ -74,7 +74,7 @@ class BackController extends Controller
                             $crs->where('company_id',$user->companies->id);
                         });
                    
-            })->where('status',3)->get();
+            })->where('status',0)->take(6)->get();
 
              //dd($rgstrdUsers);
            

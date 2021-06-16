@@ -1,4 +1,4 @@
-<h3>@lang('front.registrations list in sessions')</h3>
+<h3>@lang('front.registrations Requests')</h3>
 <div class="container-fluid">
 <table class="table responsive-table tableanalytic-lms">
   <thead class="thead-light">
@@ -9,6 +9,7 @@
       <th scope="col">@lang('front.Course Title')</th>
       <th scope="col">@lang('front.Country')</th>
       <th scope="col">@lang('front.Register date')</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -18,7 +19,7 @@
           @if(isset($rgstrdUsers->sessions->courses->companies['picture']) && $rgstrdUsers->sessions->courses->companies['picture'] != NULL)
             <!-- Picture Field -->
             <td scope="row" data-th="@lang('front.Picture')">
-              <img style="width: 80px;height: 80px;" src="{{ asset("storage/".$rgstrdUsers->sessions->courses->companies['picture']) }}" alt="">
+              <img style="width: 50px;height: 50px;" src="{{ asset("storage/".$rgstrdUsers->sessions->courses->companies['picture']) }}" alt="">
             </td>
           @else
 
@@ -37,7 +38,7 @@
         <td data-th="@lang('front.User')">
             <div class="titleuser">{{$rgstrdUsers->user['name']}}</div>
             <div class="small text-muted">
-                Registered: {{Carbon\Carbon::parse($rgstrdUsers->user['created_at'])->isoFormat(' Do MMMM  YYYY ')}}
+                @lang('front.Registered:') {{Carbon\Carbon::parse($rgstrdUsers->user['created_at'])->isoFormat(' Do MMMM  YYYY ')}}
             </div>
         </td>
         
@@ -52,6 +53,14 @@
             {{Carbon\Carbon::parse($rgstrdUsers->created_at)->isoFormat(' Do MMMM  YYYY ')}}
             <strong></strong>
         </td>
+       <td>
+          <a href="{{route('registerations.show', $rgstrdUsers->id)}}" class="btn btn-ghost-success">
+          <span class="icon icon-eye">
+          
+          </span>
+       </a>
+        </td>
+        
       </tr>
     
   @endforeach

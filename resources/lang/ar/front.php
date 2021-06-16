@@ -308,8 +308,8 @@ return [
     'Sessions' => 'الدورات',
     'Registered Users' => 'المستخدمون',
     'Courses' => 'الدروس',
-    'registrations list in sessions' => 'القائمة المسجلة في الدورات',
-    '' => '',
+    'registrations Requests' => 'آخر الطلبات',
+    'Registered:' => 'سجل في:',
     '' => '',
     '' => '',
 
