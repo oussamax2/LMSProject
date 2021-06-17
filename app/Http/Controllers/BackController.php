@@ -88,7 +88,15 @@ class BackController extends Controller
                    
             })->count();
            
-            $countregisterations = $rgstrdUsers->count();
+            $countregisterations = registerations::whereHas('sessions',function($sess){
+                                                          
+                $sess->whereHas('courses',function($crs){
+                
+                    $user = auth()->user();
+                    $crs->where('company_id',$user->companies->id);
+                });
+           
+                })->count();
             return view('home', compact([
                 'rgstrdUsers',
                 'countcourses',    
@@ -99,7 +107,11 @@ class BackController extends Controller
         
     }
     public function user()
-    { //auth()->user()->addRole(['company','admin','user']);
-        return view('home');
+    { 
+
+        $rgstrdUsers = registerations::where('user_id',auth()->user()->id)->where('status',0)->take(6)->get();
+                                                          
+          
+        return view('home', compact('rgstrdUsers'));
     }
 }

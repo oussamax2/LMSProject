@@ -310,6 +310,7 @@ return [
     'Courses' => 'الدروس',
     'registrations Requests' => 'آخر الطلبات',
     'Registered:' => 'سجل في:',
+    'no data' => 'ﻻ توجد بيانات',    
     '' => '',
     '' => '',
 

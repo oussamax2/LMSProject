@@ -284,5 +284,6 @@ return [
     'registrations Requests' => 'Registrations Requests',
     'Registered:' => 'Registered:',
 
+    'no data' => 'no data',    
 
 ];

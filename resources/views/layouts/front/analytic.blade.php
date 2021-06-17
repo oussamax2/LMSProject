@@ -36,7 +36,7 @@
         <div class="card" style="background:linear-gradient(30deg, #36d64c 10%, #fff 0%);">
             <div class="card-body">
             <span class="icon icon-user-following"></span>
-                <h3><a href="{{ route('users.index') }}">@lang('front.Registered Users')</a></h3>
+                <h3><a href="{{ route('registerations.index') }}">@lang('front.Registered Users')</a></h3>
                 <p>{{$countregisterations}}</p>
             </div>
         </div>
