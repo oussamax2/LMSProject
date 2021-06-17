@@ -5,8 +5,10 @@
     <table class="table responsive-table tableanalytic-lms">
       <thead class="thead-light">
         <tr class="trback">
-          <th scope="col"><span class="icon icon-people"></span>@lang('front.Picture')</th>
-          <th scope="col">@lang('front.Company')</th>
+          @if(!auth()->user()->hasRole('company'))
+            <th scope="col"><span class="icon icon-people"></span>@lang('front.Picture')</th>
+            <th scope="col">@lang('front.Company')</th>
+          @endif
           @if(!auth()->user()->hasRole('user'))
            <th scope="col">@lang('front.User')</th>
           @endif
@@ -21,25 +23,27 @@
         @foreach($rgstrdUsers as $rgstrdUsers)
         
             <tr class="trback">
-                @if(isset($rgstrdUsers->sessions->courses->companies['picture']) && $rgstrdUsers->sessions->courses->companies['picture'] != NULL)
-                  <!-- Picture Field -->
-                  <td scope="row" data-th="@lang('front.Picture')">
-                    <img style="width: 50px;height: 50px;" src="{{ asset("storage/".$rgstrdUsers->sessions->courses->companies['picture']) }}" alt="">
-                  </td>
-                @else
+              @if(!auth()->user()->hasRole('company'))
+                    @if(isset($rgstrdUsers->sessions->courses->companies['picture']) && $rgstrdUsers->sessions->courses->companies['picture'] != NULL)
+                      <!-- Picture Field -->
+                      <td scope="row" data-th="@lang('front.Picture')">
+                        <img style="width: 50px;height: 50px;" src="{{ asset("storage/".$rgstrdUsers->sessions->courses->companies['picture']) }}" alt="">
+                      </td>
+                    @else
 
-                  <!-- Picture Field -->
-                  <td scope="row" data-th="@lang('front.Picture')">
-                          <img src="{{ asset("images/defaultuser.png") }}" />
+                      <!-- Picture Field -->
+                      <td scope="row" data-th="@lang('front.Picture')">
+                              <img src="{{ asset("images/defaultuser.png") }}" />
+                          
+                      </td>
+
+                    @endif
+
+                  <td data-th="@lang('front.company')">
+                      <div class="titleuser">{{$rgstrdUsers->sessions->courses->companies->user['name']}}</div>
                       
                   </td>
-
-                @endif
-
-              <td data-th="@lang('front.company')">
-                  <div class="titleuser">{{$rgstrdUsers->sessions->courses->companies->user['name']}}</div>
-                  
-              </td>
+              @endif
               @if(!auth()->user()->hasRole('user'))
                 <td data-th="@lang('front.User')">
                     <div class="titleuser">{{$rgstrdUsers->user['name']}}</div>
