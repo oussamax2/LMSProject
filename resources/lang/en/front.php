@@ -12,6 +12,7 @@ return [
     'Name' => 'Name',
     'Order' => 'Order',
     'Created At' => 'Created At',
+    'Account' => 'Account',
     'registered companies' => 'registered companies',
     'Registered Users' => 'Registered Users',
     'Dashboard' => 'Dashboard',

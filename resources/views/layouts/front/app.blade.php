@@ -86,7 +86,7 @@
                                         @else
                                         {{url('/dashboarduser')}}
                                         @endif
-                                        ">account</a></li>
+                                        ">@lang('front.Account')</a></li>
                                     <li><a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">@lang('auth.sign_out')</a>
                                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                             @csrf

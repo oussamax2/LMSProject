@@ -18,8 +18,8 @@ return [
     'email'   => 'email',
     'password' => 'password',
     'sign_in' => 'sign_in',
+    'sign_out' => 'sign_out',
     'Not an account?? Sign Up' => 'Not an account?? Sign Up',
-
     'full_name'        => 'Full Name',
     'confirm_password' => 'Confirm Password',
     'remember_me'      => 'Remember Me',

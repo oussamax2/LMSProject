@@ -283,6 +283,7 @@ return [
     'Picture' => 'صورة',
     'Activity' => 'النشاط',
     'Dashboard' => 'لوحة القيادة',
+    'Account' => 'حسابك',
     'registered companies' => 'الشركاء المسجلين',
     'Registered Users' => 'المستخدمون المسجلون',
     '401 Unauthorized' => '401 غير مصرح به',
