@@ -1,14 +1,13 @@
-
-<br/><br/>
+<br>
+<li class="nav-item">
+    <a class="nav-link" href="{{ url('/dashboard') }}">
+        <span class="icon icon-speedometer"></span>
+        <span class="menu-item-dsh">@lang('front.Dashboard')</span>
+    </a>
+</li>
 <li class="nav-item" style="background-color: #143455; height: 43px;padding: 10px 25px 10px 0px;">
 
         <span class="menu-item-dsh">@lang('front.Courses')</span><br/>
-        <li class="nav-item">
-            <a class="nav-link" href="{{ url('/dashboard') }}">
-                <span class="icon icon-speedometer"></span>
-                <span class="menu-item-dsh">@lang('front.Dashboard')</span>
-            </a>
-        </li>
         <li class="nav-item {{ Request::is('admincourses*') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('courses.index') }}">
                 <span class="icon icon-graduation"></span>
