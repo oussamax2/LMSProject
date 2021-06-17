@@ -71,7 +71,7 @@
             <span class="menu-item-dsh">@lang('front.Users')</span>
         </a>
     </li>
-    
+
     <li class="nav-item {{ Request::is('companies*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('companies.index') }}">
         <span class="icon icon-organization"></span>

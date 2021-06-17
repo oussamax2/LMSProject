@@ -83,6 +83,7 @@ class companiesDataTable extends DataTable
             ['data' => 'user.name', 'name' => 'user.name', 'title' => __('forms.firstname')],
             ['data' => 'lastname', 'name' => 'lastname', 'title' => __('forms.lastname')],
             ['data' => 'user.email', 'name' => 'user.email', 'title' => __('forms.email')],
+            ['data' => 'user.email', 'name' => 'user.email', 'title' => __('forms.emaitl')],
             ['data' => 'telephone', 'name' => 'telephone', 'title' => __('forms.telephone')],
             ['data' => 'status', 'name' => 'status', 'title' => __('forms.status')],
 
