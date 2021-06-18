@@ -45,6 +45,17 @@
       0 => '\\InfyOm\\Generator\\InfyOmGeneratorServiceProvider',
     ),
   ),
+  'intervention/image' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Intervention\\Image\\ImageServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Image' => 'Intervention\\Image\\Facades\\Image',
+    ),
+  ),
   'laracasts/flash' => 
   array (
     'providers' => 

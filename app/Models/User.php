@@ -101,4 +101,10 @@ class User extends Authenticatable implements MustVerifyEmail
             $user->roles()->detach();
        });
     }
+
+    public function notif()
+    {
+        return $this->registerations()->where('notif',1)->count();
+
+    }
 }

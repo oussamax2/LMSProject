@@ -284,7 +284,12 @@ return [
     'Courses' => 'Courses',
     'registrations Requests' => 'Registrations Requests',
     'Registered:' => 'Registered:',
-
     'no data' => 'no data',
+    'profile' => 'profile',
+    'sign_out' => 'sign out',
+    '' => '',
+    '' => '',
+
+
 
 ];

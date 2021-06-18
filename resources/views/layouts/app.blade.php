@@ -79,9 +79,9 @@
         <!-- menu list -->
 
         <li class="nav-item d-md-down-none">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ route('registerationsuser.index') }}">
                 <i class="icon-bell"></i>
-                <span class="badge badge-pill badge-danger">5</span>
+                <span class="badge badge-pill badge-danger">{{auth()->user()->notif()}}</span>
             </a>
         </li>
         <li class="nav-item dropdown">
@@ -101,11 +101,11 @@
                     <strong>@lang('auth.app.settings')</strong>
                 </div> --}}
                 <a class="dropdown-item" href="{{ route('user-profile.edit') }}">
-                    <span class="icon icon-user"></span> @lang('auth.app.profile')</a>
+                    <i class="fa fa-user"></i> @lang('front.profile')</a>
 
                 <a class="dropdown-item" href="{{ url('/logout') }}" class="btn btn-default btn-flat"
                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    <span class="icon icon-logout"></span>@lang('auth.sign_out')
+                    <i class="fa fa-lock"></i>@lang('front.sign_out')
                 </a>
                 <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                     @csrf
