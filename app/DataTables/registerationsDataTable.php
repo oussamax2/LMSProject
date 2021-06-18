@@ -20,7 +20,7 @@ class registerationsDataTable extends DataTable
         $dataTable = new EloquentDataTable($query);
         $user = auth()->user();
         if($user->hasRole('user'))
-        return $dataTable->addColumn(__('front.Action'), 'registerationsuser.datatables_actions')
+        return $dataTable->addColumn('action', 'registerationsuser.datatables_actions')
         ->editColumn('sessions.start', function($data) {
 
             return Carbon::parse($data->sessions->start)->isoFormat(' Do MMMM  YYYY ');
@@ -42,7 +42,7 @@ class registerationsDataTable extends DataTable
             ])
             ->escapeColumns([]);
         else
-        return $dataTable->addColumn(__('front.Action'), 'registerations.datatables_actions') ->editColumn('sessions.start', function($data) {
+        return $dataTable->addColumn('action', 'registerations.datatables_actions') ->editColumn('sessions.start', function($data) {
 
             return Carbon::parse($data->sessions->start)->isoFormat(' Do MMMM  YYYY ');
         })
@@ -89,7 +89,7 @@ class registerationsDataTable extends DataTable
         return $this->builder()
             ->columns($this->getColumns())
             ->minifiedAjax()
-            ->addAction(['width' => '120px', 'printable' => false])
+            ->addAction(['width' => '120px', 'printable' => false,'title' => __('front.Action')])
             ->parameters([
                 'dom'       => 'Bfrtip',
 
