@@ -6,7 +6,8 @@ use App\Models\companies;
 use App\Models\User;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
-
+use Carbon\Carbon;
+use Cache;
 class companiesDataTable extends DataTable
 {
     /**
@@ -28,6 +29,14 @@ class companiesDataTable extends DataTable
                     $url= asset("images/defaultuser.png");
                     return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 70px; height:70px;">';
                     }
+                })
+                ->editColumn('user.last_seen', function ($data) {
+                    if (Cache::has('user-is-online-' . $data->user->id))
+                    return ' <span class="badge badge-success">'.__("forms.is online. Last seen:") . Carbon::parse($data->user->last_seen)->diffForHumans().'</span>' ;
+                else
+                    return ' <span class="badge badge-danger">'. __("forms.is offline. Last seen:"). Carbon::parse($data->user->last_seen)->diffForHumans() .'</span>';
+
+
                 })
                 ->editColumn('status', function ($companies) {
                     if($companies->status ==0)
@@ -63,8 +72,8 @@ class companiesDataTable extends DataTable
             ->addAction(['width' => '120px', 'printable' => false])
             ->parameters([
                 'dom'       => 'Bfrtip',
-                'stateSave' => true,
-                'order'     => [[0, 'desc']],
+
+                'order'     => [[7, 'desc']],
                 'buttons'   => [
                 ],'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],
             ]);
@@ -85,6 +94,7 @@ class companiesDataTable extends DataTable
             ['data' => 'user.email', 'name' => 'user.email', 'title' => __('forms.email')],
             ['data' => 'telephone', 'name' => 'telephone', 'title' => __('forms.telephone')],
             ['data' => 'status', 'name' => 'status', 'title' => __('forms.status')],
+            ['data' => 'user.last_seen', 'name' => 'user.last_seen', 'title' => ''],
 
 
         ];

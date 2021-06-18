@@ -45,7 +45,7 @@ class countriesDataTable extends DataTable
             ->addAction(['width' => '120px', 'printable' => false])
             ->parameters([
                 'dom'       => 'Bfrtip',
-                'stateSave' => true,
+
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
                 ],'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],
@@ -61,7 +61,7 @@ class countriesDataTable extends DataTable
     {
         return [
             ['data' => 'name', 'name' => 'name', 'title' => __('forms.name')],
-            
+
             ['data' => 'continent', 'name' => 'continent', 'title' => __('forms.Continent Name')],
 
             ['data' => 'status', 'name' => 'status', 'title' => __('forms.status')],

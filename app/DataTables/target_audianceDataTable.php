@@ -45,7 +45,7 @@ class target_audianceDataTable extends DataTable
             ->addAction(['width' => '120px', 'printable' => false])
             ->parameters([
                 'dom'       => 'Bfrtip',
-                'stateSave' => true,
+
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
                     // ['extend' => 'create', 'className' => 'btn btn-default btn-sm no-corner',],

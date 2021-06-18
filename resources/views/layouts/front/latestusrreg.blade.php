@@ -21,7 +21,7 @@
       <tbody>
 
         @foreach($rgstrdUsers as $rgstrdUsers)
-        
+
             <tr class="trback">
               @if(!auth()->user()->hasRole('company'))
                     @if(isset($rgstrdUsers->sessions->courses->companies['picture']) && $rgstrdUsers->sessions->courses->companies['picture'] != NULL)
@@ -34,14 +34,14 @@
                       <!-- Picture Field -->
                       <td scope="row" data-th="@lang('front.Picture')">
                               <img src="{{ asset("images/defaultuser.png") }}" />
-                          
+
                       </td>
 
                     @endif
 
                   <td data-th="@lang('front.company')">
                       <div class="titleuser">{{$rgstrdUsers->sessions->courses->companies->user['name']}}</div>
-                      
+
                   </td>
               @endif
               @if(!auth()->user()->hasRole('user'))
@@ -52,11 +52,11 @@
                     </div>
                 </td>
               @endif
-              
+
               <td data-th="@lang('front.User')">
                 <div class="titleuser">{{$rgstrdUsers->sessions->courses['title']}}</div>
               </td>
-              
+
               <td data-th="@lang('front.Country')">
                 <div class="titleuser">{{$rgstrdUsers->sessions->countries['name']}}</div>
               </td>
@@ -70,29 +70,29 @@
                <td>
                   <a href="{{route('registerationsuser.show', $rgstrdUsers->id)}}" class="btn btn-ghost-success">
                     <span class="icon icon-eye">
-                    
+
                     </span>
                   </a>
-                </td>  
+                </td>
               @else
                 <td>
                   <a href="{{route('registerations.show', $rgstrdUsers->id)}}" class="btn btn-ghost-success">
                     <span class="icon icon-eye">
-                    
+
                     </span>
                   </a>
                 </td>
               @endif
-              
+
             </tr>
-          
+
         @endforeach
 
 
 
-      
-      </tbody>
-    </table>   
 
-  @endif  
+      </tbody>
+    </table>
+
+  @endif
 </div>

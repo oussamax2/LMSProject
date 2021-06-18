@@ -21,7 +21,6 @@ return [
     'password'         => 'کلمه عبور',
     'confirm_password' => 'تایید رمز عبور',
     'remember_me'      => 'مرا به خاطر بسپار',
-    'sign_in'          => 'ورود',
     'sign_out'         => 'خروج',
     'register'         => 'ثبت نام',
 
