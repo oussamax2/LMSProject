@@ -35,6 +35,11 @@ class registerationsDataTable extends DataTable
             return '<span class="btn btn-ghost-pending icon icon-hourglass"></span>';
             if($registerations->status ==3)
             return '<span class="btn btn btn-ghost-success icon icon-like"></span>';})
+            ->setRowAttr([
+                'style' => function($registerations){
+                    return $registerations->notif ? 'background-color: #00ff0021;' : '';
+                }
+            ])
             ->escapeColumns([]);
         else
         return $dataTable->addColumn('action', 'registerations.datatables_actions') ->editColumn('sessions.start', function($data) {
@@ -70,7 +75,7 @@ class registerationsDataTable extends DataTable
             $query->where('company_id',$user->companies->id);
 
        });}else{
-        return $model->touser()->newQuery()->with('user')->with(['sessions', 'sessions.courses']);
+        return $model->touser()->newQuery()->with('user')->with(['sessions', 'sessions.courses'])->orderBy('updated_at', 'desc');
        }
     }
 

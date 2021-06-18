@@ -161,7 +161,7 @@ class messagingController extends AppBaseController
         {
             return $file->store('files', ['disk' => 'public']);
         }
-        
+
     public function sendmsg(Request $request)
     {
         $registerations = registerations::find($request->idr);
@@ -172,9 +172,13 @@ class messagingController extends AppBaseController
             $this->validate($request, ['file_send' => 'file|max:2048']);
             /**save image in intended folder */
             $file = $this->savefile($request->file('file_send'));
-            $input['message'] = $request->message .'<br><a style="color: #f36824;" href='.asset("storage/".$file."").'>'.$request->file_send->getClientOriginalName().'<a>';
+            $input['message'] = $request->message .'<br><a style="color: #f36824;" href='.asset("storage/".$file."").'>'.$request->file_send->getClientOriginalName().'</a>';
         }
-     
+        if(auth()->user()->hasRole('company')){
+            $registerations->notif=1;
+            $registerations->save();
+        }
+
         if($registerations->my())
         $messaging = $this->messagingRepository->create($input);
 
