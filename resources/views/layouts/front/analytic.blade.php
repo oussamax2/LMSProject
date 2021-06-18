@@ -1,21 +1,25 @@
 <div class="analytic-lms">
 <div class="container-fluid">
     <div class="row">
-    <div class="col-md-6 col-lg-3">
-        <div class="card" style="background:linear-gradient(30deg, #36d64c 10%, #fff 0%);">
-            <div class="card-body">
-                <span class="icon icon-user-following"></span>
-                <h3>@lang('front.registered companies')</h3>
-                <p>7654</p>
+    @if(isset($countcompanies))
+        <div class="col-md-6 col-lg-3">
+            <div class="card" style="background:linear-gradient(30deg, #36d64c 10%, #fff 0%);">
+                <div class="card-body">
+                    <span class="icon icon-user-following"></span>
+                    <h3><a href="{{ route('companies.index') }}">@lang('front.Registered companies')</a></h3>
+                    <p>{{$countcompanies}}</p>
+                </div>
             </div>
         </div>
-    </div>
+    @else
+
+    @endif
     <div class="col-md-6 col-lg-3">
         <div class="card" style="background:linear-gradient(30deg, #36d64c 10%, #fff 0%);">
             <div class="card-body">
                 <span class="icon icon-briefcase"></span>
-                <h3>@lang('front.Sessions')</h3>
-                <p>5673</p>
+                <h3><a href="{{ route('sessions.index') }}">@lang('front.Sessions')</a></h3>
+                <p>{{$countsessions}}</p>
             </div>
         </div>
     </div>
@@ -23,8 +27,8 @@
         <div class="card" style="background:linear-gradient(30deg, #36d64c 10%, #fff 0%);">
             <div class="card-body">
                 <span class="icon icon-docs"></span>
-                <h3>@lang('front.Courses')</h3>
-                <p>4352</p>
+                <h3><a href="{{ route('courses.index') }}">@lang('front.Courses')</a></h3>
+                <p>{{$countcourses}}</p>
             </div>
         </div>
     </div>
@@ -32,8 +36,8 @@
         <div class="card" style="background:linear-gradient(30deg, #36d64c 10%, #fff 0%);">
             <div class="card-body">
             <span class="icon icon-user-following"></span>
-                <h3>@lang('front.Registered Users')</h3>
-                <p>2876</p>
+                <h3><a href="{{ route('registerations.index') }}">@lang('front.Registered Users')</a></h3>
+                <p>{{$countregisterations}}</p>
             </div>
         </div>
     </div>

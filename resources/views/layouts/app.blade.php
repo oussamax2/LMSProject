@@ -101,11 +101,11 @@
                     <strong>@lang('auth.app.settings')</strong>
                 </div> --}}
                 <a class="dropdown-item" href="{{ route('user-profile.edit') }}">
-                    <i class="fa fa-user"></i> @lang('auth.app.profile')</a>
+                    <span class="icon icon-user"></span> @lang('auth.app.profile')</a>
 
                 <a class="dropdown-item" href="{{ url('/logout') }}" class="btn btn-default btn-flat"
                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    <i class="fa fa-lock"></i>@lang('auth.sign_out')
+                    <span class="icon icon-logout"></span>@lang('auth.sign_out')
                 </a>
                 <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                     @csrf

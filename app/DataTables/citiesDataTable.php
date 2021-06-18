@@ -28,11 +28,11 @@ class citiesDataTable extends DataTable
                     return '<img class="profile-user-img  img-circle" src="'.$url.'" style="width: 90px; height:90px;">';
                     }
                 })
-                ->editColumn('state_id', function ($dataTable) { 
+                ->editColumn('state_id', function ($dataTable) {
                     return $dataTable->states['name'];
-                    
+
                 })->escapeColumns([]);
-        
+
     }
 
     /**
@@ -59,7 +59,7 @@ class citiesDataTable extends DataTable
             ->addAction(['width' => '120px', 'printable' => false])
             ->parameters([
                 'dom'       => 'Bfrtip',
-                'stateSave' => true,
+
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
                 ],'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],

@@ -22,9 +22,9 @@ class registerationsDataTable extends DataTable
         if($user->hasRole('user'))
         return $dataTable->addColumn('action', 'registerationsuser.datatables_actions')
         ->editColumn('sessions.start', function($data) {
-       
+
             return Carbon::parse($data->sessions->start)->isoFormat(' Do MMMM  YYYY ');
-        
+
         })
         ->editColumn('status', function ($registerations) {
             if($registerations->status ==0)
@@ -38,7 +38,7 @@ class registerationsDataTable extends DataTable
             ->escapeColumns([]);
         else
         return $dataTable->addColumn('action', 'registerations.datatables_actions') ->editColumn('sessions.start', function($data) {
-       
+
             return Carbon::parse($data->sessions->start)->isoFormat(' Do MMMM  YYYY ');
         })
         ->editColumn('status', function ($registerations) {
@@ -87,7 +87,7 @@ class registerationsDataTable extends DataTable
             ->addAction(['width' => '120px', 'printable' => false])
             ->parameters([
                 'dom'       => 'Bfrtip',
-                'stateSave' => true,
+
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
                 ],'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],

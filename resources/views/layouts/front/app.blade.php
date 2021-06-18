@@ -86,7 +86,7 @@
                                         @else
                                         {{url('/dashboarduser')}}
                                         @endif
-                                        ">account</a></li>
+                                        ">@lang('front.Account')</a></li>
                                     <li><a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">@lang('auth.sign_out')</a>
                                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                             @csrf
@@ -147,6 +147,25 @@
 <script type="text/javascript" src="{{ asset('vendor/jquery-ui/jquery-ui.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('vendor/jquery.mixitup.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/theme.js') }}"></script>
+@if (0)
+<script>
+$(document).ready(function(){
+sendRequest();
+function sendRequest(){
+    $.ajax({
+      url: "{{ url('/') }}",
+      success:
+        function(data){
+      },
+
+      complete: function() {
+     setInterval(sendRequest, 180000); // The interval set to 3 min
+   }
+  });
+};
+});
+</script>
+@endif
 @yield('js')
 @section('scripts')
 @parent
