@@ -79,9 +79,9 @@
         <!-- menu list -->
 
         <li class="nav-item d-md-down-none">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ route('registerationsuser.index') }}">
                 <i class="icon-bell"></i>
-                <span class="badge badge-pill badge-danger">5</span>
+                <span class="badge badge-pill badge-danger">{{auth()->user()->notif()}}</span>
             </a>
         </li>
         <li class="nav-item dropdown">

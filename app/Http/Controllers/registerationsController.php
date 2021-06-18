@@ -77,12 +77,13 @@ class registerationsController extends AppBaseController
     {
         $registerations = $this->registerationsRepository->find($id);
 
-        if (empty($registerations) || !$registerations->my() ) {
+        if (empty($registerations) || !($registerations->user_id == auth()->user()->id)) {
             Flash::error('Registerations not found');
 
             return redirect(route('registerationsuser.index'));
         }
-
+        $registerations->notif=0;
+        $registerations->save();
         return view('registerationsuser.show')->with('registerations', $registerations);
     }
 

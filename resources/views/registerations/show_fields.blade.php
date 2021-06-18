@@ -4,7 +4,7 @@
 <div class="form-group col-sm-6 col-md-12 col-lg-6">
 <i class="icon flaticon-bookmark"></i>
     {!! Form::label('course_id', __('forms.Course Title')) !!}
-    <p>{{ $registerations->sessions->courses->title}}</p>
+    <p>{{ $registerations->sessions->courses->}}</p>
 </div>
 <!-- description -->
 <div class="form-group col-sm-6 col-md-12 col-lg-6">
@@ -62,7 +62,7 @@
     <div class="msg-bubble">
       <div class="msg-info">
         <div class="msg-info-name">{{$messaging->user->name}}</div>
-        <div class="msg-info-time">{{Carbon\Carbon::parse($messaging->created_at)->isoFormat(' Do MMMM  YYYY , H:mm')}}</div>
+        <div class="msg-info-time">{{Carbon\Carbon::parse($messaging->created_at)->diffForHumans()}}</div>
       </div>
 
       <div class="msg-text">
@@ -95,8 +95,8 @@
 var input = document.getElementById( 'file-upload' );
 var infoArea = document.getElementById( 'file-upload-filename' );
 input.addEventListener( 'change', showFileName );
-function showFileName( event ) { 
-var input = event.srcElement; 
+function showFileName( event ) {
+var input = event.srcElement;
 var fileName = input.files[0].name;
   infoArea.textContent =  fileName;
 }

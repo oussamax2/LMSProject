@@ -180,6 +180,7 @@ class registerationsController extends AppBaseController
                 Mailsender::senduser($user,$id,3);
            }
            /**save status in DB */
+           $registerations->notif=1;
            $registerations->save();
            Flash::success(__('admin.updated successfully.'));
 

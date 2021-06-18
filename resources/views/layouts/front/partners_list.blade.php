@@ -43,7 +43,7 @@
 						data : {"_token":"{{ csrf_token() }}"},
 						dataType: "json",
 						success:function(data) {
-							
+
 							if(data.current_page > data.last_page)
 							{
 								var x = document.getElementById("load-more");
@@ -67,7 +67,7 @@
 									}else{
 										$('#partners').append('<div class="col-md-3 col-sm-4 col-xs-6"><div class="single-member"><div class="image"><img src="'+urlimage+'/'+value.picture+'" alt=""></div><h6><a href="'+urlcomp+'/'+value.id+'" class="tran3s">'+value.lastname+'</a></h6><p>'+value.shortDescription+ '</p></div></div>');
 
-										
+
 									}
 
 								});
