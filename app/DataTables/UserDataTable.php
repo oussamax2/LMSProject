@@ -42,7 +42,7 @@ class UserDataTable extends DataTable
             'roles', function($q){
                 $q->where('name', 'user');
             }
-        );
+        )->orderBy('last_seen', 'desc');
     }
 
     /**
@@ -58,8 +58,8 @@ class UserDataTable extends DataTable
             ->addAction(['width' => '120px', 'printable' => false])
             ->parameters([
                 'dom'       => 'Bfrtip',
-                'stateSave' => true,
                 'order'     => [[0, 'desc']],
+                "lengthMenu" => [[15, 50, 100, -1], [25, 50, 100, "All"]] ,
                 'buttons'   => [
                 ],'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],
             ]);

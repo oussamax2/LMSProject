@@ -112,12 +112,12 @@ $("input[name=target]:checkbox:checked").each(function(){ myArray.push($(this).v
 /** chose category **/
     $( "#subcat li" ).on( "click", function() {
     @this.set('subcategory', this.value); // get id of clicked li
+    @this.set('category', "");
 });
 $( ".panel-title a" ).on( "click", function() {
-    //alert( $(this).attr('data-id'));
-    // alert($(this).data("id"));
-    @this.set('category', $(this).attr('data-id')); // get id of clicked li
-
+    @this.set('category', $(this).attr('data-id'));
+    @this.set('subcategory', ""); // get id of clicked li
+    @this.set('city', "");
 });
 $( "#resetsearch" ).on( "click", function() {
     $('input[name="target"]').each(function() {

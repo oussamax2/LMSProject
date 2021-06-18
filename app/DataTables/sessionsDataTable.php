@@ -86,7 +86,7 @@ class sessionsDataTable extends DataTable
             ->addAction(['width' => '120px', 'printable' => false])
             ->parameters([
                 'dom'       => 'Bfrtip',
-                'stateSave' => true,
+
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
                 ],'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],
@@ -107,7 +107,7 @@ class sessionsDataTable extends DataTable
             ['data' => 'start', 'name' => 'start', 'title' => __('forms.start Date')],
             ['data' => 'end', 'name' => 'end', 'title' => __('forms.end Date')],
             ['data' => 'fee', 'name' => 'fee', 'title' => __('forms.fee')],
-            
+
 
         ];
     }
