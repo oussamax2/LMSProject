@@ -54,6 +54,7 @@
     50 => 'Yajra\\DataTables\\DataTablesServiceProvider',
     51 => 'Reta110\\UserProfile\\UserProfileServiceProvider',
     52 => 'Yoeunes\\Toastr\\ToastrServiceProvider',
+    53 => 'Intervention\\Image\\ImageServiceProvider',
   ),
   'eager' => 
   array (
@@ -96,6 +97,7 @@
     36 => 'Yajra\\DataTables\\DataTablesServiceProvider',
     37 => 'Reta110\\UserProfile\\UserProfileServiceProvider',
     38 => 'Yoeunes\\Toastr\\ToastrServiceProvider',
+    39 => 'Intervention\\Image\\ImageServiceProvider',
   ),
   'deferred' => 
   array (

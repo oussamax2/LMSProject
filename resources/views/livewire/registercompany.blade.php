@@ -81,12 +81,7 @@
                                     @endif
                                     <h6>@lang('front.Your Picture')</h6>
                                     @error('picture') <span class="invalid-feedback">{{ $message }}</span> @enderror
-                                    @if($picture && in_array($picture->getClientOriginalExtension(), array("png", "jpg", "jpeg", "Cleveland"))  )
-                                    <br>
-                                    <image src="{{$picture->temporaryUrl()}}" style="width: 200px;">
-                                        <br>
-                                    @endif
-                                    <input type="file" accept="image/*"  wire:model="picture" >
+                                    <input type="file" accept="image/*"  wire:model="picture" name="picture" class="picture" >
                                     <h6>@lang('front.Description')</h6>
                                     <textarea wire:model="description" ></textarea>
                                     <h6>@lang('front.Linkedin Url')</h6>
@@ -117,4 +112,67 @@
         </div> <!-- /.row -->
     </div> <!-- /.container -->
 </div>
+    @section('js')
+            <script>
+                var $modal = $('#modal');
+                var image = document.getElementById('picture');
+                var cropper;
 
+                $("body").on("change", ".picture", function(e){
+                    var files = e.target.files;
+                    var done = function (url) {
+                      image.src = url;
+                      $modal.modal('show');
+                    };
+                    var reader;
+                    var file;
+                    var url;
+
+                    if (files && files.length > 0) {
+                      file = files[0];
+
+                      if (URL) {
+                        done(URL.createObjectURL(file));
+                      } else if (FileReader) {
+                        reader = new FileReader();
+                        reader.onload = function (e) {
+                          done(reader.result);
+                        };
+                        reader.readAsDataURL(file);
+                      }
+                    }
+                });
+
+                $modal.on('shown.bs.modal', function () {
+                    cropper = new Cropper(image, {
+                    aspectRatio: 540/400,
+                    viewMode: 4,
+                    autoCropArea: 0.5,
+                    });
+                }).on('hidden.bs.modal', function () {
+                   cropper.destroy();
+                   cropper = null;
+                });
+
+                $("#crop").click(function(){
+                    canvas = cropper.getCroppedCanvas({
+                      width: 540,
+                      height: 400,
+                    });
+
+                    canvas.toBlob(function(blob) {
+                        url = URL.createObjectURL(blob);
+                        var reader = new FileReader();
+                         reader.readAsDataURL(blob);
+                         reader.onloadend = function() {
+                            var base64data = reader.result;
+
+                            @this.set('picture', reader.result);
+                            $modal.modal('hide');
+
+                         }
+                    });
+                })
+
+                </script>
+            @endsection

@@ -9,6 +9,9 @@ use App\Models\companies;
 use Illuminate\Http\UploadedFile;
 use Livewire\WithFileUploads;
 use Auth;
+use Storage;
+use Illuminate\Support\Str;
+
 class Registercompany extends Component
 {
     use WithFileUploads;
@@ -78,12 +81,15 @@ class Registercompany extends Component
         $user->addRole(['company']);
        // $user->sendEmailVerificationNotification();
         if ($this->picture){
-            $validatedDate = $this->validate([
 
-                'picture' => 'image|mimes:jpeg,png,jpg|max:1024',
-
-            ]);
-            $image = $this->picture->store('companies_pictures', ['disk' => 'public']);
+            $data = $this->picture;
+            $type = 'post';
+            list($type, $data) = explode(';', $data);
+            list(, $data)      = explode(',', $data);
+            $data = base64_decode($data);
+            $imageName = Str::random(10).'.png';
+            Storage::disk('public')->put('companies_pictures/'.$imageName, $data);
+            $image = 'companies_pictures/'.$imageName;
             $companies = companies::create([
                 'user_id' => $user->id,
                 'lastname' => $this->lastname,
