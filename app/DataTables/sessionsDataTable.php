@@ -37,11 +37,11 @@ class sessionsDataTable extends DataTable
 
                         })
                         ->editColumn('start', function ($dataTable) {
-                            return  Carbon::parse($dataTable['start'])->isoFormat(' Do MMMM  YYYY ');
+                            return  Carbon::parse($dataTable['start'])->isoFormat('lll');
 
                         })
                         ->editColumn('end', function ($dataTable) {
-                            return  Carbon::parse($dataTable['end'])->isoFormat(' Do MMMM  YYYY ');
+                            return  Carbon::parse($dataTable['end'])->isoFormat('lll');
 
                         })
                         ->addColumn('count_registrations', function ($dataTable) {
