@@ -49,7 +49,7 @@
 								var x = document.getElementById("load-more");
 								x.style.display = "none";
 								var nomore = document.getElementById('no-more');
-
+								
 								nomore.innerHTML += @json( __('front.no more data') );
 								nomore.style.display = "block";
 							}
