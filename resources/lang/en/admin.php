@@ -29,9 +29,15 @@ return [
     'linkdinurl'      => 'linkdinurl', 
     'dribbleurl'      => 'dribbleurl',      
     'Update'      => 'Update', 
-    ''      => '',      
-    ''      => '',     
-    ''      => '',      
-    
+    'Next'      => 'Next',
+    'Previous'      => 'Previous',
+    'Showing'      => 'Showing',     
+    'to'      => 'to',       
+    'of'      => 'of',     
+    'results'      => 'results',   
+    ''      => '',        
+    ''      => '',   
+    ''      => '',       
+     
     
 ];

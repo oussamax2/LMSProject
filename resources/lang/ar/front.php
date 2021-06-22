@@ -285,7 +285,7 @@ return [
     'Dashboard' => 'لوحة القيادة',
     'Account' => 'حسابك',
     'registered companies' => 'الشركاء المسجلين',
-    'Registered Users' => 'المستخدمون المسجلون',
+    'Registered Users' => 'التسجيلات',
     '401 Unauthorized' => '401 غير مصرح به',
     'Required was not found' => 'لم يتم إيجاد المطلوب',
     'Create  your account and browse thousand of courses!!' => 'قم بإنشاء حسابك وتصفح آلاف الدورات !!',

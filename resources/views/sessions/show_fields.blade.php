@@ -81,7 +81,7 @@
                 </tr>
             </thead>
             <?php $i=1; ?>
-            @foreach ($sessions->registerations as $listreg)
+            @foreach ($regstrionList as $listreg)
                 <tbody>
                     <tr>
                         <th scope="row">{{$i++}}</th>
@@ -117,6 +117,9 @@
                 </tbody>
             @endforeach
     </table>
+    <div>
+     {{ $regstrionList->links('vendor\custompaginate') }}
+    </div>
     </div>
 </div>
 

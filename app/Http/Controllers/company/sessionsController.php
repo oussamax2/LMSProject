@@ -138,8 +138,9 @@ class sessionsController extends AppBaseController
 
             return redirect(route('sessions.index'));
         }
-
-        return view('sessions.show')->with('sessions', $sessions);
+        $regstrionList = $sessions->registerations()->paginate(1);
+// var_dump($regstrionList);
+        return view('sessions.show')->with(['sessions'=> $sessions, 'regstrionList'=> $regstrionList]);
     }
 
     /**
