@@ -81,8 +81,10 @@ class coursesController extends AppBaseController
 
             return redirect(route('courses.index'));
         }
+        $sessList = $courses->sessions()->paginate(6);
+       
 
-        return view('courses.show')->with('courses', $courses);
+        return view('courses.show')->with(['courses'=> $courses, 'sessList'=> $sessList]);
     }
 
     /**

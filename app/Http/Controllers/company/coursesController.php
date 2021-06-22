@@ -15,6 +15,8 @@ use App\Models\target_audiance;
 use Response;
 use Illuminate\Http\Request;
 use App\Imports\coursesImport;
+use App\Models\sessions;
+use Illuminate\Support\Collection;
 
 class coursesController extends AppBaseController
 {
@@ -129,7 +131,11 @@ class coursesController extends AppBaseController
             return redirect(route('courses.index'));
         }
 
-        return view('courses.show')->with('courses', $courses);
+
+        $sessList = $courses->sessions()->paginate(6);
+
+
+        return view('courses.show')->with(['courses'=> $courses, 'sessList'=> $sessList]);
     }
 
     /**

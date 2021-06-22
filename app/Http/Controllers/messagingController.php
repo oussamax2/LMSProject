@@ -177,6 +177,10 @@ class messagingController extends AppBaseController
         if(auth()->user()->hasRole('company')){
             $registerations->notif=1;
             $registerations->save();
+        }else{
+
+            $registerations->notifcompany=1;
+            $registerations->save();
         }
 
         if($registerations->my())
