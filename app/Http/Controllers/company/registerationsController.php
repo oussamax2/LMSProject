@@ -77,7 +77,8 @@ class registerationsController extends AppBaseController
 
             return redirect(route('registerations.index'));
         }
-
+        $registerations->notifcompany=0;
+        $registerations->save();
         return view('registerations.show')->with('registerations', $registerations);
     }
 

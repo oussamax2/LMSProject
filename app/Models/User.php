@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Role;
 use App\Models\companies;
+use App\Models\registerations;
+
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -103,8 +105,11 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     public function notif()
-    {
-        return $this->registerations()->where('notif',1)->count();
-
+    { if($this->hasRole('user'))
+     return $this->registerations()->where('notif',1)->count();
+     else{
+       return registerations::where('notifcompany',1)->with('user')->with(['sessions', 'sessions.courses'])->whereHas('sessions.courses', function ($query) {
+        $query->where('company_id',$this->companies->id);
+   })->count();}
     }
 }
