@@ -66,12 +66,12 @@
                 </tr>
             </thead>
             <?php $i=1; ?>
-            @foreach ($courses->sessions as $listsess)
+            @foreach ($sessList as $listsess)
                 <tbody>
                     <tr>
                         <th scope="row">{{$i++}}</th>
-                        <td>{{$listsess['start']}}</td>
-                        <td>{{$listsess['end']}}</td>
+                        <td>{{Carbon\Carbon::parse($listsess['start'])->isoFormat('dddd, MMMM Do YYYY, h:mm')}}</td>
+                        <td>{{Carbon\Carbon::parse($listsess['end'])->isoFormat('dddd, MMMM Do YYYY, h:mm')}}</td>
                         <td>{{$listsess['fee']}}</td>
                         <td>{{$listsess->countries['name']}}</td>
                         <td>
@@ -85,6 +85,9 @@
                 </tbody>
             @endforeach
         </table>
+        <div>
+            {{ $sessList->links('vendor\custompaginate') }}
+        </div>
         </div>
 </div>
 </div>
