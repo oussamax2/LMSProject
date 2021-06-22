@@ -12,13 +12,13 @@
 <div class="form-group">
 <i class="icon flaticon-clock"></i>
     {!! Form::label('start', __('forms.Start')) !!}
-    <p>{{Carbon\Carbon::parse($sessions->start)->isoFormat(' Do MMMM  YYYY ')}}</p>
+    <p>{{Carbon\Carbon::parse($sessions->start)->isoFormat('lll')}}</p>
 </div>
 <!-- End Field -->
 <div class="form-group">
 <i class="icon flaticon-clock"></i>
     {!! Form::label('end', __('forms.End')) !!}
-    <p>{{Carbon\Carbon::parse($sessions->end)->isoFormat(' Do MMMM  YYYY ')}}</p>
+    <p>{{Carbon\Carbon::parse($sessions->end)->isoFormat('lll')}}</p>
 </div>
 @if($sessions->fee == 0)
     <!-- Fee Field -->
@@ -88,7 +88,7 @@
                         <td>{{$listreg->user['name']}}</td>
 
 
-                       
+
 
                         @if($listreg->status == 0)
 
@@ -109,7 +109,7 @@
                         <td>
                             <a href="{{route('registerations.show', $listreg->id)}}" class="btn btn-ghost-success">
                                 <span class="icon icon-eye">
-                                
+
                                 </span>
                             </a>
                         </td>

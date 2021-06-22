@@ -34,7 +34,7 @@
 <div class="form-group col-sm-6 col-md-12 col-lg-6">
   <i class="icon icon-clock"></i>
     {!! Form::label('session_id', __('forms.Session Start')) !!}
-    <p>{{Carbon\Carbon::parse($registerations->sessions->start)->isoFormat(' Do MMMM  YYYY ')}}</p>
+    <p>{{Carbon\Carbon::parse($registerations->sessions->start)->isoFormat('llll')}}</p>
 </div>
 </div>
 

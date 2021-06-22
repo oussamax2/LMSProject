@@ -161,7 +161,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-      
+
 
         /*
          * Package Service Providers...
@@ -179,6 +179,7 @@ return [
         Yajra\DataTables\DataTablesServiceProvider::class,
         Reta110\UserProfile\UserProfileServiceProvider::class,
         Yoeunes\Toastr\ToastrServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
     ],
 
     /*
@@ -235,7 +236,8 @@ return [
         'Html'      => Collective\Html\HtmlFacade::class,
         'Flash'     => Laracasts\Flash\Flash::class,
         'DataTable'     => Yajra\DataTables\Services\DataTable::class,
-    
+        'Image' => Intervention\Image\Facades\Image::class,
+
     ],
 
 ];

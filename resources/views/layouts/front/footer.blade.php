@@ -37,11 +37,12 @@
 				<div class="bottom-footer">
 					<div class="container">
 						<ul class="float-right">
-							<li><h3><span class="counter p-color">8,997</span> @lang('front.Courses')</h3></li>
-							<li><h3><span class="counter p-color">53,701</span> @lang('front.Sessions')</h3></li>
-							<li><h3><span class="counter p-color">1,119</span> @lang('front.Company')</h3></li>
+
+							<li><h3><span class="counter p-color">{{$footer['courses']}}</span> @lang('front.Courses')</h3></li>
+							<li><h3><span class="counter p-color">{{$footer['sessions']}}</span> @lang('front.Sessions')</h3></li>
+							<li><h3><span class="counter p-color">{{$footer['companies']}}</span> @lang('front.Company')</h3></li>
 						</ul>
-						<p class="float-left">&copy; 2021 @lang('front.All rights reserved')</p>		
+						<p class="float-left">&copy; 2021 @lang('front.All rights reserved')</p>
 					</div>
 				</div>
 			</footer>
