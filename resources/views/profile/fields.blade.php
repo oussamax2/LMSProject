@@ -80,7 +80,7 @@
 						<strong>{{ $errors->first('shortDescription') }}</strong>
 					</span>
 				@endif
-			</div>		
+			</div>
 
 			<div class="form-group has-feedback{{ $errors->has('description') ? ' has-error' : '' }}">
 				<input type="text" class="form-control" name="description" value="{{ $user->companies->description }}" placeholder="@lang('admin.description')">
@@ -91,8 +91,8 @@
 						<strong>{{ $errors->first('description') }}</strong>
 					</span>
 				@endif
-			</div>		
-			
+			</div>
+
 			<div class="form-group has-feedback{{ $errors->has('fcburl') ? ' has-error' : '' }}">
 				<input type="text" class="form-control" name="fcburl" value="{{ $user->companies->fcburl }}" placeholder="@lang('admin.fcburl')">
 				<span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -102,8 +102,8 @@
 						<strong>{{ $errors->first('fcburl') }}</strong>
 					</span>
 				@endif
-			</div>		
-			
+			</div>
+
 			<div class="form-group has-feedback{{ $errors->has('twitturl') ? ' has-error' : '' }}">
 				<input type="text" class="form-control" name="twitturl" value="{{ $user->companies->twitturl }}" placeholder="@lang('admin.twitturl')">
 				<span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -113,8 +113,8 @@
 						<strong>{{ $errors->first('twitturl') }}</strong>
 					</span>
 				@endif
-			</div>				
-			
+			</div>
+
 			<div class="form-group has-feedback{{ $errors->has('linkdinurl') ? ' has-error' : '' }}">
 				<input type="text" class="form-control" name="linkdinurl" value="{{ $user->companies->linkdinurl }}" placeholder="@lang('admin.linkdinurl')">
 				<span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -125,7 +125,7 @@
 					</span>
 				@endif
 			</div>
-			
+
 			<div class="form-group has-feedback{{ $errors->has('dribbleurl') ? ' has-error' : '' }}">
 				<input type="text" class="form-control" name="dribbleurl" value="{{ $user->companies->dribbleurl }}" placeholder="@lang('admin.dribbleurl')">
 				<span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -135,53 +135,73 @@
 						<strong>{{ $errors->first('dribbleurl') }}</strong>
 					</span>
 				@endif
-			</div>		
-			
-	
-	
-	
+			</div>
 
-	    
-	   
-	</div> 
-	
+
+
+
+
+
+
+	</div>
+
 </div>
    <div class="row">
 	   <div class="col-lg-4 col-lg-offset-4 mx-auto">
 		    <div class="form-group has-feedback{{ $errors->has('picture') ? ' has-error' : '' }}">
-				
+
 				@push('scripts')
 					<script type="text/javascript">
-						imgInp.onchange = evt => {
-							const [file] = imgInp.files
-							if (file) {
-								blah.src = URL.createObjectURL(file)
-							}
+						// imgInp.onchange = evt => {
+						// 	const [file] = imgInp.files
+						// 	if (file) {
+						// 		blah.src = URL.createObjectURL(file)
+						// 	}
+						// }
+
+
+
+					$('#imgInp').ijaboCropTool({
+						preview : '.image-previewer',
+						setRatio:540/400,
+						allowedExtensions: ['jpg', 'jpeg','png'],
+						buttonsText:['CROP','QUIT'],
+						buttonsColor:['#30bf7d','#ee5155', -15],
+						processUrl:'{{ route("crop") }}',
+						withCSRF:['_token','{{ csrf_token() }}'],
+						onSuccess:function(message, element, status){
+							location.reload();
+						},
+						onError:function(message, element, status){
+
 						}
+					});
+
+
 				</script>
-				@endpush 	     
+				@endpush
 				@if(isset($user->companies->picture) && $user->companies['picture'] != NULL)
 
 					<!-- Picture Field -->
 					<div class="form-group col-sm-12">
 						{!! Form::label('picture', __('admin.Picture:')) !!}
-					
-							{!! Form::file('picture', ['id' =>'imgInp']) !!} 
-							
-							<img id="blah" src="{{ asset("storage/".$user->companies['picture']) }}" style="width: 229px;height: 213px;border-radius: 106px;" />
-					
+
+							{!! Form::file('picture', ['id' =>'imgInp']) !!}
+
+							<img class ="image-previewer" id="blah" src="{{ asset("storage/".$user->companies['picture']) }}" style="width: 229px;height: 213px;border-radius: 106px;" />
+
 					</div>
 
 				@else
-		
+
 					<!-- Picture Field -->
 					<div class="form-group col-sm-12">
 						{!! Form::label('picture', __('admin.Picture:')) !!}
-					
-							{!! Form::file('picture', ['id' =>'imgInp']) !!} 
-							
+
+							{!! Form::file('picture', ['id' =>'imgInp']) !!}
+
 							<img id="blah" src="{{ asset("images/no-image.png") }}" style="width: 229px;height: 213px;border-radius: 106px;"/>
-					
+
 					</div>
 
 				@endif
@@ -198,6 +218,6 @@
 	<div class="row">
 		<div class="col-lg-4 col-lg-offset-4 mx-auto">
 			<button type="submit" class="btn btn-primary btn-block btn-flat">@lang('admin.Update')</button>
-		</div>	
+		</div>
     </div>
 

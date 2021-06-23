@@ -105,16 +105,17 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     public function notif()
-    { if($this->hasRole('user'))
-     return $this->registerations()->where('notif',1)->count();
-     elseif($this->hasRole('company')){
-       return registerations::where('notifcompany',1)->with('user')->with(['sessions', 'sessions.courses'])->whereHas('sessions.courses', function ($query) {
-        $query->where('company_id',$this->companies->id);
-   })->count();}else{
-
-    return registerations::where('notifcompany',1)->with('user')->with(['sessions', 'sessions.courses'])->whereHas('sessions.courses', function ($query) {
-
-   })->count();
-   }
+    { 
+        if($this->hasRole('user'))
+            return $this->registerations()->where('notif',1)->count();
+        elseif($this->hasRole('company')){
+        return registerations::where('notifcompany',1)->with('user')->with(['sessions', 'sessions.courses'])->whereHas('sessions.courses', function ($query) {
+            $query->where('company_id',$this->companies->id);
+            })->count();
+        }else{
+            return registerations::where('notifcompany',1)->with('user')->with(['sessions', 'sessions.courses'])->whereHas('sessions.courses', function ($query) {
+                
+                })->count();
+        }
     }
 }

@@ -80,8 +80,11 @@
                                         </span>
                                     @endif
                                     <h6>@lang('front.Your Picture')</h6>
+                                    @if($picture)
+                                    <img class ="image-previewer" src="{{ asset("storage/".$picture) }}" style="width: 250px;" />
+                                    @endif
                                     @error('picture') <span class="invalid-feedback">{{ $message }}</span> @enderror
-                                    <input type="file" accept="image/*"  wire:model="picture" name="picture" class="picture" >
+                                    <input type="file" accept="image/*"   name="picture" class="picture" >
                                     <h6>@lang('front.Description')</h6>
                                     <textarea wire:model="description" ></textarea>
                                     <h6>@lang('front.Linkedin Url')</h6>
@@ -113,66 +116,24 @@
     </div> <!-- /.container -->
 </div>
     @section('js')
-            <script>
-                var $modal = $('#modal');
-                var image = document.getElementById('picture');
-                var cropper;
+    <script src="{{ asset('assets-panel/js/ijaboCropTool.min.js') }}"></script>
+    <script type="text/javascript">
+    $('.picture').ijaboCropTool({
+        setRatio:540/400,
+        allowedExtensions: ['jpg', 'jpeg','png'],
+        buttonsText:['CROP','QUIT'],
+        buttonsColor:['#30bf7d','#ee5155', -15],
+        processUrl:'{{ route("crop") }}',
+        withCSRF:['_token','{{ csrf_token() }}'],
+        onSuccess:function(message, element, status){
+            @this.set('picture', message);
 
-                $("body").on("change", ".picture", function(e){
-                    var files = e.target.files;
-                    var done = function (url) {
-                      image.src = url;
-                      $modal.modal('show');
-                    };
-                    var reader;
-                    var file;
-                    var url;
+        },
+        onError:function(message, element, status){
 
-                    if (files && files.length > 0) {
-                      file = files[0];
+        }
+    });
 
-                      if (URL) {
-                        done(URL.createObjectURL(file));
-                      } else if (FileReader) {
-                        reader = new FileReader();
-                        reader.onload = function (e) {
-                          done(reader.result);
-                        };
-                        reader.readAsDataURL(file);
-                      }
-                    }
-                });
 
-                $modal.on('shown.bs.modal', function () {
-                    cropper = new Cropper(image, {
-                    aspectRatio: 540/400,
-                    viewMode: 4,
-                    autoCropArea: 0.5,
-                    });
-                }).on('hidden.bs.modal', function () {
-                   cropper.destroy();
-                   cropper = null;
-                });
-
-                $("#crop").click(function(){
-                    canvas = cropper.getCroppedCanvas({
-                      width: 540,
-                      height: 400,
-                    });
-
-                    canvas.toBlob(function(blob) {
-                        url = URL.createObjectURL(blob);
-                        var reader = new FileReader();
-                         reader.readAsDataURL(blob);
-                         reader.onloadend = function() {
-                            var base64data = reader.result;
-
-                            @this.set('picture', reader.result);
-                            $modal.modal('hide');
-
-                         }
-                    });
-                })
-
-                </script>
+</script>
             @endsection

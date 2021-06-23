@@ -6,6 +6,7 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 
+
 /**
  * Class sessions
  * @package App\Models
@@ -133,7 +134,7 @@ class sessions extends Model
              $session->registerations()->each(function($registerations) {
                 $registerations->delete(); // <-- delete registerations belonging to this session
              });
-                     
+
         });
     }
 }
