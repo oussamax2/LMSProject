@@ -24,6 +24,27 @@ class UserProfileController extends Controller
         return $file->store('profile_pictures', ['disk' => 'public']);
     }
 
+    function crop(Request $request){
+        
+        $file = $request->file('picture');
+        $new_image_name = 'UIMG'.date('Ymd').uniqid().'.jpg';
+        $upload = $file->move(public_path('storage/companies_pictures'), $new_image_name);
+
+       
+        if($upload){
+            
+            $id = auth()->user()->id;
+            $user = User::find($id);
+            $user->companies->picture = 'companies_pictures/'.$new_image_name;
+            $user->companies->save();
+            toastr()->success('Image has been cropped successfully.!');
+            return response()->json(['status'=>1, 'msg'=>'Image has been cropped successfully.', 'name'=>$new_image_name]);
+        }else{
+              return response()->json(['status'=>0, 'msg'=>'Something went wrong, try again later']);
+        }
+      }
+  
+
     function update(Request $request){
 
         $id = auth()->user()->id;

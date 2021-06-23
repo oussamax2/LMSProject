@@ -40,6 +40,8 @@
     <link href="{{ asset('assets-panel/css/simple-line-icons.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets-panel/css/flag-icon.min.css')}}">
     @endif
+      <link rel="stylesheet" href="{{ asset('assets-panel/css/ijaboCropTool.min.css') }}">
+
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
 <header class="app-header navbar">
@@ -146,6 +148,10 @@
 <script src="{{ asset('assets-panel/js/moment.min.js')}}"></script>
 <script src="{{ asset('assets-panel/js/bootstrap-datetimepicker.min.js')}}"></script>
 <script src="{{ asset('assets-panel/js/coreui.min.js')}}"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+<script src="{{ asset('assets-panel/js/ijaboCropTool.min.js') }}"></script> 
+
 @stack('scripts')
 @toastr_js
 @toastr_render

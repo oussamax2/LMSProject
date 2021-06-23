@@ -152,12 +152,32 @@
 				
 				@push('scripts')
 					<script type="text/javascript">
-						imgInp.onchange = evt => {
-							const [file] = imgInp.files
-							if (file) {
-								blah.src = URL.createObjectURL(file)
-							}
+						// imgInp.onchange = evt => {
+						// 	const [file] = imgInp.files
+						// 	if (file) {
+						// 		blah.src = URL.createObjectURL(file)
+						// 	}
+						// }
+
+
+						
+					$('#imgInp').ijaboCropTool({
+						preview : '.image-previewer',
+						setRatio:540/400,
+						allowedExtensions: ['jpg', 'jpeg','png'],
+						buttonsText:['CROP','QUIT'],
+						buttonsColor:['#30bf7d','#ee5155', -15],
+						processUrl:'{{ route("crop") }}',
+						withCSRF:['_token','{{ csrf_token() }}'],
+						onSuccess:function(message, element, status){
+							location.reload();							
+						},
+						onError:function(message, element, status){
+							
 						}
+					});
+ 
+
 				</script>
 				@endpush 	     
 				@if(isset($user->companies->picture) && $user->companies['picture'] != NULL)
@@ -168,7 +188,7 @@
 					
 							{!! Form::file('picture', ['id' =>'imgInp']) !!} 
 							
-							<img id="blah" src="{{ asset("storage/".$user->companies['picture']) }}" style="width: 229px;height: 213px;border-radius: 106px;" />
+							<img class ="image-previewer" id="blah" src="{{ asset("storage/".$user->companies['picture']) }}" style="width: 229px;height: 213px;border-radius: 106px;" />
 					
 					</div>
 
