@@ -159,13 +159,13 @@
 						// 	}
 						// }
 
-
+						
 						
 					$('#imgInp').ijaboCropTool({
 						preview : '.image-previewer',
 						setRatio:540/400,
 						allowedExtensions: ['jpg', 'jpeg','png'],
-						buttonsText:['CROP','QUIT'],
+						buttonsText:[@json( __('front.Crop') ),@json( __('front.Cancel') )],
 						buttonsColor:['#30bf7d','#ee5155', -15],
 						processUrl:'{{ route("crop") }}',
 						withCSRF:['_token','{{ csrf_token() }}'],
