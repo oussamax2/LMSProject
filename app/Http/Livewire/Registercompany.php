@@ -125,4 +125,9 @@ class Registercompany extends Component
        $this->resetInputFields();
 
     }
+
+    public function resetfile()
+    {
+        $this->picture = '';
+    }
 }

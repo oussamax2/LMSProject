@@ -1,4 +1,25 @@
+    @section('js')
+    <script src="{{ asset('assets-panel/js/ijaboCropTool.min.js') }}"></script>
+    <script type="text/javascript">
+    $('.picture').ijaboCropTool({
+        setRatio:540/400,
+        allowedExtensions: ['jpg', 'jpeg','png'],
+        buttonsText:[@json( __('front.Crop') ),@json( __('front.Cancel') )],
+        buttonsColor:['#30bf7d','#ee5155', -15],
+        processUrl:'{{ route("crop") }}',
+        withCSRF:['_token','{{ csrf_token() }}'],
+        onSuccess:function(message, element, status){
+            @this.set('picture', message);
 
+        },
+        onError:function(message, element, status){
+
+        }
+    });
+
+
+</script>
+            @endsection
 <div class="registration-banner-company">
     <div class="container">
         <div class="row">
@@ -84,7 +105,7 @@
                                     <img class ="image-previewer" src="{{ asset("storage/".$picture) }}" style="width: 250px;" />
                                     @endif
                                     @error('picture') <span class="invalid-feedback">{{ $message }}</span> @enderror
-                                    <input type="file" accept="image/*"   name="picture" class="picture" >
+                                    <input type="file" accept="image/*"   name="picture" class="picture" wire:change="resetfile">
                                     <h6>@lang('front.Description')</h6>
                                     <textarea wire:model="description" ></textarea>
                                     <h6>@lang('front.Linkedin Url')</h6>
@@ -115,25 +136,4 @@
         </div> <!-- /.row -->
     </div> <!-- /.container -->
 </div>
-    @section('js')
-    <script src="{{ asset('assets-panel/js/ijaboCropTool.min.js') }}"></script>
-    <script type="text/javascript">
-    $('.picture').ijaboCropTool({
-        setRatio:540/400,
-        allowedExtensions: ['jpg', 'jpeg','png'],
-        buttonsText:[@json( __('front.Crop') ),@json( __('front.Cancel') )],
-        buttonsColor:['#30bf7d','#ee5155', -15],
-        processUrl:'{{ route("crop") }}',
-        withCSRF:['_token','{{ csrf_token() }}'],
-        onSuccess:function(message, element, status){
-            @this.set('picture', message);
 
-        },
-        onError:function(message, element, status){
-
-        }
-    });
-
-
-</script>
-            @endsection
