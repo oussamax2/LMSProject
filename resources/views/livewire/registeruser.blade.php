@@ -21,7 +21,7 @@
         <div class="form-wrapper">
 
             <h6>@lang('front.Your Full Name')</h6>
-            <input type="text" wire:model='name' placeholder="Your Name" value="{{ old('name') }}"  required>
+            <input type="text" wire:model='name' placeholder="@lang('front.Your Name ')" value="{{ old('name') }}"  required>
             @if ($errors->has('name'))
                 <span class="invalid-feedback">
                     <strong>{{ $errors->first('name') }}</strong>
@@ -35,14 +35,14 @@
                 </span>
             @endif
             <h6>@lang('front.Password')</h6>
-            <input type="password" wire:model="password" placeholder="password" required>
+            <input type="password" wire:model="password" placeholder="@lang('front.Password')" required>
             @if ($errors->has('password'))
                 <span class="invalid-feedback">
                     <strong>{{ $errors->first('password') }}</strong>
                 </span>
             @endif
             <h6>@lang('front.Confirm Password')</h6>
-            <input type="password" wire:model="password_confirmation"  placeholder="confirm password" required>
+            <input type="password" wire:model="password_confirmation"  placeholder="@lang('front.Confirm Password')" required>
             @if ($errors->has('password_confirmation'))
                 <span class="invalid-feedback">
                     <strong>{{ $errors->first('password_confirmation') }}</strong>
