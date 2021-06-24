@@ -292,7 +292,7 @@ return [
     'Currently Use' => 'تستخدم حاليا',
     'Total Students' => 'مجموع الطلاب',
     'Finished Course' => 'الدورة المنتهية',
-    '28,690+Student' => '28690 + طالب',
+    'Student' => 'طالب',
     'Currently Useing Campus' => 'تستخدم حاليا الحرم الجامعي',
     'We Have More' => 'لدينا المزيد',
     'There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form,' => 'هناك العديد من الاختلافات المتاحة لنصوص لوريم إيبسوم ولكن الغالبية تعرضت للتغيير في شكل ما ،',
@@ -318,7 +318,7 @@ return [
     'Crop' => 'قص',
     'email' => 'بريدك',
     'Your Name ' => 'اسمك',
-    '' => '',
+    'Registrations' => 'التسجيلات',
     '' => '',
     '' => '',
 ];

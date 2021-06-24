@@ -187,7 +187,7 @@ return [
     'Total Students' => 'Total Students',
     'Finished Course' => 'Finished Course',
     'Create  your account and browse thousand of courses!!' => 'Create  your account and browse thousand of courses!!',
-    '28,690+Student' => '28,690+Student',
+    'Student' => 'Student',
     'Currently Useing Campus' => 'Currently Useing Campus',
     'There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form,' => 'There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form,',
     'Send Message' => 'Send Message',
@@ -291,7 +291,7 @@ return [
     'Crop' => 'Crop',
     'email' => 'email',
     'Your Name ' => 'Your Name ',
-    '' => '',
+    'Registrations' => 'Registrations',
     '' => '',
     '' => '',   
 
