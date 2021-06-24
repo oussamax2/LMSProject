@@ -45,7 +45,7 @@ class Registercompany extends Component
         $this->linkdinurl = '';
         $this->dribbleurl = '';
         $this->description = '';
-
+        $this->picture = '';
     }
 
 
@@ -82,14 +82,7 @@ class Registercompany extends Component
        // $user->sendEmailVerificationNotification();
         if ($this->picture){
 
-            $data = $this->picture;
-            $type = 'post';
-            list($type, $data) = explode(';', $data);
-            list(, $data)      = explode(',', $data);
-            $data = base64_decode($data);
-            $imageName = Str::random(10).'.png';
-            Storage::disk('public')->put('companies_pictures/'.$imageName, $data);
-            $image = 'companies_pictures/'.$imageName;
+            $image = $this->picture;
             $companies = companies::create([
                 'user_id' => $user->id,
                 'lastname' => $this->lastname,

@@ -289,6 +289,11 @@ return [
     'sign_out' => 'sign out',
     'no more data' => 'no more data',
     'Crop' => 'Crop',
+    'email' => 'email',
+    'Your Name ' => 'Your Name ',
+    '' => '',
+    '' => '',
+    '' => '',   
 
 
 ];
