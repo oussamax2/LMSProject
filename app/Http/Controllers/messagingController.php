@@ -182,19 +182,25 @@ class messagingController extends AppBaseController
         if(auth()->user()->hasRole('company')){
             $registerations->notif=1;
             $registerations->save();
+            if (!Cache::has('user-is-online-' . $user)){
+                Mailsender::sendmsgtouser($user,$request->idr,$input['message']);
+            }
         }else{
 
             $registerations->notifcompany=1;
             $registerations->save();
+            $compid = $registerations->sessions->courses->companies->user->id;
+
+            if (!Cache::has('user-is-online-' . $compid)){
+                Mailsender::sendmsgtouser($compid,$request->idr,$input['message']);
+            }
         }
 
         if($registerations->my())
         $messaging = $this->messagingRepository->create($input);
 
 
-        if (!Cache::has('user-is-online-' . $user)){
-            Mailsender::sendmsgtouser($user,$request->idr,$input['message']);
-        }
+    
         
 
         Flash::success('Messaging saved successfully.');
