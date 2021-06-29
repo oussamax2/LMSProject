@@ -44,7 +44,7 @@ class Mailsender
     {
         $user =   User::find($id);
         $registeration = registerations::find($idM);
-        Mail::send('mail.msgnotiftouser', ['name'=>$user->name,'msg'=>$messagee,'registeration'=>$registeration], function ($message) use ($user){
+        Mail::send('mail.registerationmessage', ['name'=>$user->name,'msg'=>$messagee,'registeration'=>$registeration], function ($message) use ($user){
              $message->from('itmax.tn@gmail.com', 'lms project');
              $message->to($user->email)->subject('Registerations Message ');
          });
