@@ -319,6 +319,6 @@ return [
     'email' => 'بريدك',
     'Your Name ' => 'اسمك',
     'Registrations' => 'التسجيلات',
-    '' => '',
+    'no data available' => 'لا توجد بيانات متاحة',
     '' => '',
 ];

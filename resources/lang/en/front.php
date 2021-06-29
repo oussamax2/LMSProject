@@ -292,7 +292,7 @@ return [
     'email' => 'email',
     'Your Name ' => 'Your Name ',
     'Registrations' => 'Registrations',
-    '' => '',
+    'no data available' => 'no data available',
     '' => '',   
 
 
