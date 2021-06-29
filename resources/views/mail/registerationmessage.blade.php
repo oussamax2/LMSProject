@@ -60,7 +60,12 @@
                      <h3>new message from <strong>{{auth()->user()->name}}</strong></h3>
                  
                    
-                    <p>message: {!! $msg !!}</p>
+                     <h3><strong>message:</strong></h3><p> {!! $msg !!}</p>
+
+                    <div class="linkfordahsboard">
+                        <a href="{{ url('/dashboarduser/registerationsuser', $registeration->id) }}"><h3><strong>Your Registeration</strong></h3></a>
+                    </div>
+
                     <div class="details-registrations">
                     <p>Start Session: {{Carbon\Carbon::parse($registeration->sessions->start)->isoFormat(' Do MMMM  YYYY ')}}</p>
                     <p>End Session: {{Carbon\Carbon::parse($registeration->sessions->end)->isoFormat(' Do MMMM  YYYY ')}}</p>
