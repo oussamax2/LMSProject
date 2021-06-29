@@ -39,4 +39,14 @@ class Mailsender
              $message->to($company->email)->subject('New Registerations');
          });
     }
+
+     public static  function sendmsgtouser($id,$idM,$messagee)
+    {
+        $user =   User::find($id);
+        $registeration = registerations::find($idM);
+        Mail::send('mail.msgnotiftouser', ['name'=>$user->name,'msg'=>$messagee,'registeration'=>$registeration], function ($message) use ($user){
+             $message->from('itmax.tn@gmail.com', 'lms project');
+             $message->to($user->email)->subject('Registerations Message ');
+         });
+    }   
 }
