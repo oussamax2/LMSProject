@@ -28,12 +28,13 @@
 
     <div class="course-style-filter clearfix">
         <ul class="float-left clearfix">
-            <li><a href="#" wire:click="resetsearch" class="tran3s {{$all ? "active" : ""}}">@lang('front.All')</a></li>
-            <li><a href="#" wire:click="freesearch" class="tran3s {{$free ? "active" : ""}}">@lang('front.free')</a></li>
+            <li><a href="javascript:void(0);" wire:click="resetsearch" class="tran3s {{$all ? "active" : ""}}">@lang('front.All')</a></li>
+            <li><a href="javascript:void(0);" wire:click="freesearch" class="tran3s {{$free ? "active" : ""}}">@lang('front.free')</a></li>
         </ul>
     </div>
 
     <div>
+     @if(count($sessionList) >0)
         @foreach($sessionList as $session)
         <div class="single-course clearfix trending">
 
@@ -80,7 +81,16 @@
             </div>
         </div>
         @endforeach
+     @else
+        <div class="single-course clearfix trending">
+        
+           <div class="float-left">
 
+                <h6>@lang('front.no data available')</h6>
+
+            </div>
+        </div>
+     @endif
 
     </div>
 
