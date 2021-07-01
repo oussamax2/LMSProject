@@ -63,4 +63,19 @@ class subcategorie extends Model
     {
         return $this->HasMany(courses::class, 'subcateg_id');
     }
+
+    public function countsessions()
+    {
+
+        return
+            sessions::whereHas('courses', function ($query) {
+                $query->where('subcateg_id',$this->id);
+            })->count();
+                
+                    
+    }
+
+        
+
+        
 }

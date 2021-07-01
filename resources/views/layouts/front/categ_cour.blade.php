@@ -31,11 +31,8 @@
 									      <div class="panel-body">
 									      	<ul id="subcat">
                                                 @foreach($cat->subcategorie as $subcat)
-												  @foreach($subcat->courses as $countsess)
-									      			 <li  value="{{$subcat->id}}"><a href="#" class="tran3s"><span>{{$countsess->sessions->count()}}</span>{{$subcat->name}}</a></li>
+									      		<li  value="{{$subcat->id}}"><a href="#" class="tran3s"><span>{{$subcat->countsessions()}}</span>{{$subcat->name}}</a></li>
                                                   @endforeach
-												@endforeach
-												  
 									      	</ul>
 									      </div>
 									    </div>
