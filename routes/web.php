@@ -32,7 +32,6 @@ Route::get('/register_vendor', [App\Http\Controllers\HomeController::class, 'reg
 Route::post('/store_vendor', [App\Http\Controllers\Auth\RegisterController::class, 'registervendor'])->name('registervendor');
 Route::get('sendcontact', [App\Http\Controllers\ContactController::class, 'sendcontact'])->name("sendcontact");
 Route::get('/loginverif', [App\Http\Controllers\HomeController::class, 'loginverif'])->name("loginverif");
-Route::view('loginlive','livewire.home');
 Route::get('test', [App\Http\Controllers\registerationsController::class,'test']);
 
 /** verification */
@@ -84,10 +83,10 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','verified','rol
     Route::resource('messagings', App\Http\Controllers\messagingController::class);
     Route::resource('users', App\Http\Controllers\UserController::class)->except(['create', 'store']);
     Route::get('indexadmins', [App\Http\Controllers\adminController::class, 'indexadmins'])->name('indexadmins');
-    Route::get('showadmins/{id}', [App\Http\Controllers\adminController::class, 'showadmins'])->name('showadmins');    
+    Route::get('showadmins/{id}', [App\Http\Controllers\adminController::class, 'showadmins'])->name('showadmins');
     Route::delete('destroyadmins/{id}', [App\Http\Controllers\adminController::class, 'destroyadmins'])->name('destroyadmins');
-    Route::get('createadmin', [App\Http\Controllers\adminController::class, 'createadmin'])->name('createadmin'); 
-    Route::post('/storeadmin', [App\Http\Controllers\adminController::class, 'storeadmin'])->name('storeadmin');                
+    Route::get('createadmin', [App\Http\Controllers\adminController::class, 'createadmin'])->name('createadmin');
+    Route::post('/storeadmin', [App\Http\Controllers\adminController::class, 'storeadmin'])->name('storeadmin');
 });
 
 
@@ -106,7 +105,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','verified',
     Route::get('coursesimport', [App\Http\Controllers\company\coursesController::class,'import'])->name('courses.import');
     Route::post('importExcel', [App\Http\Controllers\company\coursesController::class, 'importExcel'])->name('importExcel');
     Route::resource('sessions', App\Http\Controllers\company\sessionsController::class);
-    
+
 
 });
 Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:company']], function () {

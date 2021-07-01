@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use App\Models\Role;
 use App\Models\companies;
 use App\Models\registerations;
-
+use App\Notifications\PasswordReset;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -117,5 +117,10 @@ class User extends Authenticatable implements MustVerifyEmail
                 
                 })->count();
         }
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new PasswordReset($token));
     }
 }

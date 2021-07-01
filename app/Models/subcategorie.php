@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
+use App\Models\sessions;
 
 /**
  * Class subcategorie
@@ -62,5 +62,12 @@ class subcategorie extends Model
     public function courses()
     {
         return $this->HasMany(courses::class, 'subcateg_id');
+    }
+
+    public function countsessions()
+    {
+        return  sessions::whereHas('courses', function ($query) {
+            $query->where('subcateg_id',$this->id);})->count();
+
     }
 }

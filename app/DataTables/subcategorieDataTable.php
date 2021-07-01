@@ -62,7 +62,7 @@ class subcategorieDataTable extends DataTable
         return [
             ['data' => 'category_id', 'name' => 'category_id', 'title' => __('CATEGORY ID'), 'visible' => false] ,
 
-            ['data' => 'categories.name', 'name' => 'categories.name', 'title' => __('forms.name')],
+            ['data' => 'name', 'name' => 'name', 'title' => __('forms.name')],
             ['data' => 'categories.name', 'name' => 'categories.name', 'title' => __('forms.category Name')],
         ];
     }

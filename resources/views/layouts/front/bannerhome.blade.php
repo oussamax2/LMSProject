@@ -17,7 +17,7 @@
 												</div>
 												<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
 													<div class="single-input">
-														<input type="text" name="keywords" placeholder="@lang('front.Subject or qualification, eg. IT')">
+														<input type="text" name="keywords" placeholder="@lang('front.Subject or qualification, eg. IT')" required>
 													</div>
 												</div>
 												<div class="col-md-3 col-lg-3 col-sm-12 col-xs-12"><button class="action-button tran3s">@lang('front.Search courses')</button></div>

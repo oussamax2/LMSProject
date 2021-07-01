@@ -79,7 +79,7 @@ class Registercompany extends Component
         ]);
 
         $user->addRole(['company']);
-       // $user->sendEmailVerificationNotification();
+        $user->sendEmailVerificationNotification();
         if ($this->picture){
 
             $image = $this->picture;

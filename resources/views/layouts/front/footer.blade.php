@@ -4,7 +4,7 @@
 					<div class="row">
 						<div class="col-md-4 col-sm-6">
 							<div class="footer-logo">
-								<a href="index.html"><img src="images/logo/logo2.png" alt="Logo"></a>
+								<a href="{{url('/')}}"><img src="{{ asset('images/logo/logo2.png')}}" alt="Logo"></a>
 								<p>@lang('front.It was some time before he obtained any answer, and the reply, when made, was unpropitious.')</p>
 								<ul>
 									<li><a href="" class="tran3s"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
