@@ -172,4 +172,3 @@ Route::get('/getpartners', [App\Http\Controllers\HomeController::class, 'getpart
 Route::resource('languages', App\Http\Controllers\languageController::class);
 
 Route::post('crop', [App\Http\Controllers\Profile\UserProfileController::class, 'crop'])->name('crop');
-
