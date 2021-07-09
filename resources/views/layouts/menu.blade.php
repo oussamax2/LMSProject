@@ -129,3 +129,9 @@
     <span class="menu-item-dsh">@lang('front.Languages')</span>
     </a>
 </li>
+<li class="nav-item {{ Request::is('subscribers*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('subscribers.index') }}">
+        <span class="icon icon-envelope-letter"></span >
+        <span class="menu-item-dsh">@lang('front.Subscribers')</span>
+    </a>
+</li>

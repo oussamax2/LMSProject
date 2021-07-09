@@ -87,7 +87,9 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','verified','rol
     Route::get('showadmins/{id}', [App\Http\Controllers\adminController::class, 'showadmins'])->name('showadmins');    
     Route::delete('destroyadmins/{id}', [App\Http\Controllers\adminController::class, 'destroyadmins'])->name('destroyadmins');
     Route::get('createadmin', [App\Http\Controllers\adminController::class, 'createadmin'])->name('createadmin'); 
-    Route::post('/storeadmin', [App\Http\Controllers\adminController::class, 'storeadmin'])->name('storeadmin');                
+    Route::post('/storeadmin', [App\Http\Controllers\adminController::class, 'storeadmin'])->name('storeadmin');  
+    
+    Route::resource('subscribers', App\Http\Controllers\subscribersController::class)->except(['edit', 'update', 'create', 'store']);              
 });
 
 
@@ -172,3 +174,8 @@ Route::get('/getpartners', [App\Http\Controllers\HomeController::class, 'getpart
 Route::resource('languages', App\Http\Controllers\languageController::class);
 
 Route::post('crop', [App\Http\Controllers\Profile\UserProfileController::class, 'crop'])->name('crop');
+
+
+
+
+Route::post('subscribersstore', [App\Http\Controllers\subscriberFrontController::class, 'store'])->name('subscribersstore');

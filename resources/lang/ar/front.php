@@ -178,7 +178,9 @@ return [
 
     'Partner' => 'شريك',
     'Load More' => 'اكتشف أكثر',
-    'This sounded a very good reason, and Alice was quite pleased.' => 'This sounded a very good reason, and Alice was quite pleased.',
+    'Please enter your email and subscribe here !' => '! الرجاء إدخال بريدك الإلكتروني والاشتراك هنا',
+    'Subscribe saved successfully. !' => 'تم حفظ الاشتراك بنجاح. !',
+    'subscriber already exists !' => '! المشترك موجود بالفعل',     
     'Workshop' => 'ورشة عمل',
     'Design & Development' => 'تطوير التصميم',
     'IOS & Adroid Apps Development' => 'تطوير تطبيقات IOS و Adroid',
@@ -320,5 +322,6 @@ return [
     'Your Name ' => 'اسمك',
     'Registrations' => 'التسجيلات',
     'no data available' => 'لا توجد بيانات متاحة',
+    'Subscribers' => 'المشتركين',   
     '' => '',
 ];
