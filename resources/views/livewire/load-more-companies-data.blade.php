@@ -24,6 +24,8 @@
   </div>
 @if(!$companies->hasMorePages())
   
-    <div class="load-more tran3s">no more data</div>
+    <div style="line-height: 61px;text-align: center;font-size: 18px;text-transform: uppercase;color: #f55d3a;font-weight: 500px;margin: 0 auto 30px auto;font-weight: bold;">
+        @lang('front.no more data')
+    </div>
 @endif  
 </div>
