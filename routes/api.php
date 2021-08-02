@@ -64,3 +64,5 @@ Route::resource('messagings', App\Http\Controllers\API\messagingAPIController::c
 Route::resource('users', App\Http\Controllers\API\UserAPIController::class);
 
 Route::resource('languages', App\Http\Controllers\API\languageAPIController::class);
+
+Route::resource('subscribers', App\Http\Controllers\API\subscribersAPIController::class);

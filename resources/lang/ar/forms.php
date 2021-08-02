@@ -50,7 +50,7 @@ return [
     'Fee'      => 'الثمن',
     'Language'      => 'لغة',
     'Country'      => 'دولة',
-    'Email'      => 'بريد إلكتروني',
+    'Email'      => 'البريد إلكتروني',
 
     'company Name'      => 'اسم الشريك',
     'Company status'      => 'الحالة',

@@ -79,7 +79,7 @@
             </div>
         </li>
         <!-- menu list -->
-
+@if(Illuminate\Support\Facades\Auth::check())
         <li class="nav-item d-md-down-none">
             <a class="nav-link" href="{{ route('registerationsuser.index') }}">
                 <i class="icon-bell"></i>
@@ -114,6 +114,9 @@
                 </form>
             </div>
         </li>
+@else
+    {{abort(404)}}
+@endif
     </ul>
 </header>
 
