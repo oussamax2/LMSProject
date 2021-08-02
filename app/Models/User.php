@@ -10,6 +10,7 @@ use App\Models\Role;
 use App\Models\companies;
 use App\Models\registerations;
 use App\Notifications\PasswordReset;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -106,17 +107,21 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function notif()
     { 
-        if($this->hasRole('user'))
-            return $this->registerations()->where('notif',1)->count();
-        elseif($this->hasRole('company')){
-        return registerations::where('notifcompany',1)->with('user')->with(['sessions', 'sessions.courses'])->whereHas('sessions.courses', function ($query) {
-            $query->where('company_id',$this->companies->id);
-            })->count();
-        }else{
+        if(Auth::check()){
+            if($this->hasRole('user'))
+                return $this->registerations()->where('notif',1)->count();
+            elseif($this->hasRole('company')){
             return registerations::where('notifcompany',1)->with('user')->with(['sessions', 'sessions.courses'])->whereHas('sessions.courses', function ($query) {
-                
+                $query->where('company_id',$this->companies->id);
                 })->count();
-        }
+            }else{
+                return registerations::where('notifcompany',1)->with('user')->with(['sessions', 'sessions.courses'])->whereHas('sessions.courses', function ($query) {
+                    
+                    })->count();
+            }
+        }else{
+            return abort(404);
+        }    
     }
 
     public function sendPasswordResetNotification($token)

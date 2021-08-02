@@ -196,7 +196,7 @@ class messagingController extends AppBaseController
             }
         }
 
-        if($registerations->my())
+        if($registerations->my() || $input['user_id'] == $user)
         $messaging = $this->messagingRepository->create($input);
 
 

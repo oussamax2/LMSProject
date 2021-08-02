@@ -25,11 +25,14 @@
 						</div>
 						<div class="col-md-4 col-sm-6 col-xs-12 footer-subscribe">
 							<h6>@lang('front.Subscribe Us')</h6>
-							<p>@lang('front.This sounded a very good reason, and Alice was quite pleased.')</p>
-							<form action="#">
-								<input type="text" placeholder="@lang('front.Your Email')">
-								<button class="tran3s s-bg-color"><i class="flaticon-envelope-back-view-outline"></i></button>
-							</form>
+							<p>@lang('front.Please enter your email and subscribe here !')</p>
+							{!! Form::open(['route' => 'subscribersstore']) !!}
+
+								<input name="email" type="text" placeholder="@lang('front.Your Email')">
+								<button type="submit" class="tran3s s-bg-color"><i class="flaticon-envelope-back-view-outline"></i></button>
+
+							{!! Form::close() !!}
+						
 						</div>
 					</div>
 				</div>
