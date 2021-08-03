@@ -54,6 +54,7 @@ class cities extends Model
      */
     public static $rules = [
         'name' => 'required|max:10', 
+        'state_id' => 'exists:states,id',
     ];
     
     public function states()
