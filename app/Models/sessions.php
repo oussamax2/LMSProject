@@ -74,6 +74,11 @@ class sessions extends Model
         'end' => 'required',
         'fee' => 'required',
         'note' => 'max:180',
+        'language' => 'exists:languages,id',
+        'country_id' => 'exists:countries,id', 
+        'state' => 'exists:states,id',    
+        'course_id' => 'exists:courses,id',  
+        'city' => 'exists:cities,id',                                
     ];
 
     public function languages()

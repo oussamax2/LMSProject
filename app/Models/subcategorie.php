@@ -49,6 +49,7 @@ class subcategorie extends Model
      */
     public static $rules = [
         'name' => 'required|max:30',
+        'category_id' => 'exists:categories,id',
     ];
 
     public function categories()
