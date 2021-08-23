@@ -18,7 +18,7 @@ class categoriesDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn(__('front.Action'), 'categories.datatables_actions')
+        return $dataTable->addColumn('action', 'categories.datatables_actions')
 
                          ->editColumn('picture', function($data) {
                              if(isset($data->picture) && $data->picture != NULL){
