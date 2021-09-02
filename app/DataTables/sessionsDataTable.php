@@ -63,8 +63,7 @@ class sessionsDataTable extends DataTable
     {
             $user = auth()->user();
             if($user->hasRole('admin'))
-            return $model->newQuery()->whereHas('courses', function ($query) {
-                $query->where('company_id',1);});
+            return $model->newQuery();
          else{
                  return $model->newQuery()->whereHas('courses', function ($query) {
                     $user = auth()->user();
