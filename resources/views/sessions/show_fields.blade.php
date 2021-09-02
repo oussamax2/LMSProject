@@ -118,7 +118,7 @@
             @endforeach
     </table>
     <div>
-     {{ $regstrionList->links('vendor\custompaginate') }}
+     {{ $regstrionList->links('vendor.custompaginate') }}
     </div>
     </div>
 </div>

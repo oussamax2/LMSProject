@@ -86,7 +86,7 @@
             @endforeach
         </table>
         <div>
-            {{ $sessList->links('vendor\custompaginate') }}
+            {{ $sessList->links('vendor.custompaginate') }}
         </div>
         </div>
 </div>
