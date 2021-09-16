@@ -25,14 +25,6 @@
 
 
 
-
-    <div class="course-style-filter clearfix">
-        <ul class="float-left clearfix">
-            <li><a href="#" wire:click="resetsearch" class="tran3s {{$all ? "active" : ""}}">@lang('front.All')</a></li>
-            <li><a href="#" wire:click="freesearch" class="tran3s {{$free ? "active" : ""}}">@lang('front.free')</a></li>
-        </ul>
-    </div>
-
     <div>
         @foreach($sessionList as $session)
         <div class="single-course clearfix trending">
