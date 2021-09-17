@@ -108,6 +108,7 @@ return [
     'free' => 'free',
     'To' => 'To',
     'Company' => 'Company',
+    'dashboard' => 'dashboard',
     'All rights reserved' => 'All rights reserved',
 
     'Training Organizer Company' => 'Training Organizer Company',

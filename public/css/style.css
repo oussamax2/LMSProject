@@ -3028,6 +3028,7 @@ footer .bottom-footer {
   position: relative;
   margin-bottom: 25px;
 }
+
 #mixitUp-item .single-item .opacity {
   height: 156px;
   width: 100%;
@@ -3050,6 +3051,7 @@ footer .bottom-footer {
   -webkit-transform:scale(1,0);
           transform:scale(1,0);
 }
+
 #mixitUp-item .single-item .opacity:before {left:0;}
 #mixitUp-item .single-item .opacity:after {right:0;}
 #mixitUp-item .single-item .opacity h6 a {
