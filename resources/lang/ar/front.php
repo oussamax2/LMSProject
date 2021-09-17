@@ -323,5 +323,5 @@ return [
     'Registrations' => 'التسجيلات',
     'no data available' => 'لا توجد بيانات متاحة',
     'Subscribers' => 'المشتركين',   
-    '' => '',
+    'Other session:' => 'دورات من هذا الدرس',
 ];

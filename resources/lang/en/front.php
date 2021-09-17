@@ -298,6 +298,6 @@ return [
     'Registrations' => 'Registrations',
     'no data available' => 'no data available',
     'Subscribers' => 'Subscribers', 
-    '' => '',       
+    'Other session:' => 'Other session:',       
 
 ];
