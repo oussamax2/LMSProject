@@ -22,9 +22,9 @@ class registerationsDataTable extends DataTable
         if($user->hasRole('user'))
         return $dataTable->addColumn('action', 'registerationsuser.datatables_actions')
         ->editColumn('sessions.start', function($data) {
-       
+
             return Carbon::parse($data->sessions->start)->isoFormat(' Do MMMM  YYYY ');
-        
+
         })
         ->editColumn('status', function ($registerations) {
             if($registerations->status ==0)
@@ -35,10 +35,15 @@ class registerationsDataTable extends DataTable
             return '<span class="btn btn-ghost-pending icon icon-hourglass"></span>';
             if($registerations->status ==3)
             return '<span class="btn btn btn-ghost-success icon icon-like"></span>';})
+            ->setRowAttr([
+                'style' => function($registerations){
+                    return $registerations->notif ? 'background-color: #00ff0021;' : '';
+                }
+            ])
             ->escapeColumns([]);
         else
         return $dataTable->addColumn('action', 'registerations.datatables_actions') ->editColumn('sessions.start', function($data) {
-       
+
             return Carbon::parse($data->sessions->start)->isoFormat(' Do MMMM  YYYY ');
         })
         ->editColumn('status', function ($registerations) {
@@ -50,6 +55,11 @@ class registerationsDataTable extends DataTable
             return '<span class="btn btn-ghost-pending icon icon-hourglass"></span>';
             if($registerations->status ==3)
             return '<span class="btn btn btn-ghost-success icon icon-like"></span>';})
+            ->setRowAttr([
+                'style' => function($registerations){
+                    return $registerations->notifcompany ? 'background-color: #00ff0021;' : '';
+                }
+            ])
             ->escapeColumns([]);
     }
 
@@ -69,8 +79,8 @@ class registerationsDataTable extends DataTable
             $user = auth()->user();
             $query->where('company_id',$user->companies->id);
 
-       });}else{
-        return $model->touser()->newQuery()->with('user')->with(['sessions', 'sessions.courses']);
+       })->orderBy('updated_at', 'desc');}else{
+        return $model->touser()->newQuery()->with('user')->with(['sessions', 'sessions.courses'])->orderBy('updated_at', 'desc');
        }
     }
 
@@ -84,10 +94,10 @@ class registerationsDataTable extends DataTable
         return $this->builder()
             ->columns($this->getColumns())
             ->minifiedAjax()
-            ->addAction(['width' => '120px', 'printable' => false])
+            ->addAction(['width' => '120px', 'printable' => false,'title' => __('front.Action')])
             ->parameters([
                 'dom'       => 'Bfrtip',
-                'stateSave' => true,
+
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
                 ],'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],

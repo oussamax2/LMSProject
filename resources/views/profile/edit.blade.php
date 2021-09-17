@@ -4,7 +4,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Editing Profile
+        @lang('admin.Editing Profile')
         </h1>
    </section>
    @include('flash::message')

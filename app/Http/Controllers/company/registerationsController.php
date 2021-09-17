@@ -77,7 +77,10 @@ class registerationsController extends AppBaseController
 
             return redirect(route('registerations.index'));
         }
-
+        if(auth()->user()->hasRole('company')){
+            $registerations->notifcompany=0;
+            $registerations->save();
+        }
         return view('registerations.show')->with('registerations', $registerations);
     }
 
@@ -180,6 +183,7 @@ class registerationsController extends AppBaseController
                 Mailsender::senduser($user,$id,3);
            }
            /**save status in DB */
+           $registerations->notif=1;
            $registerations->save();
            Flash::success(__('admin.updated successfully.'));
 

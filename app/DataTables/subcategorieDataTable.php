@@ -42,10 +42,10 @@ class subcategorieDataTable extends DataTable
         return $this->builder()
             ->columns($this->getColumns())
             ->minifiedAjax()
-            ->addAction(['width' => '120px', 'printable' => false])
+             ->addAction(['width' => '120px', 'printable' => false,'title' => __('front.Action')])
             ->parameters([
                 'dom'       => 'Bfrtip',
-                'stateSave' => true,
+
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
                 ],'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],
@@ -61,8 +61,8 @@ class subcategorieDataTable extends DataTable
     {
         return [
             ['data' => 'category_id', 'name' => 'category_id', 'title' => __('CATEGORY ID'), 'visible' => false] ,
-            
-            ['data' => 'categories.name', 'name' => 'categories.name', 'title' => __('forms.name')],
+
+            ['data' => 'name', 'name' => 'name', 'title' => __('forms.name')],
             ['data' => 'categories.name', 'name' => 'categories.name', 'title' => __('forms.category Name')],
         ];
     }

@@ -19,7 +19,7 @@ class categoriesDataTable extends DataTable
         $dataTable = new EloquentDataTable($query);
 
         return $dataTable->addColumn('action', 'categories.datatables_actions')
-          
+
                          ->editColumn('picture', function($data) {
                              if(isset($data->picture) && $data->picture != NULL){
                                 $url= asset("storage/".$data->picture);
@@ -30,7 +30,7 @@ class categoriesDataTable extends DataTable
                              }
                          })->escapeColumns([]);
             //   OR METHOD 2 by addColumn
-            //     ->addColumn('picture', function ($dataTable) { 
+            //     ->addColumn('picture', function ($dataTable) {
             //       $url= asset("storage/".$dataTable['picture']);
             //       return '<img src="'.$url.'" border="0" width="40" class="img-rounded" align="center" />';
             //      })->escapeColumns([]);
@@ -59,10 +59,10 @@ class categoriesDataTable extends DataTable
         return $this->builder()
             ->columns($this->getColumns())
             ->minifiedAjax()
-            ->addAction(['width' => '120px', 'printable' => false])
+             ->addAction(['width' => '120px', 'printable' => false,'title' => __('front.Action')])
             ->parameters([
                 'dom'       => 'Bfrtip',
-                'stateSave' => true,
+
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
                 ],'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],
@@ -79,8 +79,8 @@ class categoriesDataTable extends DataTable
         return [
             ['data' => 'picture', 'name' => 'picture', 'title' => __('forms.picture')],
             ['data' => 'name', 'name' => 'name', 'title' => __('forms.name')],
-           
-            
+
+
         ];
     }
 

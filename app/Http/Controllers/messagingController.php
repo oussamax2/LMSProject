@@ -6,10 +6,12 @@ use App\Http\Requests\CreatemessagingRequest;
 use App\Http\Requests\UpdatemessagingRequest;
 use App\Repositories\messagingRepository;
 use App\Http\Controllers\AppBaseController;
+use App\Models\Mailsender;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
 use App\Models\registerations;
+use Cache;
 use Illuminate\Http\UploadedFile;
 
 
@@ -161,10 +163,13 @@ class messagingController extends AppBaseController
         {
             return $file->store('files', ['disk' => 'public']);
         }
-        
+
     public function sendmsg(Request $request)
     {
         $registerations = registerations::find($request->idr);
+
+        $user =$registerations->user_id;
+
         $input['user_id'] = auth()->user()->id;
         $input['registeration_id'] = $request->idr ;
         $input['message'] = $request->message;
@@ -172,11 +177,31 @@ class messagingController extends AppBaseController
             $this->validate($request, ['file_send' => 'file|max:2048']);
             /**save image in intended folder */
             $file = $this->savefile($request->file('file_send'));
-            $input['message'] = $request->message .'<br><a style="color: #f36824;" href='.asset("storage/".$file."").'>'.$request->file_send->getClientOriginalName().'<a>';
+            $input['message'] = $request->message .'<br><a style="color: #f36824;" href='.asset("storage/".$file."").'>'.$request->file_send->getClientOriginalName().'</a>';
         }
-     
-        if($registerations->my())
+        if(auth()->user()->hasRole('company')){
+            $registerations->notif=1;
+            $registerations->save();
+            if (!Cache::has('user-is-online-' . $user)){
+                Mailsender::sendmsgtouser($user,$request->idr,$input['message']);
+            }
+        }else{
+
+            $registerations->notifcompany=1;
+            $registerations->save();
+            $compid = $registerations->sessions->courses->companies->user->id;
+
+            if (!Cache::has('user-is-online-' . $compid)){
+                Mailsender::sendmsgtouser($compid,$request->idr,$input['message']);
+            }
+        }
+
+        if($registerations->my() || $input['user_id'] == $user)
         $messaging = $this->messagingRepository->create($input);
+
+
+    
+        
 
         Flash::success('Messaging saved successfully.');
 

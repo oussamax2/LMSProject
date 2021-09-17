@@ -4,7 +4,7 @@
 					<div class="row">
 						<div class="col-md-4 col-sm-6">
 							<div class="footer-logo">
-								<a href="index.html"><img src="images/logo/logo2.png" alt="Logo"></a>
+								<a href="{{url('/')}}"><img src="{{ asset('images/logo/logo2.png')}}" alt="Logo"></a>
 								<p>@lang('front.It was some time before he obtained any answer, and the reply, when made, was unpropitious.')</p>
 								<ul>
 									<li><a href="" class="tran3s"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -25,11 +25,14 @@
 						</div>
 						<div class="col-md-4 col-sm-6 col-xs-12 footer-subscribe">
 							<h6>@lang('front.Subscribe Us')</h6>
-							<p>@lang('front.This sounded a very good reason, and Alice was quite pleased.')</p>
-							<form action="#">
-								<input type="text" placeholder="@lang('front.Your Email')">
-								<button class="tran3s s-bg-color"><i class="flaticon-envelope-back-view-outline"></i></button>
-							</form>
+							<p>@lang('front.Please enter your email and subscribe here !')</p>
+							{!! Form::open(['route' => 'subscribersstore']) !!}
+
+								<input name="email" type="text" placeholder="@lang('front.Your Email')">
+								<button type="submit" class="tran3s s-bg-color"><i class="flaticon-envelope-back-view-outline"></i></button>
+
+							{!! Form::close() !!}
+						
 						</div>
 					</div>
 				</div>
@@ -37,11 +40,12 @@
 				<div class="bottom-footer">
 					<div class="container">
 						<ul class="float-right">
-							<li><h3><span class="counter p-color">8,997</span> @lang('front.Courses')</h3></li>
-							<li><h3><span class="counter p-color">53,701</span> @lang('front.Sessions')</h3></li>
-							<li><h3><span class="counter p-color">1,119</span> @lang('front.Company')</h3></li>
+
+							<li><h3><span class="counter p-color">{{$footer['courses']}}</span> @lang('front.Courses')</h3></li>
+							<li><h3><span class="counter p-color">{{$footer['sessions']}}</span> @lang('front.Sessions')</h3></li>
+							<li><h3><span class="counter p-color">{{$footer['companies']}}</span> @lang('front.Company')</h3></li>
 						</ul>
-						<p class="float-left">&copy; 2021 @lang('front.All rights reserved')</p>		
+						<p class="float-left">&copy; 2021 @lang('front.All rights reserved')</p>
 					</div>
 				</div>
 			</footer>

@@ -77,12 +77,13 @@ class registerationsController extends AppBaseController
     {
         $registerations = $this->registerationsRepository->find($id);
 
-        if (empty($registerations) || !$registerations->my() ) {
+        if (empty($registerations) || !($registerations->user_id == auth()->user()->id)) {
             Flash::error('Registerations not found');
 
             return redirect(route('registerationsuser.index'));
         }
-
+        $registerations->notif=0;
+        $registerations->save();
         return view('registerationsuser.show')->with('registerations', $registerations);
     }
 
@@ -125,11 +126,7 @@ class registerationsController extends AppBaseController
     {
        // $r= registerations::find(6);
 
-        return courses::whereHas('target_audiance',function($q){
-
-            $q->whereIn('target_audiances.id',[30,1,2]);
-        }
-        )->get();
+        return courses::find(5)->sessions()->paginate(2);
     }
     /** send registration_request  */
     public function student_registsess(Request $request)

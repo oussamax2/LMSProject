@@ -50,7 +50,7 @@ return [
     'Fee'      => 'الثمن',
     'Language'      => 'لغة',
     'Country'      => 'دولة',
-    'Email'      => 'بريد إلكتروني',
+    'Email'      => 'البريد إلكتروني',
 
     'company Name'      => 'اسم الشريك',
     'Company status'      => 'الحالة',
@@ -59,7 +59,7 @@ return [
     'Website'      => 'موقع الكتروني',
     'Website'      => 'موقع الكتروني',
     'Company courses'      => 'دورات الشريك',
-    
+
     'Firstname'      => 'الاسم الاول',
     'Lastname'      => 'الاسم الثاني',
     'Continent'      => 'القارة',
@@ -98,7 +98,7 @@ return [
     'language list'      => 'قائمة اللغات',
     'Session endDate'      => 'تاريخ إنتهاء الدورة',
     'Continent Name'      => 'القارة',
-    ''      => '',
-    ''      => '',
-    ''      => '',
+    'Password'      => 'كلمة المرور',
+    'is online. Last seen:'      => 'متصل. اخر ظهور:',
+    'is offline. Last seen:'      => 'غير متصل. اخر ظهور:',
 ];

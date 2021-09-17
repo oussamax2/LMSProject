@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Models\companies;
+use App\Models\courses;
+use App\Models\sessions;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +26,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $data['companies'] =companies::count();
+        $data['courses'] = courses::count();
+        $data['sessions'] = sessions::count();
+
+        view()->share('footer',$data);
     }
 }

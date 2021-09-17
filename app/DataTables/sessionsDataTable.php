@@ -37,11 +37,11 @@ class sessionsDataTable extends DataTable
 
                         })
                         ->editColumn('start', function ($dataTable) {
-                            return  Carbon::parse($dataTable['start'])->isoFormat(' Do MMMM  YYYY ');
+                            return  Carbon::parse($dataTable['start'])->isoFormat('lll');
 
                         })
                         ->editColumn('end', function ($dataTable) {
-                            return  Carbon::parse($dataTable['end'])->isoFormat(' Do MMMM  YYYY ');
+                            return  Carbon::parse($dataTable['end'])->isoFormat('lll');
 
                         })
                         ->addColumn('count_registrations', function ($dataTable) {
@@ -63,8 +63,7 @@ class sessionsDataTable extends DataTable
     {
             $user = auth()->user();
             if($user->hasRole('admin'))
-            return $model->newQuery()->whereHas('courses', function ($query) {
-                $query->where('company_id',1);});
+            return $model->newQuery();
          else{
                  return $model->newQuery()->whereHas('courses', function ($query) {
                     $user = auth()->user();
@@ -83,10 +82,10 @@ class sessionsDataTable extends DataTable
         return $this->builder()
             ->columns($this->getColumns())
             ->minifiedAjax()
-            ->addAction(['width' => '120px', 'printable' => false])
+             ->addAction(['width' => '120px', 'printable' => false,'title' => __('front.Action')])
             ->parameters([
                 'dom'       => 'Bfrtip',
-                'stateSave' => true,
+
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
                 ],'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],
@@ -107,7 +106,7 @@ class sessionsDataTable extends DataTable
             ['data' => 'start', 'name' => 'start', 'title' => __('forms.start Date')],
             ['data' => 'end', 'name' => 'end', 'title' => __('forms.end Date')],
             ['data' => 'fee', 'name' => 'fee', 'title' => __('forms.fee')],
-            
+
 
         ];
     }

@@ -71,6 +71,7 @@ class Search extends Component
         });*/
 
          $sessions = $query->orderBy('start','DESC')->paginate(6);
+         
         return view('livewire.search',[
 
             'sessionList' =>$sessions

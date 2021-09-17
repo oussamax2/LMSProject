@@ -25,7 +25,16 @@
 
 
 
+
+    <div class="course-style-filter clearfix">
+        <ul class="float-left clearfix">
+            <li><a href="javascript:void(0);" wire:click="resetsearch" class="tran3s {{$all ? "active" : ""}}">@lang('front.All')</a></li>
+            <li><a href="javascript:void(0);" wire:click="freesearch" class="tran3s {{$free ? "active" : ""}}">@lang('front.free')</a></li>
+        </ul>
+    </div>
+
     <div>
+     @if(count($sessionList) >0)
         @foreach($sessionList as $session)
         <div class="single-course clearfix trending">
 
@@ -72,7 +81,16 @@
             </div>
         </div>
         @endforeach
+     @else
+        <div class="single-course clearfix trending">
+        
+           <div class="float-left">
 
+                <h6>@lang('front.no data available')</h6>
+
+            </div>
+        </div>
+     @endif
 
     </div>
 
@@ -104,12 +122,12 @@ $("input[name=target]:checkbox:checked").each(function(){ myArray.push($(this).v
 /** chose category **/
     $( "#subcat li" ).on( "click", function() {
     @this.set('subcategory', this.value); // get id of clicked li
+    @this.set('category', "");
 });
 $( ".panel-title a" ).on( "click", function() {
-    //alert( $(this).attr('data-id'));
-    // alert($(this).data("id"));
-    @this.set('category', $(this).attr('data-id')); // get id of clicked li
-
+    @this.set('category', $(this).attr('data-id'));
+    @this.set('subcategory', ""); // get id of clicked li
+    @this.set('city', "");
 });
 $( "#resetsearch" ).on( "click", function() {
     $('input[name="target"]').each(function() {

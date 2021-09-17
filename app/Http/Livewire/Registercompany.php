@@ -9,6 +9,9 @@ use App\Models\companies;
 use Illuminate\Http\UploadedFile;
 use Livewire\WithFileUploads;
 use Auth;
+use Storage;
+use Illuminate\Support\Str;
+
 class Registercompany extends Component
 {
     use WithFileUploads;
@@ -42,7 +45,7 @@ class Registercompany extends Component
         $this->linkdinurl = '';
         $this->dribbleurl = '';
         $this->description = '';
-
+        $this->picture = '';
     }
 
 
@@ -76,14 +79,10 @@ class Registercompany extends Component
         ]);
 
         $user->addRole(['company']);
-       // $user->sendEmailVerificationNotification();
+        $user->sendEmailVerificationNotification();
         if ($this->picture){
-            $validatedDate = $this->validate([
 
-                'picture' => 'image|mimes:jpeg,png,jpg|max:1024',
-
-            ]);
-            $image = $this->picture->store('companies_pictures', ['disk' => 'public']);
+            $image = $this->picture;
             $companies = companies::create([
                 'user_id' => $user->id,
                 'lastname' => $this->lastname,
@@ -125,5 +124,10 @@ class Registercompany extends Component
     }
        $this->resetInputFields();
 
+    }
+
+    public function resetfile()
+    {
+        $this->picture = '';
     }
 }

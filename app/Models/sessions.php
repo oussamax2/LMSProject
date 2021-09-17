@@ -6,6 +6,7 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 
+
 /**
  * Class sessions
  * @package App\Models
@@ -73,6 +74,11 @@ class sessions extends Model
         'end' => 'required',
         'fee' => 'required',
         'note' => 'max:180',
+        'language' => 'exists:languages,id',
+        'country_id' => 'exists:countries,id', 
+        'state' => 'exists:states,id',    
+        'course_id' => 'exists:courses,id',  
+        'city' => 'exists:cities,id',                                
     ];
 
     public function languages()
@@ -133,7 +139,7 @@ class sessions extends Model
              $session->registerations()->each(function($registerations) {
                 $registerations->delete(); // <-- delete registerations belonging to this session
              });
-                     
+
         });
     }
 }

@@ -135,6 +135,25 @@
 <script type="text/javascript" src="{{ asset('vendor/jquery-ui/jquery-ui.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('vendor/jquery.mixitup.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/theme.js') }}"></script>
+@if (0)
+<script>
+$(document).ready(function(){
+sendRequest();
+function sendRequest(){
+    $.ajax({
+      url: "{{ url('/') }}",
+      success:
+        function(data){
+      },
+
+      complete: function() {
+     setInterval(sendRequest, 180000); // The interval set to 3 min
+   }
+  });
+};
+});
+</script>
+@endif
 @yield('js')
 @section('scripts')
 @parent

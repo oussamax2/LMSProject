@@ -8,6 +8,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Role;
 use App\Models\companies;
+use App\Models\registerations;
+use App\Notifications\PasswordReset;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -100,5 +103,29 @@ class User extends Authenticatable implements MustVerifyEmail
         static::deleting(function($user) { // before delete() method call this
             $user->roles()->detach();
        });
+    }
+
+    public function notif()
+    { 
+        if(Auth::check()){
+            if($this->hasRole('user'))
+                return $this->registerations()->where('notif',1)->count();
+            elseif($this->hasRole('company')){
+            return registerations::where('notifcompany',1)->with('user')->with(['sessions', 'sessions.courses'])->whereHas('sessions.courses', function ($query) {
+                $query->where('company_id',$this->companies->id);
+                })->count();
+            }else{
+                return registerations::where('notifcompany',1)->with('user')->with(['sessions', 'sessions.courses'])->whereHas('sessions.courses', function ($query) {
+                    
+                    })->count();
+            }
+        }else{
+            return abort(404);
+        }    
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new PasswordReset($token));
     }
 }

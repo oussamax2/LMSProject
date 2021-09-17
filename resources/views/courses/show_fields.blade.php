@@ -26,7 +26,7 @@
 <div class="form-group">
 <i class="icon icon-clock"></i>
     {!! Form::label('published_on', __('forms.Published On')) !!}
-    <p>{{ $courses->created_at }}</p>
+    <p>{{Carbon\Carbon::parse($courses->created_at)->isoFormat(' Do MMMM  YYYY ')}}</p>
 </div>
 
 <!-- Category Id Field -->
@@ -62,21 +62,32 @@
                 <th scope="col">@lang('front.End date')</th>
                 <th scope="col">@lang('front.Session fee')</th>
                 <th scope="col">@lang('front.Country name')</th>
+                <th scope="col"></th>
                 </tr>
             </thead>
             <?php $i=1; ?>
-            @foreach ($courses->sessions as $listsess)
+            @foreach ($sessList as $listsess)
                 <tbody>
                     <tr>
                         <th scope="row">{{$i++}}</th>
-                        <td>{{$listsess['start']}}</td>
-                        <td>{{$listsess['end']}}</td>
+                        <td>{{Carbon\Carbon::parse($listsess['start'])->isoFormat('dddd, MMMM Do YYYY, h:mm')}}</td>
+                        <td>{{Carbon\Carbon::parse($listsess['end'])->isoFormat('dddd, MMMM Do YYYY, h:mm')}}</td>
                         <td>{{$listsess['fee']}}</td>
                         <td>{{$listsess->countries['name']}}</td>
+                        <td>
+                            <a href="{{route('sessions.show', $listsess->id)}}" class="btn btn-ghost-success">
+                                <span class="icon icon-eye">
+                                
+                                </span>
+                            </a>
+                        </td>
                     </tr>
                 </tbody>
             @endforeach
         </table>
+        <div>
+            {{ $sessList->links('vendor.custompaginate') }}
+        </div>
         </div>
 </div>
 </div>

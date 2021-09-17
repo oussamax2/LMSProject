@@ -40,6 +40,8 @@
     <link href="{{ asset('assets-panel/css/simple-line-icons.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets-panel/css/flag-icon.min.css')}}">
     @endif
+      <link rel="stylesheet" href="{{ asset('assets-panel/css/ijaboCropTool.min.css') }}">
+
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
 <header class="app-header navbar">
@@ -63,11 +65,11 @@
         <li class="menu-list"><a href="{{ route ('partners') }}" class="tran3s">@lang('front.Organizers')</a></li>
         <li class="menu-list"><a href="{{ route ('contact') }}" class="tran3s">@lang('front.Contact Us')</a></li>
         <!-- menu list -->
-
+@if(Illuminate\Support\Facades\Auth::check())
         <li class="nav-item d-md-down-none">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ route('registerationsuser.index') }}">
                 <i class="icon-bell"></i>
-                <span class="badge badge-pill badge-danger">5</span>
+                <span class="badge badge-pill badge-danger">{{auth()->user()->notif()}}</span>
             </a>
         </li>
         <li class="nav-item dropdown">
@@ -87,17 +89,20 @@
                     <strong>@lang('auth.app.settings')</strong>
                 </div> --}}
                 <a class="dropdown-item" href="{{ route('user-profile.edit') }}">
-                    <span class="icon icon-user"></span> @lang('auth.app.profile')</a>
+                    <i class="fa fa-user"></i> @lang('front.profile')</a>
 
                 <a class="dropdown-item" href="{{ url('/logout') }}" class="btn btn-default btn-flat"
                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    <span class="icon icon-logout"></span>@lang('auth.sign_out')
+                    <i class="fa fa-lock"></i>@lang('front.sign_out')
                 </a>
                 <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
             </div>
         </li>
+@else
+    {{abort(404)}}
+@endif
     </ul>
 </header>
 
@@ -132,6 +137,8 @@
 <script src="{{ asset('assets-panel/js/moment.min.js')}}"></script>
 <script src="{{ asset('assets-panel/js/bootstrap-datetimepicker.min.js')}}"></script>
 <script src="{{ asset('assets-panel/js/coreui.min.js')}}"></script>
+<script src="{{ asset('assets-panel/js/ijaboCropTool.min.js') }}"></script>
+
 @stack('scripts')
 @toastr_js
 @toastr_render

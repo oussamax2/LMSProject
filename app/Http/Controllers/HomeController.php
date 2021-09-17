@@ -10,6 +10,7 @@ use App\Models\sessions;
 use App\Models\cities;
 use App\Models\countries;
 use App\Models\target_audiance;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -18,17 +19,17 @@ class HomeController extends Controller
     public function home()
     {
         /**get latest sessions */
-        $sessionList = sessions::orderBy('id', 'desc')->take(6)->get();
+        $sessionList = sessions::orderBy('id', 'desc')->take(9)->get();
         /**get latest categories */
         $categList = categories::inRandomOrder()->orderBy('id', 'desc')->take(6)->get();
         // $citiesList = cities::inRandomOrder()->orderBy('id', 'desc')->take(8)->get();
-        $companies = companies::inRandomOrder()->orderBy('id', 'desc')->take(8)->get();
+        $companies = companies::inRandomOrder()->orderBy('id', 'desc')->take(12)->get();
 
 
 
         $citiesList = cities::whereHas('sessions', function ($query) {
             $query->where('deleted_at',null);
-        })->inRandomOrder()->orderBy('id', 'desc')->take(8)->get();
+        })->inRandomOrder()->orderBy('id', 'desc')->take(12)->get();
         // var_dump($cities);
         return view('front.index')->with([
             'sessionList'=>$sessionList,
@@ -70,8 +71,20 @@ class HomeController extends Controller
             $query->where('company_id',$id);
          })->count();
 
+       
+         
+        $countregisterations = registerations::whereHas('sessions',function($sess) use ($id){
+                                                          
+                            $sess->whereHas('courses',function($crs) use ($id){
+                            
+                               
+                                $crs->where('company_id',$id);
+                            });
+                        
+                            })->count();
+                        
         if(isset($companies))
-        return view('front.pro_training', compact('companies', 'countsessions'));
+        return view('front.pro_training', compact('companies', 'countsessions', 'countregisterations'));
        else
         return abort(404);
 
@@ -119,9 +132,16 @@ class HomeController extends Controller
 
     }
     public function registeruser()
-    {   if(auth()->user())
+    {   
+        /**get users with role "user" ~~ student_list */
+        $studentcount = User::whereHas('roles', function ($query) {
+            $query->where('name','user');
+        })->count();
+
+        if(auth()->user())
         return redirect('/');
-        return view('front.registeruser');
+        return view('front.registeruser', compact('studentcount'));
+       
     }
     public function contact()
     {

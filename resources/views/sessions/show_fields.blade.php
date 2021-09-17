@@ -12,13 +12,13 @@
 <div class="form-group">
 <i class="icon flaticon-clock"></i>
     {!! Form::label('start', __('forms.Start')) !!}
-    <p>{{Carbon\Carbon::parse($sessions->start)->isoFormat(' Do MMMM  YYYY ')}}</p>
+    <p>{{Carbon\Carbon::parse($sessions->start)->isoFormat('lll')}}</p>
 </div>
 <!-- End Field -->
 <div class="form-group">
 <i class="icon flaticon-clock"></i>
     {!! Form::label('end', __('forms.End')) !!}
-    <p>{{Carbon\Carbon::parse($sessions->end)->isoFormat(' Do MMMM  YYYY ')}}</p>
+    <p>{{Carbon\Carbon::parse($sessions->end)->isoFormat('lll')}}</p>
 </div>
 @if($sessions->fee == 0)
     <!-- Fee Field -->
@@ -77,20 +77,49 @@
                 <th scope="col">#</th>
                 <th scope="col">@lang('front.User name')</th>
                 <th scope="col">@lang('front.status')</th>
-
+                <th scope="col"></th>
                 </tr>
             </thead>
             <?php $i=1; ?>
-            @foreach ($sessions->registerations as $listreg)
+            @foreach ($regstrionList as $listreg)
                 <tbody>
                     <tr>
                         <th scope="row">{{$i++}}</th>
                         <td>{{$listreg->user['name']}}</td>
-                        <td>{{$listreg->status}}</td>
+
+
+
+
+                        @if($listreg->status == 0)
+
+                            <td>@lang('front.New')</td>
+
+                        @elseif($listreg->status == 1)
+
+                            <td>@lang('front.Rejected')</td>
+
+                        @elseif($listreg->status == 2)
+
+                            <td>@lang('front.pending-payment')</td>
+
+                        @elseif($listreg->status == 3)
+                            <td>@lang('front.Confirmed')</td>
+                        @endif
+
+                        <td>
+                            <a href="{{route('registerations.show', $listreg->id)}}" class="btn btn-ghost-success">
+                                <span class="icon icon-eye">
+
+                                </span>
+                            </a>
+                        </td>
                     </tr>
                 </tbody>
             @endforeach
     </table>
+    <div>
+     {{ $regstrionList->links('vendor.custompaginate') }}
+    </div>
     </div>
 </div>
 

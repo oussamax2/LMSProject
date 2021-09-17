@@ -1,6 +1,6 @@
 <br>
 <li class="nav-item">
-    <a class="nav-link" href="{{ url('/dashboard') }}">
+    <a class="nav-link" href="{{ url('/admin') }}">
         <span class="icon icon-speedometer"></span>
         <span class="menu-item-dsh">@lang('front.Dashboard')</span>
     </a>
@@ -70,7 +70,7 @@
             <span class="menu-item-dsh">@lang('front.Users')</span>
         </a>
     </li>
-    
+
     <li class="nav-item {{ Request::is('companies*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('companies.index') }}">
         <span class="icon icon-organization"></span>
@@ -127,5 +127,11 @@
     <a class="nav-link" href="{{ route('languages.index') }}">
     <span class="icon icon-flag"></span>
     <span class="menu-item-dsh">@lang('front.Languages')</span>
+    </a>
+</li>
+<li class="nav-item {{ Request::is('subscribers*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('subscribers.index') }}">
+        <span class="icon icon-envelope-letter"></span >
+        <span class="menu-item-dsh">@lang('front.Subscribers')</span>
     </a>
 </li>

@@ -5,7 +5,8 @@ namespace App\DataTables;
 use App\Models\User;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
-
+use Carbon\Carbon;
+use Cache;
 class UserDataTable extends DataTable
 {
     /**
@@ -18,7 +19,15 @@ class UserDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'users.datatables_actions');
+        return $dataTable->addColumn('action', 'users.datatables_actions')
+        ->editColumn('last_seen', function ($user) {
+            if (Cache::has('user-is-online-' . $user->id))
+            return ' <span class="badge badge-success">'.__("forms.is online. Last seen:") . Carbon::parse($user->last_seen)->diffForHumans().'</span>' ;
+        else
+            return ' <span class="badge badge-danger">'. __("forms.is offline. Last seen:"). Carbon::parse($user->last_seen)->diffForHumans() .'</span>';
+
+
+        })->escapeColumns([]);
     }
 
     /**
@@ -33,7 +42,7 @@ class UserDataTable extends DataTable
             'roles', function($q){
                 $q->where('name', 'user');
             }
-        );
+        )->orderBy('last_seen', 'desc');
     }
 
     /**
@@ -46,11 +55,11 @@ class UserDataTable extends DataTable
         return $this->builder()
             ->columns($this->getColumns())
             ->minifiedAjax()
-            ->addAction(['width' => '120px', 'printable' => false])
+             ->addAction(['width' => '120px', 'printable' => false,'title' => __('front.Action')])
             ->parameters([
                 'dom'       => 'Bfrtip',
-                'stateSave' => true,
                 'order'     => [[0, 'desc']],
+                "lengthMenu" => [[15, 50, 100, -1], [25, 50, 100, "All"]] ,
                 'buttons'   => [
                 ],'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],
             ]);
@@ -66,6 +75,7 @@ class UserDataTable extends DataTable
         return [
             ['data' => 'name', 'name' => 'name', 'title' => __('forms.name')],
             ['data' => 'email', 'name' => 'email', 'title' => __('forms.email')],
+            ['data' => 'last_seen', 'name' => 'last_seen', 'title' => __('forms.status')],
         ];
     }
 
