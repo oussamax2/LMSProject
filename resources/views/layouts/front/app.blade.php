@@ -63,18 +63,6 @@
                             <li class="menu-list"><a href="{{ route ('partners') }}" class="tran3s">@lang('front.Organizers')</a>
                             </li>
                             <li><a href="{{ route ('contact') }}" class="tran3s">@lang('front.Contact Us')</a></li>
-                            <li class="dropdown-holder menu-list">
-                                <a href="#" class="tran3s">
-                                    {{ Config::get('languages')[App::getLocale()] }}
-                                </a>
-                                <ul class="sub-menu">
-                                @foreach (Config::get('languages') as $lang => $language)
-                                    @if ($lang != App::getLocale())
-                                            <a href="{{ route('lang.switch', $lang) }}"> {{$language}}</a>
-                                    @endif
-                                @endforeach
-                                </ul>
-                            </li>
                             @auth
                             <li class="dropdown-holder menu-list"><a class="tran3s"><i class="flaticon-user"></i> {{ Auth::user()->name }}</a>
                                 <ul class="sub-menu">
