@@ -64,20 +64,6 @@
         <li class="menu-list"><a href="{{ route ('course') }}" class="tran3s">@lang('front.Course')</a></li>
         <li class="menu-list"><a href="{{ route ('partners') }}" class="tran3s">@lang('front.Organizers')</a></li>
         <li class="menu-list"><a href="{{ route ('contact') }}" class="tran3s">@lang('front.Contact Us')</a></li>
-        <li class="nav-item dropdown">
-            <a class="nameuserlms nav-link" href="#" class="tran3s" data-toggle="dropdown" href="#" role="button"
-               aria-haspopup="true" aria-expanded="false">
-               <i class="icon flaticon-down-arrow"></i>
-                {{ Config::get('languages')[App::getLocale()] }}
-            </a>
-            <div class="dropdown-menu dropdown-menu-right">
-            @foreach (Config::get('languages') as $lang => $language)
-                @if ($lang != App::getLocale())
-                        <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"> {{$language}}</a>
-                @endif
-            @endforeach
-            </div>
-        </li>
         <!-- menu list -->
 @if(Illuminate\Support\Facades\Auth::check())
         <li class="nav-item d-md-down-none">

@@ -2,13 +2,8 @@
 
 <!-- Firstname Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('firstname', __('forms.Firstname')) !!}
+    {!! Form::label('name', __('forms.name')) !!}
     {!! Form::text('name', isset($userdetails->name) ?$userdetails->name: null, ['class' => 'form-control', 'required']) !!}
-</div>
-<!-- Lastname Field -->
-<div class="form-group col-sm-12">
-    {!! Form::label('lastname', __('forms.Lastname')) !!}
-    {!! Form::text('lastname', null, ['class' => 'form-control']) !!}
 </div>
 <!-- Email Field -->
 <div class="form-group col-sm-12">
