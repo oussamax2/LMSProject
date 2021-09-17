@@ -39,7 +39,7 @@
 <div class="form-group">
 <i class="icon flaticon-bookmark"></i>
     {!! Form::label('language', __('forms.Language')) !!}
-    <p>{{ $sessions->language }}</p>
+    <p>{{ $sessions->languages->name }}</p>
 </div>
 </div>
 <div class="col-sm-6 col-md-12 col-lg-6">
