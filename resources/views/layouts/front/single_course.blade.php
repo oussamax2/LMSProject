@@ -13,7 +13,25 @@
 			<div class="course-details">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-8 col-xs-12">
+						<div class="col-md-3">
+							<div style="border: 1px solid rgba(0,0,0,0.06);border-radius: 3px;margin-bottom: 65px;padding: 21px;">
+							<h6 style="font-family: 'Lato', sans-serif;font-weight: 700;font-size: 18px;margin-bottom: 40px;">@lang('front.Other sessions:')</h6>
+
+								<ul class="info-list row">
+											
+									@foreach (App\Models\sessions::where('course_id',$sessions->course_id)->where('id','!=' ,$sessions->id)->get() as $sessions)
+									<li class="col-xs-12">
+										<p style="padding-bottom: 16px;">
+											<a href="{{ url('singlsession') }}/{{$sessions->id}}"><i class="icon flaticon-clock"></i>{{Carbon\Carbon::parse($sessions->start)->isoFormat(' Do MMMM  YYYY ')}}  @lang('front.To')  {{Carbon\Carbon::parse($sessions->end)->isoFormat(' Do MMMM  YYYY ')}}</a>
+										</p>
+
+									</li>
+
+									@endforeach
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-6 col-xs-12">
 							<div class="details-wrapper">
                                 @if(Session::has('success'))
                                 <div class="alert alert-success">
@@ -93,7 +111,7 @@
 
 						</div>
 
-						<div class="col-md-4 col-sm-6 col-xs-12">
+						<div class="col-md-3 col-sm-6 col-xs-12">
 							<div class="course-sidebar">
 								<div class="sidebar-course-information">
 									<ul class="price clearfix">
@@ -108,8 +126,8 @@
 								<div class="sidebar-instructor-info">
 									<h4>@lang('front.Company')</h4>
 									<div class="wrapper">
-										<div class="name">
-											<h6>{{ $sessions->companies->lastname }}</h6>
+										<div>
+											<h6 style="font-family: 'Lato', sans-serif;font-weight: 700;font-size: 18px;margin-bottom: 20px;">{{ $sessions->companies->lastname }}</h6>
 											<ul>
 											@if(isset($sessions->companies->fcburl))
 											<li><a href="{{ $sessions->companies->fcburl }}" class="tran3s"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -129,6 +147,7 @@
 										<a href="{{ url('/profilecompany',$sessions->companies->id) }}" class="tran3s p-bg-color follow hvr-trim">@lang('front.see profile')</a>
 									</div>
 								</div>
+								
 							</div>
 						</div>
 					</div>
