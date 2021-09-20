@@ -111,8 +111,10 @@
     {!! Form::label('target_id', __('forms.Target Audiance list')) !!}
     {!! Form::select('target_id[]', $listtarget,isset($targetvalues)?$targetvalues:null, ['class' => 'form-control select2','multiple']) !!}
 </div>
-
-
+<div class="form-group col-sm-12">
+    {!! Form::label('status', __('forms.status')) !!}
+    {!! Form::select('status', ['1' => 'Available', '0' => 'Closed'], isset($courses->status)?$courses->status:null, ['class' => 'form-control']) !!}
+</div>
 
 <!-- Submit Field -->
 <div class="form-group buttons-action-lms col-sm-12">
