@@ -94,9 +94,13 @@
 									{{ csrf_field() }}
 									<input type="hidden" name="session" value="{{ $sessions->id }}" />
 									<div class="curriculum-panel-buttonregister float-right">
+                                        @if($sessions->status && $sessions->courses->status)
 											<button class="btn btn-default"  type ="submit">@lang('front.Register')</button>
+                                            @else
+
 											<button class="btn btn-default" style="background: #d22323; color: #fff; border-radius: 3px; text-decoration: none; font-size: 20px; margin: 0 0 0 15px; padding: 6px 10px; border: none; text-transform: uppercase; cursor: default;">@lang('front.Closed')</button>
-									</div>
+									@endif
+                                        </div>
 								</form>
 							@elseif(!(auth()->user()))
 							<div class="curriculum-panel-buttonregister float-right">
