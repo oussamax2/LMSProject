@@ -3,7 +3,7 @@
 
 @section('content')
     <section class="content-header">
-        <h1>
+        <h1 class="edittitlep">
         @lang('admin.Editing Profile')
         </h1>
    </section>

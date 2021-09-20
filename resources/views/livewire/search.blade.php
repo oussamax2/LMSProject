@@ -22,8 +22,12 @@
         </div>
     </div>
 
-
-
+    <div class="course-style-filter clearfix">
+        <ul class="float-left clearfix">
+            <li><a href="javascript:void(0);" wire:click="resetsearch" class="tran3s {{$all ? "active" : ""}}">@lang('front.All')</a></li>
+            <li><a href="javascript:void(0);" wire:click="freesearch" class="tran3s {{$free ? "active" : ""}}">@lang('front.free')</a></li>
+        </ul>
+    </div>
 
     <div>
      @if(count($sessionList) >0)

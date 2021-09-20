@@ -88,6 +88,8 @@
                 <div class="dropdown-header text-center">
                     <strong>@lang('auth.app.settings')</strong>
                 </div> --}}
+                <a class="dropdown-item" href="{{ route('admin') }}">
+                    <i class="icon icon-speedometer"></i> @lang('front.dashboard')</a>
                 <a class="dropdown-item" href="{{ route('user-profile.edit') }}">
                     <i class="fa fa-user"></i> @lang('front.profile')</a>
 

@@ -2262,10 +2262,10 @@ footer .bottom-footer {
   margin-bottom: 65px;
   padding: 30px 25px;
 }
-.course-sidebar .sidebar-instructor-info .name {
+/* .course-sidebar .sidebar-instructor-info .name {
   position: relative;
   padding-left: 105px;
-}
+} */
 .course-sidebar .sidebar-instructor-info .name h6 {
   font-family: 'Lato', sans-serif;
   font-weight: 700;
@@ -3028,6 +3028,7 @@ footer .bottom-footer {
   position: relative;
   margin-bottom: 25px;
 }
+
 #mixitUp-item .single-item .opacity {
   height: 156px;
   width: 100%;
@@ -3050,6 +3051,7 @@ footer .bottom-footer {
   -webkit-transform:scale(1,0);
           transform:scale(1,0);
 }
+
 #mixitUp-item .single-item .opacity:before {left:0;}
 #mixitUp-item .single-item .opacity:after {right:0;}
 #mixitUp-item .single-item .opacity h6 a {
