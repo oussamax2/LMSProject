@@ -35,7 +35,8 @@ class courses extends Model
         'title',
         'body',
         'category_id',
-        'subcateg_id'
+        'subcateg_id',
+        'status'
     ];
 
     /**
@@ -49,7 +50,8 @@ class courses extends Model
         'title' => 'string',
         'body' => 'string',
         'category_id' => 'integer',
-        'subcateg_id' => 'integer'
+        'subcateg_id' => 'integer',
+        'status' => 'integer'
 
     ];
 
