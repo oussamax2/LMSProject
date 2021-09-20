@@ -2262,10 +2262,10 @@ footer .bottom-footer {
   margin-bottom: 65px;
   padding: 30px 25px;
 }
-.course-sidebar .sidebar-instructor-info .name {
+/* .course-sidebar .sidebar-instructor-info .name {
   position: relative;
   padding-left: 105px;
-}
+} */
 .course-sidebar .sidebar-instructor-info .name h6 {
   font-family: 'Lato', sans-serif;
   font-weight: 700;
