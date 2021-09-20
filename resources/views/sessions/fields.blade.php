@@ -80,7 +80,10 @@
     {!! Form::Label('city', __('front.cities list')) !!}
     {!! Form::select('city', $listcities, null, ['class' => 'form-control select2']) !!}
 </div>
-
+<div class="form-group col-sm-12">
+    {!! Form::label('status', __('forms.status')) !!}
+    {!! Form::select('status', ['1' => 'Available', '0' => 'Closed'], isset($session->status)?$session->status:null, ['class' => 'form-control']) !!}
+</div>
 <!-- Note Field -->
 <div class="form-group col-sm-12">
     {!! Form::label('note', __('forms.Note')) !!}

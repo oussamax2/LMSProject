@@ -43,7 +43,8 @@ class sessions extends Model
         'country_id',
         'state',
         'city',
-        'note'
+        'note',
+        'status'
     ];
 
     /**
@@ -61,7 +62,8 @@ class sessions extends Model
         'country_id' => 'integer',
         'state' => 'integer',
         'city' => 'integer',
-        'note' => 'string'
+        'note' => 'string',
+        'status' => 'integer'
     ];
 
     /**
@@ -75,10 +77,10 @@ class sessions extends Model
         'fee' => 'required',
         'note' => 'max:180',
         'language' => 'exists:languages,id',
-        'country_id' => 'exists:countries,id', 
-        'state' => 'exists:states,id',    
-        'course_id' => 'exists:courses,id',  
-        'city' => 'exists:cities,id',                                
+        'country_id' => 'exists:countries,id',
+        'state' => 'exists:states,id',
+        'course_id' => 'exists:courses,id',
+        'city' => 'exists:cities,id',
     ];
 
     public function languages()
