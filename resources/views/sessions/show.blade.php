@@ -18,9 +18,9 @@
                                  <strong>@lang('front.Details')</strong>
                                   <a href="{{ route('sessions.index') }}" class="btn btn-light"><span class="icon icon-arrow-right-circle"></span>@lang('front.Back')</a>
                                   <a class="pull-right" href="{{ route('sessions.edit', $sessions->id) }}"><span class="icon icon-note"></span>@lang('front.Edit')</a>
-                                  @if($courses->status == 1)
+                                  @if($sessions->status == 1)
                                   <button class="btn availablebutton pull-right" style="background: #36d64c; color: #fff; border-radius: 3px; text-decoration: none; font-size: 20px; margin: 0 0 0 15px;padding: 6px 10px; border: none; text-transform: uppercase;">@lang('front.Available')</button>
-                                  @elseif($courses->status == 0)
+                                  @elseif($sessions->status == 0)
                                   <button class="btn closedbutton pull-right" style="background: #d22323; color: #fff; border-radius: 3px; text-decoration: none; font-size: 20px; margin: 0 0 0 15px;padding: 6px 10px; border: none; text-transform: uppercase;">@lang('front.Closed')</button>
                                   @endif
                              </div>
