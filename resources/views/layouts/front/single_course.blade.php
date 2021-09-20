@@ -6,6 +6,8 @@
 							<li><a href="index.html" class="tran3s">@lang('front.Home')</a></li>
 							<li>/</li>
 							<li>@lang('front.Courses')</li>
+                            <li>/</li>
+							<li>{{ $sessions->courses->title }}</li>
 						</ul>
 					</div>
 				</div>
@@ -144,7 +146,7 @@
 										<a href="{{ url('/profilecompany',$sessions->companies->id) }}" class="tran3s p-bg-color follow hvr-trim">@lang('front.see profile')</a>
 									</div>
 								</div>
-								
+
 							</div>
 						</div>
 					</div>

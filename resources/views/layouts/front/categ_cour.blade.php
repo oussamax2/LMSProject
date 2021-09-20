@@ -88,7 +88,7 @@
 											<h5>@lang('front.Country')</h5>
 											<div class="form-group">
 										      <div>
-										        <select id="country" class="selectpicker show-tick form-control" data-live-search="true">
+										        <select name="country_id" id="country" class="selectpicker show-tick form-control" data-live-search="true">
 										          <option value="">@lang('front.All')</option>
 										     @foreach($countries as $country)
 										          <option value="{{$country->id}}">{{$country->name}}</option>
@@ -97,16 +97,24 @@
 										      </div>
 										    </div>
 										</div>
+                                        <div class="course-location">
+											<h5>@lang('front.State')</h5>
+											<div class="form-group">
+										      <div>
+										        <select name="state" id="state" class="select2  form-control" >
+                                                    <option value="">All</option>
 
+										        </select>
+										      </div>
+										    </div>
+										</div>
                                         <div class="course-location">
 											<h5>@lang('front.City')</h5>
 											<div class="form-group">
 										      <div>
-										        <select id="city" class="selectpicker show-tick form-control" data-live-search="true">
-										          <option value="">@lang('front.All')</option>
-                                                  @foreach($citiesList as $citie)
-										          <option value="{{$citie->id}}">{{$citie->name}}</option>
-                                                @endforeach
+										        <select name="city" id="city" class="select2 form-control" >
+                                                    <option value="">All</option>
+
 										        </select>
 										      </div>
 										    </div>

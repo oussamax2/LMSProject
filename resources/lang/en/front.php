@@ -90,6 +90,7 @@ return [
     'Country' => 'Country',
     'Apply filters' => 'Apply filters',
     'City' => 'City',
+    'State'      => 'State',
     'Search By Filters' => 'Search By Filters',
     'Price Range' => 'Price Range',
 
@@ -169,10 +170,10 @@ return [
 
     'Your Full Name' => 'Your Full Name',
     'Your EMail' => 'Your EMail',
-    'Your Email' => 'Your Email', 
-    'Please enter your email and subscribe here !' => 'Please enter your email and subscribe here !', 
-    'Subscribe saved successfully. !' => 'Subscribe saved successfully. !',  
-    'subscriber already exists !' => 'subscriber already exists !',        
+    'Your Email' => 'Your Email',
+    'Please enter your email and subscribe here !' => 'Please enter your email and subscribe here !',
+    'Subscribe saved successfully. !' => 'Subscribe saved successfully. !',
+    'subscriber already exists !' => 'subscriber already exists !',
     'sign_in' => 'Sign In',
     'sample@gmail.com' => 'sample@gmail.com',
     'Your Name' => 'Your Name',
@@ -298,9 +299,9 @@ return [
     'Your Name ' => 'Your Name ',
     'Registrations' => 'Registrations',
     'no data available' => 'no data available',
-    'Subscribers' => 'Subscribers', 
-    'Other Sessions' => 'Other Sessions',  
-    'Available' => 'Available',  
-    'Closed' => 'Closed',       
+    'Subscribers' => 'Subscribers',
+    'Other Sessions' => 'Other Sessions',
+    'Available' => 'Available',
+    'Closed' => 'Closed',
 
 ];
