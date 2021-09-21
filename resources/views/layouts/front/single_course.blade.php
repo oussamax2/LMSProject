@@ -19,7 +19,7 @@
 
 								<ul class="info-list row">
 											
-									@foreach (App\Models\sessions::where('course_id',$sessions->course_id)->where('id','!=' ,$sessions->id)->get() as $sessions)
+									@foreach (App\Models\sessions::where('course_id',$sessions->course_id)->where('id','!=' ,$sessions->id)->limit(6)->orderBy('created_at', 'desc')->get() as $sessions)
 									<li class="col-xs-12">
 										<p style="padding-bottom: 16px;">
 											<a href="{{ url('singlsession') }}/{{$sessions->id}}"><i class="icon flaticon-clock"></i>{{Carbon\Carbon::parse($sessions->start)->isoFormat(' Do MMMM  YYYY ')}}  @lang('front.To')  {{Carbon\Carbon::parse($sessions->end)->isoFormat(' Do MMMM  YYYY ')}}</a>

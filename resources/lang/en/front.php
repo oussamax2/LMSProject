@@ -298,6 +298,9 @@ return [
     'Registrations' => 'Registrations',
     'no data available' => 'no data available',
     'Subscribers' => 'Subscribers', 
-    'Other sessions:' => 'Other sessions:',       
-
+    'Other sessions:' => 'Other sessions:',     
+    'Pending-cancelled' => 'Pending-cancelled',        
+    'Cancel Registeration' => 'Cancel Registeration',   
+    'Approve' => 'Approve',   
+    
 ];
