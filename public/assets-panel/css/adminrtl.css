@@ -1,7 +1,7 @@
 
  @font-face {
   font-family: ExpoArabic-Book;
-  src: url('../fonts/ExpoArabic-Book.ttf'); 
+  src: url('../fonts/ExpoArabic-Book.ttf');
 }
 
 body{
@@ -106,7 +106,7 @@ margin-right: auto !important;
 .app-header .nav>li i.icon{
   font-size: 10px;
   color:#c6c4c4;
-            
+
 }
 .app-header .nav>li .dropdown-menu{
   border-radius: 0px !important;
@@ -114,12 +114,12 @@ margin-right: auto !important;
   border-top: 2px solid #f36824 !important;
   border-bottom: 0px;
   border-left: 0px;
-  border-right: 0px;  
-  box-shadow: 0px 0px 9px 1px rgb(0 0 0 / 20%);       
+  border-right: 0px;
+  box-shadow: 0px 0px 9px 1px rgb(0 0 0 / 20%);
   }
   .app-header .nav>li .dropdown-menu .dropdown-item{
     text-align: center;
-    text-transform: uppercase;    
+    text-transform: uppercase;
     }
 
 /* style header */
@@ -278,7 +278,7 @@ float: right;
   }
   .card-details .actionbuttonslmsreg{
     float: left;
-      
+
       }
 }
 @media(max-width:700px){
@@ -442,7 +442,7 @@ margin-right: 15px;
   font-size: 14px;
 }
 }
-/* /* details sessions */ 
+/* /* details sessions */
 
 /* timeline style details register */
 .clearfix:after {
@@ -466,7 +466,7 @@ color: #666;
 cursor: default;
 margin: 0 3px;
 padding: 10px 10px 10px 30px;
-min-width: 160px;
+min-width: 100px;
 float: right;
 position: relative;
 background-color: #deeaf5;
@@ -535,7 +535,7 @@ color: #fff;
 background-color: #f36824;
 }
 .arrow-steps .step.current:after {
-border-right: 17px solid #f36824;	
+border-right: 17px solid #f36824;
 }
 /* style current */
 /* style rejected */
@@ -544,7 +544,7 @@ border-right: 17px solid #f36824;
   background-color: #d22323;
   }
   .arrow-steps .step.reject:after {
-  border-right: 17px solid #d22323;	
+  border-right: 17px solid #d22323;
   }
 /* style rejected */
 /* style confirmed */
@@ -553,7 +553,7 @@ border-right: 17px solid #f36824;
   background-color: #36d64c;
   }
   .arrow-steps .step.confirm:after {
-  border-right: 17px solid #36d64c;	
+  border-right: 17px solid #36d64c;
   }
 /* style confirmed */
 /* style pending */
@@ -562,7 +562,7 @@ border-right: 17px solid #f36824;
   background-color: #ffc107;
   }
   .arrow-steps .step.pending:after {
-  border-right: 17px solid #ffc107;	
+  border-right: 17px solid #ffc107;
   }
 /* style pending */
 .card-details .card-header a.buttonecceptuser{
@@ -769,7 +769,7 @@ textarea.form-control {
   height: 3.5em;
   border-radius: 50%;
   transform: translate3d(1em,0,0) scale(0);
-  transform-origin: center right;  
+  transform-origin: center right;
   z-index: 1;
   opacity: 0;
   transition: all .25s cubic-bezier(.02, .01, .47, 1);
@@ -811,9 +811,9 @@ textarea.form-control {
 ::-webkit-scrollbar {
   width: 10px;
   }
-  
+
   ::-webkit-scrollbar-thumb {
-    background:#a8a8a8;  
+    background:#a8a8a8;
   border-radius: 10px;
   }
   /*scroll style*/
@@ -906,7 +906,7 @@ textarea.form-control {
               margin:0px auto;
               width:500px;
             border: 1px solid #efebeb;
-            
+
             }
             .responsive-table th {
               display: none;
@@ -932,6 +932,7 @@ textarea.form-control {
   .main .container-fluid {
    padding: 0 10px;
 }
+
 
 
 

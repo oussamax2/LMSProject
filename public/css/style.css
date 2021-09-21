@@ -3961,6 +3961,9 @@ display: flex;
    font-size: 15px;
    font-weight: bold;
       }
+      .course-details .curriculum-panel-date:hover{
+      color:#36d64c;
+           }
 
 /* details session  */
 
@@ -4119,7 +4122,10 @@ background: #36d64c;
       .check-register-session i.icon{
         margin-right: 10px;
         }
-       
+        .course-details li.hoversessionlms p a:hover{
+          color:#36d64c !important;
+
+       }
 
 
 

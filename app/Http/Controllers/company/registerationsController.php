@@ -161,7 +161,7 @@ class registerationsController extends AppBaseController
             $user =$registerations->user_id;
 
             // || $registerations->sessions->companies->id != auth()->user()->companies->id
-            if (empty($registerations)  ) {
+            if (empty($registerations) || !$registerations->my() ) {
                 Flash::error(__('admin.not found'));
 
                 return redirect(route('registerations.index'));
@@ -181,11 +181,11 @@ class registerationsController extends AppBaseController
              /**if company clicked on accept after status(pending-payement) button=> the registerations'status will be 3 ~ confirmed user's request */
                 $registerations->status = 3;
                 Mailsender::senduser($user,$id,3);
-           } 
+           }
         //    elseif ($response == 5){
         //       /** the request of cancel cancelled*/
         //         $registerations->status = $registerations->status;
-        //         Mailsender::senduser($user,$id,3);               
+        //         Mailsender::senduser($user,$id,3);
 
         //    }
            /**save status in DB */
@@ -193,7 +193,7 @@ class registerationsController extends AppBaseController
            $registerations->save();
            Flash::success(__('admin.updated successfully.'));
 
-          
+
 
 
            if ($response == 4){
@@ -201,11 +201,11 @@ class registerationsController extends AppBaseController
              // $registerations->deleted_at = Carbon::now();
              Mailsender::senduser($user,$id,4);
              $registerations->delete();
-             
+
              Flash::success(__('admin.deleted successfully.'));
 
-            
-            } 
+
+            }
             return redirect()->back();
         }
 }

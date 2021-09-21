@@ -71,18 +71,18 @@ class HomeController extends Controller
             $query->where('company_id',$id);
          })->count();
 
-       
-         
+
+
         $countregisterations = registerations::whereHas('sessions',function($sess) use ($id){
-                                                          
+
                             $sess->whereHas('courses',function($crs) use ($id){
-                            
-                               
+
+
                                 $crs->where('company_id',$id);
                             });
-                        
+
                             })->count();
-                        
+
         if(isset($companies))
         return view('front.pro_training', compact('companies', 'countsessions', 'countregisterations'));
        else
@@ -122,17 +122,13 @@ class HomeController extends Controller
             else
             return abort(404);
 
-        }else{
-            if(isset($sessions))
-            return view('front.singlcourse', ['sessions'=>$sessions]);
-            else
-            return abort(404);
+
 
         }
 
     }
     public function registeruser()
-    {   
+    {
         /**get users with role "user" ~~ student_list */
         $studentcount = User::whereHas('roles', function ($query) {
             $query->where('name','user');
@@ -141,7 +137,7 @@ class HomeController extends Controller
         if(auth()->user())
         return redirect('/');
         return view('front.registeruser', compact('studentcount'));
-       
+
     }
     public function contact()
     {

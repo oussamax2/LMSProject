@@ -19,10 +19,10 @@
 							<div class="sessionleft">
 							<h6 class="sessiontitle">@lang('front.Other Sessions')</h6>
 								<ul class="info-list row">
-									@foreach (App\Models\sessions::where('course_id',$sessions->course_id)->where('id','!=' ,$sessions->id)->limit(6)->orderBy('created_at', 'desc')->get() as $sessions)
-									<li class="col-xs-12">
+									@foreach (App\Models\sessions::where('course_id',$sessions->course_id)->where('id','!=' ,$sessions->id)->limit(6)->orderBy('created_at', 'desc')->get() as $sessionss)
+									<li class="col-xs-12 hoversessionlms">
 										<p style="padding-bottom: 16px;">
-											<a style="color: rgba(0,0,0,0.65); font-size: 14px; font-weight:600;" href="{{ url('singlsession') }}/{{$sessions->id}}"><i class="icon flaticon-clock" style="font-size: 17px; margin-right: 10px;"></i>{{Carbon\Carbon::parse($sessions->start)->isoFormat(' Do MMMM  YYYY ')}}  @lang('front.To')  {{Carbon\Carbon::parse($sessions->end)->isoFormat(' Do MMMM  YYYY ')}}</a>
+											<a style="color: rgba(0,0,0,0.65); font-size: 14px; font-weight:600;" href="{{ url('singlsession') }}/{{$sessionss->id}}"><i class="icon flaticon-clock" style="font-size: 17px; margin-right: 10px;"></i>{{Carbon\Carbon::parse($sessions->start)->isoFormat(' Do MMMM  YYYY ')}}  @lang('front.To')  {{Carbon\Carbon::parse($sessions->end)->isoFormat(' Do MMMM  YYYY ')}}</a>
 										</p>
 									</li>
 
@@ -89,13 +89,14 @@
 									</ul>
 								</div>
 							</div>
+
 							@if(auth()->user() && !($registuser))
 								<form action="{{ route('registsess')}}"  method="post">
 									{{ csrf_field() }}
 									<input type="hidden" name="session" value="{{ $sessions->id }}" />
 									<div class="curriculum-panel-buttonregister float-right">
                                         @if($sessions->status && $sessions->courses->status)
-											<button class="btn btn-default"  type ="submit">@lang('front.Register')</button>
+											<button data-toggle="modal" id="smallButton" data-target="#smallModal" class="btn btn-default show_confirm"  type ="submit">@lang('front.Register')</button>
                                             @else
 
 											<button class="btn btn-default" style="background: #d22323; color: #fff; border-radius: 3px; text-decoration: none; font-size: 20px; margin: 0 0 0 15px; padding: 6px 10px; border: none; text-transform: uppercase; cursor: default;">@lang('front.Closed')</button>
@@ -157,4 +158,29 @@
 					</div>
 				</div>
 			</div>
+
 {{-- single course --}}
+@section('js')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+<script type="text/javascript">
+
+     $('.show_confirm').click(function(event) {
+          var form =  $(this).closest("form");
+          var name = $(this).data("name");
+          event.preventDefault();
+          swal({
+              title: `Are you sure you want to register in this course?`,
+              text: "",
+              icon: "info",
+              buttons: true,
+              dangerMode: false,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              form.submit();
+            }
+          });
+      });
+
+</script>
+@endsection
