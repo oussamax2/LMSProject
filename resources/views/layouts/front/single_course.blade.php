@@ -14,17 +14,15 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-3">
-							<div style="border: 1px solid rgba(0,0,0,0.06);border-radius: 3px;margin-bottom: 65px;padding: 21px;">
-							<h6 style="font-family: 'Lato', sans-serif;font-weight: 700;font-size: 18px;margin-bottom: 40px;">@lang('front.Other sessions:')</h6>
-
+							<div class="sessionleft">
+							<h6 class="sessiontitle">@lang('front.Other Sessions')</h6>
 								<ul class="info-list row">
 											
 									@foreach (App\Models\sessions::where('course_id',$sessions->course_id)->where('id','!=' ,$sessions->id)->limit(6)->orderBy('created_at', 'desc')->get() as $sessions)
 									<li class="col-xs-12">
 										<p style="padding-bottom: 16px;">
-											<a href="{{ url('singlsession') }}/{{$sessions->id}}"><i class="icon flaticon-clock"></i>{{Carbon\Carbon::parse($sessions->start)->isoFormat(' Do MMMM  YYYY ')}}  @lang('front.To')  {{Carbon\Carbon::parse($sessions->end)->isoFormat(' Do MMMM  YYYY ')}}</a>
+											<a style="color: rgba(0,0,0,0.65); font-size: 14px; font-weight:600;" href="{{ url('singlsession') }}/{{$sessions->id}}"><i class="icon flaticon-clock" style="font-size: 17px; margin-right: 10px;"></i>{{Carbon\Carbon::parse($sessions->start)->isoFormat(' Do MMMM  YYYY ')}}  @lang('front.To')  {{Carbon\Carbon::parse($sessions->end)->isoFormat(' Do MMMM  YYYY ')}}</a>
 										</p>
-
 									</li>
 
 									@endforeach
@@ -128,18 +126,18 @@
 									<div class="wrapper">
 										<div>
 											<h6 style="font-family: 'Lato', sans-serif;font-weight: 700;font-size: 18px;margin-bottom: 20px;">{{ $sessions->companies->lastname }}</h6>
-											<ul>
+											<ul class="sociallmsup">
 											@if(isset($sessions->companies->fcburl))
-											<li><a href="{{ $sessions->companies->fcburl }}" class="tran3s"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+											<li><a href="{{ $sessions->companies->fcburl }}" class="tran3s"><i class="icon fa fa-facebook" aria-hidden="true"></i></a></li>
 											@endif
 											@if(isset($sessions->companies->twitturl))
-											<li><a href="{{ $sessions->companies->twitturl }}" class="tran3s"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+											<li><a href="{{ $sessions->companies->twitturl }}" class="tran3s"><i class="icon fa fa-twitter" aria-hidden="true"></i></a></li>
 											@endif
 											@if(isset($sessions->companies->linkdinurl))
-											<li><a href="{{ $sessions->companies->linkdinurl }}" class="tran3s"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+											<li><a href="{{ $sessions->companies->linkdinurl }}" class="tran3s"><i class="icon fa fa-linkedin" aria-hidden="true"></i></a></li>
 											@endif
 											@if(isset($sessions->companies->dribbleurl))
-											<li><a href="{{ $sessions->companies->dribbleurl }}" class="tran3s"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+											<li><a href="{{ $sessions->companies->dribbleurl }}" class="tran3s"><i class="icon fa fa-dribbble" aria-hidden="true"></i></a></li>
 											@endif
 											</ul>
 										</div>

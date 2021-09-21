@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-lg-6 col-md-6 col-sm-6">
+	<div class="col-lg-6 col-md-12 col-sm-12 formseditprolms">
 		<div class="form-group has-feedback{{ $errors->has('name') ? ' has-error' : '' }}">
 			<input type="text" class="form-control" name="name" value="{{ $user->name }}" placeholder="@lang('admin.Full Name')">
 			<span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -215,8 +215,8 @@
 			@endif
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-lg-4 col-lg-offset-4 mx-auto">
+	<div class="row buttonupdatep">
+		<div class="col-lg-6 col-lg-offset-6 mx-auto">
 			<button type="submit" class="btn btn-primary btn-block btn-flat">@lang('admin.Update')</button>
 		</div>
     </div>

@@ -133,20 +133,26 @@ class registerationsController extends AppBaseController
     {
         // $request->session
         // auth()->user()->id;
+        $sessions = sessions::find($request->session);
+        if($sessions->status && $sessions->courses->status){
+
         $registerations = registerations::firstOrCreate(array(
             'session_id' =>  $request->session,
             'user_id' => auth()->user()->id)
         );
         /**save in DB */
         $registerations->save();
-        $sessions = sessions::find($request->session);
+
         /** mail to company */
         Mailsender::sendcompany(auth()->user()->id,$registerations->id,$sessions->companies->user->id);
 
         toastr()->success('Your registration send with success !');
         return redirect(url('dashboarduser/registerationsuser',$registerations->id));
 
+    }else{
+        return redirect(route('home'));
     }
+}
 
 
     /** cancel registration_request  */

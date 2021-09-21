@@ -323,9 +323,35 @@ padding:0;
   font-size: 20px;
 }
 .app-header .nav>li i.icon{
-  font-size: 10px;
+  font-size: 14px;
   color:#c6c4c4;
             
+}
+.content-header .edittitlep{
+  text-align: center;
+  padding: 40px;
+}
+.formseditprolms{
+  margin: auto;
+}
+.buttonupdatep .btn-primary{
+  background: #f36824;
+  border:none;
+  height: 50px;
+  font-size: 17px;
+}
+@media(max-width:768px){
+  .buttonupdatep{
+    margin-bottom: 30px;
+  }
+}
+.formseditprolms .form-control{
+  height: 50px !important;
+  border-radius: 0px;
+  font-size: 17px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 12px 1px rgb(0 0 0 / 13%);
+  border: none;
 }
 .app-header .nav>li .dropdown-menu{
 border-radius: 0px !important;
@@ -338,7 +364,6 @@ box-shadow: 0px 0px 9px 1px rgb(0 0 0 / 20%);
 }
 
 .app-header .nav>li .dropdown-menu .dropdown-item{
-  text-align: center;
   text-transform: uppercase;    
   }
 
