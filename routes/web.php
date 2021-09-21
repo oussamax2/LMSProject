@@ -178,3 +178,6 @@ Route::post('crop', [App\Http\Controllers\Profile\UserProfileController::class, 
 
 
 Route::post('subscribersstore', [App\Http\Controllers\subscriberFrontController::class, 'store'])->name('subscribersstore');
+
+Route::post('cancelregistrtion', [App\Http\Controllers\registerationsController::class, 'cancelregistrtion'])->name("cancelregistrtion");
+

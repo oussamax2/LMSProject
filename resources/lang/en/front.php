@@ -304,4 +304,8 @@ return [
     'Available' => 'Available',
     'Closed' => 'Closed',
 
+    'Pending-cancelled' => 'Pending-cancelled',
+    'Cancel Registeration' => 'Cancel Registeration',
+    'Approve' => 'Approve',
+
 ];
