@@ -158,11 +158,11 @@ class registerationsController extends AppBaseController
     /** cancel registration_request  */
     public function cancelregistrtion(Request $request)
     {
-  
-        
+
+
 
         $registerations = $this->registerationsRepository->find($request->idr);
-      
+
         $registerations->status = 4;
         /**save in DB */
         $registerations->save();
@@ -173,7 +173,7 @@ class registerationsController extends AppBaseController
         toastr()->success('Your request send with success !');
         return redirect(url('dashboarduser/registerationsuser',$registerations->id));
 
-    }    
+    }
 
 
 }

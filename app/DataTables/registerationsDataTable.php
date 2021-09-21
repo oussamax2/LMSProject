@@ -54,7 +54,10 @@ class registerationsDataTable extends DataTable
             if($registerations->status ==2)
             return '<span class="btn btn-ghost-pending icon icon-hourglass"></span>';
             if($registerations->status ==3)
-            return '<span class="btn btn btn-ghost-success icon icon-like"></span>';})
+            return '<span class="btn btn btn-ghost-success icon icon-like"></span>';
+            if($registerations->status ==4)
+            return '<span class="btn btn-ghost-danger icon icon-close"></span>';})
+
             ->setRowAttr([
                 'style' => function($registerations){
                     return $registerations->notifcompany ? 'background-color: #00ff0021;' : '';

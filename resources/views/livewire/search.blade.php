@@ -68,7 +68,7 @@
                     </li>
                     <li class="float-right">
                         <i class="flaticon-placeholder"></i>
-                        <a  class="tran3s">{{ $session->countries->name }}{{isset($session->states->name)?','.$session->states->name:""}}</a>
+                        <a  class="tran3s">{{ $session->countries->name }}{{isset($session->cities->name)?','.$session->cities->name:""}}</a>
                     </li>
                 </ul>
             </div>
