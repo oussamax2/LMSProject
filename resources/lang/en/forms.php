@@ -10,6 +10,7 @@ return [
     'City Name'      => 'City Name',
     'Course Title'      => 'Course Title',
     'City'      => 'City',
+    'State'      => 'State',
     'Title'      => 'Title',
     'Note'      => 'Note',
     'Start'      => 'Start',

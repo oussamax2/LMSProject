@@ -6,6 +6,8 @@
 							<li><a href="index.html" class="tran3s">@lang('front.Home')</a></li>
 							<li>/</li>
 							<li>@lang('front.Courses')</li>
+                            <li>/</li>
+							<li>{{ $sessions->courses->title }}</li>
 						</ul>
 					</div>
 				</div>
@@ -17,7 +19,8 @@
 							<div class="sessionleft">
 							<h6 class="sessiontitle">@lang('front.Other Sessions')</h6>
 								<ul class="info-list row">
-									@foreach (App\Models\sessions::where('course_id',$sessions->course_id)->where('id','!=' ,$sessions->id)->get() as $sessions)
+
+									@foreach (App\Models\sessions::where('course_id',$sessions->course_id)->where('id','!=' ,$sessions->id)->limit(6)->orderBy('created_at', 'desc')->get() as $sessions)
 									<li class="col-xs-12">
 										<p style="padding-bottom: 16px;">
 											<a style="color: rgba(0,0,0,0.65); font-size: 14px; font-weight:600;" href="{{ url('singlsession') }}/{{$sessions->id}}"><i class="icon flaticon-clock" style="font-size: 17px; margin-right: 10px;"></i>{{Carbon\Carbon::parse($sessions->start)->isoFormat(' Do MMMM  YYYY ')}}  @lang('front.To')  {{Carbon\Carbon::parse($sessions->end)->isoFormat(' Do MMMM  YYYY ')}}</a>
@@ -92,8 +95,13 @@
 									{{ csrf_field() }}
 									<input type="hidden" name="session" value="{{ $sessions->id }}" />
 									<div class="curriculum-panel-buttonregister float-right">
+                                        @if($sessions->status && $sessions->courses->status)
 											<button class="btn btn-default"  type ="submit">@lang('front.Register')</button>
-									</div>
+                                            @else
+
+											<button class="btn btn-default" style="background: #d22323; color: #fff; border-radius: 3px; text-decoration: none; font-size: 20px; margin: 0 0 0 15px; padding: 6px 10px; border: none; text-transform: uppercase; cursor: default;">@lang('front.Closed')</button>
+									@endif
+                                        </div>
 								</form>
 							@elseif(!(auth()->user()))
 							<div class="curriculum-panel-buttonregister float-right">
@@ -144,7 +152,7 @@
 										<a href="{{ url('/profilecompany',$sessions->companies->id) }}" class="tran3s p-bg-color follow hvr-trim">@lang('front.see profile')</a>
 									</div>
 								</div>
-								
+
 							</div>
 						</div>
 					</div>
