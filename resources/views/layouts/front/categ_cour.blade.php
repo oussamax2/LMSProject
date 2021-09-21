@@ -100,8 +100,8 @@
                                         <div class="course-location">
 											<h5>@lang('front.State')</h5>
 											<div class="form-group">
-										      <div>
-										        <select name="state" id="state" class="select2  form-control" >
+										      <div >
+										        <select name="state" id="state" class="selectpicker show-tick form-control" data-live-search="true" >
                                                     <option value="">All</option>
 
 										        </select>
@@ -112,7 +112,7 @@
 											<h5>@lang('front.City')</h5>
 											<div class="form-group">
 										      <div>
-										        <select name="city" id="city" class="select2 form-control" >
+										        <select name="city" id="city" class="selectpicker show-tick form-control" data-live-search="true" >
                                                     <option value="">All</option>
 
 										        </select>

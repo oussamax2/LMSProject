@@ -107,7 +107,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','verified',
     Route::get('coursesimport', [App\Http\Controllers\company\coursesController::class,'import'])->name('courses.import');
     Route::post('importExcel', [App\Http\Controllers\company\coursesController::class, 'importExcel'])->name('importExcel');
     Route::resource('sessions', App\Http\Controllers\company\sessionsController::class);
-
+    Route::resource('detailuser', App\Http\Controllers\UserController::class)->except(['create', 'store','edit']);
 
 });
 Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:company']], function () {

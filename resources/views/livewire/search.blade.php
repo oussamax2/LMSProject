@@ -23,10 +23,7 @@
     </div>
 
     <div class="course-style-filter clearfix">
-        <ul class="float-left clearfix">
-            <li><a href="javascript:void(0);" wire:click="resetsearch" class="tran3s {{$all ? "active" : ""}}">@lang('front.All')</a></li>
-            <li><a href="javascript:void(0);" wire:click="freesearch" class="tran3s {{$free ? "active" : ""}}">@lang('front.free')</a></li>
-        </ul>
+
     </div>
 
     <div>
@@ -100,6 +97,7 @@
     $(document).ready(function() {
 
         $('select[name="country_id"]').on('change', function() {
+
             var stateID = $(this).val();
 
             if(stateID) {
@@ -108,7 +106,6 @@
                     type: "GET",
                     dataType: "json",
                     success:function(data) {
-
 
                         $('select[name="state"]').empty();
                         $('select[name="state"]').append('<option value="">All</option>');
@@ -119,8 +116,10 @@
 
                         });
 
-
+                        $('select[name="state"]').selectpicker('refresh');
+                        $('select[name="city"]').selectpicker('refresh');
                     }
+
                 });
             }else{
                 $('select[name="state"]').empty();
@@ -141,7 +140,8 @@
                         $.each(data, function(key, value) {
                             $('select[name="city"]').append('<option value="'+ key +'">'+ value +'</option>');
                         });
-
+                        $('select[name="state"]').selectpicker('refresh');
+                        $('select[name="city"]').selectpicker('refresh');
 
                     }
                 });
