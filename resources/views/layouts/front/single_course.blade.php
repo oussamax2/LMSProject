@@ -19,7 +19,6 @@
 							<div class="sessionleft">
 							<h6 class="sessiontitle">@lang('front.Other Sessions')</h6>
 								<ul class="info-list row">
-
 									@foreach (App\Models\sessions::where('course_id',$sessions->course_id)->where('id','!=' ,$sessions->id)->limit(6)->orderBy('created_at', 'desc')->get() as $sessions)
 									<li class="col-xs-12">
 										<p style="padding-bottom: 16px;">
