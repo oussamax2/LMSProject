@@ -219,7 +219,7 @@ float: right;
   }
   .card-details .actionbuttonslmsreg{
     float: left;
-      
+
       }
 }
 @media(max-width:700px){
@@ -325,7 +325,7 @@ padding:0;
 .app-header .nav>li i.icon{
   font-size: 14px;
   color:#c6c4c4;
-            
+
 }
 .content-header .edittitlep{
   text-align: center;
@@ -359,12 +359,12 @@ background: #fff;
 border-top: 2px solid #f36824 !important;
 border-bottom: 0px;
 border-left: 0px;
-border-right: 0px;  
-box-shadow: 0px 0px 9px 1px rgb(0 0 0 / 20%);    
+border-right: 0px;
+box-shadow: 0px 0px 9px 1px rgb(0 0 0 / 20%);
 }
 
 .app-header .nav>li .dropdown-menu .dropdown-item{
-  text-transform: uppercase;    
+  text-transform: uppercase;
   }
 
 /*---------------------- cards ----------------------*/
@@ -429,7 +429,7 @@ margin-right: 15px;
   font-size: 14px;
 }
 }
-/* /* details sessions */ 
+/* /* details sessions */
 
 /* timeline style details register */
 .clearfix:after {
@@ -453,7 +453,7 @@ color: #666;
 cursor: default;
 margin: 0 3px;
 padding: 10px 10px 10px 30px;
-min-width: 160px;
+min-width: 100px;
 float: left;
 position: relative;
 background-color: #deeaf5;
@@ -481,14 +481,14 @@ width: 0;
 height: 0;
 border-top: 24px solid transparent;
 border-bottom: 17px solid transparent;
-border-left: 17px solid #deeaf5;	
+border-left: 17px solid #deeaf5;
 z-index: 2;
 }
 
 .arrow-steps .step:before {
 right: auto;
 left: 0;
-border-left: 17px solid #fff;	
+border-left: 17px solid #fff;
 z-index: 0;
 }
 
@@ -522,7 +522,7 @@ color: #fff;
 background-color: #f36824;
 }
 .arrow-steps .step.current:after {
-border-left: 17px solid #f36824;	
+border-left: 17px solid #f36824;
 }
 /* style current */
 /* style rejected */
@@ -531,7 +531,7 @@ border-left: 17px solid #f36824;
   background-color: #d22323;
   }
   .arrow-steps .step.reject:after {
-  border-left: 17px solid #d22323;	
+  border-left: 17px solid #d22323;
   }
 /* style rejected */
 /* style confirmed */
@@ -540,7 +540,7 @@ border-left: 17px solid #f36824;
   background-color: #36d64c;
   }
   .arrow-steps .step.confirm:after {
-  border-left: 17px solid #36d64c;	
+  border-left: 17px solid #36d64c;
   }
 /* style confirmed */
 /* style pending */
@@ -549,7 +549,7 @@ border-left: 17px solid #f36824;
   background-color: #ffc107;
   }
   .arrow-steps .step.pending:after {
-  border-left: 17px solid #ffc107;	
+  border-left: 17px solid #ffc107;
   }
 /* style pending */
 /* timeline style details register */
@@ -748,7 +748,7 @@ textarea.form-control {
   height: 3.5em;
   border-radius: 50%;
   transform: translate3d(1em,0,0) scale(0);
-  transform-origin: center right;  
+  transform-origin: center right;
   z-index: 1;
   opacity: 0;
   transition: all .25s cubic-bezier(.02, .01, .47, 1);
@@ -790,7 +790,7 @@ textarea.form-control {
   width: 10px;
   }
   ::-webkit-scrollbar-thumb {
-  background:#a8a8a8; 
+  background:#a8a8a8;
   border-radius: 10px;
   }
   /*scroll style*/
@@ -863,13 +863,13 @@ textarea.form-control {
               margin:0px auto;
               width:500px;
             border: 1px solid #efebeb;
-            
+
             }
-            
+
             .responsive-table th {
               display: none;
             }
-            
+
             .responsive-table td {
               display: block;
             border-top: 1px solid #ddd;

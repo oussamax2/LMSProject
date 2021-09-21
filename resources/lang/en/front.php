@@ -299,6 +299,13 @@ return [
     'Your Name ' => 'Your Name ',
     'Registrations' => 'Registrations',
     'no data available' => 'no data available',
+    'Subscribers' => 'Subscribers', 
+    'Other sessions:' => 'Other sessions:',     
+    'Pending-cancelled' => 'Pending-cancelled',        
+    'Cancel Registeration' => 'Cancel Registeration',   
+    'Approve' => 'Approve',   
+    
+    'Other Sessions' => 'Other Sessions',       
     'Subscribers' => 'Subscribers',
     'Other Sessions' => 'Other Sessions',
     'Available' => 'Available',
