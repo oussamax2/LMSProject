@@ -11,6 +11,7 @@ return [
     'Decline request'      => 'Decline request',
     'Name' => 'Name',
     'Order' => 'Order',
+    'Clear all Notifications' => 'Clear all Notifications',
     'Created At' => 'Created At',
     'Account' => 'Account',
     'registered companies' => 'registered companies',

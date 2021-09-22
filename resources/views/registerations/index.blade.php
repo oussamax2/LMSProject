@@ -13,6 +13,7 @@
                          <div class="card-header">
                              <span class="icon icon-login"></span>
                              @lang('front.Registerations')
+                             <a class="pull-right" href="#">@lang('front.Clear all Notifications')</a>
                         </div>
                          <div class="card-body">
                              @include('registerations.table')
