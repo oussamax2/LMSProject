@@ -181,3 +181,4 @@ Route::post('subscribersstore', [App\Http\Controllers\subscriberFrontController:
 
 Route::post('cancelregistrtion', [App\Http\Controllers\registerationsController::class, 'cancelregistrtion'])->name("cancelregistrtion");
 
+Route::post('clearnotif/{id}', [App\Http\Controllers\registerationsController::class, 'clearnotif'])->name('clearnotif');
