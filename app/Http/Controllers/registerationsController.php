@@ -165,6 +165,7 @@ class registerationsController extends AppBaseController
 
         $registerations->status = 4;
         /**save in DB */
+        $registerations->notifcompany=1;
         $registerations->save();
         $sessions = sessions::find($registerations->session_id);
         /** mail to company */
