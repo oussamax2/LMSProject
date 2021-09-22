@@ -124,6 +124,12 @@ class HomeController extends Controller
 
 
 
+        }else
+        {
+            if(isset($sessions))
+            return view('front.singlcourse', ['sessions'=>$sessions]);
+            else
+            return abort(404);
         }
 
     }

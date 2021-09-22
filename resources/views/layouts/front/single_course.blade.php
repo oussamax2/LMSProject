@@ -100,14 +100,21 @@
                                             @else
 
 											<button class="btn btn-default" style="background: #d22323; color: #fff; border-radius: 3px; text-decoration: none; font-size: 20px; margin: 0 0 0 15px; padding: 6px 10px; border: none; text-transform: uppercase; cursor: default;">@lang('front.Closed')</button>
-									@endif
+									    @endif
                                         </div>
 								</form>
 							@elseif(!(auth()->user()))
 							<div class="curriculum-panel-buttonregister float-right">
-									<a class="tran3s" data-toggle="modal" data-target=".signInModal" class="btn btn-default">@lang('front.Register')</a>
+                                @if($sessions->status && $sessions->courses->status)
+                                <a class="tran3s" data-toggle="modal" data-target=".signInModal" class="btn btn-default">@lang('front.Register')</a>
+                               @else
+
+                                <button class="btn btn-default" style="background: #d22323; color: #fff; border-radius: 3px; text-decoration: none; font-size: 20px; margin: 0 0 0 15px; padding: 6px 10px; border: none; text-transform: uppercase; cursor: default;">@lang('front.Closed')</button>
+                            @endif
+
 							</div>
 							@endif
+
 							@if(auth()->user() && $registuser)
 							<div class="check-register-session">
                                 <a href="{{ route('registerationsuser.show', $registuser->id) }}"><h3><i class="icon flaticon-tick"></i>you have already registered in this session</h3></a>

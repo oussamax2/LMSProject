@@ -15,17 +15,17 @@
                             <div class="card-header">
 
                                 <i class="icon-info"></i>
-                                
+
                                 <strong style="margin-right:30px;">@lang('front.Details')</strong>
                                 <div class="arrow-steps clearfix pull-right">
                                    @if($registerations->status != 4)
-                                        
+
                                         <form  action="{{ route('cancelregistrtion')}}" method="POST" enctype="multipart/form-data">
                                              {{ csrf_field() }}
                                              <input type="text" hidden name="idr" value="{{$registerations->id}}">
                                              <button type="submit" class="btn btn-outline-danger" style="transform: translate(-305px, 40px);font-weight: bold;width: 175px;height: 44px;"> @lang('front.Cancel Registeration')</button>
-                                        </form>      
-                                   @endif                               
+                                        </form>
+                                   @endif
                                    @if($registerations->status == 0)
                                         <div class="step current"> <span>@lang('front.New')</span> </div>
                                         <div class="step"> <span>@lang('front.Rejected')</span> </div>
@@ -55,8 +55,8 @@
                                         <div class="step"> <span>@lang('front.Rejected')</span> </div>
                                         <div class="step"> <span>@lang('front.pending-payment')</span> </div>
                                         <div class="step"> <span>@lang('front.Confirmed')</span> </div>
-                                        <div class="step confirm"> <span>@lang('front.Pending-cancelled')</span> </div>
-                                        
+                                        <div class="step pending"> <span>@lang('front.Pending-cancelled')</span> </div>
+
                                    @endif
                                 </div>
                             </div>

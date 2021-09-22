@@ -57,8 +57,8 @@
                                         <div class="step"> <span>@lang('front.Rejected')</span> </div>
                                         <div class="step"> <span>@lang('front.pending-payment')</span> </div>
                                         <div class="step"> <span>@lang('front.Confirmed')</span> </div>
-                                        <div class="step confirm"> <span>@lang('front.Pending-cancelled')</span> </div>
-                                        
+                                        <div class="step pending"> <span>@lang('front.Pending-cancelled')</span> </div>
+
                                    @endif
                                 </div>
                             </div>
