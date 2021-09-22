@@ -11,7 +11,7 @@ class LoadMoreCompaniesData extends Component
     protected $listeners = [
         'load-more' => 'loadMore'
     ];
-   
+
     public function loadMore()
     {
         $this->limitPerPage = $this->limitPerPage + 4;
@@ -19,7 +19,7 @@ class LoadMoreCompaniesData extends Component
 
     public function render()
     {
-        $companies = companies::latest()->paginate($this->limitPerPage);
+        $companies = companies::latest()->where('status',2)->paginate($this->limitPerPage);
         $this->emit('userStore');
 
         // $countcompanies = count($companies);

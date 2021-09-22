@@ -18,7 +18,6 @@ class Registercompany extends Component
     public $users, $email, $password, $name,$password_confirmation,$shortDescription,
     $fcburl,
     $twitturl,
-    $lastname,
     $telephone,
     $website,
     $picture,
@@ -39,7 +38,6 @@ class Registercompany extends Component
         $this->shortDescription = '';
         $this->fcburl = '';
         $this->twitturl = '';
-        $this->lastname = '';
         $this->telephone = '';
         $this->website = '';
         $this->linkdinurl = '';
@@ -59,7 +57,6 @@ class Registercompany extends Component
     {
         $validatedDate = $this->validate([
             'name' => 'required|max:25',
-            'lastname' => 'required|max:25',
             'email' => 'required|email|max:25|unique:users',
             'password' => 'required|min:8|confirmed',
             'password_confirmation' => 'required|min:8',
@@ -85,7 +82,6 @@ class Registercompany extends Component
             $image = $this->picture;
             $companies = companies::create([
                 'user_id' => $user->id,
-                'lastname' => $this->lastname,
                 'website' => $this->website,
                 'telephone' => $this->telephone,
                 'shortDescription'	 => $this->shortDescription,
@@ -104,7 +100,6 @@ class Registercompany extends Component
 
             companies::create([
                 'user_id' => $user->id,
-                'lastname' => $this->lastname,
                 'website' => $this->website,
                 'telephone' => $this->telephone,
                 'picture' => "",

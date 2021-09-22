@@ -79,13 +79,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-wrapper">
-                                    <h6>@lang('front.Your LastName')</h6>
-                                    <input type="text" wire:model="lastname"  placeholder="@lang('front.Your LastName')" value="{{ old('lastname') }}" required>
-                                    @if ($errors->has('lastname'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('lastname') }}</strong>
-                                    </span>
-                                @endif
+
                                     <h6>@lang('front.Mobile Number')</h6>
                                     <input type="text" wire:model="telephone"  placeholder="@lang('front.+880 854 875 971')" value="{{ old('telephone') }}">
                                     @if ($errors->has('telephone'))
