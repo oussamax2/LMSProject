@@ -6,7 +6,7 @@
                     <a href="{{ route ('course') }}" class="profcourse">@lang('front.See All Course')</a>
                     </div>
 					<div class="row">
-						
+
 					@if($countsessions>0)
 						<div class="teachers-course-slider">
 						@foreach ($companies->courses as $coursesList)
@@ -24,7 +24,7 @@
 										</div>
 										<div class="name clearfix">
 											<h6 class="float-left">{{ $companies->user->name }}</h6>
-											
+
 											@if($sessList->fee == 0)
                                            <span class="p-bg-color float-right">@lang('front.free')</span>
 										@else
