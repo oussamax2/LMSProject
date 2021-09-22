@@ -16,6 +16,7 @@ use Response;
 use App\Models\sessions;
 use App\Models\courses;
 use App\Models\categories;
+use app\Models\User;
 
 class registerationsController extends AppBaseController
 {
@@ -177,4 +178,44 @@ class registerationsController extends AppBaseController
     }
 
 
+    /** clear registration_request notif for user&company */
+    public function clearnotif($id)
+    {
+
+
+
+        //   var_dump($id);
+        
+        $user = auth()->user();
+        $model = registerations::all();
+
+        if($user->hasRole('company')){
+
+            $notifcompanyy = $model->toQuery()->with('user')->with(['sessions', 'sessions.courses'])->whereHas('sessions.courses', function ($query) use ($id){
+                    $query->where('company_id',$id);
+                    })->where('notifcompany',1)->get();
+
+                // var_dump($notifcompanyy);
+
+            foreach($notifcompanyy as $registerations){
+
+                $registerations->notifcompany=0;
+                $registerations->save();            
+            }
+        }elseif($user->hasRole('user')){
+
+            $notifuser = $model->toQuery()->with('user')->whereHas('user', function ($query) use ($id){
+                    $query->where('user_id',$id);
+                    })->where('notif',1)->count();
+
+                // var_dump($notifuser);
+
+            foreach($notifuser as $registerations){
+
+                $registerations->notif=0;
+                $registerations->save();            
+            }            
+        }
+        return redirect()->back();
+    }
 }
