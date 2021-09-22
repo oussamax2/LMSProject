@@ -28,9 +28,9 @@
                                     <a href="{{ route('verifregistrequest', [$registerations->id, 1]) }}" class="btn btn-light buttonrejectuser"><span class="icon icon-trash"></span>@lang('forms.Reject')</a>
                                  @endif
                                  @if( $registerations->status == 4)
-                                    <a href="{{ route('verifregistrequest', [$registerations->id, 4]) }}" class="btn btn-light buttonecceptuser"><span class="icon icon-check"></span>@lang('front.Approve')</a>
-
-                                 @endif
+                                    <a onclick="return confirm('Are you sure?')" href="{{ route('verifregistrequest', [$registerations->id, 4]) }}" class="btn btn-light buttonecceptuser"><span class="icon icon-check"></span>@lang('front.Approve')</a>
+                                    
+                                 @endif                                 
                                 <div class="arrow-steps clearfix pull-right">
                                    @if($registerations->status == 0)
                                         <div class="step current"> <span>@lang('front.New')</span></div>

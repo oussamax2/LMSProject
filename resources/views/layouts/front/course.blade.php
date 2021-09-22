@@ -33,13 +33,13 @@
 									<h5><a href="{{ url('singlsession') }}/{{$sessionList->id}}" class="tran3s">{{$sessionList->courses->title}}</a></h5>
 									<ul class="clearfix">
 										<li class="float-left">
-											<i class="flaticon-people"></i>
+											<i class="flaticon-clock"></i>
 
 
-											<a href="#" class="tran3s">{{Carbon\Carbon::parse($sessionList->start)->isoFormat(' Do MMMM  YYYY ')}}</a>
+											<a href="#" class="tran3s">{{Carbon\Carbon::parse($sessionList->start)->isoFormat(' DD/MM/YYYY ')}}</a>
 										</li>
 										<li class="float-right">
-											<i class="flaticon-heart"></i>
+											<i class="flaticon-placeholder"></i>
 											<a href="#" class="tran3s">{{$sessionList->countries->name}}, {{substr_replace($sessionList->states->name, " ...", 3)}}</a>
 										</li>
 									</ul>
