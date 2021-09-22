@@ -104,11 +104,13 @@
 <div class="form-group">
     {!! Form::label('courses', __('forms.Company courses')) !!}
         @foreach ($listcourses as $listcourses)
-            <p>{{ $listcourses->title }}</p>
+        @if($listcourses->sessions()->count()> 0)
+            <p>{{ $listcourses->title }} :</p>
 
-            
+
             <div class="table-responsive">
                 <table class="table table-bordered" style="margin:15px 0 0 0;">
+
                         <thead>
                             <tr>
                             <th scope="col">#</th>
@@ -130,9 +132,11 @@
                                 </tr>
                             </tbody>
                         @endforeach
+
                 </table>
             </div>
-            
+            <br>
+            @endif
         @endforeach
 </div>
 </div>

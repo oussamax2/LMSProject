@@ -43,7 +43,7 @@ class HomeController extends Controller
     public function partners()
     {
         // $companies = companies::orderBy('id', 'desc')->take(6)->get();
-        $companies = companies::orderBy('id', 'desc')->paginate(4);
+        $companies = companies::orderBy('id', 'desc')->where('status',2)->paginate(4);
         return view('front.partners')->with(['companies'=>$companies ]);
     }
 
