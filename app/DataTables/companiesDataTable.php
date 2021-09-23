@@ -73,7 +73,7 @@ class companiesDataTable extends DataTable
             ->parameters([
                 'dom'       => 'Bfrtip',
 
-                'order'     => [[7, 'desc']],
+                'order'     => [[6, 'desc']],
                 'buttons'   => [
                 ],'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],
             ]);
