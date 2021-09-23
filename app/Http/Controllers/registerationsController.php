@@ -187,21 +187,20 @@ class registerationsController extends AppBaseController
         //   var_dump($id);
 
         $user = auth()->user();
-        $model = registerations::all();
+      
 
         if($user->hasRole('company')){
 
-            $notifcompanyy = $model->toQuery()->with('user')->with(['sessions', 'sessions.courses'])->whereHas('sessions.courses', function ($query) use ($id){
-                    $query->where('company_id',$id);
-                    })->where('notifcompany',1)->get();
+           
+            registerations::with(['sessions', 'sessions.courses'])->whereHas('sessions.courses', function ($query) use ($user){
+                    $query->where('company_id',$user->companies->id);
+                    })->update(['notifcompany' => 0]);
 
                 // var_dump($notifcompanyy);
 
-            foreach($notifcompanyy as $registerations){
+              
 
-                $registerations->notifcompany=0;
-                $registerations->save();
-            }
+                
         }elseif($user->hasRole('user')){
             registerations::where('user_id', '=', $user->id)->update(['notif' => 0]);
         }
