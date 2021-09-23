@@ -14,11 +14,11 @@
                             <span class="icon icon-login"></span>
                             @lang('front.Registerations')
                             
-                            <a class="pull-right" href="{{ route('clearnotif',[auth()->user()->id]) }}" onclick="event.preventDefault(); document.getElementById('submit-form').submit();">
+                            <a class="pull-right" href="{{ route('clearnotif') }}" onclick="event.preventDefault(); document.getElementById('submit-form').submit();">
                                 @lang('front.Clear all Notifications')
                             </a>
 
-                            <form id="submit-form" action="{{ route('clearnotif',[auth()->user()->id]) }}" method="POST" class="hidden">
+                            <form id="submit-form" action="{{ route('clearnotif') }}" method="POST" class="hidden">
                               {{ csrf_field() }}
 
                                

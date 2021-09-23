@@ -179,7 +179,7 @@ class registerationsController extends AppBaseController
 
 
     /** clear registration_request notif for user&company */
-    public function clearnotif($id)
+    public function clearnotif()
     {
 
 
