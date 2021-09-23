@@ -29,6 +29,7 @@
 <i class="icon icon-user"></i>
     {!! Form::label('user_id', __('forms.Student')) !!}
     <p>{{ $registerations->user['name'] }}</p>
+
 </div>
 <!-- Session Id Field -->
 <div class="form-group col-sm-6 col-md-12 col-lg-6">

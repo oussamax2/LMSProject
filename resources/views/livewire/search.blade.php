@@ -22,8 +22,9 @@
         </div>
     </div>
 
+    <div class="course-style-filter clearfix">
 
-
+    </div>
 
     <div>
      @if(count($sessionList) >0)
@@ -67,7 +68,7 @@
                     </li>
                     <li class="float-right">
                         <i class="flaticon-placeholder"></i>
-                        <a  class="tran3s">{{ $session->countries->name }}{{isset($session->states->name)?','.$session->states->name:""}}</a>
+                        <a  class="tran3s">{{ $session->countries->name }}{{isset($session->cities->name)?','.$session->cities->name:""}}</a>
                     </li>
                 </ul>
             </div>
@@ -75,7 +76,7 @@
         @endforeach
      @else
         <div class="single-course clearfix trending">
-        
+
            <div class="float-left">
 
                 <h6>@lang('front.no data available')</h6>
@@ -92,6 +93,65 @@
 
 </div>
 @section('js')
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $('select[name="country_id"]').on('change', function() {
+
+            var stateID = $(this).val();
+
+            if(stateID) {
+                $.ajax({
+                    url: '/state/ajax/'+stateID,
+                    type: "GET",
+                    dataType: "json",
+                    success:function(data) {
+
+                        $('select[name="state"]').empty();
+                        $('select[name="state"]').append('<option value="">All</option>');
+                        $('select[name="city"]').empty();
+                        $('select[name="city"]').append('<option value="">All</option>');
+                        $.each(data, function(key, value) {
+                            $('select[name="state"]').append('<option value="'+ key +'">'+ value +'</option>');
+
+                        });
+
+                        $('select[name="state"]').selectpicker('refresh');
+                        $('select[name="city"]').selectpicker('refresh');
+                    }
+
+                });
+            }else{
+                $('select[name="state"]').empty();
+            }
+        });
+
+        $('select[name="state"]').on('change', function() {
+            var stateID = $(this).val();
+            if(stateID) {
+                $.ajax({
+                    url: '/city/ajax/'+stateID,
+                    type: "GET",
+                    dataType: "json",
+                    success:function(data) {
+
+
+                        $('select[name="city"]').empty();
+                        $.each(data, function(key, value) {
+                            $('select[name="city"]').append('<option value="'+ key +'">'+ value +'</option>');
+                        });
+                        $('select[name="state"]').selectpicker('refresh');
+                        $('select[name="city"]').selectpicker('refresh');
+
+                    }
+                });
+            }else{
+                $('select[name="city"]').empty();
+            }
+        });
+
+    });
+</script>
 <script>
 $(document).ready(function() {
  @this.set('searchTerm', "{{request()->keywords}}");
@@ -128,4 +188,6 @@ $( "#resetsearch" ).on( "click", function() {
 });
 
 </script>
+
+
 @endsection

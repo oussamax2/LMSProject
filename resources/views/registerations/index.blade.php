@@ -13,6 +13,17 @@
                          <div class="card-header">
                              <span class="icon icon-login"></span>
                              @lang('front.Registerations')
+                          
+
+                             <a class="pull-right" href="{{ route('clearnotif',[auth()->user()->id]) }}" onclick="event.preventDefault(); document.getElementById('submit-form').submit();">
+                                @lang('front.Clear all Notifications')
+                            </a>
+
+                            <form id="submit-form" action="{{ route('clearnotif',[auth()->user()->id]) }}" method="POST" class="hidden">
+                              {{ csrf_field() }}
+
+                               
+                            </form>
                         </div>
                          <div class="card-body">
                              @include('registerations.table')

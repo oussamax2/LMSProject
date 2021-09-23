@@ -11,6 +11,7 @@ return [
     'Decline request'      => 'Decline request',
     'Name' => 'Name',
     'Order' => 'Order',
+    'Clear all Notifications' => 'Clear all Notifications',
     'Created At' => 'Created At',
     'Account' => 'Account',
     'registered companies' => 'registered companies',
@@ -90,6 +91,7 @@ return [
     'Country' => 'Country',
     'Apply filters' => 'Apply filters',
     'City' => 'City',
+    'State'      => 'State',
     'Search By Filters' => 'Search By Filters',
     'Price Range' => 'Price Range',
 
@@ -108,6 +110,7 @@ return [
     'free' => 'free',
     'To' => 'To',
     'Company' => 'Company',
+    'dashboard' => 'dashboard',
     'All rights reserved' => 'All rights reserved',
 
     'Training Organizer Company' => 'Training Organizer Company',
@@ -168,10 +171,10 @@ return [
 
     'Your Full Name' => 'Your Full Name',
     'Your EMail' => 'Your EMail',
-    'Your Email' => 'Your Email', 
-    'Please enter your email and subscribe here !' => 'Please enter your email and subscribe here !', 
-    'Subscribe saved successfully. !' => 'Subscribe saved successfully. !',  
-    'subscriber already exists !' => 'subscriber already exists !',        
+    'Your Email' => 'Your Email',
+    'Please enter your email and subscribe here !' => 'Please enter your email and subscribe here !',
+    'Subscribe saved successfully. !' => 'Subscribe saved successfully. !',
+    'subscriber already exists !' => 'subscriber already exists !',
     'sign_in' => 'Sign In',
     'sample@gmail.com' => 'sample@gmail.com',
     'Your Name' => 'Your Name',
@@ -298,6 +301,19 @@ return [
     'Registrations' => 'Registrations',
     'no data available' => 'no data available',
     'Subscribers' => 'Subscribers', 
-    '' => '',       
+    'Other sessions:' => 'Other sessions:',     
+    'Pending-cancelled' => 'Pending-cancelled',        
+    'Cancel Registeration' => 'Cancel Registeration',   
+    'Approve' => 'Approve',   
+    
+    'Other Sessions' => 'Other Sessions',       
+    'Subscribers' => 'Subscribers',
+    'Other Sessions' => 'Other Sessions',
+    'Available' => 'Available',
+    'Closed' => 'Closed',
+
+    'Pending-cancelled' => 'Pending-cancelled',
+    'Cancel Registeration' => 'Cancel Registeration',
+    'Approve' => 'Approve',
 
 ];

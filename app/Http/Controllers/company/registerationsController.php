@@ -161,32 +161,51 @@ class registerationsController extends AppBaseController
             $user =$registerations->user_id;
 
             // || $registerations->sessions->companies->id != auth()->user()->companies->id
-            if (empty($registerations)  ) {
+            if (empty($registerations) || !$registerations->my() ) {
                 Flash::error(__('admin.not found'));
 
                 return redirect(route('registerations.index'));
             }
-           /**if admin clicked on acceptRequest button=> the registerations'status will be 2 ~ pending-payment user's request */
+           /**if company clicked on acceptRequest button=> the registerations'status will be 2 ~ pending-payment user's request */
            if ($response == 2) {
 
                 $registerations->status = 2;
                 Mailsender::senduser($user,$id,2);
-           /**if admin clicked on declineRequest button=> the registerations'status will be 1 ~ rejected user's request */
+           /**if company clicked on declineRequest button=> the registerations'status will be 1 ~ rejected user's request */
            } elseif ($response == 1)  {
 
                 $registerations->status = 1;
                 Mailsender::senduser($user,$id,1);
 
            } elseif ($response == 3){
-             /**if admin clicked on accept after status(pending-payement) button=> the registerations'status will be 3 ~ confirmed user's request */
+             /**if company clicked on accept after status(pending-payement) button=> the registerations'status will be 3 ~ confirmed user's request */
                 $registerations->status = 3;
                 Mailsender::senduser($user,$id,3);
            }
+        //    elseif ($response == 5){
+        //       /** the request of cancel cancelled*/
+        //         $registerations->status = $registerations->status;
+        //         Mailsender::senduser($user,$id,3);
+
+        //    }
            /**save status in DB */
            $registerations->notif=1;
            $registerations->save();
            Flash::success(__('admin.updated successfully.'));
 
-           return redirect()->back();
+
+
+
+           if ($response == 4){
+             /**if company clicked on accept after status(pending-cancelled) button=> the registerations request cancelled and deleted*/
+             // $registerations->deleted_at = Carbon::now();
+             Mailsender::senduser($user,$id,4);
+             $registerations->delete();
+
+             Flash::success(__('admin.deleted successfully.'));
+
+
+            }
+            return redirect()->back();
         }
 }

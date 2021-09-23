@@ -16,6 +16,7 @@ use Response;
 use App\Models\sessions;
 use App\Models\courses;
 use App\Models\categories;
+use app\Models\User;
 
 class registerationsController extends AppBaseController
 {
@@ -133,20 +134,77 @@ class registerationsController extends AppBaseController
     {
         // $request->session
         // auth()->user()->id;
+        $sessions = sessions::find($request->session);
+        if($sessions->status && $sessions->courses->status){
+
         $registerations = registerations::firstOrCreate(array(
             'session_id' =>  $request->session,
             'user_id' => auth()->user()->id)
         );
         /**save in DB */
         $registerations->save();
-        $sessions = sessions::find($request->session);
+
         /** mail to company */
         Mailsender::sendcompany(auth()->user()->id,$registerations->id,$sessions->companies->user->id);
 
         toastr()->success('Your registration send with success !');
         return redirect(url('dashboarduser/registerationsuser',$registerations->id));
 
+    }else{
+        return redirect(route('home'));
+    }
+}
+
+
+    /** cancel registration_request  */
+    public function cancelregistrtion(Request $request)
+    {
+
+
+
+        $registerations = $this->registerationsRepository->find($request->idr);
+
+        $registerations->status = 4;
+        /**save in DB */
+        $registerations->notifcompany=1;
+        $registerations->save();
+        $sessions = sessions::find($registerations->session_id);
+        /** mail to company */
+        Mailsender::sendcompany(auth()->user()->id,$registerations->id,$sessions->companies->user->id);
+
+        toastr()->success('Your request send with success !');
+        return redirect(url('dashboarduser/registerationsuser',$registerations->id));
+
     }
 
 
+    /** clear registration_request notif for user&company */
+    public function clearnotif($id)
+    {
+
+
+
+        //   var_dump($id);
+
+        $user = auth()->user();
+        $model = registerations::all();
+
+        if($user->hasRole('company')){
+
+            $notifcompanyy = $model->toQuery()->with('user')->with(['sessions', 'sessions.courses'])->whereHas('sessions.courses', function ($query) use ($id){
+                    $query->where('company_id',$id);
+                    })->where('notifcompany',1)->get();
+
+                // var_dump($notifcompanyy);
+
+            foreach($notifcompanyy as $registerations){
+
+                $registerations->notifcompany=0;
+                $registerations->save();
+            }
+        }elseif($user->hasRole('user')){
+            registerations::where('user_id', '=', $user->id)->update(['notif' => 0]);
+        }
+        return redirect()->back();
+    }
 }

@@ -73,7 +73,7 @@ class companies extends Model
      * @var array
      */
     public static $rules = [
-        'lastname' => 'required|max:10',
+        'lastname' => 'max:10',
         'website' => 'max:100',
         'telephone' => 'max:15',
         'shortDescription' => 'max:100',

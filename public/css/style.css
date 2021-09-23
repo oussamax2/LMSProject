@@ -331,6 +331,24 @@ header.menu-style-one {
   right: 0;
   z-index: 99;
 }
+.sidebar-instructor-info .sociallmsup{
+display: flex;
+justify-content: center;
+}
+.sidebar-instructor-info .sociallmsup li{
+  border: 1px solid #ff7417;
+  border-radius: 50%;
+  margin-right: 5px;
+  line-height: 40px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  justify-content: center;
+  }
+  .sidebar-instructor-info .sociallmsup li i.icon{
+    color: #ff7417;
+    font-size: 20px;
+    }
 header.menu-style-one .header-wrapper {
   background: #fff;
   position: relative;
@@ -2172,6 +2190,20 @@ footer .bottom-footer {
           transform:rotate(-45deg);
 }
 /*----------------------- Course details -------------------*/
+.course-details .sessionleft{
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 3px;
+  margin-bottom: 65px;
+  padding: 30px;
+
+}
+.course-details .sessionleft .sessiontitle{
+  font-size: 24px;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
 .course-details .course-sidebar {padding-left: 30px;}
 .course-sidebar .sidebar-course-information {
   border: 1px solid rgba(0,0,0,0.06);
@@ -2262,10 +2294,10 @@ footer .bottom-footer {
   margin-bottom: 65px;
   padding: 30px 25px;
 }
-.course-sidebar .sidebar-instructor-info .name {
+/* .course-sidebar .sidebar-instructor-info .name {
   position: relative;
   padding-left: 105px;
-}
+} */
 .course-sidebar .sidebar-instructor-info .name h6 {
   font-family: 'Lato', sans-serif;
   font-weight: 700;
@@ -3028,6 +3060,7 @@ footer .bottom-footer {
   position: relative;
   margin-bottom: 25px;
 }
+
 #mixitUp-item .single-item .opacity {
   height: 156px;
   width: 100%;
@@ -3050,6 +3083,7 @@ footer .bottom-footer {
   -webkit-transform:scale(1,0);
           transform:scale(1,0);
 }
+
 #mixitUp-item .single-item .opacity:before {left:0;}
 #mixitUp-item .single-item .opacity:after {right:0;}
 #mixitUp-item .single-item .opacity h6 a {
@@ -3927,6 +3961,9 @@ display: flex;
    font-size: 15px;
    font-weight: bold;
       }
+      .course-details .curriculum-panel-date:hover{
+      color:#36d64c;
+           }
 
 /* details session  */
 
@@ -4085,7 +4122,10 @@ background: #36d64c;
       .check-register-session i.icon{
         margin-right: 10px;
         }
-       
+        .course-details li.hoversessionlms p a:hover{
+          color:#36d64c !important;
+
+       }
 
 
 
