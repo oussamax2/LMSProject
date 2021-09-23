@@ -191,9 +191,8 @@ class registerationsController extends AppBaseController
 
         if($user->hasRole('company')){
 
-            $model = registerations::all();
-
-           $model->toQuery()->with('user')->with(['sessions', 'sessions.courses'])->whereHas('sessions.courses', function ($query) use ($user){
+           
+            registerations::with('user')->with(['sessions', 'sessions.courses'])->whereHas('sessions.courses', function ($query) use ($user){
                     $query->where('company_id',$user->companies->id);
                     })->update(['notifcompany' => 0]);
 
