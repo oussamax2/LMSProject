@@ -3067,7 +3067,8 @@ footer .bottom-footer {
   position: absolute;
   top:50%;
   text-align: center;
-  opacity: 0;
+  opacity: 1;
+  background: #22222238;
   -webkit-transform:translateY(-50%);
           transform:translateY(-50%);
 }
@@ -3898,17 +3899,10 @@ opacity: 0.6;
 
 .testimonial-styleOne .single-blog .image{
   position: relative;
-}
-.testimonial-styleOne .single-blog:hover .image:after{
-  content: "";
-  position: absolute;
-  background: #222;
-  top:0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width:100%;
-  opacity: 0.6;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+
 
 }
 .testimonial-styleOne .single-blog .image img{
@@ -3916,18 +3910,35 @@ opacity: 0.6;
  min-height: 250px;
  object-fit: cover;
  object-position: center;
+ border-radius: 5px;
+ transition: all 0.4s ease;
+ z-index: 0;
 }
+
 .testimonial-styleOne .single-blog .categorytitle{
   position: absolute;
-  top: 50%;
-  right: 50%;
-  text-align: center;
+ bottom: 10px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 20px 0px rgb(0 0 0 / 20%);
   z-index: 1;
-  transform: translate(50%, -50%);
+  transition: all 0.4s ease;
+  z-index: 1;
+  text-align: center;
+  width: 85%;
+
+}
+.testimonial-styleOne .single-blog .categorytitle:hover{
+  transform: translate(0,-20px);
 }
 .testimonial-styleOne .single-blog .categorytitle h3{
-color:#fff;
+color:#000000;
 }
+@media(max-width:1200px){
+  .testimonial-styleOne .single-blog .categorytitle{
+    width: 100%;
+}}
 .modal-open{
   overflow: hidden !important;
 }
