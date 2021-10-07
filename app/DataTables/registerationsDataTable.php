@@ -28,15 +28,15 @@ class registerationsDataTable extends DataTable
         })
         ->editColumn('status', function ($registerations) {
             if($registerations->status ==0)
-            return '<span class="btn btn-ghost-info icon icon-hourglass"></span>';
+            return '<span class="btn btn-ghost-info icon icon-hourglass"></span>NEW';
             if($registerations->status ==1)
-            return '<span class="btn btn-ghost-danger icon icon-dislike"></span>';
+            return '<span class="btn btn-ghost-danger icon icon-dislike"></span>REJECTED';
             if($registerations->status ==2)
-            return '<span class="btn btn-ghost-pending icon icon-hourglass"></span>';
+            return '<span class="btn btn-ghost-pending icon icon-hourglass"></span>PENDING-PAYMENT';
             if($registerations->status ==3)
-            return '<span class="btn btn btn-ghost-success icon icon-like"></span>';
+            return '<span class="btn btn btn-ghost-success icon icon-like"></span>CONFIRMED';
             if($registerations->status ==4)
-            return '<span class="btn btn-ghost-danger icon icon-close"></span>';})
+            return '<span class="btn btn-ghost-danger icon icon-close"></span>CANCLED';})
             ->setRowAttr([
                 'style' => function($registerations){
                     return $registerations->notif ? 'background-color: #00ff0021;' : '';
@@ -50,21 +50,22 @@ class registerationsDataTable extends DataTable
         })
         ->editColumn('status', function ($registerations) {
             if($registerations->status ==0)
-            return '<span class="btn btn-ghost-info icon icon-hourglass"></span>';
+            return '<span class="btn btn-ghost-info icon icon-hourglass"></span>NEW';
             if($registerations->status ==1)
-            return '<span class="btn btn-ghost-danger icon icon-dislike"></span>';
+            return '<span class="btn btn-ghost-danger icon icon-dislike"></span>REJECTED';
             if($registerations->status ==2)
-            return '<span class="btn btn-ghost-pending icon icon-hourglass"></span>';
+            return '<span class="btn btn-ghost-pending icon icon-hourglass"></span>PENDING-PAYMENT';
             if($registerations->status ==3)
-            return '<span class="btn btn btn-ghost-success icon icon-like"></span>';
+            return '<span class="btn btn btn-ghost-success icon icon-like"></span>CONFIRMED';
             if($registerations->status ==4)
-            return '<span class="btn btn-ghost-danger icon icon-close"></span>';})
+            return '<span class="btn btn-ghost-danger icon icon-close"></span>CANCLED';})
 
             ->setRowAttr([
                 'style' => function($registerations){
                     return $registerations->notifcompany ? 'background-color: #00ff0021;' : '';
                 }
             ])
+
             ->escapeColumns([]);
     }
 
@@ -75,7 +76,8 @@ class registerationsDataTable extends DataTable
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function query(registerations $model)
-    {
+    { //$model = registerations::withTrashed();
+    //$model = registerations::onlyTrashed();
        $user = auth()->user();
        if($user->hasRole('admin'))
        return $model->newQuery()->with('user')->with(['sessions', 'sessions.courses']);
@@ -84,8 +86,9 @@ class registerationsDataTable extends DataTable
             $user = auth()->user();
             $query->where('company_id',$user->companies->id);
 
-       })->orderBy('updated_at', 'desc');}else{
-        return $model->touser()->newQuery()->with('user')->with(['sessions', 'sessions.courses'])->orderBy('updated_at', 'desc');
+       });}
+       else{
+        return $model->touser()->newQuery()->with('user')->with(['sessions', 'sessions.courses']);
        }
     }
 
@@ -103,14 +106,14 @@ class registerationsDataTable extends DataTable
             ->parameters([
                 'dom'       => 'Bfrtip',
 
-                'order'     => [[0, 'desc']],
+                'order'     => [[5, 'desc']],
                 'buttons'   => [
                 ],'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],
             ]);
     }
 
     /**
-     * Get columns.
+     * Get columns.->orderBy('updated_at', 'desc')
      *
      * @return array
      */
@@ -119,18 +122,20 @@ class registerationsDataTable extends DataTable
         $user = auth()->user();
         if($user->hasRole('user')){
         return [
-            'id'=> ['visible' => false, 'printable' => false, 'exportable' => true],
+            'id'=> ['visible' => false, 'printable' => false, 'exportable' => true,'sortable'=> false],
             ['data' => 'sessions.courses.title', 'name' => 'sessions.courses.title', 'title' => __('forms.Course Title')],
             ['data' => 'sessions.start', 'name' => 'sessions.start', 'title' => __('forms.Session startDate')],
-            ['data' => 'status', 'name' => 'status', 'title' => __('forms.status')]
+            ['data' => 'status', 'name' => 'status', 'title' => __('forms.status')],
+            'updated_at'=> ['visible' => false, 'printable' => false, 'exportable' => true,'sortable'=> false],
         ];}
         else{
         return [
             'id'=> ['visible' => false, 'printable' => false, 'exportable' => true],
-            ['data' => 'user.name', 'name' => 'user.name', 'title' => __('forms.User Name')],
+            ['data' => 'user.name', 'name' => 'user.name', 'title' => __('forms.User Name') ,'sortable'=> false],
             ['data' => 'sessions.courses.title', 'name' => 'sessions.courses.title', 'title' => __('forms.Course Title')],
             ['data' => 'sessions.start', 'name' => 'sessions.start', 'title' => __('forms.Session startDate')],
-            ['data' => 'status', 'name' => 'status', 'title' => __('forms.status')]
+            ['data' => 'status', 'name' => 'status', 'title' => __('forms.status')],
+            'updated_at'=> ['visible' => false, 'printable' => false, 'exportable' => true,'sortable'=> false],
         ];}
     }
 

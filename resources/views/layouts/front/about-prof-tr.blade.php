@@ -17,7 +17,7 @@
 						<div class="col-md-8 col-xs-12">
 							<div class="text">
 								<div class="title">
-									<h4>{{ $companies->lastname }}</h4>
+									<h4>{{ $companies->user->name }}</h4>
 									<span>{{ $companies->shortDescription }}</span>
 								</div>
 								<ul class="social-media">

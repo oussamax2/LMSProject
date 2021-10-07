@@ -20,7 +20,7 @@ class categories extends Model
 
 
     public $table = 'categories';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -70,12 +70,19 @@ class categories extends Model
     {
         return $this->HasMany(tag::class);
     }
-    
+
          /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function subcategorie()
     {
         return $this->HasMany(subcategorie::class, 'category_id');
+    }
+
+    public function countsessions()
+    {
+        return  sessions::whereHas('courses', function ($query) {
+            $query->where('category_id',$this->id);})->count();
+
     }
 }

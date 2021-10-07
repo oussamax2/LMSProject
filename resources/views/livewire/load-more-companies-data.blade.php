@@ -12,7 +12,7 @@
                                 <img src="{{ asset('images/companydefault.svg') }}" alt="">
                                 @endif
                             </div>
-                            <h6><a href="{{ url('/profilecompany',$compList->id) }}" class="tran3s">{{ $compList->lastname }}</a></h6>
+                            <h6><a href="{{ url('/profilecompany',$compList->id) }}" class="tran3s">{{ $compList->user->name }}</a></h6>
                             <p>{{substr_replace($compList->shortDescription, " ...", 30)}}</p>
                         </div>
                     </div>
@@ -23,9 +23,9 @@
 	   </div>
   </div>
 @if(!$companies->hasMorePages())
-  
+
     <div style="line-height: 61px;text-align: center;font-size: 18px;text-transform: uppercase;color: #f55d3a;font-weight: 500px;margin: 0 auto 30px auto;font-weight: bold;">
         @lang('front.no more data')
     </div>
-@endif  
+@endif
 </div>

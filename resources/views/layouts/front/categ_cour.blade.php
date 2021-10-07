@@ -20,6 +20,7 @@
 									<h4>@lang('front.Categories')</h4>
 									<div class="panel-group theme-accordion" id="accordion">
                                         @foreach($categList as $cat)
+                                        @if ($cat->countsessions() > 0)
                                       <div class="panel" >
 									    <div class="panel-heading {{$loop->first?'active-panel':''}} {{$cat->id==request()->cat?'active-panel':''}}">
 									      <h6 class="panel-title">
@@ -31,14 +32,19 @@
 									      <div class="panel-body">
 									      	<ul id="subcat">
                                                 @foreach($cat->subcategorie as $subcat)
-									      		<li  value="{{$subcat->id}}"><a href="javascript:void(0);" class="tran3s"><span>{{$subcat->countsessions()}}</span>{{$subcat->name}}</a></li>
-                                                  @endforeach
+                                                @if ($subcat->countsessions() > 0)
+                                                <li  value="{{$subcat->id}}"><a href="javascript:void(0);" class="tran3s"><span>{{$subcat->countsessions()}}</span>{{$subcat->name}}</a></li>
+
+                                                @endif
+
+                                             @endforeach
 
 
 									      	</ul>
 									      </div>
 									    </div>
 									  </div>
+                                      @endif
                                         @endforeach
 
 
@@ -118,6 +124,24 @@
 										        </select>
 										      </div>
 										    </div>
+                                            <div class="course-price-filter">
+                                                <h5>Date Range</h5>
+                                                <div class="price-ranger">
+                                                    <div class="ranger-min-max-block">
+                                                        <ul class="clearfix">
+                                                            <li class="float-left">
+                                                                <label for="min">@lang('front.From')</label>
+                                                                <input type="date" name="datemin" class="fdate" >
+                                                            </li>
+                                                            <li class="float-left">
+                                                                <label for="max">@lang('front.To')</label>
+                                                                <input type="date" name="datemax" class="fdate" >
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                </div>
+                                            </div>
 										</div>
 										<div class="button-wrapper"><input type="submit" id ="appfiltre" value="@lang('front.Apply filters')" class="p-bg-color tran3s"></div>
 									</form>
