@@ -19,6 +19,8 @@ class Search extends Component
     public $country;
     public $pricemin;
     public $pricemax;
+    public $datemin;
+    public $datemax;
     public $price;
     public $all;
     public $free;
@@ -39,6 +41,9 @@ class Search extends Component
         });
         $query->when(! empty($this->price), function (Builder $q) {
             $q->whereBetween('fee', [$this->pricemin, $this->pricemax]);
+        });
+        $query->when( !empty($this->datemin) && !empty($this->datemax) , function (Builder $q) {
+            $q->whereBetween('start', [$this->datemin, $this->datemax]);
         });
          $query->when(! empty($this->category), function (Builder $q) {
 
@@ -71,7 +76,7 @@ class Search extends Component
         });*/
 
          $sessions = $query->orderBy('start','DESC')->paginate(6);
-         
+
         return view('livewire.search',[
 
             'sessionList' =>$sessions
@@ -88,6 +93,8 @@ class Search extends Component
         $this->country="";
         $this->pricemin=0;
         $this->pricemax=0;
+        $this->datemin="";
+        $this->datemax="";
         $this->price=0;
         $this->all=1;
         $this->free=0;

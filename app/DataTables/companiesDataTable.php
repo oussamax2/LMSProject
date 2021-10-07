@@ -40,11 +40,11 @@ class companiesDataTable extends DataTable
                 })
                 ->editColumn('status', function ($companies) {
                     if($companies->status ==0)
-                    return '<span class="btn btn-ghost-info icon icon-hourglass"></span>';
+                    return '<span class="btn btn-ghost-info icon icon-hourglass"></span>NEW';
                     if($companies->status ==1)
-                    return '<span class="btn btn-ghost-danger icon icon-dislike"></span>';
+                    return '<span class="btn btn-ghost-danger icon icon-dislike"></span>REJECTED';
                     if($companies->status ==2)
-                    return '<span class="btn btn btn-ghost-success icon icon-like"></span>';})
+                    return '<span class="btn btn btn-ghost-success icon icon-like"></span>CONFIRMED';})
                 ->escapeColumns([]);
     }
 

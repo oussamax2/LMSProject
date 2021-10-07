@@ -168,6 +168,8 @@ $("input[name=target]:checkbox:checked").each(function(){ myArray.push($(this).v
  @this.set('price',1);
  @this.set('pricemin', $("input[name=pricemin]" ).val());
  @this.set('pricemax', $("input[name=pricemax]" ).val());
+ @this.set('datemin', $("input[name=datemin]" ).val());
+ @this.set('datemax', $("input[name=datemax]" ).val());
 
 
 });

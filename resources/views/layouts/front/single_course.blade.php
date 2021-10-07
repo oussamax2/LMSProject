@@ -139,7 +139,7 @@
 									<h4>@lang('front.Company')</h4>
 									<div class="wrapper">
 										<div>
-											<h6 style="font-family: 'Lato', sans-serif;font-weight: 700;font-size: 18px;margin-bottom: 20px;">{{ $sessions->companies->lastname }}</h6>
+											<h6 style="font-family: 'Lato', sans-serif;font-weight: 700;font-size: 18px;margin-bottom: 20px;">{{ $sessions->companies->user->name }}</h6>
 											<ul class="sociallmsup">
 											@if(isset($sessions->companies->fcburl))
 											<li><a href="{{ $sessions->companies->fcburl }}" class="tran3s"><i class="icon fa fa-facebook" aria-hidden="true"></i></a></li>

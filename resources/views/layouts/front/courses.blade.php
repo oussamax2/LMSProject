@@ -2,7 +2,7 @@
 			<div class="teachers-course popular-course">
 				<div class="container">
                     <div class="theme-title">
-                    <h3>@lang('front.Courses by') {{ $companies->lastname }}</h3>
+                    <h3>@lang('front.Courses by') {{ $companies->user->name }}</h3>
                     <a href="{{ route ('course') }}" class="profcourse">@lang('front.See All Course')</a>
                     </div>
 					<div class="row">
