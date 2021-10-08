@@ -46,7 +46,12 @@
 
 <!-- Country Id Field -->
 <div class="form-group">
-<i class="icon flaticon-placeholder"></i>
+    <i class="icon flaticon-bookmark"></i>
+    {!! Form::label('sess_type', __('forms.Session Type')) !!}
+    <p>{{ $sessions->sess_type}}</p>
+</div>   
+<div class="form-group">
+    <i class="icon flaticon-placeholder"></i>
     {!! Form::label('country_id', __('forms.Country')) !!}
     <p>{{ $sessions->countries->name}}</p>
 </div>

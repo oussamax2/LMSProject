@@ -18,12 +18,13 @@
     {!! Form::label('location', __('forms.Location')) !!}
     <p>{{ $registerations->sessions->countries->name}}</p>
 </div>
-<!-- fee -->
+<!-- Session startDate Field -->
 <div class="form-group col-sm-6 col-md-12 col-lg-6">
-<i class="icon flaticon-bookmark"></i>
-    {!! Form::label('price', __('forms.Price')) !!}
-    <p>{{ $registerations->sessions->fee}}</p>
+  <i class="icon icon-clock"></i>
+    {!! Form::label('start', __('forms.Session Start')) !!}
+    <p>{{Carbon\Carbon::parse($registerations->sessions->start)->isoFormat('llll')}}</p>
 </div>
+
 <!-- User Id Field -->
 @if(!auth()->user()->hasRole('user'))
 <div class="form-group col-sm-6 col-md-12 col-lg-6">
@@ -33,14 +34,28 @@
 
 </div>
 @endif
-<!-- Session Id Field -->
+
+
+<!-- Session endDate Field -->
 <div class="form-group col-sm-6 col-md-12 col-lg-6">
   <i class="icon icon-clock"></i>
-    {!! Form::label('session_id', __('forms.Session Start')) !!}
-    <p>{{Carbon\Carbon::parse($registerations->sessions->start)->isoFormat('llll')}}</p>
-</div>
+    {!! Form::label('end', __('forms.Session endDate')) !!}
+    <p>{{Carbon\Carbon::parse($registerations->sessions->end)->isoFormat('llll')}}</p>
 </div>
 
+<!-- fee -->
+<div class="form-group col-sm-6 col-md-12 col-lg-6">
+<i class="icon flaticon-bookmark"></i>
+    {!! Form::label('price', __('forms.Price')) !!}
+    <p>{{ $registerations->sessions->fee}}</p>
+</div>
+<!-- fee -->
+<div class="form-group col-sm-6 col-md-12 col-lg-6">
+<i class="icon flaticon-bookmark"></i>
+    {!! Form::label('sess_type', __('forms.Session Type')) !!}
+    <p>{{ $registerations->sessions->sess_type}}</p>
+</div>
+</div>
 <!-- messagerie-->
 <section class="msger">
   <header class="msger-header">
