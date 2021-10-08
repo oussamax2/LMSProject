@@ -101,6 +101,7 @@ class sessionsDataTable extends DataTable
     {
         return [
             ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
+            ['data' => 'sess_type', 'name' => 'sess_type', 'title' => __('forms.Session Type')],
             ['data' => 'course_id', 'name' => 'course_id', 'title' => __('forms.Course Title')],
             ['data' => 'count_registrations', 'name' => 'count_registrations', 'title' => __('forms.Registration Number')],
             ['data' => 'start', 'name' => 'start', 'title' => __('forms.start Date')],

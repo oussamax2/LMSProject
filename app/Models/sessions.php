@@ -36,6 +36,7 @@ class sessions extends Model
 
     public $fillable = [
         'start',
+        'sess_type',
         'end',
         'fee',
         'language',
@@ -54,6 +55,7 @@ class sessions extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'sess_type' => 'string',
         'start' => 'datetime',
         'end' => 'datetime',
         'fee' => 'integer',
