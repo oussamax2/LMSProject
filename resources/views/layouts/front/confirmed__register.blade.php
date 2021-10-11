@@ -34,56 +34,50 @@
                 </div>
             </div>
         </div>
-
         <div class="condition__session">
             <div class="col-md-12">
-            <label for="chk-1">
-                <input id="chk-1" type="checkbox" checked/>
-                <div class="title" style="display:flex">
-                <label class="label__check">
-                    <input type='checkbox'>
-                    <span></span>
+                <label for="chk-1">
+                    <input id="chk-1" type="checkbox" checked/>
+                    <div class="title" style="display:flex">
+                    <label class="label__check">
+                        <input type='checkbox'>
+                        <span></span>
+                    </label>
+                        <h3 class="title__acc">Accordion Heading One</h3>
+                    </div>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit delectus sapiente dicta eligendi quis minus nulla maxime illo reiciendis corporis repudiandae excepturi? Velit molestiae reprehenderit eligendi neque repellendus! Illum molestiae quam iusto doloribus culpa sint similique quaerat libero! Molestiae facilis quidem explicabo totam nostrum in voluptatum ipsam sequi officia error id rerum unde nisi neque!</p>
+                    </div>
                 </label>
-                    <h3 class="title__acc">Accordion Heading One</h3>
+                <label for="chk-2">
+                <input id="chk-2" type="checkbox" />
+                <div class="title" style="display:flex">
+                    <label class="label__check">
+                        <input type='checkbox'>
+                        <span></span>
+                    </label>
+                    <h3 class="title__acc">Accordion Heading Two</h3>
+                </div>
+                <div class="content">
+                <input type="checkbox">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit delectus sapiente dicta eligendi quis minus nulla maxime illo reiciendis corporis repudiandae excepturi? Velit molestiae reprehenderit eligendi neque repellendus! Illum molestiae quam iusto doloribus culpa sint similique quaerat libero! Molestiae facilis quidem explicabo totam nostrum in voluptatum ipsam sequi officia error id rerum unde nisi neque!</p>
+                </div>
+                </label>
+                <label for="chk-3">
+                <input id="chk-3" type="checkbox" />
+                <div class="title" style="display:flex">
+                    <label class="label__check">
+                        <input type='checkbox'>
+                        <span></span>
+                    </label>
+                    <h3 class="title__acc">Accordion Heading Three</h3>
                 </div>
                 <div class="content">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit delectus sapiente dicta eligendi quis minus nulla maxime illo reiciendis corporis repudiandae excepturi? Velit molestiae reprehenderit eligendi neque repellendus! Illum molestiae quam iusto doloribus culpa sint similique quaerat libero! Molestiae facilis quidem explicabo totam nostrum in voluptatum ipsam sequi officia error id rerum unde nisi neque!</p>
                 </div>
-            </label>
-
-            <label for="chk-2">
-            <input id="chk-2" type="checkbox" />
-            <div class="title" style="display:flex">
-                <label class="label__check">
-                    <input type='checkbox'>
-                    <span></span>
                 </label>
-                <h3 class="title__acc">Accordion Heading Two</h3>
+                <button class="button btn-default__confirm">Confirm</button>
             </div>
-            
-            <div class="content">
-            <input type="checkbox">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit delectus sapiente dicta eligendi quis minus nulla maxime illo reiciendis corporis repudiandae excepturi? Velit molestiae reprehenderit eligendi neque repellendus! Illum molestiae quam iusto doloribus culpa sint similique quaerat libero! Molestiae facilis quidem explicabo totam nostrum in voluptatum ipsam sequi officia error id rerum unde nisi neque!</p>
-            </div>
-            </label>
-
-            <label for="chk-3">
-            <input id="chk-3" type="checkbox" />
-            <div class="title" style="display:flex">
-                <label class="label__check">
-                    <input type='checkbox'>
-                    <span></span>
-                </label>
-                <h3 class="title__acc">Accordion Heading Three</h3>
-            </div>
-            <div class="content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit delectus sapiente dicta eligendi quis minus nulla maxime illo reiciendis corporis repudiandae excepturi? Velit molestiae reprehenderit eligendi neque repellendus! Illum molestiae quam iusto doloribus culpa sint similique quaerat libero! Molestiae facilis quidem explicabo totam nostrum in voluptatum ipsam sequi officia error id rerum unde nisi neque!</p>
-            </div>
-            </label>
-
-            <button class="button btn-default__confirm">Confirm</button>
-
-            </div>
-
+        </div>
     </div>
 </section>

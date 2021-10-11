@@ -4143,39 +4143,33 @@ background: #36d64c;
     }
     .confirmed-sec {
       width: 100%;
-      margin: 3rem auto;
-      background: #fff;
-      box-shadow: 0px 1px 20px 0px rgb(0 0 0 / 20%);
-      padding: 20px;
+      padding: 2rem;
       height: auto;
+      margin: 3rem auto;
 
 }
-.confirmed-sec .title .title__acc{
-  font-size: 20px;
-}
-@media(max-width:992px){
-  .confirmed-sec {
-    width: 100%;
-    padding: 10px;
-}
-}
-@media(max-width:375px){
-  .confirmed-sec .title .title__acc{
-    font-size: 15px;
+@media(max-width:700px){
+  .confirmed-sec .condition__session .title{
+    padding: 0.5em 1em !important;
   }
- 
-.condition__session .label__check span {
+  .confirmed-sec .title .title__acc{
+    font-size: 15px !important;
+  }
+  .condition__session .label__check span{
     height: 20px !important;
     width: 20px !important;
   }
-  .condition__session .label__check [type=checkbox]:checked + span:before {
+  .condition__session .label__check [type=checkbox]:checked + span:before{
     top: -4px !important;
     left: 2px !important;
-
+  } 
+  .confirmed-sec{
+    padding: 1rem !important;
+    margin: 1rem auto !important;
   }
-  .confirmed-sec .condition__session .btn-default__confirm {
-    font-size: 17px !important;
-  }
+}
+.confirmed-sec .title .title__acc{
+  font-size: 20px;
 }
 .confirmed-sec .list-field-detalssessions .form-group{
 display: flex;
@@ -4247,12 +4241,13 @@ display: flex;
   text-align: center;
   justify-content: center;
   margin: auto;
-  padding: 10px;
+  padding: 8px 10px;
   width: 20rem;
   background: #ff7417;
   color: #fff;
   font-size: 20px;
   margin: 20px auto;
+  border-radius: 3px;
 }
 .condition__session .label__check input{
 display: none;
