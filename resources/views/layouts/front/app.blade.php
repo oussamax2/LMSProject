@@ -14,6 +14,7 @@
     <link rel="icon" type="image/png" sizes="56x56" href="{{ asset('images/fav-icon/icon.png') }}">
 	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
+    <link href="{{ asset('assets-panel/css/simple-line-icons.css')}}" rel="stylesheet">
     @else
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/bootstrap-rtl.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styleRTL.css') }}">

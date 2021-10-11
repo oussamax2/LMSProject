@@ -27,6 +27,7 @@ Route::get('/singlsession/{id}', [App\Http\Controllers\HomeController::class, 's
 Route::get('/registeruser', [App\Http\Controllers\HomeController::class, 'registeruser'])->name('registeruser');
 Route::post('/register_user', [App\Http\Controllers\Auth\RegisterController::class, 'registeruser'])->name('register_user');
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
+Route::get('/confirmedregister', [App\Http\Controllers\HomeController::class, 'confirmedregister'])->name('confirmedregister');
 Route::get('/detailcourse', [App\Http\Controllers\HomeController::class, 'detailcourse'])->name('detailcrs');
 Route::get('/register_vendor', [App\Http\Controllers\HomeController::class, 'registervendor'])->name('register_vendor');
 Route::post('/store_vendor', [App\Http\Controllers\Auth\RegisterController::class, 'registervendor'])->name('registervendor');
