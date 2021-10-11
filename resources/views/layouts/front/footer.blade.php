@@ -17,7 +17,7 @@
 						<div class="col-md-4 col-sm-3 footer-list">
 							<h6>@lang('front.Company')</h6>
 							<ul>
-								<li><a href="{{ route ('Campus') }}" class="tran3s">@lang('front.Home')</a></li>
+								<li><a href="{{ route ('home') }}" class="tran3s">@lang('front.Home')</a></li>
 								<li><a href="{{ route ('course') }}" class="tran3s">@lang('front.Course')</a></li>
 								<li><a href="{{ route ('partners') }}" class="tran3s">@lang('front.Organizers')</a></li>
 								<li><a href="{{ route ('contact') }}" class="tran3s">@lang('front.Contact us')</a></li>
@@ -32,7 +32,7 @@
 								<button type="submit" class="tran3s s-bg-color"><i class="flaticon-envelope-back-view-outline"></i></button>
 
 							{!! Form::close() !!}
-						
+
 						</div>
 					</div>
 				</div>

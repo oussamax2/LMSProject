@@ -53,7 +53,7 @@ return [
 
 
     'course' => 'دورة',
-    'never been easy as it is to day' => 'لم يكن سهلا كما هو اليوم',
+    'never been easy as it is today' => 'لم يكن سهلا كما هو اليوم',
     'Find a course' => 'ابحث عن دورة',
     'Subject or qualification, eg. IT' => 'الموضوع أو المؤهل ، على سبيل المثال. هو - هي',
     'Home' => 'الصفحة الرئيسية',
@@ -180,7 +180,7 @@ return [
     'Load More' => 'اكتشف أكثر',
     'Please enter your email and subscribe here !' => '! الرجاء إدخال بريدك الإلكتروني والاشتراك هنا',
     'Subscribe saved successfully. !' => 'تم حفظ الاشتراك بنجاح. !',
-    'subscriber already exists !' => '! المشترك موجود بالفعل',     
+    'subscriber already exists !' => '! المشترك موجود بالفعل',
     'Workshop' => 'ورشة عمل',
     'Design & Development' => 'تطوير التصميم',
     'IOS & Adroid Apps Development' => 'تطوير تطبيقات IOS و Adroid',
@@ -295,7 +295,7 @@ return [
     'Total Students' => 'مجموع الطلاب',
     'Finished Course' => 'الدورة المنتهية',
     'Student' => 'طالب',
-    'Currently Useing Campus' => 'تستخدم حاليا الحرم الجامعي',
+    'We are targeting millions of users over the world' => 'تستخدم حاليا الحرم الجامعي',
     'We Have More' => 'لدينا المزيد',
     'There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form,' => 'هناك العديد من الاختلافات المتاحة لنصوص لوريم إيبسوم ولكن الغالبية تعرضت للتغيير في شكل ما ،',
     'Contact Information' => 'معلومات للتواصل',
@@ -322,7 +322,7 @@ return [
     'Your Name ' => 'اسمك',
     'Registrations' => 'التسجيلات',
     'no data available' => 'لا توجد بيانات متاحة',
-    'Subscribers' => 'المشتركين',   
+    'Subscribers' => 'المشتركين',
     'Other sessions:' => 'دورات من هذا الدرس',
-    'Pending-cancelled' => 'في إنتظار الإلغاء',   
+    'Pending-cancelled' => 'في إنتظار الإلغاء',
 ];

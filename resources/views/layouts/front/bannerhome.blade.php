@@ -4,7 +4,7 @@
 					<div class="camera_caption">
 						<div class="container">
 							<h1 class="wow fadeInUp animated" data-wow-delay="0.2s">@lang('front.Looking for a') <span class="p-color">@lang('front.course')</span></h1>
-							<h3 class="wow fadeInUp animated">@lang('front.never been easy as it is to day')</h3>
+							<h3 class="wow fadeInUp animated">@lang('front.never been easy as it is today')</h3>
 							<div class="find-course">
 								<div class="opacity color-one">
 									<div class="container-fluid">

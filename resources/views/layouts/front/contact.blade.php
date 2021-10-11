@@ -1,14 +1,14 @@
-			<!-- 
+			<!--
 			=============================================
 				Theme Inner Banner
-			============================================== 
+			==============================================
 			-->
 			<div class="inner-banner">
 				<div class="opacity">
 					<div class="container">
 						<h2>@lang('front.Contact Us')</h2>
 						<ul>
-							<li><a href="index.html" class="tran3s">@lang('front.Home')</a></li>
+							<li><a href="{{route('home')}}" class="tran3s">@lang('front.Home')</a></li>
 							<li>/</li>
 							<li>@lang('front.Contact')</li>
 						</ul>
@@ -18,10 +18,10 @@
 
 
 
-			<!-- 
+			<!--
 			=============================================
 				Contact Form
-			============================================== 
+			==============================================
 			-->
 	   		<div class="container contact-us-page">
 	        	<div class="row">

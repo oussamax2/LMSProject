@@ -41,7 +41,7 @@
         <div class="container-fluid">
             <div class="header-wrapper clearfix">
                 {{-- Logo --}}
-                <div class="logo float-left tran4s"><a href="{{ route ('Campus') }}"><img src="{{ asset('images/logo/logo3.png') }}" alt="Logo"></a></div>
+                <div class="logo float-left tran4s"><a href="{{ route ('home') }}"><img src="{{ asset('images/logo/logo3.png') }}" alt="Logo"></a></div>
 
                 {{-- Theme Menu --}}
                 <nav class="theme-main-menu float-right navbar" id="mega-menu-wrapper">
@@ -57,7 +57,7 @@
                     {{-- Collect the nav links, forms, and other content for toggling --}}
                     <div class="collapse navbar-collapse" id="navbar-collapse-1">
                         <ul class="nav">
-                            <li class="menu-list"><a href="{{ route ('Campus') }}" class="tran3s">@lang('front.Home')</a>
+                            <li class="menu-list"><a href="{{ route ('home') }}" class="tran3s">@lang('front.Home')</a>
                             </li>
                             <li class="menu-list"><a href="{{ route ('course') }}" class="tran3s">@lang('front.Course')</a>
                             </li>
@@ -109,7 +109,7 @@
             @livewire('login')
             @livewireScripts
             @endif
-                <div><a href="{{ route ('registeruser') }}" class="p-color tran3s">@lang('auth.Not an account?? Sign Up')</a></div>
+                <div><a href="{{ route ('registeruser') }}" class="p-color tran3s">@lang('auth.Do not have account? Sign up')</a></div>
             </div>
         </div>
     </div>

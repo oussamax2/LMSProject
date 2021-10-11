@@ -3900,7 +3900,7 @@ opacity: 0.6;
   border-radius: 3px;
 }
 .our-course .find-coursecatg{
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   direction: rtl;
 }
 .our-course .find-coursecatg .single-input{
@@ -4172,3 +4172,6 @@ input[type="text"]:focus{
             }
 
 
+            li.float-left.date {
+                margin: 0 0 0 0 !important;
+            }

@@ -23,6 +23,12 @@
     </div>
 
     <div class="course-style-filter clearfix">
+        <ul class="float-left clearfix">
+            <li><a href="javascript:void(0);" wire:click="resetsearch" class="tran3s {{$all ? "active" : ""}}">@lang('front.All')</a></li>
+            <li><a href="javascript:void(0);" wire:click="classroom" class="tran3s {{$classroom ? "active" : ""}}">Classroom</a></li>
+            <li><a href="javascript:void(0);" wire:click="online" class="tran3s {{$online ? "active" : ""}}">Online</a></li>
+            <li><a href="javascript:void(0);" wire:click="elearning" class="tran3s {{$elearning ? "active" : ""}}">E-learning</a></li>
+        </ul>
 
     </div>
 
@@ -157,6 +163,7 @@ $(document).ready(function() {
  @this.set('searchTerm', "{{request()->keywords}}");
  @this.set('category', "{{request()->cat}}");
  @this.set('city', "{{request()->cities}}");
+ @this.set('company', "{{request()->comp}}");
 });
 /** app filtre **/
 $( "#appfiltre" ).on( "click", function() {

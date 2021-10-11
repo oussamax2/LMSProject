@@ -8,7 +8,7 @@
 <!-- Session Type Field -->
 <div class="form-group col-sm-12">
     {!! Form::label('sess_type', __('forms.Session Type')) !!}
-    {!! Form::select('sess_type', ['online ' => 'online ', 'classroom' => 'classroom', 'e-learning' => 'e-learning'], null, ['class' => 'form-control']) !!}
+    {!! Form::select('sess_type', ['Online ' => 'Online', 'Classroom' => 'Classroom', 'E-learning' => 'E-learning'], null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group col-sm-12">
     {!! Form::label('start', __('forms.Session startDate')) !!}
