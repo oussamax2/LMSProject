@@ -5,6 +5,11 @@
     {!! Form::Label('course_id', __('forms.courses list')) !!}
     {!! Form::select('course_id', $listcourses, null, ['class' => 'select2 form-control' ]) !!}
 </div>
+<!-- Session Type Field -->
+<div class="form-group col-sm-12">
+    {!! Form::label('sess_type', __('forms.Session Type')) !!}
+    {!! Form::select('sess_type', ['online ' => 'online ', 'classroom' => 'classroom', 'e-learning' => 'e-learning'], null, ['class' => 'form-control']) !!}
+</div>
 <div class="form-group col-sm-12">
     {!! Form::label('start', __('forms.Session startDate')) !!}
     {!! Form::text('start', null, ['class' => 'form-control','id'=>'start', 'required']) !!}

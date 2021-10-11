@@ -15,22 +15,7 @@
 			<div class="course-details">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-3">
-							<div class="sessionleft">
-							<h6 class="sessiontitle">@lang('front.Other Sessions')</h6>
-								<ul class="info-list row">
-									@foreach (App\Models\sessions::where('course_id',$sessions->course_id)->where('id','!=' ,$sessions->id)->limit(6)->orderBy('created_at', 'desc')->get() as $sessionss)
-									<li class="col-xs-12 hoversessionlms">
-										<p style="padding-bottom: 16px;">
-											<a style="color: rgba(0,0,0,0.65); font-size: 14px; font-weight:600;" href="{{ url('singlsession') }}/{{$sessionss->id}}"><i class="icon flaticon-clock" style="font-size: 17px; margin-right: 10px;"></i>{{Carbon\Carbon::parse($sessions->start)->isoFormat(' Do MMMM  YYYY ')}}  @lang('front.To')  {{Carbon\Carbon::parse($sessions->end)->isoFormat(' Do MMMM  YYYY ')}}</a>
-										</p>
-									</li>
-
-									@endforeach
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-6 col-xs-12">
+						<div class="col-md-8 col-xs-12">
 							<div class="details-wrapper">
                                 @if(Session::has('success'))
                                 <div class="alert alert-success">
@@ -123,7 +108,7 @@
 
 						</div>
 
-						<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="course-sidebar">
 								<div class="sidebar-course-information">
 									<ul class="price clearfix">
@@ -132,6 +117,19 @@
 									<ul class="info-list row">
 
 										<li class="col-xs-12"><b>@lang('front.Target Audiances')</b><br><br>{{ implode(", ",json_decode($sessions->courses->target_audiance->pluck('name'))) }}</li>
+									</ul>
+								</div>
+								<div class="sessionleft">
+									<h6 class="sessiontitle">@lang('front.Other Sessions')</h6>
+									<ul class="info-list row">
+										@foreach (App\Models\sessions::where('course_id',$sessions->course_id)->where('id','!=' ,$sessions->id)->limit(6)->orderBy('created_at', 'desc')->get() as $sessionss)
+										<li class="col-xs-12 hoversessionlms">
+											<p style="padding-bottom: 16px;">
+												<a style="color: rgba(0,0,0,0.65); font-size: 14px; font-weight:600;" href="{{ url('singlsession') }}/{{$sessionss->id}}"><i class="icon flaticon-clock" style="font-size: 17px; margin-right: 10px;"></i>{{Carbon\Carbon::parse($sessions->start)->isoFormat(' Do MMMM  YYYY ')}}  @lang('front.To')  {{Carbon\Carbon::parse($sessions->end)->isoFormat(' Do MMMM  YYYY ')}}</a>
+											</p>
+										</li>
+
+										@endforeach
 									</ul>
 								</div>
 

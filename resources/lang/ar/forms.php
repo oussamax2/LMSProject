@@ -101,4 +101,6 @@ return [
     'Password'      => 'كلمة المرور',
     'is online. Last seen:'      => 'متصل. اخر ظهور:',
     'is offline. Last seen:'      => 'غير متصل. اخر ظهور:',
+    'Session Type'      => '',
+    
 ];

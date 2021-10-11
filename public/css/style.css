@@ -4141,6 +4141,137 @@ background: #36d64c;
        input.fdate {
         width: 140px !important;
     }
+    .confirmed-sec {
+      width: 100%;
+      padding: 2rem;
+      height: auto;
+      margin: 3rem auto;
+
+}
+@media(max-width:700px){
+  .confirmed-sec .condition__session .title{
+    padding: 0.5em 1em !important;
+  }
+  .confirmed-sec .title .title__acc{
+    font-size: 15px !important;
+  }
+  .condition__session .label__check span{
+    height: 20px !important;
+    width: 20px !important;
+  }
+  .condition__session .label__check [type=checkbox]:checked + span:before{
+    top: -4px !important;
+    left: 2px !important;
+  } 
+  .confirmed-sec{
+    padding: 1rem !important;
+    margin: 1rem auto !important;
+  }
+}
+.confirmed-sec .title .title__acc{
+  font-size: 20px;
+}
+.confirmed-sec .list-field-detalssessions .form-group{
+display: flex;
+}
+.confirmed-sec .list-field-detalssessions .form-group i.icon{
+  color: #f36824;
+  margin: -9px 10px 0 10px;
+  font-size: 23px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+}
+.confirmed-sec .list-field-detalssessions .form-group label {
+  margin: 3px 15px 0px 0px !important;
+}
+
+.confirmed-sec .condition__session label {
+  display: block;
+  overflow: hidden;
+}
+
+.confirmed-sec .condition__session .title {
+  padding: 1em 3em;
+  position: relative;
+  z-index: 599;
+  background: #fbfbfb;
+  border-bottom: 1px solid #eee;
+  transition:all 0.3s linear;
+}
+.confirmed-sec .condition__session .title:hover
+  {
+    cursor: pointer;
+    background: #f5f5f5;
+  }
+  .confirmed-sec .condition__session .content {
+  position: relative;
+  padding: 0;
+  max-height: 0px;
+  border-bottom: 1px solid #eee;
+  transition: max-height .3s linear;
+}
+.confirmed-sec .condition__session .content p {
+    position: relative;
+    padding: 1.2em 3em;
+    margin: 0;
+    transform: scale(0);
+    opacity: 0;
+    transition: all .55s ease;
+  }
+
+
+  .confirmed-sec .condition__session input[type="checkbox"] {
+  display: none;
+}
+
+.confirmed-sec .condition__session input[type="checkbox"]:checked + .title {
+  background: #d9ffde;
+}
+
+.confirmed-sec .condition__session input[type="checkbox"]:checked + .title + .content {
+  max-height: 555px;
+}
+
+.confirmed-sec .condition__session input[type="checkbox"]:checked + .title + .content p {
+  transform: scale(1);
+  opacity: 1;
+}
+.confirmed-sec .condition__session .btn-default__confirm {
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  padding: 8px 10px;
+  width: 20rem;
+  background: #ff7417;
+  color: #fff;
+  font-size: 20px;
+  margin: 20px auto;
+  border-radius: 3px;
+}
+.condition__session .label__check input{
+display: none;
+}
+.condition__session .label__check span {
+  height: 25px;
+  width: 25px;
+  margin: 0 15px 0 0;
+  border: 1px solid grey;
+  display: inline-block;
+  position: relative;
+}
+
+/* Style its checked state...with a ticked icon */
+.condition__session .label__check [type=checkbox]:checked + span:before {
+  content: '\2714';
+  position: absolute;
+  top: -2px;
+  left: 5px;
+  color: #ff7417;
+  font-size: 17px;
+}
+
+
 
 
 

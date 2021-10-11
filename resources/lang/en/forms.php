@@ -99,5 +99,5 @@ return [
     'Password'      => 'Password',
     'is online. Last seen:'      => 'is online. Last seen:',
     'is offline. Last seen:'      => 'is offline. Last seen:',
-
+    'Session Type'      => 'Session Type',
 ];

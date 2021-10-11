@@ -47,6 +47,8 @@ class HomeController extends Controller
         return view('front.partners')->with(['companies'=>$companies ]);
     }
 
+
+
    /**get partners List according to button click */
    public function getpartners(Request $request)
     {
@@ -149,6 +151,15 @@ class HomeController extends Controller
     {
         return view('front.contactp');
     }
+
+
+        /* confirmed_register */
+
+        public function confirmedregister()
+        {
+            return view('front.confirmedregister');
+        }
+
     public function registervendor()
     {   if(auth()->user())
         return redirect('/');
