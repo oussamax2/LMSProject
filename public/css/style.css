@@ -3881,7 +3881,7 @@ opacity: 0.6;
   border-radius: 3px;
 }
 .our-course .find-coursecatg{
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .our-course .find-coursecatg .single-input{
   margin-bottom: 20px;
@@ -4162,7 +4162,7 @@ background: #36d64c;
   .condition__session .label__check [type=checkbox]:checked + span:before{
     top: -4px !important;
     left: 2px !important;
-  } 
+  }
   .confirmed-sec{
     padding: 1rem !important;
     margin: 1rem auto !important;
@@ -4270,7 +4270,9 @@ display: none;
   color: #ff7417;
   font-size: 17px;
 }
-
+li.float-left.date {
+    margin: 0 0 0 0 !important;
+}
 
 
 

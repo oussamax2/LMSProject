@@ -129,11 +129,11 @@
                                                 <div class="price-ranger">
                                                     <div class="ranger-min-max-block">
                                                         <ul class="clearfix">
-                                                            <li class="float-left">
+                                                            <li class="float-left date">
                                                                 <label for="min">@lang('front.From')</label>
                                                                 <input type="date" name="datemin" class="fdate" >
                                                             </li>
-                                                            <li class="float-left">
+                                                            <li class="float-left date">
                                                                 <label for="max">@lang('front.To')</label>
                                                                 <input type="date" name="datemax" class="fdate" >
                                                             </li>

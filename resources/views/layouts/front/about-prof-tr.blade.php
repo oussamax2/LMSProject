@@ -38,7 +38,7 @@
 								<ul class="instructor-achivement clearfix">
 									<li>@lang('front.Total Courses')<h3>{{ count($companies->courses) }}</h3></li>
 									<li>@lang('front.Total Session')<h3>{{$countsessions}}</h3></li>
-									<li>@lang('front.Registrations')<h3>{{$countregisterations}}</h3></li>
+
 								</ul>
 							</div>
 						</div>

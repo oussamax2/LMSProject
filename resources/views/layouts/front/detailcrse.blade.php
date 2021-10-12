@@ -1,25 +1,25 @@
-			
-            			<!-- 
+
+            			<!--
 			=============================================
 				Theme Inner Banner
-			============================================== 
+			==============================================
 			-->
 			<div class="inner-banner-coursedetails">
 				<div class="opacity">
 					<div class="container">
 						<ul>
-							<li><a href="index.html" class="tran3s">Home</a></li>
+							<li><a href="{{route('home')}}" class="tran3s">Home</a></li>
 							<li>/</li>
 							<li>course detail</li>
 						</ul>
 					</div> <!-- /.container -->
 				</div> <!-- /.opacity -->
 			</div> <!-- /.inner-banner -->
-            
-            <!-- 
+
+            <!--
 			=============================================
 				Course Details
-			============================================== 
+			==============================================
 			-->
 			<div class="course-details">
 				<div class="container">

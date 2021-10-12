@@ -17,7 +17,7 @@ return [
     'password' => 'كلمة المرور .',
     'sign_in' => 'تسجيل الدخول',
     'sign_out' => 'خروج',
-    'Not an account?? Sign Up' => 'ليس حسابا ؟؟ اشتراك',
+    'Do not have account? Sign up' => 'ليس حسابا ؟؟ اشتراك',
     'throttle' => 'عدد كبير جدا من محاولات الدخول. يرجى المحاولة مرة أخرى بعد :seconds ثانية.',
     'app' => [
         'profile'      => 'الملف الشخصي',

@@ -60,7 +60,7 @@
 
     <ul class="nav navbar-nav ml-auto">
         <!-- menu list -->
-        <li class="menu-list"><a href="{{ route ('Campus') }}" class="tran3s">@lang('front.Home')</a></li>
+        <li class="menu-list"><a href="{{ route ('home') }}" class="tran3s">@lang('front.Home')</a></li>
         <li class="menu-list"><a href="{{ route ('course') }}" class="tran3s">@lang('front.Course')</a></li>
         <li class="menu-list"><a href="{{ route ('partners') }}" class="tran3s">@lang('front.Organizers')</a></li>
         <li class="menu-list"><a href="{{ route ('contact') }}" class="tran3s">@lang('front.Contact Us')</a></li>
@@ -76,19 +76,16 @@
             <a class="nameuserlms nav-link" data-toggle="dropdown" href="#" role="button"
                aria-haspopup="true" aria-expanded="false">
                 {{ Auth::user()->name }}
+
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-               {{-- <div class="dropdown-header text-center">
-                    <strong>Account</strong>
-                </div>
-                <a class="dropdown-item" href="#">
-                    <i class="fa fa-envelope-o"></i> @lang('auth.app.messages')
-                    <span class="badge badge-success">42</span>
-                </a>
-                <div class="dropdown-header text-center">
-                    <strong>@lang('auth.app.settings')</strong>
-                </div> --}}
+               @if( Auth::user()->hasRole('admin'))
                 <a class="dropdown-item" href="{{ route('admin') }}">
+                    @elseif(Auth::user()->hasRole('company'))
+                    <a class="dropdown-item" href="{{ url('dashboard') }}">
+                    @else
+                    <a class="dropdown-item" href="{{ url('dashboarduser') }}">
+                    @endif
                     <i class="icon icon-speedometer"></i> @lang('front.dashboard')</a>
                 <a class="dropdown-item" href="{{ route('user-profile.edit') }}">
                     <i class="fa fa-user"></i> @lang('front.profile')</a>
@@ -120,7 +117,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="footer-logo pull-left">
-                        <a href="index.html"><img src="{{ asset('images/logo/logo2.png')}}" alt="Logo"></a>
+                        <a href="{{route('home')}}"><img src="{{ asset('images/logo/logo2.png')}}" alt="Logo"></a>
                     </div>
                     <div class="footer-logo pull-right">
                         <p class="float-left">&copy; @lang('front.2021 All rights reserved')</p>
