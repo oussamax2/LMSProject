@@ -45,7 +45,11 @@ class companies extends Model
         'twitturl',
         'linkdinurl',
         'dribbleurl',
-        'user_id'
+        'user_id',
+        'generaltrm',
+        'paymenttrm',
+        'canceltrm',
+        'cancelpd'
     ];
 
     /**
@@ -64,7 +68,11 @@ class companies extends Model
         'fcburl' => 'string',
         'twitturl' => 'string',
         'linkdinurl' => 'string',
-        'dribbleurl' => 'string'
+        'dribbleurl' => 'string',
+        'generaltrm' => 'string',
+        'paymenttrm' => 'string',
+        'canceltrm' => 'string',
+        'cancelpd' => 'integer'
     ];
 
     /**
@@ -77,7 +85,11 @@ class companies extends Model
         'website' => 'max:100',
         'telephone' => 'max:15',
         'shortDescription' => 'max:100',
-        'description' => 'max:180',        
+        'description' => 'max:180',
+        'generaltrm' => 'max:300',
+        'paymenttrm' => 'max:300',
+        'canceltrm' => 'max:300',
+        'cancelpd' => 'integer|min:1|max:100',
     ];
 
     public function courses()
@@ -102,7 +114,7 @@ class companies extends Model
              $company->courses()->each(function($course) {
                 $course->delete(); // <-- delete courses belonging to this company
              });
-                     
+
         });
     }
 }

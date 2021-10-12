@@ -29,6 +29,13 @@
 								<div class="course-info row">
 									<div class="col-xs-4">
 										<div>
+											<i class="flaticon-bookmark"></i>
+											<p>@lang('front.Categories')</p>
+											<b>{{ $sessions->courses->categories->name }}</b>
+										</div>
+									</div>
+                                    <div class="col-xs-4">
+										<div>
 										@if(isset($sessions->courses->subcategorie->name))
 											<i class="flaticon-bookmark"></i>
 											<p>@lang('front.Sub Categories')</p>
@@ -42,13 +49,6 @@
 									</div>
 									<div class="col-xs-4">
 										<div>
-											<i class="flaticon-bookmark"></i>
-											<p>@lang('front.Categories')</p>
-											<b>{{ $sessions->courses->categories->name }}</b>
-										</div>
-									</div>
-									<div class="col-xs-4">
-										<div>
 											<i class="flaticon-time"></i>
 											<p>@lang('front.Duration')</p>
                                             <b>{{ Carbon\Carbon::parse($sessions->end)->longAbsoluteDiffForHumans($sessions->start) }}</b>
@@ -56,12 +56,13 @@
 										</div>
 									</div>
 								</div>
+                                <p class="p1">{{$sessions->courses->body}}</p>
 							</div>
 							<div class="curriculum-panel">
 								<div class="clearfix">
 									<h3 class="float-left">@lang('front.Session')</h3>
 									<ul class="float-right">
-										<li>1 Classes</li>
+										<li>{{$sessions->sess_type}}</li>
 									</ul>
 								</div>
 							</div>
@@ -112,7 +113,7 @@
 							<div class="course-sidebar">
 								<div class="sidebar-course-information">
 									<ul class="price clearfix">
-										<li class="float-left"><strong class="s-color"><b style="color:#222;">@lang('front.Price:')</b>  {{ $sessions->fee==0?'Free': $sessions->fee }}</strong></li>
+										<li class="float-left"><strong class="s-color"><b style="color:#222;">@lang('front.Price:')</b>  {{ $sessions->fee==0?'Free': $sessions->fee }} USD</strong></li>
 									</ul>
 									<ul class="info-list row">
 
@@ -125,7 +126,7 @@
 										@foreach (App\Models\sessions::where('course_id',$sessions->course_id)->where('id','!=' ,$sessions->id)->limit(6)->orderBy('created_at', 'desc')->get() as $sessionss)
 										<li class="col-xs-12 hoversessionlms">
 											<p style="padding-bottom: 16px;">
-												<a style="color: rgba(0,0,0,0.65); font-size: 14px; font-weight:600;" href="{{ url('singlsession') }}/{{$sessionss->id}}"><i class="icon flaticon-clock" style="font-size: 17px; margin-right: 10px;"></i>{{Carbon\Carbon::parse($sessions->start)->isoFormat(' Do MMMM  YYYY ')}}  @lang('front.To')  {{Carbon\Carbon::parse($sessions->end)->isoFormat(' Do MMMM  YYYY ')}}</a>
+												<a style="color: rgba(0,0,0,0.65); font-size: 14px; font-weight:600;" href="{{ url('singlsession') }}/{{$sessionss->id}}"><i class="icon flaticon-clock" style="font-size: 17px; margin-right: 10px;"></i>{{Carbon\Carbon::parse($sessionss->start)->isoFormat(' Do MMMM  YYYY ')}}  @lang('front.To')  {{Carbon\Carbon::parse($sessionss->end)->isoFormat(' Do MMMM  YYYY ')}}</a>
 											</p>
 										</li>
 

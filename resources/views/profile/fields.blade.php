@@ -10,8 +10,8 @@
 				</span>
 			@endif
 		</div>
-
-		<div class="form-group has-feedback{{ $errors->has('email') ? ' has-error' : '' }}">
+        <div class="row">
+		<div class="form-group col-md-8 has-feedback{{ $errors->has('email') ? ' has-error' : '' }}">
 			<input type="email" class="form-control" name="email" value="{{ $user->email }}" placeholder="@lang('admin.Email')">
 			<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 
@@ -21,6 +21,18 @@
 				</span>
 			@endif
 		</div>
+    <div class="form-group col-md-4">
+        @if($user->email_verified_at)
+        <div class="form-control">
+            <span class="btn btn btn-ghost-success icon icon-like"></span>Mail verify
+            </div>
+        @else
+        <div class="form-control">
+        <span class="btn btn-ghost-danger icon icon-close"></span>Mail no verify
+        </div>
+        @endif
+    </div>
+        </div>
 
 		<div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
 			<input type="password" class="form-control" name="password" placeholder="@lang('admin.Password')">

@@ -70,7 +70,7 @@
                     <div class="details-registrations">
                     <p>Start Session: {{Carbon\Carbon::parse($registeration->sessions->start)->isoFormat(' Do MMMM  YYYY ')}}</p>
                     <p>End Session: {{Carbon\Carbon::parse($registeration->sessions->end)->isoFormat(' Do MMMM  YYYY ')}}</p>
-                    <p>Fee: {{$registeration->sessions->fee}}</p>
+                    <p>Fee: {{$registeration->sessions->fee}} <strong>USD</strong></p>
                     <p>Course: {{$registeration->sessions->courses->title}}</p>
                     <p>Country: {{$registeration->sessions->countries->name}} , {{$registeration->sessions->states->name}}</p>
                     </div>

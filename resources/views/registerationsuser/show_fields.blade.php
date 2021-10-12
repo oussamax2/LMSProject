@@ -4,7 +4,11 @@
 <div class="form-group col-sm-6 col-md-12 col-lg-6">
 <i class="icon flaticon-bookmark"></i>
     {!! Form::label('course_id', __('front.course')) !!}
-    <p>{{ $registerations->sessions->courses->title}}</p>
+    @if(auth()->user()->hasRole('company'))
+      <a  style="color: #36d64c;font-size: 18px; font-weight: 700;" href="{{ route('detailcourses',$registerations->sessions->courses->id )}}">{{ $registerations->sessions->courses->title}}</a>
+    @else
+      <p>{{ $registerations->sessions->courses->title}}</p>
+    @endif
 </div>
 <!-- description -->
 <div class="form-group col-sm-6 col-md-12 col-lg-6">
@@ -30,7 +34,7 @@
 <div class="form-group col-sm-6 col-md-12 col-lg-6">
 <i class="icon icon-user"></i>
     {!! Form::label('user_id', __('forms.Student')) !!}
-     <a  style="color: #36d64c;font-size: 18px; font-weight: 700;" href="{{ route('detailuser',$registerations->user['id'] )}}"> {{ $registerations->user['name'] }}</a>
+    <a  style="color: #36d64c;font-size: 18px; font-weight: 700;" href="{{ route('detailuser',$registerations->user['id'] )}}"> {{ $registerations->user['name'] }}</a>
 
 </div>
 @endif
@@ -47,7 +51,7 @@
 <div class="form-group col-sm-6 col-md-12 col-lg-6">
 <i class="icon flaticon-bookmark"></i>
     {!! Form::label('price', __('forms.Price')) !!}
-    <p>{{ $registerations->sessions->fee}}</p>
+    <p>{{ $registerations->sessions->fee}} <strong>USD</strong></p>
 </div>
 <!-- fee -->
 <div class="form-group col-sm-6 col-md-12 col-lg-6">

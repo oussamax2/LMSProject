@@ -61,8 +61,8 @@ class courses extends Model
      * @var array
      */
     public static $rules = [
-        'title' => 'required|max:30',
-        'body' => 'max:180',
+        'title' => 'required|max:60',
+        'body' => 'max:300',
         'category_id' => 'exists:categories,id',
     ];
 

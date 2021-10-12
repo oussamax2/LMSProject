@@ -95,6 +95,7 @@ return [
     'lang'      => 'English',
     'State Name'      => 'State Name',
     'Published On'      => 'Published On',
+    'Changed On'      => 'Changed On',
     'Continent Name'      => 'Continent Name',
     'Password'      => 'Password',
     'is online. Last seen:'      => 'is online. Last seen:',

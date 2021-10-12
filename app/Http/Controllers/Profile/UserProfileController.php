@@ -66,7 +66,8 @@ class UserProfileController extends Controller
             $this->validate($request, ['password' => 'string|min:6|confirmed']);
     	    $user->password = bcrypt($request->password);
         }
-
+if( auth()->user()->hasRole('company'))
+{
         $user->companies->telephone = $request->telephone;
         $user->companies->website = $request->website;
         $user->companies->shortDescription = $request->shortDescription;
@@ -75,9 +76,13 @@ class UserProfileController extends Controller
         $user->companies->twitturl = $request->twitturl;
         $user->companies->linkdinurl = $request->linkdinurl;
         $user->companies->dribbleurl = $request->dribbleurl;
-
-    	$user->update();
         $user->companies->update();
+    }
+    	$user->update();
+        if(array_key_exists('email',$user->getChanges())){
+            $user->email_verified_at = NULL;
+            $user->update();
+        }
 
         if ($request->has('picture')){
             $this->validate($request, ['picture' => 'file|max:2048']);

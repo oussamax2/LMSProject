@@ -4,7 +4,7 @@
 <div class="form-group">
 <i class="icon flaticon-bookmark"></i>
     {!! Form::label('course_id', __('forms.Course Title')) !!}
-    <p>{{ $sessions->courses->title}}</p>
+    <a  style="color: #36d64c;font-size: 18px; font-weight: 700;" href="{{ route('detailcourses',$sessions->courses->id )}}"><p>{{ $sessions->courses->title}}</p></a>
 </div>
 
 <!-- Start Field -->
@@ -32,7 +32,7 @@
     <div class="form-group">
     <i class="icon flaticon-bookmark"></i>
         {!! Form::label('fee', __('forms.Fee')) !!}
-        <p>{{ $sessions->fee }}</p>
+        <p>{{ $sessions->fee }} <strong>USD</strong></p>
     </div>
 @endif
 <!-- Language Field -->
@@ -49,7 +49,7 @@
     <i class="icon flaticon-bookmark"></i>
     {!! Form::label('sess_type', __('forms.Session Type')) !!}
     <p>{{ $sessions->sess_type}}</p>
-</div>   
+</div>
 <div class="form-group">
     <i class="icon flaticon-placeholder"></i>
     {!! Form::label('country_id', __('forms.Country')) !!}
