@@ -5,7 +5,7 @@
 					<div class="container">
 						<h2>@lang('front.Our Partners')</h2>
 						<ul>
-							<li><a href="index.html" class="tran3s">@lang('front.Home')</a></li>
+							<li><a href="{{route('home')}}" class="tran3s">@lang('front.Home')</a></li>
 							<li>/</li>
 							<li>@lang('front.Partner')</li>
 						</ul>

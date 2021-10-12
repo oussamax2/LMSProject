@@ -24,6 +24,11 @@ class Search extends Component
     public $price;
     public $all;
     public $free;
+    public $company;
+    public $type;
+    public $elearning;
+    public $classroom;
+    public $online;
     public function render()
     {
         $query = sessions::with(['courses','countries','cities','states']);
@@ -36,6 +41,9 @@ class Search extends Component
         $query->when(! empty($this->city), function (Builder $q) {
                 $q->where('city',$this->city);
         });
+        $query->when(! empty($this->type), function (Builder $q) {
+            $q->where('sess_type',$this->type);
+    });
         $query->when(! empty($this->country), function (Builder $q) {
             $q->where('country_id',$this->country);
         });
@@ -49,6 +57,12 @@ class Search extends Component
 
             $q->whereHas('courses', function (Builder $q){
                 $q->where('courses.category_id', $this->category);
+             });
+        });
+        $query->when(! empty($this->company), function (Builder $q) {
+
+            $q->whereHas('courses', function (Builder $q){
+                $q->where('courses.company_id', $this->company);
              });
         });
         $query->when(! empty($this->subcategory), function (Builder $q) {
@@ -90,6 +104,8 @@ class Search extends Component
         $this->subcategory="";
         $this->target="";
         $this->city="";
+        $this->type="";
+        $this->company="";
         $this->country="";
         $this->pricemin=0;
         $this->pricemax=0;
@@ -98,16 +114,36 @@ class Search extends Component
         $this->price=0;
         $this->all=1;
         $this->free=0;
+        $this->elearning=0;
+        $this->classroom=0;
+        $this->online=0;
     }
-    public function freesearch()
-    {   $this->free=1;
+    public function elearning()
+    {
+        $this->type="E-learning";
+        $this->elearning=1;
+        $this->classroom=0;
+        $this->online=0;
         $this->all=0;
-        $this->price=1;
-        $this->pricemin=0;
-        $this->pricemax=0;
-
-
     }
+    public function classroom()
+    {
+        $this->type="Classroom";
+        $this->elearning=0;
+        $this->classroom=1;
+        $this->online=0;
+        $this->all=0;
+    }
+
+    public function online()
+    {
+        $this->type="Online";
+        $this->elearning=0;
+        $this->classroom=0;
+        $this->online=1;
+        $this->all=0;
+    }
+
 
 
 }

@@ -12,7 +12,7 @@
     <div class="col-lg-12">
         <div class="content-mail-verify">
             <div class="logo" style="margin:2rem 0;">
-                <a href="/"><a href="{{ route ('Campus') }}"><img src="{{ asset('images/logo/logo3.png') }}" alt="Logo"></a></a>
+                <a href="/"><a href="{{ route ('home') }}"><img src="{{ asset('images/logo/logo3.png') }}" alt="Logo"></a></a>
             </div>
             <div class="content-info-desc-mailverif">
                 <p class="description-mailverify">

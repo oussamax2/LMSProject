@@ -19,7 +19,7 @@ return [
     'password' => 'password',
     'sign_in' => 'Sign In',
     'sign_out' => 'Sign Out',
-    'Not an account?? Sign Up' => 'Not an account?? Sign Up',
+    'Do not have account? Sign up' => 'Do not have account? Sign up',
     'full_name'        => 'Full Name',
     'confirm_password' => 'Confirm Password',
     'remember_me'      => 'Remember Me',

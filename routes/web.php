@@ -18,8 +18,8 @@ use Illuminate\Http\Request;
  */
 
 Auth::routes(['verify' => true ,  'register' => false]);
-Route::get('/', [App\Http\Controllers\HomeController::class, 'home'])->name('Campus');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home0');
 Route::get('/partners', [App\Http\Controllers\HomeController::class, 'partners'])->name('partners');
 Route::get('/profilecompany/{id}', [App\Http\Controllers\HomeController::class, 'pro_training'])->name('profilecompany');
 Route::get('/list_sessions', [App\Http\Controllers\HomeController::class, 'catg_courses'])->name('course');

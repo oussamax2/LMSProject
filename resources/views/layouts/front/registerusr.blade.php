@@ -16,7 +16,7 @@
 
 							<div class="col-md-7 col-xs-12">
 								<div class="text-wrapper">
-									<h2>@lang('front.We Have More') <br>@lang('front.Than') <span class="p-color">{{$studentcount}} @lang('front.Student')</span> @lang('front.Currently Useing Campus')</h2>
+									<h2>@lang('front.We are targeting millions of users over the world')</h2>
 
 									<ul class="clearfix">
 										<li class="float-left">

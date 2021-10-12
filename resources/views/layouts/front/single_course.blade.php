@@ -3,9 +3,9 @@
 				<div class="opacity">
 					<div class="container">
 						<ul>
-							<li><a href="index.html" class="tran3s">@lang('front.Home')</a></li>
+							<li><a href="{{route('home')}}" class="tran3s">@lang('front.Home')</a></li>
 							<li>/</li>
-							<li>@lang('front.Courses')</li>
+							<li><a href="{{url('list_sessions')}}">@lang('front.Courses')</a></li>
                             <li>/</li>
 							<li>{{ $sessions->courses->title }}</li>
 						</ul>
