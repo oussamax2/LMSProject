@@ -29,26 +29,33 @@
     <p>{{Carbon\Carbon::parse($courses->created_at)->isoFormat(' Do MMMM  YYYY ')}}</p>
 </div>
 
+<!-- Published On Field -->
+<div class="form-group">
+    <i class="icon icon-clock"></i>
+        {!! Form::label('published_on', __('forms.Changed On')) !!}
+        <p>{{Carbon\Carbon::parse($courses->update_at)->isoFormat(' Do MMMM  YYYY ')}}</p>
+    </div>
+
 <!-- Category Id Field -->
 <div class="form-group">
 <i class="icon flaticon-bookmark"></i>
     {!! Form::label('category_id', __('forms.Category Name')) !!}
     <p>{{ $courses->categories->name }}</p>
 </div>
+<!-- SubCategory Id Field -->
+<div class="form-group">
+    <i class="icon flaticon-bookmark"></i>
+        {!! Form::label('subcategorie', __('front.Sub Categories')) !!}
+        <p>{{ isset($courses->subcategorie->name) ?$courses->subcategorie->name: "no subcategorie" }}</p>
 
+    </div>
 <!-- Target_audiance Id Field -->
 <div class="form-group">
 <i class="icon flaticon-bookmark"></i>
     {!! Form::label('target_audiance', __('front.Target Audiance :')) !!}
     <p>{{ implode(", ",json_decode($courses->target_audiance->pluck('name'))) }}</p>
 </div>
-<!-- SubCategory Id Field -->
-<div class="form-group">
-<i class="icon flaticon-bookmark"></i>
-    {!! Form::label('subcategorie', __('front.Sub Categories')) !!}
-    <p>{{ isset($courses->subcategorie->name) ?$courses->subcategorie->name: "no subcategorie" }}</p>
-    
-</div>
+
 <!-- Session List Field -->
 <div class="form-group listregistersession">
 <i class="icon icon-briefcase"></i>
@@ -77,7 +84,7 @@
                         <td>
                             <a href="{{route('sessions.show', $listsess->id)}}" class="btn btn-ghost-success">
                                 <span class="icon icon-eye">
-                                
+
                                 </span>
                             </a>
                         </td>
