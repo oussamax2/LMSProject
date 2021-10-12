@@ -109,7 +109,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','verified',
     Route::post('importExcel', [App\Http\Controllers\company\coursesController::class, 'importExcel'])->name('importExcel');
     Route::resource('sessions', App\Http\Controllers\company\sessionsController::class);
     Route::get('detailuser/{id}', [App\Http\Controllers\UserController::class,'show'])->name('detailuser');
-
+    Route::get('detailcourses/{id}', [App\Http\Controllers\coursesController::class,'show'])->name('detailcourses');
 });
 Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:company']], function () {
     Route::get('verifregistrequest/{id}/{response}', [App\Http\Controllers\company\registerationsController::class, 'update_registrationStatus'])->name('verifregistrequest');
