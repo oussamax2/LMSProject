@@ -28,7 +28,7 @@
 											@if($sessList->fee == 0)
                                            <span class="p-bg-color float-right">@lang('front.free')</span>
 										@else
-										   <strong class="s-color float-right">${{$sessList->fee}}</strong>
+										   <strong class="s-color float-right">{{$sessList->fee}} USD</strong>
 										@endif
 										</div>
 										<h5><a href="{{ url('/singlsession',$sessList->id) }}" class="tran3s">{{ $sessList->courses->title }}</a></h5>

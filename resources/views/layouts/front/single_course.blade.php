@@ -112,7 +112,7 @@
 							<div class="course-sidebar">
 								<div class="sidebar-course-information">
 									<ul class="price clearfix">
-										<li class="float-left"><strong class="s-color"><b style="color:#222;">@lang('front.Price:')</b>  {{ $sessions->fee==0?'Free': $sessions->fee }}</strong></li>
+										<li class="float-left"><strong class="s-color"><b style="color:#222;">@lang('front.Price:')</b>  {{ $sessions->fee==0?'Free': $sessions->fee }} USD</strong></li>
 									</ul>
 									<ul class="info-list row">
 

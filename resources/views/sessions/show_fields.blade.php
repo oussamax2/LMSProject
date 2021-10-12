@@ -32,7 +32,7 @@
     <div class="form-group">
     <i class="icon flaticon-bookmark"></i>
         {!! Form::label('fee', __('forms.Fee')) !!}
-        <p>{{ $sessions->fee }}</p>
+        <p>{{ $sessions->fee }} <strong>USD</strong></p>
     </div>
 @endif
 <!-- Language Field -->
