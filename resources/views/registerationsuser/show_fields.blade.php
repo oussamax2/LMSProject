@@ -4,8 +4,11 @@
 <div class="form-group col-sm-6 col-md-12 col-lg-6">
 <i class="icon flaticon-bookmark"></i>
     {!! Form::label('course_id', __('front.course')) !!}
-    <a  style="color: #36d64c;font-size: 18px; font-weight: 700;" href="{{ route('detailcourses',$registerations->sessions->courses->id )}}">{{ $registerations->sessions->courses->title}}</a>
-
+    @if(auth()->user()->hasRole('company'))
+      <a  style="color: #36d64c;font-size: 18px; font-weight: 700;" href="{{ route('detailcourses',$registerations->sessions->courses->id )}}">{{ $registerations->sessions->courses->title}}</a>
+    @else
+      <p>{{ $registerations->sessions->courses->title}}</p>
+    @endif
 </div>
 <!-- description -->
 <div class="form-group col-sm-6 col-md-12 col-lg-6">
