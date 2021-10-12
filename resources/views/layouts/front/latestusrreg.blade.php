@@ -14,6 +14,7 @@
           @endif
           <th scope="col">@lang('front.Course Title')</th>
           <th scope="col">@lang('front.Country')</th>
+          <th scope="col">@lang('forms.status')</th>          
           <th scope="col">@lang('front.Register date')</th>
           <th scope="col"></th>
         </tr>
@@ -60,6 +61,21 @@
               <td data-th="@lang('front.Country')">
                 <div class="titleuser">{{$rgstrdUsers->sessions->countries['name']}}</div>
               </td>
+
+              <td data-th="@lang('front.Country')">
+                @if($rgstrdUsers->status ==0)
+                  <span class="btn btn-ghost-info icon icon-hourglass"></span>NEW
+                @elseif($rgstrdUsers->status ==1)
+                  <span class="btn btn-ghost-danger icon icon-dislike"></span>REJECTED
+                @elseif($rgstrdUsers->status ==2)
+                  <span class="btn btn-ghost-pending icon icon-hourglass"></span>PENDING-PAYMENT
+                @elseif($rgstrdUsers->status ==3)
+                 <span class="btn btn btn-ghost-success icon icon-like"></span>CONFIRMED
+                @elseif($rgstrdUsers->status ==4)
+                 <span class="btn btn-ghost-danger icon icon-close"></span>CANCLED
+                @endif
+                
+              </td>              
               <td data-th="@lang('front.Activity')">
                   {{Carbon\Carbon::parse($rgstrdUsers->created_at)->isoFormat(' Do MMMM  YYYY ')}}
                   <strong></strong>
