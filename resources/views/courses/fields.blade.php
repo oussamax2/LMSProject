@@ -7,7 +7,7 @@
 
 <!-- Body Field -->
 <div class="form-group col-sm-12">
-    {!! Form::label('body', __('forms.Body')) !!}
+    {!! Form::label('body', __('forms.Description')) !!}
     {!! Form::textarea('body', null, ['class' => 'form-control', 'required']) !!}
 </div>
 

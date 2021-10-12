@@ -48,7 +48,7 @@
 <div class="form-group col-sm-6 col-md-12 col-lg-6">
 <i class="icon flaticon-bookmark"></i>
     {!! Form::label('price', __('forms.Price')) !!}
-    <p>{{ $registerations->sessions->fee}}</p>
+    <p>{{ $registerations->sessions->fee}} <strong>USD</strong></p>
 </div>
 <!-- fee -->
 <div class="form-group col-sm-6 col-md-12 col-lg-6">
