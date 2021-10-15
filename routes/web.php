@@ -141,6 +141,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth']], function
     //--------
     Route::get('user-profile', [App\Http\Controllers\Profile\UserProfileController::class, 'edit'])->name("user-profile.edit");
 	Route::patch('user-profile', [App\Http\Controllers\Profile\UserProfileController::class, 'update'])->name("login-profile.update");
+	Route::patch('updatesettingsprofile', [App\Http\Controllers\Profile\UserProfileController::class, 'updatesettings'])->name("updatesettingsprofile");    
     Route::post('sendmsg', [App\Http\Controllers\messagingController::class, 'sendmsg'])->name("sendmsg");
 
 });
