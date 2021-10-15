@@ -3,7 +3,7 @@
         <div class="row list-field-detalssessions">
             <div class="col-md-12">
                 <div class="form-group col-md-12 col-sm-6 col-lg-6">
-                    <i class="icon flaticon-bookmark"></i>
+                    <i class="icon icon-graduation"></i>
                     <label for="course_id">Course</label>
                     <p>Designux</p>
                 </div>
@@ -29,9 +29,45 @@
                 </div>
                 <div class="form-group col-md-12 col-sm-6 col-lg-6">
                     <i class="icon icon-clock"></i>
-                    <label for="course_id">Ssession Start</label>
+                    <label for="course_id">Session Start</label>
                     <p>Mon, Oct 11, 2021 12:00 AM</p>
                 </div>
+                <div class="form-group col-md-12 col-sm-6 col-lg-6">
+                    <i class="icon icon-clock"></i>
+                    <label for="course_id">Session End</label>
+                    <p>Mon, Oct 11, 2021 12:00 AM</p>
+                </div>
+                <div class="form-group col-md-12 col-sm-6 col-lg-6">
+                    <i class="icon icon-target"></i>
+                    <label for="course_id">target Audience</label>
+                    <p>target</p>
+                </div>
+                <div class="form-group col-md-12 col-sm-6 col-lg-6">
+                    <i class="icon icon-list"></i>
+                    <label for="course_id">Category</label>
+                    <p>category</p>
+                </div>
+                <div class="form-group col-md-12 col-sm-6 col-lg-6">
+                    <i class="icon icon-list"></i>
+                    <label for="course_id">Sub Category</label>
+                    <p>sub category</p>
+                </div>
+                <div class="form-group col-md-12 col-sm-6 col-lg-6">
+                    <i class="icon icon-globe"></i>
+                    <label for="course_id">Country</label>
+                    <p>country</p>
+                </div>
+                <div class="form-group col-md-12 col-sm-6 col-lg-6">
+                    <i class="icon icon-drawer"></i>
+                    <label for="course_id">City</label>
+                    <p>city</p>
+                </div>
+                <div class="form-group col-md-12 col-sm-6 col-lg-6">
+                    <i class="icon icon-organization"></i>
+                    <label for="course_id">Company</label>
+                    <p>company</p>
+                </div>
+               
             </div>
         </div>
         <div class="condition__session">
