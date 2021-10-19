@@ -58,10 +58,16 @@
 
 <!-- City Field -->
 <div class="form-group">
+    <i class="icon flaticon-placeholder"></i>
+        {!! Form::label('State', __('forms.State')) !!}
+        <p>{{ isset($sessions->states->name) ? $sessions->states->name:'No city' }}</p>
+    </div>
+<div class="form-group">
 <i class="icon flaticon-placeholder"></i>
     {!! Form::label('city', __('forms.City')) !!}
-    <p>{{ $sessions->cities->name }}</p>
+    <p>{{ isset($sessions->cities->name) ? $sessions->cities->name:'No city' }}</p>
 </div>
+
 
 <!-- Note Field -->
 <div class="form-group">

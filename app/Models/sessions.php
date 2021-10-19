@@ -45,7 +45,8 @@ class sessions extends Model
         'state',
         'city',
         'note',
-        'status'
+        'status',
+        'publish'
     ];
 
     /**
@@ -65,7 +66,8 @@ class sessions extends Model
         'state' => 'integer',
         'city' => 'integer',
         'note' => 'string',
-        'status' => 'integer'
+        'status' => 'integer',
+        'publish' => 'integer'
     ];
 
     /**

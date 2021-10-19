@@ -31,7 +31,7 @@ class Search extends Component
     public $online;
     public function render()
     {
-        $query = sessions::with(['courses','countries','cities','states']);
+        $query = sessions::with(['courses','countries','cities','states'])->where('publish',1);
         $query->when(! empty($this->searchTerm), function (Builder $q) {
             $q->whereHas('courses', function (Builder $q){
                 $q->where('courses.title','like', '%'.$this->searchTerm.'%')

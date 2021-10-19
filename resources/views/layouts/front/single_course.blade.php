@@ -71,7 +71,7 @@
 									<b class="title-curr-panel float-left"><i class="icon flaticon-clock"></i>{{Carbon\Carbon::parse($sessions->start)->isoFormat(' Do MMMM  YYYY ')}}  @lang('front.To')  {{Carbon\Carbon::parse($sessions->end)->isoFormat(' Do MMMM  YYYY ')}}</b>
 									<ul class="local-sec float-right">
 										<i class="flaticon-placeholder"></i>
-										<li class="title-curr-panel">{{ $sessions->countries->name }}{{ $sessions->states->name?' ,'.$sessions->cities->name :'' }}{{ $sessions->cities->name?' ,'.$sessions->cities->name :'' }}</li>
+										<li class="title-curr-panel">{{ $sessions->countries->name }}{{ isset($sessions->states->name)?' ,'.$sessions->states->name :'' }}{{ isset($sessions->cities->name)?' ,'.$sessions->cities->name :'' }}</li>
 									</ul>
 								</div>
 							</div>

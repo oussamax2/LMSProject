@@ -117,9 +117,10 @@ class sessionsController extends AppBaseController
 
         $sessions = $this->sessionsRepository->create($input);
 
-        Flash::success('Sessions saved successfully.');
 
-        return redirect(route('sessions.index'));
+        toastr()->success('Sessions saved successfully.');
+
+        return redirect(route('sessions.show',$sessions->id));
     }
 
     /**
@@ -236,5 +237,24 @@ class sessionsController extends AppBaseController
         Flash::success('Sessions deleted successfully.');
 
         return redirect(route('sessions.index'));
+    }
+
+    public function publish($id)
+    {
+        $sessions = $this->sessionsRepository->find($id);
+
+        if (empty($sessions) || !$sessions->my()) {
+            Flash::error('Sessions not found');
+
+            return redirect(route('sessions.index'));
+        }
+
+        $sessions->publish = 1;
+        $sessions->save();
+
+
+        toastr()->success('Sessions publish successfully.');
+
+        return redirect(route('sessions.show',$sessions->id));
     }
 }

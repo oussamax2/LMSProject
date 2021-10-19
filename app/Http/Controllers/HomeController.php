@@ -19,7 +19,7 @@ class HomeController extends Controller
     public function home()
     {
         /**get latest sessions */
-        $sessionList = sessions::orderBy('id', 'desc')->take(9)->get();
+        $sessionList = sessions::orderBy('id', 'desc')->where('publish',1)->take(9)->get();
         /**get latest categories */
         $categList = categories::inRandomOrder()->orderBy('id', 'desc')->take(6)->get();
         // $citiesList = cities::inRandomOrder()->orderBy('id', 'desc')->take(8)->get();
@@ -119,7 +119,7 @@ class HomeController extends Controller
             //get count user registertions in same session
             $registuser = registerations::where('session_id', $sessions->id)->where('user_id', auth()->user()->id)->first();
 
-            if(isset($sessions))
+            if(isset($sessions) && ($sessions->publish ==1 || $sessions->my()) )
             return view('front.singlcourse', ['sessions'=>$sessions, 'registuser' => $registuser]);
             else
             return abort(404);
@@ -128,7 +128,7 @@ class HomeController extends Controller
 
         }else
         {
-            if(isset($sessions))
+            if(isset($sessions) && $sessions->publish==1)
             return view('front.singlcourse', ['sessions'=>$sessions]);
             else
             return abort(404);

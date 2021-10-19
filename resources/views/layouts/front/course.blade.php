@@ -40,7 +40,7 @@
 										</li>
 										<li class="float-right">
 											<i class="flaticon-placeholder"></i>
-											<a href="{{route('course')}}?cities={{$sessionList->cities->id}}" class="tran3s">{{$sessionList->countries->name}}, {{$sessionList->cities->name}}</a>
+											<a href="{{route('course')}}?cities={{isset($sessionList->cities)?$sessionList->cities->id:''}}" class="tran3s">{{$sessionList->countries->name}}, {{isset($sessionList->cities->name)?$sessionList->cities->name:''}}</a>
 										</li>
 									</ul>
 								</div>
