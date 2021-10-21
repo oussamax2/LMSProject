@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="tab-pane" id="p2">
-         
+
              {!! Form::model($user, ['route' => ['updatesettingsprofile', $user->companies->user_id], 'method' => 'patch', 'files' => true, 'enctype' => 'multipart/form-data']) !!}
 
                 <div class="row">
@@ -40,40 +40,40 @@
                             <input type="number" class="form-control" name="cancelpd" value="{{ $user->companies->cancelpd }}" placeholder="0">
                             <span class="glyphicon glyphicon-user form-control-feedback"></span>
 
-                        </div> 
-                    </div> 
+                        </div>
+                    </div>
                     <div class="col-lg-6 col-md-12 col-sm-12 formseditprolms">
                         <div class="form-group has-feedback">
                             <label>Canceltrm</label>
                             <input type="text" class="form-control" name="canceltrm" value="{{ $user->companies->canceltrm }}" placeholder="type your canceltrm">
                             <span class="glyphicon glyphicon-user form-control-feedback"></span>
 
-                        </div> 
-                    </div> 
+                        </div>
+                    </div>
                     <div class="col-lg-6 col-md-12 col-sm-12 formseditprolms">
                         <div class="form-group has-feedback">
-                        
+
                             <label>Paymenttrm</label>
                             <input type="text" class="form-control" name="paymenttrm" value="{{ $user->companies->paymenttrm }}" placeholder="type your paymenttrm">
                             <span class="glyphicon glyphicon-user form-control-feedback"></span>
 
-                        </div> 
-                    </div> 
+                        </div>
+                    </div>
                     <div class="col-lg-6 col-md-12 col-sm-12 formseditprolms">
                         <div class="form-group has-feedback">
                             <label>Generaltrm</label>
                             <input type="text" class="form-control" name="generaltrm" value="{{ $user->companies->generaltrm }}" placeholder="type your generaltrm">
                             <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                
-                        </div> 
-                    </div> 
-                   
+
+                        </div>
+                    </div>
+
                         <div class="col-lg-6 col-lg-offset-6 mx-auto">
                             <button type="submit" class="btn btn-primary btn-block btn-flat">@lang('admin.Update')</button>
                         </div>
-                 
-                    
-                </div>   
+
+
+                </div>
 
             {!! Form::close() !!}
 
