@@ -36,7 +36,7 @@ return [
     'of'      => 'of',
     'results'      => 'results',
     'Preview'      => 'Preview',
-    'Publish'      => 'Publish',
+    'In publish'      => 'In publish',
     ''      => '',
 
 

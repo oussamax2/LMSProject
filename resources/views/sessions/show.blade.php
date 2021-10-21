@@ -23,10 +23,10 @@
                                   @elseif($sessions->status == 0)
                                   <button class="btn closedbutton pull-right" style="background: #d22323; color: #fff; border-radius: 3px; text-decoration: none; font-size: 20px; margin: 0 0 0 15px;padding: 6px 10px; border: none; text-transform: uppercase;">@lang('front.Closed')</button>
                                   @endif
-                                  <a class="btn btn-light pull-right" href="{{ route('detailcourse', $sessions->id) }}"><span class="icon icon-eye"></span>@lang('admin.Preview')</a>
+                                  <a class="btn btn-light pull-right" target="_blank" href="{{ route('detailcourse', $sessions->id) }}"><span class="icon icon-eye"></span>@lang('admin.Preview')</a>
                                   @if($sessions->publish == 0)
 
-                                  <a onclick = "return confirm('Are you sure?')" class="btn btn-ghost-success pull-right"  href="{{ route('sessions.publish', $sessions->id) }}"><span class="icon icon-check"></span>@lang('admin.Publish')</a>
+                                  <a onclick = "return confirm('Are you sure?')" class="btn btn-ghost-success pull-right"  href="{{ route('sessions.publish', $sessions->id) }}"><span class="icon icon-check"></span>@lang('admin.In publish')</a>
                                   @endif
                                 </div>
                              <div class="card-body">
