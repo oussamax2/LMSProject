@@ -9,6 +9,7 @@
      </ol>
      <div class="container-fluid">
           <div class="animated fadeIn">
+            @include('flash::message')
                  @include('coreui-templates::common.errors')
                  <div class="row">
                      <div class="col-lg-10 col-lg-offset-10 mx-auto">
@@ -34,7 +35,42 @@
                              </div>
                          </div>
                      </div>
+
                  </div>
+                 <div class="row card-body">
+                    <div class="col-lg-10 col-lg-offset-10 mx-auto card-details card">
+                        <strong>LOGS</strong>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">User</th>
+                                        <th scope="col">Action</th>
+
+                                        </tr>
+                                    </thead>
+                                    <?php $i=1; ?>
+                        <?php $i=1; ?>
+                        @foreach ($activity as $act)
+                        <tbody>
+                            <tr>
+                                <th scope="row">{{$i++}}</th>
+                                <td>{{$act->causer_id}}</td>
+
+                                <td>
+                                    {{$act->description}}
+                                    <br>
+                                    {{$act->properties}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    @endforeach
+            </table>
+                    </div>
+                </div>
+            </div>
+
           </div>
     </div>
 @endsection

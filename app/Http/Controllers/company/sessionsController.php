@@ -15,6 +15,7 @@ use App\Models\courses;
 use App\Models\language;
 use App\Models\states;
 use Response;
+use Spatie\Activitylog\Models\Activity;
 
 class sessionsController extends AppBaseController
 {
@@ -50,8 +51,9 @@ class sessionsController extends AppBaseController
         else
         $listcourses = courses::pluck('title', 'id');
         /**get countries List and send them to selection list in blade */
-        $listcountries = countries::pluck('name', 'id');
 
+        $listcountries = countries::orderBy('name', 'asc')->pluck('name', 'id');
+        $countries = countries::orderBy('name', 'asc')->get();
 
         /**get states List and send them to selection list in blade */
         $liststates = states::pluck('name', 'id');
@@ -68,6 +70,7 @@ class sessionsController extends AppBaseController
             'listcourses',
             'listcountries',
             'liststates',
+            'countries',
             'listcities'));
 
     }
@@ -140,8 +143,11 @@ class sessionsController extends AppBaseController
             return redirect(route('sessions.index'));
         }
         $regstrionList = $sessions->registerations()->paginate(6);
-// var_dump($regstrionList);
-        return view('sessions.show')->with(['sessions'=> $sessions, 'regstrionList'=> $regstrionList]);
+
+
+        $activity = Activity::where('subject_type', $sessions->getMorphClass())->Where('subject_id', $sessions->getKey())->get();
+
+        return view('sessions.show')->with(['sessions'=> $sessions,'activity'=> $activity, 'regstrionList'=> $regstrionList]);
     }
 
     /**
@@ -212,7 +218,7 @@ class sessionsController extends AppBaseController
 
         Flash::success('Sessions updated successfully.');
 
-        return redirect()->back();
+        return redirect(route('sessions.show',$sessions->id));
     }
 
     /**

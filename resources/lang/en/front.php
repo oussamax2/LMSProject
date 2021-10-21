@@ -299,7 +299,7 @@ return [
     'email' => 'email',
     'Your Name ' => 'Your Name ',
     'Registrations' => 'Registrations',
-    'no data available' => 'no data available',
+    'no data available' => 'No data available',
     'Subscribers' => 'Subscribers',
     'Other sessions:' => 'Other sessions:',
     'Pending-cancelled' => 'Pending-cancelled',

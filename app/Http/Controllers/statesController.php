@@ -41,8 +41,8 @@ class statesController extends AppBaseController
     public function create()
     {
         /**get countries List and send them to selection list in blade */
-        $listcountries = countries::pluck('name', 'id');
-         
+        $listcountries = countries::orderBy('name', 'asc')->pluck('name', 'id');
+
         return view('states.create', compact('listcountries'));
     }
 
@@ -101,10 +101,10 @@ class statesController extends AppBaseController
             return redirect(route('states.index'));
         }
         /**get countries List and send them to selection list in blade */
-        $listcountries = countries::pluck('name', 'id');
-         
+        $listcountries = countries::orderBy('name', 'asc')->pluck('name', 'id');
+
         return view('states.edit', compact('states','listcountries'));
-        
+
     }
 
     /**
