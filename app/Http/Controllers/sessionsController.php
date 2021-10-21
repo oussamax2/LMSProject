@@ -50,7 +50,7 @@ class sessionsController extends AppBaseController
         $listcourses = courses::where('company_id', auth()->user()->companies->id)->pluck('title', 'id');
 
         /**get countries List and send them to selection list in blade */
-        $listcountries = countries::pluck('name', 'id');
+        $listcountries = countries::orderBy('name', 'asc')->pluck('name', 'id');
 
 
         /**get states List and send them to selection list in blade */
@@ -128,7 +128,7 @@ class sessionsController extends AppBaseController
         $selectedID = 1;
 
         /**get countries List and send them to selection list in blade */
-        $listcountries = countries::pluck('name', 'id');
+        $listcountries = countries::orderBy('name', 'asc')->pluck('name', 'id');
 
 
         /**get states List and send them to selection list in blade */

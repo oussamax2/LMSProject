@@ -66,7 +66,6 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','verified','rol
     Route::resource('states', App\Http\Controllers\statesController::class);
     Route::resource('cities', App\Http\Controllers\citiesController::class);
     Route::resource('adminregisterations', App\Http\Controllers\registerationsController::class)->except(['create', 'store']);
-
     Route::resource('tags', App\Http\Controllers\tagController::class);
     Route::resource('admincourses', App\Http\Controllers\coursesController::class);
     Route::resource('courseTags', App\Http\Controllers\course_tagController::class);
@@ -76,11 +75,8 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','verified','rol
     Route::resource('subcategories', App\Http\Controllers\subcategorieController::class);
     Route::resource('companies', App\Http\Controllers\companiesController::class)->except(['create', 'store']);
     Route::resource('contacts', App\Http\Controllers\ContactController::class)->except(['edit', 'update', 'create', 'store']);
-
     Route::get('verifcompany/{id}/{response}', [App\Http\Controllers\companiesController::class, 'update_companyreqst'])->name('verifcompany');
-
     Route::resource('targetAudiances', App\Http\Controllers\target_audianceController::class);
-
     Route::resource('messagings', App\Http\Controllers\messagingController::class);
     Route::resource('users', App\Http\Controllers\UserController::class)->except(['create', 'store']);
     Route::get('indexadmins', [App\Http\Controllers\adminController::class, 'indexadmins'])->name('indexadmins');
@@ -88,7 +84,6 @@ Route::group(['prefix' => 'admin','middleware' => ['web', 'auth','verified','rol
     Route::delete('destroyadmins/{id}', [App\Http\Controllers\adminController::class, 'destroyadmins'])->name('destroyadmins');
     Route::get('createadmin', [App\Http\Controllers\adminController::class, 'createadmin'])->name('createadmin');
     Route::post('/storeadmin', [App\Http\Controllers\adminController::class, 'storeadmin'])->name('storeadmin');
-
     Route::resource('subscribers', App\Http\Controllers\subscribersController::class)->except(['edit', 'update', 'create', 'store']);
 });
 
@@ -108,6 +103,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','verified',
     Route::get('coursesimport', [App\Http\Controllers\company\coursesController::class,'import'])->name('courses.import');
     Route::post('importExcel', [App\Http\Controllers\company\coursesController::class, 'importExcel'])->name('importExcel');
     Route::resource('sessions', App\Http\Controllers\company\sessionsController::class);
+    Route::get('publishsession/{id}', [App\Http\Controllers\company\sessionsController::class,'publish'])->name('sessions.publish');
     Route::get('detailuser/{id}', [App\Http\Controllers\UserController::class,'show'])->name('detailuser');
     Route::get('detailcourses/{id}', [App\Http\Controllers\coursesController::class,'show'])->name('detailcourses');
 });
@@ -123,8 +119,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:compa
  */
 //Route::group(['prefix' => 'dashboarduser','middleware' => ['web', 'auth','verified','role:user']], function () {
 Route::group(['prefix' => 'dashboarduser','middleware' => ['web', 'auth','verified']], function () {
-
-    Route::resource('registerationsuser', App\Http\Controllers\registerationsController::class)->except(['create', 'store']);
+Route::resource('registerationsuser', App\Http\Controllers\registerationsController::class)->except(['create', 'store']);
 });
 Route::group(['prefix' => 'dashboarduser','middleware' => ['web', 'auth']], function () {
     Route::get('/', [App\Http\Controllers\BackController::class, 'user'])->name('user');
@@ -141,21 +136,16 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth']], function
     //--------
     Route::get('user-profile', [App\Http\Controllers\Profile\UserProfileController::class, 'edit'])->name("user-profile.edit");
 	Route::patch('user-profile', [App\Http\Controllers\Profile\UserProfileController::class, 'update'])->name("login-profile.update");
-	Route::patch('updatesettingsprofile', [App\Http\Controllers\Profile\UserProfileController::class, 'updatesettings'])->name("updatesettingsprofile");    
+	Route::patch('updatesettingsprofile', [App\Http\Controllers\Profile\UserProfileController::class, 'updatesettings'])->name("updatesettingsprofile");
     Route::post('sendmsg', [App\Http\Controllers\messagingController::class, 'sendmsg'])->name("sendmsg");
 
 });
 
 Route::get('generator_builder', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@builder')->name('io_generator_builder');
-
 Route::get('field_template', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@fieldTemplate')->name('io_field_template');
-
 Route::get('relation_field_template', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@relationFieldTemplate')->name('io_relation_field_template');
-
 Route::post('generator_builder/generate', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generate')->name('io_generator_builder_generate');
-
 Route::post('generator_builder/rollback', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@rollback')->name('io_generator_builder_rollback');
-
 Route::post(
     'generator_builder/generate-from-file',
     '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generateFromFile'
@@ -165,26 +155,14 @@ Route::post(
  * switchlanguage route
  */
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageSwitchController@switchLang']);
-
 Route::get('state/ajax/{id}',  [App\Http\Controllers\sessionsController::class, 'ajaxstate'])->name('ajaxstate');
 Route::get('city/ajax/{id}',  [App\Http\Controllers\sessionsController::class, 'ajaxcity'])->name('ajaxcity');
 // Route::get('',array('as'=>'myform.ajax','uses'=>'HomeController@));
-
 // this route can return the subcateg with the subcateg_id
 Route::get('findsubcategWithcategID/{id}', 'App\Http\Controllers\company\coursesController@findsubcategWithcategID');
-
 Route::get('/getpartners', [App\Http\Controllers\HomeController::class, 'getpartners']);
-
-
 Route::resource('languages', App\Http\Controllers\languageController::class);
-
 Route::post('crop', [App\Http\Controllers\Profile\UserProfileController::class, 'crop'])->name('crop');
-
-
-
-
 Route::post('subscribersstore', [App\Http\Controllers\subscriberFrontController::class, 'store'])->name('subscribersstore');
-
 Route::post('cancelregistrtion', [App\Http\Controllers\registerationsController::class, 'cancelregistrtion'])->name("cancelregistrtion");
-
 Route::post('clearnotif', [App\Http\Controllers\registerationsController::class, 'clearnotif'])->name('clearnotif');

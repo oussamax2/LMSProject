@@ -9,6 +9,7 @@
      </ol>
      <div class="container-fluid">
           <div class="animated fadeIn">
+            @include('flash::message')
                  @include('coreui-templates::common.errors')
                  <div class="row">
                      <div class="col-lg-10 col-lg-offset-10 mx-auto">
@@ -23,13 +24,53 @@
                                   @elseif($sessions->status == 0)
                                   <button class="btn closedbutton pull-right" style="background: #d22323; color: #fff; border-radius: 3px; text-decoration: none; font-size: 20px; margin: 0 0 0 15px;padding: 6px 10px; border: none; text-transform: uppercase;">@lang('front.Closed')</button>
                                   @endif
-                             </div>
+                                  <a class="btn btn-light pull-right" target="_blank" href="{{ route('detailcourse', $sessions->id) }}"><span class="icon icon-eye"></span>@lang('admin.Preview')</a>
+                                  @if($sessions->publish == 0)
+
+                                  <a onclick = "return confirm('Are you sure?')" class="btn btn-ghost-success pull-right"  href="{{ route('sessions.publish', $sessions->id) }}"><span class="icon icon-check"></span>@lang('admin.In publish')</a>
+                                  @endif
+                                </div>
                              <div class="card-body">
                                  @include('sessions.show_fields')
                              </div>
                          </div>
                      </div>
+
                  </div>
+                 <div class="row card-body">
+                    <div class="col-lg-10 col-lg-offset-10 mx-auto card-details card">
+                        <strong>LOGS</strong>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">User</th>
+                                        <th scope="col">Action</th>
+
+                                        </tr>
+                                    </thead>
+                                    <?php $i=1; ?>
+                        <?php $i=1; ?>
+                        @foreach ($activity as $act)
+                        <tbody>
+                            <tr>
+                                <th scope="row">{{$i++}}</th>
+                                <td>{{$act->causer_id}}</td>
+
+                                <td>
+                                    {{$act->description}}
+                                    <br>
+                                    {{$act->properties}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    @endforeach
+            </table>
+                    </div>
+                </div>
+            </div>
+
           </div>
     </div>
 @endsection

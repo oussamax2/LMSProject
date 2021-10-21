@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
+use Spatie\Activitylog\Traits\LogsActivity;
 
 
 /**
@@ -25,14 +25,28 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class sessions extends Model
 {
     use SoftDeletes;
-
+    use LogsActivity;
 
     public $table = 'sessions';
 
 
     protected $dates = ['deleted_at'];
 
-
+    protected static $logAttributes = [
+        'start',
+        'sess_type',
+        'end',
+        'fee',
+        'language',
+        'course_id',
+        'country_id',
+        'state',
+        'city',
+        'note',
+        'status',
+        'publish'
+    ];
+    protected static $logOnlyDirty = true;
 
     public $fillable = [
         'start',
@@ -45,7 +59,8 @@ class sessions extends Model
         'state',
         'city',
         'note',
-        'status'
+        'status',
+        'publish'
     ];
 
     /**
@@ -65,7 +80,8 @@ class sessions extends Model
         'state' => 'integer',
         'city' => 'integer',
         'note' => 'string',
-        'status' => 'integer'
+        'status' => 'integer',
+        'publish' => 'integer'
     ];
 
     /**
