@@ -90,12 +90,12 @@
                 <th scope="col">@lang('front.status')</th>
                 <th scope="col"></th>
                 </tr>
-            </thead>
-            <?php $i=1; ?>
+            </thead {{$i = ($regstrionList->currentPage()-1) * $regstrionList->perPage()}}>
+            
             @foreach ($regstrionList as $listreg)
                 <tbody>
                     <tr>
-                        <th scope="row">{{$i++}}</th>
+                        <th scope="row">{{++$i}}</th>
                         <td>{{$listreg->user['name']}}</td>
 
 
