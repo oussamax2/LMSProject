@@ -71,19 +71,30 @@
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
     {!! Form::Label('country_id', __('front.countries list')) !!}
-    {!! Form::select('country_id', $listcountries, null, ['class' => 'form-control select2','id'=>'country_id' ,'required']) !!}
+@isset($sessions)
+{!! Form::select('country_id', $listcountries, null, ['class' => 'form-control select2','id'=>'country_id' ,'required']) !!}
+@else
+<select name="country_id" id="country" class="form-control select2" data-live-search="true">
+    <option value="">----</option>
+@foreach($countries as $country)
+    <option value="{{$country->id}}">{{$country->name}}</option>
+  @endforeach
+  </select>
+@endisset
+
+
 </div>
 
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
     {!! Form::Label('state', __('front.states list')) !!}
-    {!! Form::select('state', $liststates, null, ['class' => 'form-control select2' ,'id'=>'state', 'required']) !!}
+    {!! Form::select('state', isset($sessions)?$liststates:[], null, ['class' => 'form-control select2' ,'id'=>'state', 'required']) !!}
 </div>
 
 <!-- Category Id Field -->
 <div class="form-group col-sm-12">
     {!! Form::Label('city', __('front.cities list')) !!}
-    {!! Form::select('city', $listcities, null, ['class' => 'form-control select2']) !!}
+    {!! Form::select('city', isset($sessions)?$listcities:[], null, ['class' => 'form-control select2']) !!}
 </div>
 <div class="form-group col-sm-12">
     {!! Form::label('status', __('forms.status')) !!}

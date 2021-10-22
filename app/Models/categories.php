@@ -81,7 +81,7 @@ class categories extends Model
 
     public function countsessions()
     {
-        return  sessions::whereHas('courses', function ($query) {
+        return  sessions::where('publish',1)->whereHas('courses', function ($query) {
             $query->where('category_id',$this->id);})->count();
 
     }
