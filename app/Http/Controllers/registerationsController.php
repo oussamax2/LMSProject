@@ -129,11 +129,29 @@ class registerationsController extends AppBaseController
 
         return courses::find(5)->sessions()->paginate(2);
     }
+
+
+    /** confirm registration_request  */
+    public function agree_registrtion($id)
+    {
+           
+        $sessions = sessions::find($id);
+     
+        return view('front.confirmedregister')->with('sessions', $sessions);
+    }
+
     /** send registration_request  */
     public function student_registsess(Request $request)
     {
         // $request->session
         // auth()->user()->id;
+//         $input = $request->validate([
+//            'session' => 'required',
+//            'agreetrm.*' => 'required_without_all'
+//         ]);
+// //         $input = $request->all();
+// var_dump($input);
+// die();
         $sessions = sessions::find($request->session);
         if($sessions->status && $sessions->courses->status){
 

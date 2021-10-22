@@ -115,7 +115,8 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:compa
     Route::get('verifregistrequest/{id}/{response}', [App\Http\Controllers\company\registerationsController::class, 'update_registrationStatus'])->name('verifregistrequest');
     Route::get('createfromcourseform/create/{id}', [App\Http\Controllers\company\sessionsController::class, 'createfromcourseform'])->name('createfromcourseform');
 });
-    Route::post('registsess', [App\Http\Controllers\registerationsController::class, 'student_registsess'])->name('registsess');
+    Route::post('agreeregistrtion/{id}', [App\Http\Controllers\registerationsController::class, 'agree_registrtion'])->name('agreeregistrtion');
+    Route::post('registsess', [App\Http\Controllers\registerationsController::class, 'student_registsess'])->name('registsess');    
 
 /*
  * dashboard user  Routes
