@@ -933,7 +933,9 @@ textarea.form-control {
    padding: 0 10px;
 }
 
-
+td.logs {
+    font-size: 12px !important;
+}
 
 
 
