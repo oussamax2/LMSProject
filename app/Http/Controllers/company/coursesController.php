@@ -134,7 +134,6 @@ class coursesController extends AppBaseController
 
         $sessList = $courses->sessions()->paginate(6);
 
-
         return view('courses.show')->with(['courses'=> $courses, 'sessList'=> $sessList]);
     }
 
