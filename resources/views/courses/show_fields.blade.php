@@ -71,12 +71,13 @@
                 <th scope="col">@lang('front.Country name')</th>
                 <th scope="col"></th>
                 </tr>
-            </thead>
-            <?php $i=1; ?>
+                
+            </thead {{$i = ($sessList->currentPage()-1) * $sessList->perPage()}}>
+           
             @foreach ($sessList as $listsess)
                 <tbody>
                     <tr>
-                        <th scope="row">{{$i++}}</th>
+                        <th scope="row">{{++$i}}</th>
                         <td>{{Carbon\Carbon::parse($listsess['start'])->isoFormat('dddd, MMMM Do YYYY, h:mm')}}</td>
                         <td>{{Carbon\Carbon::parse($listsess['end'])->isoFormat('dddd, MMMM Do YYYY, h:mm')}}</td>
                         <td>{{$listsess['fee']}}</td>
