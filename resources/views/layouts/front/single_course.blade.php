@@ -77,12 +77,14 @@
 							</div>
 
 							@if(auth()->user() && !($registuser))
-								<form action="{{ route('registsess')}}"  method="post">
+								<form action="{{ route('agreeregistrtion', $sessions->id)}}" method="post">
 									{{ csrf_field() }}
 									<input type="hidden" name="session" value="{{ $sessions->id }}" />
+								
+									
 									<div class="curriculum-panel-buttonregister float-right">
                                         @if($sessions->status && $sessions->courses->status)
-											<button data-toggle="modal" id="smallButton" data-target="#smallModal" class="btn btn-default show_confirm"  type ="submit">@lang('front.Register')</button>
+											<button class="btn btn-default"  type ="submit">@lang('front.Register')</button>
                                             @else
 
 											<button class="btn btn-default" style="background: #d22323; color: #fff; border-radius: 3px; text-decoration: none; font-size: 20px; margin: 0 0 0 15px; padding: 6px 10px; border: none; text-transform: uppercase; cursor: default;">@lang('front.Closed')</button>
@@ -166,27 +168,4 @@
 			</div>
 
 {{-- single course --}}
-@section('js')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
-<script type="text/javascript">
 
-     $('.show_confirm').click(function(event) {
-          var form =  $(this).closest("form");
-          var name = $(this).data("name");
-          event.preventDefault();
-          swal({
-              title: `Are you sure you want to register in this course?`,
-              text: "",
-              icon: "info",
-              buttons: true,
-              dangerMode: false,
-          })
-          .then((willDelete) => {
-            if (willDelete) {
-              form.submit();
-            }
-          });
-      });
-
-</script>
-@endsection

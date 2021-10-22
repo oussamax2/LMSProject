@@ -896,7 +896,9 @@ textarea.form-control {
     background: #d22323;
     border:none;
   }
-
+  td.logs {
+    font-size: 12px !important;
+}
 
 
 

@@ -40,6 +40,7 @@
                  <div class="row card-body">
                     <div class="col-lg-10 col-lg-offset-10 mx-auto card-details card">
                         <strong>LOGS</strong>
+                        <br>
                         <div class="table-responsive">
                             <table class="table table-bordered">
                                     <thead>
@@ -56,10 +57,10 @@
                         <tbody>
                             <tr>
                                 <th scope="row">{{$i++}}</th>
-                                <td>{{$act->causer_id}}</td>
+                                <td class="logs">{{App\Models\User::find($act->causer_id)->name}}</td>
 
-                                <td>
-                                    {{$act->description}}
+                                <td class="logs">
+                                   <strong>{{$act->description}}</strong>
                                     <br>
                                     {{$act->properties}}
                                 </td>
@@ -67,6 +68,7 @@
                         </tbody>
                     @endforeach
             </table>
+
                     </div>
                 </div>
             </div>

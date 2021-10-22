@@ -142,10 +142,10 @@ class sessionsController extends AppBaseController
 
             return redirect(route('sessions.index'));
         }
-        $regstrionList = $sessions->registerations()->paginate(6);
+        $regstrionList = $sessions->registerations()->paginate(2);
 
 
-        $activity = Activity::where('subject_type', $sessions->getMorphClass())->Where('subject_id', $sessions->getKey())->get();
+        $activity = Activity::where('subject_type', $sessions->getMorphClass())->Where('subject_id', $sessions->getKey())->orderBy('id', 'DESC')->get();
 
         return view('sessions.show')->with(['sessions'=> $sessions,'activity'=> $activity, 'regstrionList'=> $regstrionList]);
     }
