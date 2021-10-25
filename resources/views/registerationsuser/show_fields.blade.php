@@ -60,6 +60,18 @@
     <p>{{ $registerations->sessions->sess_type}}</p>
 </div>
 </div>
+@if($registerations->status != 4)
+  @if(Carbon\Carbon::parse($registerations->sessions->start->subDays($registerations->sessions->companies->cancelpd))->Diff($registerations->sessions->start)->days >0)
+    <!-- Limit cancellation day -->
+    <div class="form-group col-sm-6 col-md-12 col-lg-6">
+    <i class="icon flaticon-bookmark"></i>
+        {!! Form::label('sess_type', ('If you want, you must cancel your register before:')) !!}   
+    
+        <p>{{ Carbon\Carbon::parse($registerations->sessions->start->subDays($registerations->sessions->companies->cancelpd))->isoFormat('llll')}}</p>
+    </div>
+    </div>
+  @endif
+@endif
 <!-- messagerie-->
 <section class="msger">
   <header class="msger-header">
