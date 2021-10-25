@@ -3979,6 +3979,10 @@ display: flex;
 /* details session  */
 
 /* register company style */
+.registration-banner-company .registration-form form .form_mandatory{
+  color: #ff5722;
+  font-size: 15px;
+}
 
 .registration-banner-company .registration-form form {
   background: #fff;
