@@ -5,6 +5,7 @@ namespace App\Models;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Activitylog\Traits\LogsActivity;
+use App\Models\companies;
 
 
 
@@ -71,7 +72,7 @@ class registerations extends Model
 
     public function companies()
     {
-        return $this->BelongsTo(companies::class);
+        return companies::find($this->sessions->courses->company_id);
 
     }
     public function messaging()
