@@ -56,7 +56,7 @@
                         <img src="https://i.postimg.cc/fLq6Rgmg/logo3.png" alt="">
                     </div>
                     <div class="content-mail-send">
-                    <h3>welcome {{$name}}</h3>
+                    <h3>welcome {{$user->name}}</h3>
                     @if ($status == 2)
                     <p>your request was successfully accepted</p>
                     @elseif ($status == 3)
@@ -68,13 +68,27 @@
                         <a href="{{ url('/dashboarduser/registerationsuser', $registeration->id) }}">Your Registeration</a>
                     </div>
                     <div class="details-registrations">
-                    <p>Start Session: {{Carbon\Carbon::parse($registeration->sessions->start)->isoFormat(' Do MMMM  YYYY ')}}</p>
-                    <p>End Session: {{Carbon\Carbon::parse($registeration->sessions->end)->isoFormat(' Do MMMM  YYYY ')}}</p>
-                    <p>Fee: {{$registeration->sessions->fee}} <strong>USD</strong></p>
-                    <p>Course: {{$registeration->sessions->courses->title}}</p>
-                    <p>Country: {{$registeration->sessions->countries->name}} , {{$registeration->sessions->states->name}}</p>
-
-                    {{$registeration->companies()}}
+                        <p>Course: {{$registeration->sessions->courses->title}}</p>
+                        <p>Student: {{$user->name}}</p>
+                        <p>Student Email: {{$user->email}}</p>
+                        <p>Fee: {{$registeration->sessions->fee}} <strong>USD</strong></p>
+                        <p>Session Start: {{Carbon\Carbon::parse($registeration->sessions->start)->isoFormat('llll')}}</p>
+                        <p>Session End: {{Carbon\Carbon::parse($registeration->sessions->end)->isoFormat('llll')}}</p>
+                        <p>Category: {{$registeration->sessions->courses->categories->name}}</p>
+                        <p>Sub-Category: {{isset($registeration->sessions->courses->subcategorie['name']) ?$registeration->sessions->courses->subcategorie['name']: null}}</p>
+                        <p>Company: {{$registeration->sessions->companies->lastname}}</p>
+                        @foreach($registeration->sessions->courses->target_audiance as $trgetaudce)
+                        <p>Target Audience: {{$trgetaudce->name}}</p>
+                        @endforeach
+                        <p>Country: {{$registeration->sessions->countries->name}}</p>
+                        <p>City: {{$registeration->sessions->states->name}}</p>
+                        <p>Cancel Period:
+                        <span style="color: red;font-weight: bold;">If you want, you must cancel your register before:</span>
+                        {{Carbon\Carbon::parse($registeration->sessions->start->subDays($registeration->sessions->companies->cancelpd))->isoFormat('llll')}}
+                        </p>
+                        <p>Cancel Term: {{$registeration->companies()->canceltrm}}</p>
+                        <p>Payement Term: {{$registeration->companies()->paymenttrm}}</p>
+                        <p>General Term: {{$registeration->companies()->generaltrm}}</p>
                     </div>
                     </div>
                 </div>

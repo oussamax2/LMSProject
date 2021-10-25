@@ -34,16 +34,16 @@
                     <p>{{Carbon\Carbon::parse($sessions->start)->isoFormat('llll')}}</p>
                 </div>
                 <div class="form-group col-md-12 col-sm-6 col-lg-6">
-                    <i class="icon icon-clock"></i>
-                    <label for="course_id">Session End</label>
-                    <p>Mon, Oct 11, 2021 12:00 AM</p>
-                </div>
-                <div class="form-group col-md-12 col-sm-6 col-lg-6">
                     <i class="icon icon-target"></i>
                     <label for="course_id">target Audience</label>
                     @foreach($sessions->courses->target_audiance as $trgetaudce)
                      <p>  {{$trgetaudce->name}},</p>
                     @endforeach
+                </div>
+                <div class="form-group col-md-12 col-sm-6 col-lg-6">
+                    <i class="icon icon-clock"></i>
+                    <label for="course_id">Session End</label>
+                    <p>Mon, Oct 11, 2021 12:00 AM</p>
                 </div>
                 <div class="form-group col-md-12 col-sm-6 col-lg-6">
                     <i class="icon icon-list"></i>
