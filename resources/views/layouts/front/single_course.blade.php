@@ -83,7 +83,8 @@
 
 
 									<div class="curriculum-panel-buttonregister float-right">
-                                        @if($sessions->status && $sessions->courses->status)
+
+                                        @if($sessions->status && $sessions->courses->status && ($sessions->end >= date('Y-m-d')) )
 											<button class="btn btn-default"  type ="submit">@lang('front.Register')</button>
                                             @else
 

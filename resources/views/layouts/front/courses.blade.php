@@ -10,7 +10,7 @@
 					@if($countsessions>0)
 						<div class="teachers-course-slider">
 						@foreach ($companies->courses as $coursesList)
-						@foreach ($coursesList->sessions as $sessList)
+						@foreach ($coursesList->sessions->where('publish',1)->where('end', '>=', date('Y-m-d')) as $sessList)
 
 							<div class="item">
 								<div class="single-course">

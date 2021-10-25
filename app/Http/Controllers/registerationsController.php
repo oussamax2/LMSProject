@@ -17,6 +17,7 @@ use App\Models\sessions;
 use App\Models\courses;
 use App\Models\categories;
 use app\Models\User;
+use Carbon\Carbon;
 
 class registerationsController extends AppBaseController
 {
@@ -178,20 +179,22 @@ class registerationsController extends AppBaseController
     public function cancelregistrtion(Request $request)
     {
 
-
-
         $registerations = $this->registerationsRepository->find($request->idr);
+        
+        if(Carbon::parse($registerations->sessions->start->subDays($registerations->sessions->companies->cancelpd))->Diff($registerations->sessions->start)->days >0)
+        {
 
-        $registerations->status = 4;
-        /**save in DB */
-        $registerations->notifcompany=1;
-        $registerations->save();
-        $sessions = sessions::find($registerations->session_id);
-        /** mail to company */
-        Mailsender::sendcompany(auth()->user()->id,$registerations->id,$sessions->companies->user->id);
+            $registerations->status = 4;
+            /**save in DB */
+            $registerations->notifcompany=1;
+            $registerations->save();
+            $sessions = sessions::find($registerations->session_id);
+            /** mail to company */
+            Mailsender::sendcompany(auth()->user()->id,$registerations->id,$sessions->companies->user->id);
 
-        toastr()->success('Your request send with success !');
-        return redirect(url('dashboarduser/registerationsuser',$registerations->id));
+            toastr()->success('Your request send with success !');
+            return redirect(url('dashboarduser/registerationsuser',$registerations->id));
+        }
 
     }
 

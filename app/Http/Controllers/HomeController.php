@@ -12,14 +12,16 @@ use App\Models\countries;
 use App\Models\target_audiance;
 use App\Models\User;
 
+
 class HomeController extends Controller
 {
 
 
     public function home()
     {
+
         /**get latest sessions */
-        $sessionList = sessions::orderBy('id', 'desc')->where('publish',1)->take(9)->get();
+        $sessionList = sessions::orderBy('id', 'desc')->where('publish',1)->whereDate('end', '>=', date('Y-m-d'))->take(9)->get();
         /**get latest categories */
         $categList = categories::inRandomOrder()->orderBy('id', 'desc')->take(6)->get();
         // $citiesList = cities::inRandomOrder()->orderBy('id', 'desc')->take(8)->get();
