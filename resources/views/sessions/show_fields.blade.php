@@ -88,6 +88,7 @@
                 <th scope="col">#</th>
                 <th scope="col">@lang('front.User name')</th>
                 <th scope="col">@lang('front.status')</th>
+                <th scope="col">AT</th>
                 <th scope="col"></th>
                 </tr>
             </thead {{$i = ($regstrionList->currentPage()-1) * $regstrionList->perPage()}}>
@@ -114,9 +115,13 @@
                             <td>@lang('front.pending-payment')</td>
 
                         @elseif($listreg->status == 3)
-                            <td>@lang('front.Confirmed')</td>
+                        <td>@lang('front.Confirmed')</td>
+                        @elseif($listreg->status == 4)
+                            <td>@lang('front.cancled')</td>
                         @endif
-
+                        <td>
+                            {{Carbon\Carbon::parse($listreg->created_at)->isoFormat('lll')}}
+                        </td>
                         <td>
                             <a href="{{route('registerations.show', $listreg->id)}}" class="btn btn-ghost-success">
                                 <span class="icon icon-eye">

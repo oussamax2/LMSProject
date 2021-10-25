@@ -31,28 +31,28 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-wrapper">
-                                    <h6>@lang('front.Your Name')</h6>
+                                    <h6>@lang('front.Your Name') <span class="form_mandatory">*</span></h6>
                                     <input type="text" wire:model="name" placeholder="@lang('front.Your Name')" value="{{ old('name') }}" required>
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback">
                                             <strong>{{ $errors->first('name') }}</strong>
                                         </span>
                                     @endif
-                                    <h6>@lang('front.Your EMail')</h6>
+                                    <h6>@lang('front.Your EMail') <span class="form_mandatory">*</span></h6>
                                     <input type="email" wire:model="email" placeholder="@lang('front.sample@gmail.com')" value="{{ old('email') }}" required>
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback">
                                             <strong>{{ $errors->first('email') }}</strong>
                                         </span>
                                     @endif
-                                    <h6>@lang('front.Password')</h6>
+                                    <h6>@lang('front.Password') <span class="form_mandatory">*</span></h6>
                                     <input type="password" wire:model="password" placeholder="@lang('front.Password')" required>
                                     @if ($errors->has('password'))
                                         <span class="invalid-feedback">
                                             <strong>{{ $errors->first('password') }}</strong>
                                         </span>
                                     @endif
-                                    <h6>@lang('front.Confirm Password')</h6>
+                                    <h6>@lang('front.Confirm Password') <span class="form_mandatory">*</span></h6>
                                     <input type="password" wire:model="password_confirmation" placeholder="@lang('front.Confirm Password')" required>
                                     @if ($errors->has('password_confirmation'))
                                         <span class="invalid-feedback">
@@ -80,14 +80,14 @@
                             <div class="col-md-6">
                                 <div class="form-wrapper">
 
-                                    <h6>@lang('front.Mobile Number')</h6>
+                                    <h6>@lang('front.Mobile Number') <span class="form_mandatory">*</span></h6>
                                     <input type="text" wire:model="telephone"  placeholder="@lang('front.+880 854 875 971')" value="{{ old('telephone') }}">
                                     @if ($errors->has('telephone'))
                                         <span class="invalid-feedback">
                                             <strong>{{ $errors->first('telephone') }}</strong>
                                         </span>
                                     @endif
-                                    <h6>@lang('front.Your WebSite')</h6>
+                                    <h6>@lang('front.Your WebSite') <span class="form_mandatory">*</span></h6>
                                     <input type="text"  wire:model="website" placeholder="@lang('front.Your WebSite')" value="{{ old('website') }}">
                                     @if ($errors->has('website'))
                                         <span class="invalid-feedback">

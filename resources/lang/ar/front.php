@@ -237,6 +237,7 @@ return [
     'New' => 'جديد',
     'Rejected' => 'الرفض',
     'Confirmed' => 'تم تأكيد',
+    'cancled' => 'إلغاء',
     'pending-payment' => 'في انتظار الدفع',
     'Edit Registerations' => 'تعديل التسجيلات',
     'Create Registerations' => 'إنشاء التسجيلات',

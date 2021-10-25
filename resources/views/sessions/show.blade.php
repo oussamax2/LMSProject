@@ -35,8 +35,9 @@
                              </div>
                          </div>
                      </div>
-
+                    </div>
                  </div>
+
                  <div class="row card-body">
                     <div class="col-lg-10 col-lg-offset-10 mx-auto card-details card">
                         <strong>LOGS</strong>

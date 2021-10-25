@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Activitylog\Traits\LogsActivity;
+use App\Models\companies;
+
 
 
 /**
@@ -18,6 +21,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class registerations extends Model
 {
     use SoftDeletes;
+    use LogsActivity;
 
 
     public $table = 'registerations';
@@ -25,7 +29,8 @@ class registerations extends Model
 
     protected $dates = ['deleted_at'];
 
-
+    protected static $logAttributes = ['status'];
+    protected static $logOnlyDirty = true;
 
     public $fillable = [
         'session_id',
@@ -67,7 +72,7 @@ class registerations extends Model
 
     public function companies()
     {
-        return $this->BelongsTo(companies::class);
+        return companies::find($this->sessions->courses->company_id);
 
     }
     public function messaging()

@@ -58,6 +58,8 @@
 <i class="icon flaticon-bookmark"></i>
     {!! Form::label('sess_type', __('forms.Session Type')) !!}
     <p>{{ $registerations->sessions->sess_type}}</p>
+
+
 </div>
 </div>
 @if($registerations->status != 4)

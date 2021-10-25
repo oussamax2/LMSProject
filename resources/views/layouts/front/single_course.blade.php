@@ -80,8 +80,8 @@
 								<form action="{{ route('agreeregistrtion', $sessions->id)}}" method="post">
 									{{ csrf_field() }}
 									<input type="hidden" name="session" value="{{ $sessions->id }}" />
-								
-									
+
+
 									<div class="curriculum-panel-buttonregister float-right">
                                         @if($sessions->status && $sessions->courses->status)
 											<button class="btn btn-default"  type ="submit">@lang('front.Register')</button>
