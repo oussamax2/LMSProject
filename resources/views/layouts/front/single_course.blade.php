@@ -126,7 +126,7 @@
 								<div class="sessionleft">
 									<h6 class="sessiontitle">@lang('front.Other Sessions')</h6>
 									<ul class="info-list row">
-										@foreach (App\Models\sessions::where('course_id',$sessions->course_id)->where('id','!=' ,$sessions->id)->limit(6)->orderBy('created_at', 'desc')->get() as $sessionss)
+										@foreach (App\Models\sessions::where('course_id',$sessions->course_id)->where('id','!=' ,$sessions->id)->whereDate('end', '>=', date('Y-m-d'))->limit(6)->orderBy('created_at', 'desc')->get() as $sessionss)
 										<li class="col-xs-12 hoversessionlms">
 											<p style="padding-bottom: 16px;">
 												<a style="color: rgba(0,0,0,0.65); font-size: 14px; font-weight:600;" href="{{ url('single_session') }}/{{$sessionss->id}}"><i class="icon flaticon-clock" style="font-size: 17px; margin-right: 10px;"></i>{{Carbon\Carbon::parse($sessionss->start)->isoFormat(' Do MMMM  YYYY ')}}  @lang('front.To')  {{Carbon\Carbon::parse($sessionss->end)->isoFormat(' Do MMMM  YYYY ')}}</a>
