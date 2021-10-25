@@ -90,8 +90,8 @@ class sessions extends Model
      * @var array
      */
     public static $rules = [
-        'start' => 'required',
-        'end' => 'required',
+        'start' => 'required|after:yesterday',
+        'end' => 'required|after:start',
         'fee' => 'required',
         'note' => 'max:180',
         'language' => 'exists:languages,id',

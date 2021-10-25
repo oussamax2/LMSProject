@@ -19,12 +19,16 @@
                                 <strong style="margin-right:30px;">@lang('front.Details')</strong>
                                 <div class="arrow-steps clearfix pull-right">
                                    @if($registerations->status != 4)
+                                        @if(Carbon\Carbon::parse($registerations->sessions->start->subDays($registerations->sessions->companies->cancelpd))->Diff($registerations->sessions->start)->days >0)
 
-                                        <form  action="{{ route('cancelregistrtion')}}" method="POST" enctype="multipart/form-data">
-                                             {{ csrf_field() }}
-                                             <input type="text" hidden name="idr" value="{{$registerations->id}}">
-                                             <button type="submit" class="btn btn-outline-danger" style="transform: translate(-305px, 40px);font-weight: bold;width: 175px;height: 44px;"> @lang('front.Cancel Registeration')</button>
-                                        </form>
+
+                                             <form  action="{{ route('cancelregistrtion')}}" method="POST" enctype="multipart/form-data">
+                                                  {{ csrf_field() }}
+                                                  <input type="text" hidden name="idr" value="{{$registerations->id}}">
+                                                  <button type="submit" class="btn btn-outline-danger" style="transform: translate(-305px, 40px);font-weight: bold;width: 175px;height: 44px;"> @lang('front.Cancel Registeration')</button>
+                                             </form>
+                                        @endif
+                                      
                                    @endif
                                    @if($registerations->status == 0)
                                         <div class="step current"> <span>@lang('front.New')</span> </div>

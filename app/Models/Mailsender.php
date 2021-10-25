@@ -23,7 +23,7 @@ class Mailsender
     {
         $user =   User::find($id);
         $registeration = registerations::find($idr);
-        Mail::send('mail.registerationtatus', ['name'=>$user->name,'status'=>$status,'registeration'=>$registeration], function ($message) use ($user){
+        Mail::send('mail.registerationtatus', ['user'=>$user,'status'=>$status,'registeration'=>$registeration], function ($message) use ($user){
              $message->from('itmax.tn@gmail.com', 'lms project');
              $message->to($user->email)->subject('Registerations status ');
          });
@@ -48,5 +48,5 @@ class Mailsender
              $message->from('itmax.tn@gmail.com', 'lms project');
              $message->to($user->email)->subject('Registerations Message ');
          });
-    }   
+    }
 }

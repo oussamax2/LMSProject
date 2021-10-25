@@ -23,7 +23,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name(
 Route::get('/partners', [App\Http\Controllers\HomeController::class, 'partners'])->name('partners');
 Route::get('/profilecompany/{id}', [App\Http\Controllers\HomeController::class, 'pro_training'])->name('profilecompany');
 Route::get('/list_sessions', [App\Http\Controllers\HomeController::class, 'catg_courses'])->name('course');
-Route::get('/singlsession/{id}', [App\Http\Controllers\HomeController::class, 'singlcourse'])->name('detailcourse');
+Route::get('/single_session/{id}', [App\Http\Controllers\HomeController::class, 'singlcourse'])->name('detailcourse');
 Route::get('/registeruser', [App\Http\Controllers\HomeController::class, 'registeruser'])->name('registeruser');
 Route::post('/register_user', [App\Http\Controllers\Auth\RegisterController::class, 'registeruser'])->name('register_user');
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
@@ -112,7 +112,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:compa
     Route::get('createfromcourseform/create/{id}', [App\Http\Controllers\company\sessionsController::class, 'createfromcourseform'])->name('createfromcourseform');
 });
     Route::post('agreeregistrtion/{id}', [App\Http\Controllers\registerationsController::class, 'agree_registrtion'])->name('agreeregistrtion');
-    Route::post('registsess', [App\Http\Controllers\registerationsController::class, 'student_registsess'])->name('registsess');    
+    Route::post('registsess', [App\Http\Controllers\registerationsController::class, 'student_registsess'])->name('registsess');
 
 /*
  * dashboard user  Routes

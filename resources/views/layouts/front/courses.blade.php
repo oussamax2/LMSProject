@@ -10,7 +10,7 @@
 					@if($countsessions>0)
 						<div class="teachers-course-slider">
 						@foreach ($companies->courses as $coursesList)
-						@foreach ($coursesList->sessions as $sessList)
+						@foreach ($coursesList->sessions->where('publish',1)->where('end', '>=', date('Y-m-d')) as $sessList)
 
 							<div class="item">
 								<div class="single-course">
@@ -31,7 +31,7 @@
 										   <strong class="s-color float-right">{{$sessList->fee}} USD</strong>
 										@endif
 										</div>
-										<h5><a href="{{ url('/singlsession',$sessList->id) }}" class="tran3s">{{ $sessList->courses->title }}</a></h5>
+										<h5><a href="{{ url('/single_session',$sessList->id) }}" class="tran3s">{{ $sessList->courses->title }}</a></h5>
 										<ul class="clearfix">
 											<li class="float-left">
 												<i class="flaticon-people"></i>
