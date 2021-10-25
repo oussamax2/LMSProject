@@ -60,6 +60,7 @@
                         <p>Start Session: {{Carbon\Carbon::parse($registeration->sessions->start)->isoFormat(' Do MMMM  YYYY ')}}</p>
                         <p>End Session: {{Carbon\Carbon::parse($registeration->sessions->end)->isoFormat(' Do MMMM  YYYY ')}}</p>
                         <p>Fee: {{$registeration->sessions->fee}} <strong>USD</strong></p>
+                        {{$registeration->companies()}}
                         </div>
                     </div>
                 </div>

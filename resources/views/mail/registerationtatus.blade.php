@@ -73,6 +73,8 @@
                     <p>Fee: {{$registeration->sessions->fee}} <strong>USD</strong></p>
                     <p>Course: {{$registeration->sessions->courses->title}}</p>
                     <p>Country: {{$registeration->sessions->countries->name}} , {{$registeration->sessions->states->name}}</p>
+
+                    {{$registeration->companies()}}
                     </div>
                     </div>
                 </div>
