@@ -176,10 +176,10 @@ class registerationsController extends AppBaseController
 
 
     /** cancel registration_request  */
-    public function cancelregistrtion(Request $request)
+    public function cancelregistrtion($id)
     {
 
-        $registerations = $this->registerationsRepository->find($request->idr);
+        $registerations = $this->registerationsRepository->find($id);
         
         if(Carbon::parse($registerations->sessions->start->subDays($registerations->sessions->companies->cancelpd))->Diff($registerations->sessions->start)->days >0)
         {

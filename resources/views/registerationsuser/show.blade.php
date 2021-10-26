@@ -19,14 +19,11 @@
                                 <strong style="margin-right:30px;">@lang('front.Details')</strong>
                                 <div class="arrow-steps clearfix pull-right">
                                    @if($registerations->status != 4)
-                                        @if(Carbon\Carbon::now() <= Carbon\Carbon::parse($registerations->sessions->start->subDays($registerations->sessions->companies->cancelpd)))
+                                        @if(Carbon\Carbon::now() >= Carbon\Carbon::parse($registerations->sessions->start->subDays($registerations->sessions->companies->cancelpd)))
+                                        <a onclick="return confirm('Are you sure?')" href="{{ route('cancelregistrtion', $registerations->id) }}"  style="transform: translateX(-275px);font-weight: bold;float: left;">
+                                        <span class="icon icon-check"></span>@lang('front.Cancel Registeration')</a>
 
-
-                                             <form  action="{{ route('cancelregistrtion')}}" method="POST" enctype="multipart/form-data">
-                                                  {{ csrf_field() }}
-                                                  <input type="text" hidden name="idr" value="{{$registerations->id}}">
-                                                  <button type="submit" class="btn btn-outline-danger" style="transform: translate(-305px, 40px);font-weight: bold;width: 175px;height: 44px;"> @lang('front.Cancel Registeration')</button>
-                                             </form>
+                                       
                                         @endif
                                       
                                    @endif
