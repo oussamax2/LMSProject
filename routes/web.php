@@ -165,5 +165,7 @@ Route::get('/getpartners', [App\Http\Controllers\HomeController::class, 'getpart
 Route::resource('languages', App\Http\Controllers\languageController::class);
 Route::post('crop', [App\Http\Controllers\Profile\UserProfileController::class, 'crop'])->name('crop');
 Route::post('subscribersstore', [App\Http\Controllers\subscriberFrontController::class, 'store'])->name('subscribersstore');
-Route::post('cancelregistrtion', [App\Http\Controllers\registerationsController::class, 'cancelregistrtion'])->name("cancelregistrtion");
+
+Route::get('cancelregistrtion/{id}', [App\Http\Controllers\registerationsController::class, 'cancelregistrtion'])->name("cancelregistrtion");
+
 Route::post('clearnotif', [App\Http\Controllers\registerationsController::class, 'clearnotif'])->name('clearnotif');
