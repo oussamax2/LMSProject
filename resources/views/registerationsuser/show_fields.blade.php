@@ -106,7 +106,7 @@
 
 </div>
 @if($registerations->status != 4)
-  @if(Carbon\Carbon::now()->isoFormat('lll') >= Carbon\Carbon::parse($registerations->sessions->start->subDays($registerations->sessions->companies->cancelpd))->isoFormat('lll'))
+  @if(Carbon\Carbon::now() <= Carbon\Carbon::parse($registerations->sessions->start->subDays($registerations->sessions->companies->cancelpd)))
     <!-- Limit cancellation day -->
     <div class="form-group col-sm-6 col-md-12 col-lg-6">
     <i class="icon flaticon-bookmark"></i>
