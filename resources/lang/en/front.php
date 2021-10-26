@@ -303,7 +303,7 @@ return [
     'no data available' => 'No data available',
     'Subscribers' => 'Subscribers',
     'Other sessions:' => 'Other sessions:',
-    'Pending-cancelled' => 'Pending-cancelled',
+    'Cancelled' => 'Cancelled',
     'Cancel Registeration' => 'Cancel Registeration',
     'Approve' => 'Approve',
 
@@ -313,8 +313,13 @@ return [
     'Available' => 'Available',
     'Closed' => 'Closed',
 
-    'Pending-cancelled' => 'Pending-cancelled',
+    'Cancelled' => 'Cancelled',
     'Cancel Registeration' => 'Cancel Registeration',
     'Approve' => 'Approve',
+
+    'Category :' => 'Category :',
+    'Sub category:' => 'Sub category:',
+    'Country:' => 'Country:',
+    'City:' => 'City:',    
 
 ];

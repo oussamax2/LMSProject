@@ -92,7 +92,7 @@
                 <th scope="col"></th>
                 </tr>
             </thead {{$i = ($regstrionList->currentPage()-1) * $regstrionList->perPage()}}>
-            
+
             @foreach ($regstrionList as $listreg)
                 <tbody>
                     <tr>

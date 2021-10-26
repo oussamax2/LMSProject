@@ -19,7 +19,7 @@
                                 <strong style="margin-right:30px;">@lang('front.Details')</strong>
                                 <div class="arrow-steps clearfix pull-right">
                                    @if($registerations->status != 4)
-                                        @if(Carbon\Carbon::parse($registerations->sessions->start->subDays($registerations->sessions->companies->cancelpd))->Diff($registerations->sessions->start)->days >0)
+                                        @if(Carbon\Carbon::now() <= Carbon\Carbon::parse($registerations->sessions->start->subDays($registerations->sessions->companies->cancelpd)))
 
 
                                              <form  action="{{ route('cancelregistrtion')}}" method="POST" enctype="multipart/form-data">
@@ -28,38 +28,38 @@
                                                   <button type="submit" class="btn btn-outline-danger" style="transform: translate(-305px, 40px);font-weight: bold;width: 175px;height: 44px;"> @lang('front.Cancel Registeration')</button>
                                              </form>
                                         @endif
-                                      
+
                                    @endif
                                    @if($registerations->status == 0)
                                         <div class="step current"> <span>@lang('front.New')</span> </div>
                                         <div class="step"> <span>@lang('front.Rejected')</span> </div>
                                         <div class="step"> <span>@lang('front.pending-payment')</span> </div>
                                         <div class="step"> <span>@lang('front.Confirmed')</span> </div>
-                                        <div class="step"> <span>@lang('front.Pending-cancelled')</span> </div>
+                                        <div class="step"> <span>@lang('front.Cancelled')</span> </div>
                                    @elseif($registerations->status == 1)
                                         <div class="step"> <span>@lang('front.New')</span> </div>
                                         <div class="step reject"> <span>@lang('front.Rejected')</span> </div>
                                         <div class="step"> <span>@lang('front.pending-payment')</span> </div>
                                         <div class="step"> <span>@lang('front.Confirmed')</span> </div>
-                                        <div class="step"> <span>@lang('front.Pending-cancelled')</span> </div>
+                                        <div class="step"> <span>@lang('front.Cancelled')</span> </div>
                                    @elseif($registerations->status == 2)
                                         <div class="step"> <span>New</span> </div>
                                         <div class="step"> <span>Rejected</span> </div>
                                         <div class="step pending"> <span>pending-payment</span> </div>
                                         <div class="step"> <span>Confirmed</span> </div>
-                                        <div class="step"> <span>@lang('front.Pending-cancelled')</span> </div>
+                                        <div class="step"> <span>@lang('front.Cancelled')</span> </div>
                                    @elseif($registerations->status == 3)
                                         <div class="step"> <span>@lang('front.New')</span> </div>
                                         <div class="step"> <span>@lang('front.Rejected')</span> </div>
                                         <div class="step"> <span>@lang('front.pending-payment')</span> </div>
                                         <div class="step confirm"> <span>@lang('front.Confirmed')</span> </div>
-                                        <div class="step"> <span>@lang('front.Pending-cancelled')</span> </div>
+                                        <div class="step"> <span>@lang('front.Cancelled')</span> </div>
                                    @elseif($registerations->status == 4)
                                         <div class="step"> <span>@lang('front.New')</span> </div>
                                         <div class="step"> <span>@lang('front.Rejected')</span> </div>
                                         <div class="step"> <span>@lang('front.pending-payment')</span> </div>
                                         <div class="step"> <span>@lang('front.Confirmed')</span> </div>
-                                        <div class="step pending"> <span>@lang('front.Pending-cancelled')</span> </div>
+                                        <div class="step pending"> <span>@lang('front.Cancelled')</span> </div>
 
                                    @endif
                                 </div>

@@ -63,7 +63,8 @@
                                 <td class="logs">
                                    <strong>{{$act->description}}</strong>
                                     <br>
-                                    {{$act->properties}}
+                                   {{$act->properties}}
+
                                 </td>
                             </tr>
                         </tbody>

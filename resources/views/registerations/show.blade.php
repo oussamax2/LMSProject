@@ -27,10 +27,7 @@
                                     <a href="{{ route('verifregistrequest', [$registerations->id, 3]) }}" class="btn btn-light buttonecceptuser"><span class="icon icon-check"></span>@lang('forms.Accept')</a>
                                     <a href="{{ route('verifregistrequest', [$registerations->id, 1]) }}" class="btn btn-light buttonrejectuser"><span class="icon icon-trash"></span>@lang('forms.Reject')</a>
                                  @endif
-                                 @if( $registerations->status == 4)
-                                    <a onclick="return confirm('Are you sure?')" href="{{ route('verifregistrequest', [$registerations->id, 4]) }}" class="btn btn-light buttonecceptuser"><span class="icon icon-check"></span>@lang('front.Approve')</a>
-                                    
-                                 @endif                                 
+                             
                                 <div class="arrow-steps clearfix pull-right">
                                    @if($registerations->status == 0)
                                         <div class="step current"> <span>@lang('front.New')</span></div>
@@ -57,7 +54,7 @@
                                         <div class="step"> <span>@lang('front.Rejected')</span> </div>
                                         <div class="step"> <span>@lang('front.pending-payment')</span> </div>
                                         <div class="step"> <span>@lang('front.Confirmed')</span> </div>
-                                        <div class="step pending"> <span>@lang('front.Pending-cancelled')</span> </div>
+                                        <div class="step pending"> <span>@lang('front.Cancelled')</span> </div>
 
                                    @endif
                                 </div>
