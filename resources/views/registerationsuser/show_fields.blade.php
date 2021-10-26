@@ -10,11 +10,20 @@
       <p>{{ $registerations->sessions->courses->title}}</p>
     @endif
 </div>
+<!-- Company Field -->
+<div class="form-group col-sm-6 col-md-12 col-lg-6">
+<i class="icon flaticon-bookmark"></i>
+
+    {!! Form::label('Company', __('front.Company')) !!}  
+    <p>{{ $registerations->sessions->companies->lastname}}</p>
+    
+</div>
+
 <!-- description -->
 <div class="form-group col-sm-6 col-md-12 col-lg-6">
 <i class="icon icon-book-open"></i>
     {!! Form::label('description', __('forms.Description')) !!}
-    <p>{{ $registerations->sessions->courses->companies->description}}</p>
+    <p>{{ isset($registerations->sessions->courses->companies->description) ?$registerations->sessions->courses->companies->description: "no description" }}</p>
 </div>
 <!-- Location -->
 <div class="form-group col-sm-6 col-md-12 col-lg-6">
@@ -61,9 +70,43 @@
 
 
 </div>
+<div class="form-group col-sm-6 col-md-12 col-lg-6">
+    <i class="icon flaticon-bookmark"></i>
+    {!! Form::label('target_audiance', __('front.Target Audiance :')) !!}
+    <p>{{ implode(", ",json_decode($registerations->sessions->courses->target_audiance->pluck('name'))) }}</p>
+
+
+</div>
+<div class="form-group col-sm-6 col-md-12 col-lg-6">
+    <i class="icon flaticon-bookmark"></i>
+    {!! Form::label('Category', __('front.Category :')) !!}
+    <p>{{$registerations->sessions->courses->categories->name}}</p>
+
+
+</div>
+<div class="form-group col-sm-6 col-md-12 col-lg-6">
+    <i class="icon flaticon-bookmark"></i>
+    {!! Form::label('Sub category', __('front.Sub category:')) !!}
+    <p>{{isset($registerations->sessions->courses->subcategorie['name']) ?$registerations->sessions->courses->subcategorie['name']: null}}</p>
+
+
+</div>
+<div class="form-group col-sm-6 col-md-12 col-lg-6">
+    <i class="icon flaticon-bookmark"></i>
+    {!! Form::label('Country', __('front.Country:')) !!}
+    <p>{{$registerations->sessions->countries->name}}</p>
+
+
+</div>
+<div class="form-group col-sm-6 col-md-12 col-lg-6">
+    <i class="icon flaticon-bookmark"></i>
+    {!! Form::label('City', __('front.City:')) !!}
+    <p>{{$registerations->sessions->states->name}}</p>
+
+
 </div>
 @if($registerations->status != 4)
-  @if(Carbon\Carbon::parse($registerations->sessions->start->subDays($registerations->sessions->companies->cancelpd))->Diff($registerations->sessions->start)->days >0)
+  @if(Carbon\Carbon::now()->isoFormat('lll') >= Carbon\Carbon::parse($registerations->sessions->start->subDays($registerations->sessions->companies->cancelpd))->isoFormat('lll'))
     <!-- Limit cancellation day -->
     <div class="form-group col-sm-6 col-md-12 col-lg-6">
     <i class="icon flaticon-bookmark"></i>
@@ -74,6 +117,8 @@
     </div>
   @endif
 @endif
+</div>
+
 <!-- messagerie-->
 <section class="msger">
   <header class="msger-header">

@@ -196,16 +196,16 @@ class registerationsController extends AppBaseController
 
 
 
-           if ($response == 4){
-             /**if company clicked on accept after status(pending-cancelled) button=> the registerations request cancelled and deleted*/
-             // $registerations->deleted_at = Carbon::now();
-             Mailsender::senduser($user,$id,4);
-             $registerations->delete();
+        //    if ($response == 4){
+        //      /**if company clicked on accept after status(Cancelled) button=> the registerations request cancelled and deleted*/
+        //      // $registerations->deleted_at = Carbon::now();
+        //      Mailsender::senduser($user,$id,4);
+        //      $registerations->delete();
 
-             Flash::success(__('admin.deleted successfully.'));
+        //      Flash::success(__('admin.deleted successfully.'));
 
 
-            }
+        //     }
             return redirect()->back();
         }
 }

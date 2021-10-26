@@ -325,5 +325,5 @@ return [
     'no data available' => 'لا توجد بيانات متاحة',
     'Subscribers' => 'المشتركين',
     'Other sessions:' => 'دورات من هذا الدرس',
-    'Pending-cancelled' => 'في إنتظار الإلغاء',
+    'Cancelled' => 'في إنتظار الإلغاء',
 ];
