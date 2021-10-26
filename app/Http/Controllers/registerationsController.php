@@ -135,9 +135,9 @@ class registerationsController extends AppBaseController
     /** confirm registration_request  */
     public function agree_registrtion($id)
     {
-           
+
         $sessions = sessions::find($id);
-     
+
         return view('front.confirmedregister')->with('sessions', $sessions);
     }
 
@@ -163,6 +163,9 @@ class registerationsController extends AppBaseController
         /**save in DB */
         $registerations->save();
 
+        activity()
+        ->performedOn($sessions)
+        ->log('registred user');
         /** mail to company */
         Mailsender::sendcompany(auth()->user()->id,$registerations->id,$sessions->companies->user->id);
 
@@ -180,7 +183,7 @@ class registerationsController extends AppBaseController
     {
 
         $registerations = $this->registerationsRepository->find($id);
-        
+
         if(Carbon::parse($registerations->sessions->start->subDays($registerations->sessions->companies->cancelpd))->Diff($registerations->sessions->start)->days >0)
         {
 

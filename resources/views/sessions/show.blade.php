@@ -49,6 +49,7 @@
                                         <th scope="col">#</th>
                                         <th scope="col">User</th>
                                         <th scope="col">Action</th>
+                                        <th scope="col">Date</th>
 
                                         </tr>
                                     </thead>
@@ -62,10 +63,11 @@
 
                                 <td class="logs">
                                    <strong>{{$act->description}}</strong>
-                                    <br>
-                                   {{$act->properties}}
-
                                 </td>
+                                <td class="logs">
+                                {{Carbon\Carbon::parse($act->created_at)->isoFormat('lll')}}
+
+                                 </td>
                             </tr>
                         </tbody>
                     @endforeach
