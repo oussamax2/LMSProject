@@ -100,7 +100,7 @@
         {{-- Modal content --}}
         <div class="modal-content">
             <div class="modal-body">
-            @if(!isset($exception))
+            @if(!isset($exception) || ($exception->getStatusCode() == 404))
             @livewireStyles
             @livewire('login')
             @livewireScripts

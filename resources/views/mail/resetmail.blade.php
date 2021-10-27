@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Email</title>
     <style>
     .information-user-company{
         justify-content:center;
@@ -39,18 +39,18 @@
         <div class="col-md-12">
             <div class="container">
                 <div class="information-user-company">
-                   
+
                     <div class="image-logolms">
                         <img src="https://i.postimg.cc/fLq6Rgmg/logo3.png" alt="">
                     </div>
                     <div class="content-mail-send">
-                    
+
                     <h6>Click the button below to reset your email address. </h6>
                     <a target="_blank" href="{{$token}}" class="button button-primary" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -webkit-text-size-adjust: none; border-radius: 4px; color: #fff; display: inline-block; overflow: hidden; text-decoration: none; background-color: #2d3748; border-bottom: 8px solid #2d3748; border-left: 18px solid #2d3748; border-right: 18px solid #2d3748; border-top: 8px solid #2d3748;">
                         reset your email
                     </a>
-                    
-                    
+
+
                     </div>
                 </div>
             </div>

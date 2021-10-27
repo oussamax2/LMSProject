@@ -1,5 +1,7 @@
 @extends('layouts.front.app')
-
+@section('title')
+Register -  Corseat.com
+@endsection
 @section('og')
     <meta property="og:type" content="home"/>
     <meta property="og:title" content="{{ config('app.name') }}"/>

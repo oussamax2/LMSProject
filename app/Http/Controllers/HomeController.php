@@ -171,4 +171,15 @@ class HomeController extends Controller
     {
         return view('front.detailcourse');
     }
+
+
+    public function sitemap()
+    {
+        $maps = sessions::where('publish',1)->get();
+        $companies = companies::where('status',2)->get();
+        return response()->view('sitemap', [
+            'maps' => $maps,
+            'companies'=>$companies
+        ])->header('Content-Type', 'text/xml');
+    }
 }
