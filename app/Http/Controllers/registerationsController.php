@@ -181,7 +181,7 @@ class registerationsController extends AppBaseController
 
         $registerations = $this->registerationsRepository->find($id);
         
-        if(Carbon::parse($registerations->sessions->start->subDays($registerations->sessions->companies->cancelpd))->Diff($registerations->sessions->start)->days >0)
+        if(Carbon::now() <= Carbon::parse($registerations->sessions->start->subDays($registerations->sessions->companies->cancelpd)))
         {
 
             $registerations->status = 4;

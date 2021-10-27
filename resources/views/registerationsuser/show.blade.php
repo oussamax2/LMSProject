@@ -19,7 +19,7 @@
                                 <strong style="margin-right:30px;">@lang('front.Details')</strong>
                                 <div class="arrow-steps clearfix pull-right">
                                    @if($registerations->status != 4)
-                                        @if(Carbon\Carbon::now() >= Carbon\Carbon::parse($registerations->sessions->start->subDays($registerations->sessions->companies->cancelpd)))
+                                        @if(Carbon\Carbon::now() <= Carbon\Carbon::parse($registerations->sessions->start->subDays($registerations->sessions->companies->cancelpd)))
                                         <a onclick="return confirm('Are you sure?')" href="{{ route('cancelregistrtion', $registerations->id) }}"  style="transform: translateX(-275px);font-weight: bold;float: left;">
                                         <span class="icon icon-check"></span>@lang('front.Cancel Registeration')</a>
 
