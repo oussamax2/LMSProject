@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Email</title>
     <style>
     .information-user-company{
         justify-content:center;
@@ -56,10 +56,10 @@
                         <img src="https://i.postimg.cc/fLq6Rgmg/logo3.png" alt="">
                     </div>
                     <div class="content-mail-send">
-                   
+
                      <h3>new message from <strong>{{auth()->user()->name}}</strong></h3>
-                 
-                   
+
+
                      <h3><strong>message:</strong></h3><p> {!! $msg !!}</p>
 
                     <div class="linkfordahsboard">

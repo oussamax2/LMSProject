@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Email</title>
     <style>
     .information-user-company{
         justify-content:center;
@@ -69,7 +69,7 @@
                         @endforeach
                         <p>Country: {{$registeration->sessions->countries->name}}</p>
                         <p>City: {{$registeration->sessions->states->name}}</p>
-                        <p>Cancel Period: 
+                        <p>Cancel Period:
                         <span style="color: red;font-weight: bold;">If you want, you must cancel your register before:</span>
                         {{Carbon\Carbon::parse($registeration->sessions->start->subDays($registeration->sessions->companies->cancelpd))->isoFormat('llll')}}
                         </p>
