@@ -105,27 +105,27 @@ if( auth()->user()->hasRole('company'))
 
         $this->validate($request, [
             'cancelpd' => 'required',
-            'canceltrm' => 'string|max:255',
-            'paymenttrm' => 'string|max:255',
-            
-            'generaltrm' => 'string|max:255',
+            'canceltrm' => 'required',
+            'paymenttrm' => 'required',
+
+            'generaltrm' => 'required',
         ]);
 
 		$user = User::find($id);
-    
+
         if( auth()->user()->hasRole('company'))
         {
             $user->companies->cancelpd = $request->cancelpd;
             $user->companies->canceltrm = $request->canceltrm;
             $user->companies->paymenttrm = $request->paymenttrm;
             $user->companies->generaltrm = $request->generaltrm;
-    
+
             $user->companies->update();
         }
     	$user->update();
-    
+
 
 
     	return redirect()->back();
-    }    
+    }
 }

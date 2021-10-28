@@ -73,12 +73,12 @@
                 <div class="form-group col-md-12 col-sm-6 col-lg-6">
                     <i class="icon icon-organization"></i>
                     <label for="course_id">Cancel period</label>
-                   
+
                     <p>
                     <span style="color: red;font-weight: bold;">If you want, you must cancel your register before:</span>
                     {{Carbon\Carbon::parse($sessions->start->subDays($sessions->companies->cancelpd))->isoFormat('llll')}}
                     </p>
-                </div>               
+                </div>
             </div>
         </div>
         <div class="condition__session">
@@ -110,7 +110,7 @@
                     </div>
                     <div class="content">
                     <input type="checkbox">
-                        <p>{{$sessions->companies->paymenttrm}}</p>
+                        {!!$sessions->companies->paymenttrm!!}
                     </div>
                     </label>
                     <label for="chk-3">
@@ -144,7 +144,7 @@
                 submitButton.addClass('disabled');
             } else {
                 submitButton.removeClass('disabled');
-            }       
+            }
         });
     </script>
 @endsection

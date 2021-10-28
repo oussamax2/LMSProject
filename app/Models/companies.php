@@ -86,9 +86,9 @@ class companies extends Model
         'telephone' => 'max:15',
         'shortDescription' => 'max:100',
         'description' => 'max:180',
-        'generaltrm' => 'max:300',
-        'paymenttrm' => 'max:300',
-        'canceltrm' => 'max:300',
+        'generaltrm' => 'max:500',
+        'paymenttrm' => 'max:500',
+        'canceltrm' => 'max:500',
         'cancelpd' => 'integer|min:1|max:100',
     ];
 
