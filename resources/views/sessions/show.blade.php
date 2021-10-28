@@ -62,7 +62,11 @@
                                 <td class="logs">{{App\Models\User::find($act->causer_id)->name}}</td>
 
                                 <td class="logs">
-                                   <strong>{{$act->description}}</strong>
+                                   <strong>{{$act->description}}: </strong>
+                                   @if($act->description =='updated' )
+                                   <br>
+                                   {{(array)$act->properties}}
+                                   @endif
                                 </td>
                                 <td class="logs">
                                 {{Carbon\Carbon::parse($act->created_at)->isoFormat('lll')}}
