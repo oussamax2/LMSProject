@@ -8,7 +8,7 @@
 <!-- Body Field -->
 <div class="form-group col-sm-12">
     {!! Form::label('body', __('forms.Description')) !!}
-    {!! Form::textarea('body', null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::textarea('body', null, ['id' => 'body', 'class' => 'form-control', 'required']) !!}
 </div>
 
 
@@ -39,36 +39,47 @@
 
 
 @push('scripts')
+    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js" referrerpolicy="origin"></script>
 
-	<script>
-         $(document).ready(function() {
-        $('#category_id').on('change', function() {
-            var categID = $(this).val();
-            if(categID) {
-                $.ajax({
-                    url: '/findsubcategWithcategID/'+$(this).val(),
-                    type: "GET",
-                    data : {"_token":"{{ csrf_token() }}"},
-                    dataType: "json",
-                    success:function(data) {
-                        console.log(data);
-                      if(data){
-                         $('#subcateg_id').empty();
-                         $('#subcateg_id').focus;
-                         $('#subcateg_id').append('<option value="">-- Select sub category --</option>');
-                         $.each(data, function(key, value){
-                            $('select[name="subcateg_id"]').append('<option value="'+ value.id +'">' + value.name+ '</option>');
-                         });
-                        }else{
-                         $('#subcateg_id').empty();
-                        }
-                    }
-                });
-            }else{
-              $('#subcateg_id').empty();
-            }
+    <script>
+        CKEDITOR.replace( 'body',   {
+            toolbar: [
+                { name: 'document', items: [  'NewPage', 'Preview', '-', 'Templates' ] },	// Defines toolbar group with name (used to create voice label) and items in 3 subgroups.
+                [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo', 'Bold', 'Italic' ],
+   
+   
+            ]
         });
-    });
+
+	
+        $(document).ready(function() {
+            $('#category_id').on('change', function() {
+                var categID = $(this).val();
+                if(categID) {
+                    $.ajax({
+                        url: '/findsubcategWithcategID/'+$(this).val(),
+                        type: "GET",
+                        data : {"_token":"{{ csrf_token() }}"},
+                        dataType: "json",
+                        success:function(data) {
+                            console.log(data);
+                        if(data){
+                            $('#subcateg_id').empty();
+                            $('#subcateg_id').focus;
+                            $('#subcateg_id').append('<option value="">-- Select sub category --</option>');
+                            $.each(data, function(key, value){
+                                $('select[name="subcateg_id"]').append('<option value="'+ value.id +'">' + value.name+ '</option>');
+                            });
+                            }else{
+                            $('#subcateg_id').empty();
+                            }
+                        }
+                    });
+                }else{
+                $('#subcateg_id').empty();
+                }
+            });
+        });
     </script>
 @endpush
 <!-- Category Id Field -->
