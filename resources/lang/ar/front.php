@@ -326,4 +326,5 @@ return [
     'Subscribers' => 'المشتركين',
     'Other sessions:' => 'دورات من هذا الدرس',
     'Cancelled' => 'في إنتظار الإلغاء',
+    'Payment details' => 'بيانات الدفع',  
 ];
