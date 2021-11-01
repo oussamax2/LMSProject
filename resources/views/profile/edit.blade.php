@@ -37,7 +37,7 @@
                 {!! Form::model($user, ['route' => ['updatesettingsprofile', $user->companies->user_id], 'method' => 'patch', 'files' => true, 'enctype' => 'multipart/form-data']) !!}
 
                     <div class="row">
-                        <div class="col-lg-6 col-md-12 col-sm-12 formseditprolms">
+                        <div class="col-lg-12 col-md-12 col-sm-12 formseditprolms">
                             <div class="form-group has-feedback">
                                 <label>Cancel period</label>
                                 <input type="number" class="form-control" name="cancelpd" value="{{ $user->companies->cancelpd }}" placeholder="0">
@@ -70,11 +70,12 @@
 
                             </div>
                         </div>
+<div class="form-group buttons-action-lms col-sm-12">
 
-                            <div class="col-lg-6 col-lg-offset-6 mx-auto">
-                                <button type="submit" class="btn btn-primary btn-block btn-flat">@lang('admin.Update')</button>
-                            </div>
+    <input class="btn btn-primary" type="submit" value="@lang('admin.Update')">
 
+</div>
+              
 
                     </div>
 
@@ -90,35 +91,35 @@
    </div>
 @endsection
 @push('scripts')
-<script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js" referrerpolicy="origin"></script>
 
-<script>
-    CKEDITOR.replace( 'paymenttrm',   {
-	toolbar: [
-		{ name: 'document', items: [  'NewPage', 'Preview', '-', 'Templates' ] },	// Defines toolbar group with name (used to create voice label) and items in 3 subgroups.
-		[ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo','Maximize', 'ShowBlocks' ],			// Defines toolbar group without name.
-		'/',																					// Line break - next group will be placed in new line.
-		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting', 'RemoveFormat' ] },
-	{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },
-	]
-});
-CKEDITOR.replace( 'canceltrm',   {
-	toolbar: [
-		{ name: 'document', items: [  'NewPage', 'Preview', '-', 'Templates' ] },	// Defines toolbar group with name (used to create voice label) and items in 3 subgroups.
-		[ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo','Maximize', 'ShowBlocks' ],			// Defines toolbar group without name.
-		'/',																					// Line break - next group will be placed in new line.
-		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting', 'RemoveFormat' ] },
-	{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },
-	]
-});
-CKEDITOR.replace( 'generaltrm',   {
-	toolbar: [
-		{ name: 'document', items: [  'NewPage', 'Preview', '-', 'Templates' ] },	// Defines toolbar group with name (used to create voice label) and items in 3 subgroups.
-		[ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo','Maximize', 'ShowBlocks' ],			// Defines toolbar group without name.
-		'/',																					// Line break - next group will be placed in new line.
-		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting', 'RemoveFormat' ] },
-	{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },
-	]
-});
+    <script>
+            CKEDITOR.replace( 'paymenttrm',   {
+            toolbar: [
+                { name: 'document', items: [  'NewPage', 'Preview', '-', 'Templates' ] },	// Defines toolbar group with name (used to create voice label) and items in 3 subgroups.
+                [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo','Maximize', 'ShowBlocks' ],			// Defines toolbar group without name.
+                '/',																					// Line break - next group will be placed in new line.
+                { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting', 'RemoveFormat' ] },
+            { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },
+            ]
+        });
+        CKEDITOR.replace( 'canceltrm',   {
+            toolbar: [
+                { name: 'document', items: [  'NewPage', 'Preview', '-', 'Templates' ] },	// Defines toolbar group with name (used to create voice label) and items in 3 subgroups.
+                [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo','Maximize', 'ShowBlocks' ],			// Defines toolbar group without name.
+                '/',																					// Line break - next group will be placed in new line.
+                { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting', 'RemoveFormat' ] },
+            { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },
+            ]
+        });
+        CKEDITOR.replace( 'generaltrm',   {
+            toolbar: [
+                { name: 'document', items: [  'NewPage', 'Preview', '-', 'Templates' ] },	// Defines toolbar group with name (used to create voice label) and items in 3 subgroups.
+                [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo','Maximize', 'ShowBlocks' ],			// Defines toolbar group without name.
+                '/',																					// Line break - next group will be placed in new line.
+                { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting', 'RemoveFormat' ] },
+            { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },
+            ]
+        });
     </script>
 @endpush

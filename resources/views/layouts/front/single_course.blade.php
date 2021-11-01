@@ -56,7 +56,7 @@
 										</div>
 									</div>
 								</div>
-                                <p class="p1">{{$sessions->courses->body}}</p>
+                                <p class="p1">{!! $sessions->courses->body !!}</p>
 							</div>
 							<div class="curriculum-panel">
 								<div class="clearfix">

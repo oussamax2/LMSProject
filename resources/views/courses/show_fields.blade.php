@@ -19,7 +19,7 @@
 <div class="form-group">
 <i class="icon icon-book-open"></i>
     {!! Form::label('body', __('forms.Course Desciption')) !!}
-    <p>{{ $courses->body }}</p>
+    <p>{!! $courses->body !!}</p>
 </div>
 
 <!-- Published On Field -->

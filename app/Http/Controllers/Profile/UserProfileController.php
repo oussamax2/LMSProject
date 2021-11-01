@@ -53,7 +53,7 @@ class UserProfileController extends Controller
 
         $this->validate($request, [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,email,'.$id,
+           // 'email' => 'required|string|email|max:255|unique:users,email,'.$id,
             // 'telephone' => 'required',
 
         ]);

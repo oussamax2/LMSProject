@@ -21,7 +21,7 @@
                 <div class="form-group col-md-12 col-sm-6 col-lg-6">
                     <i class="icon icon-book-open"></i>
                     <label for="course_id">Description</label>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p>{!! $sessions->courses->body !!}</p>
                 </div>
                 <div class="form-group col-md-12 col-sm-6 col-lg-6">
                     <i class="icon flaticon-bookmark"></i>

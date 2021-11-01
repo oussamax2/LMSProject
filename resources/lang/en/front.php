@@ -320,6 +320,7 @@ return [
     'Category :' => 'Category :',
     'Sub category:' => 'Sub category:',
     'Country:' => 'Country:',
-    'City:' => 'City:',    
+    'City:' => 'City:', 
+    'Payment details' => 'Payment details',     
 
 ];

@@ -12,7 +12,7 @@
 		</div>
         <div class="row">
 		<div class="form-group col-md-8 has-feedback{{ $errors->has('email') ? ' has-error' : '' }}">
-			<input type="email" class="form-control" name="email" value="{{ $user->email }}" placeholder="@lang('admin.Email')">
+			<input type="email" class="form-control" name="email" value="{{ $user->email }}" placeholder="@lang('admin.Email')" readonly>
 			<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 
 			@if ($errors->has('email'))
