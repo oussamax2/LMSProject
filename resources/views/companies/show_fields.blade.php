@@ -95,6 +95,12 @@
             {!! Form::label('website', __('forms.Website')) !!}
             <p>{{ $companies->website }}</p>
         </div>
+
+        <div class="form-group">
+            <i class="icon icon-wallet"></i>
+                {!! Form::label('website', __('front.Payment details')) !!}
+                <p>{{ $companies->paymentinfo }}</p>
+            </div>
         {{-- banner home --}}
     </div>
 </div>
