@@ -162,7 +162,6 @@ return [
     'Create roles' => 'إنشاء دور',
 
     'Edit Companies' => 'تعديل الشريك',
-    'Edit Companies' => 'تعديل الشريك',
 
     'Create subcategories' => 'إنشاء فئات فرعية',
     'Create Target Audiances' => 'إنشاء فئة مستهدفة',
@@ -326,5 +325,5 @@ return [
     'Subscribers' => 'المشتركين',
     'Other sessions:' => 'دورات من هذا الدرس',
     'Cancelled' => 'في إنتظار الإلغاء',
-    'Payment details' => 'بيانات الدفع',  
+    'Payment details' => 'بيانات الدفع',
 ];

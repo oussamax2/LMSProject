@@ -316,11 +316,11 @@ return [
     'Cancelled' => 'Cancelled',
     'Cancel Registeration' => 'Cancel Registeration',
     'Approve' => 'Approve',
-
+    'Edit Companies' => 'Edit Companies',
     'Category :' => 'Category :',
     'Sub category:' => 'Sub category:',
     'Country:' => 'Country:',
-    'City:' => 'City:', 
-    'Payment details' => 'Payment details',     
+    'City:' => 'City:',
+    'Payment details' => 'Payment details',
 
 ];
