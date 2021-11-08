@@ -41,6 +41,13 @@
     {!! Form::text('description', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Description Field -->
+<div class="form-group col-sm-12">
+    {!! Form::label('paymentinfo', __('front.Payment details')) !!}
+    {!! Form::text('paymentinfo', null, ['class' => 'form-control']) !!}
+</div>
+
+
 <!-- Fcburl Field -->
 <div class="form-group col-sm-12">
     {!! Form::label('fcburl', __('forms.Fcburl')) !!}

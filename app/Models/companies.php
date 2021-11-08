@@ -49,7 +49,8 @@ class companies extends Model
         'generaltrm',
         'paymenttrm',
         'canceltrm',
-        'cancelpd'
+        'cancelpd',
+        'paymentinfo'
     ];
 
     /**
@@ -71,6 +72,7 @@ class companies extends Model
         'dribbleurl' => 'string',
         'generaltrm' => 'string',
         'paymenttrm' => 'string',
+        'paymentinfo' => 'string',
         'canceltrm' => 'string',
         'cancelpd' => 'integer'
     ];
@@ -84,11 +86,12 @@ class companies extends Model
         'lastname' => 'max:10',
         'website' => 'max:100',
         'telephone' => 'max:15',
-        'shortDescription' => 'max:100',
-        'description' => 'max:180',
+        'shortDescription' => 'max:150',
+        'description' => 'max:1000',
         'generaltrm' => 'max:500',
         'paymenttrm' => 'max:500',
         'canceltrm' => 'max:500',
+        'paymentinfo'=>'max:100',
         'cancelpd' => 'integer|min:1|max:100',
     ];
 
