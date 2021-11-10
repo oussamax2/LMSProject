@@ -245,6 +245,7 @@ return [
     'Confirmed' => 'Confirmed',
     'Create Categories' => 'Create Categories',
     'pending-payment' => 'pending-payment',
+    'Paid' => 'Paid',
     'cancled' => 'Cancled',
     'courses list:' => 'courses list:',
     'There is no subcategory' => 'There is no subcategory',

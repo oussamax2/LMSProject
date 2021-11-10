@@ -16,7 +16,7 @@
                              <div class="card-header">
                              <i class="icon icon-arrow-right-circle"></i>
                                  <strong>@lang('front.Details')</strong>
-                                  <a href="{{ route('users.index') }}" class="btn btn-light"><span class="icon icon-arrow-right-circle"></span>@lang('front.Back')</a>
+                                  <a href="{{URL::previous()}}" class="btn btn-light"><span class="icon icon-arrow-right-circle"></span>@lang('front.Back')</a>
                              </div>
                              <div class="card-body">
                                  @include('users.show_fields')

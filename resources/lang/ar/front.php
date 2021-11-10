@@ -238,6 +238,7 @@ return [
     'Confirmed' => 'تم تأكيد',
     'cancled' => 'إلغاء',
     'pending-payment' => 'في انتظار الدفع',
+    'Paid' => 'دفع',
     'Edit Registerations' => 'تعديل التسجيلات',
     'Create Registerations' => 'إنشاء التسجيلات',
     'Registerations' => 'التسجيلات',

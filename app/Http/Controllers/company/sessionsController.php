@@ -142,7 +142,7 @@ class sessionsController extends AppBaseController
 
             return redirect(route('sessions.index'));
         }
-        $regstrionList = $sessions->registerations()->paginate(2);
+        $regstrionList = $sessions->registerations()->paginate(6);
 
 
         $activity = Activity::where('subject_type', $sessions->getMorphClass())->Where('subject_id', $sessions->getKey())->orderBy('id', 'DESC')->get();

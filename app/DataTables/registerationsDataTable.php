@@ -32,9 +32,9 @@ class registerationsDataTable extends DataTable
             if($registerations->status ==1)
             return '<span class="btn btn-ghost-danger icon icon-dislike"></span>REJECTED';
             if($registerations->status ==2)
-            return '<span class="btn btn-ghost-pending icon icon-hourglass"></span>PENDING-PAYMENT';
+            return '<span class="btn btn-ghost-pending icon icon-hourglass"></span>CONFIRMED';
             if($registerations->status ==3)
-            return '<span class="btn btn btn-ghost-success icon icon-like"></span>CONFIRMED';
+            return '<span class="btn btn btn-ghost-success icon icon-like"></span>PAID';
             if($registerations->status ==4)
             return '<span class="btn btn-ghost-danger icon icon-close"></span>CANCLED';})
             ->setRowAttr([
@@ -54,9 +54,9 @@ class registerationsDataTable extends DataTable
             if($registerations->status ==1)
             return '<span class="btn btn-ghost-danger icon icon-dislike"></span>REJECTED';
             if($registerations->status ==2)
-            return '<span class="btn btn-ghost-pending icon icon-hourglass"></span>PENDING-PAYMENT';
+            return '<span class="btn btn-ghost-pending icon icon-hourglass"></span>CONFIRMED';
             if($registerations->status ==3)
-            return '<span class="btn btn btn-ghost-success icon icon-like"></span>CONFIRMED';
+            return '<span class="btn btn btn-ghost-success icon icon-like"></span>PAID';
             if($registerations->status ==4)
             return '<span class="btn btn-ghost-danger icon icon-close"></span>CANCLED';})
 

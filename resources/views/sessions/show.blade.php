@@ -63,7 +63,7 @@
 
                                 <td class="logs">
                                    <strong>{{$act->description}}: </strong>
-                                   @if($act->description =='updated' )
+                                   @if($act->description =='updated')
                                    <br>
                                    OLd<br>
                                     @foreach ((array) $act->properties['old'] as $key => $value)
