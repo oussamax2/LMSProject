@@ -46,12 +46,12 @@
             toolbar: [
                 { name: 'document', items: [  'NewPage', 'Preview', '-', 'Templates' ] },	// Defines toolbar group with name (used to create voice label) and items in 3 subgroups.
                 [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo', 'Bold', 'Italic' ],
-   
-   
+
+
             ]
         });
 
-	
+
         $(document).ready(function() {
             $('#category_id').on('change', function() {
                 var categID = $(this).val();
@@ -86,7 +86,7 @@
 
 
 	<div class="form-group  col-sm-12 {{ ($errors->has('roll'))?'has-error':'' }}">
-	    <label for="roll">@lang('front.Category')<span class="required">*</span></label>
+	    <label for="roll">@lang('front.Category')<span class="required"> *</span></label>
 	    <select name="category_id" class="form-control select2" id="category_id">
 
 		@foreach ($listcateg as $listcateg)

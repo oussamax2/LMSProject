@@ -27,7 +27,10 @@
                                   <a class="btn btn-light pull-right" target="_blank" href="{{ route('detailcourse', $sessions->id) }}"><span class="icon icon-eye"></span>@lang('admin.Preview')</a>
                                   @if($sessions->publish == 0)
 
-                                  <a onclick = "return confirm('Are you sure?')" class="btn btn-ghost-success pull-right"  href="{{ route('sessions.publish', $sessions->id) }}"><span class="icon icon-check"></span>@lang('admin.In publish')</a>
+                                  <a style="background: #4dbd74;" onclick = "return confirm('Are you sure?')" class="btn btn-ghost-success pull-right"  href="{{ route('sessions.publish', [$sessions->id,1]) }}"><span class="icon icon-check"></span>@lang('admin.In publish')</a>
+                                  @else
+                                  <a style="background:#bd544d ;" onclick = "return confirm('Are you sure?')" class="btn btn-danger pull-right"  href="{{ route('sessions.publish', [$sessions->id,0]) }}"><span class="icon icon-close"></span>@lang('Not publish')</a>
+
                                   @endif
                                 </div>
                              <div class="card-body">

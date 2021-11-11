@@ -245,7 +245,7 @@ class sessionsController extends AppBaseController
         return redirect(route('sessions.index'));
     }
 
-    public function publish($id)
+    public function publish($id,$action)
     {
         $sessions = $this->sessionsRepository->find($id);
 
@@ -255,7 +255,7 @@ class sessionsController extends AppBaseController
             return redirect(route('sessions.index'));
         }
 
-        $sessions->publish = 1;
+        $sessions->publish = $action;
         $sessions->save();
 
 

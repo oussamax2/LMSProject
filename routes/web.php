@@ -33,8 +33,12 @@ Route::get('/register_vendor', [App\Http\Controllers\HomeController::class, 'reg
 Route::post('/store_vendor', [App\Http\Controllers\Auth\RegisterController::class, 'registervendor'])->name('registervendor');
 Route::get('sendcontact', [App\Http\Controllers\ContactController::class, 'sendcontact'])->name("sendcontact");
 Route::get('/loginverif', [App\Http\Controllers\HomeController::class, 'loginverif'])->name("loginverif");
-Route::get('test', [App\Http\Controllers\registerationsController::class,'test']);
 Route::get('/sitemap.xml', [App\Http\Controllers\HomeController::class, 'sitemap']);
+
+/** test url */
+
+Route::get('test', [App\Http\Controllers\registerationsController::class,'test']);
+Route::get('getpay', [App\Http\Controllers\registerationsController::class,'getpay'])->name('getpay');
 
 /** verification */
 
@@ -104,7 +108,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','verified',
     Route::get('coursesimport', [App\Http\Controllers\company\coursesController::class,'import'])->name('courses.import');
     Route::post('importExcel', [App\Http\Controllers\company\coursesController::class, 'importExcel'])->name('importExcel');
     Route::resource('sessions', App\Http\Controllers\company\sessionsController::class);
-    Route::get('publishsession/{id}', [App\Http\Controllers\company\sessionsController::class,'publish'])->name('sessions.publish');
+    Route::get('publishsession/{id}/{action}', [App\Http\Controllers\company\sessionsController::class,'publish'])->name('sessions.publish');
     Route::get('detailuser/{id}', [App\Http\Controllers\UserController::class,'show'])->name('detailuser');
     Route::get('detailcourses/{id}', [App\Http\Controllers\coursesController::class,'show'])->name('detailcourses');
 });

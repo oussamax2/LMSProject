@@ -74,9 +74,12 @@ class coursesDataTable extends DataTable
      */
     protected function getColumns()
     {
+        $visisble = false;
+        if(auth()->user()->hasRole('admin'))
+        $visisble = true;
         return [
             ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
-            ['data' => 'companies.lastname', 'name' => 'companies.lastname', 'title' => __('forms.Company Name')],
+            ['data' => 'companies.lastname', 'name' => 'companies.lastname', 'title' => __('forms.Company Name') ,'visible' => $visisble],
             ['data' => 'title', 'name' => 'title', 'title' => __('forms.title')],
             ['data' => 'categories.name', 'name' => 'categories.name', 'title' => __('forms.Category Name')],
             ['data' => 'published_on', 'name' => 'published_on', 'title' => __('forms.Published On')],

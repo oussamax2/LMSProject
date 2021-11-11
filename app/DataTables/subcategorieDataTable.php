@@ -59,7 +59,7 @@ class subcategorieDataTable extends DataTable
      */
     protected function getColumns()
     {
-        return [
+        return ['id',
             ['data' => 'category_id', 'name' => 'category_id', 'title' => __('CATEGORY ID'), 'visible' => false] ,
 
             ['data' => 'name', 'name' => 'name', 'title' => __('forms.name')],
