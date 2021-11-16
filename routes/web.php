@@ -35,10 +35,7 @@ Route::get('sendcontact', [App\Http\Controllers\ContactController::class, 'sendc
 Route::get('/loginverif', [App\Http\Controllers\HomeController::class, 'loginverif'])->name("loginverif");
 Route::get('/sitemap.xml', [App\Http\Controllers\HomeController::class, 'sitemap']);
 
-/** test url */
 
-Route::get('test', [App\Http\Controllers\registerationsController::class,'test']);
-Route::get('getpay', [App\Http\Controllers\registerationsController::class,'getpay'])->name('getpay');
 
 /** verification */
 
@@ -118,7 +115,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:compa
 });
     Route::post('agreeregistrtion/{id}', [App\Http\Controllers\registerationsController::class, 'agree_registrtion'])->name('agreeregistrtion');
     Route::post('registsess', [App\Http\Controllers\registerationsController::class, 'student_registsess'])->name('registsess');
-
+    Route::get('getstatus/{id}', [App\Http\Controllers\registerationsController::class,'getstatus'])->name('getstatus');
 /*
  * dashboard user  Routes
  * Namespaces indicate folder structure
@@ -126,6 +123,12 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:compa
 //Route::group(['prefix' => 'dashboarduser','middleware' => ['web', 'auth','verified','role:user']], function () {
 Route::group(['prefix' => 'dashboarduser','middleware' => ['web', 'auth','verified']], function () {
 Route::resource('registerationsuser', App\Http\Controllers\registerationsController::class)->except(['create', 'store']);
+/** payment  url */
+
+Route::get('actionpay/{idreg}', [App\Http\Controllers\registerationsController::class,'actionpay'])->name('actionpay');
+Route::get('getpay/{idreg}', [App\Http\Controllers\registerationsController::class,'getpay'])->name('getpay');
+
+
 });
 Route::group(['prefix' => 'dashboarduser','middleware' => ['web', 'auth']], function () {
     Route::get('/', [App\Http\Controllers\BackController::class, 'user'])->name('user');

@@ -124,12 +124,14 @@ class registerationsController extends AppBaseController
 
 
 
-    public function test()
+    public function actionpay($id)
     {
+        $registerations = $this->registerationsRepository->find($id);
+
         $url = "https://eu-test.oppwa.com/v1/checkouts";
         $data = "entityId=8a8294174b7ecb28014b9699220015ca" .
-                    "&amount=92.00" .
-                    "&currency=EUR" .
+                    "&amount=" .$registerations->sessions->fee.
+                    "&currency=USD" .
                     "&paymentType=DB";
 
         $ch = curl_init();
@@ -146,11 +148,12 @@ class registerationsController extends AppBaseController
         }
         curl_close($ch);
         $responseData= json_decode($responseData, true);
-//return $responseData;
-        return view('front.pay')->with('id', $responseData['id']);
+
+//return $id;
+       return view('pay', ['idreg'=>$id , 'id'=>$responseData['id'],'registerations' =>$registerations ]);
     }
 
-    public function getpay()
+    public function getpay($idreg)
     {
 
         $id=  request('id');
@@ -169,7 +172,51 @@ class registerationsController extends AppBaseController
 		return curl_error($ch);
 	}
 	curl_close($ch);
-	return json_decode($responseData, true);
+
+    $responseData = json_decode($responseData, true);
+
+	 if($responseData['id'])
+     {
+        $registerations = $this->registerationsRepository->find($idreg);
+
+        if (empty($registerations) || !($registerations->user_id == auth()->user()->id)) {
+            Flash::error('Registerations not found');
+
+            return redirect(route('registerationsuser.index'));
+        }
+        $registerations->notif=0;
+        $registerations->status = 3;
+        $registerations->id_trans = $responseData['id'];
+        $registerations->save();
+        Flash::success('Payment successful');
+        return view('registerationsuser.show')->with('registerations', $registerations);
+
+     }
+
+    }
+
+    function getstatus($id){
+
+        $registerations = $this->registerationsRepository->find($id);
+
+    $url = "https://test.oppwa.com/v1/query/".$registerations->id_trans;
+	$url .= "?entityId=8a8294174b7ecb28014b9699220015ca";
+
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                   'Authorization:Bearer OGE4Mjk0MTc0YjdlY2IyODAxNGI5Njk5MjIwMDE1Y2N8c3k2S0pzVDg='));
+	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);// this should be set to true in production
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	$responseData = curl_exec($ch);
+	if(curl_errno($ch)) {
+		return curl_error($ch);
+	}
+	curl_close($ch);
+    $responseData = json_decode($responseData, true);
+	return $responseData['result']['code'];
+
     }
 
     /** confirm registration_request  */

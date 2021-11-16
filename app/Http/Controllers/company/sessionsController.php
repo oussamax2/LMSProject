@@ -12,6 +12,7 @@ use App\Http\Controllers\AppBaseController;
 use App\Models\cities;
 use App\Models\countries;
 use App\Models\courses;
+use App\Models\session;
 use App\Models\language;
 use App\Models\states;
 use Response;

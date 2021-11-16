@@ -20,10 +20,7 @@ class sessionsDataTable extends DataTable
         $dataTable = new EloquentDataTable($query);
 
         return $dataTable->addColumn('action', 'sessions.datatables_actions')
-                        ->editColumn('course_id', function ($dataTable) {
-                            return $dataTable->courses['title'];
 
-                        })
                         ->editColumn('country_id', function ($dataTable) {
                             return $dataTable->countries['name'];
 
@@ -66,14 +63,33 @@ class sessionsDataTable extends DataTable
     public function query(sessions $model)
     {
             $user = auth()->user();
+            $start_date = (!empty($_GET["start_date"])) ? ($_GET["start_date"]) : ('');
+            $end_date = (!empty($_GET["end_date"])) ? ($_GET["end_date"]) : ('');
+            if($start_date && $end_date){
+                $start_date = date($start_date);
+                $end_date = date($end_date);
+
             if($user->hasRole('admin'))
-            return $model->newQuery();
+            return $model->newQuery()->whereBetween('end', [$start_date,$end_date]);
          else{
-                 return $model->newQuery()->whereHas('courses', function ($query) {
+                 return $model->newQuery()->with('courses')->whereHas('courses', function ($query) {
                     $user = auth()->user();
-                    $query->where('company_id',$user->companies->id);});
+                    $query->where('company_id',$user->companies->id);})->whereBetween('end', [$start_date,$end_date]);
 
                  }
+                }else{
+
+                    if($user->hasRole('admin'))
+                    return $model->newQuery();
+                 else{
+                         return $model->newQuery()->with('courses')->whereHas('courses', function ($query) {
+                            $user = auth()->user();
+                            $query->where('company_id',$user->companies->id);});
+
+                         }
+
+                }
+
     }
 
     /**
@@ -86,6 +102,16 @@ class sessionsDataTable extends DataTable
         return $this->builder()
             ->columns($this->getColumns())
             ->minifiedAjax()
+            ->ajax(
+                [
+                    'url' => route('sessions.index'),
+                    'type' => 'GET',
+                    'data' => 'function(d) {
+                        d.start_date = $("#start_date").val();
+                        d.end_date = $("#end_date").val();
+                        }',
+                ]
+            )
              ->addAction(['width' => '120px', 'printable' => false,'title' => __('front.Action')])
             ->parameters([
                 'dom'       => 'Bfrtip',
@@ -106,7 +132,7 @@ class sessionsDataTable extends DataTable
         return [
             ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
 
-            ['data' => 'course_id', 'name' => 'course_id', 'title' => __('forms.Course Title')],
+            ['data' => 'courses.title', 'name' => 'courses.title', 'title' => __('forms.Course Title')],
             ['data' => 'count_registrations', 'name' => 'count_registrations', 'title' => 'NBR Regs'],
             ['data' => 'start', 'name' => 'start', 'title' => __('forms.start Date')],
             ['data' => 'end', 'name' => 'end', 'title' => __('forms.end Date')],

@@ -35,7 +35,8 @@ class registerations extends Model
     public $fillable = [
         'session_id',
         'user_id',
-        'status'
+        'status',
+        'id_trans'
     ];
 
     /**

@@ -86,7 +86,8 @@ class companiesDataTable extends DataTable
      */
     protected function getColumns()
     {
-        return [
+        return ['id',
+        ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
             ['data' => 'picture', 'name' => 'picture', 'title' => __('forms.picture')],
             ['data' => 'user.name', 'name' => 'user.name', 'title' => __('forms.name')],
             ['data' => 'user.email', 'name' => 'user.email', 'title' => __('forms.email')],
