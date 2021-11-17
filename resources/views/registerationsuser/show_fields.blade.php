@@ -18,7 +18,7 @@
     {!! Form::label('Company', __('front.Payment details')) !!}<br>
     <p>{{ $registerations->sessions->companies->paymentinfo}}<br>
         @if(auth()->user()->hasRole('user'))
-        <a href="{{ route('actionpay',$registerations->id)}}" ><button type="submit" class="msger-send-btn"> Pay Now</button></a>
+     {{-- <a href="{{ route('actionpay',$registerations->id)}}" ><button type="submit" class="msger-send-btn"> Pay Now</button></a>--}}   
         @endif
     </p>
 
