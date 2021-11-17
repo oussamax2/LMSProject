@@ -245,6 +245,7 @@ return [
     'Confirmed' => 'Confirmed',
     'Create Categories' => 'Create Categories',
     'pending-payment' => 'pending-payment',
+    'Paid' => 'Paid',
     'cancled' => 'Cancled',
     'courses list:' => 'courses list:',
     'There is no subcategory' => 'There is no subcategory',
@@ -316,11 +317,11 @@ return [
     'Cancelled' => 'Cancelled',
     'Cancel Registeration' => 'Cancel Registeration',
     'Approve' => 'Approve',
-
+    'Edit Companies' => 'Edit Companies',
     'Category :' => 'Category :',
     'Sub category:' => 'Sub category:',
     'Country:' => 'Country:',
-    'City:' => 'City:', 
-    'Payment details' => 'Payment details',     
+    'City:' => 'City:',
+    'Payment details' => 'Payment details',
 
 ];

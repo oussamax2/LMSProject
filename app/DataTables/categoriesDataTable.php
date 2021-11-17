@@ -76,7 +76,7 @@ class categoriesDataTable extends DataTable
      */
     protected function getColumns()
     {
-        return [
+        return ['id',
             ['data' => 'picture', 'name' => 'picture', 'title' => __('forms.picture')],
             ['data' => 'name', 'name' => 'name', 'title' => __('forms.name')],
 

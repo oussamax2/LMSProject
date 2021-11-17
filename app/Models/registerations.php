@@ -35,7 +35,8 @@ class registerations extends Model
     public $fillable = [
         'session_id',
         'user_id',
-        'status'
+        'status',
+        'id_trans'
     ];
 
     /**
@@ -61,7 +62,7 @@ class registerations extends Model
 
     public function sessions()
     {
-        return $this->BelongsTo(sessions::class, 'session_id');
+        return $this->BelongsTo(sessions::class, 'session_id')->withTrashed();
     }
 
     public function user()
@@ -72,7 +73,7 @@ class registerations extends Model
 
     public function companies()
     {
-        return companies::find($this->sessions->courses->company_id);
+        return companies::find($this->sessions->courses->company_id)->withTrashed();
 
     }
     public function messaging()

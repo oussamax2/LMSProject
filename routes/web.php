@@ -33,8 +33,9 @@ Route::get('/register_vendor', [App\Http\Controllers\HomeController::class, 'reg
 Route::post('/store_vendor', [App\Http\Controllers\Auth\RegisterController::class, 'registervendor'])->name('registervendor');
 Route::get('sendcontact', [App\Http\Controllers\ContactController::class, 'sendcontact'])->name("sendcontact");
 Route::get('/loginverif', [App\Http\Controllers\HomeController::class, 'loginverif'])->name("loginverif");
-Route::get('test', [App\Http\Controllers\registerationsController::class,'test']);
 Route::get('/sitemap.xml', [App\Http\Controllers\HomeController::class, 'sitemap']);
+
+
 
 /** verification */
 
@@ -104,7 +105,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','verified',
     Route::get('coursesimport', [App\Http\Controllers\company\coursesController::class,'import'])->name('courses.import');
     Route::post('importExcel', [App\Http\Controllers\company\coursesController::class, 'importExcel'])->name('importExcel');
     Route::resource('sessions', App\Http\Controllers\company\sessionsController::class);
-    Route::get('publishsession/{id}', [App\Http\Controllers\company\sessionsController::class,'publish'])->name('sessions.publish');
+    Route::get('publishsession/{id}/{action}', [App\Http\Controllers\company\sessionsController::class,'publish'])->name('sessions.publish');
     Route::get('detailuser/{id}', [App\Http\Controllers\UserController::class,'show'])->name('detailuser');
     Route::get('detailcourses/{id}', [App\Http\Controllers\coursesController::class,'show'])->name('detailcourses');
 });
@@ -114,7 +115,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:compa
 });
     Route::post('agreeregistrtion/{id}', [App\Http\Controllers\registerationsController::class, 'agree_registrtion'])->name('agreeregistrtion');
     Route::post('registsess', [App\Http\Controllers\registerationsController::class, 'student_registsess'])->name('registsess');
-
+    Route::get('getstatus/{id}', [App\Http\Controllers\registerationsController::class,'getstatus'])->name('getstatus');
 /*
  * dashboard user  Routes
  * Namespaces indicate folder structure
@@ -122,6 +123,12 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:compa
 //Route::group(['prefix' => 'dashboarduser','middleware' => ['web', 'auth','verified','role:user']], function () {
 Route::group(['prefix' => 'dashboarduser','middleware' => ['web', 'auth','verified']], function () {
 Route::resource('registerationsuser', App\Http\Controllers\registerationsController::class)->except(['create', 'store']);
+/** payment  url */
+
+Route::get('actionpay/{idreg}', [App\Http\Controllers\registerationsController::class,'actionpay'])->name('actionpay');
+Route::get('getpay/{idreg}', [App\Http\Controllers\registerationsController::class,'getpay'])->name('getpay');
+
+
 });
 Route::group(['prefix' => 'dashboarduser','middleware' => ['web', 'auth']], function () {
     Route::get('/', [App\Http\Controllers\BackController::class, 'user'])->name('user');

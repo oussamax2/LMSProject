@@ -73,9 +73,9 @@
                         <span style="color: red;font-weight: bold;">If you want, you must cancel your register before:</span>
                         {{Carbon\Carbon::parse($registeration->sessions->start->subDays($registeration->sessions->companies->cancelpd))->isoFormat('llll')}}
                         </p>
-                        <p>Cancel Term: {{$registeration->companies()->canceltrm}}</p>
-                        <p>Payement Term: {{$registeration->companies()->paymenttrm}}</p>
-                        <p>General Term: {{$registeration->companies()->generaltrm}}</p>
+                        <p>Cancel Term: {!!$registeration->sessions->companies->canceltrm!!}</p>
+                        <p>Payement Term: {!!$registeration->sessions->companies->paymenttrm!!}</p>
+                        <p>General Term: {!!$registeration->sessions->companies->generaltrm!!}</p>
                         </div>
                     </div>
                 </div>

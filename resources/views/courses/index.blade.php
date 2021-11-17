@@ -17,6 +17,9 @@
                              <a class="pull-right" href="{{ route('courses.import') }}"><span class="icon icon-social-dropbox"></span>@lang('front.Import courses')</a>
                          </div>
                          <div class="card-body">
+
+
+
                              @include('courses.table')
                               <div class="pull-right mr-3">
 

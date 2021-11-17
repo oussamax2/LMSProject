@@ -47,7 +47,7 @@ class subcategorieDataTable extends DataTable
                 'dom'       => 'Bfrtip',
 
                 'order'     => [[0, 'desc']],
-                'buttons'   => [
+                'buttons'   => ['excel', 'csv'
                 ],'language' => ['url' => '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/' . __("forms.lang") . '.json'],
             ]);
     }
@@ -59,7 +59,7 @@ class subcategorieDataTable extends DataTable
      */
     protected function getColumns()
     {
-        return [
+        return ['id',
             ['data' => 'category_id', 'name' => 'category_id', 'title' => __('CATEGORY ID'), 'visible' => false] ,
 
             ['data' => 'name', 'name' => 'name', 'title' => __('forms.name')],

@@ -153,7 +153,7 @@ class sessions extends Model
     }
 
     // this is the recommended way for declaring event handlers
-    public static function boot() {
+   /* public static function boot() {
         parent::boot();
         self::deleting(function($session) { // before delete() method call this
              $session->registerations()->each(function($registerations) {
@@ -161,5 +161,5 @@ class sessions extends Model
              });
 
         });
-    }
+    }*/
 }

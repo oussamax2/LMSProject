@@ -162,7 +162,6 @@ return [
     'Create roles' => 'إنشاء دور',
 
     'Edit Companies' => 'تعديل الشريك',
-    'Edit Companies' => 'تعديل الشريك',
 
     'Create subcategories' => 'إنشاء فئات فرعية',
     'Create Target Audiances' => 'إنشاء فئة مستهدفة',
@@ -239,6 +238,7 @@ return [
     'Confirmed' => 'تم تأكيد',
     'cancled' => 'إلغاء',
     'pending-payment' => 'في انتظار الدفع',
+    'Paid' => 'دفع',
     'Edit Registerations' => 'تعديل التسجيلات',
     'Create Registerations' => 'إنشاء التسجيلات',
     'Registerations' => 'التسجيلات',
@@ -326,5 +326,5 @@ return [
     'Subscribers' => 'المشتركين',
     'Other sessions:' => 'دورات من هذا الدرس',
     'Cancelled' => 'في إنتظار الإلغاء',
-    'Payment details' => 'بيانات الدفع',  
+    'Payment details' => 'بيانات الدفع',
 ];

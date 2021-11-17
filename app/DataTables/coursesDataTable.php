@@ -39,8 +39,23 @@ class coursesDataTable extends DataTable
      */
     public function query(courses $model)
     {
-
+        //$model = courses::onlyTrashed();
          $user = auth()->user();
+         $start_date = (!empty($_GET["start_date"])) ? ($_GET["start_date"]) : ('');
+        $end_date = (!empty($_GET["end_date"])) ? ($_GET["end_date"]) : ('');
+        if($start_date && $end_date){
+
+            $start_date = date($start_date);
+            $end_date = date($end_date);
+
+            if($user->hasRole('admin'))
+            return $model->newQuery()->with('companies')->with('categories')->whereBetween('created_at', [$start_date,$end_date])->select('courses.*') ;
+            else
+            return $model->newQuery()->with('companies')->with('categories')->where('company_id',$user->companies->id);
+        }
+
+
+
     if($user->hasRole('admin'))
         return $model->newQuery()->with('companies')->with('categories')->select('courses.*') ;
         else
@@ -56,7 +71,17 @@ class coursesDataTable extends DataTable
     {
         return $this->builder()
             ->columns($this->getColumns())
-            ->minifiedAjax()
+
+            ->ajax(
+                [
+                    'url' => route('courses.index'),
+                    'type' => 'GET',
+                    'data' => 'function(d) {
+                        d.start_date = $("#start_date").val();
+                        d.end_date = $("#end_date").val();
+                        }',
+                ]
+            )
              ->addAction(['width' => '120px', 'printable' => false,'title' => __('front.Action')])
             ->parameters([
                 'dom'       => 'Bfrtip',
@@ -74,9 +99,12 @@ class coursesDataTable extends DataTable
      */
     protected function getColumns()
     {
+        $visisble = false;
+        if(auth()->user()->hasRole('admin'))
+        $visisble = true;
         return [
             ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
-            ['data' => 'companies.lastname', 'name' => 'companies.lastname', 'title' => __('forms.Company Name')],
+            ['data' => 'companies.lastname', 'name' => 'companies.lastname', 'title' => __('forms.Company Name') ,'visible' => $visisble],
             ['data' => 'title', 'name' => 'title', 'title' => __('forms.title')],
             ['data' => 'categories.name', 'name' => 'categories.name', 'title' => __('forms.Category Name')],
             ['data' => 'published_on', 'name' => 'published_on', 'title' => __('forms.Published On')],

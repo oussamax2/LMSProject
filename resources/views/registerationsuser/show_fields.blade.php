@@ -10,14 +10,21 @@
       <p>{{ $registerations->sessions->courses->title}}</p>
     @endif
 </div>
+
 <!-- Company Field -->
 @if($registerations->status == 2)
 <div class="form-group col-sm-6 col-md-12 col-lg-6" style="border: 2px solid #ff7417;padding-top: 15px;">
 <i class="icon icon-wallet"></i>
     {!! Form::label('Company', __('front.Payment details')) !!}<br>
-    <p>{{ $registerations->companies()->paymentinfo}}
+    <p>{{ $registerations->sessions->companies->paymentinfo}}<br>
+        @if(auth()->user()->hasRole('user'))
+        <a href="{{ route('actionpay',$registerations->id)}}" ><button type="submit" class="msger-send-btn"> Pay Now</button></a>
+        @endif
     </p>
+
 </div>
+
+
 @endif
 <div class="form-group col-sm-6 col-md-12 col-lg-6">
 <i class="icon flaticon-bookmark"></i>

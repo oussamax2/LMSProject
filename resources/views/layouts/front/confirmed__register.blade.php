@@ -96,7 +96,7 @@
                             <h3 class="title__acc">Cancel term</h3>
                         </div>
                         <div class="content">
-                            <p>{{$sessions->companies->canceltrm}}</p>
+                            <p>{!!$sessions->companies->canceltrm!!}</p>
                         </div>
                     </label>
                     <label for="chk-2">
@@ -123,7 +123,7 @@
                         <h3 class="title__acc">General term</h3>
                     </div>
                     <div class="content">
-                        <p>{{$sessions->companies->generaltrm}}</p>
+                        <p>{!!$sessions->companies->generaltrm!!}</p>
                     </div>
                     </label>
                     <label for="course_id">**Check all Condition & Terms</label>

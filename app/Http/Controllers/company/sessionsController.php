@@ -12,6 +12,7 @@ use App\Http\Controllers\AppBaseController;
 use App\Models\cities;
 use App\Models\countries;
 use App\Models\courses;
+use App\Models\session;
 use App\Models\language;
 use App\Models\states;
 use Response;
@@ -142,7 +143,7 @@ class sessionsController extends AppBaseController
 
             return redirect(route('sessions.index'));
         }
-        $regstrionList = $sessions->registerations()->paginate(2);
+        $regstrionList = $sessions->registerations()->paginate(6);
 
 
         $activity = Activity::where('subject_type', $sessions->getMorphClass())->Where('subject_id', $sessions->getKey())->orderBy('id', 'DESC')->get();
@@ -245,7 +246,7 @@ class sessionsController extends AppBaseController
         return redirect(route('sessions.index'));
     }
 
-    public function publish($id)
+    public function publish($id,$action)
     {
         $sessions = $this->sessionsRepository->find($id);
 
@@ -255,7 +256,7 @@ class sessionsController extends AppBaseController
             return redirect(route('sessions.index'));
         }
 
-        $sessions->publish = 1;
+        $sessions->publish = $action;
         $sessions->save();
 
 
