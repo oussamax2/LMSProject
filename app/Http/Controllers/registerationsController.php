@@ -187,6 +187,7 @@ class registerationsController extends AppBaseController
         $registerations->status = 3;
         $registerations->id_trans = $responseData['id'];
         $registerations->save();
+        Mailsender::sendcompanypaid(auth()->user()->id,$registerations->id,$registerations->sessions->companies->user->id);
         Flash::success('Payment successful');
         return view('registerationsuser.show')->with('registerations', $registerations);
 
@@ -278,7 +279,7 @@ class registerationsController extends AppBaseController
             $registerations->save();
             $sessions = sessions::find($registerations->session_id);
             /** mail to company */
-            Mailsender::sendcompany(auth()->user()->id,$registerations->id,$sessions->companies->user->id);
+            Mailsender::sendcompanycancel(auth()->user()->id,$registerations->id,$sessions->companies->user->id);
 
             toastr()->success('Your request send with success !');
             return redirect(url('dashboarduser/registerationsuser',$registerations->id));
