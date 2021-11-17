@@ -127,7 +127,7 @@ class registerationsController extends AppBaseController
     public function actionpay($id)
     {
         $registerations = $this->registerationsRepository->find($id);
-
+        if(!$registerations->id_trans && $registerations->my() ){
         $url = "https://eu-test.oppwa.com/v1/checkouts";
         $data = "entityId=8a8294174b7ecb28014b9699220015ca" .
                     "&amount=" .$registerations->sessions->fee.
@@ -148,9 +148,8 @@ class registerationsController extends AppBaseController
         }
         curl_close($ch);
         $responseData= json_decode($responseData, true);
-
-//return $id;
        return view('pay', ['idreg'=>$id , 'id'=>$responseData['id'],'registerations' =>$registerations ]);
+    }
     }
 
     public function getpay($idreg)
@@ -215,7 +214,7 @@ class registerationsController extends AppBaseController
 	}
 	curl_close($ch);
     $responseData = json_decode($responseData, true);
-	return $responseData['result']['code'];
+	return $responseData;
 
     }
 
