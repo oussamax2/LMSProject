@@ -52,7 +52,13 @@
                     <div class="content-mail-send">
                         <h3>welcome {{$name}}</h3>
                         <div class="linkfordahsboard">
-                            <a href="{{ url('/dashboard/registerations', $registeration->id) }}">Registeration</a>
+                        @if($registeration->status ==4)
+                        <a href="{{ url('/dashboard/registerations', $registeration->id) }}">Registeration Cancelled</a>
+                        @elseif($registeration->status ==3)
+                            <a href="{{ url('/dashboard/registerations', $registeration->id) }}">Registeration Paid</a>
+                        @else
+                        <a href="{{ url('/dashboard/registerations', $registeration->id) }}">Registeration</a>
+                        @endif
                         </div>
                         <div class="details-registrations">
                         <p>Course: {{$registeration->sessions->courses->title}}</p>
