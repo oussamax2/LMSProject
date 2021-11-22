@@ -74,7 +74,7 @@ class coursesController extends AppBaseController
 
     public function importExcel(Request $request)
     {
-        if($request->import_file && auth()->user()->hasRole('company') ){
+        if($request->import_file && auth()->user()->hasRole('admin') ){
         \Excel::import(new coursesImport,$request->import_file);
 
         Flash::success('Your file is imported successfully in database.');

@@ -20,15 +20,18 @@ class coursesImport implements ToModel, WithStartRow
 
 
         $course = new courses();
-
-        return $course->firstOrCreate([
+$target = explode(".",$row[5]);
+        $course = $course->firstOrCreate([
             // 'name_on_card'     => $row[0],
-            'company_id'    => auth()->user()->companies->id,
-            'title'    => $row[0],
-            'body'    => $row[1],
-            'category_id'    => isset(categories::where('name', 'LIKE', "%{$row[2]}%")->first()->id)?categories::where('name', 'LIKE', "%{$row[2]}%")->first()->id:categories::where('name', 'LIKE', "%Others%")->first()->id,
-
+            'company_id'    => $row[0],
+            'title'    => $row[1],
+            'body'    => $row[2],
+            'category_id'    => $row[3],
+            'subcateg_id'    => $row[4]
         ]);
+        $course->target_audiance()->attach($target);
+return $course;
+
     }
 
     public function startRow(): int

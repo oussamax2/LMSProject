@@ -68,22 +68,22 @@ class courses extends Model
 
     public function categories()
     {
-        return $this->belongsTo(categories::class, 'category_id');
+        return $this->belongsTo(categories::class, 'category_id')->withTrashed();
     }
 
     public function subcategorie()
     {
-        return $this->belongsTo(subcategorie::class, 'subcateg_id');
+        return $this->belongsTo(subcategorie::class, 'subcateg_id')->withTrashed();
     }
 
     public function companies()
     {
-        return $this->belongsTo(companies::class, 'company_id');
+        return $this->belongsTo(companies::class, 'company_id')->withTrashed();
     }
 
     public function sessions()
     {
-        return $this->HasMany(sessions::class, 'course_id');
+        return $this->HasMany(sessions::class, 'course_id')->withTrashed();
     }
 
      /**

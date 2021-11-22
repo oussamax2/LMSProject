@@ -38,8 +38,9 @@ class coursesDataTable extends DataTable
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function query(courses $model)
-    {
-        //$model = courses::onlyTrashed();
+    {if($_GET["archive"] ==1)
+        $model = courses::onlyTrashed();
+
          $user = auth()->user();
          $start_date = (!empty($_GET["start_date"])) ? ($_GET["start_date"]) : ('');
         $end_date = (!empty($_GET["end_date"])) ? ($_GET["end_date"]) : ('');
@@ -77,8 +78,8 @@ class coursesDataTable extends DataTable
                     'url' => route('courses.index'),
                     'type' => 'GET',
                     'data' => 'function(d) {
-                        d.start_date = $("#start_date").val();
-                        d.end_date = $("#end_date").val();
+                        d.archive = $("#archive").val();
+                        d.reset = $("#reset").val();
                         }',
                 ]
             )

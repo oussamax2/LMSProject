@@ -31,7 +31,10 @@
                                         <h5> <br><span class="text-danger"></span></h5>
                                     <button type="text" id="btnFiterSubmitSearch" class="btn btn-success">Filtre</button>  <button type="text" id="refresh" class="btn btn-primary"><i class="fa fa-refresh" aria-hidden="true"></i></button>
                                     </div>
+
                                 </div>
+                                <input type="text" id="archive" hidden>
+                                <button type="text" id="archivebtn" class="btn btn-secondary" style=" float: right;"><i class="fa  fa-history" aria-hidden="true"></i> Archive</button>
                              @include('sessions.table')
                               <div class="pull-right mr-3">
 
@@ -45,6 +48,10 @@
 @endsection
 @push('scripts')
 <script>
+    $('#archivebtn').click(function(){
+            $('#archive').val(1);
+    $('#dataTableBuilder').DataTable().draw(true);
+});
 $('#btnFiterSubmitSearch').click(function(){
 
     $('#dataTableBuilder').DataTable().draw(true);
@@ -54,6 +61,7 @@ $('#refresh').on('click', function(){
 
             $('#start_date').val("");
             $('#end_date').val("");
+            $('#archive').val(0);
             $("#dataTableBuilder").DataTable().search("");
             $("#dataTableBuilder").DataTable().ajax.reload();
             $('#dataTableBuilder').DataTable().draw(true);
