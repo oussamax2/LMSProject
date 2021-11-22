@@ -62,6 +62,9 @@ class sessionsDataTable extends DataTable
      */
     public function query(sessions $model)
     {
+        if($_GET["archive"] ==1)
+        $model = sessions::onlyTrashed();
+
             $user = auth()->user();
             $start_date = (!empty($_GET["start_date"])) ? ($_GET["start_date"]) : ('');
             $end_date = (!empty($_GET["end_date"])) ? ($_GET["end_date"]) : ('');
@@ -70,7 +73,7 @@ class sessionsDataTable extends DataTable
                 $end_date = date($end_date);
 
             if($user->hasRole('admin'))
-            return $model->newQuery()->whereBetween('end', [$start_date,$end_date]);
+            return $model->newQuery()->with('courses')->whereBetween('end', [$start_date,$end_date]);
          else{
                  return $model->newQuery()->with('courses')->whereHas('courses', function ($query) {
                     $user = auth()->user();
@@ -80,7 +83,7 @@ class sessionsDataTable extends DataTable
                 }else{
 
                     if($user->hasRole('admin'))
-                    return $model->newQuery();
+                    return $model->newQuery()->with('courses');
                  else{
                          return $model->newQuery()->with('courses')->whereHas('courses', function ($query) {
                             $user = auth()->user();
@@ -109,6 +112,7 @@ class sessionsDataTable extends DataTable
                     'data' => 'function(d) {
                         d.start_date = $("#start_date").val();
                         d.end_date = $("#end_date").val();
+                        d.archive = $("#archive").val();
                         }',
                 ]
             )
