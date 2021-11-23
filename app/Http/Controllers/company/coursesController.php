@@ -16,6 +16,7 @@ use Response;
 use Illuminate\Http\Request;
 use App\Imports\coursesImport;
 use App\Models\sessions;
+use App\Models\courses;
 use Illuminate\Support\Collection;
 
 class coursesController extends AppBaseController
@@ -216,4 +217,24 @@ class coursesController extends AppBaseController
 
         return redirect(route('courses.index'));
     }
+
+    public function reset($id)
+    {
+        $courses = courses::withTrashed()->find($id);
+
+        if (empty($courses) || !$courses->my()) {
+            Flash::error('Sessions not found');
+
+            return redirect(route('sessions.index'));
+        }
+
+        $courses->deleted_at = NULL;
+        $courses->save();
+
+
+        toastr()->success('Courses reset successfully.');
+
+        return redirect(route('courses.show',$courses->id));
+    }
+
 }

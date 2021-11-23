@@ -27,7 +27,13 @@ class coursesDataTable extends DataTable
                          ->editColumn('published_on', function ($dataTable) {
                             return  Carbon::parse($dataTable['published_on'])->isoFormat(' Do MMMM  YYYY ');
 
-                        })->escapeColumns([]);
+                        })
+                        ->setRowAttr([
+                            'style' => function($dataTable){
+                                return $dataTable->deleted_at ? 'background-color: #ffc10721;' : '';
+                            }
+                        ])
+                        ->escapeColumns([]);
 
     }
 

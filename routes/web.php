@@ -102,9 +102,11 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','role:admin
 Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','verified','VerifiedCompany','role:admin|company']], function () {
     Route::resource('registerations', App\Http\Controllers\company\registerationsController::class)->except(['create', 'store']);
     Route::resource('courses', App\Http\Controllers\company\coursesController::class);
+    Route::get('courses.reset/{id}', [App\Http\Controllers\company\coursesController::class,'reset'])->name('courses.reset');
     Route::get('coursesimport', [App\Http\Controllers\company\coursesController::class,'import'])->name('courses.import');
     Route::post('importExcel', [App\Http\Controllers\company\coursesController::class, 'importExcel'])->name('importExcel');
     Route::resource('sessions', App\Http\Controllers\company\sessionsController::class);
+    Route::get('sessions.reset/{id}', [App\Http\Controllers\company\sessionsController::class,'reset'])->name('sessions.reset');
     Route::get('publishsession/{id}/{action}', [App\Http\Controllers\company\sessionsController::class,'publish'])->name('sessions.publish');
     Route::get('detailuser/{id}', [App\Http\Controllers\UserController::class,'show'])->name('detailuser');
     Route::get('detailcourses/{id}', [App\Http\Controllers\coursesController::class,'show'])->name('detailcourses');

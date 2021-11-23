@@ -48,7 +48,12 @@ class sessionsDataTable extends DataTable
                         ->addColumn('count_registrations', function ($dataTable) {
                             return count($dataTable->registerations);
 
-                        })->escapeColumns([]);
+                        })
+                        ->setRowAttr([
+                            'style' => function($dataTable){
+                                return $dataTable->deleted_at ? 'background-color: #ffc10721;' : '';
+                            }
+                        ])->escapeColumns([]);
 
 
 

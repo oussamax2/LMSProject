@@ -64,7 +64,7 @@ class target_audianceDataTable extends DataTable
      */
     protected function getColumns()
     {
-        return [
+        return ['id',
             ['data' => 'name', 'name' => 'name', 'title' => __('forms.name')],
         ];
     }
