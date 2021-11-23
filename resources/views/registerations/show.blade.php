@@ -33,7 +33,7 @@
                                         <div class="step current"> <span>@lang('front.New')</span></div>
                                         <div class="step"> <span>@lang('front.Confirmed')</span> </div>
                                         <div class="step"> <span>@lang('front.Paid')</span> </div>
-                                        <div class="step"> <span>@lang('front.Rejected')</span> </div>
+
                                    @elseif($registerations->status == 1)
                                         <div class="step"> <span>@lang('front.New')</span> </div>
                                         <div class="step"> <span>@lang('front.Confirmed')</span> </div>
@@ -43,17 +43,17 @@
                                         <div class="step"> <span>@lang('front.New')</span> </div>
                                         <div class="step pending"> <span>@lang('front.Confirmed')</span> </div>
                                         <div class="step"> <span>@lang('front.Paid')</span> </div>
-                                        <div class="step"> <span>@lang('front.Rejected')</span> </div>
+
                                    @elseif($registerations->status == 3)
                                         <div class="step"> <span>@lang('front.New')</span> </div>
                                         <div class="step"> <span>@lang('front.Confirmed')</span> </div>
                                         <div class="step confirm"> <span>@lang('front.Paid')</span> </div>
-                                        <div class="step"> <span>@lang('front.Rejected')</span> </div>
+
                                    @elseif($registerations->status == 4)
                                         <div class="step"> <span>@lang('front.New')</span> </div>
                                         <div class="step"> <span>@lang('front.Confirmed')</span> </div>
                                         <div class="step"> <span>@lang('front.Paid')</span> </div>
-                                        <div class="step"> <span>@lang('front.Rejected')</span> </div>
+
                                         <div class="step pending"> <span>@lang('front.Cancelled')</span> </div>
 
                                    @endif

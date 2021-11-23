@@ -18,7 +18,7 @@
                          </div>
                          <div class="card-body">
                             <input type="text" id="reset" hidden><input type="text" id="archive" hidden>
-                            <button type="text" id="refresh" class="btn btn-info" style=" float: right;"><i class="fa fa-refresh" aria-hidden="true"> </i> Reset</button>
+                            <button type="text" id="refresh" class="btn btn-info" style=" float: right;"><i class="fa fa-refresh" aria-hidden="true"> </i> Clear</button>
 
                             <button type="text" id="archivebtn" class="btn btn-secondary" style=" float: right;"><i class="fa  fa-history" aria-hidden="true"></i> Archive</button>
 

@@ -12,7 +12,7 @@ use App\Http\Controllers\AppBaseController;
 use App\Models\cities;
 use App\Models\countries;
 use App\Models\courses;
-use App\Models\session;
+use App\Models\sessions;
 use App\Models\language;
 use App\Models\states;
 use Response;
@@ -88,7 +88,7 @@ class sessionsController extends AppBaseController
         /**get countries List and send them to selection list in blade */
         $listcountries = countries::pluck('name', 'id');
 
-
+        $countries = countries::orderBy('name', 'asc')->get();
         /**get states List and send them to selection list in blade */
         $liststates = states::pluck('name', 'id');
 
@@ -104,7 +104,8 @@ class sessionsController extends AppBaseController
             'listcourses',
             'listcountries',
             'liststates',
-            'listcities'));
+            'listcities',
+            'countries'));
 
     }
 
@@ -244,6 +245,25 @@ class sessionsController extends AppBaseController
         Flash::success('Sessions deleted successfully.');
 
         return redirect(route('sessions.index'));
+    }
+
+    public function reset($id)
+    {
+        $sessions = sessions::withTrashed()->find($id);
+
+        if (empty($sessions) || !$sessions->my()) {
+            Flash::error('Sessions not found');
+
+            return redirect(route('sessions.index'));
+        }
+
+        $sessions->deleted_at = NULL;
+        $sessions->save();
+
+
+        toastr()->success('Sessions reset successfully.');
+
+        return redirect(route('sessions.show',$sessions->id));
     }
 
     public function publish($id,$action)

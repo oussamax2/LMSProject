@@ -15,9 +15,9 @@
 </div>
 {!! Form::close() !!}
 @else
-{!! Form::open(['route' => ['sessions.destroy', $id], 'method' => 'delete']) !!}
+{!! Form::open(['route' => ['sessions.reset', $id], 'method' => 'GET']) !!}
 <div class='btn-group'>
-    {!! Form::button('<i class="fa  fa-history    " aria-hidden="true"></i>', [
+    {!! Form::button('<i class="fa  fa-history" aria-hidden="true"></i> Reset', [
         'type' => 'submit',
         'class' => 'btn btn-ghost-danger',
         'onclick' => "return confirm('Are you sure?')"
