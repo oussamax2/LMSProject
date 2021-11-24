@@ -14,8 +14,10 @@
                              <i class="icon icon-docs"></i>
                              @lang('front.Courses')
                              <a class="pull-right" href="{{ route('courses.create') }}"><span class="icon icon-plus"></span>@lang('front.Create courses')</a>
+                             @if(auth()->user()->hasRole('admin'))
                              <a class="pull-right" href="{{ route('courses.import') }}"><span class="icon icon-social-dropbox"></span>@lang('front.Import courses')</a>
-                         </div>
+                        @endif
+                            </div>
                          <div class="card-body">
                             <input type="text" id="reset" hidden><input type="text" id="archive" hidden>
                             <button type="text" id="refresh" class="btn btn-info" style=" float: right;"><i class="fa fa-refresh" aria-hidden="true"> </i> Clear</button>

@@ -16,7 +16,9 @@ use App\Models\sessions;
 use App\Models\language;
 use App\Models\states;
 use Response;
+use Illuminate\Http\Request;
 use Spatie\Activitylog\Models\Activity;
+use App\Imports\sessionsImport;
 
 class sessionsController extends AppBaseController
 {
@@ -283,5 +285,30 @@ class sessionsController extends AppBaseController
         toastr()->success('Sessions publish successfully.');
 
         return redirect(route('sessions.show',$sessions->id));
+    }
+
+    public function import()
+    {
+        return view('sessions.import');
+    }
+
+    public function importExcel(Request $request)
+    {
+        if($request->import_file && auth()->user()->hasRole('admin') ){
+
+            try {
+                \Excel::import(new sessionsImport,$request->import_file);
+                Flash::success('Your file is imported successfully in database.');
+            } catch (\Illuminate\Database\QueryException $e) {
+                report($e);
+                Flash::error('error exel importation ');
+            }
+        }else{
+            Flash::error('error');
+        }
+
+
+        return back();
+
     }
 }

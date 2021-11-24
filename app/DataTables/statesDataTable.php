@@ -61,7 +61,7 @@ class statesDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
+            ['data' => 'id', 'name' => 'id', 'title' =>'id'],
             ['data' => 'name', 'name' => 'name', 'title' => __('forms.name')],
             ['data' => 'status', 'name' => 'status', 'title' => __('forms.status')],
             ['data' => 'countries.name', 'name' => 'countries.name', 'title' => __('forms.country Name')],

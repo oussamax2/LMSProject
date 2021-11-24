@@ -59,7 +59,7 @@ class countriesDataTable extends DataTable
      */
     protected function getColumns()
     {
-        return [
+        return ['id',
             ['data' => 'name', 'name' => 'name', 'title' => __('forms.name')],
 
             ['data' => 'continent', 'name' => 'continent', 'title' => __('forms.Continent Name')],

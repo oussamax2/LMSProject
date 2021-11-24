@@ -74,7 +74,7 @@ class citiesDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
+            ['data' => 'id', 'name' => 'id', 'title' =>'id'],
             ['data' => 'picture', 'name' => 'picture', 'title' => __('forms.picture')],
             ['data' => 'name', 'name' => 'name', 'title' => __('forms.name')],
             ['data' => 'state_id', 'name' => 'state_id', 'title' => __('forms.State Name')],
