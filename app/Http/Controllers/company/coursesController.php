@@ -68,8 +68,6 @@ class coursesController extends AppBaseController
      */
     public function import()
     {
-
-
         return view('courses.import');
     }
 

@@ -14,7 +14,10 @@
                              <i class="icon icon-briefcase"></i>
                              @lang('front.Sessions')
                              <a class="pull-right" href="{{ route('sessions.create') }}"><span class="icon icon-plus"></span> @lang('front.Create session')</a>
-                         </div>
+                             @if(auth()->user()->hasRole('admin'))
+                             <a class="pull-right" href="{{ route('sessions.import') }}"><span class="icon icon-social-dropbox"></span>Import sessions</a>
+                        @endif
+                            </div>
                          <div class="card-body">
                             <div class="row">
                                 <div class="form-group col-md-4">
@@ -34,6 +37,7 @@
 
                                 </div>
                                 <input type="text" id="archive" hidden>
+                                <button type="text" id="clearbtn" class="btn btn-info" style=" float: right;"><i class="fa fa-refresh" aria-hidden="true"> </i> Clear</button>
                                 <button type="text" id="archivebtn" class="btn btn-secondary" style=" float: right;"><i class="fa  fa-history" aria-hidden="true"></i> Archive</button>
                              @include('sessions.table')
                               <div class="pull-right mr-3">
@@ -50,6 +54,10 @@
 <script>
     $('#archivebtn').click(function(){
             $('#archive').val(1);
+    $('#dataTableBuilder').DataTable().draw(true);
+});
+$('#clearbtn').click(function(){
+            $('#archive').val(0);
     $('#dataTableBuilder').DataTable().draw(true);
 });
 $('#btnFiterSubmitSearch').click(function(){

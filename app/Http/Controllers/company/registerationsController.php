@@ -140,7 +140,7 @@ class registerationsController extends AppBaseController
     {
         $registerations = $this->registerationsRepository->find($id);
 
-        if (empty($registerations)   || $registerations->user_id != auth()->user()->id) {
+        if (empty($registerations)   || !$registerations->my()) {
             Flash::error('Registerations not found');
 
             return redirect(route('registerations.index'));

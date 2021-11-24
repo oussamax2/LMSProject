@@ -105,6 +105,10 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web', 'auth','verified',
     Route::get('courses.reset/{id}', [App\Http\Controllers\company\coursesController::class,'reset'])->name('courses.reset');
     Route::get('coursesimport', [App\Http\Controllers\company\coursesController::class,'import'])->name('courses.import');
     Route::post('importExcel', [App\Http\Controllers\company\coursesController::class, 'importExcel'])->name('importExcel');
+
+    Route::get('sessionsimport', [App\Http\Controllers\company\sessionsController::class,'import'])->name('sessions.import');
+    Route::post('importsessionsExcel', [App\Http\Controllers\company\sessionsController::class, 'importExcel'])->name('importsessionsExcel');
+
     Route::resource('sessions', App\Http\Controllers\company\sessionsController::class);
     Route::get('sessions.reset/{id}', [App\Http\Controllers\company\sessionsController::class,'reset'])->name('sessions.reset');
     Route::get('publishsession/{id}/{action}', [App\Http\Controllers\company\sessionsController::class,'publish'])->name('sessions.publish');
