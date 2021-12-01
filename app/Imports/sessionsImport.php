@@ -19,13 +19,14 @@ class sessionsImport implements ToModel, WithStartRow
 
 
         $sessions = new sessions();
+        //dd($this->transformDate($row[3]));
 $target = explode(".",$row[5]);
         $sessions = $sessions->firstOrCreate([
 
             'course_id'    => $row[0],
             'fee'    => $row[1],
-            'start'    => date('Y-m-d H:i:s',strtotime($row[2])),
-            'end'    => date('Y-m-d H:i:s',strtotime($row[3])),
+            'start'    => $this->transformDate($row[2]),
+            'end'    => $this->transformDate($row[3]),
             'language'    => $row[4],
             'country_id'    => $row[5],
             'state'    => $row[6],
@@ -39,6 +40,15 @@ $target = explode(".",$row[5]);
 return $sessions;
 
     }
+
+    public function transformDate($value, $format = 'Y-m-d')
+{
+    try {
+        return \Carbon\Carbon::instance(\PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($value));
+    } catch (\ErrorException $e) {
+        return \Carbon\Carbon::createFromFormat($format, $value);
+    }
+}
 
     public function startRow(): int
     {
