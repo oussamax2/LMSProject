@@ -110,7 +110,7 @@ class coursesDataTable extends DataTable
         if(auth()->user()->hasRole('admin'))
         $visisble = true;
         return [
-            ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => false],
+            ['data' => 'id', 'name' => 'id', 'title' =>'id', 'visible' => $visisble],
             ['data' => 'companies.lastname', 'name' => 'companies.lastname', 'title' => __('forms.Company Name') ,'visible' => $visisble],
             ['data' => 'title', 'name' => 'title', 'title' => __('forms.title')],
             ['data' => 'categories.name', 'name' => 'categories.name', 'title' => __('forms.Category Name')],
