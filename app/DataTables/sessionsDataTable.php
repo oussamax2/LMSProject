@@ -25,18 +25,11 @@ class sessionsDataTable extends DataTable
                             return $dataTable->countries['name'];
 
                         })
-                        ->editColumn('state', function ($dataTable) {
-                            return $dataTable->states['name'];
-
-                        })
                         ->editColumn('fee', function ($dataTable) {
                             return $dataTable->fee.' <strong>USD</strong>';
 
                         })
-                        ->editColumn('city', function ($dataTable) {
-                            return $dataTable->cities['name'];
 
-                        })
                         ->editColumn('start', function ($dataTable) {
                             return  Carbon::parse($dataTable['start'])->isoFormat('lll');
 
@@ -54,9 +47,6 @@ class sessionsDataTable extends DataTable
                                 return $dataTable->deleted_at ? 'background-color: #ffc10721;' : '';
                             }
                         ])->escapeColumns([]);
-
-
-
     }
 
     /**
@@ -145,8 +135,9 @@ class sessionsDataTable extends DataTable
             ['data' => 'count_registrations', 'name' => 'count_registrations', 'title' => 'NBR Regs'],
             ['data' => 'start', 'name' => 'start', 'title' => __('forms.start Date')],
             ['data' => 'end', 'name' => 'end', 'title' => __('forms.end Date')],
+            ['data' => 'country_id', 'name' => 'country_id', 'title' => __('front.Country')],
             ['data' => 'sess_type', 'name' => 'sess_type', 'title' => __('forms.Session Type')],
-            ['data' => 'fee', 'name' => 'fee', 'title' => __('forms.fee')],
+            ['data' => 'fee', 'name' => 'fee', 'title' => __('forms.Price')."  "],
 
 
         ];

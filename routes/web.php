@@ -35,6 +35,8 @@ Route::get('sendcontact', [App\Http\Controllers\ContactController::class, 'sendc
 Route::get('/loginverif', [App\Http\Controllers\HomeController::class, 'loginverif'])->name("loginverif");
 Route::get('/sitemap.xml', [App\Http\Controllers\HomeController::class, 'sitemap']);
 
+Route::get('/test', [App\Http\Controllers\HomeController::class, 'test']);
+
 
 
 /** verification */

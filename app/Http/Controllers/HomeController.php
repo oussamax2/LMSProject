@@ -11,6 +11,7 @@ use App\Models\cities;
 use App\Models\countries;
 use App\Models\target_audiance;
 use App\Models\User;
+use Illuminate\Support\Str;
 
 
 class HomeController extends Controller
@@ -152,6 +153,12 @@ class HomeController extends Controller
     public function contact()
     {
         return view('front.contactp');
+    }
+
+
+    public function test()
+    {
+        return Str::slug("java h".date_format(now(),"Y-m-d H:i:s"),"_");
     }
 
 

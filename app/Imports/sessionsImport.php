@@ -6,6 +6,8 @@ use App\Models\sessions;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithStartRow;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
+use App\Models\courses;
 
 class sessionsImport implements ToModel, WithStartRow
 {
@@ -20,7 +22,9 @@ class sessionsImport implements ToModel, WithStartRow
 
         $sessions = new sessions();
         //dd($this->transformDate($row[3]));
+        $title = courses::find($row[0])->title;
 $target = explode(".",$row[5]);
+
         $sessions = $sessions->firstOrCreate([
 
             'course_id'    => $row[0],
@@ -34,6 +38,7 @@ $target = explode(".",$row[5]);
             'note'    => $row[8],
             'status'    => 1,
             'publish'    => 0,
+            'slug' => Str::slug($title."_".date_format($this->transformDate($row[2]),"Y-m-d")."0_2_".$row[0],"_"),
             'sess_type'    => $row[9],
         ]);
 
