@@ -26,7 +26,7 @@
         </url>
     @foreach ($maps as $map)
         <url>
-            <loc>{{ url('/') }}/single_session/{{ $map->id }}</loc>
+            <loc>{{ url('/') }}/{{ $map->slug }}</loc>
             <lastmod>{{ $map->created_at->tz('UTC')->toAtomString() }}</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>

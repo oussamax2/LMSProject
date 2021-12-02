@@ -44,7 +44,8 @@ class sessions extends Model
         'city',
         'note',
         'status',
-        'publish'
+        'publish',
+        'slug'
     ];
     protected static $logOnlyDirty = true;
 
@@ -60,7 +61,8 @@ class sessions extends Model
         'city',
         'note',
         'status',
-        'publish'
+        'publish',
+        'slug'
     ];
 
     /**
@@ -80,6 +82,7 @@ class sessions extends Model
         'state' => 'integer',
         'city' => 'integer',
         'note' => 'string',
+        'slug' => 'string',
         'status' => 'integer',
         'publish' => 'integer'
     ];

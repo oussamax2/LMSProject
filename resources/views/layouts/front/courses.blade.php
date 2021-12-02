@@ -31,7 +31,7 @@
 										   <strong class="s-color float-right">{{$sessList->fee}} USD</strong>
 										@endif
 										</div>
-										<h5><a href="{{ url('/single_session',$sessList->id) }}" class="tran3s">{{ $sessList->courses->title }}</a></h5>
+										<h5><a href="{{ url('/',$sessList->slug) }}" class="tran3s">{{ $sessList->courses->title }}</a></h5>
 										<ul class="clearfix">
 											<li class="float-left">
 												<i class="flaticon-people"></i>

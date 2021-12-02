@@ -57,7 +57,7 @@
                  @endif
 
                 </div>
-                <h5><a href="{{ url('single_session') }}/{{$session->id}}" class="tran3s">{{$session->courses->title}}</a></h5>
+                <h5><a href="{{ url('/') }}/{{$session->slug}}" class="tran3s">{{$session->courses->title}}</a></h5>
 
                 <ul class="clearfix">
                     <li class="float-left">

@@ -23,7 +23,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name(
 Route::get('/partners', [App\Http\Controllers\HomeController::class, 'partners'])->name('partners');
 Route::get('/profilecompany/{id}', [App\Http\Controllers\HomeController::class, 'pro_training'])->name('profilecompany');
 Route::get('/list_sessions', [App\Http\Controllers\HomeController::class, 'catg_courses'])->name('course');
-Route::get('/single_session/{id}', [App\Http\Controllers\HomeController::class, 'singlcourse'])->name('detailcourse');
 Route::get('/registeruser', [App\Http\Controllers\HomeController::class, 'registeruser'])->name('registeruser');
 Route::post('/register_user', [App\Http\Controllers\Auth\RegisterController::class, 'registeruser'])->name('register_user');
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
@@ -34,6 +33,8 @@ Route::post('/store_vendor', [App\Http\Controllers\Auth\RegisterController::clas
 Route::get('sendcontact', [App\Http\Controllers\ContactController::class, 'sendcontact'])->name("sendcontact");
 Route::get('/loginverif', [App\Http\Controllers\HomeController::class, 'loginverif'])->name("loginverif");
 Route::get('/sitemap.xml', [App\Http\Controllers\HomeController::class, 'sitemap']);
+
+Route::get('/test', [App\Http\Controllers\HomeController::class, 'test']);
 
 
 
@@ -183,3 +184,6 @@ Route::post('subscribersstore', [App\Http\Controllers\subscriberFrontController:
 Route::get('cancelregistrtion/{id}', [App\Http\Controllers\registerationsController::class, 'cancelregistrtion'])->name("cancelregistrtion");
 
 Route::post('clearnotif', [App\Http\Controllers\registerationsController::class, 'clearnotif'])->name('clearnotif');
+
+/** url session */
+Route::get('/{session}', [App\Http\Controllers\HomeController::class, 'singlcourse'])->name('detailcourse');

@@ -11,6 +11,7 @@ use App\Models\cities;
 use App\Models\countries;
 use App\Models\target_audiance;
 use App\Models\User;
+use Illuminate\Support\Str;
 
 
 class HomeController extends Controller
@@ -111,10 +112,11 @@ class HomeController extends Controller
             'citiesList'=>$citiesList
             ]);;
     }
-    public function singlcourse($id)
+    public function singlcourse($session)
     {
 
-        $sessions = sessions::find($id);
+        $sessions = sessions::where('slug',$session)->first();
+        //dd($sessions);
         if(auth()->user())
         {
 
@@ -152,6 +154,12 @@ class HomeController extends Controller
     public function contact()
     {
         return view('front.contactp');
+    }
+
+
+    public function test()
+    {
+        return Str::slug("java h".date_format(now(),"Y-m-d H:i:s"),"_");
     }
 
 
