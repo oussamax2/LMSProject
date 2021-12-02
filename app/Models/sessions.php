@@ -45,7 +45,6 @@ class sessions extends Model
         'note',
         'status',
         'publish',
-        'slug'
     ];
     protected static $logOnlyDirty = true;
 

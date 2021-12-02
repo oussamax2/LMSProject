@@ -124,9 +124,10 @@ class sessionsController extends AppBaseController
         $input = $request->all();
 
         $sessions = $this->sessionsRepository->create($input);
-
-        $sessions->slug = Str::slug($sessions->courses->title."_".date_format($sessions->start,"Y-m-d")."_".$sessions->id,"_");
-        $sessions->save();
+         activity()->withoutLogs(function () use ($sessions){
+            $sessions->slug = Str::slug($sessions->courses->title."_".date_format($sessions->start,"Y-m-d")."_".$sessions->id,"_");
+            $sessions->save();
+          });
         toastr()->success('Sessions saved successfully.');
 
         return redirect(route('sessions.show',$sessions->id));
