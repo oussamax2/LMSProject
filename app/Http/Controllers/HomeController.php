@@ -112,10 +112,11 @@ class HomeController extends Controller
             'citiesList'=>$citiesList
             ]);;
     }
-    public function singlcourse($id)
+    public function singlcourse($session)
     {
 
-        $sessions = sessions::find($id);
+        $sessions = sessions::where('slug',$session)->first();
+        //dd($sessions);
         if(auth()->user())
         {
 
