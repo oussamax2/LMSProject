@@ -304,7 +304,7 @@ class registerationsController extends AppBaseController
 
             registerations::with(['sessions', 'sessions.courses'])->whereHas('sessions.courses', function ($query) use ($user){
                     $query->where('company_id',$user->companies->id);
-                    })->where('notifcompany',1)->update(['notifcompany' => 0],['timestamps' => false]);
+                    })->where('notifcompany',1)->update(['notifcompany' => 0,'updated_at' => registerations::raw('updated_at')]);
 
                 // var_dump($notifcompanyy);
 
@@ -312,7 +312,7 @@ class registerationsController extends AppBaseController
 
 
         }elseif($user->hasRole('user')){
-            registerations::where('user_id', '=', $user->id)->where('notif',1)->update(['notif' => 0],['timestamps' => false]);
+            registerations::where('user_id', '=', $user->id)->where('notif',1)->update(['notif' => 0,'updated_at' => registerations::raw('updated_at')]);
         }
         return redirect()->back();
     }
