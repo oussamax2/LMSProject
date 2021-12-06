@@ -4,7 +4,7 @@ List session -  Corseat.com
 @endsection
 @section('og')
 
-    <meta name="title" content="session_List - {{config('app.name')}}">
+    <meta name="title" content="session_List - Corseat.com">
     <meta name="description" content="session_List">
     <meta name="medium" content="mult">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">

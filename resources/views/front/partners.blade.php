@@ -5,7 +5,7 @@ Partner list -  Corseat.com
 @section('og')
 
 
-    <meta name="title" content="Partners-List - {{config('app.name')}}">
+    <meta name="title" content="Partners-List - Corseat.com">
     <meta name="description" content="Partners-List">
     <meta name="medium" content="mult">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">

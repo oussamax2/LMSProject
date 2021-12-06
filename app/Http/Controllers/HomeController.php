@@ -26,7 +26,7 @@ class HomeController extends Controller
         /**get latest categories */
         $categList = categories::inRandomOrder()->orderBy('id', 'desc')->take(6)->get();
         // $citiesList = cities::inRandomOrder()->orderBy('id', 'desc')->take(8)->get();
-        $companies = companies::inRandomOrder()->orderBy('id', 'desc')->take(12)->get();
+        $companies = companies::where('status',2)->inRandomOrder()->orderBy('id', 'desc')->take(12)->get();
 
 
 

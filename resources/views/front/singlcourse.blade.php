@@ -3,7 +3,7 @@
 {{ $sessions->courses->title }} -  Corseat.com
 @endsection
 @section('og')
-    <meta name="title" content="{{ $sessions->courses->title }} - {{config('app.name')}}">
+    <meta name="title" content="{{ $sessions->courses->title }} - Corseat.com">
     <meta name="description" content="{!! \Illuminate\Support\Str::limit(strip_tags($sessions->courses->body), 160, $end='...') !!}">
     <meta name="medium" content="mult">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -24,7 +24,50 @@
     <meta name="twitter:description" content="{!! \Illuminate\Support\Str::limit(strip_tags($sessions->courses->body), 160, $end='...') !!}">
     <meta name="twitter:image" content="{{ asset("storage/".$sessions->companies->picture) }}">
     <meta name="twitter:site" content="website">
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Event",
+          "name": "{{ $sessions->courses->title }}",
+          "startDate": "{{Carbon\Carbon::parse($sessions->start )->format('Y-m-d\TH:i:s')}}",
+          "endDate": "{{Carbon\Carbon::parse($sessions->end )->format('Y-m-d\TH:i:s')}}",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": {
+            "@type": "Place",
+            "name": "{{ isset($sessions->states->name) ? $sessions->states->name:'' }},{{ $sessions->countries->name }}",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "{{ isset($sessions->cities->name) ? $sessions->cities->name:'' }}",
+              "addressRegion": "{{ isset($sessions->states->name) ? $sessions->states->name:'' }}",
+              "addressCountry": "{{ $sessions->countries->name }}"
+            }
+          },
+          "image": [
+            "{{ asset("storage/".$sessions->companies->picture) }}",
+            "{{ asset("storage/".$sessions->companies->picture) }}"
 
+           ],
+          "description": "{!! \Illuminate\Support\Str::limit(strip_tags($sessions->courses->body), 160, $end='...') !!}",
+          "offers": {
+            "@type": "Offer",
+            "url": "{{ request()->url() }}",
+            "price": "{{ $sessions->fee }}",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2024-05-21T12:00"
+          },
+          "performer": {
+            "@type": "PerformingGroup",
+            "name": "Kira and Morrison"
+          },
+          "organizer": {
+            "@type": "Organization",
+            "name": "{{$sessions->companies->user->name}}",
+            "url": "https://corseat.com/"
+          }
+        }
+        </script>
 @endsection
 
 @section('content')
