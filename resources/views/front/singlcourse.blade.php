@@ -55,11 +55,11 @@
             "price": "{{ $sessions->fee }}",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
-            "validFrom": "2024-05-21T12:00"
+            "validFrom": "{{Carbon\Carbon::parse($sessions->start )->format('Y-m-d\TH:i:s')}}"
           },
           "performer": {
             "@type": "PerformingGroup",
-            "name": "Kira and Morrison"
+            "name": "{{$sessions->companies->user->name}}"
           },
           "organizer": {
             "@type": "Organization",

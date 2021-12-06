@@ -45,7 +45,7 @@
 							<li><h3><span class="counter p-color">{{$footer['sessions']}}</span> @lang('front.Sessions')</h3></li>
 							<li><h3><span class="counter p-color">{{$footer['companies']}}</span> @lang('front.Company')</h3></li>
 						</ul>
-						<p class="float-left">&copy; 2021 @lang('front.All rights reserved')</p>
+						<p class="float-left">&copy; {{date("Y")}} @lang('front.All rights reserved')</p>
 					</div>
 				</div>
 			</footer>

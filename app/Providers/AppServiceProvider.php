@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $data['companies'] =companies::count();
+        $data['companies'] =companies::where('status',2)->count();
         $data['courses'] = courses::count();
         $data['sessions'] = sessions::count();
 
