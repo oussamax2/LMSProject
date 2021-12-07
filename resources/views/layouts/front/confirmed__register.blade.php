@@ -68,7 +68,7 @@
                 <div class="form-group col-md-12 col-sm-6 col-lg-6">
                     <i class="icon icon-organization"></i>
                     <label for="course_id">Company</label>
-                    <p>{{$sessions->companies->lastname}}</p>
+                    <p>{{$sessions->companies->user->name}}</p>
                 </div>
                 <div class="form-group col-md-12 col-sm-6 col-lg-6">
                     <i class="icon icon-organization"></i>

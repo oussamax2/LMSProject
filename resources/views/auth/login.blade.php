@@ -4,8 +4,8 @@ Login -  Corseat.com
 @endsection
 @section('og')
     <meta property="og:type" content="home"/>
-    <meta property="og:title" content="{{ config('app.name') }}"/>
-    <meta property="og:description" content="{{ config('app.name') }}"/>
+    <meta property="og:title" content="Login -  Corseat.com"/>
+    <meta property="og:description" content="Corseat - Looking for a course NEVER BEEN EASY AS IT IS TODAY"/>
 @endsection
 
 @section('content')

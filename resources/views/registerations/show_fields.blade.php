@@ -54,9 +54,9 @@
     <div
      class="msg-img"
      @if($messaging->user->hasAnyRole('company'))
-     style="background-image: url(://image.flaticon.com/icons/svg/327/327779.svg)"
+     style="background-image: url({{ asset('images/logo/video-tutorials.png')}})"
      @else
-     style="background-image: url(https://image.flaticon.com/icons/svg/327/327779.svg)"
+     style="background-image: url({{ asset('images/logo/programmer.png')}})"
      @endif
     ></div>
 

@@ -30,7 +30,7 @@
 <i class="icon flaticon-bookmark"></i>
 
     {!! Form::label('Company', __('front.Company')) !!}
-    <p>{{ $registerations->sessions->companies->lastname}}</p>
+    <p>{{ $registerations->sessions->companies->user->name}}</p>
 
 </div>
 
@@ -155,7 +155,7 @@
      @if($messaging->user->hasAnyRole('company'))
      style="background-image: url({{ asset("storage/".$messaging->user->companies['picture']) }}"
      @else
-     style="background-image: url(https://image.flaticon.com/icons/svg/327/327779.svg)"
+     style="background-image: url({{ asset('images/logo/programmer.png')}})"
      @endif
     ></div>
 

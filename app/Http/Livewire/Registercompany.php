@@ -115,7 +115,7 @@ class Registercompany extends Component
         }
         if(\Auth::attempt(array('email' => $this->email, 'password' => $pass))){
             session()->flash('message', "You are Login successful.");
-            redirect('/dashboarduser');
+            redirect('/dashboard');
     }
        $this->resetInputFields();
 
