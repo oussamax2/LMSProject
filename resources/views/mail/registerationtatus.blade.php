@@ -76,7 +76,7 @@
                         <p>Session End: {{Carbon\Carbon::parse($registeration->sessions->end)->isoFormat('llll')}}</p>
                         <p>Category: {{$registeration->sessions->courses->categories->name}}</p>
                         <p>Sub-Category: {{isset($registeration->sessions->courses->subcategorie['name']) ?$registeration->sessions->courses->subcategorie['name']: null}}</p>
-                        <p>Company: {{$registeration->sessions->companies->lastname}}</p>
+                        <p>Company: {{$registeration->sessions->companies->user->name}}</p>
                         @foreach($registeration->sessions->courses->target_audiance as $trgetaudce)
                         <p>Target Audience: {{$trgetaudce->name}}</p>
                         @endforeach
