@@ -13,7 +13,7 @@ Contact -  Corseat.com
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Contact-Courseat - {{config('app.name')}}">
+    <meta property="og:title" content="Contact - {{config('app.name')}}">
     <meta property="og:url" content="{{ request()->url() }}"/>
     <meta property="og:description" content="Contact-Courseat">
     <meta property="og:image" content="{{ asset('images/logo/logo3.png')}}">
@@ -21,7 +21,7 @@ Contact -  Corseat.com
     <meta property="og:site_name" content="{{config('app.name')}}">
     <meta property="og:locale" content='{{app()->getLocale()}}'>
     <meta name="twitter:domain" content="{{request()->getHost()}}">
-    <meta name="twitter:title" content="Contact-Courseat - {{config('app.name')}}">
+    <meta name="twitter:title" content="Contact - {{config('app.name')}}">
     <meta name="twitter:url" content="{{ request()->url() }}">
     <meta name="twitter:description" content="Contact-Courseat">
     <meta name="twitter:image" content="{{ asset('images/logo/logo3.png')}}">
