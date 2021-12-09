@@ -4175,3 +4175,6 @@ input[type="text"]:focus{
             li.float-left.date {
                 margin: 0 0 0 0 !important;
             }
+            .details-wrapper {
+                margin-bottom: 25px;
+            }

@@ -34,7 +34,7 @@
 										<li><a href="{{ $companies->dribbleurl }}" class="tran3s"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
 									@endif
 								</ul>
-								<p>{{ $companies->shortDescription }}</p> <br>
+								<p>{{ $companies->description }}</p> <br>
 								<ul class="instructor-achivement clearfix">
 									<li>@lang('front.Total Courses')<h3>{{ count($companies->courses) }}</h3></li>
 									<li>@lang('front.Total Session')<h3>{{$countsessions}}</h3></li>
