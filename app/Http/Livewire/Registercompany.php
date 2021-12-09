@@ -102,7 +102,6 @@ class Registercompany extends Component
                 'user_id' => $user->id,
                 'website' => $this->website,
                 'telephone' => $this->telephone,
-                'picture' => "",
                 'shortDescription'	 => $this->shortDescription,
                 'description' => $this->description,
                 'fcburl' => $this->fcburl,

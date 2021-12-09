@@ -19,7 +19,7 @@
 										@endif
 									</div>
 									<h6><a href="{{ url('/profilecompany',$compList->id) }}" class="tran3s">{{ $compList->user->name }}</a></h6>
-									<p>{{substr_replace($compList->shortDescription, " ...", 30)}}</p>
+									<p>{{$compList->shortDescription?substr_replace($compList->shortDescription, " ...", 30):""}}</p>
 								</div>
 							</div>
 							@endforeach
