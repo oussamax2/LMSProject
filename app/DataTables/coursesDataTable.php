@@ -24,8 +24,8 @@ class coursesDataTable extends DataTable
                              return count($dataTable->sessions);
 
                          })
-                         ->editColumn('published_on', function ($dataTable) {
-                            return  Carbon::parse($dataTable['published_on'])->isoFormat(' Do MMMM  YYYY ');
+                         ->editColumn('created_at', function ($dataTable) {
+                            return  Carbon::parse($dataTable['created_at'])->isoFormat(' Do MMMM  YYYY ');
 
                         })
                         ->setRowAttr([
@@ -114,7 +114,7 @@ class coursesDataTable extends DataTable
             ['data' => 'companies.lastname', 'name' => 'companies.lastname', 'title' => __('forms.Company Name') ,'visible' => $visisble],
             ['data' => 'title', 'name' => 'title', 'title' => __('forms.title')],
             ['data' => 'categories.name', 'name' => 'categories.name', 'title' => __('forms.Category Name')],
-            ['data' => 'published_on', 'name' => 'published_on', 'title' => __('forms.Published On')],
+            ['data' => 'created_at', 'name' => 'created_at', 'title' => __('forms.Published On')],
             ['data' => 'count_session', 'name' => 'count_session', 'title' => __('forms.Session Number')],
         ];
     }

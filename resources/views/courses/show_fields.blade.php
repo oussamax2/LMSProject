@@ -33,7 +33,10 @@
 <div class="form-group">
     <i class="icon icon-clock"></i>
         {!! Form::label('published_on', __('forms.Changed On')) !!}
-        <p>{{Carbon\Carbon::parse($courses->update_at)->isoFormat(' Do MMMM  YYYY ')}}</p>
+        @isset($courses->updated_at)
+        <p>{{Carbon\Carbon::parse($courses->updated_at)->isoFormat(' Do MMMM  YYYY ')}}</p>
+        @endisset
+
     </div>
 
 <!-- Category Id Field -->
@@ -71,12 +74,12 @@
                 <th scope="col">@lang('front.Country name')</th>
                 <th scope="col"></th>
                 </tr>
-                
+
             </thead {{$i = ($sessList->currentPage()-1) * $sessList->perPage()}}>
-           
+
             @foreach ($sessList as $listsess)
                 <tbody>
-                    <tr>
+                               <tr>
                         <th scope="row">{{++$i}}</th>
                         <td>{{Carbon\Carbon::parse($listsess['start'])->isoFormat('dddd, MMMM Do YYYY, h:mm')}}</td>
                         <td>{{Carbon\Carbon::parse($listsess['end'])->isoFormat('dddd, MMMM Do YYYY, h:mm')}}</td>

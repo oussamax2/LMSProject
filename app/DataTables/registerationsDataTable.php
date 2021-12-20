@@ -124,8 +124,8 @@ class registerationsDataTable extends DataTable
         if($user->hasRole('user'))
         $visible =false;
         return [
-            'id'=> ['visible' => false, 'printable' => false, 'exportable' => true,'sortable'=> false], 
-            ['data' => 'user.name', 'name' => 'user.name', 'title' => __('forms.User Name') ,'sortable'=> false,'visible' => $visible],  
+            'id'=> ['visible' => false, 'printable' => false, 'exportable' => true,'sortable'=> false],
+            ['data' => 'user.name', 'name' => 'user.name', 'title' => __('forms.User Name') ,'sortable'=> false,'visible' => $visible],
             ['data' => 'sessions.courses.title', 'name' => 'sessions.courses.title', 'title' => __('forms.Course Title')],
             ['data' => 'sessions.start', 'name' => 'sessions.start', 'title' => __('forms.Session startDate')],
             ['data' => 'status', 'name' => 'status', 'title' => __('forms.status')],

@@ -20,7 +20,7 @@ class coursesRepository extends BaseRepository
         'company_id',
         'title',
         'body',
-        'published_on',
+        'created_at',
         'category_id',
         'tags'
     ];
