@@ -15,4 +15,4 @@ jobs:
       with:
         server: 50.62.141.178
         username: oussama@tomohalmajd.com
-        password: pirateX2@
+        password: ${{ secrets.passftp }}
